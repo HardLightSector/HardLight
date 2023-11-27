@@ -1,0 +1,110 @@
+- type: latheRecipe
+  id: SpeedLoaderSpecial
+  result: SpeedLoaderSpecial
+  completetime: 5
+  materials:
+    Steel: 200
+
+- type: latheRecipe
+  id: CartridgeSpecial
+  result: CartridgeSpecial
+  completetime: 2
+  materials:
+    Steel: 20
+
+- type: latheRecipe
+  id: CartridgeSpecialRubber
+  result: CartridgeSpecialRubber
+  completetime: 2
+  materials:
+    Plastic: 5
+    Steel: 5
+
+- type: latheRecipe
+  id: CartridgeSpecialHoly
+  result: CartridgeSpecialHoly
+  completetime: 2
+  materials:
+    Plastic: 5
+    Steel: 5
+    Silver: 5
+
+- type: latheRecipe
+  id: CartridgeSpecialMindbreaker
+  result: CartridgeSpecialMindbreaker
+  completetime: 2
+  materials:
+    Plastic: 5
+    Steel: 5
+    Bluespace: 5
+
+- type: latheRecipe
+  id: MagazineBoxSpecial
+  result: MagazineBoxSpecial
+  completetime: 5
+  materials:
+    Steel: 1000
+
+- type: latheRecipe
+  id: MagazineBoxSpecialRubber
+  result: MagazineBoxSpecialRubber
+  completetime: 5
+  materials:
+    Steel: 350
+    Plastic: 300
+
+- type: latheRecipe
+  id: ClothingOuterArmorPlateCarrier
+  result: ClothingOuterArmorPlateCarrier
+  completetime: 10
+  materials:
+    Steel: 1500
+    Plastic: 1500
+
+- type: latheRecipe
+  id: ClothingOuterArmorDuraVest
+  result: ClothingOuterArmorDuraVest
+  completetime: 10
+  materials:
+    Steel: 500
+    Plastic: 1000
+    
+- type: latheRecipe
+  id: WeaponEnergyGun
+  result: WeaponEnergyGun
+  completetime: 8
+  materials:
+    Steel: 2000
+    Glass: 800
+    Plastic: 500
+    
+- type: latheRecipe  
+  id: WeaponEnergyGunMini
+  result: WeaponEnergyGunMini
+  completetime: 4
+  materials:   #Half of Energy Gun Recipe
+    Steel: 1000
+    Glass: 400
+    Plastic: 250 
+
+- type: latheRecipe
+  id: WeaponEnergyGunPistol
+  result: WeaponEnergyGunPistol
+  completetime: 10
+  materials:
+    Steel: 1500
+    Glass: 600
+    Plastic: 400
+    Gold: 150
+    
+- type: latheRecipe
+  id: WeaponGunLaserCarbineAutomatic
+  result: WeaponGunLaserCarbineAutomatic
+  completetime: 15
+  materials: 
+    Steel: 2000
+    Glass: 1000
+    Plastic: 500
+    Gold: 250
+    Silver: 100
+    Plasma: 500

@@ -459,21 +459,88 @@
   - type: Lathe
     idleState: icon
     runningState: icon
-    staticPacks:
-    - SecurityEquipmentStatic
-    - SecurityPracticeStatic
-    - CivilianAmmoRecipePack
-    - SecurityWeaponsStatic
-    dynamicPacks:
-    - SalvageSecurityBoards
-    - SalvageSecurityWeapons
-    - SecurityEquipment
-    - SecurityBoards # Frontier
-    - SecurityExplosives
-    - AdvancedAmmoRecipePack
-    - SecurityWeapons
-    - SecurityDisablers
-    - SMCybernetics
+    staticRecipes:
+      - ClothingEyesHudSecurity
+      - Flash
+      - Handcuffs
+      - Zipties
+      - Stunbaton
+      - ForensicPad
+      - ClothingEyesGlassesSecurity
+      - RiotShield
+      - ShellShotgun
+      - ShellShotgunFlare
+      - ShellTranquilizer
+      - MagazinePistol
+      - MagazinePistolSubMachineGun
+      - MagazinePistolSubMachineGunTopMounted
+      - MagazineRifle
+      - MagazineLightRifle
+      - MagazineBoxPistol
+      - MagazineBoxSpecial # DeltaV - .38 Special revolver
+      - MagazineBoxMagnum
+      - MagazineBoxRifle
+      - MagazineBoxLightRifle
+      - SpeedLoaderMagnum
+      - SpeedLoaderSpecial # DeltaV - .38 Special revolver
+      - ClothingOuterArmorPlateCarrier # DeltaV - plate carrier body armour
+      - ClothingOuterArmorDuraVest # DeltaV - stabproof vest body armour
+      - TargetHuman
+      - TargetSyndicate
+      - TargetClown
+    dynamicRecipes:
+      - CartridgeSpecialRubber # DeltaV - .38 Special revolver
+      - EncryptionKeySyndie # Nyano
+      - MagazineBoxSpecialRubber # DeltaV - .38 Special revolver
+      - CartridgeLightRifleIncendiary
+      - CartridgeMagnumIncendiary
+      - CartridgePistolIncendiary
+      - CartridgeRifleIncendiary
+      - CartridgeLightRifleRubber
+      - CartridgeMagnumRubber
+      - CartridgePistolRubber
+      - CartridgeRifleRubber
+      - ExplosivePayload
+      - FlashPayload
+      - HoloprojectorSecurity
+      - MagazineBoxLightRifleIncendiary
+      - MagazineBoxMagnumIncendiary
+      - MagazineBoxPistolIncendiary
+      - MagazineBoxRifleIncendiary
+      - CartridgeSpecialHoly # DeltaV - .38 Special revolver, Holy ammo
+      - CartridgeSpecialMindbreaker # DeltaV - .38 Special revolver, Mindbreaker ammo
+      - ShellSoulbreaker # Nyanotrasen - Shotgun shell to get rid of psionics
+      - MagazineBoxLightRiflePractice
+      - MagazineBoxMagnumPractice
+      - MagazineBoxPistolPractice
+      - MagazineBoxRiflePractice
+      - MagazineBoxLightRifleRubber
+      - MagazineBoxMagnumRubber
+      - MagazineBoxPistolRubber
+      - MagazineBoxRifleRubber
+      - ShellShotgunBeanbag
+      - ShellShotgunIncendiary
+      - ShellShotgunPractice
+      - Signaller
+      - SignalTrigger
+      - TelescopicShield
+      - TimerTrigger
+      - Truncheon
+      - VoiceTrigger
+      - WeaponAdvancedLaser
+      - WeaponDisablerPractice
+      - WeaponLaserCannon
+      - WeaponLaserCarbine
+      - WeaponLaserCarbinePractice
+      - WeaponTaser
+      - ClothingHeadHelmetInsulated # Nyanotrasen - Insulative headgear
+      - ClothingHeadCage # Nyanotrasen - Insulative headgear
+      - ShockCollar # Nyanotrasen - Shock Collar
+      - WeaponXrayCannon
+      - WeaponEnergyGun #DeltaV - Energy Gun
+      - WeaponEnergyGunMini #DeltaV - Energy Gun but miniature
+      - WeaponEnergyGunPistol #DeltaV - Energy Gun Mini but with the power of a normal energy gun
+      - WeaponGunLaserCarbineAutomatic #DeltaV - New Laser Projectiles with a 20 round carbine
   - type: MaterialStorage
     whitelist:
       tags:
