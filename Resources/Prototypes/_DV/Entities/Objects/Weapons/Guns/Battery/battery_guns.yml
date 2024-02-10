@@ -40,7 +40,7 @@
       state: disabler
     - proto: BulletLaser
       fireCost: 200
-      name: kill
+      name: lethal
       state: lethal
   - type: MagazineVisuals
     magState: mag
@@ -158,7 +158,7 @@
       state: disabler
     - proto: BulletEnergyGunLaser
       fireCost: 200
-      name: kill
+      name: lethal
       state: lethal
   - type: MagazineVisuals
     magState: mag
