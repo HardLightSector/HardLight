@@ -1,0 +1,60 @@
+- type: trait
+  id: CumProducer
+  category: Physical
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+  components:
+    - type: CumProducer
+      solutionname: "penis"
+    - type: SolutionContainerManager
+      solutions:
+        penis:
+          maxVol: 250
+          reagents:
+          - ReagentId: Cum
+            Quantity: 30
+
+- type: trait
+  id: MilkProducer
+  category: Physical
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+  components:
+    - type: MilkProducer
+      solutionname: "breasts"
+    - type: SolutionContainerManager
+      solutions:
+        breasts:
+          maxVol: 250
+          reagents:
+          - ReagentId: Milk
+            Quantity: 30
+
+# WIP - Needs a Reagent
+# - type: trait
+#   id: SquirtProducer
+#   category: Physical
+#   requirements:
+#     - !type:CharacterJobRequirement
+#       inverted: true
+#       jobs:
+#         - Borg
+#         - MedicalBorg
+#   components:
+#     - type: SquirtProducer
+#       solutionname: "vagina"
+#     - type: SolutionContainerManager
+#       solutions:
+#         vagina:
+#           maxVol: 250
+#           reagents:
+#           - ReagentId: Water
+#             Quantity: 30
