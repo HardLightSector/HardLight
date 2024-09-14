@@ -1,0 +1,36 @@
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterSuitHEV
+  name: H.E.V suit
+  description: Full-body hazardous suit designed to protect wearer from radiation, energy discarges, blunt-force trauma during the handling of hazardous material.
+  components:
+  - type: Sprite
+    sprite: Goobstation/Clothing/OuterClothing/Suits/hev.rsi
+  - type: Clothing
+    sprite: Goobstation/Clothing/OuterClothing/Suits/hev.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.7
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.7
+        Shock: 0.7
+        Radiation: 0.01
+        Caustic: 0.5
+  - type: ClothingSpeedModifier
+    walkModifier: 0.9
+    sprintModifier: 0.9
+  - type: HeldSpeedModifier
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHEV
+  - type: ClothingGrantComponent
+    component: # same as CE suit
+      - type: SupermatterImmune
+      # - type: EventHorizonIgnore
+      #   horizonWhitelist:
+      #     tags:
+      #     - Tesla
+      # - type: ContainmentFieldIgnore
+  - type: Tag
+    tags:
+      - HEVSuit
