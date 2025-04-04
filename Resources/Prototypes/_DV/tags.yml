@@ -7,6 +7,9 @@
   id: BulletBB
 
 - type: Tag
+  id: CartridgeLaser
+
+- type: Tag
   id: BionicSyrinxImplant
 
 - type: Tag
@@ -24,9 +27,21 @@
 - type: Tag
   id: HandLabeler
 
-#- type: Tag # Frontier - This was replaced with HarpyHideWings comp
-#  id: HidesHarpyWings # Frontier - This was replaced with HarpyHideWings comp
+- type: Tag
+  id: HidesHarpyWings
 
+- type: Tag
+  id: HudMedicalSecurity #Craftable Corpsman Glasses
+
+- type: Tag # prevents ID chips being used for an id computer privileged id
+  id: IdChip
+
+- type: Tag
+  id: MagazineLaser
+
+- type: Tag
+  id: MagazinePistolSpecial # For the .38 special ammo and pistol
+  
 - type: Tag
   id: Magazine9x19mmSpecial # For the .38 special ammo and pistol
 
