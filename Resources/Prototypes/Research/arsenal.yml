@@ -239,6 +239,20 @@
   recipeUnlocks:
   - WeaponAdvancedLaser # Frontier
   - PortableRecharger
+  - GamblagatorCapacitor # DeltaV - added for superweapon
+  - WeaponEnergyGunAdvanced # DeltaV
+
+#- type: technology # DeltaV - Removed for only causing issues
+#  id: ExperimentalBatteryAmmo
+#  name: research-technology-experimental-battery-ammo
+#  icon:
+#    sprite: Objects/Weapons/Guns/Battery/svalinn.rsi
+#    state: icon
+#  discipline: Arsenal
+#  tier: 3
+#  cost: 15000
+#  recipeUnlocks:
+#  - WeaponLaserSvalinn
 
 - type: technology
   id: ThermalWeaponry
@@ -263,20 +277,20 @@
   cost: 15000
   recipeUnlocks:
   - NFWeaponEnergyPistolLaserSvalinn
-#  - NFBlueprintWeaponLaserSvalinn # Frontier
+  - NFBlueprintWeaponLaserSvalinn # Frontier
 
-# - type: technology #Frontier
-#  id: AdvancedShuttleWeapon
-#  name: research-technology-advanced-shuttle-weapon
-#  icon:
-#    sprite: _Mono/Objects/Weapons/Guns/Ammunition/Magazine/Grenade/40mm_grenade_cartridge.rsi
-#    state: icon
-#  discipline: Arsenal
-#  tier: 3
-#  cost: 15000
-#  recipeUnlocks:
-#  - 40mmGrenadeEMP
-#  - PowerCageHigh
-#  - ShuttleGunDusterCircuitboard # Frontier
-#  technologyPrerequisites:
-#  - BasicShuttleArmament
+- type: technology #Frontier
+  id: AdvancedShuttleWeapon
+  name: research-technology-advanced-shuttle-weapon
+  icon:
+    sprite: _Mono/Objects/Weapons/Guns/Ammunition/Magazine/Grenade/40mm_grenade_cartridge.rsi
+    state: icon
+  discipline: Arsenal
+  tier: 3
+  cost: 15000
+  recipeUnlocks:
+  - 40mmGrenadeEMP
+  - PowerCageHigh
+  - ShuttleGunDusterCircuitboard # Frontier
+  technologyPrerequisites:
+  - BasicShuttleArmament
