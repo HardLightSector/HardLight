@@ -63,7 +63,6 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
-using Robust.Shared.ViewVariables;
 
 namespace Content.Shared.Preferences
 {
@@ -140,18 +139,6 @@ namespace Content.Shared.Preferences
         [DataField]
         public Gender Gender { get; private set; } = Gender.Male;
 
-        /// <summary>
-        /// Company affiliation (e.g., Neutral, Rogue).
-        /// </summary>
-        [DataField, ViewVariables]
-        public CompanyAffiliation Company { get; private set; } = CompanyAffiliation.None;
-
-        /// <summary>
-        /// Custom company data when Company is set to CustomCompany.
-        /// </summary>
-        [DataField, ViewVariables]
-        public CustomCompanyData? CustomCompanyData { get; private set; } = null;
-
         [DataField] // Frontier: Bank balance
         public int BankBalance { get; private set; } = DefaultBalance; // Frontier: Bank balance
 
@@ -201,8 +188,6 @@ namespace Content.Shared.Preferences
             int age,
             Sex sex,
             Gender gender,
-            CompanyAffiliation company,
-            CustomCompanyData? customCompanyData,
             int bankBalance,
             HumanoidCharacterAppearance appearance,
             SpawnPriorityPreference spawnPriority,
@@ -218,8 +203,6 @@ namespace Content.Shared.Preferences
             Age = age;
             Sex = sex;
             Gender = gender;
-            Company = company;
-            CustomCompanyData = customCompanyData;
             BankBalance = bankBalance;
             Appearance = appearance;
             SpawnPriority = spawnPriority;
@@ -237,7 +220,7 @@ namespace Content.Shared.Preferences
             HashSet<ProtoId<AntagPrototype>> antagPreferences,
             HashSet<ProtoId<TraitPrototype>> traitPreferences,
             Dictionary<string, RoleLoadout> loadouts)
-            : this(other.Name, other.FlavorText, other.Species, other.Age, other.Sex, other.Gender, other.Company, other.CustomCompanyData, other.BankBalance, other.Appearance, other.SpawnPriority,
+            : this(other.Name, other.FlavorText, other.Species, other.Age, other.Sex, other.Gender, other.BankBalance, other.Appearance, other.SpawnPriority,
                 jobPriorities, other.PreferenceUnavailable, antagPreferences, traitPreferences, loadouts)
         {
         }
@@ -250,8 +233,6 @@ namespace Content.Shared.Preferences
                 other.Age,
                 other.Sex,
                 other.Gender,
-                other.Company,
-                other.CustomCompanyData,
                 other.BankBalance,
                 other.Appearance.Clone(),
                 other.SpawnPriority,
@@ -360,11 +341,6 @@ namespace Content.Shared.Preferences
         public HumanoidCharacterProfile WithGender(Gender gender)
         {
             return new(this) { Gender = gender };
-        }
-
-        public HumanoidCharacterProfile WithCompany(CompanyAffiliation company, CustomCompanyData? customCompanyData = null)
-        {
-            return new(this) { Company = company, CustomCompanyData = customCompanyData };
         }
 
         // Frontier: this is probably an issue and should be removed.
@@ -525,7 +501,6 @@ namespace Content.Shared.Preferences
             if (Sex != other.Sex) return false;
             if (Gender != other.Gender) return false;
             if (Species != other.Species) return false;
-            if (Company != other.Company) return false;
             if (BankBalance != other.BankBalance) return false; // Frontier
             if (PreferenceUnavailable != other.PreferenceUnavailable) return false;
             if (SpawnPriority != other.SpawnPriority) return false;
@@ -769,7 +744,6 @@ namespace Content.Shared.Preferences
             hashCode.Add(BankBalance); // Frontier
             hashCode.Add((int)SpawnPriority);
             hashCode.Add((int)PreferenceUnavailable);
-            hashCode.Add((int)Company);
             return hashCode.ToHashCode();
         }
 

@@ -96,7 +96,6 @@ using Robust.Client.Graphics;
 using Robust.Client.Player;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
-using Robust.Client.UserInterface.CustomControls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Client.Utility;
 using Robust.Shared.Configuration;
@@ -105,8 +104,6 @@ using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using Direction = Robust.Shared.Maths.Direction;
-using Robust.Client.Timing;
-using Robust.Shared.Timing;
 
 namespace Content.Client.Lobby.UI
 {
@@ -123,8 +120,7 @@ namespace Content.Client.Lobby.UI
         private readonly MarkingManager _markingManager;
         private readonly JobRequirementsManager _requirements;
         private readonly LobbyUIController _controller;
-        private readonly SpriteSystem _sprite;
-        private readonly IUserInterfaceManager _uiManager; // For popup notifications
+        private readonly EntityWhitelistSystem _whitelist; // Frontier
 
         private FlavorText.FlavorText? _flavorText;
         private TextEdit? _flavorTextEdit;
@@ -179,61 +175,6 @@ namespace Content.Client.Lobby.UI
 
         private ISawmill _sawmill;
 
-        /// <summary>
-        /// Safely sets a tab title for the specified child control by resolving its current index in the TabContainer.
-        /// This avoids hard-coding tab indices that can drift if tabs are added or removed dynamically.
-        /// </summary>
-        /// <param name="child">The direct child control of the TabContainer representing a tab.</param>
-        /// <param name="title">The title to set.</param>
-        private void SetTabTitleForChild(Control? child, string title)
-        {
-            if (child == null)
-                return;
-
-            for (var i = 0; i < TabContainer.ChildCount; i++)
-            {
-                if (TabContainer.GetChild(i) == child)
-                {
-                    TabContainer.SetTabTitle(i, title);
-                    return;
-                }
-            }
-        }
-
-        /// <summary>
-        /// Updates all tab titles based on the current TabContainer children.
-        /// </summary>
-        private void UpdateTabTitles()
-        {
-            // Appearance is the first tab in XAML
-            var appearanceTab = TabContainer.ChildCount > 0 ? TabContainer.GetChild(0) as Control : null;
-            SetTabTitleForChild(appearanceTab, Loc.GetString("humanoid-profile-editor-appearance-tab"));
-
-            // Jobs tab: ancestor of JobList
-            var jobsTab = JobList?.Parent?.Parent as Control;
-            SetTabTitleForChild(jobsTab, Loc.GetString("humanoid-profile-editor-jobs-tab"));
-
-            // Antags tab: ancestor of AntagList
-            var antagsTab = AntagList?.Parent?.Parent as Control;
-            SetTabTitleForChild(antagsTab, Loc.GetString("humanoid-profile-editor-antags-tab"));
-
-            // Traits tab: ancestor of TraitsList
-            var traitsTab = TraitsList?.Parent?.Parent as Control;
-            SetTabTitleForChild(traitsTab, Loc.GetString("humanoid-profile-editor-traits-tab"));
-
-            // Markings tab: explicitly named in XAML as MarkingsTab
-            SetTabTitleForChild(MarkingsTab, Loc.GetString("humanoid-profile-editor-markings-tab"));
-
-            // Flavor text (description) tab is dynamically added as the last child when enabled
-            if (_flavorText != null)
-            {
-                TabContainer.SetTabTitle(TabContainer.ChildCount - 1, Loc.GetString("humanoid-profile-editor-flavortext-tab"));
-            }
-        }
-
-        // Dictionary to track custom companies in the dropdown by name
-        private Dictionary<string, int> _customCompanyItems = new Dictionary<string, int>();
-
         public HumanoidProfileEditor(
             IClientPreferencesManager preferencesManager,
             IConfigurationManager configurationManager,
@@ -244,8 +185,7 @@ namespace Content.Client.Lobby.UI
             IPrototypeManager prototypeManager,
             IResourceManager resManager,
             JobRequirementsManager requirements,
-            MarkingManager markings,
-            IUserInterfaceManager uiManager)
+            MarkingManager markings)
         {
             RobustXamlLoader.Load(this);
             _sawmill = logManager.GetSawmill("profile.editor");
@@ -259,8 +199,8 @@ namespace Content.Client.Lobby.UI
             _resManager = resManager;
             _requirements = requirements;
             _controller = UserInterfaceManager.GetUIController<LobbyUIController>();
-            _uiManager = uiManager;
-            _sprite = _entManager.System<SpriteSystem>();
+
+            _whitelist = _entManager.System<EntityWhitelistSystem>(); // Frontier
 
             ImportButton.OnPressed += args =>
             {
@@ -306,248 +246,6 @@ namespace Content.Client.Lobby.UI
             #region Appearance
 
             TabContainer.SetTabTitle(0, Loc.GetString("humanoid-profile-editor-appearance-tab"));
-
-            // Company Tab START
-            TabContainer.SetTabTitle(2, "Company"); // Assuming it's the 3rd tab (index 2)
-
-            // Clear any existing tracked custom companies
-            _customCompanyItems.Clear();
-
-            // Always initialize with the basic company types
-            CompanyButton.AddItem("None", (int)CompanyAffiliation.None);
-            CompanyButton.SelectId((int)CompanyAffiliation.None); // Default to None
-
-            // Get reference to the registry system
-            var customCompanyRegistry = _entManager.System<Content.Client.Company.CustomCompanyRegistrySystem>();
-
-            // Add any existing custom companies
-            foreach (var company in customCompanyRegistry.GetAllCustomCompanies().Values)
-            {
-                AddCustomCompanyToDropdown(company.Name);
-            }
-
-            // Check if player has already created a custom company and disable the Create button if needed
-            CreateCompanyButton.Disabled = customCompanyRegistry.HasCreatedCustomCompany;
-
-            CompanyButton.OnItemSelected += args =>
-            {
-                CompanyButton.SelectId(args.Id);
-
-                // Handle custom company selection by identifying if it's a custom company (negative ID)
-                if (args.Id < 0)
-                {
-                    // Find which custom company name corresponds to this selection
-                    string? selectedCompanyName = null;
-
-                    // Get the selected index
-                    int selectedIndex = CompanyButton.GetIdx(args.Id);
-
-                    // Find which custom company name corresponds to this index
-                    foreach (var entry in _customCompanyItems)
-                    {
-                        if (entry.Value == selectedIndex)
-                        {
-                            selectedCompanyName = entry.Key;
-                            break;
-                        }
-                    }
-
-                    if (selectedCompanyName != null)
-                    {
-                        try
-                        {
-                            // Create the custom company data with proper capitalization
-                            string properName;
-                            if (selectedCompanyName.Length > 0)
-                            {
-                                char[] chars = selectedCompanyName.ToCharArray();
-                                chars[0] = char.ToUpper(chars[0]);
-                                properName = new string(chars);
-                            }
-                            else
-                            {
-                                properName = selectedCompanyName;
-                            }
-
-                            // Create and set custom company data, which will mark as dirty if it's a change
-                            var customCompanyData = new CustomCompanyData(properName);
-                            var oldProfile = Profile;
-                            SetCompany(CompanyAffiliation.Custom, customCompanyData);
-
-                            // Force dirty flag if the profile has changed but SetDirty() wasn't called
-                            if (Profile != null && oldProfile != null && !Profile.MemberwiseEquals(oldProfile))
-                            {
-                                SetDirty();
-                            }
-                            return;
-                        }
-                        catch
-                        {
-                            // If something goes wrong, fall back to using the raw key name
-                            var customCompanyData = new CustomCompanyData(selectedCompanyName);
-                            SetCompany(CompanyAffiliation.Custom, customCompanyData);
-                            SetDirty(); // Always mark as dirty in case of error recovery
-                            return;
-                        }
-                    }
-                }
-                else
-                {
-                    // For standard companies, use the CompanyAffiliation enum value directly
-                    SetCompany((CompanyAffiliation)args.Id);
-                    SetDirty(); // Mark profile as changed
-                }
-            };
-
-            CreateCompanyButton.OnPressed += args =>
-            {
-                var companyName = CreateCompanyEdit.Text.Trim();
-                if (string.IsNullOrWhiteSpace(companyName))
-                {
-                    // TODO: Show error message
-                    return;
-                }
-
-                // Check if company name would be a duplicate
-                if (customCompanyRegistry.IsDuplicateCompanyName(companyName))
-                {
-                    // Check if it's a preset company name
-                    var normalizedName = companyName.ToLowerInvariant();
-                    if (normalizedName == "none")
-                    {
-                        _uiManager.Popup(Loc.GetString("Cannot create company with same name as preset company."), "Error");
-                    }
-                    else
-                    {
-                        _uiManager.Popup(Loc.GetString("A company with this name already exists."), "Error");
-                    }
-                    return;
-                }
-
-                // Check if player has already created a custom company
-                if (customCompanyRegistry.HasCreatedCustomCompany)
-                {
-                    // If they've created a company but are trying to select it again, that's fine
-                    if (string.Equals(companyName, customCompanyRegistry.PlayerCreatedCompanyName, StringComparison.OrdinalIgnoreCase))
-                    {
-                        // If we already have this company in our dictionary, just select it
-                        if (_customCompanyItems.ContainsKey(companyName.ToLowerInvariant()))
-                        {
-                            int itemIndex = _customCompanyItems[companyName.ToLowerInvariant()];
-                            CompanyButton.SelectId(CompanyButton.GetItemId(itemIndex));
-                            CreateCompanyEdit.Text = string.Empty;
-                            return;
-                        }
-                    }
-                    else
-                    {
-                        // The Create button should already be disabled, but just in case
-                        CreateCompanyButton.Disabled = true;
-                        return;
-                    }
-                }
-
-                // Check if we already have this company in our dropdown
-                if (_customCompanyItems.ContainsKey(companyName.ToLowerInvariant()))
-                {
-                    // Company already exists locally, just select it
-                    int itemIndex = _customCompanyItems[companyName.ToLowerInvariant()];
-                    CompanyButton.SelectId(CompanyButton.GetItemId(itemIndex));
-                }
-                else
-                {
-                    // Generate a unique ID for this custom company
-                    // We'll use negative IDs to avoid conflicts with the enum values
-                    int customId = -1000 - _customCompanyItems.Count;
-
-                    // Add new custom company to dropdown with the unique ID
-                    CompanyButton.AddItem($"Custom: {companyName} (by you)", customId);
-
-                    // Store the dropdown index
-                    _customCompanyItems[companyName.ToLowerInvariant()] = CompanyButton.ItemCount - 1;
-
-                    // Select the new custom company
-                    CompanyButton.SelectId(customId);
-
-                    // Request to add the company to the registry for other clients
-                    customCompanyRegistry.RequestAddCustomCompany(companyName);
-
-                    // Create custom company data
-                    var customCompanyData = new CustomCompanyData(companyName);
-                    SetCompany(CompanyAffiliation.Custom, customCompanyData);
-                    SetDirty();
-
-                    // Disable the Create button since the player has now created a company
-                    CreateCompanyButton.Disabled = true;
-
-                    // Enable the Delete button
-                    DeleteCompanyButton.Disabled = false;
-
-                    // Auto-save preferences with the new company
-                    if (Profile != null && CharacterSlot != null)
-                    {
-                        // Make sure we've set the company properly first
-                        Profile = Profile.WithCompany(CompanyAffiliation.Custom, customCompanyData);
-                        _preferencesManager.UpdateCharacter(Profile, CharacterSlot.Value);
-                        _sawmill.Debug($"Auto-saved preferences with new company: {companyName}");
-                        _uiManager.Popup(Loc.GetString("Your company has been created."), "Company Created");
-                    }
-                }
-
-                // Clear the text field
-                CreateCompanyEdit.Text = string.Empty;
-            };
-
-            DeleteCompanyButton.OnPressed += args =>
-            {
-                var customCompanyRegistry = _entManager.System<Content.Client.Company.CustomCompanyRegistrySystem>();
-
-                // Make sure the player has created a custom company
-                if (!customCompanyRegistry.HasCreatedCustomCompany ||
-                    string.IsNullOrEmpty(customCompanyRegistry.PlayerCreatedCompanyName))
-                {
-                    DeleteCompanyButton.Disabled = true;
-                    return;
-                }
-
-                var companyName = customCompanyRegistry.PlayerCreatedCompanyName;
-
-                // First confirmation - change the button text/color
-                if (DeleteCompanyButton.Text == "Delete")
-                {
-                    // Store confirmation text in a variable to ensure consistency when checking
-                    var confirmText = Loc.GetString("Confirm?");
-
-                    // Change button to confirmation mode
-                    DeleteCompanyButton.Text = confirmText;
-                    DeleteCompanyButton.StyleClasses.Add("Caution");
-
-                    // Revert after 5 seconds if not clicked
-                    Timer.Spawn(TimeSpan.FromSeconds(5), () =>
-                    {
-                        // Only reset if still in confirmation mode - compare against stored variable
-                        if (DeleteCompanyButton.Text == confirmText)
-                        {
-                            DeleteCompanyButton.Text = "Delete";
-                            DeleteCompanyButton.StyleClasses.Remove("Caution");
-                        }
-                    });
-                }
-                else
-                {
-                    // Second click - actually delete the company
-                    customCompanyRegistry.RequestDeleteCustomCompany(companyName);
-                    _sawmill.Debug($"Requested deletion of company: {companyName}");
-                    // Reset button back to normal immediately
-                    DeleteCompanyButton.Text = "Delete";
-                    DeleteCompanyButton.StyleClasses.Remove("Caution");
-
-                    // The server will send a deletion message back to us if successful,
-                    // which will trigger OnCustomCompanyDeleted
-                    _uiManager.Popup(Loc.GetString("Deleting company..."), "Company Deletion");
-                }
-            };
-            // Company Tab END
 
             #region Sex
 
@@ -808,14 +506,13 @@ namespace Content.Client.Lobby.UI
 
             #endregion Jobs
 
-            // Ensure tab titles match XAML order: 0 Appearance, 1 Jobs, 2 Antags, 3 Traits, 4 Markings
-            TabContainer.SetTabTitle(2, Loc.GetString("humanoid-profile-editor-antags-tab")); // Frontier: show proper label if present
+            //TabContainer.SetTabTitle(2, Loc.GetString("humanoid-profile-editor-antags-tab")); // Frontier
 
             RefreshTraits();
 
             #region Markings
 
-            TabContainer.SetTabTitle(4, Loc.GetString("humanoid-profile-editor-markings-tab")); // Frontier: Markings is the 5th tab in XAML
+            TabContainer.SetTabTitle(3, Loc.GetString("humanoid-profile-editor-markings-tab")); // Frontier: 4<3
 
             Markings.OnMarkingAdded += OnMarkingChange;
             Markings.OnMarkingRemoved += OnMarkingChange;
@@ -898,7 +595,7 @@ namespace Content.Client.Lobby.UI
             EnforceSpeciesTraitRestrictions();
 
             var traits = _prototypeManager.EnumeratePrototypes<TraitPrototype>().OrderBy(t => Loc.GetString(t.Name)).ToList();
-            TabContainer.SetTabTitle(3, Loc.GetString("humanoid-profile-editor-traits-tab"));
+            TabContainer.SetTabTitle(2, Loc.GetString("humanoid-profile-editor-traits-tab")); // Frontier: 3<2
 
             if (traits.Count < 1)
             {
@@ -1509,11 +1206,8 @@ namespace Content.Client.Lobby.UI
             {
                 PreferenceUnavailableButton.SelectId((int) Profile.PreferenceUnavailable);
             }
-
-            // Load Company START
-            UpdateCompanyControls();
-            // Load Company END
         }
+
 
         /// <summary>
         /// A slim reload that only updates the entity itself and not any of the job entities, etc.
@@ -1910,24 +1604,12 @@ namespace Content.Client.Lobby.UI
         protected override void EnteredTree()
         {
             base.EnteredTree();
-
-            // Subscribe to company events
-            var customCompanyRegistry = _entManager.System<Content.Client.Company.CustomCompanyRegistrySystem>();
-            customCompanyRegistry.CustomCompanyAdded += OnCustomCompanyAdded;
-            customCompanyRegistry.CustomCompanyDeleted += OnCustomCompanyDeleted;
-
             ReloadPreview();
         }
 
         protected override void ExitedTree()
         {
             base.ExitedTree();
-
-            // Unsubscribe from company events
-            var customCompanyRegistry = _entManager.System<Content.Client.Company.CustomCompanyRegistrySystem>();
-            customCompanyRegistry.CustomCompanyAdded -= OnCustomCompanyAdded;
-            customCompanyRegistry.CustomCompanyDeleted -= OnCustomCompanyDeleted;
-
             _entManager.DeleteEntity(PreviewDummy);
             PreviewDummy = EntityUid.Invalid;
         }
@@ -2511,238 +2193,6 @@ namespace Content.Client.Lobby.UI
             _exporting = false;
             ImportButton.Disabled = false;
             ExportButton.Disabled = false;
-        }
-
-        private void SetCompany(CompanyAffiliation company, CustomCompanyData? customCompanyData = null)
-        {
-            if (Profile == null)
-                return;
-
-            // Check if this is actually a change - compare both enum values and custom company names
-            bool isChange = Profile.Company != company;
-
-            // If both are custom companies, we need to check if the names differ
-            if (!isChange && company == CompanyAffiliation.Custom && Profile.CustomCompanyData != null && customCompanyData != null)
-            {
-                isChange = Profile.CustomCompanyData.Name != customCompanyData.Name;
-            }
-
-            // If nothing changed, return early
-            if (!isChange)
-                return;
-
-            // If it's a custom company, make sure it's in the registry
-            if (company == CompanyAffiliation.Custom && customCompanyData != null)
-            {
-                var customCompanyRegistry = _entManager.System<Content.Client.Company.CustomCompanyRegistrySystem>();
-
-                // First check if this company still exists in the registry
-                // It might have been deleted by an admin
-                if (!customCompanyRegistry.CustomCompanyExists(customCompanyData.Name))
-                {
-                    _sawmill.Debug($"Attempted to set company to deleted company {customCompanyData.Name}, falling back to None");
-                    // If the company has been deleted, fall back to None
-                    company = CompanyAffiliation.None;
-                    customCompanyData = null;
-                }
-                else
-                {
-                    // Company exists, so request to add it
-                    customCompanyRegistry.RequestAddCustomCompany(customCompanyData.Name);
-                }
-            }
-
-            Profile = Profile.WithCompany(company, customCompanyData);
-            // Note: ReloadPreview() is likely not needed unless company affects appearance
-            SetDirty();
-        }
-
-        private void UpdateCompanyControls()
-        {
-            if (Profile == null)
-                return;
-
-            // Update the company dropdown
-            var company = Profile.Company;
-
-            // Check if this is a custom company
-            if (company == CompanyAffiliation.Custom && Profile.CustomCompanyData != null)
-            {
-                var customCompanyName = Profile.CustomCompanyData.Name;
-
-                // If this custom company is already in our tracked dictionary, select it
-                if (_customCompanyItems.TryGetValue(customCompanyName.ToLowerInvariant(), out var itemIndex))
-                {
-                    // Get the unique ID for this custom company
-                    int id = CompanyButton.GetItemId(itemIndex);
-                    CompanyButton.SelectId(id);
-                }
-                else
-                {
-                    // We need to add this custom company to the dropdown
-                    // Generate a unique ID for this custom company
-                    int customId = -1000 - _customCompanyItems.Count;
-
-                    // Get the company data from the registry
-                    var customCompanyRegistry = _entManager.System<Content.Client.Company.CustomCompanyRegistrySystem>();
-                    var companyData = customCompanyRegistry.GetCustomCompany(customCompanyName);
-
-                    // Format the display text to include creator's username if available
-                    string displayText;
-                    if (companyData != null && !string.IsNullOrEmpty(companyData.CreatorUsername))
-                    {
-                        displayText = $"Custom: {customCompanyName} (by {companyData.CreatorUsername})";
-                    }
-                    else
-                    {
-                        displayText = $"Custom: {customCompanyName}";
-                    }
-
-                    // Add to dropdown with unique ID
-                    CompanyButton.AddItem(displayText, customId);
-                    int newIndex = CompanyButton.ItemCount - 1;
-                    _customCompanyItems[customCompanyName.ToLowerInvariant()] = newIndex;
-                    CompanyButton.SelectId(customId);
-
-                    // Register with the system
-                    customCompanyRegistry.RequestAddCustomCompany(customCompanyName);
-                }
-            }
-            else
-            {
-                // For regular companies, verify ID exists before selecting
-                try
-                {
-                    CompanyButton.SelectId((int)company);
-                }
-                catch (KeyNotFoundException)
-                {
-                    // Fallback to None (0) if the company ID doesn't exist in the dropdown
-                    CompanyButton.SelectId((int)CompanyAffiliation.None);
-                }
-            }
-
-            // Update Create/Delete button states
-            var companyRegistrySystem = _entManager.System<Content.Client.Company.CustomCompanyRegistrySystem>();
-
-            // If the player has already created a custom company, disable Create and enable Delete
-            if (companyRegistrySystem.HasCreatedCustomCompany)
-            {
-                CreateCompanyButton.Disabled = true;
-                DeleteCompanyButton.Disabled = false;
-            }
-            else
-            {
-                CreateCompanyButton.Disabled = false;
-                DeleteCompanyButton.Disabled = true;
-            }
-
-            // If the current profile is using a custom company that's different from what the player created,
-            // we need special handling
-            if (Profile.Company == CompanyAffiliation.Custom &&
-                Profile.CustomCompanyData != null &&
-                companyRegistrySystem.HasCreatedCustomCompany &&
-                !string.Equals(Profile.CustomCompanyData.Name, companyRegistrySystem.PlayerCreatedCompanyName, StringComparison.OrdinalIgnoreCase))
-            {
-                // Player is viewing a custom company they didn't create
-                DeleteCompanyButton.Disabled = true;
-            }
-        }
-
-        private void OnCustomCompanyAdded(CustomCompanyData companyData)
-        {
-            AddCustomCompanyToDropdown(companyName: companyData.Name);
-        }
-
-        private void OnCustomCompanyDeleted(string companyName)
-        {
-            // Check if this company is in our tracked dictionary
-            if (!_customCompanyItems.TryGetValue(companyName.ToLowerInvariant(), out var itemIndex))
-                return;
-
-            _sawmill.Debug($"Removing company {companyName} from dropdown UI (index: {itemIndex})");
-
-            // Get the ID for this custom company
-            int id = CompanyButton.GetItemId(itemIndex);
-
-            // Remove the company from the dropdown
-            CompanyButton.RemoveItem(itemIndex);
-
-            // Remove from the tracked dictionary
-            _customCompanyItems.Remove(companyName.ToLowerInvariant());
-
-            // Update the indices of all remaining custom companies in the dictionary
-            // since removing an item can change the indices
-            var keys = _customCompanyItems.Keys.ToList();
-            foreach (var key in keys)
-            {
-                var idx = _customCompanyItems[key];
-                if (idx > itemIndex)
-                {
-                    // Decrement indices of items that were after the removed item
-                    _customCompanyItems[key] = idx - 1;
-                }
-            }
-
-            // If the currently selected profile has this company, reset to None
-            if (Profile?.Company == CompanyAffiliation.Custom &&
-                Profile.CustomCompanyData?.Name.ToLowerInvariant() == companyName.ToLowerInvariant())
-            {
-                _sawmill.Debug($"Resetting profile's company from {companyName} to None");
-
-                // Create a new profile with None company
-                Profile = Profile.WithCompany(CompanyAffiliation.None, null);
-
-                // Explicitly mark the profile as dirty to ensure changes are saved
-                SetDirty();
-
-                // Explicitly update UI to make sure the company selector changes
-                CompanyButton.SelectId((int)CompanyAffiliation.None);
-
-                // Note: this change should be saved to the player's preferences when they click Save
-            }
-
-            // Notify the user that the company was deleted if they were using it
-            if (Profile?.Company == CompanyAffiliation.None &&
-                companyName.ToLowerInvariant() == Profile?.CustomCompanyData?.Name?.ToLowerInvariant())
-            {
-                _uiManager.Popup(Loc.GetString("The company '{companyName}' has been deleted by an admin. Your affiliation has been reset to None.", ("companyName", companyName)), "Company Deleted");
-            }
-        }
-
-        private void AddCustomCompanyToDropdown(string companyName)
-        {
-            // Check if this company option already exists in our dictionary
-            if (_customCompanyItems.ContainsKey(companyName.ToLowerInvariant()))
-                return;
-
-            // Get the company data from the registry to access the creator username
-            var customCompanyRegistry = _entManager.System<Content.Client.Company.CustomCompanyRegistrySystem>();
-            var companyData = customCompanyRegistry.GetCustomCompany(companyName);
-
-            if (companyData == null)
-                return;
-
-            // Generate a unique ID for this custom company
-            // We'll use negative IDs to avoid conflicts with the enum values
-            int customId = -1000 - _customCompanyItems.Count;
-
-            // Format the display text to include creator's username if available
-            string displayText;
-            if (!string.IsNullOrEmpty(companyData.CreatorUsername))
-            {
-                displayText = $"Custom: {companyName} (by {companyData.CreatorUsername})";
-            }
-            else
-            {
-                displayText = $"Custom: {companyName}";
-            }
-
-            // Add a new dropdown item for this custom company with a unique ID
-            CompanyButton.AddItem(displayText, customId);
-
-            // Track the custom company in our dictionary
-            _customCompanyItems[companyName.ToLowerInvariant()] = CompanyButton.ItemCount - 1;
         }
     }
 }
