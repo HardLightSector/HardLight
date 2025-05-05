@@ -276,7 +276,10 @@ namespace Content.Server.Database
                 (PreferenceUnavailableMode) profile.PreferenceUnavailable,
                 antags.ToHashSet(),
                 traits.ToHashSet(),
-                loadouts);
+                loadouts,
+                cdRecords,
+                profile.CDProfile?.CustomSpeciesName
+            );
         }
 
         private static Profile ConvertProfiles(HumanoidCharacterProfile humanoid, int slot, Profile? profile = null)
@@ -329,6 +332,20 @@ namespace Content.Server.Database
                 humanoid.TraitPreferences
                         .Select(t => new Trait {TraitName = t})
             );
+
+            // CD: CD Character Data
+            profile.CDProfile ??= new CDModel.CDProfile();
+            profile.CDProfile.Height = humanoid.Height;
+            // There are JsonIgnore annotations to ensure that entries are not stored as JSON.
+            profile.CDProfile.CharacterRecords = JsonSerializer.SerializeToDocument(humanoid.CDCharacterRecords ?? PlayerProvidedCharacterRecords.DefaultRecords());
+            if (humanoid.CDCharacterRecords != null)
+            {
+                profile.CDProfile.CharacterRecordEntries.Clear();
+                profile.CDProfile.CharacterRecordEntries.AddRange(RecordsSerialization.GetEntries(humanoid.CDCharacterRecords));
+            }
+
+            profile.CDProfile.CustomSpeciesName = humanoid.CDCustomSpeciesName;
+            // END CD
 
             profile.Loadouts.Clear();
 
