@@ -5,6 +5,7 @@
   components:
     - type: RandomHumanoidAppearance
       randomizeName: false
+      randomizeName: false
     - type: GhostTakeoverAvailable
     - type: IdBind
 
@@ -19,6 +20,7 @@
 - type: randomHumanoidSettings
   id: EventHumanoidColcomm
   parent: EventHumanoidMindShielded
+  randomizeName: false
   components:
   - type: AutoImplant
     implants:
@@ -604,7 +606,7 @@
     - type: RandomHumanoidAppearance
       randomizeName: false
     - type: NukeOperative
-    - type: PsionicBonusChance #Nyano - Summary: makes more likely to be psionic. 
+    - type: PsionicBonusChance #Nyano - Summary: makes more likely to be psionic.
       multiplier: 7
       warn: false
 
