@@ -2,7 +2,7 @@
   abstract: true
   id: GasPipeBase
   parent: [RecyclableItemSteelSmall, BaseItem] # Frontier: add RecyclableItemSteelSmall
-  name: pipe
+  name: gas pipe
   description: Holds gas.
   placement:
     mode: SnapgridCenter
