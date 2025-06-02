@@ -86,6 +86,9 @@ namespace Content.Shared.Verbs
 
         public static readonly VerbCategory PowerLevel = new("verb-categories-power-level", null);
 
+        public static readonly VerbCategory Adjust =
+            new("verb-categories-adjust", "/Textures/Interface/VerbIcons/screwdriver.png");
+
         public static readonly VerbCategory Pen =
             new("verb-categories-pen", "/Textures/Interface/pencil.png");
 
