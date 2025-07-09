@@ -14,6 +14,19 @@
       amount: 2
 
 - type: entity
+  parent: WeaponCaseLong
+  id: WeaponCaseLongSVSExpedition
+  suffix: Dungeon, SVS
+#  categories: [ HideSpawnMenu ]
+  components:
+  - type: StorageFill
+    contents:
+    - id: WeaponRifleSVS
+      amount: 1
+    - id: Magazine7.62x54mmRFMJ
+      amount: 2
+
+- type: entity
   parent: WeaponCaseShort
   id: WeaponCaseShortN1984Expedition
   suffix: Dungeon, N1984
@@ -194,7 +207,7 @@
   components:
   - type: StorageFill
     contents:
-    - id: WeaponShotgunHandmadeExpedition
+    - id: WeaponShotgunHandmade
       amount: 1
     - id: AmmoBox12_gaugeBuckshot
       amount: 1
@@ -207,7 +220,7 @@
   components:
   - type: StorageFill
     contents:
-    - id: WeaponShotgunDoubleBarreledExpedition
+    - id: WeaponShotgunDoubleBarreled
       amount: 1
     - id: AmmoBox12_gaugeBuckshot
       amount: 2
@@ -220,7 +233,7 @@
   components:
   - type: StorageFill
     contents:
-    - id: WeaponShotgunSawnExpedition
+    - id: WeaponShotgunSawn
       amount: 1
     - id: AmmoBox12_gaugeBuckshot
       amount: 1
@@ -266,6 +279,35 @@
     - id: AmmoBox12_gaugeBuckshot
       amount: 2
 
+- type: entity
+  parent: WeaponCaseLong
+  id: WeaponCaseLongMosinExpedition
+  suffix: Dungeon, Mosin
+#  categories: [ HideSpawnMenu ]
+  components:
+  - type: StorageFill
+    contents:
+    - id: WeaponSniperMosin
+      amount: 1
+    - id: Magazine7.62x54mmRFMJ
+      amount: 2
+    - id: AmmoBox7.62x51mmBigFMJ
+      amount: 2
+      
+- type: entity
+  parent: WeaponCaseLong
+  id: WeaponCaseLongSniperCeremonialExpedition
+  suffix: Dungeon, Ceremonial
+#  categories: [ HideSpawnMenu ]
+  components:
+  - type: StorageFill
+    contents:
+    - id: WeaponSniperCeremonial
+      amount: 1
+    - id: Magazine7.62x51mmFMJ
+      amount: 2
+    - id: AmmoBox7.62x51mmBigFMJ
+      amount: 2
 #region SMGs
 - type: entity
   parent: WeaponCaseLong
@@ -275,7 +317,7 @@
   components:
   - type: StorageFill
     contents:
-    - id: WeaponSubMachineGunWt550Expedition
+    - id: WeaponSubMachineGunWt550
       amount: 1
     - id: Magazine4.6x30mmSubMachineGunTopMountedFMJ
       amount: 2
@@ -307,7 +349,7 @@
   components:
   - type: StorageFill
     contents:
-    - id: WeaponSubMachineGunDrozdExpedition
+    - id: WeaponSubMachineGunDrozd
       amount: 1
     - id: Magazine45_ACPSubMachineGunFMJ
       amount: 2
@@ -578,7 +620,7 @@
   components:
   - type: StorageFill
     contents:
-    - id: NFWeaponRifleMusketExpedition
+    - id: Musket
       amount: 1
     - id: AmmoBox14.5x114mm
       amount: 2

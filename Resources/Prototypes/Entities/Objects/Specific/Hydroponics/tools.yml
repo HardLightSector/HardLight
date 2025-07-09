@@ -146,14 +146,14 @@
     # End Frontier
   - type: Item
     storedRotation: -90
-    size: Ginormous # Frontier
+    size: Small # Frontier - NOT ANYMORE, this is again a pocket item! (Loki)
   - type: Clothing
     quickEquip: false
     slots:
     - belt
   - type: Storage
     grid:
-    - 0,0,7,4
+    - 0,0,7,5
     maxItemSize: Small
     quickInsert: true
     areaInsert: true

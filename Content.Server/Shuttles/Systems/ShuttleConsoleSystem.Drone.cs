@@ -56,34 +56,8 @@ public sealed partial class ShuttleConsoleSystem
     /// </summary>
     private EntityUid? GetShuttleConsole(EntityUid uid, DroneConsoleComponent? component = null)
     {
-        if (!Resolve(uid, ref component))
-            return null;
-
-        var stationUid = _station.GetOwningStation(uid);
-
-        if (stationUid == null)
-            return null;
-
         // I know this sucks but needs device linking or something idunno
         var query = AllEntityQuery<ShuttleConsoleComponent, TransformComponent>();
-
-        while (query.MoveNext(out var cUid, out _, out var xform))
-        {
-            if (xform.GridUid == null ||
-                !TryComp<StationMemberComponent>(xform.GridUid, out var member) ||
-                member.Station != stationUid)
-            {
-                continue;
-            }
-
-            foreach (var compType in component.Components.Values)
-            {
-                if (!HasComp(xform.GridUid, compType.Component.GetType()))
-                    continue;
-
-                return cUid;
-            }
-        }
 
         return null;
     }

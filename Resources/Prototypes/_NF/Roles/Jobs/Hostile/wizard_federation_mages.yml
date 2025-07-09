@@ -98,3 +98,66 @@
     outerClothing: ClothingOuterHardsuitClown
   inhand:
     - WizardStaffMeleeSoap
+
+# Expedition enemies
+
+- type: startingGear
+  id: MobHumanoidWizardGearMeleeT1
+  equipment:
+    head: ClothingHeadPaperSackSmile
+    back: ClothingBackpackT1WizardLoot
+    jumpsuit: ClothingUniformJumpsuitLoungewear
+  inhand:
+    - ReinforcedShiv
+
+- type: startingGear
+  id: MobHumanoidWizardRangedT1
+  equipment:
+    shoes: ClothingShoesWizard
+    back: ClothingBackpackT1WizardLoot
+    outerClothing: ClothingOuterWizardRed
+  inhand:
+    - WizardStaffMeleeRed
+
+- type: startingGear
+  id: MobHumanoidWizardRangedT2
+  equipment:
+    head: ClothingHeadHatPartyBlue
+    shoes: ClothingShoesWizard
+    back: ClothingBackpackT2WizardLoot
+    outerClothing: ClothingOuterWizard
+  inhand:
+    - WizardStaffMeleeBase
+
+- type: startingGear
+  id: MobHumanoidWizardGearSupportT3
+  equipment:
+    head: ClothingHeadHatWitch
+    shoes: ClothingShoesWizard
+    back: ClothingBackpackT3WizardLoot
+    outerClothing: ClothingOuterHoodieChaplain
+  inhand:
+    - WizardStaffMeleeBase
+
+- type: startingGear
+  id: MobHumanoidWizardGearMixedT3
+  equipment:
+    head: ClothingHeadHelmetWizardHelm
+    shoes: ClothingShoesWizard
+    back: ClothingBackpackT3WizardLoot
+    outerClothing: ClothingOuterArmorMagusblue
+  inhand:
+    - WizardStaffMeleeBase
+
+- type: startingGear
+  id: MobHumanoidWizardGearBoss
+  equipment:
+    head: ClothingHeadHatVioletwizard
+    shoes: ClothingShoesWizard
+    back: ClothingBackpackT4WizardLoot
+    belt: ClothingBeltWand
+    neck: ClothingNeckScarfStripedPurple
+    outerClothing: ClothingOuterHardsuitWizard
+  inhand:
+    - Claymore
+    - WizardStaffMeleeViolet

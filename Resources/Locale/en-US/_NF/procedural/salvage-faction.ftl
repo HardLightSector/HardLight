@@ -11,3 +11,4 @@ nf-salvage-faction-mercenaries = Mercenaries
 nf-salvage-faction-explorers = Explorers
 nf-salvage-faction-silicons = Rogue Silicon
 nf-salvage-faction-punks = Punks
+nf-salvage-faction-Wizards = Wizards

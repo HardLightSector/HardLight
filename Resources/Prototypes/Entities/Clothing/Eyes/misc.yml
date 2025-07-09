@@ -33,3 +33,15 @@
   parent: [ClothingEyesEyepatch, ClothingHeadEyeBaseFlipped]
   id: ClothingEyesEyepatchFlipped
   suffix: flipped
+
+# Dummy plug for invisible glasses
+- type: entity
+  parent: ClothingEyesBase
+  id: DummyGlassesInvisible
+  name: emperor's new goggles
+  description: The finest goggles you'll never see. Prevents welding blindness but not flashes.
+  components:
+  - type: Sprite
+    sprite: Clothing/Eyes/Glasses/emper_new.rsi
+  - type: Clothing
+    sprite: Clothing/Eyes/Glasses/emper_new.rsi

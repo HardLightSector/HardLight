@@ -262,8 +262,8 @@
   tier: 3
   cost: 15000
   recipeUnlocks:
-  - WeaponLaserSvalinn
-  - NFBlueprintWeaponLaserSvalinn # Frontier
+  - NFWeaponEnergyPistolLaserSvalinn
+#  - NFBlueprintWeaponLaserSvalinn # Frontier
 
 # - type: technology #Frontier
 #  id: AdvancedShuttleWeapon

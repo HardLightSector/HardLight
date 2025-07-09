@@ -1,0 +1,24 @@
+- type: entity
+  parent: [ ClothingOuterBaseLarge, BaseC3WizardContraband ]
+  id: ClothingOuterArmourAlchemist
+  name: alchemist armour
+  description: An armoured gambeson and accompanying leather armour, stained with more than an ounce of prevention. The lightweight materials don't compromise movement while the enchantments keep it protective.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Armor/armour-alchemist.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Armor/armour-alchemist.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.7
+        Slash: 0.4
+        Piercing: 0.6
+        Heat: 0.5
+        Caustic: 0.5
+  - type: ClothingSpeedModifier
+    walkModifier: 1.0
+    sprintModifier: 1.0
+  - type: ExplosionResistance
+    damageCoefficient: 0.7
+  - type: GroupExamine

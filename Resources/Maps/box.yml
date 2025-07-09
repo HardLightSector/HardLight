@@ -21861,7 +21861,7 @@ entities:
     - type: Transform
       pos: 24.498875,-36.223793
       parent: 8364
-- proto: BoxLethalshot
+- proto: NFAmmunitionBoxShellShotgunBuckshot
   entities:
   - uid: 9388
     components:

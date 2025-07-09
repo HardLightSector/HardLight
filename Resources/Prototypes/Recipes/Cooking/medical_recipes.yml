@@ -6,7 +6,7 @@
   group: Medicinal
   solids:
     FoodAloe: 1
-  recipeType: MedicalAssembler # Frontier
+  recipeType: Microwave # Frontier #FIXED, WHAT THE FUCK FRONTIER IT'S HERBAL MEDICINE - Loki
 
 - type: microwaveMealRecipe
   id: RecipeMedicatedSuture

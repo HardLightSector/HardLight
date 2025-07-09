@@ -58,7 +58,7 @@
   - type: SolutionContainerManager
     solutions:
       hypospray:
-        maxVol: 20
+        maxVol: 60
   - type: RefillableSolution
     solution: hypospray
   - type: ExaminableSolution
@@ -98,7 +98,7 @@
   - type: SolutionContainerManager
     solutions:
       hypospray:
-        maxVol: 10
+        maxVol: 30
   - type: RefillableSolution
     solution: hypospray
   - type: ExaminableSolution
@@ -696,7 +696,7 @@
   - type: SolutionContainerManager
     solutions:
       hypospray:
-        maxVol: 10
+        maxVol: 30
   - type: RefillableSolution
     solution: hypospray
   - type: ExaminableSolution

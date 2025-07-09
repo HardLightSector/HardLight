@@ -4,7 +4,7 @@
   description: uplink-security-annie-desc
   productEntity: WeaponRifleAnnie
   cost:
-    FederationMilitaryCredit: 15
+    FrontierUplinkCoin: 15
   categories:
     - UplinkSecurityWeapons
   conditions:
@@ -19,7 +19,7 @@
   description: uplink-security-eg4-desc
   productEntity: WeaponEnergyRevolver
   cost:
-    FederationMilitaryCredit: 7
+    FrontierUplinkCoin: 7
   categories:
   - UplinkSecurityWeapons
   conditions:
@@ -35,7 +35,7 @@
   productEntity: ClothingBackpackDuffelSurgeryAdvancedFilled
   icon: { sprite: Objects/Specific/Medical/Surgery/scalpel.rsi, state: laser }
   cost:
-    FederationMilitaryCredit: 4
+    FrontierUplinkCoin: 4
   categories:
     - UplinkSecurityUtility
   conditions:
@@ -56,7 +56,7 @@
   description: uplink-security-portable-recharger-desc
   productEntity: PortableRecharger
   cost:
-    FederationMilitaryCredit: 7
+    FrontierUplinkCoin: 7
   categories:
   - UplinkSecurityUtility
   conditions:
@@ -69,10 +69,10 @@
   id: UplinkSecurityCash75000
   name: uplink-security-cash75000-name
   description: uplink-security-cash75000-desc
-  productEntity: SpaceCash75000
+  productEntity: SpaceCash10000
   icon: { sprite: _NF/Objects/Economy/cash.rsi, state: cash_100000 }
   cost:
-    FederationMilitaryCredit: 10
+    FrontierUplinkCoin: 10
   categories:
     - UplinkSecurityUtility
   conditions:
@@ -87,7 +87,7 @@
   description: uplink-subsonic-mag-desc
   productEntity: Magazine7.62x39mmSubsonic
   cost:
-    FederationMilitaryCredit: 1
+    FrontierUplinkCoin: 1
   categories:
   - UplinkSecurityAmmo
   conditions:
@@ -102,7 +102,7 @@
   description: uplink-subsonic-box-desc
   productEntity: AmmoBox7.62x39mmSubsonic
   cost:
-    FederationMilitaryCredit: 3
+    FrontierUplinkCoin: 3
   categories:
   - UplinkSecurityAmmo
   conditions:
@@ -111,21 +111,21 @@
       tags:
       - SecurityUplink
 
-- type: listing
-  id: UplinkSecurityNavyOfficerSword
-  name:  uplink-security-navyofficersword-name
-  description: uplink-security-navyofficersword-desc
-  productEntity: ClothingBeltSheathFilledNavy
-  icon: { sprite: _Mono/Objects/Weapons/Melee/ccsabre.rsi, state: icon }
-  cost:
-    FederationMilitaryCredit: 2 #From 10 to 2
-  categories:
-    - UplinkSecurityWeapons
-  conditions:
-    - !type:StoreWhitelistCondition
-      whitelist:
-        tags:
-          - SecurityUplink
+#- type: listing
+#  id: UplinkSecurityNavyOfficerSword
+#  name:  uplink-security-navyofficersword-name
+#  description: uplink-security-navyofficersword-desc
+#  productEntity: ClothingBeltSheathFilledNavy
+#  icon: { sprite: _Mono/Objects/Weapons/Melee/ccsabre.rsi, state: icon }
+#  cost:
+#    FederationMilitaryCredit: 2 #From 10 to 2
+#  categories:
+#    - UplinkSecurityWeapons
+#  conditions:
+#    - !type:StoreWhitelistCondition
+#      whitelist:
+#        tags:
+#          - SecurityUplink
 
 # - type: listing
 #   id: UplinkSecurityAuroraExosuit

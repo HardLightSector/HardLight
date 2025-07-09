@@ -124,9 +124,9 @@
   - type: RevolverAmmoProvider
     whitelist:
       tags:
-        - NFCartridgePistol45
-        - NFSpeedLoaderPistol45
-    proto: NFCartridgePistol45
+        - Cartridge45_ACPFMJ
+        - SpeedLoader45_magnumFMJ
+    proto: Cartridge45_ACPFMJ
 
 - type: entity
   id: NFBaseWeaponRevolverChamber35

@@ -44,7 +44,7 @@
     steps: 4
     zeroVisible: false
   - type: Sprite
-    sprite: _Mono/Objects/Weapons/Guns/Ammunition/Boxes/45_magnum.rsi # Frontier: add _NF prefix
+    sprite: Objects/Weapons/Guns/Ammunition/Boxes/magnum.rsi # Frontier: add _NF prefix
     layers:
       - state: capbase # Frontier: base<capbase
         map: ["enum.GunVisualLayers.Base"]

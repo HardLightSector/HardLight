@@ -23,9 +23,9 @@
     maxItemSize: Normal
     defaultStorageOrientation: Vertical
     grid:
-    - 0,0,9,3
+    - 0,0,11,3
   - type: Item
-    size: Ginormous
+    size: Small
     shape:
     - 0,0,3,2
 

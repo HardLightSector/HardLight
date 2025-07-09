@@ -234,7 +234,7 @@
     - state: icon-unlit
       shader: unshaded
   - type: Item
-    size: Ginormous
+    size: Small
     inhandVisuals: # Frontier
       left: # Frontier
       - state: inhand-left # Frontier
@@ -247,7 +247,7 @@
   - type: Storage
     maxItemSize: Huge
     grid:
-    - 0,0,7,7 # Frontier: Was 0,0,19,9
+    - 0,0,19,9 # Frontier: Was 0,0,19,9 - FRONTIER MADE IT 0,0,7,7 AND THAT'S DUMB - Loki
   - type: ClothingSpeedModifier
     sprintModifier: 1 # makes its stats identical to other variants of bag of holding
   - type: HeldSpeedModifier

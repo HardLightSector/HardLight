@@ -452,3 +452,46 @@
     fiberMaterial: fibers-rubber
     fiberColor: fibers-yellow
   - type: FingerprintMask
+
+- type: entity
+  parent: ClothingHandsButcherable
+  id: ClothingHandsGlovesAlchemist
+  name: alchemist's leather gloves
+  description: These leather gloves protect against more than just flora.
+  components:
+  - type: Sprite
+    sprite: Clothing/Hands/Gloves/alchemist.rsi
+  - type: Clothing
+    sprite: Clothing/Hands/Gloves/alchemist.rsi
+  - type: Fiber
+    fiberMaterial: fibers-leather
+    fiberColor: fibers-brown
+  - type: FingerprintMask
+  - type: DamageOnInteractProtection
+    damageProtection:
+      flatReductions:
+        Heat: 10
+        Caustic: 5
+
+- type: entity
+  parent: [ ClothingHandsGlovesColorBlack, BaseC3WizardContraband ] # BaseSecurityEngineeringContraband<BaseC1Contraband
+  id: ClothingHandsGlovesChameleon
+  name: emperor's new gloves
+  suffix: Chameleon
+  components:
+    - type: Tag
+      tags: [] # ignore "WhitelistChameleon" tag
+    - type: Sprite
+      sprite: Clothing/Hands/Gloves/Color/black.rsi
+    - type: Clothing
+      sprite: Clothing/Hands/Gloves/Color/black.rsi
+    - type: ChameleonClothing
+      slot: [gloves]
+      default: DummyGloveInvisible
+    - type: Fiber
+      fiberMaterial: fibers-chameleon
+    - type: FingerprintMask
+    - type: UserInterface
+      interfaces:
+        enum.ChameleonUiKey.Key:
+          type: ChameleonBoundUserInterface

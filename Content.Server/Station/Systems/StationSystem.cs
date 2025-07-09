@@ -106,7 +106,7 @@ public sealed class StationSystem : EntitySystem
     {
         foreach (var grid in component.Grids)
         {
-            RemComp<StationMemberComponent>(grid);
+            // RemComp<StationMemberComponent>(grid);
         }
 
         RaiseNetworkEvent(new StationsUpdatedEvent(GetStationNames()), Filter.Broadcast());
@@ -152,11 +152,11 @@ public sealed class StationSystem : EntitySystem
         if (eventArgs.New != GameRunLevel.PreRoundLobby)
             return;
 
-        var query = EntityQueryEnumerator<StationDataComponent>();
-        while (query.MoveNext(out var station, out _))
-        {
-            QueueDel(station);
-        }
+      //  var query = EntityQueryEnumerator<StationDataComponent>();
+      //  while (query.MoveNext(out var station, out _))
+      //  {
+      //      QueueDel(station);
+      //  }
     }
 
     #endregion Event handlers

@@ -91,6 +91,8 @@
         prob: 0.4
       - id: waterpage
         prob: 0.05
+      - id: flashpage
+        prob: 0.05
     sound:
       path: /Audio/Items/jumpsuit_equip.ogg
 
@@ -147,6 +149,8 @@
         prob: 0.01
       - id: DrinkBottleOfNothingFull
         prob: 0.5
+      - id: repulsepage
+        prob: 0.05
     sound:
       path: /Audio/Items/jumpsuit_equip.ogg
 
@@ -175,5 +179,128 @@
         prob: 0.5
       - id: cumpage
         prob: 0.05
+      - id: instrumentpage
+        prob: 0.05
+    sound:
+      path: /Audio/Items/jumpsuit_equip.ogg
+
+
+# Expedition wizards loot
+
+- type: entity
+  parent: WizardMessengerGiftBox
+  id: ClothingBackpackT1WizardLoot
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SpawnItemsOnUse
+    items:
+      - id: SpaceCash500
+      - id: SpawnDungeonLootSeed
+      # Bonus Loot T3
+      - id: SpaceCash1000
+        prob: 0.9
+      - id: SpaceCash500
+        prob: 0.9
+      - id: SpaceCash1000
+        prob: 0.7
+      - id: SpawnDungeonLootMaterialsBasicFull
+        prob: 0.7
+      - id: TrinketAcidRes
+        prob: 0.1
+      - id: TrinketHeatRes
+        prob: 0.1
+    sound:
+      path: /Audio/Items/jumpsuit_equip.ogg
+
+- type: entity
+  parent: WizardMessengerGiftBox
+  id: ClothingBackpackT2WizardLoot
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SpawnItemsOnUse
+    items:
+      - id: SpaceCash500
+      - id: SpawnDungeonLootSeed
+      # Bonus Loot T3
+      - id: SpaceCash1000
+        prob: 0.9
+      - id: SpaceCash1000
+        prob: 0.9
+      - id: SpaceCash1000
+        prob: 0.5
+      - id: SpawnDungeonLootMaterialsValuableFull
+        prob: 0.4
+      - id: TrinketBleedRes
+        prob: 0.1
+      - id: waterpage
+        prob: 0.05
+      - id: cumpage
+        prob: 0.05
+    sound:
+      path: /Audio/Items/jumpsuit_equip.ogg
+
+- type: entity
+  parent: WizardMessengerGiftBox
+  id: ClothingBackpackT3WizardLoot
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SpawnItemsOnUse
+    items:
+      - id: SpaceCash2500
+      - id: ClothingBundleBundle
+      # Bonus Loot T3
+      - id: SpaceCash1000
+        prob: 0.9
+      - id: SpaceCash1000
+        prob: 0.9
+      - id: SpaceCash1000
+        prob: 0.5
+      - id: SpawnDungeonLootMaterialsValuableFull
+        prob: 0.4
+      - id: TrinketSpeed
+        prob: 0.1
+      - id: firepage
+        prob: 0.05
+      - id: flashpage
+        prob: 0.05
+      - id: instrumentpage
+        prob: 0.05
+      - id: KnifeGun
+        prob: 0.3
+    sound:
+      path: /Audio/Items/jumpsuit_equip.ogg
+
+- type: entity
+  parent: WizardMessengerGiftBox
+  id: ClothingBackpackT4WizardLoot
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SpawnItemsOnUse
+    items:
+      - id: SpaceCash5000
+      - id: ClothingBundleBundle
+      # Bonus Loot T3
+      - id: SpaceCash1000
+        prob: 0.9
+      - id: SpaceCash1000
+        prob: 0.9
+      - id: SpawnDungeonLootMaterialsValuableFull
+        prob: 0.4
+      - id: TrinketSpeed
+        prob: 0.3
+      - id: TrinketBleedRes
+        prob: 0.3
+      - id: firepage
+        prob: 0.2
+      - id: boogiepage
+        prob: 0.2
+      - id: flashpage
+        prob: 0.2
+      - id: repulsepage
+        prob: 0.2
+      - id: instrumentpage
+        prob: 0.2
+      - id: KnifeGun
+        prob: 0.3
     sound:
       path: /Audio/Items/jumpsuit_equip.ogg

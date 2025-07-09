@@ -18,11 +18,30 @@
   displayWeight: 50 # Second from the top
   setPreference: true
   access:
-  - Service
-  - Maintenance
-  - External
-  - Frontier
-  - StationTrafficController
+    - Command
+    - HeadOfPersonnel
+    - Bar
+    - Service
+    - Maintenance
+    - Janitor
+    - Theatre
+    - Kitchen
+    - Chapel
+    - Hydroponics
+    - External
+    - Cryogenics
+    - Chemistry
+    - Engineering
+    - Research
+    - Detective
+    - Salvage
+    - Security
+    - Brig
+    - Lawyer
+    - Cargo
+    - Atmospherics
+    - Medical
+    - Frontier
   special:
   - !type:GiveItemOnHolidaySpecial
     holiday: FrontierBirthday

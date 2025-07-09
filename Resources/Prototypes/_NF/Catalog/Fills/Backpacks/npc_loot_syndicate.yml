@@ -438,7 +438,7 @@
   components:
   - type: SpawnItemsOnUse
     items:
-      - id: WeaponSubMachineGunAtreidesExpedition
+      - id: WeaponSubMachineGunAtreides
       - id: Magazine5.7x28mmSubMachineGunFMJ
       - id: Magazine5.7x28mmSubMachineGunFMJ
       - id: SpaceCash1000
@@ -471,7 +471,7 @@
   components:
   - type: SpawnItemsOnUse
     items:
-      - id: WeaponSubMachineGunWt550Expedition
+      - id: WeaponSubMachineGunWt550
       - id: Magazine4.6x30mmSubMachineGunTopMountedFMJ
       - id: SpaceCash1000
       - id: SpaceCash500
@@ -595,7 +595,7 @@
   components:
   - type: SpawnItemsOnUse
     items:
-      - id: WeaponPistolMk58Expedition
+      - id: WeaponPistolMk58
       - id: Magazine9x19mmPistolFMJ
       - id: SpaceCash1000
       # Bonus Loot T1

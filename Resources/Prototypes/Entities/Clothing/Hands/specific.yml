@@ -30,3 +30,15 @@
   - type: Thieving
     stripTimeReduction: 2
     stealthy: true
+
+# Dummy gloves for chameleon gloves to be invisible when worn
+- type: entity
+  parent: ClothingHandsGlovesSyntheticBase
+  id: DummyGloveInvisible
+  name: emperor's new gloves
+  description: The finest gloves you'll never see. Insulated.
+  components:
+  - type: Sprite
+    sprite: Clothing/Hands/Gloves/emper_new.rsi
+  - type: Clothing
+    sprite: Clothing/Hands/Gloves/emper_new.rsi

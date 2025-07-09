@@ -25,11 +25,15 @@
   # End Frontier: sprite revisions
   - type: Clothing
     sprite: _NF/Objects/Specific/Mining/ore_bag_holding.rsi # Frontier
+    quickEquip: false
+    slots:
+    - belt
   - type: Storage
     grid:
     - 0,0,19,9
   # Frontier: item visuals
   - type: Item
+    size: Small
     inhandVisuals:
       left:
       - state: inhand-left

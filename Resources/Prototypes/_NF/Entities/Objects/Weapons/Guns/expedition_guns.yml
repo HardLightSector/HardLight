@@ -69,7 +69,7 @@
 - type: entity
   parent:
   - BaseC2ExpeditionContraband
-  - WeaponRevolverArgenti
+  - NFWeaponRevolverArgenti
   categories: [ HideSpawnMenu ]
   id: WeaponRevolverArgentiExpedition
   name: worn Argenti
@@ -315,7 +315,7 @@
 - type: entity
   parent:
   - BaseExpeditionWeaponTier3
-  - NFWeaponEnergyPistolLaserSvalinn
+  - WeaponLaserSvalinn
 #  categories: [ HideSpawnMenu ]
   id: NFWeaponEnergyPistolLaserSvalinnExpedition
   name: worn Svalinn

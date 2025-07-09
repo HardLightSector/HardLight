@@ -66,6 +66,35 @@
     - type: SubdermalImplant
       implantAction: ActionVoidApplauseLR
 
+- type: entity
+  parent: BaseMagicAdder
+  id: flashimplant
+  name: bright magic
+  description: It smells like lightbulbs.
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: SubdermalImplant
+      implantAction: ActionFlashSpell
+
+- type: entity
+  parent: BaseMagicAdder
+  id: repulseimplant
+  name: forceful magic
+  description: It smells like strong wind.
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: SubdermalImplant
+      implantAction: ActionRepulseWeak
+
+- type: entity
+  parent: BaseMagicAdder
+  id: instrumentimplant
+  name: melodic magic
+  description: It smells like faded tragedies.
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: SubdermalImplant
+      implantAction: ActionSummonInstrument
 
 # Slightly pared down implanter.
 - type: entity
@@ -164,3 +193,30 @@
   components:
     - type: Implanter
       implant: blueimplant
+
+- type: entity
+  id: flashpage
+  name: torn page
+  description: A torn page from a spell book. It looks brittle.
+  parent: BaseMagicPage
+  components:
+    - type: Implanter
+      implant: flashimplant
+
+- type: entity
+  id: repulsepage
+  name: torn page
+  description: A torn page from a spell book. It looks brittle.
+  parent: BaseMagicPage
+  components:
+    - type: Implanter
+      implant: repulseimplant
+
+- type: entity
+  id: instrumentpage
+  name: torn page
+  description: A torn page from a spell book. It looks brittle.
+  parent: BaseMagicPage
+  components:
+    - type: Implanter
+      implant: instrumentimplant

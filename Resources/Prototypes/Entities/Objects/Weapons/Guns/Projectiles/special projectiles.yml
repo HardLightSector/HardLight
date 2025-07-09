@@ -1,0 +1,58 @@
+#Needed to move this to a separate file to projectiles since it was throwing twenty million errors for having a new base bullet alike in the existing projectiles file
+- type: entity
+  id: KnifeProjectileBase
+  abstract: true
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Reflective
+  - type: FlyBySound
+  - type: Clickable
+  - type: Physics
+    bodyType: Dynamic
+    linearDamping: 0
+    angularDamping: 0
+  - type: Sprite
+    noRot: false
+    sprite: Objects/Weapons/Melee/combat_knife.rsi
+    layers:
+    - state: storage
+      shader: unshaded
+  - type: Fixtures
+    fixtures:
+      projectile:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.1,-0.1,0.1,0.1"
+        hard: false
+        mask:
+        - Impassable
+        - BulletImpassable
+      fly-by: &flybyfixture
+        shape: !type:PhysShapeCircle
+          radius: 1.5
+        layer:
+        - Impassable
+        - MidImpassable
+        - HighImpassable
+        - LowImpassable
+        hard: False
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 12
+    soundHit:
+      path: /Audio/Weapons/star_hit.ogg
+  - type: TimedDespawn
+    lifetime: 10
+
+- type: entity
+  id: KnifeProjectile
+  name: fading knife
+  parent: KnifeProjectileBase
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Melee/combat_knife.rsi
+    layer: storage
+  - type: Ammo
+    muzzleFlash: null

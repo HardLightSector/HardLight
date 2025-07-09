@@ -63,7 +63,7 @@
   parent: BaseGrenade
   components:
   - type: CartridgeAmmo
-    proto: BulletGrenadeBaton # Frontier
+    proto: Bullet40mmGrenadeBaton # Frontierd
   - type: Sprite
     sprite: Objects/Weapons/Guns/Ammunition/Explosives/explosives.rsi
     layers:
@@ -80,7 +80,7 @@
   parent: BaseGrenade
   components:
   - type: CartridgeAmmo
-    proto: BulletGrenadeBlast # Frontier
+    proto: Bullet40mmGrenadeThermobaric # Frontier
   - type: Sprite
     sprite: Objects/Weapons/Guns/Ammunition/Explosives/explosives.rsi
     layers:
@@ -97,7 +97,7 @@
   parent: BaseGrenade
   components:
   - type: CartridgeAmmo
-    proto: BulletGrenadeFlash # Frontier
+    proto: Bullet40mmGrenadeFlash # Frontier
   - type: Sprite
     sprite: Objects/Weapons/Guns/Ammunition/Explosives/explosives.rsi
     layers:
@@ -114,7 +114,7 @@
   parent: BaseGrenade
   components:
   - type: CartridgeAmmo
-    proto: BulletGrenadeFrag # Frontier
+    proto: Bullet40mmGrenadeFragmentation # Frontier
   - type: Sprite
     sprite: Objects/Weapons/Guns/Ammunition/Explosives/explosives.rsi
     layers:
@@ -131,7 +131,7 @@
   name: cleanade grenade round
   components:
   - type: CartridgeAmmo
-    proto: BulletGrenadeCleanade # Frontier
+    proto: NFBulletGrenadeCleanade # Frontier
   - type: Sprite
     sprite: Objects/Weapons/Guns/Ammunition/Explosives/explosives.rsi
     layers:
@@ -148,7 +148,7 @@
   parent: BaseGrenade
   components:
   - type: CartridgeAmmo
-    proto: BulletGrenadeEMP # Frontier
+    proto: Bullet40mmGrenadeEMP # Frontier
   - type: Sprite
     sprite: Objects/Weapons/Guns/Ammunition/Explosives/explosives.rsi
     layers:

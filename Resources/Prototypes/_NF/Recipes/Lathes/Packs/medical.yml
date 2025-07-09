@@ -18,6 +18,8 @@
   - CraftMedicalBag
   - CraftClothingEyesHudMedical
   - CraftClothingEyesEyepatchHudMedical
+  - LiddedBottle
+  - LiddedVial
 
 - type: latheRecipePack
   id: NFMedical

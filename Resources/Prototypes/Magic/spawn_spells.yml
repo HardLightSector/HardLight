@@ -33,7 +33,7 @@
       prototypes:
       - id: WizardBucketA
         amount: 1
-      speech: action-speech-spell-summon-magicarp
+      speech: ort mal ith!
 
 - type: entity
   id: ActionSpawnCumSpell
@@ -51,7 +51,43 @@
       prototypes:
       - id: WizardBucketB
         amount: 1
-      speech: action-speech-spell-summon-magicarp
+      speech: dol io!
+
+- type: entity
+  id: ActionFlashSpell
+  name: Flash
+  description: This spell is bright. Especially to you.
+  components:
+  - type: WorldTargetAction
+    useDelay: 15
+    range: 6
+    itemIconStyle: BigAction
+    icon:
+      sprite: Objects/Magic/magicactions.rsi
+      state: spell_default
+    event: !type:WorldSpawnSpellEvent
+      prototypes:
+      - id: WizardFlash
+        amount: 1
+      speech: nef sol ith!
+
+- type: entity
+  id: ActionSummonInstrument
+  name: Summon Instrument
+  description: Calls forth an instrument for ten minutes, after which it disappears until summoned again.
+  components:
+  - type: WorldTargetAction
+    useDelay: 600
+    range: 6
+    itemIconStyle: BigAction
+    icon:
+      sprite: Objects/Magic/magicactions.rsi
+      state: spell_default
+    event: !type:WorldSpawnSpellEvent
+      prototypes:
+      - id: JLuteInstrument
+        amount: 1
+      speech: shael ko nef!
 
 # Liquid spawning template.
 - type: entity

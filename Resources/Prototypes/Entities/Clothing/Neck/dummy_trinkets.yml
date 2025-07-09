@@ -1,0 +1,47 @@
+# So for whatever fucking reason, the chameleon on /neck pieces specifically/ breaks if you have the item default be itself,
+# so I need to make a dummy copy of each one in order for the description to tell you what the sodding thing does.
+# Addendum to this, it's every chameleon piece with a non-base rsi, which sucks.
+
+- type: entity
+  parent: ClothingNeckBase
+  id: DummyTrinketBleedRes
+  name: clotting cruor
+  description: A faded trinket said to increase resistance to bloodloss.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Trinkets/clotting.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/Trinkets/clotting.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: DummyTrinketSpeed
+  name: wolfsblood
+  description: A faded trinket said to increase speed.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Trinkets/wolfsblood.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/Trinkets/wolfsblood.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: DummyTrinketHeatRes
+  name: heat shield
+  description: A faded trinket said to increase resistance to fire.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Trinkets/heat.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/Trinkets/heat.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: DummyTrinketAcidRes
+  name: sacrificial host
+  description: A faded trinket said to increase resistance to acids.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Trinkets/sachost.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/Trinkets/sachost.rsi

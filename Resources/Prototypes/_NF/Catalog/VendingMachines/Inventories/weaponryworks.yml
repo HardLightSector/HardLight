@@ -52,6 +52,7 @@
     AmmoBox23x75mmSlug: 28 # 4 gauge
     AmmoBox23x75mmBuckshot: 28 # 4 gauge
     AmmoBox23x75mmBeanbag: 28 # 4 gauge
+    
   emaggedInventory:
     WeaponPistolViper: 1
 
@@ -65,11 +66,10 @@
     WeaponSniperRepeater: 4294967295
     NFWeaponShotgunDoubleBarreled: 4294967295
     WeaponBrassKnuckles: 4294967295
-    WeaponLaserPistolNF: 4294967295
     WeaponRifleGestio: 4294967295
     WeaponRifleNovaliteC1: 4294967295
     WeaponShotgunDoubleBarreled: 4294967295
-    WeaponRevolverArgenti: 4294967295
+    #WeaponRevolverArgenti: 4294967295
     WeaponPistolMk32: 4294967295
     WeaponRevolverFaith: 4294967295
     WeaponShotgunBigJohnny: 4294967295

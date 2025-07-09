@@ -83,4 +83,4 @@
       state: fireball
     event: !type:ProjectileSpellEvent
       prototype: ProjectileFireballWeak
-      speech: action-speech-spell-fireball
+      speech: nef pul vex!

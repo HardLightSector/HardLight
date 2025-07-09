@@ -27,7 +27,7 @@
   jobEntity: InterviewHologramContractor
 
 - type: startingGear
-  id: ContractorGear
-  storage:
-    back:
-    - WeaponPistolMk32
+  id: ContractorHologramGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorGrey
+    shoes: ClothingShoesColorBlack

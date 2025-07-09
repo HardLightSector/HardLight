@@ -338,3 +338,14 @@
   - type: HideLayerClothing
     slots:
     - Hair
+
+- type: entity
+  parent: ClothingHeadBase
+  id: DummyHelmetInvisible
+  name: emperor's new helmet
+  description: The most beautiful headwear you never have seen.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Helmets/emper_new.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Helmets/emper_new.rsi

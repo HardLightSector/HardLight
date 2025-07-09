@@ -30,7 +30,7 @@
       - state: inhand-right # Frontier
       - state: inhand-right-unlit # Frontier
         shader: unshaded # Frontier
-  # Frontier: magnet toggle from White Dream 
+  # Frontier: magnet toggle from White Dream
   - type: ItemToggle
     soundActivate: &soundActivate
       collection: sparks

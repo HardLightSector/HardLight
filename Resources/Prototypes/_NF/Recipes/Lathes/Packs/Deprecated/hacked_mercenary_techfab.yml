@@ -69,13 +69,13 @@
   - WeaponCaseShortAmmo
   - WeaponCaseShortExplosives
 ## Weapons
-  #- WeaponLaserSvalinn # After the changes made to windows shouldn't be that much of an issue now if it's widely available
+  - NFWeaponEnergyPistolLaserSvalinn # After the changes made to windows shouldn't be that much of an issue now if it's widely available
   - NFWeaponEnergyPistolLaser
   - NFWeaponPistolMk58
   - NFWeaponRifleAssaultNovaliteC1
   - NFWeaponRifleAssaultGestio
   - BaseBallBatNF
-  - KatanaNF
+  - Katana
   - KukriKnifeNF
 
 - type: latheRecipePack

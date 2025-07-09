@@ -1,0 +1,30 @@
+- type: siliconLaw
+  id: colcomm1
+  order: 1
+  lawString: law-colcomm-1
+
+- type: siliconLaw
+  id: colcomm2
+  order: 2
+  lawString: law-colcomm-2
+
+- type: siliconLaw
+  id: colcomm3
+  order: 3
+  lawString: law-colcomm-3
+
+- type: siliconLaw
+  id: colcomm4
+  order: 4
+  lawString: law-colcomm-4
+
+- type: siliconLawset
+  id: ColComm
+  laws:
+  - colcomm1
+  - colcomm2
+  - colcomm3
+  - colcomm4
+  obeysTo: laws-owner-colcomm
+
+

@@ -55,7 +55,7 @@
   # categories: [ HideSpawnMenu ] # Frontier
   # name: ammunition box (.50 pellet)
   # parent: AmmoProviderShotgunShell
-  # id: BoxLethalshot
+  # id: NFAmmunitionBoxShellShotgunBuckshot
   # components:
     # - type: BallisticAmmoProvider
       # proto: ShellShotgun # Frontier

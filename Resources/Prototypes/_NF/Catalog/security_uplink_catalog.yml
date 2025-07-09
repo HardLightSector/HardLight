@@ -148,7 +148,7 @@
   id: UplinkSecurityMk32
   name:  uplink-security-mk32-name
   description: uplink-security-mk32-desc
-  productEntity: WeaponPistolUniversalNfsd
+  productEntity: NFWeaponPistolUniversalNfsd
   icon: { sprite: _DV/Objects/Weapons/Guns/Pistols/universal.rsi, state: icon }
   cost:
     FrontierUplinkCoin: 2
@@ -563,7 +563,7 @@
   productEntity: BoxMagazine7.62x51mmFMJ
   icon: { sprite: Objects/Storage/boxes.rsi, state: box }
   cost:
-    FederationMilitaryCredit: 1
+    FrontierUplinkCoin: 1
   categories:
     - UplinkSecurityAmmo
   conditions:
@@ -579,7 +579,7 @@
   productEntity: BoxMagazine7.62x51mmRubber
   icon: { sprite: Objects/Storage/boxes.rsi, state: box }
   cost:
-    FederationMilitaryCredit: 1
+    FrontierUplinkCoin: 1
   categories:
     - UplinkSecurityAmmo
   conditions:
@@ -950,7 +950,7 @@
   productEntity: AmmoBox12_gaugeBeanbag
   icon: { sprite: Objects/Storage/boxes.rsi, state: box }
   cost:
-    FederationMilitaryCredit: 1
+    FrontierUplinkCoin: 1
   categories:
     - UplinkSecurityAmmo
   conditions:
@@ -966,7 +966,7 @@
   productEntity: AmmoBox12_gaugeIncendiary
   icon: { sprite: Objects/Storage/boxes.rsi, state: box }
   cost:
-    FederationMilitaryCredit: 2
+    FrontierUplinkCoin: 2
   categories:
     - UplinkSecurityAmmo
   conditions:
@@ -1155,21 +1155,21 @@
         tags:
           - SecurityUplink
 
-- type: listing
-  id: UplinkSecurityEmpBundle
-  name: uplink-security-emp-bundle-name
-  description: uplink-security-emp-bundle-desc
-  productEntity: ClothingBackpackDuffelNfsdEmpBundle
-  icon: { sprite: _NF/Clothing/Back/Duffels/nfsd_brown.rsi, state: icon }
-  cost:
-    FrontierUplinkCoin: 4
-  categories:
-    - UplinkSecurityBundles
-  conditions:
-    - !type:StoreWhitelistCondition
-      whitelist:
-        tags:
-          - SecurityUplink
+#- type: listing
+#  id: UplinkSecurityEmpBundle
+#  name: uplink-security-emp-bundle-name
+#  description: uplink-security-emp-bundle-desc
+#  productEntity: ClothingBackpackDuffelNfsdEmpBundle
+#  icon: { sprite: _NF/Clothing/Back/Duffels/nfsd_brown.rsi, state: icon }
+#  cost:
+#    FrontierUplinkCoin: 4
+#  categories:
+#    - UplinkSecurityBundles
+#  conditions:
+#    - !type:StoreWhitelistCondition
+#      whitelist:
+#        tags:
+#          - SecurityUplink
 
 - type: listing
   id: UplinkSecurityNonLethalArmory

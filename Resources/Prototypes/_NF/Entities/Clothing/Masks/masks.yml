@@ -129,3 +129,21 @@
     sprite: _NF/Clothing/Mask/clown_bald.rsi
   - type: Clothing
     sprite: _NF/Clothing/Mask/clown_bald.rsi
+
+- type: entity
+  parent: [ BaseC3WizardContraband, ContrabandClothing, ClothingMaskGasExplorer ]
+  id: ClothingMaskAlchemist
+  name: alchemist mask
+  description: The beaked, leather mask of an alchemist. Even alone it provides ample protection to acids.
+  components:
+  - type: Sprite
+    sprite: Clothing/Mask/alchemist.rsi
+  - type: Clothing
+    sprite: Clothing/Mask/alchemist.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.95
+        Piercing: 0.95
+        Heat: 0.95
+        Caustic: 0.7

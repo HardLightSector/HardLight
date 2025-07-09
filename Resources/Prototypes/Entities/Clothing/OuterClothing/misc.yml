@@ -384,3 +384,15 @@
     sprite: Clothing/OuterClothing/Misc/red_racoon.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Misc/red_racoon.rsi
+
+# Dummy plug for "emperor's new armour" in armor.yml
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: DummyOuterInvisible
+  name: emperor's new armour
+  description: The most beautiful armour you'll never see.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Armor/emper_new.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Armor/emper_new.rsi

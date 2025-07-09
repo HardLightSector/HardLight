@@ -12837,7 +12837,7 @@ entities:
     - type: Transform
       pos: 1.2395834,-4.3535376
       parent: 1
-- proto: NFWeaponLauncherPirateCannon
+- proto: WeaponLauncherPirateCannon
   entities:
   - uid: 677
     components:

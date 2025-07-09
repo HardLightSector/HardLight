@@ -213,3 +213,25 @@
     - type: Grammar
       attributes:
         proper: true
+
+- type: entity
+  name: sickle
+  parent: [ BaseSword, BaseC1Contraband ] # Frontier: BaseMajorContraband<BaseC1Contraband
+  id: Sickle
+  description: A wickedly curved blade, but not in the way a cutlass is.
+  components:
+  - type: Tag
+    tags:
+    - Machete
+  - type: Sprite
+    sprite: Objects/Weapons/Melee/sickle.rsi
+  - type: MeleeWeapon
+    damage:
+      types:
+        Slash: 16
+    wideAnimationRotation: 135
+    soundHit:
+        path: /Audio/Weapons/bladeslice.ogg
+  - type: Item
+    sprite: Objects/Weapons/Melee/sickle.rsi
+  - type: DisarmMalus

@@ -63,6 +63,117 @@
     fireStacks: 0.1
 
 - type: entity
+  id: ProjectileFireballWeakish
+  name: fireball
+  description: Not as good as the real thing.
+  parent: BulletRocket
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: PointLight
+    color: "#0307fc"
+    radius: 0.5
+    energy: 1.25
+  - type: Projectile
+    damage:
+      types:
+        Heat: 2.5
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/magic.rsi
+    layers:
+    - state: fireball
+      shader: unshaded
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 5
+    intensitySlope: 1.3
+    totalIntensity: 3
+    maxTileBreak: 0
+  - type: IgnitionSource
+    temperature: 250
+    ignited: true
+  - type: IgniteOnCollide
+    fireStacks: 0.1
+
+- type: entity
+  id: ProjectileFireballWeaker
+  name: fireball
+  description: Decidedly not as good as the real thing.
+  parent: BulletRocket
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: PointLight
+    color: "#E25822"
+    radius: 0.5
+    energy: 1.25
+  - type: Projectile
+    damage:
+      types:
+        Heat: 2.5
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/magic.rsi
+    layers:
+    - state: fireball
+      shader: unshaded
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 4
+    intensitySlope: 0.75
+    totalIntensity: 1.5
+    maxTileBreak: 0
+  - type: IgnitionSource
+    temperature: 250
+    ignited: true
+  - type: IgniteOnCollide
+    fireStacks: 0.1
+
+- type: entity
+  id: ProjectileFireballWeakest
+  name: firebolt
+  description: Way, way worse than the real thing.
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: PointLight
+    color: "#E25822"
+    radius: 0.5
+    energy: 1.25
+  - type: Projectile
+    damage:
+      types:
+        Heat: 7.5
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/magic.rsi
+    layers:
+    - state: fireball
+      shader: unshaded
+  - type: IgnitionSource
+    temperature: 250
+    ignited: true
+  - type: IgniteOnCollide
+    fireStacks: 0.1
+
+- type: entity
+  id: ProjectileLightningBolt
+  name: lightning bolt
+  description: Lightning bolt, LIGHTNING BOLT.
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: PointLight
+    color: "#b2cdf7"
+    radius: 0.5
+    energy: 1.25
+  - type: Projectile
+    damage:
+      types:
+        Shock: 7.5
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/magic.rsi
+    layers:
+    - state: magicm_cyan
+      shader: unshaded
+
+- type: entity
   categories: [ HideSpawnMenu ]
   parent: BaseBulletTrigger
   id: ProjectileDragonsBreath

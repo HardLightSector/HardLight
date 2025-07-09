@@ -5,8 +5,8 @@
   # Pistols
     NFWeaponPistolMk58: 4294967295
     WeaponPistolCobra: 4294967295
-    WeaponPistolUniversal: 4294967295
-    WeaponPistolUniversalNfsd: 4294967295
+    NFWeaponPistolUniversal: 4294967295
+    NFWeaponPistolUniversalNfsd: 4294967295
   # Machine Pistols
     NFWeaponPistolViper: 4294967295
     NFWeaponPistolPollock: 4294967295
@@ -29,7 +29,7 @@
     NFWeaponSubMachineGunTypewriter: 4294967295
   # Rifles
     WeaponSniperMosin: 4294967295
-    NFWeaponRifleMusket: 4294967295
+    Musket: 4294967295
     WeaponSniperRepeater: 4294967295
   # Assault Rifles
     NFWeaponRifleAssaultSm: 4294967295
@@ -48,7 +48,7 @@
     NFWeaponLauncherChinaLake: 4294967295
     NFWeaponLauncherRocket: 4294967295
     NFWeaponLauncherMultipleRocket: 4294967295
-    NFWeaponLauncherPirateCannon: 4294967295
+    WeaponLauncherPirateCannon: 4294967295
     NFWeaponLauncherMail: 4294967295
     NFWeaponLauncherGrenadeNfsd: 4294967295
   # Energy Pistols

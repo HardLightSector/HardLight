@@ -374,3 +374,30 @@
   - type: ProtectedFromStepTriggers
     slots: WITHOUT_POCKET
 
+- type: entity
+  parent: [ClothingOuterBaseLarge, BaseC3WizardContraband, AllowSuitStorageClothing, ContrabandClothing] # Frontier: BaseMajorContraband<BaseC3CultContraband, added ContrabandClothing as parent
+  id: ClothingOuterArmorChameleon
+  name: emperor's new armour
+  suffix: Chameleon
+  components:
+  - type: Tag
+    tags: []
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Armor/emper_new.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Armor/emper_new.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.5
+        Slash: 0.5
+        Piercing: 0.6
+        Heat: 0.5
+  - type: GroupExamine
+  - type: ChameleonClothing
+    slot: [outerClothing]
+    default: DummyOuterInvisible
+  - type: UserInterface
+    interfaces:
+      enum.ChameleonUiKey.Key:
+        type: ChameleonBoundUserInterface

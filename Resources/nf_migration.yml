@@ -233,7 +233,7 @@ MobSnakeExpeditions: NFMobPurpleSnake
 VendingMachineChefvendDungeon: Biogenerator
 
 # 2025-03-01 SVT
-WeaponRifleSVT: NFWeaponRifleSVS
+#WeaponRifleSVT: NFWeaponRifleSVS
 
 # 2025-03-15 hydroponicsTray with bind to grid
 hydroponicsTrayAnchored: hydroponicsTray
@@ -319,7 +319,7 @@ BoxMagazinePistolSubMachineGunRubber: NFMagazineSubMachineGun35Rubber
 BoxMagazinePistolSubMachineGunTopMounted: NFMagazineSubMachineGunTopMounted35 # close enough
 BoxMagazineRifle: NFMagazineRifle20 # close enough
 BoxMagazineRiflePractice: NFMagazineRifle20Practice # close enough
-BoxMagazineRifleRubber: NFBoxMagazineRifle20Rubber
+#BoxMagazineRifleRubber: NFBoxMagazineRifle20Rubber
 BoxMagazineShotgun: NFMagazineShotgunDrum # close enough
 BoxMagazineShotgunBeanbag: NFMagazineShotgunDrumBeanbag # close enough
 BoxMagazineShotgunIncendiary: NFMagazineShotgunDrumIncendiary # close enough
@@ -369,7 +369,7 @@ GrenadeBlast: NFGrenadeBlast
 GrenadeEMP: NFGrenadeEMP
 GrenadeFlash: NFGrenadeFlash
 GrenadeFrag: NFGrenadeFrag
-Kardashev-MosinNonlethal: NFWeaponRifleBarlowsBoltLessLethal
+#Kardashev-MosinNonlethal: NFWeaponRifleBarlowsBoltLessLethal
 MagazineBoxAntiMateriel: NFAmmunitionBoxRifle60
 MagazineBoxCaselessRifle: null
 MagazineBoxCaselessRiflePractice: null
@@ -460,7 +460,7 @@ MagazineShotgunBeanbag: NFMagazineShotgunDrumBeanbag
 MagazineShotgunEmpty: NFMagazineShotgunDrumEmpty
 MagazineShotgunIncendiary: NFMagazineShotgunDrumIncendiary
 MagazineShotgunSlug: NFMagazineShotgunDrumSlug
-Musket: NFWeaponRifleMusket
+#Musket: NFWeaponRifleMusket
 RevolverCapGun: NFRevolverCapGun
 RevolverCapGunFake: NFRevolverCapGunFake
 RevolverCapGunFakeGrown: NFRevolverCapGunFakeGrown
@@ -487,7 +487,7 @@ SpeedLoaderPistolPractice: NFSpeedLoaderPistol35Practice
 SpeedLoaderPistolRubber: NFSpeedLoaderPistol35Rubber
 WeaponAdvancedLaser: NFWeaponEnergyPistolLaserAdvanced
 WeaponAntiqueLaser: NFWeaponEnergyPistolLaserAntique
-WeaponBehonkerLaser: NFWeaponBehonkerLaser
+#WeaponBehonkerLaser: NFWeaponBehonkerLaser
 WeaponDisabler: NFWeaponEnergyPistolDisabler
 WeaponDisablerPractice: NFWeaponEnergyPistolDisablerPractice
 WeaponDisablerSMG: NFWeaponEnergySubMachineGunDisabler
@@ -503,10 +503,10 @@ WeaponLaserPistolNF: NFWeaponEnergyPistolLaser
 WeaponLaserSvalinn: NFWeaponEnergyPistolLaserSvalinn
 WeaponLaserTurboNF: NFWeaponEnergyLightMachineGunTurbo
 WeaponLauncherChinaLake: NFWeaponLauncherChinaLake
-WeaponLauncherChinaLakeEmp: NFWeaponLauncherChinaLakeEmp
+#WeaponLauncherChinaLakeEmp: NFWeaponLauncherChinaLakeEmp
 WeaponLauncherMultipleRocket: NFWeaponLauncherMultipleRocket
 WeaponLauncherNfsdLake: NFWeaponLauncherGrenadeNfsd
-WeaponLauncherPirateCannon: NFWeaponLauncherPirateCannon
+#WeaponLauncherPirateCannon: NFWeaponLauncherPirateCannon
 WeaponLauncherRocket: NFWeaponLauncherRocket
 WeaponLauncherRocketEmp: NFWeaponLauncherRocketEmp
 WeaponLightMachineGunL6: NFWeaponLightMachineGunL6
@@ -538,7 +538,7 @@ WeaponRevolverArgenti: NFWeaponRevolverArgenti
 WeaponRevolverArgentiNonlethal: NFWeaponRevolverArgentiLessLethal
 WeaponRevolverDeckard: NFWeaponRevolverDeckard
 WeaponRevolverDeckardNonlethal: NFWeaponRevolverDeckard # close enough
-WeaponRevolverDeckardExpeditionGrifty: NFWeaponRevolverDeckardExpeditionGrifty
+#WeaponRevolverDeckardExpeditionGrifty: NFWeaponRevolverDeckardExpeditionGrifty
 WeaponRevolverFaith: NFWeaponRevolverFaith
 WeaponRevolverFitz: NFWeaponRevolverFitz
 WeaponRevolverInspector: NFWeaponRevolverInspector
@@ -549,14 +549,14 @@ WeaponRevolverPirate: NFWeaponRevolverPirate
 WeaponRevolverPython: NFWeaponRevolverRitland45
 WeaponRevolverPythonAP: NFWeaponRevolverRitland45
 WeaponRifleAk: NFWeaponRifleAssaultSm
-WeaponRifleFoam: NFWeaponRifleFoam
+#WeaponRifleFoam: NFWeaponRifleFoam
 WeaponRifleGestio: NFWeaponRifleAssaultGestio
 WeaponRifleJackdaw: NFWeaponRifleAssaultJackdaw
 WeaponRifleLecter: NFWeaponRifleAssaultLecter
 WeaponRifleLecterRubber: NFWeaponRifleAssaultLecterLessLethal # ??
 WeaponRifleM90GrenadeLauncher: NFWeaponRifleAssaultM90GrenadeLauncher
 WeaponRifleNovaliteC1: NFWeaponRifleAssaultNovaliteC1
-WeaponRifleSVS: NFWeaponRifleSVS
+#WeaponRifleSVS: NFWeaponRifleSVS
 WeaponRifleVulcan: NFWeaponRifleAssaultVulcan
 WeaponShotgunBlunderbuss: NFWeaponShotgunBlunderbuss
 WeaponShotgunBulldog: NFWeaponShotgunBulldog
@@ -572,10 +572,10 @@ WeaponShotgunKammererNonlethal: NFWeaponShotgunKammererLessLethal
 WeaponShotgunSawn: NFWeaponShotgunSawn
 WeaponShotgunSawnEmpty: NFWeaponShotgunSawnEmpty
 WeaponShotgunSawnNonlethal: NFWeaponShotgunSawnLessLethal
-WeaponSniperCeremonial: NFWeaponRifleCeremonial
+#WeaponSniperCeremonial: NFWeaponRifleCeremonial
 WeaponSniperHristov: NFWeaponRifleSniperHristov
-WeaponSniperMosin: NFWeaponRifleBarlowsBolt
-WeaponSniperRepeater: NFWeaponRifleRepeater
+#WeaponSniperMosin: NFWeaponRifleBarlowsBolt
+#WeaponSniperRepeater: NFWeaponRifleRepeater
 WeaponSubMachineGunAtreides: NFWeaponSubMachineGunAtreides
 WeaponSubMachineGunC20r: NFWeaponSubMachineGunC20r
 WeaponSubMachineGunDrozd: NFWeaponSubMachineGunDrozd

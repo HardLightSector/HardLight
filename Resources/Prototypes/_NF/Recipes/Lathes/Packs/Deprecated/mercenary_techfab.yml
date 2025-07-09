@@ -79,7 +79,7 @@
   - WeaponCaseShortExplosives
 ## Weapons
   - NFCombatKnife
-  #- WeaponLaserSvalinn # After the changes made to windows shouldn't be that much of an issue now if it's widely available
+  - NFWeaponEnergyPistolLaserSvalinn # After the changes made to windows shouldn't be that much of an issue now if it's widely available
   - NFWeaponEnergyPistolLaser # After the changes made to windows shouldn't be that much of an issue now if it's widely available
   - NFWeaponRevolverArgenti
   - NFWeaponPistolMk58

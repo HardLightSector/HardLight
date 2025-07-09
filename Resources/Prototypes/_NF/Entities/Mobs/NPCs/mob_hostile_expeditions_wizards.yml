@@ -1,0 +1,391 @@
+# Base
+- type: entity
+  name: Wizard
+  abstract: true
+  parent:
+  - MobHumanoidHostileBase
+  - MobHumanoidInvetory
+  - NFMobRestrictions
+  id: MobExpedWizardBase
+  components:
+  - type: NpcFactionMember
+    factions:
+    - WizFedFaction
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      90: Critical
+      120: Dead
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      48: 0.7
+      64: 0.5
+  - type: DamageStateVisuals
+    rotate: true
+  - type: RotationVisuals
+    defaultRotation: 90
+    horizontalRotation: 90
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 1.5
+    rechargeSound:
+      path: /Audio/_NF/Effects/silence.ogg
+  - type: MeleeWeapon
+    attackRate: 1.0
+    altDisarm: false
+    animation: WeaponArcPunch
+    angle: 0
+    damage:
+      types:
+        Slash: 10
+        Structural: 30
+    soundHit:
+      collection: MetalThud
+  - type: Advertise
+    pack: wizardhumanoidchatter
+    minimumWait: 30
+    maximumWait: 120
+    nextAdvertisementTime: 10
+  - type: AutoWakeUp
+  - type: PointLight
+    enabled: true
+    autoRot: true
+    netsync: false
+    radius: 3
+    energy: 1
+    mask: /Textures/Effects/LightMasks/cone.png
+    color: "#802678"
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 2.3
+    baseSprintSpeed : 4.3
+
+# Variations
+## Tier 1
+- type: entity
+  name: aspirant
+  parent:
+  - MobExpedWizardBase
+  - MobHumanoidHostileAISimpleMelee
+  id: MobWizardMeleeT1
+  description: The lowest of the low, yet to even be given a staff, but desperation can drive people to do incredible and incredibly dangerous things.
+#  categories: [ HideSpawnMenu ]
+  components:
+  - type: Loadout
+    prototypes:
+    - MobHumanoidWizardGearMeleeT1
+  - type: PointLight
+    radius: 1
+    energy: 3
+  - type: MeleeWeapon
+    attackRate: 1.0
+    altDisarm: false
+    animation: WeaponArcPunch
+    angle: 0
+    damage:
+      types:
+        Slash: 7
+        Structural: 30
+    soundHit:
+      collection: MetalThud
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      130: Dead
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      60: 1
+      80: 1
+
+- type: entity
+  name: apprentice
+  parent:
+  - MobExpedWizardBase
+  - MobHumanoidHostileAISimpleRanged
+  id: MobWizardRangedT1Heat
+  description: A rung above the Aspirants, something they make repeatedly clear to said Aspirants. They command the most basic of magics.
+  suffix: Heat
+#  categories: [ HideSpawnMenu ]
+  components:
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 4
+    baseSprintSpeed : 4
+  - type: Loadout
+    prototypes:
+    - MobHumanoidWizardRangedT1
+  - type: PointLight
+    radius: 1
+    energy: 3
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 1
+    rechargeSound:
+      path: /Audio/_NF/Effects/silence.ogg
+  - type: BasicEntityAmmoProvider
+    proto: ProjectileFireballWeakest
+    capacity: 1
+    count: 1
+  - type: Gun
+    showExamineText: false
+    fireRate: 0.5
+    minAngle: 10
+    maxAngle: 40
+    angleIncrease: 5
+    angleDecay: 3
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot: /Audio/Magic/fireball.ogg
+
+- type: entity
+  name: apprentice
+  parent:
+  - MobExpedWizardBase
+  - MobHumanoidHostileAISimpleRanged
+  id: MobWizardRangedT1Shock
+  description: A rung above the Aspirants, something they make repeatedly clear to said Aspirants. They command the most basic of magics.
+  suffix: Shock
+#  categories: [ HideSpawnMenu ]
+  components:
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 4
+    baseSprintSpeed : 4
+  - type: Loadout
+    prototypes:
+    - MobHumanoidWizardRangedT1
+  - type: PointLight
+    radius: 1
+    energy: 3
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 1
+    rechargeSound:
+      path: /Audio/_NF/Effects/silence.ogg
+  - type: BasicEntityAmmoProvider
+    proto: ProjectileLightningBolt
+    capacity: 1
+    count: 1
+  - type: Gun
+    showExamineText: false
+    fireRate: 0.5
+    minAngle: 10
+    maxAngle: 40
+    angleIncrease: 5
+    angleDecay: 3
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot: /Audio/Effects/tesla_consume.ogg
+
+## Tier 2
+- type: entity
+  name: journeyman
+  parent:
+  - MobExpedWizardBase
+  - MobHumanoidHostileAISimpleRanged
+  id: MobWizardRangedT2
+  description: The more mature magician, at least they say so. They have a better command of magic than the Apprentices and are more than eager to prove it.
+#  categories: [ HideSpawnMenu ]
+  components:
+  - type: Loadout
+    prototypes:
+    - MobHumanoidWizardRangedT2
+  - type: PointLight
+    radius: 1
+    energy: 3
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 1
+    rechargeSound:
+      path: /Audio/_NF/Effects/silence.ogg
+  - type: BasicEntityAmmoProvider
+    proto: ProjectileFireballWeaker
+    capacity: 1
+    count: 1
+  - type: Gun
+    showExamineText: false
+    fireRate: 0.075
+    minAngle: 5
+    maxAngle: 30
+    angleIncrease: 5
+    angleDecay: 3
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot: /Audio/Magic/fireball.ogg
+
+- type: entity
+  name: instructor
+  parent:
+  - MobExpedWizardBase
+  - MobHumanoidHostileAISimpleRanged
+  id: MobWizardSupportT3
+  description: The foul mouthed teachers of the Journeyman and Apprentice casters, while they won’t kill you directly they’ll make you wish they did.
+#  categories: [ HideSpawnMenu ]
+  components:
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 4
+    baseSprintSpeed : 4
+  - type: Loadout
+    prototypes:
+    - MobHumanoidWizardGearSupportT3
+  - type: PointLight
+    radius: 1
+    energy: 3
+  - type: BasicEntityAmmoProvider
+    proto: SoapConjured
+    capacity: 1
+    count: 1
+  - type: Gun
+    showExamineText: false
+    fireRate: 1
+    soundGunshot:
+      path: /Audio/Effects/teleport_arrival.ogg
+
+# Tier 3
+- type: entity
+  name: master
+  parent:
+  - MobExpedWizardBase
+  - MobHumanoidHostileAISimpleRanged
+  id: MobWizardRangedT3
+  description: The foppish and vain overseers of the instructors, preferring flashy magic to practical spells, not that they’re any less dangerous for it.
+#  categories: [ HideSpawnMenu ]
+  components:
+  - type: Loadout
+    prototypes:
+    - MobHumanoidWizardGearMixedT3
+  - type: PointLight
+    radius: 1
+    energy: 3
+  - type: BasicEntityAmmoProvider
+    proto: ProjectileFireballWeakish
+    capacity: 1
+    count: 1
+  - type: Gun
+    showExamineText: false
+    fireRate: 0.1
+    minAngle: 5
+    maxAngle: 25
+    angleIncrease: 5
+    angleDecay: 3
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot: /Audio/Magic/fireball.ogg
+  - type: MeleeWeapon
+    attackRate: 1.0
+    altDisarm: false
+    animation: WeaponArcPunch
+    angle: 0
+    damage:
+      types:
+        Blunt: 20
+        Structural: 30
+    soundHit:
+      collection: MetalThud
+
+# Tier 4 - Boss
+- type: entity
+  name: archmage
+  parent:
+  - MobHostileBossBase
+  - MobExpedWizardBase
+  - MobHumanoidHostileAISimpleRanged
+  - NFMobBossRestrictions
+  id: MobWizardBoss
+  description: The true masters of magic, rarely seen in backwaters like the places apprentices train in. Maybe this one lost their favourite mug?
+#  categories: [ HideSpawnMenu ]
+  components:
+  - type: Reflect # Emulating holopickaxe to a degree
+    reflectProb: 0.03
+  - type: Loadout
+    prototypes:
+    - MobHumanoidWizardGearBoss
+  - type: Damageable
+    damageModifierSet: MobHostileDamageModifierSetBoss
+  - type: PointLight
+    radius: 7
+    energy: 3
+  - type: MobThresholds
+    thresholds:
+      100: Critical
+      130: Dead
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      60: 0.7
+      80: 0.5
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 4.3
+    baseSprintSpeed : 4.3
+  - type: BasicEntityAmmoProvider
+    proto: MuteElementalConjured
+    capacity: 2
+    count: 2
+  - type: Gun
+    showExamineText: false
+    fireRate: 1
+    soundGunshot:
+      path: /Audio/Effects/teleport_arrival.ogg
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 40
+    rechargeSound:
+      path: /Audio/_NF/Effects/silence.ogg
+
+
+# Salvage expedition objective
+- type: entity
+  parent: CybersunDataMiner
+  id: NotABloodCollectorIPromise
+  name: elemental gestator
+  description: A cauldron condensing huge amounts of fluids. Better destroy it before the process completes.
+  components:
+  - type: Sprite
+    sprite: _NF/Structures/Machines/cauldron.rsi
+    layers:
+    - state: off-0
+    - state: on-8
+      shader: unshaded
+  - type: PointLight
+    radius: 1.4
+    energy: 1.2
+    color: "#0099ff"
+    castShadows: false
+    netsync: false
+  - type: AmbientSound
+    volume: -9
+    range: 5
+    sound:
+      path: /Audio/Ambience/Objects/anomaly_generator.ogg
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Heat
+        damage: 5
+      behaviors:
+      - !type:SolutionExplosionBehavior
+        solution: tank
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Piercing
+        damage: 5
+      behaviors:
+      - !type:SolutionExplosionBehavior
+        solution: tank
+    - trigger:
+        !type:DamageTrigger
+        damage: 10
+      behaviors:
+      - !type:SpillBehavior
+        solution: tank
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        maxVol: 1000
+        reagents:
+        - ReagentId: BlueCuracao
+          Quantity: 1000

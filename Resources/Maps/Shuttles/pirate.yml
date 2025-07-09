@@ -652,7 +652,7 @@ entities:
           showEnts: False
           occludes: True
           ents: []
-- proto: BoxLethalshot
+- proto: NFAmmunitionBoxShellShotgunBuckshot
   entities:
   - uid: 34
     components:

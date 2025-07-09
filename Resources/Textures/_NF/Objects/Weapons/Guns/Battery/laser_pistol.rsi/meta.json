@@ -33,6 +33,12 @@
 			"name": "mag-unshaded-4"
 		},
 		{
+			"name": "equipped-SUITSTORAGE"
+		},
+		{
+			"name": "equipped-BELT"
+		},
+		{
 			"name": "inhand-left-0",
 			"directions": 4
 		},

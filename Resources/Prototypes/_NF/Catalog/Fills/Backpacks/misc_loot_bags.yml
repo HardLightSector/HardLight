@@ -1,0 +1,79 @@
+- type: entity
+  parent: WizardDuffelGiftBox
+  id: WizardMiscGiftBox
+  name: clothing bundle
+  description: There's something inside...
+  abstract: true
+  categories: [ HideSpawnMenu ]
+  suffix: NPC Loot
+  components:
+  - type: Sprite
+    sprite: _NF/Clothing/Back/Messenger/color.rsi
+    layers:
+    - state: icon-base
+      color: "#6e2673"
+    - state: icon-sling
+      color: "#4b3144"
+    - state: icon-clasp
+      color: "#0f73ab"
+  - type: Clothing
+    sprite: _NF/Clothing/Back/Messenger/color.rsi
+    clothingVisuals:
+      back:
+      - state: base-equipped-BACKPACK
+        color: "#6e2673"
+      - state: sling-equipped-BACKPACK
+        color: "#0f73ab"
+      - state: clasp-equipped-BACKPACK
+        color: "#0f73ab"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: base-inhand-left
+        color: "#6e2673"
+      - state: clasp-inhand-left
+        color: "#0f73ab"
+      right:
+      - state: base-inhand-right
+        color: "#6e2673"
+      - state: clasp-inhand-right
+        color: "#0f73ab"
+
+- type: entity
+  parent: WizardMiscGiftBox
+  id: ClothingBundleBundle
+  name: bundle of bundles
+  description: Maybe something's inside?
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SpawnItemsOnUse
+    items:
+      - id: ClothingBundleAlchemist
+        prob: 0.3
+      - id: ClothingBundleEmpNew
+        prob: 0.3
+
+- type: entity
+  parent: WizardMiscGiftBox
+  id: ClothingBundleAlchemist
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SpawnItemsOnUse
+    items:
+      - id: ClothingOuterArmourAlchemist
+      - id: ClothingMaskAlchemist
+      - id: ClothingHoodAlchemist
+      - id: ClothingHandsGlovesAlchemist
+      - id: PDDagger
+
+- type: entity
+  parent: WizardMiscGiftBox
+  id: ClothingBundleEmpNew
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SpawnItemsOnUse
+    items:
+      - id: ClothingOuterArmorChameleon
+      - id: ClothingEyesGlassesChameleon
+      - id: ClothingHeadHelmetChameleon
+      - id: ClothingHandsGlovesChameleon

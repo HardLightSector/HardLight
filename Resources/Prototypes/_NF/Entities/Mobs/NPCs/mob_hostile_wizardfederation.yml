@@ -246,3 +246,74 @@
   - type: MovementSpeedModifier
     baseWalkSpeed : 4.5
     baseSprintSpeed : 4.5
+
+- type: entity
+  name: Elder Mute Elemental
+  description: You really really shouldn't just be staring.
+#  categories: [ HideSpawnMenu ]
+  parent:
+  - MobNonHumanHostileBase
+  - MobHumanoidHostileAISimpleMelee
+  - NFMobTimedDespawn30
+  id: MuteElementalConjured
+  components:
+  - type: HTN
+    rootTask:
+       task: SimpleHostileCompound
+    blackboard:
+      NavClimb: !type:Bool
+        true
+      NavInteract: !type:Bool
+        true
+      NavPry: !type:Bool
+        true
+      NavSmash: !type:Bool
+        true
+  - type: MovementAlwaysTouching
+  - type: NoSlip
+  - type: NpcFactionMember
+    factions:
+    - WizFedFaction
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: Mobs/Aliens/elemental.rsi
+    layers:
+      - map: [ "enum.DamageStateVisualLayers.Base" ]
+        state: alive
+        color: "#9342f5"
+  - type: PointLight
+    radius: 2.0
+    energy: 3.5
+    color: "#9342f5"
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      150: Dead
+  - type: Bloodstream
+    bloodReagent: Hydrogen
+    chemicalMaxVolume: 100
+  - type: MeleeWeapon
+    soundHit:
+      collection: AlienClaw
+    animation: WeaponArcBite
+    damage:
+      types:
+        Slash: 15
+        Structural: 20
+  - type: MeleeChemicalInjector
+    solution: drink
+    transferAmount: 1.25
+  - type: Ammo
+    muzzleFlash: null
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 4.5
+    baseSprintSpeed : 4.5
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: MuteToxin
+          Quantity: 30
+  - type: TimedDespawn
+    lifetime: 30

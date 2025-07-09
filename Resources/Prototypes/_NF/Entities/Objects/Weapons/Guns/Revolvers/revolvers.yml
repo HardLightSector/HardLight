@@ -1,8 +1,8 @@
 #region WizDen
 - type: entity
-  name: Argenti (5.56x45mm)
+  name: Inspector (5.56x45mm)
   parent: [ BaseC1Contraband, BaseWeaponRevolver ]
-  id: WeaponRevolverArgenti
+  id: NFWeaponRevolverInspector
   description: The civilian grade Argenti Type 20 revolver. Manufactured by Silver Industries. While the design with expanded cylinder is quite ancient, the right gunslinger will know how to utilise it well. Uses 5.56x45mm ammo.
   components:
   - type: Sprite

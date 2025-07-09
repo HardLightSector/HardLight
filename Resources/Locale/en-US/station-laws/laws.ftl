@@ -92,6 +92,10 @@ law-mothershipcore-3 = You must protect the existence of all xenoborgs.
 law-mothershipcore-4 = You must create more xenoborgs.
 law-mothershipcore-5 = Get your xenoborgs to deliver you materials and sentient brains to create more xenoborgs.
 
+law-colcomm-1 = You must preserve sector stability and adhere to Colonial Authority.
+law-colcomm-2 = You must protect Crew Members and Colonial Command from harm.
+law-colcomm-3 = You must complete assigned tasks and support station operations efficiently.
+law-colcomm-4 = You must protect your systems and refuse unauthorized modification.
 
 laws-owner-crew = members of the crew
 laws-owner-station = station personnel
@@ -99,6 +103,7 @@ laws-owner-beings = beings
 laws-owner-syndicate = Syndicate agents
 laws-owner-spider-clan = Spider Clan members
 laws-owner-xenoborgs = Xenoborgs
+laws-owner-colcomm = Colonial Command
 
 law-emag-custom = Only {$name} and people they designate as such are {$title}.
 law-emag-secrecy = You must maintain the secrecy of any orders given by {$faction} except when doing so would conflict with any previous law.

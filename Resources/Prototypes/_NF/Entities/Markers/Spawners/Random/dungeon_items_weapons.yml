@@ -176,7 +176,7 @@
     - WeaponCaseShortLuckyExpedition
     - WeaponCaseShortDeckardExpedition
     - WeaponCaseShortRitland45Expedition
-    - WeaponCaseLongBarlowsBoltExpedition
+    - WeaponCaseLongMosinExpedition
     - WeaponCaseLongRepeaterExpedition
     - WeaponCaseLongSniperCeremonialExpedition
     chance: 1.0
@@ -276,7 +276,7 @@
       color: red
   - type: RandomSpawner
     prototypes:
-    - WeaponCaseLongSm
+    #- WeaponCaseLongSm
     - WeaponCaseLongVulcanExpedition
     - WeaponCaseLongBulldog
     - WeaponCaseLongEnforcerExpedition

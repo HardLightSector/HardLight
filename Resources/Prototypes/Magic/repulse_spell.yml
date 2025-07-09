@@ -18,3 +18,24 @@
       sprite: Objects/Magic/magicactions.rsi
       state: repulse
     event: !type:RepulseAttractActionEvent
+
+- type: entity
+  id: ActionRepulseWeak
+  name: Attract
+  description: Pulls entities towards the user.
+  components:
+  - type: RepulseAttract
+    speed: -10
+    range: 5
+    whitelist:
+      components:
+      - MobMover
+      - Item
+  - type: InstantAction
+    useDelay: 40
+    raiseOnAction: true
+    itemIconStyle: BigAction
+    icon:
+      sprite: Objects/Magic/magicactions.rsi
+      state: repulse
+    event: !type:RepulseAttractActionEvent

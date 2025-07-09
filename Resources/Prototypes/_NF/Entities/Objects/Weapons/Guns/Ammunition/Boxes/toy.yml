@@ -14,7 +14,7 @@
 # Ignored upstream redefinitions
 - type: entity
   parent: BoxDonkSoftBox
-  id: old NFBoxDonkSoftBox
+  id: NFBoxDonkSoftBox
   components:
   - type: BallisticAmmoProvider
     proto: NFBulletFoam

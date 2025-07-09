@@ -210,7 +210,7 @@
   - type: Item
     size: Tiny
   - type: CartridgeAmmo
-    proto: BulletRocketEmp
+    proto: NFBulletRocketEmp
     deleteOnSpawn: true
   - type: Sprite
     sprite: _Mono/Objects/Weapons/Guns/Ammunition/Explosives/explosives.rsi
@@ -228,7 +228,7 @@
   parent: BaseCannonBall
   components:
   - type: CartridgeAmmo
-    proto: BulletCannonBallEmp
+    proto: NFBulletCannonBallEmp
     deleteOnSpawn: true
   - type: Sprite
     sprite: _NF/Objects/Weapons/Guns/Projectiles/projectiles2.rsi

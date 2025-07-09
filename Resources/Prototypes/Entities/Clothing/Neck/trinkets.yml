@@ -1,0 +1,103 @@
+- type: entity
+  parent: ClothingNeckBase
+  id: TrinketBleedRes
+  name: clotting cruor
+  suffix: Chameleon
+  components:
+  - type: Armor
+    modifiers:
+      coefficients:
+        Piercing: 0.8
+        Heat: 1.1
+  - type: Tag
+    tags: [] # ignore "WhitelistChameleon" tag
+  - type: Sprite
+    sprite: Clothing/Neck/Scarfs/red.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/Scarfs/red.rsi
+  - type: ChameleonClothing
+    slot: [NECK]
+    default: DummyTrinketBleedRes
+  - type: UserInterface
+    interfaces:
+      enum.ChameleonUiKey.Key:
+        type: ChameleonBoundUserInterface
+
+- type: entity
+  parent: ClothingNeckBase
+  id: TrinketSpeed
+  name: wolfsblood
+  suffix: Chameleon
+  components:
+  - type: Armor
+    modifiers:
+      coefficients:
+        Piercing: 1.1
+        Slash: 1.1
+        Blunt: 1.1
+  - type: ClothingSpeedModifier
+    walkModifier: 1.2
+    sprintModifier: 1.2
+  - type: Tag
+    tags: [] # ignore "WhitelistChameleon" tag
+  - type: Sprite
+    sprite: Clothing/Neck/Scarfs/red.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/Scarfs/red.rsi
+  - type: ChameleonClothing
+    slot: [NECK]
+    default: DummyTrinketSpeed
+  - type: UserInterface
+    interfaces:
+      enum.ChameleonUiKey.Key:
+        type: ChameleonBoundUserInterface
+
+- type: entity
+  parent: ClothingNeckBase
+  id: TrinketHeatRes
+  name: heat shield
+  suffix: Chameleon
+  components:
+  - type: Armor
+    modifiers:
+      coefficients:
+        Heat: 0.8
+        Caustic: 1.1
+  - type: Tag
+    tags: [] # ignore "WhitelistChameleon" tag
+  - type: Sprite
+    sprite: Clothing/Neck/Scarfs/red.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/Scarfs/red.rsi
+  - type: ChameleonClothing
+    slot: [NECK]
+    default: DummyTrinketHeatRes
+  - type: UserInterface
+    interfaces:
+      enum.ChameleonUiKey.Key:
+        type: ChameleonBoundUserInterface
+
+- type: entity
+  parent: ClothingNeckBase
+  id: TrinketAcidRes
+  name: sacrificial host
+  suffix: Chameleon
+  components:
+  - type: Armor
+    modifiers:
+      coefficients:
+        Caustic: 0.8
+        Bloodloss: 1.1
+  - type: Tag
+    tags: [] # ignore "WhitelistChameleon" tag
+  - type: Sprite
+    sprite: Clothing/Neck/Scarfs/red.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/Scarfs/red.rsi
+  - type: ChameleonClothing
+    slot: [NECK]
+    default: DummyTrinketAcidRes
+  - type: UserInterface
+    interfaces:
+      enum.ChameleonUiKey.Key:
+        type: ChameleonBoundUserInterface

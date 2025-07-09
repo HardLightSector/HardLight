@@ -30,8 +30,8 @@
         tags:
           - PirateUplink
     - !type:BuyerJobCondition
-      whitelist:
-        - NFPirateCaptain
+      # whitelist:
+        # - NFptain
 
 - type: listing
   id: UplinkPirateHardsuitElite
@@ -49,11 +49,11 @@
         tags:
           - PirateUplink
     - !type:BuyerJobCondition
-      whitelist:
-        - NFPirateCaptain
+      # whitelist:
+        # - NFptain
 
 - type: listing
-  id: UplinkPirateCaptainCrateFilled
+  id: UplinkptainCrateFilled
   name:  uplink-pirate-crate-captain-name
   description: uplink-pirate-crate-captain-desc
   productEntity: CratePirateChestCaptain
@@ -68,8 +68,8 @@
         tags:
           - PirateUplink
     - !type:BuyerJobCondition
-      whitelist:
-        - NFPirateCaptain
+      # whitelist:
+        # - NFptain
 
 - type: listing
   id: UplinkPirateCrateFilled
@@ -135,8 +135,8 @@
         tags:
           - PirateUplink
     - !type:BuyerJobCondition
-      whitelist:
-        - NFPirateCaptain
+      # whitelist:
+        # - NFptain
 
 - type: listing
   id: UplinkPirateBlunderbuss
@@ -171,10 +171,10 @@
           - PirateUplink
 
 - type: listing
-  id: UplinkPirateCannon
+  id: Uplinknnon
   name:  uplink-pirate-cannon-name
   description: uplink-pirate-cannon-desc
-  productEntity: NFWeaponLauncherPirateCannon
+  productEntity: WeaponLauncherPirateCannon
   icon: { sprite: Objects/Weapons/Guns/Launchers/pirate_cannon.rsi, state: icon }
   cost:
     Doubloon: 6

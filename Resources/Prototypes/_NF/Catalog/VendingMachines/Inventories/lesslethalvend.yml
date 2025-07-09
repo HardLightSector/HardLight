@@ -3,7 +3,7 @@
   startingInventory:
     WeaponDisabler: 10
 #    WeaponSniperMosinNonlethal: 10
-    WeaponRevolverArgentiNonlethal: 10
+    NFWeaponRevolverArgentiLessLethal: 10
     WeaponShotgunDoubleBarreledRubber: 10
     NFWeaponHoloflareGun: 5
     AmmoBox12_gaugeBeanbag: 8
@@ -27,7 +27,7 @@
   startingInventory:
     WeaponDisabler: 4294967295 # Infinite
 #    WeaponSniperMosinNonlethal: 4294967295 # Infinite
-    WeaponRevolverArgentiNonlethal: 4294967295 # Infinite
+    NFWeaponRevolverArgentiLessLethal: 4294967295 # Infinite
     WeaponShotgunDoubleBarreledRubber: 4294967295 # Infinite
     NFWeaponHoloflareGun: 4294967295 # Infinite
     AmmoBox12_gaugeBeanbag: 4294967295 # Infinite

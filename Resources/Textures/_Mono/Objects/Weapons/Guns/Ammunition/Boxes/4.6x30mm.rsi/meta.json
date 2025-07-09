@@ -13,6 +13,9 @@
     {
       "name": "base-b"
     },
+	{
+      "name": "mag-0"
+    },
     {
       "name": "mag-1"
     },
@@ -27,6 +30,30 @@
     },
     {
       "name": "magb-3"
+    },
+	{
+      "name": "mag-4"
+    },
+	{
+      "name": "mag-5"
+    },
+	{
+      "name": "decal-01"
+    },
+	{
+      "name": "inhand-left"
+    },
+	{
+      "name": "inhand-right"
+    },
+	{
+      "name": "mag-3"
+    },
+	{
+      "name": "decal-calibre-35"
+    },
+	{
+      "name": "decal-calibre-45"
     },
     {
       "name": "incendiary"

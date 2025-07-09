@@ -103,7 +103,7 @@
     contents:
     - id: NFWeaponEnergyPistolDisabler
       amount: 5
-    - id: WeaponPistolUniversalNfsdLessLethal
+    - id: NFWeaponPistolUniversalNfsdLessLethal
       amount: 4
     - id: NFWeaponEnergySubMachineGunDisabler
       amount: 5

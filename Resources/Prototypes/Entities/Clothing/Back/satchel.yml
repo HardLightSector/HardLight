@@ -173,7 +173,7 @@
     - state: icon-unlit
       shader: unshaded
   - type: Item
-    size: Ginormous
+    size: Small
     inhandVisuals: # Frontier
       left: # Frontier
       - state: inhand-left # Frontier
@@ -186,7 +186,7 @@
   - type: Storage
     maxItemSize: Huge
     grid:
-    - 0,0,7,7 # Frontier: Was 0,0,19,9
+    - 0,0,19,9 # Frontier: Was 0,0,19,9 - FRONTIER MADE IT 0,0,7,7 AND THAT'S DUMB - Loki
   - type: Clothing # Frontier
     sprite: _NF/Clothing/Back/Satchels/holding.rsi # Frontier
     clothingVisuals: # Frontier

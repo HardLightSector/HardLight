@@ -12,15 +12,15 @@
     WeaponRifleSVS: 4294967295 # Infinite
     CombatKnife: 4294967295 # Infinite
     SurvivalKnife: 4294967295 # Infinite
-    ClothingUniformUSSP: 4294967295 # Infinite
-    ShipVoucherUSSP: 4294967295 # Infinite
+    #ClothingUniformUSSP: 4294967295 # Infinite
+    #ShipVoucherUSSP: 4294967295 # Infinite
     Brutepack: 4294967295 # Infinite
     Ointment: 4294967295 # Infinite
     Gauze: 4294967295 # Infinite
-    ClothingOuterHardsuitUsspL27: 4294967295 # Infinite
-    ClothingOuterHardsuitUsspL10: 4294967295 # Infinite
+    #ClothingOuterHardsuitUsspL27: 4294967295 # Infinite
+    #ClothingOuterHardsuitUsspL10: 4294967295 # Infinite
     # ClothingOuterHardsuitUsspM10: 4294967295 # Infinite
-    ClothingOuterCoatUSSP: 4294967295 # Infinite
-    ClothingHeadHelmetHeavyUSSP: 4294967295 # Infinite
+    #ClothingOuterCoatUSSP: 4294967295 # Infinite
+    #ClothingHeadHelmetHeavyUSSP: 4294967295 # Infinite
     EmergencyMedipen: 4294967295 # Infinite
     WeaponRifleAK502: 4294967295 # Infinite

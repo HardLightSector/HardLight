@@ -74,7 +74,7 @@
       visible: false
       map: [ "enum.ToggleVisuals.Layer" ]
   - type: Item
-    size: Ginormous
+    size: Small
     inhandVisuals:
       left:
       - state: inhand-left

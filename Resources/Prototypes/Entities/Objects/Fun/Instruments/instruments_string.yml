@@ -253,3 +253,30 @@
   - type: Tag
     tags:
     - StringInstrument
+
+- type: entity
+  parent: BaseHandheldInstrument
+  id: JLuteInstrument
+  name: jester's lute
+  description: A murderous melody lingers long after the final chord has been struck.
+  components:
+  - type: Instrument
+    program: 27
+  - type: SwappableInstrument
+    instrumentList:
+      "Clean": {27: 0}
+      "Jazz": {26: 0}
+      "Muted": {28: 0}
+  - type: Sprite
+    sprite: Objects/Fun/Instruments/guitar.rsi
+    state: icon
+  - type: Item
+    size: Normal
+    sprite: Objects/Fun/Instruments/guitar.rsi
+  - type: Tag
+    tags:
+    - StringInstrument
+  - type: TimedDespawn
+    lifetime: 600
+  - type: ActivatableUI
+    inHandsOnly: false

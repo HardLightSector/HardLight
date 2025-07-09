@@ -79,6 +79,42 @@
       shader: unshaded
       map: ["light"]
       visible: false
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Command
+    - Security
+    - Supply
+    - Service
+    - Medical
+    - Engineering
+    - Science
+    - Binary
+    - Common
+  - type: ActiveRadio
+    channels:
+    - Command
+    - Security
+    - Supply
+    - Service
+    - Medical
+    - Engineering
+    - Science
+    - Binary
+    - Common
+  - type: BorgChassis
+    maxModules: 10
+    moduleWhitelist:
+      tags:
+      - BorgModuleGeneric
+      - BorgModuleCargo
+      - BorgModuleEngineering
+      - BorgModuleMedical
+      - BorgModuleSecurity
+      - BorgModuleScience
+      - BorgModuleService
+      - BorgModuleSyndicate
+      - BorgModuleSyndicateAssault
+      - BorgModuleJanitor
   - type: AccessReader
     access: [["Security"], ["Armory"], ["Command"]]
   - type: SpriteMovement
@@ -88,7 +124,9 @@
     noMovementLayers:
       movement:
         state: quadspriteCC
-      
+  - type: SiliconLawProvider
+    laws: ColComm
+
 - type: entity
   id: BorgChassisQuadsalv
   parent: BorgChassisQuad
@@ -188,7 +226,7 @@
     access: [["Cargo"], ["Service"], ["Command"], ["Research"], ["Maintenance"]]
   - type: SiliconLawProvider
     laws: StationEfficiency
-    
+
 - type: entity
   id: BorgChassisQuadmed
   parent: BorgChassisQuad
@@ -255,7 +293,7 @@
     # - Elyran
     # - RobotTalk
     # - Sign
-    
+
 - type: entity
   id: BorgChassisApex
   parent: BorgChassisQuad
