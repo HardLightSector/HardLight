@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2025 Onezero0
+# SPDX-FileCopyrightText: 2025 Redrover1760
+# SPDX-FileCopyrightText: 2025 significant harassment
 # SPDX-FileCopyrightText: 2025 starch
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
@@ -26,7 +29,7 @@
     requireNoGrid: true
     shape: circle
   - type: TimedDespawn
-    lifetime: 5
+    lifetime: 7
   - type: PointLight
     color: "#FB00FF"
   - type: EmpOnTrigger
@@ -84,6 +87,33 @@
     range: 10
     energyConsumption: 500000
     disableDuration: 5.5
+
+# EMP end
+
+- type: entity
+  id: ShipTarnyxApProjectile
+  name: TARNYX 150mm AP projectile
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Structural: 12000
+        Blunt: 3000
+  - type: Sprite
+    sprite: _Mono/Objects/SpaceArtillery/150_shell.rsi
+    layers:
+    - state: 150-shell
+  - type: Ammo
+    muzzleFlash: null
+  - type: ShipWeaponProjectile
+  - type: RadarBlip
+    scale: 1.75
+    requireNoGrid: true
+    shape: triangle
+  - type: TimedDespawn
+    lifetime: 7
 
 - type: entity
   id: 150mmApShell

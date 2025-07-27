@@ -33,7 +33,7 @@
     range: 500
   - type: Gun
     fireRate: 0.5
-    projectileSpeed: 180
+    projectileSpeed: 90
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser_cannon2.ogg
     soundEmpty:
@@ -166,7 +166,7 @@
     range: 500
   - type: Gun
     fireRate: 0.2
-    projectileSpeed: 180
+    projectileSpeed: 90
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser_cannon2.ogg
     soundEmpty:
@@ -233,7 +233,7 @@
           bounds: "-0.75,-0.75,0.75,0.75"
         density: 1500
   - type: Gun
-    projectileSpeed: 285
+    projectileSpeed: 150
     fireRate: 0.75
     soundGunshot:
       path: /Audio/_Mono/Weapons/Guns/Gunshots/laserfire.ogg

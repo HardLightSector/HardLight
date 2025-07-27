@@ -34,7 +34,7 @@
     requireNoGrid: true
     shape: triangle
   - type: TimedDespawn
-    lifetime: 3.5
+    lifetime: 7
   - type: PointLight
     radius: 3.5
     color: orange
@@ -49,11 +49,11 @@
   - type: MiningGatheringSoft
   - type: MiningGatheringHard
   - type: TargetSeeking
-    acceleration: 150
+    acceleration: 75
     detectionRange: 300
     scanArc: 70
-    launchSpeed: 300
-    maxSpeed: 360
+    launchSpeed: 150
+    maxSpeed: 180
     trackDelay: 0.3
 
 # ASM-302
@@ -83,7 +83,7 @@
     requireNoGrid: true
     shape: triangle
   - type: TimedDespawn
-    lifetime: 3
+    lifetime: 7
   - type: PointLight
     radius: 3.5
     color: orange
@@ -98,11 +98,11 @@
   - type: MiningGatheringSoft
   - type: MiningGatheringHard
   - type: TargetSeeking
-    acceleration: 200
+    acceleration: 100
     detectionRange: 450
     scanArc: 70
-    launchSpeed: 180
-    maxSpeed: 420
+    launchSpeed: 90
+    maxSpeed: 210
     trackDelay: 0.7
 
 # ASM-501
@@ -132,7 +132,7 @@
     requireNoGrid: true
     shape: triangle
   - type: TimedDespawn
-    lifetime: 10
+    lifetime: 20
   - type: PointLight
     radius: 5
     color: orange
@@ -147,11 +147,11 @@
   - type: MiningGatheringSoft
   - type: MiningGatheringHard
   - type: TargetSeeking
-    acceleration: 50
+    acceleration: 25
     detectionRange: 300
     scanArc: 50
-    launchSpeed: 50
-    maxSpeed: 60
+    launchSpeed: 25
+    maxSpeed: 30
     trackDelay: 4
 
 # TOVEK
@@ -181,7 +181,7 @@
     requireNoGrid: true
     shape: triangle
   - type: TimedDespawn
-    lifetime: 4.2
+    lifetime: 8.2
   - type: PointLight
     radius: 3.5
     color: orange
@@ -201,9 +201,9 @@
   - type: MiningGatheringSoft
   - type: MiningGatheringHard
   - type: TargetSeeking
-    acceleration: 80
+    acceleration: 40
     detectionRange: 450
     scanArc: 80
-    launchSpeed: 100
-    maxSpeed: 250
+    launchSpeed: 50
+    maxSpeed: 125
     trackDelay: 1.2

@@ -23,11 +23,11 @@ A rapid-fire [color=GreenYellow]swarm missile[/color] pod turret that saturates 
 
 ## Missile Specifications
 
-- Acceleration: [color=mediumspringgreen][bold]150 m/s²[/bold][/color]
+- Acceleration: [color=mediumspringgreen][bold]75 m/s²[/bold][/color]
 - Tracking Range: [color=orangered][bold]300m[/bold][/color]
 - Scanning Arc: [color=teal]70 degrees[/color]
-- Launch Speed: [color=darkorange]300 m/s[/color]
-- Max Speed: [color=darkorange]360 m/s[/color]
+- Launch Speed: [color=darkorange]150 m/s[/color]
+- Max Speed: [color=darkorange]180 m/s[/color]
 - Range: [color=orange]1260m[/color]
 - Tracking Delay [color=orange] 0.3 seconds [/color]
 
