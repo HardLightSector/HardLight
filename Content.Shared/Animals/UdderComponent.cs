@@ -41,7 +41,7 @@ public sealed partial class UdderComponent : Component
     ///     The amount of nutrient consumed on update.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public float HungerUsage = 10f;
+    public float HungerUsage = 1000f;
 
     /// <summary>
     ///     How long to wait before producing.
