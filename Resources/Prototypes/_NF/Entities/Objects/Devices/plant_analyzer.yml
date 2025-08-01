@@ -24,7 +24,7 @@
   - type: PlantAnalyzer
     settings:
       scanDelay: 2
-      advScanDelay: 8
+      advScanDelay: 5
     scanningEndSound:
       path: "/Audio/Items/Medical/healthscanner.ogg"
   - type: Appearance
