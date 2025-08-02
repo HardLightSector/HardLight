@@ -378,7 +378,7 @@ public sealed partial class CCVars
     ///     so it's off by default.
     /// </remarks>
     public static readonly CVarDef<bool> GameTabletopPlace =
-        CVarDef.Create("game.tabletop_place", true, CVar.SERVERONLY);
+        CVarDef.Create("game.tabletop_place", false, CVar.SERVERONLY);
 
     /// <summary>
     ///     If true, contraband severity can be viewed in the examine menu
