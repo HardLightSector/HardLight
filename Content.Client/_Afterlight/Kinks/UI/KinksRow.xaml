@@ -1,0 +1,13 @@
+﻿<controls:KinksRow
+    xmlns="https://spacestation14.io"
+    xmlns:controls="clr-namespace:Content.Client._Afterlight.Kinks.UI"
+    HorizontalExpand="True"
+    MouseFilter="Pass">
+    <BoxContainer Orientation="Horizontal">
+        <Control MinWidth="24">
+            <RichTextLabel Name="IconLabel" Access="Public" HorizontalAlignment="Center" />
+        </Control>
+        <RichTextLabel Name="NameLabel" Access="Public" HorizontalExpand="True" />
+        <controls:KinksButtons Name="Buttons" Access="Public" />
+    </BoxContainer>
+</controls:KinksRow>

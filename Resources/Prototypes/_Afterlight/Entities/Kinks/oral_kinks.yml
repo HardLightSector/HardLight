@@ -1,0 +1,184 @@
+﻿- type: entity
+  parent: KinkCategoryBase
+  id: KinkCategoryOralSexPlay
+  name: "Oral Sex & Play"
+
+- type: entity
+  parent: KinkBase
+  id: KinkAsstoMouth
+  name: "Ass to Mouth"
+  description: "The act of anally penetrating a character with a cock (or phallic object, in terms of strap ons), then withdrawing the cock and having it go straight to the other’s mouth for them to perform oral."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryOralSexPlay
+    fListImport: "Ass to Mouth"
+
+- type: entity
+  parent: KinkBase
+  id: KinkAuto-Fellatio
+  name: "Auto-Fellatio"
+  description: "The act of performing fellatio or cunnilingus on one's self."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryOralSexPlay
+    fListImport: "Auto-Fellatio"
+
+- type: entity
+  parent: KinkBase
+  id: KinkCunnilingusGiving
+  name: "Cunnilingus (Giving)"
+  description: "The act of performing cunnilingus -- oral sex on a character's vagina."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryOralSexPlay
+    fListImport: "Cunnilingus (Giving)"
+
+- type: entity
+  parent: KinkBase
+  id: KinkCunnilingusReceiving
+  name: "Cunnilingus (Receiving)"
+  description: "The act of receiving cunnilingus -- oral sex on a character's vagina."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryOralSexPlay
+    fListImport: "Cunnilingus (Receiving)"
+
+- type: entity
+  parent: KinkBase
+  id: KinkFace-Fucking
+  name: "Face-Fucking"
+  description: "Refers to the act of penetrating the mouth of another character with a similar technique as fucking a vagina or anus, typically by bracing the mouth or skull and thrusting back and forth; often rough."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryOralSexPlay
+    fListImport: "Face-Fucking"
+
+- type: entity
+  parent: KinkBase
+  id: KinkFace-Sitting
+  name: "Face-Sitting"
+  description: "A sexual practice where someone sits on another character's face with their buttocks or genitals, causing the person to be smothered, sometimes to the point of asphyxiation; often done as a form of forcing oral gratification."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryOralSexPlay
+    fListImport: "Face-Sitting"
+
+- type: entity
+  parent: KinkBase
+  id: KinkFellatioPerforming
+  name: "Fellatio (Performing)"
+  description: "The act of performing fellatio -- oral sex on a character's penis."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryOralSexPlay
+    fListImport: "Fellatio (Performing)"
+
+- type: entity
+  parent: KinkBase
+  id: KinkFellatioReceiving
+  name: "Fellatio (Receiving)"
+  description: "The act of receiving fellatio -- oral sex on a character's penis."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryOralSexPlay
+    fListImport: "Fellatio (Receiving)"
+
+- type: entity
+  parent: KinkBase
+  id: KinkFingersinMouth
+  name: "Fingers in Mouth"
+  description: "Expresses an interest in play that involves inserting fingers in one’s mouth. Often implies sucking, licking, feeling out one’s mouth in an exploratory fashion, or possibly inserting something into it."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryOralSexPlay
+    fListImport: "Fingers in Mouth"
+
+- type: entity
+  parent: KinkBase
+  id: KinkKissing
+  name: "Kissing"
+  description: "Expresses an interest in kissing or being kissed by another character, typically denoting French kissing."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryOralSexPlay
+    fListImport: "Kissing"
+
+- type: entity
+  parent: KinkBase
+  id: KinkLicking
+  name: "Licking"
+  description: "The act of one character licking another. May or may not be sexual."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryOralSexPlay
+    fListImport: "Licking"
+
+- type: entity
+  parent: KinkBase
+  id: KinkOralFixation
+  name: "Oral Fixation"
+  description: "An act in which a character is unconsciously obsessed with the mouth and feels the need to be sucking, chewing, or inserting something into it."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryOralSexPlay
+    fListImport: "Oral Fixation"
+
+- type: entity
+  parent: KinkBase
+  id: KinkOralSexGiving
+  name: "Oral Sex (Giving)"
+  description: "The act of performing fellatio or cunnilingus."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryOralSexPlay
+    fListImport: "Oral Sex (Giving)"
+
+- type: entity
+  parent: KinkBase
+  id: KinkOralSexReceiving
+  name: "Oral Sex (Receiving)"
+  description: "The act of receiving fellatio or cunnilingus."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryOralSexPlay
+    fListImport: "Oral Sex (Receiving)"
+
+- type: entity
+  parent: KinkBase
+  id: KinkOralVirginity
+  name: "Oral Virginity"
+  description: "Engaging in an RP in which a character that has never performed fellatio or cunnilingus performs such acts."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryOralSexPlay
+    fListImport: "Oral Virginity"
+
+- type: entity
+  parent: KinkBase
+  id: KinkSaliva
+  name: "Saliva"
+  description: "Interest in roleplay that prominently includes saliva. This may refer to excessive secretion and great appreciation of it."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryOralSexPlay
+    fListImport: "Saliva"
+
+- type: entity
+  parent: KinkBase
+  id: KinkTeethPlay
+  name: "Teeth Play"
+  description: "Expresses an interest in play that revolves around one’s teeth. Often denotes cleaning and similar dental play."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryOralSexPlay
+    fListImport: "Teeth Play"
+
+- type: entity
+  parent: KinkBase
+  id: KinkThroatPenetration
+  name: "Throat Penetration"
+  description: "The act of penetrating the mouth of another character to the depths at which the penis or insertion enters the back of the mouth cavity and / or throat, sometimes causing a gag reflex, or being the recipient of such actions."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryOralSexPlay
+    fListImport: "Throat Penetration"

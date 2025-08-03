@@ -1,0 +1,164 @@
+﻿- type: entity
+  parent: KinkCategoryBase
+  id: KinkCategoryDressUpMaterials
+  name: "Dress Up & Materials"
+
+- type: entity
+  parent: KinkBase
+  id: KinkClothedSex
+  name: "Clothed Sex"
+  description: "Engaging in an RP where you and / or your partner are not undressed during sexual interaction."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryDressUpMaterials
+    fListImport: "Clothed Sex"
+
+- type: entity
+  parent: KinkBase
+  id: KinkClothingPlay
+  name: "Clothing Play"
+  description: "Expresses an interest in scenes where clothing plays a distinct involvement, such as lingerie, using certain articles of clothing sexually, or having a character wearing (or being made to wear) various outfits."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryDressUpMaterials
+    fListImport: "Clothing Play"
+
+- type: entity
+  parent: KinkBase
+  id: KinkCrossdressing
+  name: "Crossdressing"
+  description: "Engaging in an RP where one or more characters dress in the clothes considered traditionally atypical for their identifying gender."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryDressUpMaterials
+    fListImport: "Crossdressing"
+
+- type: entity
+  parent: KinkBase
+  id: KinkFootgearWorship
+  name: "Footgear Worship"
+  description: "The act of giving gratuitous acknowledgment to the shoes or boots of one's partner, typically referring to oral play, often to clean or shine the exterior of the shoes or boots, or musk play, when regarding the interior of the shoes or boots."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryDressUpMaterials
+    fListImport: "Footgear Worship"
+
+- type: entity
+  parent: KinkBase
+  id: KinkForcedClotheswearing
+  name: "Forced Clotheswearing"
+  description: "The act of either forcing a character to wear or being forced to wear specific garments of clothing of the other character's choosing; often humiliating."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryDressUpMaterials
+    fListImport: "Forced Clotheswearing"
+
+- type: entity
+  parent: KinkBase
+  id: KinkGlasses
+  name: "Glasses"
+  description: "A preference for characters who wear glasses."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryDressUpMaterials
+    fListImport: "Glasses"
+
+- type: entity
+  parent: KinkBase
+  id: KinkLatexRubber
+  name: "Latex / Rubber"
+  description: "The usage of latex and / or rubber material worn as clothing and / or used as a form of mummification / bondage; typically full body suits."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryDressUpMaterials
+    fListImport: "Latex / Rubber"
+
+- type: entity
+  parent: KinkBase
+  id: KinkLeather
+  name: "Leather"
+  description: "The use of leather, often in a bondage situation; typically includes leather garments or equipment associated with dominants, as well as harness gear."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryDressUpMaterials
+    fListImport: "Leather"
+
+- type: entity
+  parent: KinkBase
+  id: KinkMasks
+  name: "Masks"
+  description: "The use of masks (surgical, BDSM, gas masks, etc), typically to conceal the wearer's identity, in an RP scene."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryDressUpMaterials
+    fListImport: "Masks"
+
+- type: entity
+  parent: KinkBase
+  id: KinkSexySluttyClothing
+  name: "Sexy / Slutty Clothing"
+  description: "Having least one character wear clothing that is of a sexually suggestive or explicit nature, including but not limited to exceptionally short skirts, flamboyant underwear, excessively tight clothing, clothing with explicit graphics, etc."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryDressUpMaterials
+    fListImport: "Sexy / Slutty Clothing"
+
+- type: entity
+  parent: KinkBase
+  id: KinkSocksStockings
+  name: "Socks / Stockings"
+  description: "Expresses an interest in the inclusion of socks and / or stockings in the sexual context of an RP, or an interest in characters wearing such."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryDressUpMaterials
+    fListImport: "Socks / Stockings"
+
+- type: entity
+  parent: KinkBase
+  id: KinkStripTease
+  name: "Strip Tease"
+  description: "The act of dramatically removing clothing or watching a participant do such, typically as a form of seduction."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryDressUpMaterials
+    fListImport: "Strip Tease"
+
+- type: entity
+  parent: KinkBase
+  id: KinkUnderwear
+  name: "Underwear"
+  description: "An affinity for underwear, either being worn on one's self, one's partner(s) or by itself; often involves stimulation from the scent or tactility of the underwear, but may also refer to using underwear as a sex toy in any way."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryDressUpMaterials
+    fListImport: "Underwear"
+
+- type: entity
+  parent: KinkBase
+  id: KinkUnderwearBulges
+  name: "Underwear Bulges"
+  description: "The act of being sexually aroused or stimulated by the sight and / or feel of someone's genitalia creating a bulge on the front of their underwear; typically refers to exceptionally large bulges, and may include pants bulges as well."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryDressUpMaterials
+    fListImport: "Underwear Bulges"
+
+- type: entity
+  parent: KinkBase
+  id: KinkUniforms
+  name: "Uniforms"
+  description: "The act of being sexually aroused by uniforms or work-related attire, and / or engaging in RPs in which characters will wear such clothing."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryDressUpMaterials
+    fListImport: "Uniforms"
+
+- type: entity
+  parent: KinkBase
+  id: KinkWardrobeMalfunctions
+  name: "Wardrobe Malfunctions"
+  description: "An interest in scenes that involve clothing mishaps. May involve parts of a character's body being exposed unintentionally, clothing breaking, failing, or being ill fitting."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryDressUpMaterials
+    fListImport: "Wardrobe Malfunctions"

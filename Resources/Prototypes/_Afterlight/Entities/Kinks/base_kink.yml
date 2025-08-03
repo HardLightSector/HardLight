@@ -1,0 +1,18 @@
+﻿- type: entity
+  abstract: true
+  id: KinkBase
+  name: kink
+  components:
+  - type: KinkDefinition
+
+- type: entity
+  abstract: true
+  id: KinkCategoryBase
+  name: kink category
+  components:
+  - type: KinkCategory
+
+- type: entityCategory
+  id: Kink
+  name: al-kinks
+  hideSpawnMenu: true

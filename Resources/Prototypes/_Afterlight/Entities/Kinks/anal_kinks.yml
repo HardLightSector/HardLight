@@ -1,0 +1,134 @@
+﻿- type: entity
+  parent: KinkCategoryBase
+  id: KinkCategoryAnalSexPlay
+  name: "Anal Sex & Play"
+
+- type: entity
+  parent: KinkBase
+  id: KinkAnalFisting
+  name: "Anal Fisting"
+  description: "The act of inserting one's hand(s) and / or arm(s) into one's partner's anus, or being the recipient of such acts."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryAnalSexPlay
+    fListImport: "Anal Fisting"
+
+- type: entity
+  parent: KinkBase
+  id: KinkAnalProlapse
+  name: "Anal Prolapse"
+  description: "Where insides of the anus are pulled out by force (unnatural means, such as a cream, liquid or suction method, or internal massage) or naturally (either by a cock, dildo, or pushing)."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryAnalSexPlay
+    fListImport: "Anal Prolapse"
+
+- type: entity
+  parent: KinkBase
+  id: KinkAnalSexGiving
+  name: "Anal Sex (Giving)"
+  description: "The act of anally penetrating a partner."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryAnalSexPlay
+    fListImport: "Anal Sex (Giving)"
+
+- type: entity
+  parent: KinkBase
+  id: KinkAnalSexReceiving
+  name: "Anal Sex (Receiving)"
+  description: "The act of being anally penetrated."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryAnalSexPlay
+    fListImport: "Anal Sex (Receiving)"
+
+- type: entity
+  parent: KinkBase
+  id: KinkAnalTraining
+  name: "Anal Training"
+  description: "Engaging in the use of the various anatomy of a character's anus to otherwise prepare and / or acclimate the character to an insertion, the size of which the character would not otherwise be comfortable taking."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryAnalSexPlay
+    fListImport: "Anal Training"
+
+- type: entity
+  parent: KinkBase
+  id: KinkAnalVirginity
+  name: "Anal Virginity"
+  description: "Engaging in anal sex with a character who has never been anally penetrated before, or being anally penetrated while playing a character that has never been penetrated before."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryAnalSexPlay
+    fListImport: "Anal Virginity"
+
+- type: entity
+  parent: KinkBase
+  id: KinkEnemas
+  name: "Enemas"
+  description: "The application of a liquid, typically warm water or a body fluid, to the intestines of a character, often to clean them out, but sometimes as a form of discipline or sexual gratification, or receiving such actions; might imply a form of administration other than phallic penetration."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryAnalSexPlay
+    fListImport: "Enemas"
+
+- type: entity
+  parent: KinkBase
+  id: KinkFingeringAnal
+  name: "Fingering (Anal)"
+  description: "The act of using one’s fingers to stimulate another character anally, or receiving such actions, in order to induce sexual pleasure."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryAnalSexPlay
+    fListImport: "Fingering (Anal)"
+
+- type: entity
+  parent: KinkBase
+  id: KinkGapingAnal
+  name: "Gaping (Anal)"
+  description: "Stretching the anus during penetration, to the point that it stays open for a period of time."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryAnalSexPlay
+    fListImport: "Gaping (Anal)"
+
+- type: entity
+  parent: KinkBase
+  id: KinkPegging
+  name: "Pegging"
+  description: "Anal penetration with a strap-on."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryAnalSexPlay
+    fListImport: "Pegging"
+
+- type: entity
+  parent: KinkBase
+  id: KinkProstatePlay
+  name: "Prostate Play"
+  description: "The act of stimulating the prostate, generally rectally with fingers or toys."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryAnalSexPlay
+    fListImport: "Prostate Play"
+
+- type: entity
+  parent: KinkBase
+  id: KinkRimmingGiving
+  name: "Rimming (Giving)"
+  description: "The act of giving oral stimulation to a partner's anus, by the means of licking and / or penetrating the recipient's anus with the tongue."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryAnalSexPlay
+    fListImport: "Rimming (Giving)"
+
+- type: entity
+  parent: KinkBase
+  id: KinkRimmingReceiving
+  name: "Rimming (Receiving)"
+  description: "The act of receiving oral stimulation to one's anus, by the means of licking and / or having one's anus penetrated by the tongue."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryAnalSexPlay
+    fListImport: "Rimming (Receiving)"

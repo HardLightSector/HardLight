@@ -1,0 +1,94 @@
+﻿- type: entity
+  parent: KinkCategoryBase
+  id: KinkCategoryTransformation
+  name: "Transformation"
+
+- type: entity
+  parent: KinkBase
+  id: KinkQuadrupedTransformation
+  name: "Quadruped Transformation"
+  description: "Transforming a character into typically a quadrupedal creature."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryTransformation
+    fListImport: "Animal Transformation"
+
+- type: entity
+  parent: KinkBase
+  id: KinkBimbofication
+  name: "Bimbofication"
+  description: "Scenes in which someone is turned into a stereotypical bimbo, often including breast growth, intelligence-reduction, increased sex drive, and more subtle change to features such as hair-color or general appearance."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryTransformation
+    fListImport: "Bimbofication"
+
+- type: entity
+  parent: KinkBase
+  id: KinkBodyPartTransformation
+  name: "Body Part Transformation"
+  description: "Transforming a character into a body part, or into a part of another character's body, may be done through a variety of means."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryTransformation
+    fListImport: "Body Part Transformation"
+
+- type: entity
+  parent: KinkBase
+  id: KinkBodySwapping
+  name: "Body Swapping"
+  description: "The act of two or more individuals swapping bodies through consciousness transfer, enabling them to inhabit the other's body."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryTransformation
+    fListImport: "Body Swapping"
+
+- type: entity
+  parent: KinkBase
+  id: KinkGenderTransformation
+  name: "Gender Transformation"
+  description: "Transforming a character into another gender by various means, which may or may not include their sex. Encompasses both magical and sci-fi changes, as well as more realistic gender reassignment."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryTransformation
+    fListImport: "Gender Transformation"
+
+- type: entity
+  parent: KinkBase
+  id: KinkInanimateObjectTransformation
+  name: "Inanimate Object Transformation"
+  description: "Transforming a character into an object of sorts (a chair, clothing, a toy, etc.), may be done through a variety of means."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryTransformation
+    fListImport: "Inanimate Object Transformation"
+
+- type: entity
+  parent: KinkBase
+  id: KinkSpeciesTransformation
+  name: "Species Transformation"
+  description: "Transforming a character into another species other than their own, may be done through a variety of means."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryTransformation
+    fListImport: "Species Transformation"
+
+- type: entity
+  parent: KinkBase
+  id: KinkSupernaturalTransformation
+  name: "Supernatural Transformation"
+  description: "Transforming a character into a supernatural entity such as a vampire, werebeast, demon, god, and other such varied mythical figures. May be done through a variety of means."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryTransformation
+    fListImport: "Supernatural Transformation"
+
+- type: entity
+  parent: KinkBase
+  id: KinkTransformation
+  name: "Transformation"
+  description: "The act of causing the physical characteristics of a participant of an RP, possibly including one's self, by magical or chemical means, to change in a dramatic fashion; may refer to a myriad of different types of transformations, and connotates receiving sexual pleasure from the act of transformation itself."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryTransformation
+    fListImport: "Transformation"

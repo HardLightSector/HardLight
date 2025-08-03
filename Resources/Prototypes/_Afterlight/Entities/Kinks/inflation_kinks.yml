@@ -1,0 +1,204 @@
+﻿- type: entity
+  parent: KinkCategoryBase
+  id: KinkCategoryInflationGrowthSizeplay
+  name: "Inflation, Growth, & Sizeplay"
+
+- type: entity
+  parent: KinkBase
+  id: KinkAssGrowth
+  name: "Ass Growth"
+  description: "A situation where at least one character's ass grows in size, typically to fantastical proportions, by any means, including but not limited to magical or chemical."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryInflationGrowthSizeplay
+    fListImport: "Ass Growth"
+
+- type: entity
+  parent: KinkBase
+  id: KinkBlueberrification
+  name: "Blueberrification"
+  description: "The process of a character being inflated into a spherical shape by swelling with juice, accompanied by their skin turning into shades of blue (or other fruit hues)."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryInflationGrowthSizeplay
+    fListImport: "Blueberrification"
+
+- type: entity
+  parent: KinkBase
+  id: KinkBreastGrowth
+  name: "Breast Growth"
+  description: "A situation in which at least one character's breasts grow in size, typically to fantastical proportions, by any means, including but not limited to magical or chemical."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryInflationGrowthSizeplay
+    fListImport: "Breast Growth"
+
+- type: entity
+  parent: KinkBase
+  id: KinkCockBallGrowth
+  name: "Cock / Ball Growth"
+  description: "A situation in which at least one character's penis and testicles grow in size, typically to fantastical proportions, by any means, including but not limited to magical or chemical infusion or due to sexual fluids becoming blocked or otherwise obstructed."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryInflationGrowthSizeplay
+    fListImport: "Cock / Ball Growth"
+
+- type: entity
+  parent: KinkBase
+  id: KinkCumInflationHeavyExtreme
+  name: "Cum Inflation (Heavy / Extreme)"
+  description: "Engaging in an RP in which at least one character is filled with an impossible amount of semen, typically directly from the penis due to anal, vaginal or oral sex, causing their stomach and / or body to expand to fantastical sizes."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryInflationGrowthSizeplay
+    fListImport: "Cum Inflation (Heavy / Extreme)"
+
+- type: entity
+  parent: KinkBase
+  id: KinkCumInflationLightMedium
+  name: "Cum Inflation (Light / Medium)"
+  description: "Engaging in an RP in which at least one character is filled with a massive amount of semen, typically directly from the penis due to anal, vaginal or oral sex, causing their stomach and / or body to bulge or become somewhat round."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryInflationGrowthSizeplay
+    fListImport: "Cum Inflation (Light / Medium)"
+
+- type: entity
+  parent: KinkBase
+  id: KinkForcedGrowth
+  name: "Forced Growth"
+  description: "Expresses an interest in which at least one character will be forced to endure themselves, or any part(s) of their body, growing against their will."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryInflationGrowthSizeplay
+    fListImport: "Forced Growth"
+
+- type: entity
+  parent: KinkBase
+  id: KinkGrowth
+  name: "Growth"
+  description: "Growing in body size by magical, medicinal, or otherwise fantastic means."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryInflationGrowthSizeplay
+    fListImport: "Growth"
+
+- type: entity
+  parent: KinkBase
+  id: KinkGrowthMacro
+  name: "Growth (Macro)"
+  description: "Growing in body size to heights in vast excess, often to seemingly impossible sizes."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryInflationGrowthSizeplay
+    fListImport: "Growth (Macro)"
+
+- type: entity
+  parent: KinkBase
+  id: KinkHyperMuscleGrowth
+  name: "Hyper Muscle Growth"
+  description: "Increasing the size or strength of one's muscles to excessive or impossible degrees."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryInflationGrowthSizeplay
+    fListImport: "Hyper Muscle Growth"
+
+- type: entity
+  parent: KinkBase
+  id: KinkImmobilizationSize
+  name: "Immobilization (Size)"
+  description: "Engaging in an RP in which at least one character will be rendered immobile due to a variety of reasons, typically due to some form of bodily growth. May be a result of extremer forms weight gain, inflation, or a part of their body growing to impeccable sizes such as their breasts, cock, ass, or muscles that result in them becoming encumbered."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryInflationGrowthSizeplay
+    fListImport: "Immobilization (Size)"
+
+- type: entity
+  parent: KinkBase
+  id: KinkInflationHeavyExtreme
+  name: "Inflation (Heavy / Extreme)"
+  description: "Engaging in an RP in which at least one character is filled with an impossible amount of a substance other than a bodily fluid, typically a gas or liquid, causing their stomach and / or body to expand to fantastical sizes."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryInflationGrowthSizeplay
+    fListImport: "Inflation (Heavy / Extreme)"
+
+- type: entity
+  parent: KinkBase
+  id: KinkInflationLightMedium
+  name: "Inflation (Light / Medium)"
+  description: "Engaging in an RP in which at least one character is filled with a massive amount of a substance other than a bodily fluid, typically a gas or liquid, causing their stomach and / or body to bulge or become somewhat round."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryInflationGrowthSizeplay
+    fListImport: "Inflation (Light / Medium)"
+
+- type: entity
+  parent: KinkBase
+  id: KinkMuscleGrowth
+  name: "Muscle Growth"
+  description: "Increasing the size or strength of one's muscles by magical, medicinal, or other fantastic means."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryInflationGrowthSizeplay
+    fListImport: "Muscle Growth"
+
+- type: entity
+  parent: KinkBase
+  id: KinkPopping
+  name: "Popping"
+  description: "The act of causing a part of a character's anatomy, or the entire character, to explode by means of ballooning or inflation, or being the recipient of such actions."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryInflationGrowthSizeplay
+    fListImport: "Popping"
+
+- type: entity
+  parent: KinkBase
+  id: KinkShrinking
+  name: "Shrinking"
+  description: "Reducing in body size, usually a reduction of about one foot in size, or being the receiver of such actions."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryInflationGrowthSizeplay
+    fListImport: "Shrinking"
+
+- type: entity
+  parent: KinkBase
+  id: KinkShrinkingMicro
+  name: "Shrinking (Micro)"
+  description: "Reducing in body size to such an extent that inches or smaller units are the most that can be used for measurement."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryInflationGrowthSizeplay
+    fListImport: "Shrinking (Micro)"
+
+- type: entity
+  parent: KinkBase
+  id: KinkWeightGainHeavyExtreme
+  name: "Weight Gain (Heavy / Extreme)"
+  description: "The act of a character gaining significant amounts of weight (be it through the increased consumption of food, magical / scifi effects, or other influences) or engaging in an RP where a character does as such. Typically in unrealistic or large quantities and paces."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryInflationGrowthSizeplay
+    fListImport: "Weight Gain (Heavy / Extreme)"
+
+- type: entity
+  parent: KinkBase
+  id: KinkWeightGainLightMedium
+  name: "Weight Gain (Light / Medium)"
+  description: "The act of a character gaining weight (be it through the increased consumption of food, magical / scifi effects, or other influences) or engaging in an RP where a character does as such. Typically in more realistic amounts and paces."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryInflationGrowthSizeplay
+    fListImport: "Weight Gain (Light / Medium)"
+
+- type: entity
+  parent: KinkBase
+  id: KinkWeightLoss
+  name: "Weight Loss"
+  description: "The act of losing of weight through various means, or engaging in an RP in which a character does such.May be done realistically, unrealistically, through starvation, work out, through magical / scifi effects, or a variety of other methods."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryInflationGrowthSizeplay
+    fListImport: "Weight Loss"

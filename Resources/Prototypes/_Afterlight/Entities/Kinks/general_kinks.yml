@@ -1,0 +1,284 @@
+﻿- type: entity
+  parent: KinkCategoryBase
+  id: KinkCategoryGeneral
+  name: "General Kinks"
+
+- type: entity
+  parent: KinkBase
+  id: KinkAhegao
+  name: "Ahegao"
+  description: "Commonly referred to as “fucked silly.” Refers to a character wearing a facial expression that signifies an immense amount of pleasure during sexual intercourse / or sexual arousal."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryGeneral
+    fListImport: "Ahegao"
+
+- type: entity
+  parent: KinkBase
+  id: KinkAphrodisiacs
+  name: "Aphrodisiacs"
+  description: "The incorporation of a food, drink, drug, scent, or other such stimulate that generates sexual arousal."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryGeneral
+    fListImport: "Aphrodisiacs"
+
+- type: entity
+  parent: KinkBase
+  id: KinkCondoms
+  name: "Condoms"
+  description: "The use of condoms in any way; typically refers to a preference for the use of condoms during penetration, but may also refer to condom play, in which a condom (typically filled), is used as a sex toy; or, the filling of condoms with fluids, such as semen."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryGeneral
+    fListImport: "Condoms"
+
+- type: entity
+  parent: KinkBase
+  id: KinkCrotchSniffing
+  name: "Crotch Sniffing"
+  description: "The act of receiving pleasure from inhaling the scent of the crotch, or receiving such actions. Emphasis is often placed on the musk and / or pheromone-related properties of the scent."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryGeneral
+    fListImport: "Crotch Sniffing"
+
+- type: entity
+  parent: KinkBase
+  id: KinkDrugAlcoholUse
+  name: "Drug / Alcohol Use"
+  description: "The use of illicit drugs and / or alcohol in the context of an RP."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryGeneral
+    fListImport: "Drug / Alcohol Use"
+
+- type: entity
+  parent: KinkBase
+  id: KinkFlexibilityContortionism
+  name: "Flexibility / Contortionism"
+  description: "Exceptional or unrealistic flexibility, typically used to achieve extremely difficult or impossible sexual positions to derive maximum stimulation."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryGeneral
+    fListImport: "Flexibility / Contortionism"
+
+- type: entity
+  parent: KinkBase
+  id: KinkFoodPlay
+  name: "Food Play"
+  description: "The act of incorporating food into the sexual context of an RP, or which may include (but is not limited to) use of whipped cream or chocolate sauce in a sexual act, receiving sexual gratification from the act of eating, or including rather large amounts of food (but not necessarily)."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryGeneral
+    fListImport: "Food Play"
+
+- type: entity
+  parent: KinkBase
+  id: KinkForeplay
+  name: "Foreplay"
+  description: "Sexual activity that precedes intercourse, incorporating various forms of erotic build up before the actual act of sex."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryGeneral
+    fListImport: "Foreplay"
+
+- type: entity
+  parent: KinkBase
+  id: KinkIce
+  name: "Ice"
+  description: "The use of ice in any fashion during sex, typically as a form of erotic foreplay."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryGeneral
+    fListImport: "Ice"
+
+- type: entity
+  parent: KinkBase
+  id: KinkInflatables
+  name: "Inflatables"
+  description: "An expressed interest in characters (or objects) that are inflatable in nature, such as balloons, pool toys, or characters / objects compiled of elastic material meant to be expanded."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryGeneral
+    fListImport: "Inflatables"
+
+- type: entity
+  parent: KinkBase
+  id: KinkInterracial
+  name: "Interracial"
+  description: "Romantic / sexual interaction between or involving different races."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryGeneral
+    fListImport: "Interracial"
+
+- type: entity
+  parent: KinkBase
+  id: KinkMultipleOrgasms
+  name: "Multiple Orgasms"
+  description: "The act of cumming multiple times, sometimes in direct succession, or being the recipient of such actions."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryGeneral
+    fListImport: "Multiple Orgasms"
+
+- type: entity
+  parent: KinkBase
+  id: KinkNaturalMusk
+  name: "Natural Musk"
+  description: "Refers to an RP involving characters where the aspect of musk is notably present / involved in play. Generally implies one or more characters having a distinct scent (typically with pheromones derived from the crotch)."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryGeneral
+    fListImport: "Natural Musk"
+
+- type: entity
+  parent: KinkBase
+  id: KinkObjectophilia
+  name: "Objectophilia"
+  description: "A deep interest in particular inanimate objects. Denotes an expressed preference and / or strong feelings of love, sexual attraction, and / or commitment to certain items or structures of a character's fixation. Said objects may be things such furniture, cars, buildings, toys, clothing, and so on."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryGeneral
+    fListImport: "Objectophilia"
+
+- type: entity
+  parent: KinkBase
+  id: KinkOnomatopoeia
+  name: "Onomatopoeia"
+  description: "Engaging in an RP, or getting turned on by an emphasis on exaggerated descriptions of sexual noises in a roleplay, usually described with onomatopoeia, words that seek to duplicate the sounds they describe. Often refers to fluid noises such as: slosh, splurt, squirt, gurgle, splortch, or others."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryGeneral
+    fListImport: "Onomatopoeia"
+
+- type: entity
+  parent: KinkBase
+  id: KinkPotionsInjections
+  name: "Potions / Injections"
+  description: "The act of using and / or receiving a substance through any means that has a physical or mental effect on the character receiving it; implies fantastical or unrealistic results."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryGeneral
+    fListImport: "Potions / Injections"
+
+- type: entity
+  parent: KinkBase
+  id: KinkSexToys
+  name: "Sex Toys"
+  description: "Refers to the inclusion of (generally penetrating) sex toys in an RP, including but not limited to dildos, vibrators, anal eggs, anal beads, flesh tubes, etc."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryGeneral
+    fListImport: "Sex Toys"
+
+- type: entity
+  parent: KinkBase
+  id: KinkSexualExhaustion
+  name: "Sexual Exhaustion"
+  description: "Engaging in an RP in which at least one character's genitals and / or orifice(s) endure pain due to exceptionally arduous sex or sex of an exceptional duration; implies continuing despite such."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryGeneral
+    fListImport: "Sexual Exhaustion"
+
+- type: entity
+  parent: KinkBase
+  id: KinkSexualFrustration
+  name: "Sexual Frustration"
+  description: "Engaging in an RP in which at least one character is exceptionally desperate or horny and is often willing to eschew standard inhibitions in order to receive sexual stimulation."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryGeneral
+    fListImport: "Sexual Frustration"
+
+- type: entity
+  parent: KinkBase
+  id: KinkShaving
+  name: "Shaving"
+  description: "Engaging in the removal of fur / hair from a participant in an RP by the means of shaving."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryGeneral
+    fListImport: "Shaving"
+
+- type: entity
+  parent: KinkBase
+  id: KinkSmoking
+  name: "Smoking"
+  description: "Refers to the act of smoking and / or receiving pleasure from an aspect of smoking or smoke during an RP."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryGeneral
+    fListImport: "Smoking"
+
+- type: entity
+  parent: KinkBase
+  id: KinkStomachBulging
+  name: "Stomach Bulging"
+  description: "Engaging in an RP in which a character's stomach will bulge, either due to an exceptionally large insertion (often taking the shape of such), due to eating an exceptionally large amount of food, or as a localized form of inflation from any liquid or gas."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryGeneral
+    fListImport: "Stomach Bulging"
+
+- type: entity
+  parent: KinkBase
+  id: KinkStrap-ons
+  name: "Strap-ons"
+  description: "Engaging in an RP in which at least one character will wear a strap-on to penetrate another character."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryGeneral
+    fListImport: "Strap-ons"
+
+- type: entity
+  parent: KinkBase
+  id: KinkStuckage
+  name: "Stuckage"
+  description: "The act of a character getting trapped / stuck in one manner or another. For example: holes, doorways, windows, chairs."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryGeneral
+    fListImport: "Stuckage"
+
+- type: entity
+  parent: KinkBase
+  id: KinkSweat
+  name: "Sweat"
+  description: "The act of sweating and / or receiving sexual gratification from the appearance, taste, scent and / or tactility of sweat."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryGeneral
+    fListImport: "Sweat"
+
+- type: entity
+  parent: KinkBase
+  id: KinkTailPulling
+  name: "Tail Pulling"
+  description: "Pulling a partner's tail during sexual intercourse. Often as a means of forcing the bottom to clench, or as a handle, or merely a cute act."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryGeneral
+    fListImport: "Tail Pulling"
+
+- type: entity
+  parent: KinkBase
+  id: KinkTeasing
+  name: "Teasing"
+  description: "Refers to extended scenes of foreplay prior to explicit, sexual intercourse, which may be physical and / or verbal, typically to arouse one's partner to the point of sexual frustration or desperation."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryGeneral
+    fListImport: "Teasing"
+
+- type: entity
+  parent: KinkBase
+  id: KinkTickling
+  name: "Tickling"
+  description: "The act of tickling and / or being tickled in a sexual context of an RP; or, receiving sexual stimulation from such."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryGeneral
+    fListImport: "Tickling"

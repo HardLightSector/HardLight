@@ -1,0 +1,124 @@
+﻿- type: entity
+  parent: KinkCategoryBase
+  id: KinkCategoryWatersportsScat
+  name: "Watersports & Scat"
+
+- type: entity
+  parent: KinkBase
+  id: KinkBathroomControl
+  name: "Bathroom Control"
+  description: "A situation in which a character controls when, how and where another character may use the bathroom in any fashion, typically as a form of control or degradation."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryWatersportsScat
+    fListImport: "Bathroom Control"
+
+- type: entity
+  parent: KinkBase
+  id: KinkHyperScat
+  name: "Hyper Scat"
+  description: "Producing unnatural amounts of feces, or using other means to obtain feces in huge, often unrealistic, amounts within an RP, the excretion of product thereof causing sexual stimulation and / or distress to one or more characters."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryWatersportsScat
+    fListImport: "Hyper Scat"
+
+- type: entity
+  parent: KinkBase
+  id: KinkHyperWatersports
+  name: "Hyper Watersports"
+  description: "Producing unnatural amounts of urine, or using other means to obtain urine in huge, often unrealistic, amounts within an RP, the excretion of product thereof causing sexual stimulation and / or distress to one or more characters."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryWatersportsScat
+    fListImport: "Hyper Watersports"
+
+- type: entity
+  parent: KinkBase
+  id: KinkMarking
+  name: "Marking"
+  description: "The act of urinating on another character in order to mark them with your proprietary scent of urine, or being the recipient of such actions."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryWatersportsScat
+    fListImport: "Marking"
+
+- type: entity
+  parent: KinkBase
+  id: KinkPissEnemas
+  name: "Piss Enemas"
+  description: "The act of performing an enema, the liquid being used in such being urine, or receiving such actions, often by means of someone urinating inside their partner."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryWatersportsScat
+    fListImport: "Piss Enemas"
+
+- type: entity
+  parent: KinkBase
+  id: KinkScat
+  name: "Scat"
+  description: "Pertains to the inclusion of fecal matter or the expelling of fecal matter in any form in the sexual context of an RP."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryWatersportsScat
+    fListImport: "Scat"
+
+- type: entity
+  parent: KinkBase
+  id: KinkScatTorture
+  name: "Scat Torture"
+  description: "The act of using fecal matter or the act of expelling fecal matter to abuse another character who is unwilling or uninterested in taking part in such actions, or being the recipient of such."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryWatersportsScat
+    fListImport: "Scat Torture"
+
+- type: entity
+  parent: KinkBase
+  id: KinkSoiling
+  name: "Soiling"
+  description: "The act of \"fecal soiling\" in one's underwear, pants or clothes, or having another character perform such actions."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryWatersportsScat
+    fListImport: "Soiling"
+
+- type: entity
+  parent: KinkBase
+  id: KinkSwallowingFeces
+  name: "Swallowing Feces"
+  description: "Engaging in an RP in which a character will orally consume fecal matter."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryWatersportsScat
+    fListImport: "Swallowing Feces"
+
+- type: entity
+  parent: KinkBase
+  id: KinkSwallowingUrine
+  name: "Swallowing Urine"
+  description: "Engaging in an RP in which a character will orally consume urine."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryWatersportsScat
+    fListImport: "Swallowing Urine"
+
+- type: entity
+  parent: KinkBase
+  id: KinkWatersports
+  name: "Watersports"
+  description: "Pertains to the inclusion of urine, or the expelling of urine, in any form, in the sexual context of an RP."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryWatersportsScat
+    fListImport: "Watersports"
+
+- type: entity
+  parent: KinkBase
+  id: KinkWetting
+  name: "Wetting"
+  description: "The act of urinating in one's underwear, pants or clothes, or having another character urinate onto a person who is clothed to any degree."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryWatersportsScat
+    fListImport: "Wetting"

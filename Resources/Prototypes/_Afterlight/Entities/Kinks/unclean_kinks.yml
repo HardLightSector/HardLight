@@ -1,0 +1,114 @@
+﻿- type: entity
+  parent: KinkCategoryBase
+  id: KinkCategoryUncleanThemesPlay
+  name: "Unclean Themes & Play"
+
+- type: entity
+  parent: KinkBase
+  id: KinkBelchingBurping
+  name: "Belching / Burping"
+  description: "Belching, during sexual intercourse, or just as an act during the roleplay. May be exaggerated (visible expulsions of air) and / or with exaggerated burping noises, but not necessarily."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryUncleanThemesPlay
+    fListImport: "Belching / Burping"
+
+- type: entity
+  parent: KinkBase
+  id: KinkDirtyFeet
+  name: "Dirty Feet"
+  description: "Expresses an interest in feet that are deemed “unclean,” usually through sweat, dirt, or a buildup of grime."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryUncleanThemesPlay
+    fListImport: "Dirty Feet"
+
+- type: entity
+  parent: KinkBase
+  id: KinkExtremeMusk
+  name: "Extreme Musk"
+  description: "Engaging in an RP in which one character exudes exceptionally strong odors from the body, such as but not limited to: odor from the crotch, foreskin, feet, or armpits. Indicates a level of body odor that is typically unrealistic and / or visibly apparent in the form of a radiating fog."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryUncleanThemesPlay
+    fListImport: "Extreme Musk"
+
+- type: entity
+  parent: KinkBase
+  id: KinkFarting
+  name: "Farting"
+  description: "Farting, during sexual intercourse, or just as an act during the roleplay. May be exaggerated (visible expulsions of air) and / or with exaggerated flatulent noises, but not necessarily."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryUncleanThemesPlay
+    fListImport: "Farting"
+
+- type: entity
+  parent: KinkBase
+  id: KinkFilth
+  name: "Filth"
+  description: "Expresses an interest in the inclusion of dirtiness and uncleanly aspects such as foul odors, trash, or any other form of physical matter that is considered unsanitary or disgusting."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryUncleanThemesPlay
+    fListImport: "Filth"
+
+- type: entity
+  parent: KinkBase
+  id: KinkMessy
+  name: "Messy"
+  description: "Engaging in an RP that may involve excessive amounts of liquids (which may be bodily fluids) or other solutions such as (but not limited to) mud, food, slime, etc."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryUncleanThemesPlay
+    fListImport: "Messy"
+
+- type: entity
+  parent: KinkBase
+  id: KinkSlob
+  name: "Slob"
+  description: "Characters without hygiene or uncaring of typical standards for cleanliness due to laziness, personal choice, or otherwise; may emphasize and derive pleasure from laziness or from actions linked with a lack of hygiene."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryUncleanThemesPlay
+    fListImport: "Slob"
+
+- type: entity
+  parent: KinkBase
+  id: KinkSmegma
+  name: "Smegma"
+  description: "Expresses an interest in the build-up substance that generates on one's genitals (typically under foreskin and labia) due to a lack of maintained hygiene."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryUncleanThemesPlay
+    fListImport: "Smegma"
+
+- type: entity
+  parent: KinkBase
+  id: KinkSwallowingVomit
+  name: "Swallowing Vomit"
+  description: "Engaging in an RP in which a character will orally consume vomit."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryUncleanThemesPlay
+    fListImport: "Swallowing Vomit"
+
+- type: entity
+  parent: KinkBase
+  id: KinkUnwashedMusk
+  name: "Unwashed Musk"
+  description: "Refers to an RP involving characters where the aspect of unwashed musk is notably present / involved in play. Generally implies one or more characters having a distinct scent due to a lack of hygiene (typically with pheromones derived from the crotch)."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryUncleanThemesPlay
+    fListImport: "Unwashed Musk"
+
+- type: entity
+  parent: KinkBase
+  id: KinkVomiting
+  name: "Vomiting"
+  description: "The act of vomiting, being vomited upon, consuming vomit or otherwise including vomit in the sexual context of an RP."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryUncleanThemesPlay
+    fListImport: "Vomiting"

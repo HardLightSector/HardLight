@@ -1,0 +1,184 @@
+﻿- type: entity
+  parent: KinkCategoryBase
+  id: KinkCategoryBDSM
+  name: "BDSM"
+
+- type: entity
+  parent: KinkBase
+  id: KinkAftercare
+  name: "Aftercare"
+  description: "Comforting care and maintenance carried out between two characters after a particularly rigorous experience, such as after BDSM scenes or heavy / harsh exchanges. May consist of talking, cuddling, and various forms of pampering."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryBDSM
+    fListImport: "Aftercare"
+
+- type: entity
+  parent: KinkBase
+  id: KinkApparatuses
+  name: "Apparatuses"
+  description: "The use of complex objects with moving parts in order to bondage, immobilize or otherwise sexually gratify and / or incapacitate a character, in the sexual context of an RP."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryBDSM
+    fListImport: "Apparatuses"
+
+- type: entity
+  parent: KinkBase
+  id: KinkBlindfolds
+  name: "Blindfolds"
+  description: "The use of blindfolds or other objects to obscure the vision of at least one character in a sexual context."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryBDSM
+    fListImport: "Blindfolds"
+
+- type: entity
+  parent: KinkBase
+  id: KinkCaging
+  name: "Caging"
+  description: "The act of placing another character in a cage, or being placed in a cage, or other confining, device."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryBDSM
+    fListImport: "Caging"
+
+- type: entity
+  parent: KinkBase
+  id: KinkCoiling
+  name: "Coiling"
+  description: "The act of becoming entwined, held or hugged in the grasp of a long tail, coils of a snake, serpent, or other long-bodied creature."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryBDSM
+    fListImport: "Coiling"
+
+- type: entity
+  parent: KinkBase
+  id: KinkCrying
+  name: "Crying"
+  description: "The involvement and presence of someone crying or making a character do so, usually as the result of pain or actions carried out against them (which may or may not stimulate arousal from the inflictor)."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryBDSM
+    fListImport: "Crying"
+
+- type: entity
+  parent: KinkBase
+  id: KinkElectricToys
+  name: "Electric Toys"
+  description: "The use of sex toys that carry an electrical current; sometimes painful."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryBDSM
+    fListImport: "Electric Toys"
+
+- type: entity
+  parent: KinkBase
+  id: KinkFloggingWhipping
+  name: "Flogging / Whipping"
+  description: "The use of toys being employed against another character, particularly referring to contact play involving whips of any type, riding crops, paddles, or flogs."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryBDSM
+    fListImport: "Flogging / Whipping"
+
+- type: entity
+  parent: KinkBase
+  id: KinkGags
+  name: "Gags"
+  description: "The act of placing and lodging an object in another character's mouth to force them to breathe through their nose, as well as creating the inability to speak, or receiving such actions."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryBDSM
+    fListImport: "Gags"
+
+- type: entity
+  parent: KinkBase
+  id: KinkHandCuffs
+  name: "Hand Cuffs"
+  description: "The use of hand cuffs to partially immobilize a character during an RP, or to restrain a character to an object."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryBDSM
+    fListImport: "Hand Cuffs"
+
+- type: entity
+  parent: KinkBase
+  id: KinkHeavyExtremeBondage
+  name: "Heavy / Extreme Bondage"
+  description: "The use of bondage that is extreme in either the position in which it causes the bound character to be in, the duration for which the character will be in bondage, the level of discomfort caused by the bondage or the amount of immobilization that will occur due to the bondage."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryBDSM
+    fListImport: "Heavy / Extreme Bondage"
+
+- type: entity
+  parent: KinkBase
+  id: KinkImmobilizationBondage
+  name: "Immobilization (Bondage)"
+  description: "Engaging in an RP in which at least one character will be physically immobilized, typical by heavy bondage or mummification from BDSM, but may be from other methods like entrapment or suppression."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryBDSM
+    fListImport: "Immobilization (Bondage)"
+
+- type: entity
+  parent: KinkBase
+  id: KinkLeash&Collar
+  name: "Leash & Collar"
+  description: "Engaging in an RP in which a character will be adorned with a collar that will be attached to a leash."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryBDSM
+    fListImport: "Leash & Collar"
+
+- type: entity
+  parent: KinkBase
+  id: KinkLightMediumBondage
+  name: "Light / Medium Bondage"
+  description: "The use of bondage that is mild or moderate in either the position in which it causes the bound character to be in, the duration for which the character will be in bondage, the level of discomfort caused by the bondage or the amount of immobilization that will occur due to the bondage."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryBDSM
+    fListImport: "Light / Medium Bondage"
+
+- type: entity
+  parent: KinkBase
+  id: KinkOrgasmControlDenial
+  name: "Orgasm Control / Denial"
+  description: "Refers to the dominant(s) being in control of when the submissive(s) achieve(s) orgasm, either by physical means or by command; typically involves domination and / or excessive teasing and edging; orgasm may be completely denied"
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryBDSM
+    fListImport: "Orgasm Control / Denial"
+
+- type: entity
+  parent: KinkBase
+  id: KinkPleasureControlDenial
+  name: "Pleasure Control / Denial"
+  description: "Engaging in an RP in which one character is in a position to administer or withhold any form of physical, sexual or psychological pleasure to another character; pleasure may be completely denied."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryBDSM
+    fListImport: "Pleasure Control / Denial"
+
+- type: entity
+  parent: KinkBase
+  id: KinkSensoryDeprivation
+  name: "Sensory Deprivation"
+  description: "Expresses an interest in the deliberate reduction or removal of stimuli from one or more of the senses. May include devices such as blindfolds, hoods, or earmuffs to cut off sight and hearing, or more complex devices that can cut off a character’s sense of smell, touch, taste, heat sense, or gravity."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryBDSM
+    fListImport: "Sensory Deprivation"
+
+- type: entity
+  parent: KinkBase
+  id: KinkSuspensionPlay
+  name: "Suspension Play"
+  description: "Engaging in an RP that includes suspension apparatuses and / or rope toys, which typically will suspend one character above the bed or floor; often uncomfortable."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryBDSM
+    fListImport: "Suspension Play"

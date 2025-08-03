@@ -1,0 +1,324 @@
+﻿- type: entity
+  parent: KinkCategoryBase
+  id: KinkCategoryDomSubPsychePlay
+  name: "Dom / Sub & Psyche Play"
+
+- type: entity
+  parent: KinkBase
+  id: KinkBegging
+  name: "Begging"
+  description: "The self-abasing act of pleading, as a form of submission, being incorporated into an RP."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryDomSubPsychePlay
+    fListImport: "Begging"
+
+- type: entity
+  parent: KinkBase
+  id: KinkChastity
+  name: "Chastity"
+  description: "Sexual abstinence, either willing or forced; this can include someone simply abstaining from sexual activity, or the wearing of a device that prevents it."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryDomSubPsychePlay
+    fListImport: "Chastity"
+
+- type: entity
+  parent: KinkBase
+  id: KinkCoercionBlackmail
+  name: "Coercion / Blackmail"
+  description: "Refers to the inclusion of Coercion and / or Blackmail in the context of the story arc of an RP, often in the form of a semi-consensual means of receiving goods, services, or sex from a partner."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryDomSubPsychePlay
+    fListImport: "Coercion / Blackmail"
+
+- type: entity
+  parent: KinkBase
+  id: KinkCorruption
+  name: "Corruption"
+  description: "Refers to the loss of morality, characterized by a character starting pure and then becoming depraved in some way, typically ending with them being evil, slutty, or some combination of the two."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryDomSubPsychePlay
+    fListImport: "Corruption"
+
+- type: entity
+  parent: KinkBase
+  id: KinkDegradation
+  name: "Degradation"
+  description: "A situation where one character will be purposefully degraded, usually as a means of lowering their self worth; typically in the context of guilt or BDSM."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryDomSubPsychePlay
+    fListImport: "Degradation"
+
+- type: entity
+  parent: KinkBase
+  id: KinkDirtyTalking
+  name: "Dirty Talking"
+  description: "The act of speaking in a typically explicit manner to provoke sexual stimulation from a participant, sometimes one's self; often in the context of seduction or foreplay."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryDomSubPsychePlay
+    fListImport: "Dirty Talking"
+
+- type: entity
+  parent: KinkBase
+  id: KinkDisciplineReinforcement
+  name: "Discipline / Reinforcement"
+  description: "The use of reinforcement (rewards and / or punishments) in order to train a submissive to obey the various commands of a master."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryDomSubPsychePlay
+    fListImport: "Discipline / Reinforcement"
+
+- type: entity
+  parent: KinkBase
+  id: KinkExtremeHumiliation
+  name: "Extreme Humiliation"
+  description: "Engaging in an RP in which one character will purposefully be humiliated to the point (or attempted point) of intense, mental anguish and total loss of self-worth through sexual interaction; typically implies exceptional or devastating, psychological damage."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryDomSubPsychePlay
+    fListImport: "Extreme Humiliation"
+
+- type: entity
+  parent: KinkBase
+  id: KinkFear
+  name: "Fear"
+  description: "Refers to the incorporation of one or more character(s) having reason to be fearful during the sexual (or even nonsexual) aspects of an RP."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryDomSubPsychePlay
+    fListImport: "Fear"
+
+- type: entity
+  parent: KinkBase
+  id: KinkFemdom
+  name: "Femdom"
+  description: "Play in which a character of female gender takes the role of dominant, maintaining control and authority; being considered the focal point of the dynamic. It is defined as an exchange founded on her needs, pleasures, and desires, with the submissive’s purpose to provide service to her first and foremost."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryDomSubPsychePlay
+    fListImport: "Femdom"
+
+- type: entity
+  parent: KinkBase
+  id: KinkFeminization
+  name: "Feminization"
+  description: "The act of changing the appearance of a male identifying character through traditionally realistic means to have them appear more feminine / female. Typically implies the use of makeup, feminine clothes / accessories, as well as possibly adopting more feminine mannerisms and behaviors."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryDomSubPsychePlay
+    fListImport: "Feminization"
+
+- type: entity
+  parent: KinkBase
+  id: KinkForcedIncest
+  name: "Forced Incest"
+  description: "Engaging in an RP in which a character is forced to have sex with a character who is related to them, either by blood or marriage."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryDomSubPsychePlay
+    fListImport: "Forced Incest"
+
+- type: entity
+  parent: KinkBase
+  id: KinkForcedNudity
+  name: "Forced Nudity"
+  description: "The act of either forcing a character to be nude or being forced to be nude by another character; typically used in public situations."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryDomSubPsychePlay
+    fListImport: "Forced Nudity"
+
+- type: entity
+  parent: KinkBase
+  id: KinkForceFeeding
+  name: "Force Feeding"
+  description: "Engaging in an RP in which a character, typically bound or otherwise immobile, is forced to consume large, often impossible and unrealistic, amounts of food against their will, often resulting in inflation and / or weight gain."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryDomSubPsychePlay
+    fListImport: "Force Feeding"
+
+- type: entity
+  parent: KinkBase
+  id: KinkHumiliation
+  name: "Humiliation"
+  description: "Engaging in an RP in which one character will be embarrassed, typically extremely and / or frequently, in an attempt to elicit either a response of sexual gratification from the emotions correlating to humiliation, or merely as a form of psychological domination or punishment; typically a more intense form of degradation."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryDomSubPsychePlay
+    fListImport: "Humiliation"
+
+- type: entity
+  parent: KinkBase
+  id: KinkHypnotismMindControl
+  name: "Hypnotism / Mind Control"
+  description: "Engaging in an RP in which one character will mentally and / or supernaturally take control of another character's mind and / or body through psychic means or hypnotic means, sometimes through the use of supernatural or magical powers."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryDomSubPsychePlay
+    fListImport: "Hypnotism / Mind Control"
+
+- type: entity
+  parent: KinkBase
+  id: KinkImpotence
+  name: "Impotence"
+  description: "Expresses an interest in characters that are unable to achieve an erection (or arousal) without, or even with, help."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryDomSubPsychePlay
+    fListImport: "Impotence"
+
+- type: entity
+  parent: KinkBase
+  id: KinkLimaSyndrome
+  name: "Lima Syndrome"
+  description: "The act of a character that is an abductor developing sympathy for their captives, trusting and / or displaying affection for their captive / victim."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryDomSubPsychePlay
+    fListImport: "Lima Syndrome"
+
+- type: entity
+  parent: KinkBase
+  id: KinkMasterPet
+  name: "Master / Pet"
+  description: "Engaging in an RP in which a domination / submission relationship is played between at least two characters, and in which the bottom character takes on the role of a pet; typically a training-based scenario with positive reinforcement over negative reinforcement, as well as the inclusion of affection."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryDomSubPsychePlay
+    fListImport: "Master / Pet"
+
+- type: entity
+  parent: KinkBase
+  id: KinkMasterSlave
+  name: "Master / Slave"
+  description: "Engaging in an RP in which a domination / submission relationship is played between at least two characters, and in which the bottom character takes on the role of a slave; typically requires the slave to accept any and all commands, often involves non-sexual forms of abuse and uses negative reinforcement."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryDomSubPsychePlay
+    fListImport: "Master / Slave"
+
+- type: entity
+  parent: KinkBase
+  id: KinkMentalTorture
+  name: "Mental Torture"
+  description: "An expressed interest in scenes that involve torture that is psychological in nature, typically involving themes of fear, paranoia, insanity, mental abuse, and so on."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryDomSubPsychePlay
+    fListImport: "Mental Torture"
+
+- type: entity
+  parent: KinkBase
+  id: KinkObjectification
+  name: "Objectification"
+  description: "The act of either being treated or treating another character as a specific and set object, often articles of furniture, or bestowing dehumanizing tasks to a character in order to imbue a character with the traits of an object."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryDomSubPsychePlay
+    fListImport: "Objectification"
+
+- type: entity
+  parent: KinkBase
+  id: KinkOrientationPlay
+  name: "Orientation Play"
+  description: "Expresses an interest in RP's in which one character's sexual orientation will be a focal point of the scene, typically in correlation with the discovery, exploration, or coercion of bisexuality / homosexuality in the sexuality of a character."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryDomSubPsychePlay
+    fListImport: "Orientation Play"
+
+- type: entity
+  parent: KinkBase
+  id: KinkPhysicalRestraints
+  name: "Physical Restraints"
+  description: "The act of giving or receiving commands, typically verbal, that limit the way in which another character is permitted to physically interact with another character."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryDomSubPsychePlay
+    fListImport: "Physical Restraints"
+
+- type: entity
+  parent: KinkBase
+  id: KinkPossessivenessJealousy
+  name: "Possessiveness / Jealousy"
+  description: "Describes a character who is or becomes jealous or even possessive of their partner(s). Such a character may be (overly) demanding and overbearing in a relationship, growing aggressive towards those that may encroach on said partner."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryDomSubPsychePlay
+    fListImport: "Possessiveness / Jealousy"
+
+- type: entity
+  parent: KinkBase
+  id: KinkPowerbottoming
+  name: "Powerbottoming"
+  description: "An expressed interest in a sexual exchange where the character who is receiving penetration is in control, dominant, taking initiative, or directing the interaction."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryDomSubPsychePlay
+    fListImport: "Powerbottoming"
+
+- type: entity
+  parent: KinkBase
+  id: KinkPublicHumiliation
+  name: "Public Humiliation"
+  description: "One or more characters engaging in explicit sexual activity, and / or embarrassing situations, in a public setting for the purposes of humiliating one or more characters."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryDomSubPsychePlay
+    fListImport: "Public Humiliation"
+
+- type: entity
+  parent: KinkBase
+  id: KinkSexualRestraints
+  name: "Sexual Restraints"
+  description: "Refers to a dominant giving a command for how the submissive may act in regard to sexual acts or within a sexual situation; often a decree of chastity or prohibition from any form of sexual contact."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryDomSubPsychePlay
+    fListImport: "Sexual Restraints"
+
+- type: entity
+  parent: KinkBase
+  id: KinkSpeechRestrictions
+  name: "Speech Restrictions"
+  description: "The act of giving or receiving commands, typically verbal, that limit the way in which another character is permitted to speak or otherwise make noise from one's mouth; typically used in a BDSM context to constrain the submissive to begging, animal noises or silence."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryDomSubPsychePlay
+    fListImport: "Speech Restrictions"
+
+- type: entity
+  parent: KinkBase
+  id: KinkStockholmSyndrome
+  name: "Stockholm Syndrome"
+  description: "The act of a character trusting or displaying affection towards those responsible for kidnapping / taking them as a hostage, may or may not involve actual kidnapping vs. a domestic abuse relationship."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryDomSubPsychePlay
+    fListImport: "Stockholm Syndrome"
+
+- type: entity
+  parent: KinkBase
+  id: KinkUppity
+  name: "Uppity"
+  description: "Expresses an interest in engaging in an RP in which the submissive and / or bottom character is combative and disobedient in any number of ways."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryDomSubPsychePlay
+    fListImport: "Uppity"
+
+- type: entity
+  parent: KinkBase
+  id: KinkVerbalAbuse
+  name: "Verbal Abuse"
+  description: "The act of verbally accosting or being verbally accosted with derogatory terms pertaining to sex, or in the effort to demean, degrade or otherwise humiliate another character, or occasionally to elicit sexual stimulation from abuse."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryDomSubPsychePlay
+    fListImport: "Verbal Abuse"

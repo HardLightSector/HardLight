@@ -13,10 +13,12 @@ using NpgsqlTypes;
 
 namespace Content.Server.Database
 {
-    public abstract class ServerDbContext : DbContext
+    public abstract partial class ServerDbContext : DbContext
     {
         protected ServerDbContext(DbContextOptions options) : base(options)
         {
+            RegisterDataModel<StarLightModel>();
+            RegisterDataModel<AfterlightModel>();
         }
 
         public DbSet<Preference> Preference { get; set; } = null!;

@@ -1,0 +1,543 @@
+﻿- type: entity
+  parent: KinkCategoryBase
+  id: KinkCategorySpeciesPreferences
+  name: "Species Preferences"
+
+- type: entity
+  parent: KinkBase
+  id: KinkAmphibians
+  name: "Amphibians"
+  description: "Salamanders, Frogs, Toads, Newts, etc."
+  components:
+  - type: KinkDefinition
+    category: KinkCategorySpeciesPreferences
+    fListImport: "Amphibians"
+
+- type: entity
+  parent: KinkBase
+  id: KinkAngels
+  name: "Angels"
+  description: "Angels or other celestials, typically magical."
+  components:
+  - type: KinkDefinition
+    category: KinkCategorySpeciesPreferences
+    fListImport: "Angels"
+
+- type: entity
+  parent: KinkBase
+  id: KinkAvians
+  name: "Avians"
+  description: "Birds, gryphons, phoenixes, rocs, chimeras etc."
+  components:
+  - type: KinkDefinition
+    category: KinkCategorySpeciesPreferences
+    fListImport: "Avians"
+
+- type: entity
+  parent: KinkBase
+  id: KinkBats
+  name: "Bats"
+  description: "Bats and other true-flight mammals."
+  components:
+  - type: KinkDefinition
+    category: KinkCategorySpeciesPreferences
+    fListImport: "Bats"
+
+- type: entity
+  parent: KinkBase
+  id: KinkBovines
+  name: "Bovines"
+  description: "Bulls, cows, buffalo etc."
+  components:
+  - type: KinkDefinition
+    category: KinkCategorySpeciesPreferences
+    fListImport: "Bovines"
+
+- type: entity
+  parent: KinkBase
+  id: KinkCanines
+  name: "Canines"
+  description: "Domesticated dogs, wolves, dingos, coyotes, jackals etc."
+  components:
+  - type: KinkDefinition
+    category: KinkCategorySpeciesPreferences
+    fListImport: "Canines"
+
+- type: entity
+  parent: KinkBase
+  id: KinkCaprinae
+  name: "Caprinae"
+  description: "Sheep, goats, etc."
+  components:
+  - type: KinkDefinition
+    category: KinkCategorySpeciesPreferences
+    fListImport: "Caprinae"
+
+- type: entity
+  parent: KinkBase
+  id: KinkCervines
+  name: "Cervines"
+  description: "Deer, elk, moose etc."
+  components:
+  - type: KinkDefinition
+    category: KinkCategorySpeciesPreferences
+    fListImport: "Cervines"
+
+- type: entity
+  parent: KinkBase
+  id: KinkDemons
+  name: "Demons"
+  description: "Demons or devils, typically magical. May also include other, fantastical creatures, such as but not limited to Incubi, Succubi, and fiends."
+  components:
+  - type: KinkDefinition
+    category: KinkCategorySpeciesPreferences
+    fListImport: "Demons"
+
+- type: entity
+  parent: KinkBase
+  id: KinkDigimon
+  name: "Digimon"
+  description: "Characters from the manga and television show \"Digimon\","
+  components:
+  - type: KinkDefinition
+    category: KinkCategorySpeciesPreferences
+    fListImport: "Digimon"
+
+- type: entity
+  parent: KinkBase
+  id: KinkDinosaurs
+  name: "Dinosaurs"
+  description: "Prehistoric species such as tyrannosaurus rex, triceratops, raptors, apatosaurus, etc."
+  components:
+  - type: KinkDefinition
+    category: KinkCategorySpeciesPreferences
+    fListImport: "Dinosaurs"
+
+- type: entity
+  parent: KinkBase
+  id: KinkDivinities
+  name: "Divinities"
+  description: "Gods, goddesses, demi-gods and demi-goddesses of all sorts, ranging from those barely more powerful than a mortal to the nearly omnipotent."
+  components:
+  - type: KinkDefinition
+    category: KinkCategorySpeciesPreferences
+    fListImport: "Divinities"
+
+- type: entity
+  parent: KinkBase
+  id: KinkDragons
+  name: "Dragons"
+  description: "Dragons, drakes, wyverns, etc."
+  components:
+  - type: KinkDefinition
+    category: KinkCategorySpeciesPreferences
+    fListImport: "Dragons"
+
+- type: entity
+  parent: KinkBase
+  id: KinkDriders
+  name: "Driders"
+  description: "Describes a kind of species that is a combination of human and spider. Usually, their anatomy consists of a (mostly) humanoid upper body seated on top of the body of a spider. It may refer to hybrids with mostly humanoid or arachnid features as well."
+  components:
+  - type: KinkDefinition
+    category: KinkCategorySpeciesPreferences
+    fListImport: "Driders"
+
+- type: entity
+  parent: KinkBase
+  id: KinkElves
+  name: "Elves"
+  description: "Humanoid individuals characterized by long pointed ears and typically containing fantasy elements."
+  components:
+  - type: KinkDefinition
+    category: KinkCategorySpeciesPreferences
+    fListImport: "Elves"
+
+- type: entity
+  parent: KinkBase
+  id: KinkEquines
+  name: "Equines"
+  description: "Horses, donkeys, mules, zebra, centauri etc."
+  components:
+  - type: KinkDefinition
+    category: KinkCategorySpeciesPreferences
+    fListImport: "Equines"
+
+- type: entity
+  parent: KinkBase
+  id: KinkExoticSpecies
+  name: "Exotic Species"
+  description: "Expresses an interest for uncommon, hybrid or otherwise exotic choices in species."
+  components:
+  - type: KinkDefinition
+    category: KinkCategorySpeciesPreferences
+    fListImport: "Exotic Species"
+
+- type: entity
+  parent: KinkBase
+  id: KinkFae
+  name: "Fae"
+  description: "Beings of the mythical and supernatural variety, generally consisting of things such as fairies, imps, spirits, elementals, etc."
+  components:
+  - type: KinkDefinition
+    category: KinkCategorySpeciesPreferences
+    fListImport: "Fae"
+
+- type: entity
+  parent: KinkBase
+  id: KinkFelines
+  name: "Felines"
+  description: "Domesticated cats, jaguars, lions, tigers, cheetahs etc."
+  components:
+  - type: KinkDefinition
+    category: KinkCategorySpeciesPreferences
+    fListImport: "Felines"
+
+- type: entity
+  parent: KinkBase
+  id: KinkFishSharks
+  name: "Fish / Sharks"
+  description: "Gill-bearing aquatic animals such Great Whites, Tiger sharks, Whale sharks, and various types of fish."
+  components:
+  - type: KinkDefinition
+    category: KinkCategorySpeciesPreferences
+    fListImport: "Fish / Sharks"
+
+- type: entity
+  parent: KinkBase
+  id: KinkHumanoids
+  name: "Humanoids"
+  description: "Characters that have a humanoid shape but are not human. Examples may consist of various races such as satyrs, gnomes, dwarves, halflings, tieflings, etc."
+  components:
+  - type: KinkDefinition
+    category: KinkCategorySpeciesPreferences
+    fListImport: "Humanoids"
+
+- type: entity
+  parent: KinkBase
+  id: KinkHumans
+  name: "Humans"
+  description: "Characters that are purely human, generally realistic, and generally contain no fantasy or supernatural elements (but not necessarily)."
+  components:
+  - type: KinkDefinition
+    category: KinkCategorySpeciesPreferences
+    fListImport: "Humans"
+
+- type: entity
+  parent: KinkBase
+  id: KinkHyaenidae
+  name: "Hyaenidae"
+  description: "Hyenas!"
+  components:
+  - type: KinkDefinition
+    category: KinkCategorySpeciesPreferences
+    fListImport: "Hyaenidae"
+
+- type: entity
+  parent: KinkBase
+  id: KinkInsectsArachnids
+  name: "Insects / Arachnids"
+  description: "Bees, wasps, spiders, scorpions, ants etc."
+  components:
+  - type: KinkDefinition
+    category: KinkCategorySpeciesPreferences
+    fListImport: "Insects / Arachnids"
+
+- type: entity
+  parent: KinkBase
+  id: KinkKemonomimi
+  name: "Kemonomimi"
+  description: "Characters with animal ears, a tail, or other animal characteristics on an otherwise human body."
+  components:
+  - type: KinkDefinition
+    category: KinkCategorySpeciesPreferences
+    fListImport: "Kemonomimi"
+
+- type: entity
+  parent: KinkBase
+  id: KinkLamiaNaga
+  name: "Lamia / Naga"
+  description: "Characters with lower bodies (typically serpentine) that do not possess legs, with their lower extremities being more akin to a snake, eel, worm, fish, or similar."
+  components:
+  - type: KinkDefinition
+    category: KinkCategorySpeciesPreferences
+    fListImport: "Lamia / Naga"
+
+- type: entity
+  parent: KinkBase
+  id: KinkLapines
+  name: "Lapines"
+  description: "Bunnies, rabbits, hares etc."
+  components:
+  - type: KinkDefinition
+    category: KinkCategorySpeciesPreferences
+    fListImport: "Lapines"
+
+- type: entity
+  parent: KinkBase
+  id: KinkLycanthropes
+  name: "Lycanthropes"
+  description: "A character with the ability and/or condition to transform into an animal or particular non-human beast (generally an anthropomorphic animal or animal-like creature). Examples of such would be werewolves, werecats, and all forms of general werebeasts."
+  components:
+  - type: KinkDefinition
+    category: KinkCategorySpeciesPreferences
+    fListImport: "Lycanthropes"
+
+- type: entity
+  parent: KinkBase
+  id: KinkMammals
+  name: "Mammals"
+  description: "Any character belonging to the Mammalia class."
+  components:
+  - type: KinkDefinition
+    category: KinkCategorySpeciesPreferences
+    fListImport: "Mammals"
+
+- type: entity
+  parent: KinkBase
+  id: KinkMarineMammals
+  name: "Marine Mammals"
+  description: "Whales, dolphins, etc."
+  components:
+  - type: KinkDefinition
+    category: KinkCategorySpeciesPreferences
+    fListImport: "Marine Mammals"
+
+- type: entity
+  parent: KinkBase
+  id: KinkMarsupials
+  name: "Marsupials"
+  description: "Kangaroos, koala, possums, wombats etc."
+  components:
+  - type: KinkDefinition
+    category: KinkCategorySpeciesPreferences
+    fListImport: "Marsupials"
+
+- type: entity
+  parent: KinkBase
+  id: KinkMephitis
+  name: "Mephitis"
+  description: "Skunks, basically!"
+  components:
+  - type: KinkDefinition
+    category: KinkCategorySpeciesPreferences
+    fListImport: "Mephitis"
+
+- type: entity
+  parent: KinkBase
+  id: KinkMollusca
+  name: "Mollusca"
+  description: "Slugs, snails, oysters, squids, octopuses, etc."
+  components:
+  - type: KinkDefinition
+    category: KinkCategorySpeciesPreferences
+    fListImport: "Mollusca"
+
+- type: entity
+  parent: KinkBase
+  id: KinkMonkeysPrimates
+  name: "Monkeys / Primates"
+  description: "Apes, monkeys, chimps, gorillas, etc."
+  components:
+  - type: KinkDefinition
+    category: KinkCategorySpeciesPreferences
+    fListImport: "Monkeys / Primates"
+
+- type: entity
+  parent: KinkBase
+  id: KinkMonsters
+  name: "Monsters"
+  description: "Various types of monsters and aesthetically challenging characters."
+  components:
+  - type: KinkDefinition
+    category: KinkCategorySpeciesPreferences
+    fListImport: "Monsters"
+
+- type: entity
+  parent: KinkBase
+  id: KinkMustelidae
+  name: "Mustelidae"
+  description: "Minks, ferrets, weasels, stoats, otters, wolverines, martens etc."
+  components:
+  - type: KinkDefinition
+    category: KinkCategorySpeciesPreferences
+    fListImport: "Mustelidae"
+
+- type: entity
+  parent: KinkBase
+  id: KinkPonies
+  name: "Ponies"
+  components:
+  - type: KinkDefinition
+    category: KinkCategorySpeciesPreferences
+    fListImport: "My Little Pony"
+
+- type: entity
+  parent: KinkBase
+  id: KinkOrcs
+  name: "Orcs"
+  description: "A race of humanlike creatures, normally larger than humans and green skinned. They are typically characterized as brutish and aggressive (but not necessarily so)."
+  components:
+  - type: KinkDefinition
+    category: KinkCategorySpeciesPreferences
+    fListImport: "Orcs"
+
+- type: entity
+  parent: KinkBase
+  id: KinkParasites
+  name: "Parasites"
+  description: "Expresses an interest in characters being infested with a parasitic organism or hosting one, or involving parasitic characters in general."
+  components:
+  - type: KinkDefinition
+    category: KinkCategorySpeciesPreferences
+    fListImport: "Parasites"
+
+- type: entity
+  parent: KinkBase
+  id: KinkPlants
+  name: "Plants"
+  description: "Any form of plant life, vegetation or character composed partially, or fully, there-of."
+  components:
+  - type: KinkDefinition
+    category: KinkCategorySpeciesPreferences
+    fListImport: "Plants"
+
+- type: entity
+  parent: KinkBase
+  id: KinkPokémon
+  name: "Pokémon"
+  description: "Characters from the manga and television show \"Pokemon\"."
+  components:
+  - type: KinkDefinition
+    category: KinkCategorySpeciesPreferences
+    fListImport: "Pokémon"
+
+- type: entity
+  parent: KinkBase
+  id: KinkPredatorSpecies
+  name: "Predator Species"
+  description: "Expresses a preference for characters which are often perceived to be predatorial, e.g. wolves, hyenas, tigers, bears, dragons etc."
+  components:
+  - type: KinkDefinition
+    category: KinkCategorySpeciesPreferences
+    fListImport: "Predator Species"
+
+- type: entity
+  parent: KinkBase
+  id: KinkPreySpecies
+  name: "Prey Species"
+  description: "Expresses a preference for characters which are often perceived to be meek or preyed upon, e.g. mice, deer, raccoons, bunnies etc."
+  components:
+  - type: KinkDefinition
+    category: KinkCategorySpeciesPreferences
+    fListImport: "Prey Species"
+
+- type: entity
+  parent: KinkBase
+  id: KinkProcyonidae
+  name: "Procyonidae"
+  description: "Raccoons, coatimundi, longtails etc."
+  components:
+  - type: KinkDefinition
+    category: KinkCategorySpeciesPreferences
+    fListImport: "Procyonidae"
+
+- type: entity
+  parent: KinkBase
+  id: KinkReptiles
+  name: "Reptiles"
+  description: "Chameleons, anoles, alligators, snakes, crocodiles, lizards, etc."
+  components:
+  - type: KinkDefinition
+    category: KinkCategorySpeciesPreferences
+    fListImport: "Reptiles"
+
+- type: entity
+  parent: KinkBase
+  id: KinkRobotsCyborgsAndroids
+  name: "Robots, Cyborgs, Androids"
+  description: "Manufactured or partially manufactured life forms."
+  components:
+  - type: KinkDefinition
+    category: KinkCategorySpeciesPreferences
+    fListImport: "Robots, Cyborgs, Androids"
+
+- type: entity
+  parent: KinkBase
+  id: KinkRodentsMurines
+  name: "Rodents / Murines"
+  description: "Rats, mice, chipmunks, squirrels, etc."
+  components:
+  - type: KinkDefinition
+    category: KinkCategorySpeciesPreferences
+    fListImport: "Rodents / Murines"
+
+- type: entity
+  parent: KinkBase
+  id: KinkSentientCocks
+  name: "Sentient Cocks"
+  description: "Expresses interest in cocks that are sentient. It might have the ability to twist and coil, move by itself, the external urethral orifice able to open and close at will, or be entirely stand alone without an attached \"host.\" May have a more serpent-like appearance."
+  components:
+  - type: KinkDefinition
+    category: KinkCategorySpeciesPreferences
+    fListImport: "Sentient Cocks"
+
+- type: entity
+  parent: KinkBase
+  id: KinkTaurs
+  name: "Taurs"
+  description: "Characters having an upper torso adjoining a lower quadrupedal body where the creature's head should normally appear. Includes centaurs, chakats, etc."
+  components:
+  - type: KinkDefinition
+    category: KinkCategorySpeciesPreferences
+    fListImport: "Taurs"
+
+- type: entity
+  parent: KinkBase
+  id: KinkUndead
+  name: "Undead"
+  description: "The undead. Zombies, and other undead creatures."
+  components:
+  - type: KinkDefinition
+    category: KinkCategorySpeciesPreferences
+    fListImport: "Undead"
+
+- type: entity
+  parent: KinkBase
+  id: KinkUrsines
+  name: "Ursines"
+  description: "Bears! Bears! Bears!"
+  components:
+  - type: KinkDefinition
+    category: KinkCategorySpeciesPreferences
+    fListImport: "Ursines"
+
+- type: entity
+  parent: KinkBase
+  id: KinkVampires
+  name: "Vampires"
+  description: "Vampiric characters, not necessarily humanoid."
+  components:
+  - type: KinkDefinition
+    category: KinkCategorySpeciesPreferences
+    fListImport: "Vampires"
+
+- type: entity
+  parent: KinkBase
+  id: KinkVulpines
+  name: "Vulpines"
+  description: "Foxes, fennecs, kitsune etc."
+  components:
+  - type: KinkDefinition
+    category: KinkCategorySpeciesPreferences
+    fListImport: "Vulpines"
+
+- type: entity
+  parent: KinkBase
+  id: KinkXenoAlien
+  name: "Xeno / Alien"
+  description: "Extraterrestrial or otherwise alien / abnormal characters."
+  components:
+  - type: KinkDefinition
+    category: KinkCategorySpeciesPreferences
+    fListImport: "Xeno / Alien"

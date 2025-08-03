@@ -1,5 +1,7 @@
 using Content.Server._Common.Consent;
 using Content.Server._NF.Auth;
+using Content.Server._Afterlight.Kinks;
+using Content.Server._NullLink.Core;
 using Content.Server.Administration;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
@@ -12,6 +14,7 @@ using Content.Server.Discord;
 using Content.Server.Discord.WebhookMessages;
 using Content.Server.EUI;
 using Content.Server.GhostKick;
+using Content.Server.Holiday;
 using Content.Server.Info;
 using Content.Server.Mapping;
 using Content.Server.Maps;
@@ -23,6 +26,8 @@ using Content.Server.Players.RateLimiting;
 using Content.Server.Preferences.Managers;
 using Content.Server.ServerInfo;
 using Content.Server.ServerUpdates;
+using Content.Server.Starlight;
+using Content.Server.Starlight.TextToSpeech;
 using Content.Server.Voting.Managers;
 using Content.Server.Worldgen.Tools;
 using Content.Shared.Administration.Logs;
@@ -31,6 +36,7 @@ using Content.Shared.Chat;
 using Content.Shared.Kitchen;
 using Content.Shared.Players.PlayTimeTracking;
 using Content.Shared.Players.RateLimiting;
+using Content.Shared.Starlight;
 using Content.Server._FS.DiscordAuth; // Floofstation
 using Content.Server.Shuttles;
 
@@ -57,6 +63,9 @@ namespace Content.Server.IoC
             IoCManager.Register<IVoteManager, VoteManager>();
             IoCManager.Register<IPlayerLocator, PlayerLocator>();
             IoCManager.Register<IAfkManager, AfkManager>();
+
+            IoCManager.Register<HolidaySystem>();
+
             IoCManager.Register<IGameMapManager, GameMapManager>();
             IoCManager.Register<RulesManager, RulesManager>();
             IoCManager.Register<IBanManager, BanManager>();
@@ -85,6 +94,19 @@ namespace Content.Server.IoC
             IoCManager.Register<MiniAuthManager>(); //Frontier
             IoCManager.Register<DiscordAuthManager>(); //Floofstation
             IoCManager.Register<ServerIdentityService>();
+
+            IoCManager.Register<DiscordLink>();
+            IoCManager.Register<DiscordChatLink>();
+
+            // 🌟Starlight🌟
+            IoCManager.Register<ISharedPlayersRoleManager, PlayerRolesManager>();
+            IoCManager.Register<IPlayerRolesManager, PlayerRolesManager>();
+            IoCManager.Register<ITTSManager, TTSManager>();
+            IoCManager.Register<IActorRouter, ActorRouter>(); // nulllink
+
+            // Afterlight
+            IoCManager.Register<KinkManager>();
+            // Afterlight
         }
     }
 }

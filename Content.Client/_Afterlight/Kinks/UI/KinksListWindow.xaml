@@ -1,0 +1,23 @@
+﻿<controls:KinksListWindow
+    xmlns="https://spacestation14.io"
+    xmlns:controls="clr-namespace:Content.Client._Afterlight.Kinks.UI"
+    MinSize="1240 600">
+    <BoxContainer Orientation="Vertical">
+        <BoxContainer Orientation="Vertical">
+            <LineEdit Name="SearchEdit" Access="Public" PlaceHolder="Search..."
+                      HorizontalExpand="True" />
+            <BoxContainer Orientation="Horizontal" Margin="0 0 0 10">
+                <Button Name="CompareWithYourselfButton" Access="Public"
+                        Text="Compare with yourself" ToggleMode="True"
+                        StyleClasses="OpenBoth" />
+                <Button Name="OnlyShowMatchingButton" Access="Public"
+                        Text="Only show matching kinks" ToggleMode="True"
+                        StyleClasses="OpenBoth" />
+            </BoxContainer>
+        </BoxContainer>
+        <ScrollContainer HScrollEnabled="True" VScrollEnabled="True"
+                         HorizontalExpand="True" VerticalExpand="True">
+            <BoxContainer Name="Columns" Access="Public" Orientation="Horizontal" />
+        </ScrollContainer>
+    </BoxContainer>
+</controls:KinksListWindow>

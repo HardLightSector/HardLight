@@ -1,0 +1,17 @@
+﻿{
+  "version": 1,
+  "license": "CC-BY-4.0",
+  "copyright": "Made by DrSmugleaf",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "black"
+    },
+    {
+      "name": "white"
+    }
+  ]
+}

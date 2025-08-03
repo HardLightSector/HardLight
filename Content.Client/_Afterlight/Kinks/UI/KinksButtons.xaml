@@ -1,0 +1,14 @@
+﻿<controls:KinksButtons
+    xmlns="https://spacestation14.io"
+    xmlns:controls="clr-namespace:Content.Client._Afterlight.Kinks.UI">
+    <BoxContainer Orientation="Horizontal">
+        <Button Name="FavouriteButton" Access="Public" Text="{Loc 'al-kinks-mark-fave'}"
+            StyleClasses="OpenRight" Mode="Press" ToggleMode="True" />
+        <Button Name="YesButton" Access="Public" Text="{Loc 'al-kinks-mark-yes'}"
+            StyleClasses="OpenBoth" Mode="Press" ToggleMode="True" />
+        <Button Name="AskButton" Access="Public" Text="{Loc 'al-kinks-mark-ask'}"
+            StyleClasses="OpenBoth" Mode="Press" ToggleMode="True" />
+        <Button Name="NoButton" Access="Public" Text="{Loc 'al-kinks-mark-no'}"
+            StyleClasses="OpenLeft" Mode="Press" ToggleMode="True" />
+    </BoxContainer>
+</controls:KinksButtons>

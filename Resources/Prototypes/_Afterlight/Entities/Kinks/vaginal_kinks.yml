@@ -1,0 +1,134 @@
+﻿- type: entity
+  parent: KinkCategoryBase
+  id: KinkCategoryVaginalSexPlay
+  name: "Vaginal Sex & Play"
+
+- type: entity
+  parent: KinkBase
+  id: KinkCervicalPenetration
+  name: "Cervical Penetration"
+  description: "Engaging in sex that involves the penetration, by the penis or by another object, of a cervix; typically connotes exceptionally rough sex or exceptionally large insertions."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryVaginalSexPlay
+    fListImport: "Cervical Penetration"
+
+- type: entity
+  parent: KinkBase
+  id: KinkClitPlay
+  name: "Clit Play"
+  description: "Play that is centered around the clitoris, applying stimulation and significant attention, usually as a form of achieving orgasm."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryVaginalSexPlay
+    fListImport: "Clit Play"
+
+- type: entity
+  parent: KinkBase
+  id: KinkFingeringVaginal
+  name: "Fingering (Vaginal)"
+  description: "The act of using one’s fingers to stimulate another’s vagina, or receiving such actions, in order to induce sexual pleasure, commonly resulting in orgasm."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryVaginalSexPlay
+    fListImport: "Fingering (Vaginal)"
+
+- type: entity
+  parent: KinkBase
+  id: KinkGapingVaginal
+  name: "Gaping (Vaginal)"
+  description: "Stretching the vagina during penetration, to the point that it stays open for a period of time."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryVaginalSexPlay
+    fListImport: "Gaping (Vaginal)"
+
+- type: entity
+  parent: KinkBase
+  id: KinkPussyWorship
+  name: "Pussy Worship"
+  description: "Gratuitous acknowledgment of one's partner's vagina, either verbal and / or physical, or receiving such actions; typically implies oral stimulation."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryVaginalSexPlay
+    fListImport: "Pussy Worship"
+
+- type: entity
+  parent: KinkBase
+  id: KinkQueefing
+  name: "Queefing"
+  description: "The sounds of air expulsion from the vagina via intercourse."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryVaginalSexPlay
+    fListImport: "Queefing"
+
+- type: entity
+  parent: KinkBase
+  id: KinkSquirting
+  name: "Squirting"
+  description: "The act of a vagina emitting a projectile fluid during orgasm."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryVaginalSexPlay
+    fListImport: "Squirting"
+
+- type: entity
+  parent: KinkBase
+  id: KinkTribadismScissoring
+  name: "Tribadism / Scissoring"
+  description: "Form of non-penetrative sex in which a person rubs their vagina against a same-sex partner's body for sexual stimulation, in most cases vaginal-to-vaginal contact through scissoring."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryVaginalSexPlay
+    fListImport: "Tribadism / Scissoring"
+
+- type: entity
+  parent: KinkBase
+  id: KinkVaginalFisting
+  name: "Vaginal Fisting"
+  description: "The act of placing one's hand(s) and / or arm(s) into a vagina, or receiving such actions."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryVaginalSexPlay
+    fListImport: "Vaginal Fisting"
+
+- type: entity
+  parent: KinkBase
+  id: KinkVaginalProlapse
+  name: "Vaginal Prolapse"
+  description: "Where insides of the vagina are pulled out by force (unnatural means, such as a cream, liquid or suction method, or internal massage) or naturally (either by a cock, dildo, or pushing)."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryVaginalSexPlay
+    fListImport: "Vaginal Prolapse"
+
+- type: entity
+  parent: KinkBase
+  id: KinkVaginalSexGiving
+  name: "Vaginal Sex (Giving)"
+  description: "The act of sexually penetrating a vagina."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryVaginalSexPlay
+    fListImport: "Vaginal Sex (Giving)"
+
+- type: entity
+  parent: KinkBase
+  id: KinkVaginalSexReceiving
+  name: "Vaginal Sex (Receiving)"
+  description: "The act of being sexually penetrated in the vagina."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryVaginalSexPlay
+    fListImport: "Vaginal Sex (Receiving)"
+
+- type: entity
+  parent: KinkBase
+  id: KinkVaginalVirginity
+  name: "Vaginal Virginity"
+  description: "Engaging in vaginal sex with a character who has never been vaginally penetrated before, or being vaginally penetrated while playing a character that has never been penetrated before."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryVaginalSexPlay
+    fListImport: "Vaginal Virginity"

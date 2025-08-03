@@ -1,0 +1,224 @@
+﻿- type: entity
+  parent: KinkCategoryBase
+  id: KinkCategoryGoreTortureDeath
+  name: "Gore / Torture / Death"
+
+- type: entity
+  parent: KinkBase
+  id: KinkAbrasions
+  name: "Abrasions"
+  description: "Engaging in a situation in which at least one character will receive abrasions, defined as scrapes that are at their mildest in severity capable of causing bleeding; typically administered via rough or coarse objects, such as sandpaper or cement."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryGoreTortureDeath
+    fListImport: "Abrasions"
+
+- type: entity
+  parent: KinkBase
+  id: KinkBloodplay
+  name: "Bloodplay"
+  description: "Pertains to the inclusion of blood or the retrieval of blood in any form in a sexual context, or engaging in acts which will draw blood."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryGoreTortureDeath
+    fListImport: "Bloodplay"
+
+- type: entity
+  parent: KinkBase
+  id: KinkBranding
+  name: "Branding"
+  description: "A situation in which at least one character will be branded, usually as a form of sadomasochism. Typically by means of applying intense heat in a specific pattern designed to visually show ownership."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryGoreTortureDeath
+    fListImport: "Branding"
+
+- type: entity
+  parent: KinkBase
+  id: KinkBreastNippleTorture
+  name: "Breast / Nipple Torture"
+  description: "A situation in which at least one character's breasts or nipples will be the subject of physical, non-sexual pain of an extended duration."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryGoreTortureDeath
+    fListImport: "Breast / Nipple Torture"
+
+- type: entity
+  parent: KinkBase
+  id: KinkBurning
+  name: "Burning"
+  description: "A situation in which at least one character will be burned. May include burning with such things as cigars, cigarettes, hot iron, or other methods."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryGoreTortureDeath
+    fListImport: "Burning"
+
+- type: entity
+  parent: KinkBase
+  id: KinkCastration
+  name: "Castration"
+  description: "An action where the testicles (or ovaries) are removed or disabled, whether by surgical, chemical or magical means."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryGoreTortureDeath
+    fListImport: "Castration"
+
+- type: entity
+  parent: KinkBase
+  id: KinkDeath
+  name: "Death"
+  description: "A situation in which a character will die at any point by any means."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryGoreTortureDeath
+    fListImport: "Death"
+
+- type: entity
+  parent: KinkBase
+  id: KinkEmasculation
+  name: "Emasculation"
+  description: "The act whereby the genitalia are removed by magical or surgical means, usually the penis and / or the testicles. May also imply humiliation; e.g. to render a male less of a man."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryGoreTortureDeath
+    fListImport: "Emasculation"
+
+- type: entity
+  parent: KinkBase
+  id: KinkExecutionMurder
+  name: "Execution / Murder"
+  description: "The act of actively causing death to a character that is not accidental. Implies committing lethal acts on a character that is intended to result in their end, or being the receiver of such actions."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryGoreTortureDeath
+    fListImport: "Execution / Murder"
+
+- type: entity
+  parent: KinkBase
+  id: KinkGenitalTorture
+  name: "Genital Torture"
+  description: "Engaging in an RP in which at least one character's genitals will be given negative attention, the intent of which to be to cause physical pain."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryGoreTortureDeath
+    fListImport: "Genital Torture"
+
+- type: entity
+  parent: KinkBase
+  id: KinkGore
+  name: "Gore"
+  description: "The involvement of graphic violence and carnage, generally of serious physical injuries involving blood, flesh, bone, and internal organs."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryGoreTortureDeath
+    fListImport: "Gore"
+
+- type: entity
+  parent: KinkBase
+  id: KinkImpalement
+  name: "Impalement"
+  description: "Describes a character being pierced by an object, and subsequently having it extend out and through an exit wound. Typically implies pain, torture, and is often fatal."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryGoreTortureDeath
+    fListImport: "Impalement"
+
+- type: entity
+  parent: KinkBase
+  id: KinkMenses
+  name: "Menses"
+  description: "Engaging in an RP in which menstruation will be involved, or applied to the sexual context of a scene."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryGoreTortureDeath
+    fListImport: "Menses"
+
+- type: entity
+  parent: KinkBase
+  id: KinkMutilation
+  name: "Mutilation"
+  description: "The act of physically damaging or otherwise causing irreparable change and / or harm to a character in an RP, typically by the use of cutting, stabbing or contact objects; often exceptionally painful."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryGoreTortureDeath
+    fListImport: "Mutilation"
+
+- type: entity
+  parent: KinkBase
+  id: KinkNonsexualPain
+  name: "Nonsexual Pain"
+  description: "Refers to either the administering and / or receiving of pain that is not derived through sexual activity and does not cause sexual gratification for the recipient, often interpreted to mean pain that is located in non-sexual parts of one's body."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryGoreTortureDeath
+    fListImport: "Nonsexual Pain"
+
+- type: entity
+  parent: KinkBase
+  id: KinkNonsexualTorture
+  name: "Nonsexual Torture"
+  description: "The act of causing or receiving extended scenes of pain due to acts that are not of a sexual nature, or giving or being the recipient of psychological abuse for extended periods of time or at a great degree of intensity."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryGoreTortureDeath
+    fListImport: "Nonsexual Torture"
+
+- type: entity
+  parent: KinkBase
+  id: KinkAmputation
+  name: "Amputation"
+  description: "The removal / amputation of any body part."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryGoreTortureDeath
+    fListImport: "Nullification"
+
+- type: entity
+  parent: KinkBase
+  id: KinkPiercing
+  name: "Piercing"
+  description: "The act of piercing a character's body, typically in a painful manner, and often in a sexual or exceptionally sensitive location on the person's body, or having one's own body pierced."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryGoreTortureDeath
+    fListImport: "Piercing"
+
+- type: entity
+  parent: KinkBase
+  id: KinkSexualTorture
+  name: "Sexual Torture"
+  description: "Torture that is sexual in nature, or greatly harms one sexually."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryGoreTortureDeath
+    fListImport: "Sexual Torture"
+
+- type: entity
+  parent: KinkBase
+  id: KinkSwallowingBlood
+  name: "Swallowing Blood"
+  description: "The act of orally consuming blood."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryGoreTortureDeath
+    fListImport: "Swallowing Blood"
+
+- type: entity
+  parent: KinkBase
+  id: KinkToothRemoval
+  name: "Tooth Removal"
+  description: "Expresses an interest in play that involves tooth removal."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryGoreTortureDeath
+    fListImport: "Tooth Removal"
+
+- type: entity
+  parent: KinkBase
+  id: KinkWoundFucking
+  name: "Wound Fucking"
+  description: "Inserting one’s cock into a wound, either preexisting or freshly made, in order to engage in intercourse."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryGoreTortureDeath
+    fListImport: "Wound Fucking"

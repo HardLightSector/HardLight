@@ -1,0 +1,464 @@
+﻿- type: entity
+  parent: KinkCategoryBase
+  id: KinkCategoryThemesSettings
+  name: "Themes & Settings"
+
+- type: entity
+  parent: KinkBase
+  id: KinkAdultery
+  name: "Adultery"
+  description: "The act of voluntary sexual intercourse between a person and another character who is not their established spouse or partner."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryThemesSettings
+    fListImport: "Adultery"
+
+- type: entity
+  parent: KinkBase
+  id: KinkAffection
+  name: "Affection"
+  description: "The act of providing the sensations of tenderness and fondness, having characters express such feelings with one another through endearing behaviors."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryThemesSettings
+    fListImport: "Affection"
+
+- type: entity
+  parent: KinkBase
+  id: KinkBadEnds
+  name: "Bad Ends"
+  description: "A scenario where a character doesn't necessarily have to face death, but is presented with an unfortunate and inevitable future. May involve situations where a character is forced to submit to an undesired opposition or is trapped in a dangerous scenario where there is no escape."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryThemesSettings
+    fListImport: "Bad Ends"
+
+- type: entity
+  parent: KinkBase
+  id: KinkCompetition
+  name: "Competition"
+  description: "Pertains to multiple dominants competing to administer domination the best, or multiple submissives competing to please a dominant the best."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryThemesSettings
+    fListImport: "Competition"
+
+- type: entity
+  parent: KinkBase
+  id: KinkConsensual
+  name: "Consensual"
+  description: "A preference for sexual interactions between characters in an RP to be fully consenting, by their characters' own free wills."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryThemesSettings
+    fListImport: "Consensual"
+
+- type: entity
+  parent: KinkBase
+  id: KinkCuckolding
+  name: "Cuckolding"
+  description: "A scenario in which one partner is complicit in their partner's infidelity and derives sexual pleasure from it. Generally consists of watching their established partner have sexual relations with another individual, often where the other is considered to be “better” than them, but not necessarily."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryThemesSettings
+    fListImport: "Cuckolding"
+
+- type: entity
+  parent: KinkBase
+  id: KinkDating
+  name: "Dating"
+  description: "Engaging in an RP where characters go on a date."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryThemesSettings
+    fListImport: "Dating"
+
+- type: entity
+  parent: KinkBase
+  id: KinkDub-Consensual
+  name: "Dub-Consensual"
+  description: "Denotes situations of \"dubious consent,\" where the receiver either claims denial, uncertainty, or is unclear in their agreement. Typically denotes secretly enjoying what is occurring. May involve the character struggling with the personal internal conflict of unsureness. Often sexual, but can be applied to a variety of circumstances."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryThemesSettings
+    fListImport: "Dub-Consensual"
+
+- type: entity
+  parent: KinkBase
+  id: KinkExhibitionism
+  name: "Exhibitionism"
+  description: "Engaging in some kind of play where one or both parties will be caught, spotted, or otherwise observed by a third party or parties, adding to the thrill (and / or humiliation)."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryThemesSettings
+    fListImport: "Exhibitionism"
+
+- type: entity
+  parent: KinkBase
+  id: KinkFantasy
+  name: "Fantasy"
+  description: "Themes consisting of the fantasy genre, involving magic or other supernatural elements as a main plot element, theme, or setting. Magic and magical creatures are commonly incorporated."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryThemesSettings
+    fListImport: "Fantasy"
+
+- type: entity
+  parent: KinkBase
+  id: KinkFightingWrestling
+  name: "Fighting / Wrestling"
+  description: "The act of physically sparring, either with malice or more playfully, with another character in an RP; typically non-sexual, although sometimes with the intent to pin the bottom or submissive in order to penetrate them."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryThemesSettings
+    fListImport: "Fighting / Wrestling"
+
+- type: entity
+  parent: KinkBase
+  id: KinkHorror
+  name: "Horror"
+  description: "Themes consisting of the horror genre, incorporating aspects that are considered creepy, macabre, scary, or unsettling (typically to elicit a physiological reaction) as a main plot element, theme, or setting."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryThemesSettings
+    fListImport: "Horror"
+
+- type: entity
+  parent: KinkBase
+  id: KinkHumorComedy
+  name: "Humor / Comedy"
+  description: "Expresses an interest in the inclusion of humorous dialogue, settings, or situations."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryThemesSettings
+    fListImport: "Humor / Comedy"
+
+- type: entity
+  parent: KinkBase
+  id: KinkIncest
+  name: "Incest"
+  description: "Engaging in an RP in which at least two characters will be related, either by blood or by marriage."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryThemesSettings
+    fListImport: "Incest"
+
+- type: entity
+  parent: KinkBase
+  id: KinkInexperiencedPartners
+  name: "Inexperienced Partners"
+  description: "Refers to players whose characters are sexually inexperienced and / or naive (typically virgin characters), or an interest in RPing with such characters; does not refer to the RPing capabilities of the player."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryThemesSettings
+    fListImport: "Inexperienced Partners"
+
+- type: entity
+  parent: KinkBase
+  id: KinkInformality
+  name: "Informality"
+  description: "Treating sexual acts, having explicit dialogue or reacting to predetermined kinks casually, or as if they were normal in their setting."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryThemesSettings
+    fListImport: "Informality"
+
+- type: entity
+  parent: KinkBase
+  id: KinkKidnapping
+  name: "Kidnapping"
+  description: "The act of abducting a character in an RP, (typically for the purpose of abusing, usually sexually, but not necessarily) or being abducted for such reasons; often implies indefinite imprisonment."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryThemesSettings
+    fListImport: "Kidnapping"
+
+- type: entity
+  parent: KinkBase
+  id: KinkMedicalPlay
+  name: "Medical Play"
+  description: "Engaging in an RP set in a medical setting, such as a hospital, or an RP involving aspects of medicine, such as injections, medical equipment, uniforms or medical experiments or procedures."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryThemesSettings
+    fListImport: "Medical Play"
+
+- type: entity
+  parent: KinkBase
+  id: KinkMilitaryThemes
+  name: "Military Themes"
+  description: "Expresses an interest in scenes, settings, and themes that incorporate military aspects. Implies concepts such as war, weapon involvement, uniforms, rank, and more. All of which may be historical, fantasy, scifi or otherwise."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryThemesSettings
+    fListImport: "Military Themes"
+
+- type: entity
+  parent: KinkBase
+  id: KinkModernSettings
+  name: "Modern Settings"
+  description: "Themes consisting of the modern aspects, taking place in current times. Often implies up to date technology and culture."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryThemesSettings
+    fListImport: "Modern Settings"
+
+- type: entity
+  parent: KinkBase
+  id: KinkMultiplePartners
+  name: "Multiple Partners"
+  description: "Engaging in an RP containing at least three characters."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryThemesSettings
+    fListImport: "Multiple Partners"
+
+- type: entity
+  parent: KinkBase
+  id: KinkNightclubsBars
+  name: "Nightclubs / Bars"
+  description: "Engaging in an RP which is set in a nightclub or a bar setting."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryThemesSettings
+    fListImport: "Nightclubs / Bars"
+
+- type: entity
+  parent: KinkBase
+  id: KinkNonconsensual
+  name: "Nonconsensual"
+  description: "Engaging in an RP in which a character will be forced to give or receive sex against their will by another character."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryThemesSettings
+    fListImport: "Nonconsensual"
+
+- type: entity
+  parent: KinkBase
+  id: KinkPhotographyVideotaping
+  name: "Photography / Videotaping"
+  description: "The act of visually recording a scene amongst participants, often as a form of humiliation, exhibitionist fetishism and / or blackmail / extortion."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryThemesSettings
+    fListImport: "Photography / Videotaping"
+
+- type: entity
+  parent: KinkBase
+  id: KinkPolyamory
+  name: "Polyamory"
+  description: "The practice of carrying out intimate relationships with more than one partner, with the knowledge and consent of all involved partners. Often described as \"consensual, ethical, and responsible non-monogamy.\""
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryThemesSettings
+    fListImport: "Polyamory"
+
+- type: entity
+  parent: KinkBase
+  id: KinkProstitution
+  name: "Prostitution"
+  description: "Engaging in an RP in which at least one player's character is a prostitute, or involves a prostitute; a person who receives money for sex."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryThemesSettings
+    fListImport: "Prostitution"
+
+- type: entity
+  parent: KinkBase
+  id: KinkRealism
+  name: "Realism"
+  description: "Expresses an interest in roleplaying scenes that are realistically possible by real life standards, or at the very least applying sensible logic and reason to situations, character responses, and motivations."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryThemesSettings
+    fListImport: "Realism"
+
+- type: entity
+  parent: KinkBase
+  id: KinkRoleplaywithinRP
+  name: "Roleplay within RP"
+  description: "Expresses an interest in two or more characters taking on roles within an RP and acting out a predetermined scene with predetermined characters."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryThemesSettings
+    fListImport: "Roleplay within RP"
+
+- type: entity
+  parent: KinkBase
+  id: KinkRoleReversal
+  name: "Role Reversal"
+  description: "Refers to characters that, within the context of a particular RP, have, through character development or pre-determined measures, established their identity in regard to dominance and / or submissiveness, that will, at some point during the sexual portion of the RP, reverse their roles in regard to their previously understood roles."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryThemesSettings
+    fListImport: "Role Reversal"
+
+- type: entity
+  parent: KinkBase
+  id: KinkRomance
+  name: "Romance"
+  description: "Displaying or expressing love or strong affection, passion, either during love making or during normal scenes. Typically involves the roleplaying of romantic relationships, acts, and themes."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryThemesSettings
+    fListImport: "Romance"
+
+- type: entity
+  parent: KinkBase
+  id: KinkScenes-Dungeon
+  name: "Scenes - Dungeon"
+  description: "Engaging in an RP which is set in a BDSM dungeon."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryThemesSettings
+    fListImport: "Scenes - Dungeon"
+
+- type: entity
+  parent: KinkBase
+  id: KinkScenes-Laboratory
+  name: "Scenes - Laboratory"
+  description: "Engaging in an RP in which the setting is of a laboratorial nature."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryThemesSettings
+    fListImport: "Scenes - Laboratory"
+
+- type: entity
+  parent: KinkBase
+  id: KinkScenes-LockerRoom
+  name: "Scenes - Locker Room"
+  description: "Engaging in an RP in which the setting is a locker room."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryThemesSettings
+    fListImport: "Scenes - Locker Room"
+
+- type: entity
+  parent: KinkBase
+  id: KinkScenes-Office
+  name: "Scenes - Office"
+  description: "Engaging in an RP which is set in an office."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryThemesSettings
+    fListImport: "Scenes - Office"
+
+- type: entity
+  parent: KinkBase
+  id: KinkScenesUniversity
+  name: "Scenes - University"
+  description: "Engaging in an RP in which the setting is a university."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryThemesSettings
+    fListImport: "Scenes - School"
+
+- type: entity
+  parent: KinkBase
+  id: KinkScenesShowerBath
+  name: "Scenes - Shower / Bath"
+  description: "Engaging in an RP in which the setting includes a bath or shower, may be public and / or shared."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryThemesSettings
+    fListImport: "Scenes - Shower / Bath"
+
+- type: entity
+  parent: KinkBase
+  id: KinkScenes-Steampunk
+  name: "Scenes - Steampunk"
+  description: "Setting in a roleplay where the main power source is steam. The time-period usually appearing as the 19th century, yet containing fantasy / futuristic elements, inventions, and machines often way ahead of it's time."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryThemesSettings
+    fListImport: "Scenes - Steampunk"
+
+- type: entity
+  parent: KinkBase
+  id: KinkScenes-Tribal
+  name: "Scenes - Tribal"
+  description: "Engaging in an RP set in a tribal village or wild area, located far from civilization."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryThemesSettings
+    fListImport: "Scenes - Tribal"
+
+- type: entity
+  parent: KinkBase
+  id: KinkSci-fi
+  name: "Sci-fi"
+  description: "Themes of the science-fiction genre, typically dealing with imaginative concepts such as futuristic science and technology, space travel, time travel, extraterrestrial life, and so on."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryThemesSettings
+    fListImport: "Sci-fi"
+
+- type: entity
+  parent: KinkBase
+  id: KinkSliceofLife
+  name: "Slice of Life"
+  description: "Engaging in scenes of seemingly arbitrary events in a character's life, often lacking plot development and left open ended. Usually consists of naturally occurring themes and narratives that are of the casual and mundane variety."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryThemesSettings
+    fListImport: "Slice of Life"
+
+- type: entity
+  parent: KinkBase
+  id: KinkSmallDomBigSub
+  name: "Small Dom / Big Sub"
+  description: "Expresses an interest in the bottom / submissive character being physically larger than the top / dominant character in an RP; often implies the larger character is also physically stronger as well."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryThemesSettings
+    fListImport: "Small Dom / Big Sub"
+
+- type: entity
+  parent: KinkBase
+  id: KinkSTDs
+  name: "STDs"
+  description: "Expresses an interest in play that incorporates sexually transmitted diseases, be they ones of real world origin or entirely fictional."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryThemesSettings
+    fListImport: "STDs"
+
+- type: entity
+  parent: KinkBase
+  id: KinkVeryExperiencedPartners
+  name: "Very Experienced Partners"
+  description: "Refers to players whose characters are exceptionally experienced and / or skilled in the practice of sex, and typically connotates esoteric sexual abilities and / or knowledge, or the interest in RPing with such characters; does not refer to the RPing capabilities of the player."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryThemesSettings
+    fListImport: "Very Experienced Partners"
+
+- type: entity
+  parent: KinkBase
+  id: KinkVoyeurism
+  name: "Voyeurism"
+  description: "Participating in watching other individuals engaging in sex or some other kind of intercourse, usually discretely and without their knowledge."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryThemesSettings
+    fListImport: "Voyeurism"
+
+- type: entity
+  parent: KinkBase
+  id: KinkWeaponPlay
+  name: "Weapon Play"
+  description: "Expresses an interest in the incorporation of weaponry, such as knives, swords, guns, and various other armaments."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryThemesSettings
+    fListImport: "Weapon Play"
+
+- type: entity
+  parent: KinkBase
+  id: KinkWorldofWarcraft
+  name: "World of Warcraft"
+  description: "Roleplay taking place in the World of Warcraft universe."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryThemesSettings
+    fListImport: "World of Warcraft"

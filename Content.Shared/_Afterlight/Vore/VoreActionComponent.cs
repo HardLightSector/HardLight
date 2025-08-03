@@ -1,4 +1,4 @@
-﻿using Content.Shared.Actions.Components;
+﻿using Content.Shared.Actions;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 

@@ -1,11 +1,11 @@
 using Content.Client._Afterlight.Kinks.UI;
 using Content.Client._Afterlight.MobInteraction;
 using Content.Client._Starlight.Managers;
-using Content.Client.Administration.Managers;
 using Content.Client.Gameplay;
 using Content.Client.UserInterface.Controls;
 using Content.Client.UserInterface.Systems.Guidebook;
 using Content.Client.UserInterface.Systems.Info;
+using Content.Client.UserInterface.Systems.MenuBar.Widgets;
 using Content.Shared.CCVar;
 using JetBrains.Annotations;
 using Robust.Client.Console;

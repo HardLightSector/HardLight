@@ -1,0 +1,154 @@
+﻿- type: entity
+  parent: KinkCategoryBase
+  id: KinkCategoryPenetrationSexualThemes
+  name: "Penetration & Sexual Themes"
+
+- type: entity
+  parent: KinkBase
+  id: Kink3Penetration
+  name: "3+ Penetration"
+  description: "The act of penetrating a single character with three or more objects, including but not limited to cocks, sex toys, hands, etc., or receiving such actions."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryPenetrationSexualThemes
+    fListImport: "3+ Penetration"
+
+- type: entity
+  parent: KinkBase
+  id: KinkAlltheWayThrough
+  name: "All the Way Through"
+  description: "The act of a character being penetrated by an object (generally in a nonharmful fashion), and having it extend out their other end - typically ass / vagina to mouth, vice versa, or other orifices in a less realistic fashion. May also include fluids being pumped into one end and coming out the other."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryPenetrationSexualThemes
+    fListImport: "All the Way Through"
+
+- type: entity
+  parent: KinkBase
+  id: KinkDoublePenetration
+  name: "Double Penetration"
+  description: "The act of penetrating a single character with two objects, including but not limited to the penis, sex toys, fist etc., or receiving such."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryPenetrationSexualThemes
+    fListImport: "Double Penetration"
+
+- type: entity
+  parent: KinkBase
+  id: KinkExtremeTightness
+  name: "Extreme Tightness"
+  description: "Engaging in an RP in which at least one character exhibits exceptional tightness in their anus, vagina, or throat; sometimes implies pain, exceptionally large penetrations and / or inexperience."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryPenetrationSexualThemes
+    fListImport: "Extreme Tightness"
+
+- type: entity
+  parent: KinkBase
+  id: KinkGangbangs
+  name: "Gangbangs"
+  description: "A situation in which several people engage in physical sexual activity with one particular character sequentially or at the same time."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryPenetrationSexualThemes
+    fListImport: "Gangbangs"
+
+- type: entity
+  parent: KinkBase
+  id: KinkKnottingTying
+  name: "Knotting / Tying"
+  description: "The act of lodging the knot of a penis, typical of canine anatomy, into an orifice to \"tie\" with your partner."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryPenetrationSexualThemes
+    fListImport: "Knotting / Tying"
+
+- type: entity
+  parent: KinkBase
+  id: KinkLivingInsertions
+  name: "Living Insertions"
+  description: "The act of inserting an animate object(s) into an orifice, or receiving such action; typically worms, insects, or alien creatures."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryPenetrationSexualThemes
+    fListImport: "Living Insertions"
+
+- type: entity
+  parent: KinkBase
+  id: KinkNipplePenetration
+  name: "Nipple Penetration"
+  description: "The act of penetrating the nipple, often deep into the breast, with an object such as a finger, sex toy or penis, etc., or receiving such actions."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryPenetrationSexualThemes
+    fListImport: "Nipple Penetration"
+
+- type: entity
+  parent: KinkBase
+  id: KinkNon-StandardPenetration
+  name: "Non-Standard Penetration"
+  description: "Alternative forms of penetration outside of the norm such as of the ears, nose, eyes, or generating new / nonstandard holes to use in a sexually penetrative fashion."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryPenetrationSexualThemes
+    fListImport: "Non-Standard Penetration"
+
+- type: entity
+  parent: KinkBase
+  id: KinkSomnophilia
+  name: "Somnophilia"
+  description: "The act of engaging in sexual intercourse with a sleeping partner or enjoying being on the receiving end thereof."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryPenetrationSexualThemes
+    fListImport: "Somnophilia"
+
+- type: entity
+  parent: KinkBase
+  id: KinkSounding
+  name: "Sounding"
+  description: "The act of inserting metal rods into a character's urethra, or receiving such actions; technically implies rods that resonate and / or vibrate in response to a form of stimulation, but does not necessarily mean so."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryPenetrationSexualThemes
+    fListImport: "Sounding"
+
+- type: entity
+  parent: KinkBase
+  id: KinkTailsex
+  name: "Tailsex"
+  description: "Penetrating an orifice using a character's tail."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryPenetrationSexualThemes
+    fListImport: "Tailsex"
+
+- type: entity
+  parent: KinkBase
+  id: KinkTantricSex
+  name: "Tantric Sex"
+  description: "A form of sex characterized by its focus on intimacy and emotional closeness between involved parties. Often implies a long duration with a significant aim on their intertwining such as listening to heartbeats, breathing, and exploring one another through a deep romantic bond."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryPenetrationSexualThemes
+    fListImport: "Tantric Sex"
+
+- type: entity
+  parent: KinkBase
+  id: KinkUrethraPlay
+  name: "Urethra Play"
+  description: "Sexual stimulation or play involving the urethra. When involving cocks, typically connotates inserting objects into the penis."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryPenetrationSexualThemes
+    fListImport: "Urethra Play"
+
+- type: entity
+  parent: KinkBase
+  id: KinkVanillaSex
+  name: "Vanilla Sex"
+  description: "Sex which does not involve such elements as BDSM, kink, or fetish activities."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryPenetrationSexualThemes
+    fListImport: "Vanilla Sex"

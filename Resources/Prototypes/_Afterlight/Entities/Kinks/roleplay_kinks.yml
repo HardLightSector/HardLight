@@ -1,0 +1,164 @@
+﻿- type: entity
+  parent: KinkCategoryBase
+  id: KinkCategoryRoleplayPreferences
+  name: "Roleplay Preferences"
+
+- type: entity
+  parent: KinkBase
+  id: KinkApproachingIC
+  name: "Approaching IC"
+  description: "Approaching another roleplayer while “in character.” Generally means carrying out actions, speaking as your character, and other forms of character emoting. This is a means of diving straight into roleplay with little to no out-of-character discussion beforehand."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryRoleplayPreferences
+    fListImport: "Approaching IC"
+
+- type: entity
+  parent: KinkBase
+  id: KinkApproachingOOC
+  name: "Approaching OOC"
+  description: "Approaching another roleplayer while “out of character.” Generally means speaking to another player as yourself the player, not as your character, and does not involve actions or emotes from your character. This is done to discuss scenes and RP ideas first with the player, rather than jumping into something without forethought."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryRoleplayPreferences
+    fListImport: "Approaching OOC"
+
+- type: entity
+  parent: KinkBase
+  id: KinkDrawnImageReferences
+  name: "Drawn Image References"
+  description: "Expresses an interest in character profiles that use drawn / art images for visual references for their character."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryRoleplayPreferences
+    fListImport: "Drawn Image References"
+
+- type: entity
+  parent: KinkBase
+  id: KinkInstantHookups
+  name: "Instant Hookups"
+  description: "An in-character meeting between one or more characters that more often than not will lead to sudden intercourse without much thought prior to it."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryRoleplayPreferences
+    fListImport: "Instant Hookups"
+
+- type: entity
+  parent: KinkBase
+  id: KinkMultipleCharacters
+  name: "Multiple Characters"
+  description: "Expresses an interest in the ability to take turns playing a character other than one's main character in a single roleplay, or simply involving a number of other characters within a roleplay."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryRoleplayPreferences
+    fListImport: "Multiple Characters"
+
+- type: entity
+  parent: KinkBase
+  id: KinkNonsexualRoleplay
+  name: "Nonsexual Roleplay"
+  description: "Scenes of extended play that involve either no sex or very little sex."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryRoleplayPreferences
+    fListImport: "Nonsexual Roleplay"
+
+- type: entity
+  parent: KinkBase
+  id: KinkPlotTwists
+  name: "Plot Twists"
+  description: "Revelatory events in storytelling that alter the course of the roleplay."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryRoleplayPreferences
+    fListImport: "Plot Twists"
+
+- type: entity
+  parent: KinkBase
+  id: KinkPrivateRoleplay
+  name: "Private Roleplay"
+  description: "Expresses an interest in conducting roleplay in private, be it private messages, notes, or some other nonpublic means of messaging."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryRoleplayPreferences
+    fListImport: "Private Roleplay"
+
+- type: entity
+  parent: KinkBase
+  id: KinkPublicRoomRoleplay
+  name: "Public Room Roleplay"
+  description: "Expresses an interest in conducting roleplays publicly, usually in a group with other players."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryRoleplayPreferences
+    fListImport: "Public Room Roleplay"
+
+- type: entity
+  parent: KinkBase
+  id: KinkRoleplayPerspective-FirstPerson
+  name: "Roleplay Perspective - First Person"
+  description: "Roleplaying in a first-person perspective. \"I see you.\" is an example of a sentence written in first person."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryRoleplayPreferences
+    fListImport: "Roleplay Perspective - First Person"
+
+- type: entity
+  parent: KinkBase
+  id: KinkRoleplayPerspective-SecondPerson
+  name: "Roleplay Perspective - Second Person"
+  description: "Using the word ‘you’ to refer to another’s character and third person to refer to one’s own."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryRoleplayPreferences
+    fListImport: "Roleplay Perspective - Second Person"
+
+- type: entity
+  parent: KinkBase
+  id: KinkRoleplayPerspective-ThirdPerson
+  name: "Roleplay Perspective - Third Person"
+  description: "Roleplaying from a third-person perspective. \"He sees her.\" is an example of a sentence written in third person."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryRoleplayPreferences
+    fListImport: "Roleplay Perspective - Third Person"
+
+- type: entity
+  parent: KinkBase
+  id: KinkSexDriven
+  name: "Sex Driven"
+  description: "Expresses a preference to eschew story and / or character development to reach the sexual context of a scene more quickly."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryRoleplayPreferences
+    fListImport: "Sex Driven"
+
+- type: entity
+  parent: KinkBase
+  id: KinkStoryDriven
+  name: "Story Driven"
+  description: "Expresses a preference for RPs where plot and story are the focal point, typically involving complex situations, character development, framed scenes, elaboration, and amplification of settings. Often (but not necessarily) comparatively containing little sex."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryRoleplayPreferences
+    fListImport: "Story Driven"
+
+- type: entity
+  parent: KinkBase
+  id: KinkStorytellingNarrator
+  name: "Storytelling (Narrator)"
+  description: "Expresses an interest in narrating the story, playing as the entire setting and running most of the characters and the environment for their partner(s), usually without playing a protagonist character of their own."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryRoleplayPreferences
+    fListImport: "Storytelling (Narrator)"
+
+- type: entity
+  parent: KinkBase
+  id: KinkStorytellingPlayer
+  name: "Storytelling (Player)"
+  description: "Expresses an interest in playing the protagonist character in a story narrated by their partner, where the partner plays as the entire setting and running most of the characters and the environment for the protagonist character."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryRoleplayPreferences
+    fListImport: "Storytelling (Player)"

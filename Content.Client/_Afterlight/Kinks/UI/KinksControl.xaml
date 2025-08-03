@@ -1,0 +1,35 @@
+﻿<controls:KinksControl
+    xmlns="https://spacestation14.io"
+    xmlns:controls="clr-namespace:Content.Client._Afterlight.Kinks.UI"
+    xmlns:ui="clr-namespace:Content.Client._Afterlight.UserInterface">
+    <BoxContainer Orientation="Vertical">
+        <Button Name="ImportFlistButton" Access="Public" Text="{Loc 'al-kinks-import-f-list'}"
+                StyleClasses="OpenBoth" />
+        <BoxContainer Name="ImportFlistContainer" Access="Public" Orientation="Horizontal">
+            <LineEdit Name="ImportFlistEdit" Access="Public" HorizontalExpand="True"
+                      PlaceHolder="https://www.f-list.net/c/..." />
+            <Button Name="ImportFlistSubmitButton" Access="Public"
+                    Text="{Loc 'al-kinks-import-f-list-import'}" StyleClasses="OpenRight" />
+            <Button Name="ImportFlistCancelButton" Access="Public"
+                    Text="{Loc 'al-kinks-import-f-list-cancel'}" StyleClasses="OpenLeft" />
+        </BoxContainer>
+        <Button Name="BackButton" Access="Public" Text="{Loc 'al-kinks-back'}" StyleClasses="OpenBoth" />
+        <LineEdit Name="SearchEdit" Access="Public" PlaceHolder="Search..." />
+        <ui:HorizontalYellowSeparator />
+        <BoxContainer Name="MarkAllContainer" Access="Public" Orientation="Vertical">
+            <BoxContainer Orientation="Horizontal">
+                <Label Text="{Loc 'al-kinks-mark-all-as'}" HorizontalExpand="True" Margin="24 0 0 0" />
+                <controls:KinksButtons Name="MarkAllButtons" Access="Public" />
+            </BoxContainer>
+            <ui:HorizontalYellowSeparator />
+        </BoxContainer>
+        <ScrollContainer HScrollEnabled="False" VScrollEnabled="True"
+                         HorizontalExpand="True" VerticalExpand="True"
+                         MouseFilter="Pass">
+            <BoxContainer Name="Categories" Access="Public" Orientation="Vertical" />
+            <BoxContainer Name="KinksContainer" Access="Public" Orientation="Vertical">
+                <BoxContainer Name="Kinks" Access="Public" Orientation="Vertical" />
+            </BoxContainer>
+        </ScrollContainer>
+    </BoxContainer>
+</controls:KinksControl>

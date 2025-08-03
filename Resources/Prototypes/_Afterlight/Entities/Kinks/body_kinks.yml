@@ -1,0 +1,264 @@
+﻿- type: entity
+  parent: KinkCategoryBase
+  id: KinkCategoryBodyWorshipPlay
+  name: "Body Worship & Play"
+
+- type: entity
+  parent: KinkBase
+  id: KinkArmpits
+  name: "Armpits"
+  description: "Play revolving around the armpit region."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryBodyWorshipPlay
+    fListImport: "Armpits"
+
+- type: entity
+  parent: KinkBase
+  id: KinkAssWorship
+  name: "Ass Worship"
+  description: "Gratuitous acknowledgment of one's partner's ass or buttocks, either verbal and / or physical, or receiving such actions."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryBodyWorshipPlay
+    fListImport: "Ass Worship"
+
+- type: entity
+  parent: KinkBase
+  id: KinkBellyFucking
+  name: "Belly Fucking"
+  description: "The act of placing one's penis into / against a character's belly (may be through the navel, making use of significant body fat, or other means) and achieving climax due to the friction thereof, or receiving such actions."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryBodyWorshipPlay
+    fListImport: "Belly Fucking"
+
+- type: entity
+  parent: KinkBase
+  id: KinkBellyPlay
+  name: "Belly Play"
+  description: "Play that revolves around the stomach / midsection region, be it massaging, groping, squeezing, or otherwise."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryBodyWorshipPlay
+    fListImport: "Belly Play"
+
+- type: entity
+  parent: KinkBase
+  id: KinkBodyWriting
+  name: "Body Writing"
+  description: "The act of writing, drawing, or painting various (typically sexual or degrading) words or pictures onto a character’s body."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryBodyWorshipPlay
+    fListImport: "Body Writing"
+
+- type: entity
+  parent: KinkBase
+  id: KinkBreastNipplePlay
+  name: "Breast / Nipple Play"
+  description: "Play that revolves around the breasts and / or nipples."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryBodyWorshipPlay
+    fListImport: "Breast / Nipple Play"
+
+- type: entity
+  parent: KinkBase
+  id: KinkBreastNippleWorship
+  name: "Breast / Nipple Worship"
+  description: "Gratuitous acknowledgement of one's partner's chest or nipples, either verbal and / or physical, or receiving such actions."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryBodyWorshipPlay
+    fListImport: "Breast / Nipple Worship"
+
+- type: entity
+  parent: KinkBase
+  id: KinkBreastSmothering
+  name: "Breast Smothering"
+  description: "The act of smothering a character using one's breasts, making it hard to breathe."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryBodyWorshipPlay
+    fListImport: "Breast Smothering"
+
+- type: entity
+  parent: KinkBase
+  id: KinkCuddling
+  name: "Cuddling"
+  description: "Characters showing affection through hugging, snuggling, and other forms of physical closeness."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryBodyWorshipPlay
+    fListImport: "Cuddling"
+
+- type: entity
+  parent: KinkBase
+  id: KinkEarPlay
+  name: "Ear Play"
+  description: "Interest in roleplay where ears play an important role. This can involve suckling, caressing, breathing / whispering into, pulling them, or any other kind of interaction focusing on the ears."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryBodyWorshipPlay
+    fListImport: "Ear Play"
+
+- type: entity
+  parent: KinkBase
+  id: KinkFatPlay
+  name: "Fat Play"
+  description: "Play that revolves around a character's body fat in one form or another. Typically in regions such as the belly, ass, chest, thighs, etc."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryBodyWorshipPlay
+    fListImport: "Fat Play"
+
+- type: entity
+  parent: KinkBase
+  id: KinkFootjobs
+  name: "Footjobs"
+  description: "A sexual practice that involves one's feet being rubbed on a partner in order to induce sexual excitement, stimulation, or orgasm."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryBodyWorshipPlay
+    fListImport: "Footjobs"
+
+- type: entity
+  parent: KinkBase
+  id: KinkFootPlay
+  name: "Foot Play"
+  description: "The act of incorporating the feet or feet paws into the sexual context of an RP, including but not limited to the worshiping of feet, receiving sexual gratification from the sight or feel of feet and / or humping feet, sometimes to the point of orgasm."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryBodyWorshipPlay
+    fListImport: "Foot Play"
+
+- type: entity
+  parent: KinkBase
+  id: KinkHandjobs
+  name: "Handjobs"
+  description: "The act of using one’s hand to stimulate another’s cock, or receiving such actions, in order to induce sexual pleasure, commonly resulting in orgasm."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryBodyWorshipPlay
+    fListImport: "Handjobs"
+
+- type: entity
+  parent: KinkBase
+  id: KinkHandPlay
+  name: "Hand Play"
+  description: "Play that revolves around the hands."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryBodyWorshipPlay
+    fListImport: "Hand Play"
+
+- type: entity
+  parent: KinkBase
+  id: KinkHotdogging
+  name: "Hotdogging"
+  description: "The act of placing a penis between the ass cheeks and pressing them against it, sliding it between them in order to reach sexual satisfaction."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryBodyWorshipPlay
+    fListImport: "Hotdogging"
+
+- type: entity
+  parent: KinkBase
+  id: KinkHyperLactation
+  name: "Hyper Lactation"
+  description: "Expresses an interest in lactation that is exceptionally excessive and in unrealistic proportions."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryBodyWorshipPlay
+    fListImport: "Hyper Lactation"
+
+- type: entity
+  parent: KinkBase
+  id: KinkIntercruralSex
+  name: "Intercrural Sex"
+  description: "A form of non-penetrative sex done by inserting a cock between one’s thighs in order to achieve orgasm."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryBodyWorshipPlay
+    fListImport: "Intercrural Sex"
+
+- type: entity
+  parent: KinkBase
+  id: KinkLactation
+  name: "Lactation"
+  description: "The act of producing milk from one's breasts, or engaging in sex with a character that produces milk from one's breasts, typically in response to sexual stimulation, and any play that will emanate thereof."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryBodyWorshipPlay
+    fListImport: "Lactation"
+
+- type: entity
+  parent: KinkBase
+  id: KinkMassages
+  name: "Massages"
+  description: "The act of treating the body by rubbing, kneading, patting, or similar in order to stimulate circulation, increase suppleness, relieve tension, or pamper an individual."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryBodyWorshipPlay
+    fListImport: "Massages"
+
+- type: entity
+  parent: KinkBase
+  id: KinkMasturbation
+  name: "Masturbation"
+  description: "The act of stimulating oneself sexually, usually utilizing physical contact from the hands or fingers to the genitals."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryBodyWorshipPlay
+    fListImport: "Masturbation"
+
+- type: entity
+  parent: KinkBase
+  id: KinkMuscleWorship
+  name: "Muscle Worship"
+  description: "Gratuitous acknowledgment of someone's muscular physique, either verbal or physical."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryBodyWorshipPlay
+    fListImport: "Muscle Worship"
+
+- type: entity
+  parent: KinkBase
+  id: KinkNavelPlay
+  name: "Navel Play"
+  description: "Engaging in sexual acts involving pleasure derived from a character's bellybutton; often refers to licking or tonguing of the navel."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryBodyWorshipPlay
+    fListImport: "Navel Play"
+
+- type: entity
+  parent: KinkBase
+  id: KinkBreastFeeding
+  name: "Breast Feeding"
+  description: "The act of feeding a character by having them suckle a lactating breast, or receiving such actions."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryBodyWorshipPlay
+    fListImport: "Nursing"
+
+- type: entity
+  parent: KinkBase
+  id: KinkPawPlay
+  name: "Paw Play"
+  description: "Expresses an interest in play surrounding paws (hand or feet pads), generally of anthropomorphic characters."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryBodyWorshipPlay
+    fListImport: "Paw Play"
+
+- type: entity
+  parent: KinkBase
+  id: KinkTitfucking
+  name: "Titfucking"
+  description: "The act of placing one's penis in between a pair of breasts and achieving climax due to the friction thereof, or receiving such actions."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryBodyWorshipPlay
+    fListImport: "Titfucking"

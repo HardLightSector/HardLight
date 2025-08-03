@@ -1,0 +1,104 @@
+﻿- type: entity
+  parent: KinkCategoryBase
+  id: KinkCategoryPregnancyBreeding
+  name: "Pregnancy & Breeding"
+
+- type: entity
+  parent: KinkBase
+  id: KinkAlternativePregnancy
+  name: "Alternative Pregnancy"
+  description: "Pregnancy that takes place in areas of the body other than the womb through vaginal means, such as the breasts, balls, limbs, tail, and so on."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryPregnancyBreeding
+    fListImport: "Alternative Pregnancy"
+
+- type: entity
+  parent: KinkBase
+  id: KinkAnalPregnancy
+  name: "Anal Pregnancy"
+  description: "Pregnancy that takes place rectally in the anal canal."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryPregnancyBreeding
+    fListImport: "Anal Pregnancy"
+
+- type: entity
+  parent: KinkBase
+  id: KinkBreeding
+  name: "Breeding"
+  description: "Entails the act sexual intercourse for the sole purpose of inducing pregnancy and / or producing offspring."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryPregnancyBreeding
+    fListImport: "Breeding"
+
+- type: entity
+  parent: KinkBase
+  id: KinkExtremePregnancy
+  name: "Extreme Pregnancy"
+  description: "The act of becoming pregnant with an incredible or unrealistic size and / or number of fetuses / eggs, often in an unrealistically short time span, and often to the point of immobility, or engaging in an RP in which at least one character fits such a description."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryPregnancyBreeding
+    fListImport: "Extreme Pregnancy"
+
+- type: entity
+  parent: KinkBase
+  id: KinkHeatRut
+  name: "Heat / Rut"
+  description: "A character entering a state of heightened sexual arousal which often alters or overrides their inhibitions. May correspond with being more receptive to impregnation / the ability to impregnate."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryPregnancyBreeding
+    fListImport: "Heat / Rut"
+
+- type: entity
+  parent: KinkBase
+  id: KinkImpregnation
+  name: "Impregnation"
+  description: "Expresses an interest in actions where impregnating a character is the focused act, actively trying to get another character pregnant in one form or another."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryPregnancyBreeding
+    fListImport: "Impregnation"
+
+- type: entity
+  parent: KinkBase
+  id: KinkMalePregnancy
+  name: "Male Pregnancy"
+  description: "The act of a male identifying character becoming pregnant during the course of an RP, or engaging in an RP in which at least one male character is pregnant."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryPregnancyBreeding
+    fListImport: "Male Pregnancy"
+
+- type: entity
+  parent: KinkBase
+  id: KinkOviposition
+  name: "Oviposition"
+  description: "Engaging in an RP in which at least one character will lay eggs through an orifice."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryPregnancyBreeding
+    fListImport: "Oviposition"
+
+- type: entity
+  parent: KinkBase
+  id: KinkPregnancy
+  name: "Pregnancy"
+  description: "Engaging in an RP in which at least one character is pregnant, and / or includes themes of pregnancy."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryPregnancyBreeding
+    fListImport: "Pregnancy"
+
+- type: entity
+  parent: KinkBase
+  id: KinkRiskofPregnancy
+  name: "Risk of Pregnancy"
+  description: "Engaging in an RP in which there is an immediate and serious risk of at least one character becoming pregnant; often implies that at least one character does not want such a result."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryPregnancyBreeding
+    fListImport: "Risk of Pregnancy"

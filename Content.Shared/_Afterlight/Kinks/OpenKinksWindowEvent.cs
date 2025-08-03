@@ -1,0 +1,9 @@
+﻿using Robust.Shared.Serialization;
+
+namespace Content.Shared._Afterlight.Kinks;
+
+[Serializable, NetSerializable]
+public sealed class OpenKinksWindowEvent(NetEntity target) : EntityEventArgs
+{
+    public readonly NetEntity Target = target;
+}

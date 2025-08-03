@@ -1,0 +1,794 @@
+﻿- type: entity
+  parent: KinkCategoryBase
+  id: KinkCategoryCharacterPreferences
+  name: "Character Preferences"
+
+- type: entity
+  parent: KinkBase
+  id: KinkAmputees
+  name: "Amputees"
+  description: "Characters that have had limbs amputated, or are missing a limb / limbs."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Amputees"
+
+- type: entity
+  parent: KinkBase
+  id: KinkAnatomicallyCorrect
+  name: "Anatomically Correct"
+  description: "Expresses an interest in characters that have realistic and average body proportions."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Anatomically Correct"
+
+- type: entity
+  parent: KinkBase
+  id: KinkAndrogyny
+  name: "Androgyny"
+  description: "Gender ambiguity in appearance. May also be found in fashion, voice, gender identity, sexual identity, or lifestyle."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Androgyny"
+
+- type: entity
+  parent: KinkBase
+  id: KinkAnimalAnatomy
+  name: "Animal Anatomy"
+  description: "Expresses an interest in characters with penises or vaginas that are exact replicas of those of real animals."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Animal Anatomy"
+
+- type: entity
+  parent: KinkBase
+  id: KinkAnthroCharacters
+  name: "Anthro Characters"
+  description: "Characters that are anthropomorphic in nature, typically defined as an object or animal species with human characteristics."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Anthro Characters"
+
+- type: entity
+  parent: KinkBase
+  id: KinkBarbedCocks
+  name: "Barbed Cocks"
+  description: "Expresses an interest in penises with barbed heads; typically feline."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Barbed Cocks"
+
+- type: entity
+  parent: KinkBase
+  id: KinkBodyHair
+  name: "Body Hair"
+  description: "Expresses in interest in characters that have body hair. Generally denotes hair on places like a character’s chest, arms, legs, armpits, stomach trail, etc."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Body Hair"
+
+- type: entity
+  parent: KinkBase
+  id: KinkCanonCharacters
+  name: "Canon Characters"
+  description: "Expressing an interest in characters from established “canonized” media, derived from official publicized content such as movies, video games, TV, comics, and so on."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Canon Characters"
+
+- type: entity
+  parent: KinkBase
+  id: KinkChubby
+  name: "Chubby"
+  description: "Expresses an interest in characters that are well-rounded and pudgy, with a little more extra weight than average but not necessarily fat."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Chubby"
+
+- type: entity
+  parent: KinkBase
+  id: KinkCutCocks
+  name: "Cut Cocks"
+  description: "Expresses an interest in circumcised penises."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Cut Cocks"
+
+- type: entity
+  parent: KinkBase
+  id: KinkDisabilities
+  name: "Disabilities"
+  description: "Expresses an interest in characters with disabilities in some way, such as deafness, blindness, paraplegia, or other impairments that may be cognitive, developmental, intellectual, mental, physical, sensory, or some combination of these."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Disabilities"
+
+- type: entity
+  parent: KinkBase
+  id: KinkExoticCocks
+  name: "Exotic Cocks"
+  description: "Expresses an interest in unusually shaped or accessorized penises."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Exotic Cocks"
+
+- type: entity
+  parent: KinkBase
+  id: KinkFacialHairBeards
+  name: "Facial Hair / Beards"
+  description: "Expresses an interest in characters sporting facial hair in some manner, which can extend anywhere from scruffy stubble to full beards."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Facial Hair / Beards"
+
+- type: entity
+  parent: KinkBase
+  id: KinkFangsSharpTeeth
+  name: "Fangs / Sharp Teeth"
+  description: "Expresses an interest in having or playing with a character that has sharp pointed fangs and/or teeth."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Fangs / Sharp Teeth"
+
+- type: entity
+  parent: KinkBase
+  id: KinkFemboys
+  name: "Femboys"
+  description: "Effeminate, girly males."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Femboys"
+
+- type: entity
+  parent: KinkBase
+  id: KinkFemininity
+  name: "Femininity"
+  description: "An interest in characters that tend to be traditionally feminine in appearance and / or personality."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Femininity"
+
+- type: entity
+  parent: KinkBase
+  id: KinkGenitalNipplePiercings
+  name: "Genital / Nipple Piercings"
+  description: "Engaging in an RP in which at least one character has piercings that are located on the nipples or sexual areas of the body; typically cock or labia piercings."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Genital / Nipple Piercings"
+
+- type: entity
+  parent: KinkBase
+  id: KinkHirsute
+  name: "Hirsute"
+  description: "Refers to the preference for characters with excessive or pronounced hair; typically involves character that would otherwise not have hair to have hair, or for furry characters to have additional hair in areas such as but not limited to the pubis, armpits and chin, and often implies a denser or more wiry texture of hair."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Hirsute"
+
+- type: entity
+  parent: KinkBase
+  id: KinkHorns
+  name: "Horns"
+  description: "A preference for characters that possess horns, regardless of the appropriateness of horns to the character’s species."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Horns"
+
+- type: entity
+  parent: KinkBase
+  id: KinkHumanCocks
+  name: "Human Cocks"
+  description: "Expresses an interest in characters that have human shaped penises."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Human Cocks"
+
+- type: entity
+  parent: KinkBase
+  id: KinkHyperAsses
+  name: "Hyper Asses"
+  description: "Expresses an interest in asses that are incredibly large and disproportional to their body size."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Hyper Asses"
+
+- type: entity
+  parent: KinkBase
+  id: KinkHyperBalls
+  name: "Hyper Balls"
+  description: "Expresses an interest in balls that are exceptionally large."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Hyper Balls"
+
+- type: entity
+  parent: KinkBase
+  id: KinkHyperBreasts
+  name: "Hyper Breasts"
+  description: "Expresses an interest in breasts that are incredibly disproportionate to their body size."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Hyper Breasts"
+
+- type: entity
+  parent: KinkBase
+  id: KinkHyperCocks
+  name: "Hyper Cocks"
+  description: "Expresses an interest in large penises incredibly disproportionate to their body size."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Hyper Cocks"
+
+- type: entity
+  parent: KinkBase
+  id: KinkHyperFat
+  name: "Hyper Fat"
+  description: "Expresses an interest in characters that are impossibly obese."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Hyper Fat"
+
+- type: entity
+  parent: KinkBase
+  id: KinkHyperMuscle
+  name: "Hyper Muscle"
+  description: "Expresses an interest in characters that have an impossibly muscular physique."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Hyper Muscle"
+
+- type: entity
+  parent: KinkBase
+  id: KinkHyperVaginas
+  name: "Hyper Vaginas"
+  description: "Expresses an interest in vaginas that are exceptionally large, or with unrealistic proportions."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Hyper Vaginas"
+
+- type: entity
+  parent: KinkBase
+  id: KinkHyper-Voluptuous
+  name: "Hyper-Voluptuous"
+  description: "Expresses an interest in characters that have unrealistically large hips and buttocks."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Hyper-Voluptuous"
+
+- type: entity
+  parent: KinkBase
+  id: KinkIntelligentCharacters
+  name: "Intelligent Characters"
+  description: "Exhibits a preference for characters that have particularly high levels of intelligence, wit, cunning and manipulation skills."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Intelligent Characters"
+
+- type: entity
+  parent: KinkBase
+  id: KinkKnottedCocks
+  name: "Knotted Cocks"
+  description: "Expresses an interest in penises with a knot."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Knotted Cocks"
+
+- type: entity
+  parent: KinkBase
+  id: KinkLargeAsses
+  name: "Large Asses"
+  description: "Expresses an interest in exceptionally large asses."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Large Asses"
+
+- type: entity
+  parent: KinkBase
+  id: KinkLargeBalls
+  name: "Large Balls"
+  description: "Expresses an interest in balls that are large."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Large Balls"
+
+- type: entity
+  parent: KinkBase
+  id: KinkLargeBreasts
+  name: "Large Breasts"
+  description: "Expresses an interest in exceptionally large breasts."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Large Breasts"
+
+- type: entity
+  parent: KinkBase
+  id: KinkLargeCocks
+  name: "Large Cocks"
+  description: "Expresses an interest in exceptionally large cocks."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Large Cocks"
+
+- type: entity
+  parent: KinkBase
+  id: KinkLargeTails
+  name: "Large Tails"
+  description: "Expresses an interest in exceptionally large or dense tails."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Large Tails"
+
+- type: entity
+  parent: KinkBase
+  id: KinkMacroAsses
+  name: "Macro Asses"
+  description: "Expresses an interest in impossibly large asses that are incredibly disproportionate to their body size."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Macro Asses"
+
+- type: entity
+  parent: KinkBase
+  id: KinkMacroBalls
+  name: "Macro Balls"
+  description: "Expresses an interest in balls that are larger than their owner, with or without being proportionate to the owner's penis."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Macro Balls"
+
+- type: entity
+  parent: KinkBase
+  id: KinkMacroBreasts
+  name: "Macro Breasts"
+  description: "Expresses an interest in impossibly large breasts that are incredibly disproportionate to their body size."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Macro Breasts"
+
+- type: entity
+  parent: KinkBase
+  id: KinkMacroCocks
+  name: "Macro Cocks"
+  description: "Expresses an interest in penises that are taller and / or wider than its owner."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Macro Cocks"
+
+- type: entity
+  parent: KinkBase
+  id: KinkMacrophilia
+  name: "Macrophilia"
+  description: "Expresses an interest in characters that are incredibly and unrealistically tall."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Macrophilia"
+
+- type: entity
+  parent: KinkBase
+  id: KinkMagicUsers
+  name: "Magic Users"
+  description: "RPs involving characters that are capable of performing magical or supernatural feats that may or may not be sexual in nature."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Magic Users"
+
+- type: entity
+  parent: KinkBase
+  id: KinkMasculinity
+  name: "Masculinity"
+  description: "An interest in characters that tend to be traditionally masculine in appearance and / or personality."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Masculinity"
+
+- type: entity
+  parent: KinkBase
+  id: KinkMegaMacro
+  name: "Mega Macro"
+  description: "Expresses an interest in characters that are at least one mile tall."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Mega Macro"
+
+- type: entity
+  parent: KinkBase
+  id: KinkMicrophilia
+  name: "Microphilia"
+  description: "Expresses an interest in characters that are impossibly and unrealistically small."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Microphilia"
+
+- type: entity
+  parent: KinkBase
+  id: KinkMoobs
+  name: "Moobs"
+  description: "Expresses an interest in male identifying characters that have significant breast tissue, typically known as gynecomastia."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Moobs"
+
+- type: entity
+  parent: KinkBase
+  id: KinkMultiGenitalia
+  name: "Multi Genitalia"
+  description: "Expresses an interest in characters that have more than one set of external sex organs."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Multi Genitalia"
+
+- type: entity
+  parent: KinkBase
+  id: KinkMultipleBreasts
+  name: "Multiple Breasts"
+  description: "Expresses an interest in characters that have more than one pair of breasts."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Multiple Breasts"
+
+- type: entity
+  parent: KinkBase
+  id: KinkMuscularCharacters
+  name: "Muscular Characters"
+  description: "Expresses an interest in characters that are powerfully-built and / or athletic."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Muscular Characters"
+
+- type: entity
+  parent: KinkBase
+  id: KinkNonsexualPiercings
+  name: "Nonsexual Piercings"
+  description: "Engaging in sex with a character who has piercings on parts of their body that are not of a sexual nature, such as but not limited to tongue, ears, nose, lips, bellybutton etc."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Nonsexual Piercings"
+
+- type: entity
+  parent: KinkBase
+  id: KinkOriginalCharacters
+  name: "Original Characters"
+  description: "Expressing an interest in characters that are of the player’s own personalized creation (typically not from established publicized media)."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Original Characters"
+
+- type: entity
+  parent: KinkBase
+  id: KinkPrehensileCocks
+  name: "Prehensile Cocks"
+  description: "Expresses an interest in characters that have the ability to control the motion of their penises."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Prehensile Cocks"
+
+- type: entity
+  parent: KinkBase
+  id: KinkPubicHair
+  name: "Pubic Hair"
+  description: "Expresses an interest in pubic hair, possibly in large or excessive quantities."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Pubic Hair"
+
+- type: entity
+  parent: KinkBase
+  id: KinkQuadrupeds
+  name: "Quadrupeds"
+  description: "Characters that walk on four legs."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Quadrupeds"
+
+- type: entity
+  parent: KinkBase
+  id: KinkRubberElasticCharacters
+  name: "Rubber / Elastic Characters"
+  description: "Expresses an interest in characters who are composed of rubber, latex, or an otherwise elastic material."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Rubber / Elastic Characters"
+
+- type: entity
+  parent: KinkBase
+  id: KinkSheaths
+  name: "Sheaths"
+  description: "Expresses an interest in characters that have a sheath."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Sheaths"
+
+- type: entity
+  parent: KinkBase
+  id: KinkShorterCharacters
+  name: "Shorter Characters"
+  description: "An expressed interest in characters that are shorter than one's character."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Shorter Characters"
+
+- type: entity
+  parent: KinkBase
+  id: KinkSizeDifferences1-3Feet
+  name: "Size Differences (1-3 Feet)"
+  description: "Engaging in an RP in which the height difference between any, two characters is between one and three feet."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Size Differences (1-3 Feet)"
+
+- type: entity
+  parent: KinkBase
+  id: KinkSizeDifferencesMicroMacro
+  name: "Size Differences (Micro / Macro)"
+  description: "Engaging in an RP in which the height difference between any, two characters is extremely large."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Size Differences (Micro / Macro)"
+
+- type: entity
+  parent: KinkBase
+  id: KinkSkinnyCharacters
+  name: "Skinny Characters"
+  description: "Expresses an interest in characters that are rather thin or lank."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Skinny Characters"
+
+- type: entity
+  parent: KinkBase
+  id: KinkSlimeGooCharacters
+  name: "Slime / Goo Characters"
+  description: "Expresses an interest in characters who are composed of slime, goo, fluids, or similar viscous / semi-viscous substances."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Slime / Goo Characters"
+
+- type: entity
+  parent: KinkBase
+  id: KinkSmallBreasts
+  name: "Small Breasts"
+  description: "Expresses an interest in breasts that are particularly small, sometimes to the point of appearing absent."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Small Breasts"
+
+- type: entity
+  parent: KinkBase
+  id: KinkSmallCocks
+  name: "Small Cocks"
+  description: "Expresses an interest in cocks that are smaller than five inches."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Small Cocks"
+
+- type: entity
+  parent: KinkBase
+  id: KinkSuperheroesVillains
+  name: "Superheroes / Villains"
+  description: "Characters that fit into the Superhero / Superhuman genre, set in a world of heroes and villains, where costumed crime fighters and individuals with superhuman powers exist."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Superheroes / Villains"
+
+- type: entity
+  parent: KinkBase
+  id: KinkTails
+  name: "Tails"
+  description: "A preference for characters that possess tails, regardless of the appropriateness of tails to the character’s species."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Tails"
+
+- type: entity
+  parent: KinkBase
+  id: KinkTallerCharacters
+  name: "Taller Characters"
+  description: "An expressed interest in characters that are taller than one's character."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Taller Characters"
+
+- type: entity
+  parent: KinkBase
+  id: KinkTattoosBodyArt
+  name: "Tattoos / Body Art"
+  description: "An interest in characters that have tattoos."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Tattoos / Body Art"
+
+- type: entity
+  parent: KinkBase
+  id: KinkTentacles
+  name: "Tentacles"
+  description: "Engaging in an RP that involves self-sentient tentacles, or a character / entity with tentacle-like appendages. Often implies multiple penetration."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Tentacles"
+
+- type: entity
+  parent: KinkBase
+  id: KinkTomboys
+  name: "Tomboys"
+  description: "Females who behave or present themselves in a masculine manner."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Tomboys"
+
+- type: entity
+  parent: KinkBase
+  id: KinkToons
+  name: "Toons"
+  description: "Characters that are “cartoony” in nature, implying exaggerated design styles and anatomy as well toony physics and behaviors."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Toons"
+
+- type: entity
+  parent: KinkBase
+  id: KinkTwinks
+  name: "Twinks"
+  description: "Expresses an interest in male characters that are typically skinny / slim in build, having little or no body or facial hair, and described as conventionally attractive, but still present as masculine / male."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Twinks"
+
+- type: entity
+  parent: KinkBase
+  id: KinkTwinsClones
+  name: "Twins / Clones"
+  description: "Expresses an interest in two or more characters who are identical, often siblings but not necessarily, who may or may not be played by the same player."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Twins / Clones"
+
+- type: entity
+  parent: KinkBase
+  id: KinkUdders
+  name: "Udders"
+  description: "Expresses interest in characters with udders instead of, or in addition to, normal breasts."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Udders"
+
+- type: entity
+  parent: KinkBase
+  id: KinkUncutCocks
+  name: "Uncut Cocks"
+  description: "Expresses an interest in penises that have not been circumcised and have present foreskin."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Uncut Cocks"
+
+- type: entity
+  parent: KinkBase
+  id: KinkUnintelligentCharacters
+  name: "Unintelligent Characters"
+  description: "Exhibits a preference for characters that exhibit below-average intelligence; this includes everything from air-headed bimbos/himbos to animalistic primitive minded brutes."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Unintelligent Characters"
+
+- type: entity
+  parent: KinkBase
+  id: KinkVeryFatCharacters
+  name: "Very Fat Characters"
+  description: "Expresses an interest in characters that are exceptionally overweight or obese."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Very Fat Characters"
+
+- type: entity
+  parent: KinkBase
+  id: KinkVeryLitheCharacters
+  name: "Very Lithe Characters"
+  description: "Expresses an interest in characters that are exceptionally thin or lank."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Very Lithe Characters"
+
+- type: entity
+  parent: KinkBase
+  id: KinkVeryMuscularCharacters
+  name: "Very Muscular Characters"
+  description: "Expresses an interest in characters that are exceptionally muscular or toned."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Very Muscular Characters"
+
+- type: entity
+  parent: KinkBase
+  id: KinkVoluptuousness
+  name: "Voluptuousness"
+  description: "Expresses an interest in characters with wider than average hips and large buttocks."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Voluptuousness"
+
+- type: entity
+  parent: KinkBase
+  id: KinkWings
+  name: "Wings"
+  description: "A preference for characters that possess wings, regardless of the appropriateness of wings to the character's species."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCharacterPreferences
+    fListImport: "Wings"

@@ -1,0 +1,6 @@
+﻿<controls:KinksListLabel
+    xmlns="https://spacestation14.io"
+    xmlns:controls="clr-namespace:Content.Client._Afterlight.Kinks.UI"
+    Margin="5">
+    <Label Name="Label" Access="Public" RectClipContent="True" />
+</controls:KinksListLabel>

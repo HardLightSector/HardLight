@@ -1,0 +1,164 @@
+﻿- type: entity
+  parent: KinkCategoryBase
+  id: KinkCategoryRoughnessPain
+  name: "Roughness / Pain"
+
+- type: entity
+  parent: KinkBase
+  id: KinkPhysicalAbuse
+  name: "Physical Abuse"
+  description: "The act of applying abusive actions onto a character, typically through acts of physical violence. Involves subjecting a character(s) to unpleasant situations and behaviors."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryRoughnessPain
+    fListImport: "Abuse"
+
+- type: entity
+  parent: KinkBase
+  id: KinkBallbusting
+  name: "Ballbusting"
+  description: "Harm to the testicles, usually for sexual pleasure."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryRoughnessPain
+    fListImport: "Ballbusting"
+
+- type: entity
+  parent: KinkBase
+  id: KinkBiting
+  name: "Biting"
+  description: "The act of biting or being bitten; sometimes painful, sometimes playful."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryRoughnessPain
+    fListImport: "Biting"
+
+- type: entity
+  parent: KinkBase
+  id: KinkBreathControl
+  name: "Breath Control"
+  description: "A situation in which at least one character will have physical control over the breathing habits of another character, often by either intermittent choking and / or due to the penetration of the throat."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryRoughnessPain
+    fListImport: "Breath Control"
+
+- type: entity
+  parent: KinkBase
+  id: KinkChoking
+  name: "Choking"
+  description: "A situation in which one character will control another character's breath with extreme force, and typically for extended and / or dangerous periods of time."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryRoughnessPain
+    fListImport: "Choking"
+
+- type: entity
+  parent: KinkBase
+  id: KinkCrushingLiving
+  name: "Crushing (Living)"
+  description: "The act of crushing living organisms (such as people, animals, and other sentient life) with one’s body, or being aroused by another individual doing so."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryRoughnessPain
+    fListImport: "Crushing (Living)"
+
+- type: entity
+  parent: KinkBase
+  id: KinkCrushingObjects
+  name: "Crushing (Objects)"
+  description: "The act of crushing inanimate objects (such as food, furniture, toys, housing structure) with one’s body, or being aroused by another individual doing so."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryRoughnessPain
+    fListImport: "Crushing (Objects)"
+
+- type: entity
+  parent: KinkBase
+  id: KinkFaceSlapping
+  name: "Face Slapping"
+  description: "Slaps to the face, of any degree or severity."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryRoughnessPain
+    fListImport: "Face Slapping"
+
+- type: entity
+  parent: KinkBase
+  id: KinkHairPulling
+  name: "Hair Pulling"
+  description: "The act of pulling or tugging on another character's hair, or being the recipient of such."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryRoughnessPain
+    fListImport: "Hair Pulling"
+
+- type: entity
+  parent: KinkBase
+  id: KinkRoughness
+  name: "Roughness"
+  description: "The involvement of rough behavior and actions (typically during sex) upon a partner. Usually denotes harsh grabbing, pulling, brisk brusque motions, and similar physical conduct."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryRoughnessPain
+    fListImport: "Roughness"
+
+- type: entity
+  parent: KinkBase
+  id: KinkSadismMasochism
+  name: "Sadism / Masochism"
+  description: "The act of taking the role of a sadist or masochist, meaning one that receives sexual gratification from being the recipient of or administering physical pain."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryRoughnessPain
+    fListImport: "Sadism / Masochism"
+
+- type: entity
+  parent: KinkBase
+  id: KinkScratching
+  name: "Scratching"
+  description: "One character scratching another with their nails or claws, sometimes leaving marks; but not necessarily painful."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryRoughnessPain
+    fListImport: "Scratching"
+
+- type: entity
+  parent: KinkBase
+  id: KinkSexualPain
+  name: "Sexual Pain"
+  description: "Refers to the inclusion of physical pain due to acts which are directly sexual; typically rough or excessive penetrations."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryRoughnessPain
+    fListImport: "Sexual Pain"
+
+- type: entity
+  parent: KinkBase
+  id: KinkSpanking
+  name: "Spanking"
+  description: "The act of striking the buttocks of another character, or being the recipient of such; often as a form of erotic foreplay or as punishment in a BDSM setting."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryRoughnessPain
+    fListImport: "Spanking"
+
+- type: entity
+  parent: KinkBase
+  id: KinkViolence
+  name: "Violence"
+  description: "Themes that incorporate the use of intense force that results in physical pain and discomfort."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryRoughnessPain
+    fListImport: "Violence"
+
+- type: entity
+  parent: KinkBase
+  id: KinkWaxPlay
+  name: "Wax Play"
+  description: "The act of using wax, typically hot candle wax, as a form of sexual stimulation and / or torture, or receiving such actions."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryRoughnessPain
+    fListImport: "Wax Play"

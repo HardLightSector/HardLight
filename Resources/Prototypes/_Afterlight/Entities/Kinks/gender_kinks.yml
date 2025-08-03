@@ -1,0 +1,104 @@
+﻿- type: entity
+  parent: KinkCategoryBase
+  id: KinkCategoryGenderPreferences
+  name: "Gender Preferences"
+
+- type: entity
+  parent: KinkBase
+  id: KinkCuntboys
+  name: "Cuntboys"
+  description: "Expresses an interest in male characters who have a vagina instead of typically male genitals."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryGenderPreferences
+    fListImport: "Cuntboys"
+
+- type: entity
+  parent: KinkBase
+  id: KinkFemales
+  name: "Females"
+  description: "Expresses an interest in traditionally female characters."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryGenderPreferences
+    fListImport: "Females"
+
+- type: entity
+  parent: KinkBase
+  id: KinkHermaphrodites
+  name: "Hermaphrodites"
+  description: "Expresses an interest in female-identifying characters that have breasts, a penis, and a vagina."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryGenderPreferences
+    fListImport: "Hermaphrodites"
+
+- type: entity
+  parent: KinkBase
+  id: KinkMale-Herms
+  name: "Male-Herms"
+  description: "Expresses an interest in male-identifying characters that have a penis and a vagina."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryGenderPreferences
+    fListImport: "Male-Herms"
+
+- type: entity
+  parent: KinkBase
+  id: KinkMales
+  name: "Males"
+  description: "Expresses an interest in traditionally male characters."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryGenderPreferences
+    fListImport: "Males"
+
+- type: entity
+  parent: KinkBase
+  id: KinkNonbinary
+  name: "Nonbinary"
+  description: "Characters that do not strictly identify or abide by a gender binary (regardless of originally assigned gender or biological sex)."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryGenderPreferences
+    fListImport: "Nonbinary"
+
+- type: entity
+  parent: KinkBase
+  id: KinkGynomorphs
+  name: "Gynomorphs"
+  description: "Expresses an interest in female-identifying characters that have a penis (and typically breasts), but not a vagina."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryGenderPreferences
+    fListImport: "Shemales"
+
+- type: entity
+  parent: KinkBase
+  id: KinkTransFemales
+  name: "Trans Females"
+  description: "Expresses an interest in transgender characters that identify as female regardless of originally assigned gender or biological sex."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryGenderPreferences
+    fListImport: "Trans Females"
+
+- type: entity
+  parent: KinkBase
+  id: KinkTransgender
+  name: "Transgender"
+  description: "Expresses an interest in characters whose assigned sex and identified gender are not the same, who identifies as a non-binary gender, or who has transitioned (or is in the process of transitioning) from one previously assigned gender to another."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryGenderPreferences
+    fListImport: "Transgender"
+
+- type: entity
+  parent: KinkBase
+  id: KinkTransMales
+  name: "Trans Males"
+  description: "Expresses an interest in transgender characters that identify as male regardless of originally assigned gender or biological sex."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryGenderPreferences
+    fListImport: "Trans Males"

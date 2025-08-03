@@ -1,0 +1,264 @@
+﻿- type: entity
+  parent: KinkCategoryBase
+  id: KinkCategoryCumRelated
+  name: "Cum Related"
+
+- type: entity
+  parent: KinkBase
+  id: KinkBukkake
+  name: "Bukkake"
+  description: "The act of a group of at least two people ejaculating directly onto the face and / or body of a single recipient, or receiving such actions."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCumRelated
+    fListImport: "Bukkake"
+
+- type: entity
+  parent: KinkBase
+  id: KinkCreampie
+  name: "Creampie"
+  description: "The act of orgasming into or onto an exposed, often gaping, orifice, or receiving such actions."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCumRelated
+    fListImport: "Creampie"
+
+- type: entity
+  parent: KinkBase
+  id: KinkCum
+  name: "Cum"
+  description: "Sexual fluids, often generated from one’s orgasm."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCumRelated
+    fListImport: "Cum"
+
+- type: entity
+  parent: KinkBase
+  id: KinkCumBath
+  name: "Cum Bath"
+  description: "The act of being treated physically with cum (typically in large amounts) such as having it rubbed into one's skin or fur, or literally bathing in it, or having one's semen used in such ways."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCumRelated
+    fListImport: "Cum Bath"
+
+- type: entity
+  parent: KinkBase
+  id: KinkCumEnemas
+  name: "Cum Enemas"
+  description: "The act of performing an enema, the liquid being used in such being semen, or receiving such actions, often by means of an orgasm."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCumRelated
+    fListImport: "Cum Enemas"
+
+- type: entity
+  parent: KinkBase
+  id: KinkCumFromMouthNose
+  name: "Cum From Mouth / Nose"
+  description: "The act of ejaculating with such force and / or by such a volume that the cum leaks and / or sprays from a characters mouth and / or nose, or receiving such actions."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCumRelated
+    fListImport: "Cum From Mouth / Nose"
+
+- type: entity
+  parent: KinkBase
+  id: KinkCumMarking
+  name: "Cum Marking"
+  description: "The act of cumming onto a bottom or submissive with the intent for the scent or sight of the cum to work as a proprietary mark, sometimes for extended or permanent periods of time, or receiving such actions."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCumRelated
+    fListImport: "Cum Marking"
+
+- type: entity
+  parent: KinkBase
+  id: KinkCumMilking
+  name: "Cum Milking"
+  description: "The act of collecting or milking the semen from at least one partner, typically done through manual or mechanical stimulation to the penis, or using stored semen as a sexual toy in an RP. Often involves machines and apparati."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCumRelated
+    fListImport: "Cum Milking"
+
+- type: entity
+  parent: KinkBase
+  id: KinkCumonClothes
+  name: "Cum on Clothes"
+  description: "The act of ejaculating onto clothing or wearing clothing that has been ejaculated on, often in public and / or for extended periods of time."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCumRelated
+    fListImport: "Cum on Clothes"
+
+- type: entity
+  parent: KinkBase
+  id: KinkCumVomit
+  name: "Cum Vomit"
+  description: "The act of, or interest in, vomiting cum that has been recently ingested, typically in copious amounts but not necessarily."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCumRelated
+    fListImport: "Cum Vomit"
+
+- type: entity
+  parent: KinkBase
+  id: KinkExcessivePrecum
+  name: "Excessive Precum"
+  description: "Engaging in an RP in which a character produces a larger than average amount of precum; typically unrealistic."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCumRelated
+    fListImport: "Excessive Precum"
+
+- type: entity
+  parent: KinkBase
+  id: KinkExcessiveSemen
+  name: "Excessive Semen"
+  description: "Engaging in an RP in which a character produces a larger than average amount of semen; typically unrealistic."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCumRelated
+    fListImport: "Excessive Semen"
+
+- type: entity
+  parent: KinkBase
+  id: KinkFelching
+  name: "Felching"
+  description: "The act of orally sucking semen out of a partner's anus or vagina."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCumRelated
+    fListImport: "Felching"
+
+- type: entity
+  parent: KinkBase
+  id: KinkHardCumFacials
+  name: "Hard Cum Facials"
+  description: "The act of cumming onto someone's face with no regard for that person's well-being, typically cumming into their ears, onto their eyes, into their nostrils or hair etc., or receiving such action; implies an exceptionally large amount of semen."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCumRelated
+    fListImport: "Hard Cum Facials"
+
+- type: entity
+  parent: KinkBase
+  id: KinkHeavilyExcessivePrecum
+  name: "Heavily Excessive Precum"
+  description: "Engaging in an RP in which a character, typically unrealistically endowed, produces exceptionally large volumes of precum, including but not limited to multiple gallons, and / or looses precum with exceptional force and consistency, often to the point of being comparable to urinating or further."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCumRelated
+    fListImport: "Heavily Excessive Precum"
+
+- type: entity
+  parent: KinkBase
+  id: KinkHeavilyExcessiveSemen
+  name: "Heavily Excessive Semen"
+  description: "Engaging in an RP in which a character, typically unrealistically endowed, produces exceptionally large volumes of semen, including but not limited to multiple gallons, and / or looses semen with exceptional force and consistency, often to the point of being comparable to urinating or further."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCumRelated
+    fListImport: "Heavily Excessive Semen"
+
+- type: entity
+  parent: KinkBase
+  id: KinkInternalCumshots
+  name: "Internal Cumshots"
+  description: "The act of ejaculating into another's body, or receiving such actions."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCumRelated
+    fListImport: "Internal Cumshots"
+
+- type: entity
+  parent: KinkBase
+  id: KinkPrematureEjaculation
+  name: "Premature Ejaculation"
+  description: "Expresses interest in at least one partner reaching orgasm very quickly; typically implies eagerness, excessive sensitivity and / or prolonged teasing."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCumRelated
+    fListImport: "Premature Ejaculation"
+
+- type: entity
+  parent: KinkBase
+  id: KinkRealisticCum
+  name: "Realistic Cum"
+  description: "Expresses a preference for engaging in an RP in which the volume and quality of sexual fluid is realistic."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCumRelated
+    fListImport: "Realistic Cum"
+
+- type: entity
+  parent: KinkBase
+  id: KinkShootingPrecum
+  name: "Shooting Precum"
+  description: "Engaging in an RP in which a character spurts precum with exceptional force and consistency."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCumRelated
+    fListImport: "Shooting Precum"
+
+- type: entity
+  parent: KinkBase
+  id: KinkSloppySeconds
+  name: "Sloppy Seconds"
+  description: "Engaging in an RP in which a character that has just been came in receives sex from a different partner in the same orifice without removing the previous top's semen."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCumRelated
+    fListImport: "Sloppy Seconds"
+
+- type: entity
+  parent: KinkBase
+  id: KinkSnowballing
+  name: "Snowballing"
+  description: "The act of receiving cum into one's mouth transmitted from another person's mouth, or french kissing while sharing a load of cum between one anothers' mouths."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCumRelated
+    fListImport: "Snowballing"
+
+- type: entity
+  parent: KinkBase
+  id: KinkSoftCumFacials
+  name: "Soft Cum Facials"
+  description: "The act of cumming directly onto one's face, typically into an open mouth or across the cheeks and / or lips, or receiving such actions."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCumRelated
+    fListImport: "Soft Cum Facials"
+
+- type: entity
+  parent: KinkBase
+  id: KinkSwallowingSemen
+  name: "Swallowing Semen"
+  description: "The act of orally consuming semen, either directly or indirectly from a penis."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCumRelated
+    fListImport: "Swallowing Semen"
+
+- type: entity
+  parent: KinkBase
+  id: KinkThickStickyCum
+  name: "Thick / Sticky Cum"
+  description: "A preference for characters' semen to be particularly thick and / or viscous, often comparable to tar or glue."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCumRelated
+    fListImport: "Thick / Sticky Cum"
+
+- type: entity
+  parent: KinkBase
+  id: KinkUnusualSemen
+  name: "Unusual Semen"
+  description: "A preference for a character's semen to have any number of unusual or atypical properties, often referring to taste, color, texture, scent and / or temperature."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCumRelated
+    fListImport: "Unusual Semen"

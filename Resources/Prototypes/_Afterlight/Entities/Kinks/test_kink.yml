@@ -1,0 +1,10 @@
+﻿- type: entity
+  id: KinkTestColor
+  name: kink test - anal sex giving
+  suffix: Off - Black, On - White
+  components:
+  - type: Sprite
+  - type: KinkAlternateSprite
+    kink: KinkAnalSexGiving
+    offSprite: { sprite: _Afterlight/Kink/kink_test.rsi, state: black }
+    onSprite: { sprite: _Afterlight/Kink/kink_test.rsi, state: white }

@@ -1,0 +1,154 @@
+﻿- type: entity
+  parent: KinkCategoryBase
+  id: KinkCategoryVoreUnbirth
+  name: "Vore & Unbirth"
+
+- type: entity
+  parent: KinkBase
+  id: KinkAbsorption
+  name: "Absorption"
+  description: "Vore by means of merging with the predator, or being absorbed and / or dissolved by an anatomical fluid of the predator."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryVoreUnbirth
+    fListImport: "Absorption"
+
+- type: entity
+  parent: KinkBase
+  id: KinkAlternativeVore
+  name: "Alternative Vore"
+  description: "The act of physically consuming another character, performed through an orifice other than the mouth, penis, vagina or anus, or receiving such actions."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryVoreUnbirth
+    fListImport: "Alternative Vore"
+
+- type: entity
+  parent: KinkBase
+  id: KinkAnalVore
+  name: "Anal Vore"
+  description: "Vore where something or someone is swallowed into the anus."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryVoreUnbirth
+    fListImport: "Anal Vore"
+
+- type: entity
+  parent: KinkBase
+  id: KinkCannibalism
+  name: "Cannibalism"
+  description: "The act of consuming same / similar species, usually of the humanoid variety and intelligent. Typically denotes realism and a character being realistically eaten."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryVoreUnbirth
+    fListImport: "Cannibalism"
+
+- type: entity
+  parent: KinkBase
+  id: KinkCockVore
+  name: "Cock Vore"
+  description: "The act of physically consuming another character, performed through the penis, often resulting in the prey character being lodged into the testicles, or being the recipient of such actions."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryVoreUnbirth
+    fListImport: "Cock Vore"
+
+- type: entity
+  parent: KinkBase
+  id: KinkCookingVore
+  name: "Cooking (Vore)"
+  description: "The act of a character cooking / preparing a character (or being cooked / prepared) to be consumed by another. May involve a character whole or just parts of a character. Tends to involve the act of realistically preparing someone in the same way one would cook a traditional meal."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryVoreUnbirth
+    fListImport: "Cooking (Vore)"
+
+- type: entity
+  parent: KinkBase
+  id: KinkDigestion
+  name: "Digestion"
+  description: "Engaging in a vore-related RP in which the prey character will be digested in whatever fluid(s) are applicable."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryVoreUnbirth
+    fListImport: "Digestion"
+
+- type: entity
+  parent: KinkBase
+  id: KinkDisposal
+  name: "Disposal"
+  description: "Engaging in a vore-related RP in which the prey will be consumed, digested and released as fecal matter and / or urine."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryVoreUnbirth
+    fListImport: "Disposal"
+
+- type: entity
+  parent: KinkBase
+  id: KinkHardVore
+  name: "Hard Vore"
+  description: "Engaging in vore in which the prey character is chewed and / or eaten piece by piece, or otherwise physically mutilated by the act of being consumed."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryVoreUnbirth
+    fListImport: "Hard Vore"
+
+- type: entity
+  parent: KinkBase
+  id: KinkRealisticVore
+  name: "Realistic Vore"
+  description: "Engaging in a vore scene in which realistic physiology is taken into account; typically connotates hard vore."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryVoreUnbirth
+    fListImport: "Realistic Vore"
+
+- type: entity
+  parent: KinkBase
+  id: KinkSoftVore
+  name: "Soft Vore"
+  description: "Engaging in vore in which the prey character is consumed whole, causing no or minimal damage to the character due to the vore process."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryVoreUnbirth
+    fListImport: "Soft Vore"
+
+- type: entity
+  parent: KinkBase
+  id: KinkUnbirthing
+  name: "Unbirthing"
+  description: "The act of physically consuming another character through the vagina and into the womb, or being the recipient of such actions."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryVoreUnbirth
+    fListImport: "Unbirthing"
+
+- type: entity
+  parent: KinkBase
+  id: KinkUnrealisticVore
+  name: "Unrealistic Vore"
+  description: "Engaging in a vore scene in which realistic physiology is not taken into account; typically connotates soft vore."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryVoreUnbirth
+    fListImport: "Unrealistic Vore"
+
+- type: entity
+  parent: KinkBase
+  id: KinkVoreBeingPredator
+  name: "Vore (Being Predator)"
+  description: "Being the consuming partner in a vore or unbirth situation, acting as the predator."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryVoreUnbirth
+    fListImport: "Vore (Being Predator)"
+
+- type: entity
+  parent: KinkBase
+  id: KinkVoreBeingPrey
+  name: "Vore (Being Prey)"
+  description: "Being the consumed partner in a vore-related RP situation."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryVoreUnbirth
+    fListImport: "Vore (Being Prey)"

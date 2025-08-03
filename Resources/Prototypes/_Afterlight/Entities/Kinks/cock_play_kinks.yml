@@ -1,0 +1,104 @@
+﻿- type: entity
+  parent: KinkCategoryBase
+  id: KinkCategoryCockPlay
+  name: "Cock Play"
+
+- type: entity
+  parent: KinkBase
+  id: KinkCockBallSmothering
+  name: "Cock / Ball Smothering"
+  description: "The act of smothering a character with a cock and / or balls, making it difficult to breathe."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCockPlay
+    fListImport: "Cock / Ball Smothering"
+
+- type: entity
+  parent: KinkBase
+  id: KinkCockBallsWorship
+  name: "Cock / Balls Worship"
+  description: "Gratuitous acknowledgment of one's partner's cock and / or balls, either verbal and / or physical, or receiving such actions; typically implies oral stimulation."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCockPlay
+    fListImport: "Cock / Balls Worship"
+
+- type: entity
+  parent: KinkBase
+  id: KinkCockFucking
+  name: "Cock Fucking"
+  description: "The act of inserting one's penis into another penis and thrusting into it as if it were a more traditional orifice."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCockPlay
+    fListImport: "Cock Fucking"
+
+- type: entity
+  parent: KinkBase
+  id: KinkCockSlapping
+  name: "Cock Slapping"
+  description: "The act of using one's penis to slap one's partner and / or being slapped by a penis, usually in order to humiliate or debase a bottom prior to or during fellatio."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCockPlay
+    fListImport: "Cock Slapping"
+
+- type: entity
+  parent: KinkBase
+  id: KinkCockWarming
+  name: "Cock Warming"
+  description: "The act of slipping one’s erection into a partner’s body in order to keep warm, typically considered a more intimate and sexual means of spooning."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCockPlay
+    fListImport: "Cock Warming"
+
+- type: entity
+  parent: KinkBase
+  id: KinkDocking
+  name: "Docking"
+  description: "Phallic insertion into another person's sheath and / or foreskin."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCockPlay
+    fListImport: "Docking"
+
+- type: entity
+  parent: KinkBase
+  id: KinkFlaccidPlay
+  name: "Flaccid Play"
+  description: "Expresses an interest in play that involves a character’s penis being flaccid. May involve handjobs or oral sex while flaccid, or attempting penetration in such a state."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCockPlay
+    fListImport: "Flaccid Play"
+
+- type: entity
+  parent: KinkBase
+  id: KinkForeskinWorship
+  name: "Foreskin Worship"
+  description: "Gratuitous acknowledgment of one's partner's foreskin, either verbal and / or physical, or receiving such actions; typically implies oral stimulation."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCockPlay
+    fListImport: "Foreskin Worship"
+
+- type: entity
+  parent: KinkBase
+  id: KinkFrotting
+  name: "Frotting"
+  description: "The act of at least two penises being ground against each other for sexual gratification."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCockPlay
+    fListImport: "Frotting"
+
+- type: entity
+  parent: KinkBase
+  id: KinkSheathPlay
+  name: "Sheath Play"
+  description: "The act of stimulating or otherwise playing with the sheath of a character, typically through tonguing or fingering, or receiving such actions, or being sexually aroused by the scent, taste, or touch of a sheath."
+  components:
+  - type: KinkDefinition
+    category: KinkCategoryCockPlay
+    fListImport: "Sheath Play"
