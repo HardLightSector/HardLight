@@ -248,6 +248,12 @@ public sealed class CrewManifestSystem : EntitySystem
         entries.Entries = entriesSort.Select(x => x.entry).ToArray();
         _cachedEntries[station] = entries;
     }
+
+    public void RebuildManifestForStation(EntityUid station)
+    {
+        BuildCrewManifest(station);
+        UpdateEuis(station);
+    }
 }
 
 [AdminCommand(AdminFlags.Admin)]

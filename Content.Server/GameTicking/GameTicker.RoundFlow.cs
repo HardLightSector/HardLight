@@ -832,7 +832,7 @@ namespace Content.Server.GameTicking
             RoundId = 0;
 
             // Remove all job slots from every station
-            foreach (var station in EntityQuery<StationJobsComponent>())
+            /* foreach (var station in EntityQuery<StationJobsComponent>())
             {
                 var jobs = _stationJobs.GetJobs(station.Owner);
                 foreach (var job in jobs.Keys.ToList())
@@ -845,7 +845,7 @@ namespace Content.Server.GameTicking
 
                     //}
                 }
-            }
+            } */
         }
 
         public bool DelayStart(TimeSpan time)

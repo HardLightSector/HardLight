@@ -3,9 +3,12 @@ using Content.Server.Chat.Systems;
 using Content.Server.GameTicking;
 using Content.Server.Station.Components;
 using Content.Server.Station.Events;
+using Content.Server.StationRecords;
+using Content.Server.StationRecords.Systems;
 using Content.Shared.CCVar;
 using Content.Shared.Station;
 using Content.Shared.Station.Components;
+using Content.Shared.StationRecords;
 using JetBrains.Annotations;
 using Robust.Server.GameObjects;
 using Robust.Server.GameStates;
@@ -18,6 +21,7 @@ using Robust.Shared.Map.Components;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
+using Content.Shared.CriminalRecords;
 
 namespace Content.Server.Station.Systems;
 
@@ -44,6 +48,8 @@ public sealed class StationSystem : EntitySystem
 
     private ValueList<MapId> _mapIds = new();
     private ValueList<(Box2Rotated Bounds, MapId MapId)> _gridBounds = new();
+
+    private EntityUid? _oldStation;
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -116,18 +122,14 @@ public sealed class StationSystem : EntitySystem
     {
         var dict = new Dictionary<string, List<EntityUid>>();
 
-        // Iterate over all BecomesStation
         foreach (var grid in ev.Grids)
         {
-            // We still setup the grid
             if (TryComp<BecomesStationComponent>(grid, out var becomesStation))
                 dict.GetOrNew(becomesStation.Id).Add(grid);
         }
 
         if (!dict.Any())
         {
-            // Oh jeez, no stations got loaded.
-            // We'll yell about it, but the thing this used to do with creating a dummy is kinda pointless now.
             _sawmill.Error($"There were no station grids for {ev.GameMap.ID}!");
         }
 
@@ -143,7 +145,40 @@ public sealed class StationSystem : EntitySystem
                 continue;
             }
 
-            InitializeNewStation(stationConfig, gridIds, ev.StationName);
+            // If an old station exists, transfer its components to the new one
+            if (_oldStation != null && EntityManager.EntityExists(_oldStation.Value))
+            {
+                // Spawn the new station entity as normal
+                var newStation = EntityManager.SpawnEntity(stationConfig.StationPrototype, MapCoordinates.Nullspace, stationConfig.StationComponentOverrides);
+
+                // Transfer components from old station to new station
+                TransferStationComponents(_oldStation.Value, newStation);
+
+                // Optionally, transfer grids to the new station
+                var data = Comp<StationDataComponent>(newStation);
+                var name = ev.StationName ?? MetaData(newStation).EntityName;
+
+                foreach (var grid in gridIds)
+                {
+                    AddGridToStation(newStation, grid, null, data, name);
+                }
+
+                // Raise post-init event
+                var evPost = new StationPostInitEvent((newStation, data));
+                RaiseLocalEvent(newStation, ref evPost, true);
+
+                // Delete the old station entity
+                QueueDel(_oldStation.Value);
+
+                // Update _oldStation to the new station
+                _oldStation = newStation;
+            }
+            else
+            {
+                // No old station, create a new one as normal
+                var station = InitializeNewStation(stationConfig, gridIds, ev.StationName);
+                _oldStation = station;
+            }
         }
     }
 
@@ -157,6 +192,12 @@ public sealed class StationSystem : EntitySystem
         //{
         //    QueueDel(station);
         //}
+    }
+
+    public void OnRoundEnd()
+    {
+        // Store the old station entity
+        _oldStation = GetStations().FirstOrDefault();
     }
 
     #endregion Event handlers
@@ -308,26 +349,48 @@ public sealed class StationSystem : EntitySystem
     /// <returns>The initialized station.</returns>
     public EntityUid InitializeNewStation(StationConfig stationConfig, IEnumerable<EntityUid>? gridIds, string? name = null)
     {
-        // Use overrides for setup.
-        var station = EntityManager.SpawnEntity(stationConfig.StationPrototype, MapCoordinates.Nullspace, stationConfig.StationComponentOverrides);
+        // If an old station exists, reuse it
+        if (_oldStation != null && EntityManager.EntityExists(_oldStation.Value))
+        {
+            var station = _oldStation.Value;
+
+            if (name is not null)
+                RenameStation(station, name, false);
+
+            var data = Comp<StationDataComponent>(station);
+            name ??= MetaData(station).EntityName;
+
+            foreach (var grid in gridIds ?? Array.Empty<EntityUid>())
+            {
+                AddGridToStation(station, grid, null, data, name);
+            }
+
+            var ev = new StationPostInitEvent((station, data));
+            RaiseLocalEvent(station, ref ev, true);
+
+            return station;
+        }
+
+        // Only spawn a new station if there is no old one
+        var newStation = EntityManager.SpawnEntity(stationConfig.StationPrototype, MapCoordinates.Nullspace, stationConfig.StationComponentOverrides);
 
         if (name is not null)
-            RenameStation(station, name, false);
+            RenameStation(newStation, name, false);
 
-        DebugTools.Assert(HasComp<StationDataComponent>(station), "Stations should have StationData in their prototype.");
+        DebugTools.Assert(HasComp<StationDataComponent>(newStation), "Stations should have StationData in their prototype.");
 
-        var data = Comp<StationDataComponent>(station);
-        name ??= MetaData(station).EntityName;
+        var newData = Comp<StationDataComponent>(newStation);
+        name ??= MetaData(newStation).EntityName;
 
         foreach (var grid in gridIds ?? Array.Empty<EntityUid>())
         {
-            AddGridToStation(station, grid, null, data, name);
+            AddGridToStation(newStation, grid, null, newData, name);
         }
 
-        var ev = new StationPostInitEvent((station, data));
-        RaiseLocalEvent(station, ref ev, true);
+        var newEv = new StationPostInitEvent((newStation, newData));
+        RaiseLocalEvent(newStation, ref newEv, true);
 
-        return station;
+        return newStation;
     }
 
     /// <summary>
@@ -417,6 +480,15 @@ public sealed class StationSystem : EntitySystem
             throw new ArgumentException("Tried to use a non-station entity as a station!", nameof(station));
 
         QueueDel(station);
+    }
+
+    private void MoveComponent<T>(EntityUid from, EntityUid to) where T : Component
+    {
+        if (EntityManager.TryGetComponent<T>(from, out var comp))
+        {
+            EntityManager.RemoveComponent<T>(from);
+            EntityManager.AddComponent(to, comp);
+        }
     }
 
     public EntityUid? GetOwningStation(EntityUid? entity, TransformComponent? xform = null)
@@ -521,6 +593,67 @@ public sealed class StationSystem : EntitySystem
         }
 
         return null;
+    }
+
+    private void TransferStationComponents(EntityUid oldStation, EntityUid newStation)
+    {
+        var jobsSystem = EntityManager.System<StationJobsSystem>();
+        var recordsSystem = EntityManager.System<StationRecordsSystem>();
+
+        // --- Transfer StationJobsComponent ---
+        if (EntityManager.TryGetComponent<StationJobsComponent>(oldStation, out var oldJobs))
+        {
+            RemComp<StationJobsComponent>(oldStation);
+
+            // Only add if not present
+            StationJobsComponent? newJobs;
+            if (!EntityManager.TryGetComponent<StationJobsComponent>(newStation, out newJobs))
+                newJobs = EntityManager.AddComponent<StationJobsComponent>(newStation);
+
+            foreach (var (jobId, counts) in oldJobs.SetupAvailableJobs)
+            {
+                int slotCount = 0;
+                if (counts != null && counts.Length > 0)
+                {
+                    slotCount = Math.Max(0, counts[0]);
+                }
+                // Only set if non-negative
+                jobsSystem.TrySetJobSlot(newStation, jobId, slotCount, createSlot: true, newJobs);
+            }
+
+            foreach (var jobId in oldJobs.OverflowJobs)
+            {
+                jobsSystem.MakeJobUnlimited(newStation, jobId, newJobs);
+            }
+        }
+
+        // --- Transfer StationRecordsComponent ---
+        if (EntityManager.TryGetComponent<StationRecordsComponent>(oldStation, out var oldRecords))
+        {
+            RemComp<StationRecordsComponent>(oldStation);
+
+            // Only add if not present
+            StationRecordsComponent? newRecords;
+            if (!EntityManager.TryGetComponent<StationRecordsComponent>(newStation, out newRecords))
+                newRecords = EntityManager.AddComponent<StationRecordsComponent>(newStation);
+
+            // List all record types you want to transfer here:
+            TransferRecordsOfType<GeneralStationRecord>(oldStation, newStation, recordsSystem);
+            TransferRecordsOfType<CriminalRecord>(oldStation, newStation, recordsSystem);
+            // Add more types as needed...
+        }
+    }
+
+    /// <summary>
+    /// Transfers all records of a specific type from one station to another.
+    /// </summary>
+    private void TransferRecordsOfType<T>(EntityUid oldStation, EntityUid newStation, StationRecordsSystem recordsSystem)
+    {
+        foreach (var (recordId, record) in recordsSystem.GetRecordsOfType<T>(oldStation))
+        {
+            // Use the public API to add the record to the new station
+            recordsSystem.AddRecordEntry(new StationRecordKey(recordId, newStation), record, Comp<StationRecordsComponent>(newStation));
+        }
     }
 }
 

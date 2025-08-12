@@ -358,8 +358,8 @@ entities:
         chunkSize: 4
     - type: GasTileOverlay
     - type: RadiationGridResistance
-    - type: BecomesStation
-      id: lpbravo
+    #- type: BecomesStation
+    #  id: lpbravo
 - proto: AirlockExternalShuttleSyndicateLocked
   entities:
   - uid: 25
