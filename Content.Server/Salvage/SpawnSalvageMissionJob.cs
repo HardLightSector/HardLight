@@ -176,7 +176,7 @@ public sealed class SpawnSalvageMissionJob : Job<bool>
             missionBiome = _prototypeManager.EnumeratePrototypes<SalvageBiomeModPrototype>().FirstOrDefault();
         }
 
-        if (missionBiome.BiomePrototype != null)
+        if (missionBiome?.BiomePrototype != null)
         {
             var biome = _entManager.AddComponent<BiomeComponent>(mapUid);
             var biomeSystem = _entManager.System<BiomeSystem>();
@@ -237,6 +237,12 @@ public sealed class SpawnSalvageMissionJob : Job<bool>
             _sawmill.Warning($"Failed to find dungeon prototype '{mission.Dungeon}', using fallback");
             dungeonMod = _prototypeManager.EnumeratePrototypes<SalvageDungeonModPrototype>().FirstOrDefault();
         }
+        if (dungeonMod == null)
+        {
+            _sawmill.Error("No dungeon mod prototypes available, skipping dungeon generation");
+            return false;
+        }
+        
         var dungeonConfig = _prototypeManager.Index(dungeonMod.Proto);
         var dungeons = await WaitAsyncTask(_dungeon.GenerateDungeonAsync(dungeonConfig, dungeonMod.Proto, mapUid, grid, (Vector2i)dungeonOffset, // Frontier: add dungeonMod.Proto
             _missionParams.Seed));
@@ -396,6 +402,13 @@ public sealed class SpawnSalvageMissionJob : Job<bool>
             _sawmill.Warning($"Failed to find loot prototype '{lootTable}', using fallback");
             allLoot = _prototypeManager.EnumeratePrototypes<SalvageLootPrototype>().FirstOrDefault();
         }
+        
+        if (allLoot == null)
+        {
+            _sawmill.Error("No loot prototypes available, skipping loot generation");
+            return true;
+        }
+        
         // End Frontier
         var lootBudget = difficultyProto.LootBudget;
 
