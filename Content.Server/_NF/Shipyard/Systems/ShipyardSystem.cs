@@ -4,6 +4,7 @@ using Content.Server.Station.Components;
 using Content.Server.Cargo.Systems;
 using Content.Server.Station.Systems;
 using Content.Shared._NF.Shipyard.Components;
+using Content.Shared.Station.Components;
 using Content.Shared._NF.Shipyard;
 using Content.Shared.GameTicking;
 using Robust.Server.GameObjects;
@@ -19,6 +20,10 @@ using Robust.Shared.Containers;
 using Content.Server._NF.Station.Components;
 using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.Utility;
+
+using Content.Shared._NF.Shipyard.Components;
+using Content.Server.Station.Events;
+using Robust.Shared.Map.Components;
 
 namespace Content.Server._NF.Shipyard.Systems;
 
@@ -78,6 +83,46 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
         SubscribeLocalEvent<ShipyardConsoleComponent, EntRemovedFromContainerMessage>(OnItemSlotChanged);
         /* SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestart); */
         SubscribeLocalEvent<StationDeedSpawnerComponent, MapInitEvent>(OnInitDeedSpawner);
+
+        // Subscribe to station post-init to refresh shuttles
+        SubscribeLocalEvent<StationPostInitEvent>(OnStationPostInit);
+    }
+
+    /// <summary>
+    /// Called after a station is initialized. Re-setup all shuttles with ShuttleDeedComponent.
+    /// </summary>
+    private void OnStationPostInit(ref StationPostInitEvent ev)
+    {
+        // Find all grids with ShuttleDeedComponent
+        var query = EntityQueryEnumerator<ShuttleDeedComponent, TransformComponent>();
+        while (query.MoveNext(out var grid, out var deed, out var xform))
+        {
+            // Only apply to grids (not loose entities)
+            if (xform.GridUid != grid)
+                continue;
+            SetupShuttleGrid(grid, ev.Station);
+        }
+    }
+
+    /// <summary>
+    /// Sets up a grid as a shuttle, linking it to the station and applying all necessary components/records.
+    /// </summary>
+    public void SetupShuttleGrid(EntityUid grid, EntityUid station)
+    {
+        // Ensure ShuttleComponent
+        EnsureComp<ShuttleComponent>(grid);
+
+        // Ensure StationMemberComponent and set station
+        var member = EnsureComp<StationMemberComponent>(grid);
+        member.Station = station;
+
+        // Optionally ensure ShipyardVoucherComponent or other ownership/access components as needed
+        // (If you want to copy logic from purchase, do so here)
+
+        // Update shuttle records if needed (pseudo, depends on your ShuttleRecordsSystem)
+        // _shuttleRecordsSystem.AddOrUpdateRecord(grid, station);
+
+        // Any other logic from purchase (ownership, access, etc) can be added here
     }
     public override void Shutdown()
     {

@@ -3,10 +3,10 @@
   isGrid: true # Did you know that Colcomm is the only "game map" that isn't actually a map? Send help.
   mapName: 'Colonial Command'
   mapPath: /Maps/colcomm.yml
-  minPlayers: 10
+  minPlayers: 0
   stations:
     Colcomm:
-      stationProto: NanotrasenCentralCommand
+      stationProto: RecordsFrontierOutpost
       components:
         - type: StationNameSetup
           mapNameTemplate: '{0} Colonial Command {1}'
