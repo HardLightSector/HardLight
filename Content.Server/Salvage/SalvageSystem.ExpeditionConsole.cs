@@ -38,6 +38,19 @@ public sealed partial class SalvageSystem
 
         // Get grid for FTL validation (where MapGridComponent is)
         var gridEntity = Transform(uid).GridUid ?? uid;
+        
+        // Find the actual station that owns this ship/grid
+        EntityUid? actualStation = null;
+        if (TryComp<StationMemberComponent>(gridEntity, out var stationMember))
+        {
+            actualStation = stationMember.Station;
+        }
+        
+        if (actualStation == null)
+        {
+            _popupSystem.PopupEntity("No station found for this ship!", uid, PopupType.LargeCaution);
+            return;
+        }
 
         if (!data.Missions.TryGetValue(args.Index, out var missionparams))
             return;
@@ -106,12 +119,20 @@ public sealed partial class SalvageSystem
                 return;
             }
         }
-        SpawnMission(missionparams, gridEntity, null);
+        SpawnMission(missionparams, actualStation.Value, null);
         #endregion Frontier FTL changes
         // End Frontier
 
     data.ActiveMission = args.Index;
-    var mission = GetMission(missionparams.MissionType, _prototypeManager.Index<SalvageDifficultyPrototype>(missionparams.Difficulty), missionparams.Seed); // Frontier: add MissionType
+    
+    // Safe difficulty prototype lookup
+    if (!_prototypeManager.TryIndex<SalvageDifficultyPrototype>(missionparams.Difficulty, out var difficultyProto))
+    {
+        Log.Error($"Failed to find difficulty prototype {missionparams.Difficulty}, expedition may fail");
+        return; // Abort mission creation if difficulty is invalid
+    }
+    
+    var mission = GetMission(missionparams.MissionType, difficultyProto, missionparams.Seed); // Frontier: add MissionType
     // Frontier - TODO: move this to progression for secondary window timer
     data.NextOffer = _timing.CurTime + mission.Duration + TimeSpan.FromSeconds(1);
     data.CooldownTime = mission.Duration + TimeSpan.FromSeconds(1); // Frontier

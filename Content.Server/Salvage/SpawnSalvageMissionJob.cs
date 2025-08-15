@@ -167,7 +167,14 @@ public sealed class SpawnSalvageMissionJob : Job<bool>
         // As we go through the config the rating will deplete so we'll go for most important to least important.
         // Frontier: custom difficulty
         if (!_prototypeManager.TryIndex<SalvageDifficultyPrototype>(_missionParams.Difficulty, out var difficultyProto))
-            difficultyProto = _prototypeManager.Index<SalvageDifficultyPrototype>(FallbackDifficulty);
+        {
+            if (!_prototypeManager.TryIndex<SalvageDifficultyPrototype>(FallbackDifficulty, out difficultyProto))
+            {
+                _sawmill.Error($"Failed to find both primary difficulty {_missionParams.Difficulty} and fallback difficulty {FallbackDifficulty}");
+                return false; // Abort mission if no valid difficulty found
+            }
+            _sawmill.Warning($"Using fallback difficulty {FallbackDifficulty} instead of {_missionParams.Difficulty}");
+        }
         // End Frontier
 
         var mission = _entManager.System<SharedSalvageSystem>()
@@ -282,7 +289,34 @@ public sealed class SpawnSalvageMissionJob : Job<bool>
 
         if (!_entManager.TryGetComponent<StationDataComponent>(Station, out var stationData))
         {
-            _sawmill.Warning($"Station {Station} does not have StationDataComponent, skipping ship FTL positioning");
+            _sawmill.Warning($"Station {Station} does not have StationDataComponent, using alternative ship detection");
+            
+            // Alternative approach: Find ships with StationMemberComponent that belong to this station
+            var query = _entManager.EntityQueryEnumerator<StationMemberComponent, ShuttleComponent>();
+            EntityUid? playerShip = null;
+            
+            while (query.MoveNext(out var shipUid, out var member, out var shuttle))
+            {
+                // Check if this ship belongs to our station
+                if (member.Station == Station)
+                {
+                    playerShip = shipUid;
+                    break;
+                }
+            }
+            
+            if (playerShip.HasValue && _entManager.TryGetComponent<ShuttleComponent>(playerShip.Value, out var shuttleComp))
+            {
+                // Use center of expedition map as destination
+                var coords = new Vector2(0f, 0f);
+                _sawmill.Debug($"[SalvageMission] FTL: Calling FTLToCoordinates for player ship {playerShip.Value}");
+                _shuttle.FTLToCoordinates(playerShip.Value, shuttleComp, new EntityCoordinates(mapUid, coords), 0f, 5.5f, _salvage.TravelTime);
+            }
+            else
+            {
+                _sawmill.Warning($"No player ship found for station {Station}");
+            }
+            
             return true;
         }
 
