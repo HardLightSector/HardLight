@@ -549,38 +549,6 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
         _metaData.SetEntityName(map, Loc.GetString("map-name-Colcomm"));
         _shuttle.TryAddFTLDestination(mapId, true, out _);
         Log.Info($"Created Colcomm grid {ToPrettyString(grid)} on map {ToPrettyString(map)} for station {ToPrettyString(station)}");
-
-        // --- Begin: Ensure Colcomm is a station entity with correct prototype ---
-        // Check if a station entity exists for this grid; if not, create one with the correct prototype
-        var stationSystem = EntitySystem.Get<StationSystem>();
-        var stationEntity = stationSystem.GetOwningStation(grid.Value);
-        if (stationEntity == null || stationEntity == EntityUid.Invalid)
-        {
-            // Spawn a station entity with the desired prototype and assign the grid
-            var stationProto = "RecordsFrontierOutpost";
-            var stationEntMgr = IoCManager.Resolve<IEntityManager>();
-            var stationCoords = new EntityCoordinates(grid.Value, 0, 0);
-            var stationUid = stationEntMgr.SpawnEntity(stationProto, stationCoords);
-            // Add the grid to the station
-            stationSystem.AddGridToStation(stationUid, grid.Value);
-            Log.Info($"Spawned Colcomm station entity {ToPrettyString(stationUid)} with prototype {stationProto} for grid {ToPrettyString(grid)}");
-        }
-        // --- End: Ensure Colcomm is a station entity with correct prototype ---
-
-        // --- Begin: Add expedition support to Colcomm ---
-        // Ensure SalvageExpeditionDataComponent is present on the grid
-        if (!HasComp<SalvageExpeditionDataComponent>(grid.Value))
-        {
-            EnsureComp<SalvageExpeditionDataComponent>(grid.Value);
-        }
-
-        // Spawn an expedition console (ComputerSalvageExpedition) at a default location (0,0, grid)
-        var consoleProto = "ComputerTabletopShipyardExpedition";
-        var coords = new EntityCoordinates(grid.Value, 0, 0);
-        var entMgr = IoCManager.Resolve<IEntityManager>();
-        var console = entMgr.SpawnEntity(consoleProto, coords);
-        Log.Info($"Spawned expedition console {console} on Colcomm grid {ToPrettyString(grid)}");
-        // --- End: Add expedition support to Colcomm ---
     }
 
     public HashSet<EntityUid> GetColcommMaps()

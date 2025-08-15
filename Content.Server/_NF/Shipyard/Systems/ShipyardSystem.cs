@@ -109,20 +109,26 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
     /// </summary>
     public void SetupShuttleGrid(EntityUid grid, EntityUid station)
     {
-        // Ensure ShuttleComponent
+        // Ensure basic shuttle components
         EnsureComp<ShuttleComponent>(grid);
+        
+        // Ensure MapGridComponent is properly accessible (critical for FTL validation)
+        // The reparenting process can sometimes make this component inaccessible via TryComp
+        if (!TryComp<MapGridComponent>(grid, out var mapGridComp))
+        {
+            // If TryComp fails, re-ensure the component to fix accessibility
+            mapGridComp = EnsureComp<MapGridComponent>(grid);
+            Log.Warning($"Had to re-ensure MapGridComponent for reparented shuttle {ToPrettyString(grid)}");
+        }
 
         // Ensure StationMemberComponent and set station
         var member = EnsureComp<StationMemberComponent>(grid);
         member.Station = station;
 
-        // Optionally ensure ShipyardVoucherComponent or other ownership/access components as needed
-        // (If you want to copy logic from purchase, do so here)
+        // Ensure ShuttleDeedComponent exists on the shuttle itself (required for ownership)
+        EnsureComp<ShuttleDeedComponent>(grid);
 
-        // Update shuttle records if needed (pseudo, depends on your ShuttleRecordsSystem)
-        // _shuttleRecordsSystem.AddOrUpdateRecord(grid, station);
-
-        // Any other logic from purchase (ownership, access, etc) can be added here
+        Log.Info($"Reparented shuttle {ToPrettyString(grid)} to station {ToPrettyString(station)} with FTL validation fix");
     }
     public override void Shutdown()
     {

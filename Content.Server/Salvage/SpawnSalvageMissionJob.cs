@@ -507,7 +507,7 @@ public sealed class SpawnSalvageMissionJob : Job<bool>
         var availableRooms = new ValueList<DungeonRoom>(dungeon.Rooms);
         var availableTiles = new List<Vector2i>();
 
-        while (availableRooms.Count > 0 && structureComp.Structures.Count < difficulty.DestructionStructures)
+        while (availableRooms.Count > 0 && structureComp.Structures.Count < (difficulty?.DestructionStructures ?? 0))
         {
             availableTiles.Clear();
             var roomIndex = random.Next(availableRooms.Count);

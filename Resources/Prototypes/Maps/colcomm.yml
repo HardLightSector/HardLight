@@ -13,3 +13,9 @@
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: 'TG'
+        - type: ExtraStationInformation
+          lobbySortOrder: 3
+        - type: StationJobs
+          availableJobs:
+        - type: StationDeadDrop
+          maxDeadDrops: 0

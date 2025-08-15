@@ -32,10 +32,12 @@ public sealed partial class SalvageSystem
     private void OnSalvageClaimMessage(EntityUid uid, SalvageExpeditionConsoleComponent component, ClaimSalvageMessage args)
     {
 
-        // Use the grid/entity the console is on, not the station
-        var gridEntity = uid;
-        if (!TryComp<SalvageExpeditionDataComponent>(gridEntity, out var data) || data.Claimed)
+        // Check expedition data on console (where it actually is)
+        if (!TryComp<SalvageExpeditionDataComponent>(uid, out var data))
             return;
+
+        // Get grid for FTL validation (where MapGridComponent is)
+        var gridEntity = Transform(uid).GridUid ?? uid;
 
         if (!data.Missions.TryGetValue(args.Index, out var missionparams))
             return;
