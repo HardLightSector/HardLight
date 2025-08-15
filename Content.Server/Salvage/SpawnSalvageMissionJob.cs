@@ -170,13 +170,24 @@ public sealed class SpawnSalvageMissionJob : Job<bool>
         var mission = _entManager.System<SharedSalvageSystem>()
             .GetMission(_missionParams.MissionType, difficultyProto, _missionParams.Seed); // Frontier: add MissionType
 
-        var missionBiome = _prototypeManager.Index<SalvageBiomeModPrototype>(mission.Biome);
+        if (!_prototypeManager.TryIndex<SalvageBiomeModPrototype>(mission.Biome, out var missionBiome))
+        {
+            _sawmill.Warning($"Failed to find biome prototype '{mission.Biome}', using fallback");
+            missionBiome = _prototypeManager.EnumeratePrototypes<SalvageBiomeModPrototype>().FirstOrDefault();
+        }
 
         if (missionBiome.BiomePrototype != null)
         {
             var biome = _entManager.AddComponent<BiomeComponent>(mapUid);
             var biomeSystem = _entManager.System<BiomeSystem>();
-            biomeSystem.SetTemplate(mapUid, biome, _prototypeManager.Index<BiomeTemplatePrototype>(missionBiome.BiomePrototype));
+            if (_prototypeManager.TryIndex<BiomeTemplatePrototype>(missionBiome.BiomePrototype, out var biomeTemplate))
+            {
+                biomeSystem.SetTemplate(mapUid, biome, biomeTemplate);
+            }
+            else
+            {
+                _sawmill.Warning($"Failed to find biome template prototype '{missionBiome.BiomePrototype}'");
+            }
             biomeSystem.SetSeed(mapUid, biome, mission.Seed);
             _entManager.Dirty(mapUid, biome);
 
@@ -221,7 +232,11 @@ public sealed class SpawnSalvageMissionJob : Job<bool>
         var dungeonOffsetDistance = minDungeonOffset + (maxDungeonOffset - minDungeonOffset) * random.NextFloat();
         var dungeonOffset = new Vector2(0f, dungeonOffsetDistance);
         dungeonOffset = dungeonRotation.RotateVec(dungeonOffset);
-        var dungeonMod = _prototypeManager.Index<SalvageDungeonModPrototype>(mission.Dungeon);
+        if (!_prototypeManager.TryIndex<SalvageDungeonModPrototype>(mission.Dungeon, out var dungeonMod))
+        {
+            _sawmill.Warning($"Failed to find dungeon prototype '{mission.Dungeon}', using fallback");
+            dungeonMod = _prototypeManager.EnumeratePrototypes<SalvageDungeonModPrototype>().FirstOrDefault();
+        }
         var dungeonConfig = _prototypeManager.Index(dungeonMod.Proto);
         var dungeons = await WaitAsyncTask(_dungeon.GenerateDungeonAsync(dungeonConfig, dungeonMod.Proto, mapUid, grid, (Vector2i)dungeonOffset, // Frontier: add dungeonMod.Proto
             _missionParams.Seed));
@@ -337,7 +352,18 @@ public sealed class SpawnSalvageMissionJob : Job<bool>
          */
 
         var mobBudget = difficultyProto.MobBudget;
-        var faction = _prototypeManager.Index<SalvageFactionPrototype>(mission.Faction);
+        if (!_prototypeManager.TryIndex<SalvageFactionPrototype>(mission.Faction, out var faction))
+        {
+            _sawmill.Warning($"Failed to find faction prototype '{mission.Faction}', using fallback");
+            faction = _prototypeManager.EnumeratePrototypes<SalvageFactionPrototype>().FirstOrDefault();
+        }
+        
+        if (faction == null)
+        {
+            _sawmill.Error("No faction prototypes available, skipping mob spawning");
+            return true;
+        }
+        
         var randomSystem = _entManager.System<RandomSystem>();
 
         foreach (var entry in faction.MobGroups)
@@ -365,7 +391,11 @@ public sealed class SpawnSalvageMissionJob : Job<bool>
 
         // Frontier: difficulty-based loot tables
         var lootTable = difficultyProto.LootTable ?? SharedSalvageSystem.ExpeditionsLootProto;
-        var allLoot = _prototypeManager.Index<SalvageLootPrototype>(lootTable);
+        if (!_prototypeManager.TryIndex<SalvageLootPrototype>(lootTable, out var allLoot))
+        {
+            _sawmill.Warning($"Failed to find loot prototype '{lootTable}', using fallback");
+            allLoot = _prototypeManager.EnumeratePrototypes<SalvageLootPrototype>().FirstOrDefault();
+        }
         // End Frontier
         var lootBudget = difficultyProto.LootBudget;
 
@@ -477,7 +507,12 @@ public sealed class SpawnSalvageMissionJob : Job<bool>
                     {
                         if (_entManager.TryGetComponent<BiomeComponent>(gridUid, out var biome))
                         {
-                            _biome.AddTemplate(gridUid, biome, "Loot", _prototypeManager.Index<BiomeTemplatePrototype>(biomeLoot.Prototype), i);
+                            if (_prototypeManager.TryIndex<BiomeTemplatePrototype>(biomeLoot.Prototype, out var biomeTemplate))
+                            {
+                                _biome.AddTemplate(gridUid, biome, "Loot", biomeTemplate, i);
+                            }
+                            else
+                                _sawmill.Warning($"Failed to find biome template prototype '{biomeLoot.Prototype}'");
                         }
                     }
                     break;
