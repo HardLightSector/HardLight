@@ -1,6 +1,6 @@
 using Content.Shared.Security.Components;
 using Content.Shared.Security.Systems;
-AWADADAD"!£"!£"!£!"£! //temp
+
 namespace Content.Server.Security;
 
 public sealed class GenpopSystem : SharedGenpopSystem
