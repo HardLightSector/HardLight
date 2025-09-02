@@ -1,0 +1,29 @@
+- type: entity
+  name: mech-suit diamond drill
+  parent: MiningDrillDiamond
+  id: CitronaMiningDrillDiamondMech
+  description: A massive industrial mining drill meant to be used on a mech, Citrona has modified this to be (barely) man-portable.  It'll tear through anything.
+  suffix: Citrona
+  components:
+  - type: Sprite
+    sprite: _HL/Objects/Tools/mecha_diamond_drill.rsi
+    state: handdrill
+    scale: 2.0, 2.0
+  - type: MeleeWeapon
+    autoAttack: true
+    angle: 45
+    wideAnimationRotation: -90
+    range: 2
+    soundHit:
+      path: "/Audio/Items/drill_hit.ogg"
+    attackRate: 4
+    damage:
+      groups:
+        Brute: 15
+      types:
+        Structural: 75
+  - type: MiningGatheringHard # Frontier
+  - type: Wieldable
+  - type: Item
+    size: Large
+  - type: MeleeRequiresWield

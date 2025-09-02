@@ -1,0 +1,11 @@
+- type: entity
+  id: RCDCitrona
+  parent: RCD
+  name: experimental industrial RCD
+  description: A bluespace-enhanced rapid construction device that draws from huge reserves of compressed matter stored off-site, though the distance means it can take a moment to refill itself.
+  suffix: Citrona
+  components:
+  - type: LimitedCharges
+    maxCharges: 50
+  - type: AutoRecharge
+    rechargeDuration: 5

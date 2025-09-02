@@ -1,0 +1,42 @@
+- type: entity
+  name: pocket floodlight
+  id: CitronaPocketFloodlight
+  parent: BaseLamp
+  description: A remarkably small bright light with the logo of the Jell Design Bureau on it.  Fits in your pocket!
+  suffix: Citrona
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: Objects/Misc/Lights/lights.rsi
+    layers:
+      - state: floodlight
+        map: [ "base" ]
+      - state: floodlight-on
+        shader: unshaded
+        visible: false
+        map: [ "light" ]
+  - type: Physics
+    canCollide: true
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.2, -0.5, 0.2, 0.5"
+        density: 50
+        mask:
+        - HighImpassable
+  - type: PointLight
+    enabled: false
+    radius: 10
+    energy: 3
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellMicroreactor
+  - type: PhysicalComposition
+    materialComposition:
+      Glass: 500
+      Steel: 200
