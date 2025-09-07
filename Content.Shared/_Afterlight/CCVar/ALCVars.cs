@@ -26,4 +26,16 @@ public sealed class ALCVars : CVars
     // Taken from https://github.com/RMC-14/RMC-14
     public static readonly CVarDef<bool> ALActiveInputMoverEnabled =
         CVarDef.Create("al.active_input_mover_enabled", true, CVar.REPLICATED | CVar.SERVER);
+
+    public static readonly CVarDef<int> ALSubtleMaxCharacters =
+        CVarDef.Create("al.subtle_max_characters", 2048, CVar.REPLICATED | CVar.SERVER);
+
+    public static readonly CVarDef<float> ALSubtleRange =
+        CVarDef.Create("al.subtle_range", 1.5f, CVar.REPLICATED | CVar.SERVER);
+
+    public static readonly CVarDef<bool> ALSubtlePlaySound =
+        CVarDef.Create("al.subtle_play_sound", true, CVar.REPLICATED | CVar.CLIENT);
+
+    public static readonly CVarDef<bool> ALGhostSeeAllEmotes =
+        CVarDef.Create("al.ghost_see_all_emotes", false, CVar.REPLICATED | CVar.CLIENT);
 }

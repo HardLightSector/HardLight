@@ -4,6 +4,7 @@ using Robust.Client.UserInterface.XAML;
 
 namespace Content.Client._Afterlight.UserInterface;
 
+// Taken from https://github.com/RMC-14/RMC-14
 [GenerateTypedNameReferences]
 public sealed partial class BlueHorizontalSeparator : Control
 {

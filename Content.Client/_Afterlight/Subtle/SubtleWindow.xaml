@@ -1,0 +1,15 @@
+﻿<controls:SubtleWindow
+    xmlns="https://spacestation14.io"
+    xmlns:controls="clr-namespace:Content.Client._Afterlight.Subtle"
+    Title="{Loc al-subtle-title}"
+    MinSize="325 210">
+    <BoxContainer Orientation="Vertical">
+        <TextEdit Name="TextEdit" Access="Public" VerticalExpand="True" />
+        <CheckBox Name="AntiGhostCheckbox" Access="Public" Text="{Loc 'al-subtle-anti-ghost'}" />
+        <BoxContainer Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 5">
+            <Button Name="SubmitButton" Access="Public" Text="{Loc al-subtle-submit}" StyleClasses="OpenBoth" />
+            <Label Name="CharacterCountLabel" Access="Public" Margin="25 0" />
+            <Button Name="CancelButton" Access="Public" Text="{Loc al-subtle-cancel}" StyleClasses="OpenBoth" />
+        </BoxContainer>
+    </BoxContainer>
+</controls:SubtleWindow>

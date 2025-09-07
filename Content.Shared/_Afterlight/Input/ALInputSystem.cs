@@ -2,6 +2,7 @@
 using Content.Shared.Movement.Components;
 using Content.Shared.NPC;
 using Robust.Shared.Configuration;
+using Robust.Shared.Network;
 using Robust.Shared.Player;
 
 namespace Content.Shared._Afterlight.Input;
@@ -10,6 +11,7 @@ namespace Content.Shared._Afterlight.Input;
 public sealed class ALInputSystem : EntitySystem
 {
     [Dependency] private readonly IConfigurationManager _config = default!;
+    [Dependency] private readonly INetManager _net = default!;
 
     private bool _activeInputMoverEnabled;
 
@@ -34,7 +36,7 @@ public sealed class ALInputSystem : EntitySystem
 
     private void OnActiveChanged<TComp, TEvent>(Entity<TComp> ent, ref TEvent args) where TComp : IComponent?
     {
-        if (!_activeInputMoverEnabled)
+        if (!_activeInputMoverEnabled || _net.IsClient)
             return;
 
         if (ShouldBeActive(ent))

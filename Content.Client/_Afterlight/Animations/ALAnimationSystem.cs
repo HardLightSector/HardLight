@@ -59,7 +59,8 @@ public sealed class ALAnimationSystem : SharedALAnimationSystem
         if (_animation.HasRunningAnimation(ent, FlickId))
             return;
 
-        if (ev.Layer == null)
+        var layer = ev.Layer ?? FlickId;
+        if (!_sprite.LayerExists(ent, layer))
             _sprite.LayerMapSet(ent, FlickId, 0);
 
         var animationState = _sprite.GetState(ev.AnimationState);

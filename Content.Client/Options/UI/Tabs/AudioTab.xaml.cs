@@ -69,6 +69,10 @@ public sealed partial class AudioTab : Control
             ALCVars.VolumeGainCassettes,
             SliderVolumeCassettes,
             scale: 1f);
+
+        Control.AddOptionCheckBox(
+            ALCVars.ALSubtlePlaySound,
+            SubtlePlaySound);
         // Afterlight
 
         Control.AddOptionSlider(

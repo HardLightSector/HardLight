@@ -1,10 +1,19 @@
 ﻿<tabs:MiscTab xmlns="https://spacestation14.io"
               xmlns:tabs="clr-namespace:Content.Client.Options.UI.Tabs"
               xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-              xmlns:ui="clr-namespace:Content.Client.Options.UI">
+              xmlns:ui="clr-namespace:Content.Client.Options.UI"
+              xmlns:s="clr-namespace:Content.Client.Stylesheets">
     <BoxContainer Orientation="Vertical">
         <ScrollContainer VerticalExpand="True" HorizontalExpand="True">
             <BoxContainer Orientation="Vertical" Margin="8 8 8 8" VerticalExpand="True">
+                <!-- Afterlight -->
+                <Label Text="{Loc 'al-ui-afterlight'}"
+                       FontColorOverride="{x:Static s:StyleNano.NanoGold}"
+                       StyleClasses="LabelKeyText" />
+                <BoxContainer Orientation="Vertical" Margin="0 3 0 0">
+                    <CheckBox Name="GhostSeeAllEmotes" Text="{Loc 'al-subtle-see-all-emotes'}" />
+                </BoxContainer>
+                <!-- Afterlight -->
                 <Label Text="{Loc 'ui-options-general-ui-style'}"
                        StyleClasses="LabelKeyText"/>
                 <ui:OptionDropDown Name="DropDownHudTheme" Title="{Loc 'ui-options-hud-theme'}" />

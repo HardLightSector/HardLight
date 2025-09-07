@@ -485,31 +485,8 @@ public enum LogType
     /// Events relating to midi playback.
     /// </summary>
     Instrument = 103,
-    AdminRefund = 203,
-    /// <summary>
-    /// An atmos device's direction was changed.
-    /// </summary>
-    AtmosDirectionChanged = 204,
 
-    Consent = 12489, // Floofstation - random high number to avoid conflict when upstream adds new log types
-    /// <summary>
-    /// A player has posted a bounty contract.
-    /// </summary>
-    BountyContractCreated = 205,
-    /// <summary>
-    /// A player has deleted a bounty contract.
-    /// </summary>
-    BountyContractRemoved = 206,
-    /// <summary>
-    /// A medical bounty was redeemed.
-    /// </summary>
-    MedicalBountyRedeemed = 207,
-    /// <summary>
-    /// Shuttle info was changed.
-    /// </summary>
-    ShuttleInfoChanged = 208,
-    #endregion Frontier Values
-    // End Frontier
-    BagOfHolding = 420, //Nyano - Summary: adds bag of holding. 
-    Psionics = 421, //Nyano - Summary: ads psionic as a log type.
+    #region Starlight log flags
+    Railroading = 1000,
+    #endregion
 }

@@ -54,4 +54,26 @@ public abstract class SharedALAnimationSystem : EntitySystem
         var filter = Filter.Pvs(ent);
         RaiseNetworkEvent(ev, filter);
     }
+
+    /// <summary>
+    ///     Wrapper around <see cref="Flick"/> which only runs if both
+    ///     <see cref="animationRsi"/> and <see cref="defaultRsi"/> are not null.
+    /// </summary>
+    /// <param name="ent">The entity to play the animation on.</param>
+    /// <param name="animationRsi">The RSI state to use for playing the animation.</param>
+    /// <param name="defaultRsi">The RSI state to set when the animation ends.</param>
+    /// <param name="layer">
+    ///     Which layer to play the animation on. If null, it will choose the first
+    ///     layer by default.
+    /// </param>
+    public void TryFlick(Entity<ALAnimationComponent?> ent,
+        SpriteSpecifier.Rsi? animationRsi,
+        SpriteSpecifier.Rsi? defaultRsi,
+        string? layer = null)
+    {
+        if (animationRsi == null || defaultRsi == null)
+            return;
+
+        Flick(ent, animationRsi, defaultRsi, layer);
+    }
 }
