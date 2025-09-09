@@ -34,6 +34,8 @@
       Brass: 100
   - type: StaticPrice
     price: 30 # Ensures these can be sold and have a reasonable vending value
+  - type: NFWeaponDetails # Hardlight change
+    manufacturer: weapon-details-manufacturer-SESWC-consortium
 
 - type: entity
   name: crass knuckles

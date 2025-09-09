@@ -19,3 +19,45 @@
     damage:
       types:
         Blunt: 8
+
+- type: entity
+  name: SESWC Vortex-12
+  parent: WeaponShotgunBulldog
+  id: WeaponShotgunVortex
+  description: Design by SESWC. An automatic magazine-fed shotgun for close-quarters combat #with an auto magazine ejector
+  components:
+  - type: NFWeaponDetails
+    manufacturer: weapon-details-manufacturer-SESWC-consortium
+  - type: Sprite
+    sprite: _HL/Objects/Weapons/Guns/Shotguns/vortex.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Item
+    # sprite: _HL/Objects/Weapons/Guns/Shotguns/vortex_inhand.rsi
+    size: Large
+  - type: Clothing
+    sprite: _HL/Objects/Weapons/Guns/Shotguns/vortex.rsi
+    quickEquip: false
+    slots:
+    - Back
+    - suitStorage
+  - type: AltFireMelee # Not using the gun melee based because this is a different damage type and need different rotation
+    attackType: Light
+  - type: MeleeRequiresWield
+  - type: MeleeWeapon
+    attackRate: .85
+    damage:
+      types:
+       Blunt: 20
+    angle: 0
+    wideAnimationRotation: 90
+    animation: WeaponArcThrust
+    soundHit:
+      collection: MetalThud
+  - type: DisarmMalus
+    malus: 0.225
+  #- type: ChamberMagazineAmmoProvider
+  #  autoEject: true

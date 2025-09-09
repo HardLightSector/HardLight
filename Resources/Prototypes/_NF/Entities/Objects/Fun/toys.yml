@@ -582,6 +582,8 @@
   - type: EmitSoundOnCollide
     sound:
       collection: ToySqueak
+  - type: NFWeaponDetails  # Hardlight change
+    manufacturer: weapon-details-manufacturer-SESWC-consortium
   # - type: EyeCursorOffset # clear the offset
     # maxOffset: 0
     # pvsIncrease: 0

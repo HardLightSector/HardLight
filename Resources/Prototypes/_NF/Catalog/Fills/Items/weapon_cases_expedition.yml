@@ -272,7 +272,7 @@
   components:
   - type: StorageFill
     contents:
-    - id: NFWeaponShotgunBulldogExpedition
+    - id: WeaponShotgunBulldog  # Hardlight change
       amount: 1
     - id: Magazine12_gaugeBuckshot
       amount: 2
@@ -293,7 +293,7 @@
       amount: 2
     - id: AmmoBox7.62x51mmBigFMJ
       amount: 2
-      
+
 - type: entity
   parent: WeaponCaseLong
   id: WeaponCaseLongSniperCeremonialExpedition
