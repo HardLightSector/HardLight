@@ -131,7 +131,7 @@
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
   - type: AltFireMelee # Frontier
-    attackType: Heavy # Frontier
+    attackType: Light # Frontier
 
 - type: entity
   categories: [ HideSpawnMenu ] # Frontier
