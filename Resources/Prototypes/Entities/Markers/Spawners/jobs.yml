@@ -660,3 +660,66 @@
     layers:
       - state: green
       - state: zookeeper
+
+# HL syndicate jobs
+
+- type: entity
+  id: SpawnPointCellComm
+  parent: SpawnPointJobBase
+  name: cell commander
+  components:
+  - type: SpawnPoint
+    job_id: SynCellCommander
+  - type: Sprite
+    layers:
+      - state: green
+      - state: ertleadereva
+
+
+- type: entity
+  id: SpawnPointCellOfficer
+  parent: SpawnPointJobBase
+  name: cell officer
+  components:
+  - type: SpawnPoint
+    job_id: SynCellOfficer
+  - type: Sprite
+    layers:
+      - state: green
+      - state: ertsecurityeva
+
+- type: entity
+  id: SpawnPointCellSpecialist
+  parent: SpawnPointJobBase
+  name: cell specialist
+  components:
+  - type: SpawnPoint
+    job_id: SynCellSpecialist
+  - type: Sprite
+    layers:
+      - state: green
+      - state: seniorofficer
+
+- type: entity
+  id: SpawnPointCellAgent
+  parent: SpawnPointJobBase
+  name: cell agent
+  components:
+  - type: SpawnPoint
+    job_id: SynCellAgent
+  - type: Sprite
+    layers:
+      - state: green
+      - state: security_officer
+
+- type: entity
+  id: SpawnPointCellProspect
+  parent: SpawnPointJobBase
+  name: cell prospect
+  components:
+  - type: SpawnPoint
+    job_id: SynCellProspect
+  - type: Sprite
+    layers:
+      - state: green
+      - state: security_cadet

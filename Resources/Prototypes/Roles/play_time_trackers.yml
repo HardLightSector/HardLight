@@ -159,3 +159,20 @@
 
 - type: playTimeTracker
   id: JobBrigmedic
+
+# HL Syndicate jobs
+
+- type: playTimeTracker
+  id: JobCellComm
+
+- type: playTimeTracker
+  id: JobCellOff
+
+- type: playTimeTracker
+  id: JobCellSpec
+
+- type: playTimeTracker
+  id: JobCellOp
+
+- type: playTimeTracker
+  id: JobCellPros

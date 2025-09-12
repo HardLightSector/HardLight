@@ -123,3 +123,10 @@ JobVisitor = Visitor
 # Frontier: Warden<Bailiff
 JobWarden = Bailiff
 JobZookeeper = Zookeeper
+
+# HL Syndicate jobs
+job-name-cellleader = Cell Commander
+job-name-cellofficer = Officer
+job-name-cellspecialist = Specialist
+job-name-cellagent = Agent
+job-name-cellprospect = Prospect

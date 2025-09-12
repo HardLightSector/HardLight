@@ -144,3 +144,16 @@
   - Zookeeper
   - Psychologist
   primary: false
+
+- type: department
+  id: Syndicate
+  name: department-Syndicate
+  description: department-Syndicate-description
+  color: "#620303"
+  roles:
+   - SynCellCommander
+   - SynCellOfficer
+   - SynCellSpecialist
+   - SynCellAgent
+   - SynCellProspect
+  weight: -15

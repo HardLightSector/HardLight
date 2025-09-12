@@ -1676,3 +1676,38 @@
   hidden: true
   loadouts:
   - LoadoutSpeciesBreathToolSecurity
+
+# HL Syndicate jobs ClothingNeckScarfStripedSyndieRed
+
+#- type: loadoutGroup
+#  id: CellJumpsuit
+#  name: loadout-group-syndi-jumpsuit
+#  loadouts:
+#  - SynJumpsuit
+#  - SynJumpskirt
+#  - SynTurtleneck
+#  - SynTurtleneckSkirt
+#  - SynCrop
+#  - SynCropSkirt
+#  - SynCropSleeve
+#  - SynCropSkirtSleeve
+#  fallbacks:
+#  - SynJumpsuit
+
+- type: loadoutGroup
+  id: CellBackpack
+  name: loadout-group-syndi-backpack
+  loadouts:
+  - SynBack
+  - SynBackDuff
+  - SynBackMess
+  fallbacks:
+  - SynBack
+
+- type: loadoutGroup
+  id: CellJumpsuit
+  name: loadout-group-atmospheric-technician-jumpsuit
+  loadouts:
+#  - SynJumpsuit
+  - AtmosphericTechnicianJumpskirt
+  - AtmosphericTechnicianJumpsuitCasual

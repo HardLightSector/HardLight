@@ -927,3 +927,60 @@
   groups:
   - GroupEVATank
   - SurvivalExtended
+
+# HL Syndicate jobs
+
+- type: roleLoadout
+  id: JobSynCellCommander
+  groups:
+  - MercenaryGlasses
+  - MercenaryBelt
+  - SurvivalSyndicate
+  - ContractorWallet
+  - ContractorImplanter
+  - ContractorBackpackItems
+  - ContractorHandItems
+
+- type: roleLoadout
+  id: JobSynCellOfficer
+  groups:
+  - MercenaryGlasses
+  - MercenaryBelt
+  - SurvivalSyndicate
+  - ContractorWallet
+  - ContractorImplanter
+  - ContractorBackpackItems
+  - ContractorHandItems
+
+- type: roleLoadout
+  id: JobSynCellSpecialist
+  groups:
+  - MercenaryGlasses
+  - MercenaryBelt
+  - SurvivalSyndicate
+  - ContractorWallet
+  - ContractorImplanter
+  - ContractorBackpackItems
+  - ContractorHandItems
+
+- type: roleLoadout
+  id: JobSynCellAgent
+  groups:
+  - MercenaryGlasses
+  - MercenaryBelt
+  - SurvivalSyndicate
+  - ContractorWallet
+  - ContractorImplanter
+  - ContractorBackpackItems
+  - ContractorHandItems
+
+- type: roleLoadout
+  id: JobSynCellProspect
+  groups:
+  - MercenaryGlasses
+  - MercenaryBelt
+  - SurvivalSyndicate
+  - ContractorWallet
+  - ContractorImplanter
+  - ContractorBackpackItems
+  - ContractorHandItems
