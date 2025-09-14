@@ -10,7 +10,7 @@
   - Quadborgendoskeleton
 
 - type: latheRecipePack
-  id: BorgModulesStatic
+  id: BorgModulesStatic #
   recipes:
   - BorgModuleCable
   - BorgModuleFireExtinguisher
@@ -20,11 +20,31 @@
   - BorgModuleKill
   - BorgModuleInvestigation
   - BorgModuleSurgery # Shitmed Change
+  # Hardlight change start
+  - BorgModuleCleaning
+  - BorgModuleTreatment
+  - BorgModuleBureaucracy
+  - BorgModuleJetpack
+  - BorgModuleConstruction
+  - BorgModuleDefibrillator
+  - BorgModuleDiagnosis
+  - BorgModuleNFService
+  - BorgModuleRCDShipyard
 
 - type: latheRecipePack
   id: BorgModulesDynamic
   recipes:
   - BorgModuleAdvancedSurgery
+  #Hardlight change start
+  - BorgModuleClowning
+  - BorgModuleMusique
+  - BorgModuleTreatment
+  - BorgModuleadvancedmeasures
+  - BorgModuleAdvancedTreatment
+  - BorgModuleGrapplingGun
+  - BorgModuleLightReplacer
+  - BorgModuleAdvancedParamedic
+
 
 - type: latheRecipePack
   id: SMCybernetics

@@ -1,14 +1,14 @@
 - type: reagent
   id: NTLight
-  name: NanoLight
+  name: reagent-name-nanolight
   parent: BaseAlcohol
-  desc: NanoLight, a beer made by NT
+  desc: reagent-desc-nanolight
   physicalDesc: reagent-physical-desc-bubbly
   flavor: beer
   color: "#e3e77b"
   recognizable: true
   metamorphicSprite:
-    sprite: Object/Consumables/Drinks/beerglass.rsi
+    sprite: Objects/Consumable/Drinks/beerglass.rsi
     state: icon_empty
   metamorphicMaxFillLevels: 6
   metamorphicFillBaseName: fill-

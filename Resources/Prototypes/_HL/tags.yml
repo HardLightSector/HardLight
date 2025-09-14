@@ -1,4 +1,4 @@
-﻿#region .25 caseless
+#region .25 caseless
 - type: Tag
   id: HLMagazineCaselessRifle
 
@@ -269,6 +269,12 @@
 
 - type: Tag
   id: ShellShotgun23x75mmBuckshot
+
+- type: Tag
+  id: MagazineAMR
+
+- type: Tag
+  id: CartridgeAntiMaterielBig
 
 - type: Tag
   id: Abyssal

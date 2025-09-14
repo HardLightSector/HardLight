@@ -1,4 +1,4 @@
-﻿- type: inventoryTemplate
+- type: inventoryTemplate
   id: hostilehumanoid
   slots:
     - name: pocket1

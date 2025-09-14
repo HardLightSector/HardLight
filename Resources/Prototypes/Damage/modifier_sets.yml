@@ -331,3 +331,12 @@
     Blunt: 1.5
     Slash: 1.5
     Piercing: 1.5
+
+- type: damageModifierSet
+  id: BaseHealthyMob
+  coefficients:
+    # Standard biological entity with no specific resistances
+    # Represents a healthy biological creature
+    Poison: 1.0
+    Heat: 1.0
+    Cold: 1.0

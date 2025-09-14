@@ -169,8 +169,10 @@
     usesApcPower: true
   - type: ContainerFill
     containers:
-      board:
-      - WeaponEnergyTurretStationControlPanelElectronics
+      board:  # Hardlight change
+      - WeaponEnergyTurretSecurityControlPanelElectronics
+      - WeaponEnergyTurretAIControlPanelElectronics
+      - WeaponEnergyTurretCommandControlPanelElectronics
   - type: Construction
     graph: WeaponEnergyTurretControlPanel
     node: finish

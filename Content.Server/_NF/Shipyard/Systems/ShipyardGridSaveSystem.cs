@@ -703,67 +703,10 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
         var entitiesRemoved = 0;
         var componentsRemoved = 0;
 
-        // PHASE 1: Delete problematic entities that should not be saved
-        // This eliminates them from processing entirely, avoiding race conditions
-        _sawmill.Info("Phase 1: Deleting problematic entities");
-
-        var entitiesToDelete = new List<EntityUid>();
-
-        foreach (var entity in allEntities)
-        {
-            try
-            {
-                // Check if entity still exists before processing
-                if (!_entityManager.EntityExists(entity))
-                    continue;
-
-                // Mark vending machines for deletion to avoid lag and complexity
-                if (_entityManager.HasComponent<VendingMachineComponent>(entity))
-                {
-                    entitiesToDelete.Add(entity);
-                    continue;
-                }
-
-                // Mark loose items for deletion (not anchored and not in containers)
-                if (_entityManager.TryGetComponent<TransformComponent>(entity, out var transform))
-                {
-                    // Check if item is loose (not anchored and not in a container)
-                    if (!transform.Anchored && !_containerSystem.IsEntityInContainer(entity))
-                    {
-                        // Skip important structural entities like the grid itself
-                        if (!_entityManager.HasComponent<MapGridComponent>(entity))
-                        {
-                            entitiesToDelete.Add(entity);
-                            continue;
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                _sawmill.Warning($"Error evaluating entity {entity} for deletion: {ex}");
-            }
-        }
-
-        // Actually delete the marked entities
-        foreach (var entity in entitiesToDelete)
-        {
-            try
-            {
-                if (_entityManager.EntityExists(entity))
-                {
-                    _sawmill.Info($"Deleting problematic entity {entity} during ship cleanup");
-                    _entityManager.DeleteEntity(entity);
-                    entitiesRemoved++;
-                }
-            }
-            catch (Exception ex)
-            {
-                _sawmill.Warning($"Error deleting entity {entity}: {ex}");
-            }
-        }
-
-        _sawmill.Info($"Phase 1 complete: deleted {entitiesRemoved} entities");
+    // PHASE 1: Do not delete entities to preserve physics counts
+    // We'll clean by removing components instead (e.g., VendingMachineComponent)
+    _sawmill.Info("Phase 1: Skipping entity deletions to preserve physics components");
+    _sawmill.Info($"Phase 1 complete: deleted {entitiesRemoved} entities");
 
         // PHASE 2: Clean components from remaining entities
         // Re-gather remaining entities to avoid processing deleted ones
@@ -796,6 +739,10 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
                 if (_entityManager.RemoveComponent<ActorComponent>(entity))
                     componentsRemoved++;
                 if (_entityManager.RemoveComponent<EyeComponent>(entity))
+                    componentsRemoved++;
+
+                // Remove vending machine behavior but keep the entity to preserve physics
+                if (_entityManager.RemoveComponent<VendingMachineComponent>(entity))
                     componentsRemoved++;
 
                 // Note: Removed PhysicsComponent deletion that was causing collision issues in loaded ships

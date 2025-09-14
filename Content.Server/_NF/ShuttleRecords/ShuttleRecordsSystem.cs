@@ -121,8 +121,21 @@ public sealed partial class ShuttleRecordsSystem : SharedShuttleRecordsSystem
 
     private bool TryGetShuttleRecordsDataComponent([NotNullWhen(true)] out SectorShuttleRecordsComponent? component)
     {
+        var service = _sectorService.GetServiceEntity();
+        if (service == EntityUid.Invalid)
+        {
+            component = null;
+            return false;
+        }
+
+        if (!EntityManager.EntityExists(service) || Terminating(service))
+        {
+            component = null;
+            return false;
+        }
+
         if (_entityManager.EnsureComponent<SectorShuttleRecordsComponent>(
-                uid: _sectorService.GetServiceEntity(),
+                uid: service,
                 out var shuttleRecordsComponent))
         {
             component = shuttleRecordsComponent;

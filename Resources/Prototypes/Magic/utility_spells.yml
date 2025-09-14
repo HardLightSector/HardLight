@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   id: ActionChargeSpell
   name: Charge
   description: Adds a charge back to your wand

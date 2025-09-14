@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   parent: AirlockGlassShuttleNfsdLocked
   id: AirlockExternalGlassShuttleSec
   suffix: External, Glass, Docking, Security

@@ -136,6 +136,7 @@ public sealed class GameMapManager : IGameMapManager
     public void ClearSelectedMap()
     {
         _selectedMap = default!;
+        _configSelectedMap = default!;
     }
 
     public bool TrySelectMapIfEligible(string gameMap)

@@ -1,4 +1,4 @@
-﻿# generic parts
+# generic parts
 - type: entity
   id: LeftArmBorg
   parent: BaseBorgArmLeft

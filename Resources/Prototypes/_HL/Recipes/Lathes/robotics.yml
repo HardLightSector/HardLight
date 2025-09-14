@@ -1,0 +1,21 @@
+# using the Parent for the recipe this is in the _NF folder
+
+- type: latheRecipe
+  parent: BaseBorgModuleRecipe
+  id: BorgModuleBureaucracy
+  result: BorgModuleBureaucracy
+
+- type: latheRecipe
+  parent: BaseBorgModuleRecipe
+  id: BorgModuleNFService
+  result: BorgModuleNFService
+
+- type: latheRecipe
+  parent: BaseBorgModuleRecipe
+  id: BorgModuleRCDShipyard
+  result: BorgModuleRCDShipyard
+
+- type: latheRecipe
+  parent: BaseGoldBorgModuleRecipe
+  id: BorgModuleadvancedmeasures
+  result: BorgModuleadvancedmeasures

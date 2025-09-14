@@ -191,3 +191,4 @@
   suffix: Robot
   parent: BaseWeaponEnergyShotgun
   id: WeaponBorgEnergyShotgun
+  categories: [ HideSpawnMenu ] # Hardlight change

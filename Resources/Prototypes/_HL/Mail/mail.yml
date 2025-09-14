@@ -1,0 +1,17 @@
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: BaseMail
+  id: HLMailSecurityFuc
+  suffix: FuCs
+  components:
+  - type: Mail
+    contents:
+     - id: FrontierUplinkCoin5
+       amount: 1
+       prob: 0.60
+     - id: FrontierUplinkCoin10
+       amount: 1
+       prob: 0.25
+     - id: FrontierUplinkCoin
+       amount: 1
+       prob: 0.15

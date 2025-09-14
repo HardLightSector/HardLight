@@ -219,7 +219,7 @@
   - type: InstantAction
     useDelay: 30
     event: !type:VendingMachineSelfDispenseEvent
-    
+
 - type: entity
   id: ActionArtifactActivate
   name: Activate Artifact
@@ -352,7 +352,7 @@
   name: Toggle Paramedic Siren
   description: Toggles the paramedic siren on and off.
   components:
-  - type: InstantAction 
+  - type: InstantAction
     icon:
       sprite: Clothing/OuterClothing/Hardsuits/paramed.rsi
       state: icon-siren

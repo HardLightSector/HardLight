@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   name: umbrella
   parent: BaseItem
   id: FlashlightUmbrella

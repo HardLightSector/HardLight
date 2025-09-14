@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   parent: ClothingUniformBase
   id: ClothingUniformFiresuitCroptop
   name: responder's respite (fire)

@@ -26,7 +26,6 @@
     sprite: /Textures/_HL/Tiles/Misc/crystallineabyss.rsi
     state: crystallineabyss
   - type: Item
-    size: 5
   - type: Stack
     stackType: FloorTileAbyssCrystal
     count: 1

@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   name: shuttle records console
   parent: [BaseStructureIndestructible, BaseStructureAccessReaderImmuneToEmag, BaseComputer]
   id: ComputerShuttleRecordsBase

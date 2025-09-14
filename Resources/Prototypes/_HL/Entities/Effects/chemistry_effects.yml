@@ -22,7 +22,6 @@
         layer:
         - GlassLayer
   - type: Smoke
-    id: SmokeNoSlip
   - type: SolutionContainerManager
     solutions:
       solutionArea:

@@ -338,9 +338,9 @@
       collection: RadiationPulse
       params:
         volume: 5
-    anomalyContactDamage:
-      types:
-        Radiation: 10
+    # anomalyContactDamage:
+    #   types:
+    #     Radiation: 10
   - type: Psionic
     removable: false
     roller: false

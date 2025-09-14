@@ -1,4 +1,4 @@
-﻿- type: entityTable
+- type: entityTable
   id: HLLockerFillChemistry
   table: !type:AllSelector
     children:

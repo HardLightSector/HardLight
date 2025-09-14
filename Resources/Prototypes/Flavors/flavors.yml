@@ -1340,6 +1340,11 @@
   description: flavor-weh
 
 - type: flavor
+  id: woof
+  flavorType: Base
+  description: flavor-woof
+
+- type: flavor
   id: hew
   flavorType: Base
   description: flavor-hew

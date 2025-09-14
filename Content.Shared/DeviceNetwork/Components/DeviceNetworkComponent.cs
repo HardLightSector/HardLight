@@ -108,18 +108,34 @@ namespace Content.Shared.DeviceNetwork.Components
         [DataField("savableAddress")]
         public bool SavableAddress = true;
 
-        /// <summary>
-        ///     A list of device-lists that this device is on.
-        /// </summary>
-        [DataField]
-        [Access(typeof(SharedDeviceListSystem))]
-        public HashSet<EntityUid> DeviceLists = new();
+    /// <summary>
+    ///     A list of device-lists that this device is on.
+    ///     Note: We intentionally do NOT deserialize entity references from maps here, as some maps include
+    ///     placeholder values (e.g., invalid entity strings) that cause deserialization errors. The runtime
+    ///     systems will populate and maintain this set.
+    /// </summary>
+    [Access(typeof(SharedDeviceListSystem))]
+    public HashSet<EntityUid> DeviceLists = new();
 
-        /// <summary>
-        ///     A list of configurators that this device is on.
-        /// </summary>
-        [DataField]
-        [Access(typeof(SharedNetworkConfiguratorSystem))]
-        public HashSet<EntityUid> Configurators = new();
+    /// <summary>
+    ///     Sink for legacy map data where device list UIDs were serialized. We accept arbitrary strings to avoid
+    ///     crashing on invalid values and ignore them at runtime.
+    /// </summary>
+    [DataField("deviceLists")] private HashSet<string> _deviceListsSerialized = new();
+
+    /// <summary>
+    ///     A list of configurators that this device is on.
+    ///     Note: We intentionally do NOT deserialize entity references from maps here, as some maps include
+    ///     placeholder values (e.g., "invalid") that are not valid EntityUids and cause deserialization errors.
+    ///     The runtime system will populate this set as needed.
+    /// </summary>
+    [Access(typeof(SharedNetworkConfiguratorSystem))]
+    public HashSet<EntityUid> Configurators = new();
+
+    /// <summary>
+    ///     Sink for legacy map data where configurator UIDs were serialized. We accept arbitrary strings to avoid
+    ///     crashing on invalid values and ignore them at runtime.
+    /// </summary>
+    [DataField("configurators")] private HashSet<string> _configuratorsSerialized = new();
     }
 }

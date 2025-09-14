@@ -25,7 +25,6 @@
     - SemiAuto
     soundGunshot:
       path: /Audio/Effects/teleport_departure.ogg
-    cameraRecoilScalarModified: 0.1
   - type: RefillableSolution
     solution: Welder
   - type: SolutionContainerManager

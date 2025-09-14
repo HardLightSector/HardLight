@@ -225,7 +225,7 @@
   time: 5
   reagents:
     IceCream: 20
-    Frostoil: 10
+    Coldsauce: 10
     CocoaPowder: 5
   solids:
     IceCreamBowl: 1

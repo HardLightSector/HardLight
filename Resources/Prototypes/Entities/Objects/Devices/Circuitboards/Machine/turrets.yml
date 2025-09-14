@@ -8,8 +8,10 @@
   - type: Sprite
     sprite: Objects/Misc/module.rsi
     state: security
-  - type: MachineBoard
+  - type: MachineBoard    # Hardlight change start
     prototype: WeaponEnergyTurretStation
+    requirements:
+      PowerCell: 1
     tagRequirements:
       TurretCompatibleWeapon:
         amount: 1
@@ -17,12 +19,7 @@
         examineName: construction-insert-info-examine-name-laser-cannon
       ProximitySensor:
         amount: 1
-        defaultPrototype: ProximitySensor
-    componentRequirements:
-      PowerCell:
-        amount: 1
-        defaultPrototype: PowerCellMedium
-        examineName: construction-insert-info-examine-name-power-cell
+        defaultPrototype: ProximitySensor # Hardlight change stop
 
 - type: entity
   parent: WeaponEnergyTurretStationMachineCircuitboardBase
@@ -45,7 +42,7 @@
     state: security
   - type: MachineBoard
     prototype: WeaponEnergyTurretSecurity
-    
+
 - type: entity
   parent: WeaponEnergyTurretStationMachineCircuitboardBase
   id: WeaponEnergyTurretCommandMachineCircuitboard

@@ -1,4 +1,4 @@
-﻿- type: localizedDataset
+- type: localizedDataset
   id: NamesScrap
   values:
     prefix: names-scrap-dataset-

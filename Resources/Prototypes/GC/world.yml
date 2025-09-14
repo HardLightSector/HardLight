@@ -1,4 +1,4 @@
-﻿- type: gcQueue
+- type: gcQueue
   id: SpaceDebris
   depth: 512
   minDepthToProcess: 256

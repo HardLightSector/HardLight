@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   name: tac-lite
   parent: FlashlightLantern
   id: FlashlightNfsdLite

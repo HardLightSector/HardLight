@@ -281,7 +281,11 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
     {
         var playerPool = GetPlayerPool(ent, pool, def);
         var existingAntagCount = ent.Comp.PreSelectedSessions.TryGetValue(def, out var existingAntags) ?  existingAntags.Count : 0;
-        var count = GetTargetAntagCount(ent, GetTotalPlayerCount(pool), def) - existingAntagCount;
+        var totalPlayerCount = GetTotalPlayerCount(pool);
+        var targetCount = GetTargetAntagCount(ent, totalPlayerCount, def);
+        var count = targetCount - existingAntagCount;
+
+        Log.Info($"ChooseAntags Debug - Rule: {ToPrettyString(ent)}, Players: {totalPlayerCount}, Min: {def.Min}, Max: {def.Max}, PlayerRatio: {def.PlayerRatio}, TargetCount: {targetCount}, ExistingCount: {existingAntagCount}, FinalCount: {count}");
 
         // if there is both a spawner and players getting picked, let it fall back to a spawner.
         var noSpawner = def.SpawnerPrototype == null;
@@ -294,6 +298,8 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
             DebugTools.Assert(def.SpawnerPrototype != null, $"Rule {ent:?} had no spawner for pre-spawn rule added mid-round!");
             picking = false;
         }
+
+        Log.Info($"Player pool Debug - Total pool size: {pool.Count}, Player pool available: {playerPool.Count}, picking: {picking}, noSpawner: {noSpawner}");
 
         for (var i = 0; i < count; i++)
         {

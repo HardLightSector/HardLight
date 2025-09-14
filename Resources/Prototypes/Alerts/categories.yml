@@ -17,6 +17,9 @@
   id: Internals
 
 - type: alertCategory
+  id: Mana
+
+- type: alertCategory
   id: Stamina
 
 - type: alertCategory

@@ -2,7 +2,7 @@
   id: ActionEatMouse
   name: action-name-eat-mouse
   description: action-description-eat-mouse
-  noSpawn: true
+  abstract: true
   components:
   - type: InstantAction
     icon: Nyanotrasen/Icons/verbiconfangs.png
@@ -12,10 +12,8 @@
   id: ActionHairball
   name: action-name-hairball
   description: action-description-hairball
-  noSpawn: true
   components:
   - type: InstantAction
-    charges: 1
     icon: { sprite: Nyanotrasen/Objects/Specific/Species/felinid.rsi, state: icon }
     useDelay: 30
     event: !type:HairballActionEvent
@@ -24,7 +22,7 @@
   id: ActionFabricateLollipop
   name: action-name-fabricate-lollipop
   description: action-description-fabricate-lollipop
-  noSpawn: true
+  abstract: true
   components:
   - type: InstantAction
     icon: { sprite: Nyanotrasen/Objects/Consumable/Food/candy.rsi, state: lollipop }
@@ -35,7 +33,7 @@
   id: ActionFabricateGumball
   name: action-name-fabricate-gumball
   description: action-description-fabricate-gumball
-  noSpawn: true
+  abstract: true
   components:
   - type: InstantAction
     icon: { sprite: Nyanotrasen/Objects/Consumable/Food/candy.rsi, state: gumball }

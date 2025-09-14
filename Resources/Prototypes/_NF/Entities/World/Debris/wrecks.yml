@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   id: NFBaseWreckDebris
   parent: NFBaseDebris
   abstract: true

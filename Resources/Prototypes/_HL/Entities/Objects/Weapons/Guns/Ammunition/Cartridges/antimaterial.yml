@@ -1,0 +1,16 @@
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: BaseBullet
+  id: shell(20x82mm)
+  name: shell (20x82mm)
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 100
+        Structural: 10000
+    penetrationThreshold: 360
+    penetrationDamageTypeRequirement:
+    - Structural
+  - type: StaminaDamageOnCollide
+    damage: 100

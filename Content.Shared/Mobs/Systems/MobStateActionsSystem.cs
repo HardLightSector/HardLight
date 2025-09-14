@@ -19,6 +19,8 @@ public sealed class MobStateActionsSystem : EntitySystem
 
     private void OnMobStateChanged(EntityUid uid, MobStateActionsComponent component, MobStateChangedEvent args)
     {
+        if (TerminatingOrDeleted(uid))
+            return;
         ComposeActions(uid, component, args.NewMobState);
     }
 
@@ -27,6 +29,8 @@ public sealed class MobStateActionsSystem : EntitySystem
         if (!TryComp<MobStateActionsComponent>(uid, out var mobStateActionsComp))
             return;
 
+        if (TerminatingOrDeleted(uid))
+            return;
         ComposeActions(uid, mobStateActionsComp, component.CurrentState);
     }
 
@@ -35,6 +39,10 @@ public sealed class MobStateActionsSystem : EntitySystem
     /// </summary>
     private void ComposeActions(EntityUid uid, MobStateActionsComponent component, MobState newMobState)
     {
+        // Don't modify actions on entities that are terminating or deleted.
+        if (TerminatingOrDeleted(uid))
+            return;
+
         if (!TryComp<ActionsComponent>(uid, out var action))
             return;
 
@@ -44,12 +52,16 @@ public sealed class MobStateActionsSystem : EntitySystem
         }
         component.GrantedActions.Clear();
 
-        if (!component.Actions.TryGetValue(newMobState, out var toGrant))
+        if (!component.Actions.TryGetValue(newMobState, out var toGrant) || toGrant.Count == 0)
             return;
 
         foreach (var id in toGrant)
         {
             EntityUid? act = null;
+            // Skip granting if entity is terminating between loop iterations.
+            if (TerminatingOrDeleted(uid))
+                break;
+
             if (_actions.AddAction(uid, ref act, id, uid, action))
                 component.GrantedActions.Add(act.Value);
         }

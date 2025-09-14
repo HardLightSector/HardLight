@@ -261,6 +261,16 @@
       implant: turretimplant
 
 - type: entity
+  parent: BaseMagicAdder
+  id: chaptest
+  name: chaplain test
+  description: A test implant for chaplain abilities.
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: SubdermalImplant
+      implantAction: ActionTestChaplain
+
+- type: entity
   id: chaptestplant
   name: torn page
   description: A torn page from a spell book. It looks brittle.

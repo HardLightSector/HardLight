@@ -1,0 +1,42 @@
+# Author Info
+# GitHub: BlueNexus
+# Discord: BlueNexa
+
+# Maintainer Info
+# GitHub: BlueNexus
+# Discord: BlueNexa
+
+# Notes:
+# HL replacement for LPB
+
+- type: pointOfInterest
+  id: VipersDen
+  parent: BasePOI
+  name: "Viper's Den"
+  minimumDistance: 5500
+  maximumDistance: 7500
+  spawnGroup: SyndicateFOB
+  gridPath: /Maps/_HL/POI/vipersden.yml
+  hideWarp: true
+  addComponents:
+  - type: IFF
+    color: "#C83737"
+    flags: [HideLabel]
+    readOnly: false
+  - type: SyndicateFOB # For pinpointer
+
+- type: gameMap
+  id: VipersDen
+  mapName: "Viper's Den"
+  mapPath: /Maps/_HL/POI/vipersden.yml
+  minPlayers: 0
+  stations:
+    VipersDen:
+      stationProto: StandardFrontierOutpost
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: "Viper's Den"
+        - type: StationJobs
+          availableJobs: {}
+        - type: StationDeadDropHintExempt
+        - type: BindToStationVariationPassExemption

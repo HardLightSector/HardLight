@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   parent: DoubleEmergencyOxygenTank
   id: DoubleEmergencyAirTank
   name: double emergency air tank

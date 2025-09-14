@@ -133,7 +133,7 @@
     - type: Stasis
       enterStasisAction: ActionStasisEnter
       exitStasisAction: ActionStasisExit
-
+    - type: Carriable  # Hardlight change they can be carry now
 # Chirp!
 
 - type: entity

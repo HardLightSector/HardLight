@@ -884,6 +884,11 @@
   - type: Sprite
     state: poster31_legit
 
+# Alias for maps referencing PosterLegit12Gauge (without underscore)
+- type: entity
+  parent: PosterLegit12_gauge
+  id: PosterLegit12Gauge
+
 - type: entity
   parent: PosterBase
   id: PosterLegitHighClassMartini

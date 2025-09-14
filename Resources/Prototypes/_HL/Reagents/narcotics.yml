@@ -188,6 +188,21 @@
       - !type:AdjustReagent
         reagent: Ipecac
         amount: -8.0
+      #Sedation resistance
+      - !type:AdjustReagent
+        conditions:
+        - !type:ReagentThreshold
+          reagent: ChloralHydrate
+          min: 1
+        reagent: ChloralHydrate
+        amount: -10
+      - !type:AdjustReagent
+        conditions:
+        - !type:ReagentThreshold
+          reagent: Nocturine
+          min: 1
+        reagent: Nocturine
+        amount: -10
       # Risky doses (5-9u) - mild side effects
       - !type:HealthChange
         conditions:
@@ -306,7 +321,7 @@
         visualType: LargeCaution
         messages:
           - "ruin-effect-burning"
-          - "ruin-effect-agony"  
+          - "ruin-effect-agony"
           - "ruin-effect-regret"
           - "ruin-effect-freezing"
           - "ruin-effect-confusion"
@@ -324,7 +339,7 @@
             Caustic: 1
             Asphyxiation: 1
             Cold: 1.5
-      # Corrupted Abyssal Blood - extreme hypothermia  
+      # Corrupted Abyssal Blood - extreme hypothermia
       - !type:AdjustTemperature
         amount: -5000
       # Corrupted Artifexium - reality distortion/confusion
@@ -581,7 +596,7 @@
         visualType: LargeCaution
         messages:
           - "abyssal-cleansing-widow-burning"
-          - "abyssal-cleansing-widow-agony" 
+          - "abyssal-cleansing-widow-agony"
           - "abyssal-cleansing-widow-searing"
           - "abyssal-cleansing-widow-purging"
         probability: 0.8

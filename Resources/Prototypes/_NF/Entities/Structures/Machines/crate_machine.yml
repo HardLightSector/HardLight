@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   id: CrateMachine
   name: crate machine
   description: Where do they come from?

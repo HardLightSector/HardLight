@@ -13,6 +13,11 @@
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: 'SC'
+        - type: ExtraStationInformation
+          iconPath: /Textures/_HL/Logo/icon/icon-256x256.png # used the biggest one, looks better when downscaling than upscaling
+          stationSubtext: 'hardlight-lobby-hardlight-subtext'
+          stationDescription: 'hardlight-lobby-hardlight-description'
+          lobbySortOrder: 1
         - type: StationEmergencyShuttle
           emergencyShuttlePath: /Maps/Shuttles/emergency.yml
         - type: StationJobs

@@ -1,4 +1,4 @@
-﻿#MARK: Wizard antag spell
+#MARK: Wizard antag spell
 - type: entity
   id: ActionSpawnMagicarpSpell
   name: Summon Magicarp
@@ -466,3 +466,14 @@
           Quantity: 2001
   - type: TimedDespawn
     lifetime: 0
+
+- type: entity
+  id: ActionTestChaplain
+  name: Test Chaplain Ability
+  description: A test action for chaplain abilities.
+  components:
+  - type: InstantAction
+    useDelay: 10
+    icon:
+      sprite: Objects/Magic/magicactions.rsi
+      state: spell_default

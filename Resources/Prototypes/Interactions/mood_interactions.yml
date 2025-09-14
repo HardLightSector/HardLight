@@ -34,7 +34,7 @@
       inverted: true
     - !type:EntityWhitelistRequirement
       whitelist:
-        components: [HumanoidAppearance]
+        components: [HumanoidAppearance, BorgChassis ]  # Hardlight change by popular demand you can now PET BORGS BABY woooo
 # Flooftier doesn't have mood
   action:
     !type:NoOpAction

@@ -103,9 +103,9 @@
   name: magazine (20x82mm)
   parent: BaseMagazineLightRifle
   components:
-#  - type: Tag  This is causing a crash
-#    tags:
-#      - MagazineAMR
+  - type: Tag # Hardlight change
+    tags:
+      - MagazineAMR
   - type: BallisticAmmoProvider
     proto: CartridgeAntiMaterielBig
     capacity: 3

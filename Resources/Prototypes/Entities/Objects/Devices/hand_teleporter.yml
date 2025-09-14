@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   id: HandTeleporter
   parent: [BaseItem, BaseC2ContrabandUnredeemable] # Frontier: BaseC2ContrabandUnredeemable
   name: hand teleporter

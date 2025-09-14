@@ -13,6 +13,9 @@
     sprite: Objects/Weapons/Guns/Battery/laser_cannon.rsi
   - type: Clothing
     sprite: Objects/Weapons/Guns/Battery/laser_cannon.rsi
+  - type: Tag #Hardlight change
+    tags:
+    - TurretCompatibleWeapon
 
 - type: entity
   id: NFWeaponEnergyRifleSniperXrayCannon
@@ -26,3 +29,6 @@
     sprite: Objects/Weapons/Guns/Battery/xray.rsi
   - type: Clothing
     sprite: Objects/Weapons/Guns/Battery/xray.rsi
+  - type: Tag #Hardlight change
+    tags:
+    - TurretCompatibleWeapon

@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   id: BaseSpellbook
   name: spellbook
   parent: [ BaseItem, BaseC3WizardContraband ] # Frontier: BaseMagicalContraband<BaseC3WizardContraband

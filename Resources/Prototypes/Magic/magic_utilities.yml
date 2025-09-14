@@ -1,4 +1,4 @@
-﻿
+
 # This is just all the misc shit we can't be arsed to move elsewhere but needs to stay grouped under the Magic header and specifically chaplain's stuff - Usk
 
 #MARK: Implanters
@@ -126,7 +126,7 @@
         true
   - type: NpcFactionMember
     factions:
-    - Nanotrasen
+    - NanoTrasen
 
 - type: entity
   name: queen

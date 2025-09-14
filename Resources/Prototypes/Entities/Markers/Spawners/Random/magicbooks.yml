@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   id: RandomMagicBook
   name: random magic book spawner
   parent: MarkerBase

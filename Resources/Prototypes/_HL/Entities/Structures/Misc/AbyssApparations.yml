@@ -100,10 +100,9 @@
     noRot: true
   - type: Transform
     noRot: true
+    anchored: true
   - type: Physics
     bodyType: Static
-  - type: Pullable
-    pullable: false
   - type: Fixtures
     fixtures:
         fix1:
@@ -154,10 +153,9 @@
     noRot: true
   - type: Transform
     noRot: true
+    anchored: true
   - type: Physics
     bodyType: Static
-  - type: Pullable
-    pullable: false
   - type: Fixtures
     fixtures:
         fix1:
@@ -208,10 +206,9 @@
     noRot: true
   - type: Transform
     noRot: true
+    anchored: true
   - type: Physics
     bodyType: Static
-  - type: Pullable
-    pullable: false
   - type: Fixtures
     fixtures:
         fix1:
@@ -262,10 +259,9 @@
     noRot: true
   - type: Transform
     noRot: true
+    anchored: true
   - type: Physics
     bodyType: Static
-  - type: Pullable
-    pullable: false
   - type: Fixtures
     fixtures:
         fix1:
@@ -316,10 +312,9 @@
     noRot: true
   - type: Transform
     noRot: true
+    anchored: true
   - type: Physics
     bodyType: Static
-  - type: Pullable
-    pullable: false
   - type: Fixtures
     fixtures:
         fix1:
@@ -370,10 +365,9 @@
     noRot: true
   - type: Transform
     noRot: true
+    anchored: true
   - type: Physics
     bodyType: Static
-  - type: Pullable
-    pullable: false
   - type: Fixtures
     fixtures:
         fix1:
@@ -424,10 +418,9 @@
     noRot: true
   - type: Transform
     noRot: true
+    anchored: true
   - type: Physics
     bodyType: Static
-  - type: Pullable
-    pullable: false
   - type: Fixtures
     fixtures:
         fix1:
@@ -470,10 +463,9 @@
     noRot: true
   - type: Transform
     noRot: true
+    anchored: true
   - type: Physics
     bodyType: Static
-  - type: Pullable
-    pullable: false
   - type: Fixtures
     fixtures:
         fix1:

@@ -1,4 +1,4 @@
-﻿# Frontier: if updating this, also update _NF/Recipes/Construction/Graphs/structures/shuttle.yml
+# Frontier: if updating this, also update _NF/Recipes/Construction/Graphs/structures/shuttle.yml
 - type: constructionGraph
   id: AirlockShuttle
   start: start

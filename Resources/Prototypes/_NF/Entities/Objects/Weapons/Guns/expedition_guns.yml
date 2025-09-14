@@ -431,6 +431,10 @@
   - NFWeaponEnergyRifleSniperCannon
 #  categories: [ HideSpawnMenu ]
   id: NFWeaponEnergyRifleSniperCannonExpedition
+  components: #Hardlight change
+  - type: Tag
+    tags:
+    - TurretCompatibleWeapon
 
 - type: entity
   parent:

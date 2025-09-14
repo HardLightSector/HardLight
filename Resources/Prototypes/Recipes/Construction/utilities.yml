@@ -375,7 +375,7 @@
   startNode: start
   targetNode: sensor
   category: construction-category-structures
-  description: Reports on the status of the gas within the attached pipe network. 
+  description: Reports on the status of the gas within the attached pipe network.
   icon:
     sprite: Structures/Piping/Atmospherics/gas_pipe_sensor.rsi
     state: icon
@@ -876,8 +876,13 @@
 # DEFENSES
 - type: construction
   id: WeaponEnergyTurretControlPanel
+  name: turret control panel. # hardlight change
   graph: WeaponEnergyTurretControlPanel
-  startNode: start
+  description: wall-mounted assembly for a sentry turret control panel # hardlight change
+  icon: # hardlight change
+    sprite: Structures/Wallmounts/turret_controls.rsi # hardlight change
+    state: base
+  startNode: start # hardlight change
   targetNode: finish
   category: construction-category-utilities
   objectType: Structure

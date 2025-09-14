@@ -323,6 +323,7 @@
 - type: entity
   name: borgdropper
   parent: Dropper
+  categories: [ HideSpawnMenu ] # Hardlight change
   description: Used to transfer small amounts of chemical solution between containers. Extended for use by medical borgs.
   id: BorgDropper
   components:

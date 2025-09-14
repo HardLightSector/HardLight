@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   parent: [ClothingHeadsetCommon, ClothingHeadsetAlt]
   id: ClothingHeadsetAltMercenary
   name: mercenary over-ear headset

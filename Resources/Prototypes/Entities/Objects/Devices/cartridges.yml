@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   parent: NFBasePDACartridge # Frontier: BaseItem<NFBasePDACartridge
   id: NotekeeperCartridge
   name: notekeeper cartridge

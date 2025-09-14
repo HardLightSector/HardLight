@@ -202,6 +202,7 @@
     selectionTime: IntraPlayerSpawn
     definitions:
     - prefRoles: [ Traitor ]
+      min: 1
       max: 8
       playerRatio: 10
       blacklist:
@@ -236,6 +237,7 @@
     selectionTime: IntraPlayerSpawn
     definitions:
     - prefRoles: [ HeadRev ]
+      min: 1
       max: 3
       playerRatio: 15
       briefing:

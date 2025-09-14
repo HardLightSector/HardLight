@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   id: MiniStationAnchor
   parent: [StationAnchor, BaseMachinePowered, ConstructibleMachine]
   name: mini station anchor

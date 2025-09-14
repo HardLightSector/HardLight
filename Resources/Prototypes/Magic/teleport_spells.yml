@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   id: ActionBlink
   name: Blink
   description: Teleport to the clicked location.
@@ -72,7 +72,6 @@
   description: Clap your hands and swap places with the target, has multiple charges.
   components:
   - type: EntityTargetAction
-    requiresCharge: true
     range: 20
 #    sound: !type:SoundPathSpecifier
 #      path: /Audio/Magic/Eldritch/voidblink.ogg

@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   id: RandomCargoSpawner
   name: random cargo spawner
   parent: MarkerBase

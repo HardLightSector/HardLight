@@ -27,6 +27,7 @@
       movement:
         state: quadsprite
   - type: Stripping
+  - type: Sanitized
   - type: IntrinsicRadioTransmitter
     channels:
     - Security
@@ -64,6 +65,69 @@
   - type: SiliconLawProvider
     laws: Qborg
   - type: LeashAnchor # Floofstation
+  - type: InteractionPopup  # Hardlight change
+    interactSuccessString: petting-success-generic-cyborg
+    interactFailureString: petting-failure-generic-cyborg
+    interactSuccessSound:
+      path: /Audio/Ambience/Objects/periodic_beep.ogg
+  
+- type: entity
+  id: SyndiQuad
+  parent: [BorgChassisQuad, BaseBorgChassisSyndicate]
+  components:
+  - type: Sprite
+    sprite: Floof/Mobs/Silicon/quad.rsi
+    scale: 0.7, 0.7
+    layers:
+    - state: SyndQuad
+      map: ["movement"]
+    - state: SyndQuadl
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: SyndQuadr
+      shader: unshaded
+      map: ["light"]
+      visible: false
+  - type: SpriteMovement
+    movementLayers:
+      movement:
+        state: SyndQuad_moving
+    noMovementLayers:
+      movement:
+        state: SyndQuad
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Security
+    - Binary
+    - Common
+    - Science
+  - type: ActiveRadio
+    channels:
+    - Security
+    - Binary
+    - Common
+    - Science
+  - type: NpcFactionMember
+    factions:
+    - Syndicate
+  - type: BorgChassis
+    maxModules: 8
+    moduleWhitelist:
+      tags:
+      - BorgModuleGeneric
+      - BorgModuleSecurity
+      - BorgModuleSyndicate
+      - BorgModuleSyndicateAssault
+    hasMindState: SyndQuadl
+    noMindState: SyndQuadr
+  - type: AccessReader
+    access: [["NuclearOperative"], ["SyndicateAgent"], ["Security"], ["Armory"], ["Command"], ["Mercenary"]]
+  - type: BorgTransponder
+    sprite:
+      sprite: Floof/Mobs/Silicon/quad.rsi
+      state: SyndQuad
+    name: cyborg
 
 - type: entity
   id: BorgChassisQuadCC
@@ -232,6 +296,60 @@
     noMindState: quadspriteservr
   - type: AccessReader
     access: [["Cargo"], ["Service"], ["Command"], ["Research"], ["Maintenance"]]
+  - type: SiliconLawProvider
+    laws: StationEfficiency
+    
+- type: entity
+  id: BorgChassisQuadEngineer
+  parent: BorgChassisQuad
+  components:
+  - type: Sprite
+    sprite: Floof/Mobs/Silicon/quad.rsi
+    scale: 0.7, 0.7
+    layers:
+    - state: engieborg
+      map: ["movement"]
+    - state: engieborgl
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: engieborgr
+      shader: unshaded
+      map: ["light"]
+      visible: false
+  - type: SpriteMovement
+    movementLayers:
+      movement:
+        state: engieborg_moving
+    noMovementLayers:
+      movement:
+        state: engieborg
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Service
+    - Binary
+    - Common
+    - Science
+    - Engineering
+  - type: ActiveRadio
+    channels:
+    - Service
+    - Binary
+    - Common
+    - Science
+    - Engineering
+  - type: BorgChassis
+    maxModules: 7
+    moduleWhitelist:
+      tags:
+      - BorgModuleGeneric
+      - BorgModuleEngineering
+      - BorgModuleSyndicate
+      - BorgModuleSyndicateAssault
+    hasMindState: engieborgl
+    noMindState: engieborgr
+  - type: AccessReader
+    access: [["Cargo"], ["Service"], ["Command"], ["Research"], ["Maintenance"], ["Engineering"]]
   - type: SiliconLawProvider
     laws: StationEfficiency
 

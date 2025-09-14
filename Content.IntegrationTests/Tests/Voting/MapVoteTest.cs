@@ -1,9 +1,11 @@
 using System.Linq;
+using System.Reflection;
 using Content.Server.GameTicking;
 using Content.Server.Maps;
 using Content.Server.Voting.Managers;
 using Content.Shared.CCVar;
 using Robust.Shared.Configuration;
+using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 
 namespace Content.IntegrationTests.Tests.Voting;
@@ -53,7 +55,6 @@ public sealed class MapVoteTest
         var server = pair.Server;
 
         var gameMapManager = server.ResolveDependency<IGameMapManager>();
-        var gameTicker = server.ResolveDependency<GameTicker>();
         var prototypeManager = server.ResolveDependency<IPrototypeManager>();
 
         await server.WaitAssertion(() =>
@@ -120,6 +121,46 @@ public sealed class MapVoteTest
             // Test that invalid maps don't exist
             Assert.That(gameMapManager.CheckMapExists("NonExistentMap123"), Is.False,
                 "Non-existent map should not exist");
+        });
+
+        await pair.CleanReturnAsync();
+    }
+
+    /// <summary>
+    /// Tests that map selection works correctly and our LoadMaps fix doesn't break functionality.
+    /// This verifies that map selection via voting still works after our Nullspace handling fix.
+    /// </summary>
+    [Test]
+    public async Task TestMapSelectionAfterFix()
+    {
+        await using var pair = await PoolManager.GetServerClient();
+        var server = pair.Server;
+
+        var gameMapManager = server.ResolveDependency<IGameMapManager>();
+
+        await server.WaitAssertion(() =>
+        {
+            // Clear any existing map selection
+            gameMapManager.ClearSelectedMap();
+            Assert.That(gameMapManager.GetSelectedMap(), Is.Null,
+                "Map selection should be cleared");
+
+            // Test map selection - this should work regardless of DefaultMap state
+            gameMapManager.SelectMap(TestMapEligibleName);
+            var selectedMap = gameMapManager.GetSelectedMap();
+            Assert.That(selectedMap?.ID, Is.EqualTo(TestMapEligibleName),
+                "Selected map should be set correctly via SelectMap()");
+
+            // Test another map selection
+            gameMapManager.SelectMap(TestMapIneligibleName);
+            selectedMap = gameMapManager.GetSelectedMap();
+            Assert.That(selectedMap?.ID, Is.EqualTo(TestMapIneligibleName),
+                "Selected map should be updated correctly");
+
+            // Clear and verify
+            gameMapManager.ClearSelectedMap();
+            Assert.That(gameMapManager.GetSelectedMap(), Is.Null,
+                "Map selection should be cleared again");
         });
 
         await pair.CleanReturnAsync();

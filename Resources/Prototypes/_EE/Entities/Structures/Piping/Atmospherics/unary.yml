@@ -8,7 +8,6 @@
   components:
     - type: GasVentPump
       maxPressure: 13500
-      PumpPower: 6
 
 - type: entity
   parent: GasVentScrubber

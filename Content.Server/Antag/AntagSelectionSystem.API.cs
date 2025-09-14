@@ -110,7 +110,12 @@ public sealed partial class AntagSelectionSystem
         // make sure we don't double-count the current selection
         countOffset -= Math.Clamp(poolSize / def.PlayerRatio, def.Min, def.Max) * def.PlayerRatio;
 
-        return Math.Clamp((poolSize - countOffset) / def.PlayerRatio, def.Min, def.Max);
+        var rawCount = (poolSize - countOffset) / def.PlayerRatio;
+        var result = Math.Clamp(rawCount, def.Min, def.Max);
+
+        Log.Info($"GetTargetAntagCount Debug - PoolSize: {poolSize}, CountOffset: {countOffset}, RawCount: {rawCount}, Min: {def.Min}, Max: {def.Max}, PlayerRatio: {def.PlayerRatio}, Result: {result}");
+
+        return result;
     }
 
     /// <summary>

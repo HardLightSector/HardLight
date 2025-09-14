@@ -13,7 +13,7 @@
     name: salvage snake
     description: You are a salvage snake hunting for a meal.
     rules: floof-ghost-role-information-solo-antag-rules # Floof station - Setting ghost role rules
-  - type: SalvageMobRestrictions
+  - type: NFSalvageMobRestrictions
 
 - type: entity
   parent: MobSmallPurpleSnake
@@ -27,7 +27,7 @@
     name: salvage snake
     description: You are a salvage snake hunting for a meal.
     rules: floof-ghost-role-information-solo-antag-rules # Floof station - Setting ghost role rules
-  - type: SalvageMobRestrictions
+  - type: NFSalvageMobRestrictions
 
 # Delta V variants of Xenos to allow ghost takeover again
 

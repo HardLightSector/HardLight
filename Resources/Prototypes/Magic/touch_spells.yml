@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   id: ActionSmite
   name: Smite
   description: Instantly gibs a target.
@@ -213,3 +213,12 @@
         damage:
           types:
             Poison: 8
+
+- type: entity
+  id: ActionTogging
+  name: Toggle Iron Hide
+  description: Toggle the protective iron blessing granted by your tattoo.
+  components:
+  - type: InstantAction
+    event: !type:ToggleActionEvent
+    useDelay: 2

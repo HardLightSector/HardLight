@@ -1,4 +1,4 @@
-﻿# Asteroid types & loot tables
+# Asteroid types & loot tables
 # region Rock Table
 - type: entity
   id: NFBaseAsteroidDebris

@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   id: NFWallSpawnAsteroidIronCrab
   parent: WallSpawnAsteroid
   categories: [ HideSpawnMenu ]

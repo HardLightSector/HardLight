@@ -48,11 +48,11 @@ public sealed class HLCCVars
     /// Maximum number of rounds to keep persistence data for
     /// </summary>
     public static readonly CVarDef<int> RoundPersistenceMaxRounds =
-        CVarDef.Create("hardlight.round_persistence.max_rounds", 10, CVar.SERVERONLY);
+        CVarDef.Create("hardlight.round_persistence.max_rounds", 20, CVar.SERVERONLY);
 
     /// <summary>
     /// Enable verbose logging for the persistence system
     /// </summary>
     public static readonly CVarDef<bool> RoundPersistenceDebugLogging =
-        CVarDef.Create("hardlight.round_persistence.debug_logging", false, CVar.SERVERONLY);
+        CVarDef.Create("hardlight.round_persistence.debug_logging", true, CVar.SERVERONLY);
 }

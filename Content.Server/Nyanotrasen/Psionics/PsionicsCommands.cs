@@ -64,7 +64,7 @@ public sealed class AddPsionicPowerCommand : IConsoleCommand
             return;
         }
 
-        if (!protoMan.TryIndex<PsionicPowerPrototype>(args[1], out var powerProto))
+    if (!protoMan.TryIndex<Content.Shared.Abilities.Psionics.PsionicPowerPrototype>(args[1], out var powerProto))
         {
             shell.WriteError(Loc.GetString("addpsionicpower-args-two-error"));
             return;
@@ -120,7 +120,7 @@ public sealed class RemovePsionicPowerCommand : IConsoleCommand
             return;
         }
 
-        if (!protoMan.TryIndex<PsionicPowerPrototype>(args[1], out var powerProto))
+    if (!protoMan.TryIndex<Content.Shared.Abilities.Psionics.PsionicPowerPrototype>(args[1], out var powerProto))
         {
             shell.WriteError(Loc.GetString("removepsionicpower-args-two-error"));
             return;

@@ -1,4 +1,4 @@
-﻿- type: stack
+- type: stack
   id: Cable
   name: lv cable
   icon: { sprite: "/Textures/Objects/Tools/cable-coils.rsi", state: coil-30 }

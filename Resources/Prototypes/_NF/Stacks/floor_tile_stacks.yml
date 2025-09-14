@@ -1,4 +1,4 @@
-﻿- type: stack
+- type: stack
   id: FloorTileGrassDark
   name: dark grass floor
   spawn: FloorTileItemGrassDark

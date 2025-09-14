@@ -58,7 +58,7 @@
     volume: -8
     range: 5
     sound:
-      path: /Audio/Ambience/wisp_ambience.ogg
+      path: /Audio/Ambience/ambigen3.ogg
   # physical
   - type: Fixtures
     fixtures:
@@ -109,7 +109,7 @@
       behaviors:
       - !type:PlaySoundBehavior
         sound:
-          path: /Audio/Effects/wail.ogg
+          path: /Audio/_NF/Effects/bloodcult/ghost-scream.ogg
       - !type:SpawnEntitiesBehavior
         spawn:
           Ectoplasm:
@@ -118,8 +118,8 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: Damageable
-    damageContainer: CorporealSpirit
-    damageModifierSet: CorporealSpirit
+    damageContainer: Biological
+    damageModifierSet: BaseHealthyMob
   - type: DamageOnDispel
     damage:
       types:
@@ -139,7 +139,7 @@
   - type: Gun
     fireRate: 0.4
     soundGunshot:
-      collection: MagicMissile
+      collection: EnergyMiss
     showExamineText: false
     selectedMode: SemiAuto
     availableModes:
@@ -147,7 +147,7 @@
     minAngle: 0.17453
     maxAngle: 0.52359
   - type: HitscanBatteryAmmoProvider
-    proto: WispLash
+    proto: NFRedLightLaser
     fireCost: 1
     # TODO: implement upstream or make it use a proper thing, maybe copy dragon
     #examinable: false
@@ -160,7 +160,7 @@
   # AI
   - type: HTN
     rootTask:
-      task: GlimmerWispCompound
+      task: SimpleHostileCompound
   - type: NpcFactionMember
     factions:
     - GlimmerMonster

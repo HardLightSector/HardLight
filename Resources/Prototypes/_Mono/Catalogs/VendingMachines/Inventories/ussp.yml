@@ -1,4 +1,4 @@
-﻿- type: vendingMachineInventory
+- type: vendingMachineInventory
   id: USSPVendInventory
   startingInventory:
     Magazine7.62x39mmFMJ: 4294967295 # Infinite

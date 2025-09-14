@@ -1,4 +1,4 @@
-﻿- type: localizedDataset
+- type: localizedDataset
   id: CuddlyCritterAds
   values:
     prefix: advertisement-cuddlycritter-

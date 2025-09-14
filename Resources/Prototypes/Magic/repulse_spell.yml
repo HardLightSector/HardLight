@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   id: ActionRepulse
   name: Repulse
   description: Pushes entities away from the user.

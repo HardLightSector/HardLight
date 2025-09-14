@@ -423,6 +423,9 @@
   id: ConveyorAssembly
 
 - type: Tag
+  id: CoreTattoo
+
+- type: Tag
   id: CoordinatesDisk
 
 - type: Tag #Ohioans die happy
@@ -1116,6 +1119,9 @@
 
 - type: Tag
   id: PlushieSharkPink
+
+- type: Tag
+  id: PlushieStoneRengault
 
 - type: Tag
   id: Potato

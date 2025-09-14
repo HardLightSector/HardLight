@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   id: ActionRevertPolymorph
   name: Revert
   description: Revert back into your original form.

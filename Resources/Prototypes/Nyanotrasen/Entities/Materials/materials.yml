@@ -42,6 +42,30 @@
     count: 1
 
 - type: entity
+  parent: MaterialBluespace
+  id: MaterialBluespace3
+  suffix: 3
+  components:
+  - type: Sprite
+    layers:
+    - state: bluespace_2
+      map: ["base"]
+  - type: Stack
+    count: 3
+
+- type: entity
+  parent: MaterialBluespace
+  id: MaterialBluespace5
+  suffix: 5
+  components:
+  - type: Sprite
+    layers:
+    - state: bluespace_3
+      map: ["base"]
+  - type: Stack
+    count: 5
+
+- type: entity
   parent: BaseItem
   id: HideMothroach
   name: mothroach hide

@@ -1,4 +1,4 @@
-﻿#region Base
+#region Base
 - type: entity
   id: BaseCrossbow
   name: crossbow

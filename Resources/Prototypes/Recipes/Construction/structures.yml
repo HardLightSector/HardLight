@@ -888,6 +888,11 @@
       targets:
         - Lattice
         - Plating
+        # Frontier : Allow catwalks on top of lava, plasma and water
+        - FloorBasalt
+        - FloorSnow
+        - FloorPlanetDirt
+        # End Frontier
   icon:
     sprite: Structures/catwalk.rsi
     state: catwalk_preview

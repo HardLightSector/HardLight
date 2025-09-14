@@ -1,4 +1,4 @@
-﻿# A floating, singular grid, useful for space junk or asteroids
+# A floating, singular grid, useful for space junk or asteroids
 - type: entity
   id: NFBaseDebris
   abstract: true

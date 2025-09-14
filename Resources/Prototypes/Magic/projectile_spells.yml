@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   id: ActionFireball
   name: Fireball
   description: Fires an explosive fireball towards the clicked location.

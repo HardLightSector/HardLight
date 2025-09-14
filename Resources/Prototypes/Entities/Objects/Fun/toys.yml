@@ -1410,7 +1410,6 @@
     proto: Cartridge45_magnumAP
   - type: Contraband # Frontier
     hideValues: true # Frontier
-    proto: CartridgeMagnumAP
 
 - type: entity
   parent: BaseItem

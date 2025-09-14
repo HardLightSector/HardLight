@@ -1,4 +1,4 @@
-﻿- type: job # Move this to _HL later
+- type: job # Move this to _HL later
   id: StationCaptain
   name: job-name-station-captain
   description: job-description-captain

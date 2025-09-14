@@ -13,9 +13,17 @@
     groups:
     - id: Medicine
     - id: Cryogenic # Frontier
-#    - id: Poison
-#    - id: Narcotic
-#    - id: Toxins
+    - id: Narcotic # Hardlight Change
+    # - id: Poison
+    # - id: Toxins
+  # HardLight additions - Shitmed compatibility
+  - type: Heart # Shitmed Change
+  - type: Organ # Shitmed Change
+    slotId: heart # Shitmed Change
+  - type: Item
+    size: Small
+    heldPrefix: heart
+  # end of HardLight additions
 
 - type: entity
   id: OrganSyntheticLiver
@@ -35,8 +43,16 @@
       rateModifier: 10 # removes Poison fast
     - id: Narcotic
       rateModifier: 10 # removes Narcotic fast
-#    - id: Toxins # Frontier - Restore this later
-#      rateModifier: 20 # removes Toxins fast
+    # - id: Toxins # Frontier - Restore this later
+      # rateModifier: 20 # removes Toxins fast
+  # HardLight additions - Shitmed compatibility
+  - type: Liver # Shitmed Change
+  - type: Organ # Shitmed Change
+    slotId: liver # Shitmed Change
+  - type: Item
+    size: Small
+    heldPrefix: liver
+  # end of HardLight additions
 
 - type: entity
   id: OrganSyntheticKidneys
@@ -52,3 +68,10 @@
     maxReagents: 5
     metabolizerTypes: [Human]
     removeEmpty: true
+  # HardLight additions - Shitmed compatibility
+  - type: Organ # Shitmed
+    slotId: kidneys
+  - type: Item
+    size: Small
+    heldPrefix: kidneys
+  # end of HardLight additions

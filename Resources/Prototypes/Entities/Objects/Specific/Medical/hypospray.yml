@@ -78,6 +78,7 @@
   parent: BaseItem
   description: A sterile injector for rapid administration of drugs to patients. A cheaper and more specialised version for medical borgs.
   id: BorgHypo
+  categories: [ HideSpawnMenu ] # Hardlight change
   components:
   # Frontier: fillable sprite
   - type: Sprite

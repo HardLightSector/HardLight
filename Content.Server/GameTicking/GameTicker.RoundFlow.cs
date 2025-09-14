@@ -105,7 +105,8 @@ namespace Content.Server.GameTicking
         private void LoadMaps()
         {
             // Prevent loading maps if the default map already exists.
-            if (_mapManager.MapExists(DefaultMap))
+            // Skip this check if DefaultMap is Nullspace (invalid/uninitialized)
+            if (DefaultMap != MapId.Nullspace && _mapManager.MapExists(DefaultMap))
                 return;
 
             AddGamePresetRules();
@@ -837,6 +838,7 @@ namespace Content.Server.GameTicking
             //    _playerGameStatuses[session.UserId] = LobbyEnabled ? PlayerGameStatus.NotReadyToPlay : PlayerGameStatus.ReadyToPlay;
             //}
             // DefaultMap = default; // This will set DefaultMap to 0 (invalid)
+            DefaultMap = default; // Reset DefaultMap so new map selections (e.g., from voting) take effect
             RoundId = 0;
 
             // Remove all job slots from every station

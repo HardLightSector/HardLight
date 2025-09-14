@@ -118,6 +118,12 @@ chat-speech-verb-vox-1 = screeches
 chat-speech-verb-vox-2 = shrieks
 chat-speech-verb-vox-3 = croaks
 
+chat-speech-verb-name-felionoid = Felionoid
+chat-speech-verb-felionoid-1 = mews
+chat-speech-verb-felionoid-2 = purrs
+chat-speech-verb-felionoid-3 = meows
+chat-speech-verb-felionoid-4 = chirps
+
 chat-speech-verb-name-canine = Canine
 chat-speech-verb-canine-1 = barks
 chat-speech-verb-canine-2 = woofs

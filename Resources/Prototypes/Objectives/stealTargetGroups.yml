@@ -2,7 +2,7 @@
 
 - type: stealTargetGroup
   id: SupermatterSliver
-  name: supermatter sliver
+  name: steal-target-groups-supermatter-sliver
   sprite:
     sprite: Supermatter/supermatter_sliver.rsi
     state: icon

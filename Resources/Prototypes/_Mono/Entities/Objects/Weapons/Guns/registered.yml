@@ -129,6 +129,9 @@
   components:
   - type: StaticPrice
     price: 1400
+  - type: Tag #Hardlight change
+    tags:
+    - TurretCompatibleWeapon
 
 - type: entity #Disabler SMG
   parent:

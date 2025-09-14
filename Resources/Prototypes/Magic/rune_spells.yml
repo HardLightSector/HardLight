@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   id: ActionFlashRune
   name: Flash Rune
   description: Summons a rune that flashes if used.

@@ -399,6 +399,7 @@
   id: BorgHypoTricordrazine
   description: A sterile injector for rapid administration of drugs to patients. This one synthesizes tricordrazine.
   name: tricordrazine hypo
+  categories: [ HideSpawnMenu ] # Hardlight change
   components:
   - type: Sprite
     sprite: _NF/Objects/Specific/Medical/borghypo.rsi
@@ -421,6 +422,7 @@
   id: BorgHypoInaprovaline
   description: A sterile injector for rapid administration of drugs to patients. This one synthesizes inaprovaline.
   name: inaprovaline hypo
+  categories: [ HideSpawnMenu ] # Hardlight change
   components:
   - type: Sprite
     sprite: _NF/Objects/Specific/Medical/borghypo.rsi

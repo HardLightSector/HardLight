@@ -5,7 +5,7 @@
     sprite: _NF/Objects/Specific/Medical/firstaidkits.rsi # Frontier: _NF prefix
     state: firstaid
   product: CrateMedicalSupplies
-  cost: 2400
+  cost: 2700
   category: cargoproduct-category-name-medical
   group: market
 
@@ -80,7 +80,7 @@
     sprite: _NF/Objects/Specific/Medical/firstaidkits.rsi # Frontier: _NF prefix
     state: advkit
   product: CrateEmergencyAdvancedKit
-  cost: 1200
+  cost: 1900
   category: cargoproduct-category-name-medical
   group: market
 

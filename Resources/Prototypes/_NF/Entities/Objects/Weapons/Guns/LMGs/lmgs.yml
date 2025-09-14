@@ -20,6 +20,7 @@
   id: NFWeaponLightMachineGunL6C
   parent: [ NFBaseWeaponFrameLightMachineGunGorlex ]
   name: cyborg GSW LMG-6
+  categories: [ HideSpawnMenu ] # Hardlight change
   description: |-
     A GSW LMG-6 for use by cyborgs. Creates rifle ammo on the fly from an internal ammo fabricator, which slowly self-charges. An illegal firearm often used by Syndicate agents.
   components:

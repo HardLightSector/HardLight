@@ -1,4 +1,4 @@
-﻿- type: examinableDamage
+- type: examinableDamage
   id: WindowMessages
   messages:
     - comp-window-damaged-1

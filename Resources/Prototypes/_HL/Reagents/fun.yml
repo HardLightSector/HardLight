@@ -1,8 +1,8 @@
 - type: reagent
   id: JuiceThatMakesYouBark
-  name: juice that makes you Bark
+  name: reagent-name-juice-that-makes-you-bark
   group: Toxins
-  desc: Pure essence of vulp plush. Makes you Woof!
+  desc: reagent-desc-juice-that-makes-you-bark
   physicalDesc: reagent-physical-desc-vibrant
   flavor: woof
   color: "#cd570e"
