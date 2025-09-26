@@ -71,3 +71,29 @@
         Structural: 30
   - type: UseDelay
     delay: 1
+
+
+- type: entity
+  name: halberd
+  parent: UnholyHalberd
+  id: WeaponHalberd
+  description: A polearm with an axe blade, topped with a spike, mounted on a long shaft. Produced by SESWC.
+  components:
+  - type: Clothing
+    sprite: _HL/Objects/Weapons/Melee/halberd.rsi
+    quickEquip: false
+    slots:
+    - back
+  - type: Sprite
+    sprite: _HL/Objects/Weapons/Melee/halberd.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    attackRate: 0.75
+    angle: 80
+    damage:
+      types:
+        Slash: 20
+        Structural: 10
+  - type: NFWeaponDetails
+    manufacturer: weapon-details-manufacturer-SESWC-consortium

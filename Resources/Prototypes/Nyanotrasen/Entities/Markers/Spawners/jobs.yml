@@ -45,3 +45,15 @@
     layers:
       - state: green
       - state: prisonguard
+
+- type: entity
+  id: SpawnPointForensicMantis
+  parent: SpawnPointJobBase
+  name: mantis
+  components:
+  - type: SpawnPoint
+    job_id: ForensicMantis
+  - type: Sprite
+    layers:
+      - state: green
+      - state: scientist

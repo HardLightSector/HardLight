@@ -83,10 +83,6 @@ public sealed class ActionContainerSystem : EntitySystem
     {
         action = null;
 
-        // Do not create or modify actions for entities that are terminating or deleted.
-        if (TerminatingOrDeleted(uid))
-            return false;
-
         DebugTools.AssertOwner(uid, comp);
         comp ??= EnsureComp<ActionsContainerComponent>(uid);
 
@@ -113,10 +109,6 @@ public sealed class ActionContainerSystem : EntitySystem
 
         // Client cannot predict entity spawning.
         if (_netMan.IsClient && !IsClientSide(uid))
-            return false;
-
-        // Double-check termination prior to spawning the action entity to avoid orphan spawns during teardown.
-        if (TerminatingOrDeleted(uid))
             return false;
 
         actionId = Spawn(actionPrototypeId);
@@ -237,10 +229,6 @@ public sealed class ActionContainerSystem : EntitySystem
     /// </summary>
     public bool AddAction(EntityUid uid, EntityUid actionId, BaseActionComponent? action = null, ActionsContainerComponent? comp = null)
     {
-        // Avoid adding actions to entities that are terminating or deleted (e.g., during teardown).
-        if (TerminatingOrDeleted(uid))
-            return false;
-
         if (!_actions.ResolveActionData(actionId, ref action))
             return false;
 
@@ -249,12 +237,6 @@ public sealed class ActionContainerSystem : EntitySystem
 
         DebugTools.AssertOwner(uid, comp);
         comp ??= EnsureComp<ActionsContainerComponent>(uid);
-        if (TerminatingOrDeleted(uid) || comp.Deleted)
-        {
-            Log.Error($"Attempted to insert an action {ToPrettyString(actionId)} into a terminating or deleted entity {ToPrettyString(uid)}.");
-            return false;
-        }
-
         if (!_container.Insert(actionId, comp.Container))
         {
             Log.Error($"Failed to insert action {ToPrettyString(actionId)} into {ToPrettyString(uid)}");
@@ -304,8 +286,6 @@ public sealed class ActionContainerSystem : EntitySystem
 
     private void OnShutdown(EntityUid uid, ActionsContainerComponent component, ComponentShutdown args)
     {
-        if (TerminatingOrDeleted(uid))
-            return;
         if (_timing.ApplyingState && component.NetSyncEnabled)
             return; // The game state should handle the container removal & action deletion.
 
@@ -318,10 +298,6 @@ public sealed class ActionContainerSystem : EntitySystem
             return;
 
         if (!_actions.TryGetActionData(args.Entity, out var data))
-            return;
-
-        // If either side is terminating, ignore the insert. This can happen during pool teardown.
-        if (TerminatingOrDeleted(uid) || TerminatingOrDeleted(args.Entity))
             return;
 
         if (data.Container != uid)
@@ -340,9 +316,6 @@ public sealed class ActionContainerSystem : EntitySystem
             return;
 
         if (!_actions.TryGetActionData(args.Entity, out var data, false))
-            return;
-
-        if (TerminatingOrDeleted(uid) || TerminatingOrDeleted(args.Entity))
             return;
 
         var ev = new ActionRemovedEvent(args.Entity, data);

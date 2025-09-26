@@ -48,7 +48,7 @@ public sealed partial class CCVars
     ///     This is useful to keep "logs" on what files admins have uploaded in the past.
     /// </summary>
     public static readonly CVarDef<bool> ResourceUploadingStoreEnabled =
-        CVarDef.Create("netres.store_enabled", true, CVar.SERVER | CVar.SERVERONLY);
+        CVarDef.Create("netres.store_enabled", false, CVar.SERVER | CVar.SERVERONLY);
 
     /// <summary>
     ///     Numbers of days before stored uploaded files are deleted. Set to zero or negative to disable auto-delete.
@@ -84,7 +84,7 @@ public sealed partial class CCVars
         CVarDef.Create("entgc.maximum_time_ms", 10, CVar.SERVERONLY); // Frontier: 5<10
 
     public static readonly CVarDef<bool> GatewayGeneratorEnabled =
-        CVarDef.Create("gateway.generator_enabled", false); // Frontier: false
+        CVarDef.Create("gateway.generator_enabled", true); // Frontier: false
 
     public static readonly CVarDef<string> TippyEntity =
         CVarDef.Create("tippy.entity", "NFTippy", CVar.SERVER | CVar.REPLICATED); // Frontier: Tippy<NFTippy

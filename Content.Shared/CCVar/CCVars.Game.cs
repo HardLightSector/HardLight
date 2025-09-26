@@ -214,7 +214,7 @@ public sealed partial class CCVars
     /// Whether clients which are flagged as a VPN will be denied
     /// </summary>
     public static readonly CVarDef<bool> GameIPIntelRejectBad =
-        CVarDef.Create("game.ipintel_reject_bad", true, CVar.SERVERONLY);
+        CVarDef.Create("game.ipintel_reject_bad", false, CVar.SERVERONLY);
 
     /// <summary>
     /// Whether clients which cannot be checked due to a rate limit will be denied

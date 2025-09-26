@@ -450,6 +450,9 @@
     - CrateAmmoBoxRubber35
     - CrateAmmoBoxRubber45
     - CrateAmmoBoxRubberShotgun
+
+    # Hardlight start
+    - CrateArmoryShotgunVortex
     chance: 0.85
     offset: 0.0
     rarePrototypes:

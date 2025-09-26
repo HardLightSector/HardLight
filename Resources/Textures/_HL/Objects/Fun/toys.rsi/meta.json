@@ -1,7 +1,7 @@
 {
     "version": 1,
     "license": "CC-BY-NC-SA-4.0",
-    "copyright": "dean0364",
+    "copyright": "CMG",
     "size": {
         "x": 32,
         "y": 32
@@ -9,6 +9,9 @@
     "states": [
         {
             "name": "plushie_stone_rengault"
+        },
+        {
+            "name": "plushie_nirou_jol"
         }
     ]
 }

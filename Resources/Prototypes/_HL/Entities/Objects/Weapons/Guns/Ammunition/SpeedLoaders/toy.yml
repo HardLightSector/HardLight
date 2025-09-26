@@ -1,0 +1,49 @@
+# Base Speed Loader for Foam Darts
+- type: entity
+  id: BaseSpeedLoaderBulletFoam
+  parent: BaseItem
+  name: "speed loader (foam darts)"
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+      - SpeedLoaderBulletFoam
+  - type: SpeedLoader
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+        - BulletFoam
+    capacity: 6
+  - type: Sprite
+    sprite: _HL/Objects/Fun/foam_speed_loader.rsi
+    layers:
+      - state: base
+        map: [ "enum.GunVisualLayers.Base" ]
+      - state: base-6
+        map: [ "enum.GunVisualLayers.Mag" ]
+  - type: MagazineVisuals
+    magState: base
+    steps: 7
+    zeroVisible: false
+  - type: Appearance
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+        ents: []
+
+# Foam Dart speed loaders
+- type: entity
+  id: SpeedLoaderBulletFoamEmpty
+  parent: BaseSpeedLoaderBulletFoam
+  name: "speed loader (foam darts)"
+  components:
+  - type: BallisticAmmoProvider
+    proto: null
+
+- type: entity
+  id: SpeedLoaderBulletFoam
+  parent: BaseSpeedLoaderBulletFoam
+  name: "speed loader (foam darts)"
+  components:
+  - type: BallisticAmmoProvider
+    proto: BulletFoam

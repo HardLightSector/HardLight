@@ -75,6 +75,8 @@ entities:
     - type: SpreaderGrid
       updateAccumulator: 0.18502522
     - type: Shuttle
+    - type: WorldLoader
+      disabled: False
     - type: GridPathfinding
     - type: Gravity
       gravityShakeSound: !type:SoundPathSpecifier

@@ -54,9 +54,9 @@
     - id: BluespaceVaultError
     - id: BluespaceVaultSmallError
     - id: BluespaceSyndicateFTLInterception
-    - id: BluespaceWizardFederationScout
-    - id: BluespaceBloodMoon
-    - id: BluespaceDungeonBasalt
+    #- id: BluespaceWizardFederationScout
+    #- id: BluespaceBloodMoon
+    #- id: BluespaceDungeonBasalt
     - id: BluespaceDungeonChromite
     - id: BluespaceDungeonSnow
     - id: BluespaceDungeonCave

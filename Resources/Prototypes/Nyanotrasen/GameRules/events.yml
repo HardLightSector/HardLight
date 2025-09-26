@@ -2,7 +2,7 @@
 - type: entity
   id: NoosphericStorm
   parent: BaseGameRule
-  abstract: true
+  # abstract: true
   components:
     - type: StationEvent
       startAnnouncement: station-event-noospheric-storm-announcement
@@ -29,7 +29,7 @@
 - type: entity
   id: BaseGlimmerEvent
   parent: BaseGameRule
-  abstract: true
+  # abstract: true
   components:
     - type: StationEvent
       # Favor glimmer events just a little more than regular events.
@@ -40,7 +40,7 @@
 - type: entity
   id: MundaneDischarge
   parent: BaseGlimmerEvent
-  abstract: true
+  # abstract: true
   components:
     - type: GlimmerEvent
       maximumGlimmer: 300
@@ -51,7 +51,7 @@
 - type: entity
   id: NoosphericZap
   parent: BaseGlimmerEvent
-  abstract: true
+  # abstract: true
   components:
     - type: GlimmerEvent
     - type: NoosphericZapRule
@@ -59,7 +59,7 @@
 - type: entity
   id: NoosphericFry
   parent: BaseGlimmerEvent
-  abstract: true
+  # abstract: true
   components:
     - type: GlimmerEvent
       minimumGlimmer: 300
@@ -69,7 +69,7 @@
 - type: entity
   id: PsionicCatGotYourTongue
   parent: BaseGlimmerEvent
-  abstract: true
+  # abstract: true
   components:
     - type: GlimmerEvent
       minimumGlimmer: 200
@@ -81,7 +81,7 @@
 - type: entity
   id: MassMindSwap
   parent: BaseGlimmerEvent
-  abstract: true
+  # abstract: true
   components:
     - type: GlimmerEvent
       minimumGlimmer: 900
@@ -89,21 +89,21 @@
       glimmerBurnUpper: 110
     - type: MassMindSwapRule
 
-#- type: entity
-#  id: GlimmerWispSpawn
-#  parent: BaseGlimmerEvent
-#  abstract: true
-#  components:
-#    - type: GlimmerEvent
-#      minimumGlimmer: 300
-#      maximumGlimmer: 1000
-#      report: glimmer-event-report-signatures
-#    - type: GlimmerWispRule
+- type: entity
+  id: GlimmerWispSpawn
+  parent: BaseGlimmerEvent
+  # abstract: true
+  components:
+   - type: GlimmerEvent
+     minimumGlimmer: 300
+     maximumGlimmer: 1000
+     report: glimmer-event-report-signatures
+   - type: GlimmerWispRule
 
 - type: entity
   id: FreeProber
   parent: BaseGlimmerEvent
-  abstract: true
+  # abstract: true
   components:
     - type: GlimmerEvent
       minimumGlimmer: 300
@@ -115,7 +115,7 @@
 - type: entity
   id: GlimmerRandomSentience
   parent: BaseGlimmerEvent
-  abstract: true
+  # abstract: true
   components:
     - type: GlimmerEvent
       minimumGlimmer: 300
@@ -126,7 +126,7 @@
 - type: entity
   id: GlimmerRevenantSpawn
   parent: BaseGlimmerEvent
-  abstract: true
+  # abstract: true
   components:
     - type: GlimmerEvent
       minimumGlimmer: 500

@@ -203,6 +203,10 @@
           min: 1
         reagent: Nocturine
         amount: -10
+      - !type:GenericStatusEffect
+        key: ForcedSleep
+        time: 5
+        type: Remove
       # Risky doses (5-9u) - mild side effects
       - !type:HealthChange
         conditions:
@@ -409,7 +413,7 @@
   recognizable: false
   metabolisms:
     Poison:
-      metabolismRate: 0.025
+      metabolismRate: 0.015
       effects:
       # Blood corruption effect - addiction keeps blood black
       - !type:ChangeBloodReagent

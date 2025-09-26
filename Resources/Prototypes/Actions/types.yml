@@ -359,3 +359,17 @@
     useDelay: 1
     itemIconStyle: BigAction
     event: !type:ToggleActionEvent
+
+# Generic toggle for sprite-state swapping via SpriteStateToggleComponent
+- type: entity
+  id: ActionToggleSpriteState
+  name: toggle balls
+  description: Deploy if boy
+  components:
+  - type: InstantAction
+    # Keep a short delay to avoid rapid spam while still feeling responsive
+    useDelay: 1
+    # Generic toggle icons; override per-item if you want custom art
+    icon: Interface/Actions/nuts/nuts.png
+    iconOn: Interface/Actions/nuts/nuts.png
+    event: !type:SpriteStateToggleActionEvent

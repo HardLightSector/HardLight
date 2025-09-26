@@ -47,6 +47,8 @@ entities:
       bodyType: Dynamic
     - type: Fixtures
       fixtures: {}
+    - type: WorldLoader
+      disabled: False
     - type: DeviceNetwork
       configurators: []
       deviceLists: []

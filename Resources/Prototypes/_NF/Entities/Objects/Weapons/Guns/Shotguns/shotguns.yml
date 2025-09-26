@@ -6,9 +6,9 @@
   description: |-
     An automatic magazine-fed shotgun for close-quarters combat. Kicks like a mule on steroids.
   components:
-  - type: BallisticAmmoProvider
-    capacity: 2
-    proto: ShellShotgun12_gaugeBeanbag
+ # - type: BallisticAmmoProvider  # this is causing it to have 2 shells and then an 8 shell cap Hardlight change
+ #   capacity: 2
+ #   proto: ShellShotgun12_gaugeBeanbag
   - type: Sprite
     sprite: Objects/Weapons/Guns/Shotguns/bulldog.rsi
   - type: Clothing

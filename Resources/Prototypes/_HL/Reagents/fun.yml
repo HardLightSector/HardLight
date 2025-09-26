@@ -1,9 +1,9 @@
 - type: reagent
   id: JuiceThatMakesYouBark
   name: reagent-name-juice-that-makes-you-bark
-  group: Toxins
   desc: reagent-desc-juice-that-makes-you-bark
   physicalDesc: reagent-physical-desc-vibrant
+  group: Toxins
   flavor: woof
   color: "#cd570e"
   metabolisms:

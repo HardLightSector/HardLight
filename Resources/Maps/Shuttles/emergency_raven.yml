@@ -67,6 +67,8 @@ entities:
       fixtures: {}
     - type: OccluderTree
     - type: Shuttle
+    - type: WorldLoader
+      disabled: False
     - type: Gravity
       gravityShakeSound: !type:SoundPathSpecifier
         path: /Audio/Effects/alert.ogg

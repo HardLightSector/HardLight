@@ -52,6 +52,7 @@
       - id: RemoteSignaller
         amount: 2
       - id: Binoculars
+      - id: WeaponEnergyHalberdAntique # HL
 
 - type: entity
   id: LockerSecurityFilled

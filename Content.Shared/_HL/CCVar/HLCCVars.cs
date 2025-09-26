@@ -1,6 +1,6 @@
 using Robust.Shared.Configuration;
 
-namespace Content.Shared._HL.CCVar;
+namespace Content.Shared.HL.CCVar;
 
 /// <summary>
 /// Configuration variables for HardLight-specific features
@@ -12,7 +12,7 @@ public sealed class HLCCVars
     /// Enable round persistence system to maintain ship functionality across round restarts
     /// </summary>
     public static readonly CVarDef<bool> RoundPersistenceEnabled =
-        CVarDef.Create("hardlight.round_persistence.enabled", true, CVar.SERVERONLY);
+        CVarDef.Create("hardlight.round_persistence.enabled", false, CVar.SERVERONLY);
 
     /// <summary>
     /// Enable expedition data persistence
@@ -48,11 +48,11 @@ public sealed class HLCCVars
     /// Maximum number of rounds to keep persistence data for
     /// </summary>
     public static readonly CVarDef<int> RoundPersistenceMaxRounds =
-        CVarDef.Create("hardlight.round_persistence.max_rounds", 20, CVar.SERVERONLY);
+        CVarDef.Create("hardlight.round_persistence.max_rounds", 10, CVar.SERVERONLY);
 
     /// <summary>
     /// Enable verbose logging for the persistence system
     /// </summary>
     public static readonly CVarDef<bool> RoundPersistenceDebugLogging =
-        CVarDef.Create("hardlight.round_persistence.debug_logging", true, CVar.SERVERONLY);
+        CVarDef.Create("hardlight.round_persistence.debug_logging", false, CVar.SERVERONLY);
 }

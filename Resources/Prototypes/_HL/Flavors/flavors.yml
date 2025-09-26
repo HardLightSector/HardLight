@@ -1,0 +1,4 @@
+- type: flavor
+  id: woof
+  flavorType: Base
+  description: flavor-woof

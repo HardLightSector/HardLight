@@ -76,15 +76,12 @@ public abstract class SharedActionsSystem : EntitySystem
 
     private void OnActionShutdown(EntityUid uid, BaseActionComponent component, ComponentShutdown args)
     {
-    if (component.AttachedEntity != null && !TerminatingOrDeleted(component.AttachedEntity.Value) && !TerminatingOrDeleted(uid))
+        if (component.AttachedEntity != null && !TerminatingOrDeleted(component.AttachedEntity.Value))
             RemoveAction(component.AttachedEntity.Value, uid, action: component);
     }
 
     private void OnShutdown(EntityUid uid, ActionsComponent component, ComponentShutdown args)
     {
-        if (TerminatingOrDeleted(uid))
-            return;
-
         foreach (var act in component.Actions)
         {
             RemoveAction(uid, act, component);
@@ -648,9 +645,6 @@ public abstract class SharedActionsSystem : EntitySystem
         EntityUid container = default,
         ActionsComponent? component = null)
     {
-        // Avoid adding actions during teardown.
-        if (TerminatingOrDeleted(performer) || (container.IsValid() && TerminatingOrDeleted(container)))
-            return false;
         return AddAction(performer, ref actionId, out _, actionPrototypeId, container, component);
     }
 
@@ -662,12 +656,6 @@ public abstract class SharedActionsSystem : EntitySystem
         EntityUid container = default,
         ActionsComponent? component = null)
     {
-        // Avoid adding actions during teardown.
-        if (TerminatingOrDeleted(performer) || (container.IsValid() && TerminatingOrDeleted(container)))
-        {
-            action = null;
-            return false;
-        }
         if (!container.IsValid())
             container = performer;
 
@@ -688,8 +676,6 @@ public abstract class SharedActionsSystem : EntitySystem
         ActionsContainerComponent? containerComp = null
         )
     {
-        if (TerminatingOrDeleted(performer) || TerminatingOrDeleted(container))
-            return false;
         if (!ResolveActionData(actionId, ref action))
             return false;
 
@@ -713,8 +699,6 @@ public abstract class SharedActionsSystem : EntitySystem
         ActionsComponent? comp = null,
         BaseActionComponent? action = null)
     {
-        if (TerminatingOrDeleted(performer) || TerminatingOrDeleted(actionId))
-            return false;
         if (!ResolveActionData(actionId, ref action))
             return false;
 

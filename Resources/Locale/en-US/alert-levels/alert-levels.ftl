@@ -57,3 +57,7 @@ alert-level-epsilon-instructions = Consider all contracts terminated.
 alert-level-omicron = Omicron
 alert-level-omicron-announcement = Station override activated. Await further orders from Colonial Command staff, stay in your departments.
 alert-level-omicron-instructions = Await further orders.
+
+alert-level-white = White
+alert-level-white-announcement = The station is suffering dangerously high levels of glimmer, there are several active psionic threats, or there is another significant epistemic emergency. Turn off all glimmer probers. Seek psionic insulation. Psychics should report for mindbreaking.
+alert-level-white-instructions = Crewmembers are advised to seek psionic insulation. Psychics should report for mindbreaking or golemization.

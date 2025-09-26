@@ -24,3 +24,34 @@
       whitelist:
         tags:
           - SecurityUplink
+
+- type: listing
+  id: UplinkSecurityEhalberd
+  name:  uplink-Weapons-Ehalberd-name
+  description: uplink-Weapons-Ehalberd-desc
+  productEntity: WeaponEnergyHalberdAntique
+  icon: { sprite: _HL/Objects/Weapons/Melee/e_halberd.rsi, state: e_halberd }
+  cost:
+    FrontierUplinkCoin: 5
+  categories:
+    - UplinkSecurityWeapons
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - SecurityUplink
+
+
+
+# Syndicate
+- type: listing
+  id: UplinkSynicateEhalberd
+  name:  uplink-Weapons-Ehalberd-name
+  description: uplink-Weapons-Ehalberd-desc
+  productEntity: WeaponEnergyHalberd
+  icon: { sprite: _HL/Objects/Weapons/Melee/e_halberd.rsi, state: e_halberd }
+  discountCategory: rareDiscounts
+  cost:
+    Telecrystal: 8
+  categories:
+    - UplinkWeaponry

@@ -682,6 +682,8 @@ entities:
         chunkSize: 4
     - type: OccluderTree
     - type: Shuttle
+    - type: WorldLoader
+      disabled: False
     - type: RadiationGridResistance
     - type: GravityShake
       shakeTimes: 10

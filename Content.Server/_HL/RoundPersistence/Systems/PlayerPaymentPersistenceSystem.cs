@@ -17,7 +17,7 @@ using Robust.Shared.Log;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
 
-namespace Content.Server._HL.RoundPersistence.Systems;
+namespace Content.Server.HL.RoundPersistence.Systems;
 
 /// <summary>
 /// Handles persistence of player payment/autopay data across round restarts
@@ -233,7 +233,15 @@ public sealed class PlayerPaymentPersistenceSystem : EntitySystem
             return "Unknown";
 
         var station = _station.GetOwningStation(session.AttachedEntity.Value);
-        return station != null ? MetaData(station.Value).EntityName : "Unknown";
+        if (station != null && EntityManager.EntityExists(station.Value) && !TerminatingOrDeleted(station.Value))
+        {
+            if (EntityManager.TryGetComponent<MetaDataComponent>(station.Value, out var stationMeta))
+            {
+                return stationMeta.EntityName;
+            }
+        }
+
+        return "Unknown";
     }
 
     /// <summary>

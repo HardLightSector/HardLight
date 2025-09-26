@@ -15,5 +15,25 @@
     animation: WeaponArcThrust
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
-  - type: DisarmMalus
-    malus: 0.225
+ # - type: DisarmMalus  #HL
+ #   malus: 0.225
+
+- type: entity #HL this is for nonbayonet weapons as it is a buttstock hit
+  id: BaseGunMeleeBlunt
+  abstract: true
+  components:
+  - type: Sprite
+  - type: MeleeRequiresWield
+  - type: MeleeWeapon
+    attackRate: .85
+    damage:
+      types:
+       Blunt: 10
+       Slash: 5
+    angle: 0
+    wideAnimationRotation: 90
+    animation: WeaponArcThrust
+    soundHit:
+      collection: MetalThud
+ # - type: DisarmMalus they can add it if they want
+ #   malus: 0.225

@@ -37,6 +37,30 @@
         whitelist:
           tags:
           - BorgGenericTorso
+      borg_l_engiarm+o:
+        whitelist:
+          tags:
+          - BorgEngineerLLeg
+      borg_r_engiarm+o:
+        whitelist:
+          tags:
+          - BorgEngineerRLeg
+      borg_l_engileg+o:
+        whitelist:
+          tags:
+          - BorgEngineerLLeg
+      borg_r_engileg+o:
+        whitelist:
+          tags:
+          - BorgEngineerRLeg
+      borg_engihead+o:
+        whitelist:
+          tags:
+          - BorgEngineerHead
+      borg_engichest+o:
+        whitelist:
+          tags:
+          - BorgEngineerTorso
       borg_l_salvarm+o:
         whitelist:
           tags:
@@ -119,6 +143,13 @@
       - BorgGenericRLeg
       - BorgGenericHead
       - BorgGenericTorso
+      quadengi:
+      - BorgEngineerLArm
+      - BorgEngineerRArm
+      - BorgEngineerLLeg
+      - BorgEngineerRLeg
+      - BorgEngineerHead
+      - BorgEngineerTorso
       quadsalv:
       - BorgMiningLLeg
       - BorgMiningRLeg

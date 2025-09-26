@@ -138,3 +138,13 @@
   price: 1200
   equipment:
     shoes: ClothingUnderSocksCoderValid
+
+
+# Merc guns
+
+- type: loadout
+  id: MercenaryShotgunVortexLoadout
+  price: 50000
+  storage:
+    back:
+    - WeaponShotgunVortex

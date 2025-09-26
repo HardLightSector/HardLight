@@ -338,18 +338,12 @@
 - type: entity
   id: LockerWallColorHydroponicsFilled
   suffix: Filled, Frontier
-  parent: LockerWallColorHydroponics
+  parent: [LockerWallColorHydroponics, LockerBotanistFilled]
   components: # fixes sprite errors from parenting
   - type: EntityStorageVisuals
     stateBaseClosed: base
     stateDoorOpen: open
     stateDoorClosed: door
-  - type: StorageFill
-    contents:
-      # keep the belt with tools but omit the bulky plant bag for wall variant
-      - id: ClothingBeltPlantFilled
-      - id: BoxMouthSwab
-      - id: Dropper
   - type: ContainerContainer
     containers:
       storagebase: !type:Container

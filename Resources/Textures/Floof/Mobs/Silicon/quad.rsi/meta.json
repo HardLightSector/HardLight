@@ -11,48 +11,6 @@
       "name": "quadsprite",
       "directions": 4
     },
-	{
-      "name": "engieborg",
-      "directions": 4
-    },
-	{
-      "name": "engieborgl",
-      "directions": 4
-    },
-	{
-      "name": "engieborgr",
-      "directions": 4
-    },
-	{
-      "name": "engieborg_moving",
-      "directions": 4,
-	  "delays": [
-        [
-          0.2,
-          0.2,
-          0.2,
-          0.2
-        ],
-        [
-          0.2,
-          0.2,
-          0.2,
-          0.2
-        ],
-        [
-          0.2,
-          0.2,
-          0.2,
-          0.2
-        ],
-        [
-          0.2,
-          0.2,
-          0.2,
-          0.2
-        ]
-	  ]
-    },
     {
       "name": "quadspritel",
       "directions": 4
@@ -61,50 +19,8 @@
       "name": "Apex",
       "directions": 4
     },
-	{
-      "name": "SyndQuad",
-      "directions": 4
-    },
-	{
-      "name": "SyndQuadl",
-      "directions": 4
-    },
-	{
-      "name": "SyndQuadr",
-      "directions": 4
-    },
     {
       "name": "quadsprite_moving",
-      "directions": 4,
-      "delays": [
-        [
-          0.2,
-          0.2,
-          0.2,
-          0.2
-        ],
-        [
-          0.2,
-          0.2,
-          0.2,
-          0.2
-        ],
-        [
-          0.2,
-          0.2,
-          0.2,
-          0.2
-        ],
-        [
-          0.2,
-          0.2,
-          0.2,
-          0.2
-        ]
-      ]
-    },
-	{
-      "name": "SyndQuad_moving",
       "directions": 4,
       "delays": [
         [
@@ -283,11 +199,331 @@
         ]
       ]
     },
-		{
-      "name": "Chip",
+	{
+      "name": "quadspriteserv",
       "directions": 4
     },
 	{
+      "name": "quadspritemed",
+      "directions": 4
+    },
+	{
+      "name": "quadspriteballz",
+      "directions": 4
+    },
+	{
+      "name": "Apexballz",
+      "directions": 4
+    },
+    {
+      "name": "quadsprite_movingballz",
+      "directions": 4,
+      "delays": [
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ]
+      ]
+    },
+    {
+      "name": "quadspriteCC_movingballz",
+      "directions": 4,
+      "delays": [
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ]
+      ]
+    },
+    {
+      "name": "quadspritemed_movingballz",
+      "directions": 4,
+      "delays": [
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ]
+      ]
+    },
+    {
+      "name": "quadspritesalv_movingballz",
+      "directions": 4,
+      "delays": [
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ]
+      ]
+    },
+    {
+      "name": "quadspriteserv_movingballz",
+      "directions": 4,
+      "delays": [
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ]
+      ]
+    },
+    {
+      "name": "Apex_movingballz",
+      "directions": 4,
+      "delays": [
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ]
+      ]
+    },
+	{
+      "name": "engieborg_movingballz",
+      "directions": 4,
+      "delays": [
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ]
+      ]
+    },
+	{
+      "name": "engieborg_moving",
+      "directions": 4,
+      "delays": [
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ]
+      ]
+    },
+	{
+      "name": "SyndQuad_movingballz",
+      "directions": 4,
+      "delays": [
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ]
+      ]
+    },
+    {
+      "name": "SyndQuad_moving",
+      "directions": 4,
+      "delays": [
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ]
+      ]
+    },
+    {
+      "name": "Chip",
+      "directions": 4
+    },
+    {
+      "name": "quadspritechip",
+      "directions": 4
+    },
+    {
       "name": "chip_moving",
       "directions": 4,
       "delays": [
@@ -317,16 +553,20 @@
         ]
       ]
     },
-		{
-      "name": "quadspritechip",
+	{
+      "name": "quadspriteservballz",
       "directions": 4
     },
 	{
-      "name": "quadspriteserv",
+      "name": "quadspritemedballz",
       "directions": 4
     },
 	{
-      "name": "quadspritemed",
+      "name": "quadspriteCCballz",
+      "directions": 4
+    },
+	{
+      "name": "quadspritesalvballz",
       "directions": 4
     },
 	{
@@ -364,7 +604,38 @@
 	{
       "name": "quadspritesalv",
       "directions": 4
+    },
+	{
+      "name": "engieborg",
+      "directions": 4
+    },
+	{
+      "name": "engieborgl",
+      "directions": 4
+    },
+	{
+      "name": "SyndQuad",
+      "directions": 4
+    },
+	{
+      "name": "SyndQuadl",
+      "directions": 4
+    },
+	{
+      "name": "SyndQuadballz",
+      "directions": 4
+    },
+	{
+      "name": "SyndQuadr",
+      "directions": 4
+    },
+	{
+      "name": "engieborgr",
+      "directions": 4
+    },
+	{
+      "name": "engieborgballz",
+      "directions": 4
     }
-
   ]
 }

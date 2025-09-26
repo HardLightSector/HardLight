@@ -1,11 +1,11 @@
 using Content.Server.Administration;
-using Content.Server._HL.RoundPersistence.Systems;
+using Content.Server.HL.RoundPersistence.Systems;
 using Content.Server._HL.RoundPersistence.Components;
 using Content.Shared.Administration;
 using Robust.Shared.Console;
 using Robust.Shared.IoC;
 
-namespace Content.Server._HL.RoundPersistence.Commands;
+namespace Content.Server.HL.RoundPersistence.Commands;
 
 /// <summary>
 /// Console commands for managing the round persistence system

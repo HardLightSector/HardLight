@@ -1,0 +1,14 @@
+- type: entity
+  parent: WeaponCaseLong
+  id: WeaponCaseLongVortex
+  suffix: Dungeon, Vortex
+#  categories: [ HideSpawnMenu ]
+  components:
+  - type: StorageFill
+    contents:
+    - id: WeaponShotgunVortex
+      amount: 1
+    - id: Magazine12_gaugeBuckshot
+      amount: 6
+    - id: AmmoBox12_gaugeBuckshot
+      amount: 2

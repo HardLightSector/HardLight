@@ -1165,6 +1165,36 @@
       CottonBurger: HumanPlushie
 
 - type: entity
+  parent: PlushieHuman
+  id: PlushieDire
+  name: Dire Plushie
+  description: It depicts a sweet-hearted Shadekin in a corpsman's uniform. It's very fluffy.
+  components:
+  - type: Sprite
+    state: direplush
+  - type: UseDelay
+    delay: 3.0
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/Voice/Shadowkin/mar.ogg
+      params:
+        volume: 2
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Voice/Shadowkin/mar.ogg
+      params:
+        volume: 2
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Voice/Slime/slime_scream_m1.ogg
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Voice/Slime/slime_scream_m1.ogg
+      params:
+        variation: 0.05
+        volume: 4
+
+- type: entity
   parent: BasePlushie
   id: PlushieMoth
   name: moth plushie

@@ -50,3 +50,15 @@
       state: nyanoprisonguard
   - type: PresetIdCard
     job: PrisonGuard
+
+- type: entity
+  parent: IDCardStandard
+  id: ForensicMantisIDCard
+  name: mantis ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idscientist
+  - type: PresetIdCard
+    job: ForensicMantis

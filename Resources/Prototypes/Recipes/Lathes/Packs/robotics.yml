@@ -30,6 +30,7 @@
   - BorgModuleDiagnosis
   - BorgModuleNFService
   - BorgModuleRCDShipyard
+  - BorgModuleMining
 
 - type: latheRecipePack
   id: BorgModulesDynamic

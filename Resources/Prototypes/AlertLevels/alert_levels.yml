@@ -21,6 +21,13 @@
       emergencyLightColor: Violet
       forceEnableEmergencyLights: true
       shuttleTime: 600
+    white:
+      announcement: alert-level-white-announcement
+      sound: /Audio/Misc/redalert.ogg
+      emergencyLightColor: "#F6CCF6"
+      color: White
+      forceEnableEmergencyLights: true
+      shuttleTime: 600
     yellow:
       announcement: alert-level-yellow-announcement
       sound: /Audio/Misc/notice1.ogg

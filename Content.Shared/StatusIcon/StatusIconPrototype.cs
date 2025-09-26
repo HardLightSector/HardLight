@@ -153,6 +153,22 @@ public sealed partial class SatiationIconPrototype : StatusIconPrototype, IInher
 }
 
 /// <summary>
+/// StatusIcons for showing the psionics status on the epi HUD
+/// </summary>
+[Prototype]
+public sealed partial class PsionicsIconPrototype : StatusIconPrototype, IInheritingPrototype
+{
+    /// <inheritdoc />
+    [ParentDataField(typeof(AbstractPrototypeIdArraySerializer<PsionicsIconPrototype>))]
+    public string[]? Parents { get; }
+
+    /// <inheritdoc />
+    [NeverPushInheritance]
+    [AbstractDataField]
+    public bool Abstract { get; }
+}
+
+/// <summary>
 /// StatusIcons for showing the wanted status on the sec HUD
 /// </summary>
 [Prototype]

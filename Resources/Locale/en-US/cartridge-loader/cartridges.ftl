@@ -98,3 +98,14 @@ wanted-list-status-label = [color=darkgray]status:[/color] {$status ->
 wanted-list-history-table-time-col = Time
 wanted-list-history-table-reason-col = Crime
 wanted-list-history-table-initiator-col = Initiator
+
+glimmer-monitor-program-name = Glimmer Monitor
+glimmer-monitor-current-glimmer = Current Glimmer: {$glimmer}Ψ
+glimmer-monitor-interval = Interval
+glimmer-monitor-sync = Sync
+
+psi-watch-program-name = PsiWatch
+psi-watch-title = PsiWatch 1.3
+psi-watch-no-entries = Nobody is registered. Why not enjoy a nice, cold brew?
+psi-watch-entry = {$name}, {$job}
+psi-watch-no-reason = [ERROR] No reason given?

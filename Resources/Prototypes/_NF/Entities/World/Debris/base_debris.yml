@@ -5,7 +5,7 @@
   components:
   - type: OwnedDebris
   - type: LocalityLoader
-  - type: WorldLoader
+  #- type: WorldLoader
   - type: GCAbleObject
     queue: SpaceDebris
   - type: MapGrid

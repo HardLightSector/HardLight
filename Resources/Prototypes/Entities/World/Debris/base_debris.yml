@@ -4,4 +4,4 @@
   components:
     - type: OwnedDebris
     - type: LocalityLoader
-    - type: WorldLoader
+    #- type: WorldLoader

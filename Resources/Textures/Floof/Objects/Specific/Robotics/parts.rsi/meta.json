@@ -25,6 +25,24 @@
     {
       "name": "borg_head+o"
     },
+	{
+      "name": "borg_l_engiarm+o"
+    },
+    {
+      "name": "borg_r_engiarm+o"
+    },
+    {
+      "name": "borg_l_engileg+o"
+    },
+    {
+      "name": "borg_r_engileg+o"
+    },
+    {
+      "name": "borg_engichest+o"
+    },
+    {
+      "name": "borg_engihead+o"
+    },
     {
       "name": "borg_l_salvleg+o"
     },

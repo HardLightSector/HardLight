@@ -17795,7 +17795,10 @@ entities:
     - type: Transform
       pos: -8.5,-46.5
       parent: 2
-  - uid: 9324
+    - type: Door
+      secondsUntilStateChange: -55586.55
+      state: Opening
+  - uid: 383
     components:
     - type: Transform
       pos: -9.5,-46.5
@@ -63123,7 +63126,7 @@ entities:
     - type: Transform
       pos: -0.5,-59.5
       parent: 2
-- proto: ComputerShipyardMedical
+- proto: ComputerRadar
   entities:
   - uid: 1298
     components:
@@ -148319,7 +148322,13 @@ entities:
     - type: Transform
       pos: -11.5,-16.5
       parent: 2
-  - uid: 13392
+    - type: DeviceLinkSink
+      links:
+      - 19976
+    - type: Door
+      secondsUntilStateChange: -191878.86
+      state: Opening
+  - uid: 23356
     components:
     - type: Transform
       pos: 5.5,-46.5

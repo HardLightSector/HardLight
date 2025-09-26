@@ -19,3 +19,48 @@
     damage:
       types:
         Blunt: 8
+
+- type: entity
+  name: Vortex-12
+  parent: [ WeaponShotgunBulldog, BaseGunMeleeBlunt ]
+  id: WeaponShotgunVortex
+  description: Designed by SESWC. A semi-automatic magazine-fed shotgun for close-quarters combat #with an auto magazine ejector
+  components:
+  - type: NFWeaponDetails
+    manufacturer: weapon-details-manufacturer-SESWC-consortium
+  - type: Sprite
+    sprite: _HL/Objects/Weapons/Guns/Shotguns/vortex.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Item
+    sprite: Objects/Weapons/Guns/Shotguns/enforcer_inhands_64x.rsi
+    size: Large
+  - type: Clothing
+    sprite: _HL/Objects/Weapons/Guns/Shotguns/vortex.rsi
+    quickEquip: false
+    slots:
+    - Back
+    - suitStorage
+  - type: AltFireMelee # Not using the gun melee based because this is a different damage type and need different rotation
+    attackType: Light
+  - type: MeleeRequiresWield
+  - type: AmmoCounter
+  - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
+  - type: Gun  # Have to do this to reduce the firerate
+    fireRate: 1
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/shotgun.ogg
+    soundEmpty:
+      path: /Audio/Weapons/Guns/Empty/empty.ogg
+  - type: Contraband # Try to do parent but bulldog override it thus This
+    severity: Class1
+    # Pretty much everyone.
+    allowedDepartments: [ Civilian, Security, Command, Frontier, CentralCommand ]  #IF we had a merc department we can expand on it
+  #- type: ChamberMagazineAmmoProvider
+  #  autoEject: true

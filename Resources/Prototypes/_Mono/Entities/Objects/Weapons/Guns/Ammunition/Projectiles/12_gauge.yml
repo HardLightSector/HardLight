@@ -41,6 +41,8 @@
     damage:
       types:
         Piercing: 10
+        Structural: 15 #Hardlight change
+
 
 - type: entity
   id: PelletShotgunSpread
