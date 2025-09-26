@@ -157,17 +157,15 @@
     - state: mag-0
       map: ["enum.GunVisualLayers.Mag"]
       shader: unshaded
-    - type: BallisticAmmoProvider
-      capacity: 0
     - type: Gun
-      fireRate: 1
+      fireRate: 0.5
       selectedMode: SemiAuto
       availableModes:
       - SemiAuto
     soundGunshot: /Audio/Weapons/Guns/Gunshots/taser2.ogg
   - type: ProjectileBatteryAmmoProvider
     proto: BulletEnergyTurretDisabler # Frontier
-    fireCost: 10
+    fireCost: 20
   - type: PointLight
     enabled: true
     mask: /Textures/Effects/LightMasks/cone.png
@@ -201,10 +199,10 @@
   - type: Appearance
   - type: StaticPrice
     price: 500
-    vendPrice: 6000
+    vendPrice: 7500
 
 - type: entity
-  parent: BaseWeaponBallisticTurret
+  parent: BaseWeaponTurret
   id: WeaponTurretGestio
   name: automated gestio turret
   description: A modified gestio bolted to a turret mounting, don't forget to feed and change its magazines. Can be unanchored and repacked into the smaller form for transport. A note on the side reads "if uncooperative, drag it around".
@@ -220,7 +218,6 @@
     selectedMode: Burst
     availableModes:
       - Burst
-      - SemiAuto
     soundGunshot:
       path: /Audio/_NF/Weapons/Guns/Gunshots/rifle.ogg
       params:
@@ -236,7 +233,6 @@
           tags:
             - Magazine7.62x39mmLowCapacityFMJ
             - Magazine7.62x39mmFMJ
-            - Magazine7.62x39mmBox
         whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
         name: Chamber
