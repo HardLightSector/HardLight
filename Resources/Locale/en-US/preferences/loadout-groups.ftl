@@ -208,8 +208,3 @@ loadout-group-psychologist-jumpsuit = Psychologist jumpsuit
 
 loadout-group-boxer-jumpsuit = Boxer jumpsuit
 loadout-group-boxer-gloves = Boxer gloves
-
-loadout-group-syndi-head = Syndicate head
-loadout-group-syndi-jumpsuit = Syndicate jumpsuit
-loadout-group-syndi-backpack = Syndicate backpack
-loadout-group-syndi-outerclothing = Syndicate outer clothing

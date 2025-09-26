@@ -47,10 +47,3 @@ job-description-station-ai = Follow your laws, serve the crew.
 job-description-visitor = Enjoy your visit to the station.
 job-description-warden = Patrol the security department, ensure that no one is stealing from the armory, and make sure that all prisoners are processed and let out when their time is up.
 job-description-zookeeper = Put on a joyful display of cute animals and space carps for all the crew to see. Currently available on Oasis.
-
-# HL syndicate jobs
-job-description-cellleader = (whitelist only) Manage the Officers and Agents of Viper Cell under the direction of High Command.
-job-description-cellofficer = (whitelist only) Lead the agents of Viper Cell on behalf of the Cell Commander and High Command.
-job-description-cellspecialist = (whitelist only) Direct others when there's need of your specialisation, obey the higher ups if not.
-job-description-cellagent = (whitelist only) Obey SoP, Station Law and RoE, work for the betterment of the Syndicate.
-job-description-cellprospect = (whitelist only) Prove yourself as a trustworthy and valuable asset to the Syndicate.
