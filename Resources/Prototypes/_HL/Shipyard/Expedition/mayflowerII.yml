@@ -1,0 +1,38 @@
+# Author Info
+# GitHub: VividPups
+# Discord: VividPups
+
+- type: vessel
+  id: MayflowerII
+  parent: BaseVessel
+  name: USS Mayflower mk II
+  description: Designed and produced by SESWC. Heavily Upgraded from the Mayflower MKI. This expedition capable bounty hunters ship offers two armorys, small medical treatment bay, expand cargo bay, Two confinment cells, captain quaters and crew quater with addition station like lattice protection!
+  price: 100000 # 89838 on mapinit 13 percent mark up
+  category: Medium
+  group: Expedition
+  shuttlePath: /Maps/_HL/Shuttles/Expedition/mayflowerII.yml
+  guidebookPage:
+  class:
+  - Expedition
+  engine:
+  - AME
+
+- type: gameMap
+  id: MayflowerII
+  mapName: 'Mayflower mkII'
+  mapPath: /Maps/_HL/Shuttles/Expedition/mayflowerII.yml
+  minPlayers: 0
+  stations:
+    MayflowerII:
+      stationProto: StandardFrontierExpeditionVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Mayflower mk II {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            Contractor: [ 0, 0 ]
+            Pilot: [ 0, 0 ]
+            Mercenary: [ 0, 0 ]
