@@ -287,6 +287,24 @@
   - !type:TileNotBlocked
 
 - type: construction
+  name: cardboard wall
+  id: Cardwall
+  graph: Cardwall
+  startNode: start
+  targetNode: cardwall
+  category: construction-category-structures
+  description: Cheapskate.
+  icon:
+    sprite: Structures/Walls/card.rsi
+    state: full
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
   name: grille
   id: Grille
   graph: Grille
@@ -1545,6 +1563,23 @@
   canBuildInImpassable: false
   icon:
     sprite: Structures/Doors/MineralDoors/metal_door.rsi
+    state: closed
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  name: cardboard door
+  id: CardDoor
+  graph: DoorGraph
+  startNode: start
+  targetNode: cardDoor
+  category: construction-category-structures
+  description: A cheap cardboard door.
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  icon:
+    sprite: Structures/Doors/MineralDoors/card_door.rsi
     state: closed
   conditions:
     - !type:TileNotBlocked

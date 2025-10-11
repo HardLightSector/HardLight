@@ -140,6 +140,20 @@
     shoes: ClothingUnderSocksCoderValid
 
 
+# Outer clothing
+
+- type: loadout
+  id: ContractorClothingOuterCoatBomberCrop
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ContractorT2
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFCoatCapable
+  price: 1200
+  equipment:
+    outerClothing: ClothingOuterCoatBomberCrop
+
 # Merc guns
 
 - type: loadout

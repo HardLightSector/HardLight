@@ -315,13 +315,14 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
                 melee = glovesMelee;
                 return true;
             }
-            
+
             // Check all other slots
             foreach (var slot in slotDefinitions)
             {
                 if (slot.Name == "gloves") continue; // Already checked
                 if (_inventory.TryGetSlotEntity(entity, slot.Name, out var slotEntity) &&
-                    TryComp<MeleeWeaponComponent>(slotEntity, out var slotMelee))
+                    TryComp<MeleeWeaponComponent>(slotEntity, out var slotMelee) &&
+                    slotMelee.UsableWhileEquipped)
                 {
                     weaponUid = slotEntity.Value;
                     melee = slotMelee;

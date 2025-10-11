@@ -262,3 +262,39 @@
       path: /Audio/Effects/rustle1.ogg
     openSound:
       path: /Audio/Effects/rustle2.ogg
+
+- type: entity
+  id: CardDoor
+  name: cardboard door
+  parent: BaseMaterialDoorNavMap
+  description: A door, where will it lead?
+  components:
+    - type: Sprite
+      sprite: Structures/Doors/MineralDoors/card_door.rsi
+    - type: MeleeSound
+      soundGroups:
+        Brute:
+          path:
+           "/Audio/Weapons/pierce.ogg"
+    - type: Destructible
+      thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 60 #excess damage (nuke?). avoid computational cost of spawning entities.
+        behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTrigger
+          damage: 30
+        behaviors:
+        - !type:SpawnEntitiesBehavior
+          spawn:
+            MaterialCardboard:
+              min: 2
+              max: 4
+        - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+    - type: Construction
+      graph: DoorGraph
+      node: cardDoor

@@ -13,6 +13,13 @@ badfeeling-artifact-12 = The light seems to flicker.
 badfeeling-artifact-13 = The shadows seem to lengthen.
 badfeeling-artifact-14 = The walls are getting closer.
 badfeeling-artifact-15 = Something is wrong.
+badfeeling-artifact-16 = You feel insurmountable dread.
+# Hardlight Starts
+badfeeling-artifact-17 = You feel like you are being watched.
+badfeeling-artifact-18 = You feel something could jump out from the vent.
+badfeeling-artifact-19 = You feel shivers down your spine.
+badfeeling-artifact-20 = You feel melancholy.
+# Harlidght Ends
 
 badfeeling-artifact-drastic-1 = Someone's trying to kill you!
 badfeeling-artifact-drastic-2 = There's something out there!
@@ -20,3 +27,10 @@ badfeeling-artifact-drastic-3 = What's happening to you?
 badfeeling-artifact-drastic-4 = OH GOD!
 badfeeling-artifact-drastic-5 = HELP ME!
 badfeeling-artifact-drastic-6 = You've got to get out of here!
+# Harlidhgt Starts
+badfeeling-artifact-drastic-7 = Someone is not who they are!
+badfeeling-artifact-drastic-8 = something is rattling inside the vents! run!
+badfeeling-artifact-drastic-9 = THEY'RE COMING!
+badfeeling-artifact-drastic-10 = YOU GOING TO DIE! RUN!
+badfeeling-artifact-drastic-11 = THE SHADOW GROWS!
+# Hardlight Ends

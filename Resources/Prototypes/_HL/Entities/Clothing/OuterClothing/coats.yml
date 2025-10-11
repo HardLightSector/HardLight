@@ -1,0 +1,10 @@
+- type: entity
+  parent: [ ClothingOuterStorageBase, ClothingOuterStorageFoldableBase ]
+  id: ClothingOuterCoatBomberCrop
+  name: crop bomber jacket
+  description: A short verison of the thick, well-worn WW2 leather bomber jacket. Produced by SESWC!
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/OuterClothing/cropbomber.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/OuterClothing/cropbomber.rsi

@@ -388,6 +388,10 @@
   - ContractorWetFloorSign
   - ContractorClothingOuterCoatExpensive
   - ContractorClothingOuterCoatSpaceAsshole
+ #_HL START
+  - ContractorClothingOuterCoatBomberCrop
+# HL END
+
 
 - type: loadoutGroup
   id: ContractorBelt

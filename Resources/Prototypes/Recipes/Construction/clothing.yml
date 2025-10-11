@@ -43,6 +43,28 @@
   objectType: Item
 
 - type: construction
+  name: cardboard helmet
+  id: cardHelmet
+  graph: cardHelmet
+  startNode: start
+  targetNode: cardhelmet
+  category: construction-category-clothing
+  description: Helmet made of cardboard.  Just like when you were a kid.
+  icon: { sprite: Clothing/Head/Helmets/card_helmet.rsi, state: icon }
+  objectType: Item
+
+- type: construction
+  name: cardboard armor
+  id: cardArmour
+  graph: cardArmour
+  startNode: start
+  targetNode: cardarmour
+  category: construction-category-clothing
+  description: Armor made of cardboard.  This end up.
+  icon: { sprite: Clothing/OuterClothing/Armor/card_armour.rsi, state: icon }
+  objectType: Item
+
+- type: construction
   name: banana clown mask
   id: BananaClownMask
   graph: BananaClownMask

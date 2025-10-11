@@ -166,6 +166,16 @@ public sealed partial class MeleeWeaponComponent : Component
     public float HeavyPartDamageMultiplier = 0.5f;
 
     // Shitmed Change End
+
+    // Hardlight Change Start
+
+    /// <summary>
+    /// If true, the weapon is able to be swung while equipped, like for boxing gloves.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public bool UsableWhileEquipped = false;
+
+    // Hardlight Change End
 }
 
 /// <summary>

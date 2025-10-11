@@ -131,6 +131,17 @@
   objectType: Item
 
 - type: construction
+  name: cardboard shield
+  id: CardShield
+  graph: CardShield
+  startNode: start
+  targetNode: cardShield
+  category: construction-category-weapons
+  description: A flimsy cardboard shield.
+  icon: { sprite: Objects/Weapons/Melee/shields.rsi, state: cardshield-icon }
+  objectType: Item
+
+- type: construction
   name: makeshift shield
   id: MakeshiftShield
   graph: MakeshiftShield
@@ -175,6 +186,17 @@
   objectType: Item
 
 - type: construction
+  name: cardboard arrow
+  id: CardArrow
+  graph: CardArrow
+  startNode: start
+  targetNode: CardArrow
+  category: construction-category-weapons
+  description: An arrow made from a thin cardboard tube.  Don't poke your eye out!
+  icon: { sprite: Objects/Weapons/Guns/Bow/bow.rsi, state: wielded-arrow }
+  objectType: Item
+
+- type: construction
   name: improvised bow
   id: ImprovisedBow
   graph: ImprovisedBow
@@ -194,4 +216,15 @@
   category: construction-category-weapons
   description: Bones and silk combined together.
   icon: { sprite: Objects/Weapons/Melee/bone_spear.rsi, state: spear }
+  objectType: Item
+
+- type: construction
+  name: cardboard sword
+  id: CardSword
+  graph: CardSword
+  startNode: start
+  targetNode: cardSword
+  category: construction-category-weapons
+  description: A cardboard tube shaped into a rough sword.  Give it a swing, you know you want to.
+  icon: { sprite: Objects/Fun/card_sword.rsi, state: icon }
   objectType: Item

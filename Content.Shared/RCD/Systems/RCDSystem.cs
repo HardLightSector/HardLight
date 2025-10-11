@@ -131,6 +131,9 @@ public sealed class RCDSystem : EntitySystem
         if (args.Handled)
             return;
 
+        if (_net.IsClient)
+            return;
+
         if (args.Target is not { Valid: true } target || !args.CanReach)
             return;
 
@@ -146,9 +149,9 @@ public sealed class RCDSystem : EntitySystem
         // If the id card has no registered ship we cant continue.
         if (!TryComp<ShuttleDeedComponent>(uid, out var shuttleDeedComponent))
         {
-            _popup.PopupClient(Loc.GetString("rcd-component-missing-id-deed"),
+            _popup.PopupEntity(Loc.GetString("rcd-component-missing-id-deed"),
                 uid, args.User, PopupType.Medium);
-            _audio.PlayLocal(comp.ErrorSound, rcdEntityUid, args.User);
+            _audio.PlayEntity(comp.ErrorSound, args.User, rcdEntityUid);
             return;
         }
 
@@ -159,16 +162,16 @@ public sealed class RCDSystem : EntitySystem
 
         if (rcdComponent.LinkedShuttleUid == deedEntity)
         {
-            _popup.PopupClient(Loc.GetString("rcd-component-id-card-removed"),
+            _popup.PopupEntity(Loc.GetString("rcd-component-id-card-removed"),
                 uid, args.User, PopupType.Medium);
-            _audio.PlayLocal(comp.SwipeSound, rcdEntityUid, args.User);
+            _audio.PlayEntity(comp.SwipeSound, args.User, rcdEntityUid);
             rcdComponent.LinkedShuttleUid = null;
         }
         else // Transfering or setting a new ID card
         {
-            _popup.PopupClient(Loc.GetString("rcd-component-id-card-accepted"),
+            _popup.PopupEntity(Loc.GetString("rcd-component-id-card-accepted"),
                 uid, args.User, PopupType.Medium);
-            _audio.PlayLocal(comp.InsertSound, rcdEntityUid, args.User);
+            _audio.PlayEntity(comp.InsertSound, args.User, rcdEntityUid);
             rcdComponent.LinkedShuttleUid = deedEntity;
         }
 

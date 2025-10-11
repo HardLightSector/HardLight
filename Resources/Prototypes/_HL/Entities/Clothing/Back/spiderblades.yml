@@ -33,6 +33,7 @@
     wideAnimationRotation: 90
     attackRate: 3.0
     animation: WeaponArcClaw
+    usableWhileEquipped: true
     damage:
       types:
         Slash: 20
