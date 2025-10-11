@@ -1,10 +1,15 @@
 ﻿using System.Linq;
+using Content.Client._Afterlight.UserInterface;
+using Content.Client.Chat.TypingIndicator;
 using Content.Client.Popups;
 using Content.Shared._Afterlight.CCVar;
 using Content.Shared._Afterlight.Subtle;
 using Content.Shared.Popups;
 using Robust.Client.Player;
+using Robust.Client.UserInterface;
+using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Configuration;
+using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
 namespace Content.Client._Afterlight.Subtle;
@@ -15,9 +20,13 @@ public sealed class SubtleUISystem : EntitySystem
     [Dependency] private readonly IPlayerManager _player = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly SubtleSystem _subtle = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly TypingIndicatorSystem _typingIndicator = default!;
+    [Dependency] private readonly IUserInterfaceManager _ui = default!;
 
     private int _maxCharacters;
     private readonly HashSet<SubtleWindow> _windows = new();
+    private SubtleWindow? _focused;
 
     public override void Initialize()
     {
@@ -44,6 +53,7 @@ public sealed class SubtleUISystem : EntitySystem
             var msg = Loc.GetString("al-subtle-character-count", ("current", current), ("max", _maxCharacters));
             window.CharacterCountLabel.Text = msg;
             window.SubmitButton.Disabled = Rope.IsNullOrEmpty(args.TextRope);
+            _typingIndicator.ClientChangedChatText();
         };
 
         window.SubmitButton.OnPressed += _ => Submit(window);
@@ -75,5 +85,25 @@ public sealed class SubtleUISystem : EntitySystem
         var ev = new SubtleClientEvent(msg, window.AntiGhostCheckbox.Pressed);
         RaiseNetworkEvent(ev);
         window.Close();
+
+        _typingIndicator.ClientSubmittedChatText();
+    }
+
+    public override void Update(float frameTime)
+    {
+        if (!_timing.IsFirstTimePredicted)
+            return;
+
+        var lastFocused = _focused;
+        if (_ui.KeyboardFocused is not TextEdit edit ||
+            !edit.TryFindParent(out _focused))
+        {
+            _focused = null;
+        }
+
+        if (lastFocused == null && _focused != null)
+            _typingIndicator.ClientChangedChatFocus(true);
+        else if (lastFocused != null && _focused == null)
+            _typingIndicator.ClientChangedChatFocus(false);
     }
 }
