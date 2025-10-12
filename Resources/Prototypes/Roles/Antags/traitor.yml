@@ -2,7 +2,7 @@
   id: Traitor
   name: roles-antag-syndicate-agent-name
   antagonist: true
-  setPreference: false # Frontier: true<false
+  setPreference: true # Frontier: true<false
   objective: roles-antag-syndicate-agent-objective
   # guides: [ Traitors ] # Frontier: removed, irrelevant
   requirements:
@@ -13,7 +13,7 @@
   id: TraitorSleeper
   name: roles-antag-syndicate-agent-sleeper-name
   antagonist: true
-  setPreference: false # Frontier: true<false
+  setPreference: true # Frontier: true<false
   objective: roles-antag-syndicate-agent-sleeper-objective
   # guides: [ Traitors ] # Frontier: removed, irrelevant
   requirements:

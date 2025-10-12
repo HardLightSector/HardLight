@@ -106,6 +106,58 @@ namespace Content.Client.Lobby.UI
 
         private ISawmill _sawmill;
 
+        /// <summary>
+        /// Safely sets a tab title for the specified child control by resolving its current index in the TabContainer.
+        /// This avoids hard-coding tab indices that can drift if tabs are added or removed dynamically.
+        /// </summary>
+        /// <param name="child">The direct child control of the TabContainer representing a tab.</param>
+        /// <param name="title">The title to set.</param>
+        private void SetTabTitleForChild(Control? child, string title)
+        {
+            if (child == null)
+                return;
+
+            for (var i = 0; i < TabContainer.ChildCount; i++)
+            {
+                if (TabContainer.GetChild(i) == child)
+                {
+                    TabContainer.SetTabTitle(i, title);
+                    return;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Updates all tab titles based on the current TabContainer children.
+        /// </summary>
+        private void UpdateTabTitles()
+        {
+            // Appearance is the first tab in XAML
+            var appearanceTab = TabContainer.ChildCount > 0 ? TabContainer.GetChild(0) as Control : null;
+            SetTabTitleForChild(appearanceTab, Loc.GetString("humanoid-profile-editor-appearance-tab"));
+
+            // Jobs tab: ancestor of JobList
+            var jobsTab = JobList?.Parent?.Parent as Control;
+            SetTabTitleForChild(jobsTab, Loc.GetString("humanoid-profile-editor-jobs-tab"));
+
+            // Antags tab: ancestor of AntagList
+            var antagsTab = AntagList?.Parent?.Parent as Control;
+            SetTabTitleForChild(antagsTab, Loc.GetString("humanoid-profile-editor-antags-tab"));
+
+            // Traits tab: ancestor of TraitsList
+            var traitsTab = TraitsList?.Parent?.Parent as Control;
+            SetTabTitleForChild(traitsTab, Loc.GetString("humanoid-profile-editor-traits-tab"));
+
+            // Markings tab: explicitly named in XAML as MarkingsTab
+            SetTabTitleForChild(MarkingsTab, Loc.GetString("humanoid-profile-editor-markings-tab"));
+
+            // Flavor text (description) tab is dynamically added as the last child when enabled
+            if (_flavorText != null)
+            {
+                TabContainer.SetTabTitle(TabContainer.ChildCount - 1, Loc.GetString("humanoid-profile-editor-flavortext-tab"));
+            }
+        }
+
         public HumanoidProfileEditor(
             IClientPreferencesManager preferencesManager,
             IConfigurationManager configurationManager,
@@ -436,13 +488,14 @@ namespace Content.Client.Lobby.UI
 
             #endregion Jobs
 
-            //TabContainer.SetTabTitle(2, Loc.GetString("humanoid-profile-editor-antags-tab")); // Frontier
+            // Ensure tab titles match XAML order: 0 Appearance, 1 Jobs, 2 Antags, 3 Traits, 4 Markings
+            TabContainer.SetTabTitle(2, Loc.GetString("humanoid-profile-editor-antags-tab")); // Frontier: show proper label if present
 
             RefreshTraits();
 
             #region Markings
 
-            TabContainer.SetTabTitle(3, Loc.GetString("humanoid-profile-editor-markings-tab")); // Frontier: 4<3
+            TabContainer.SetTabTitle(4, Loc.GetString("humanoid-profile-editor-markings-tab")); // Frontier: Markings is the 5th tab in XAML
 
             Markings.OnMarkingAdded += OnMarkingChange;
             Markings.OnMarkingRemoved += OnMarkingChange;
@@ -452,6 +505,9 @@ namespace Content.Client.Lobby.UI
             #endregion Markings
 
             RefreshFlavorText();
+
+            // Ensure tab titles are correct after initial setup.
+            UpdateTabTitles();
 
             #region Dummy
 
@@ -520,7 +576,7 @@ namespace Content.Client.Lobby.UI
             TraitsList.DisposeAllChildren();
 
             var traits = _prototypeManager.EnumeratePrototypes<TraitPrototype>().OrderBy(t => Loc.GetString(t.Name)).ToList();
-            TabContainer.SetTabTitle(2, Loc.GetString("humanoid-profile-editor-traits-tab")); // Frontier: 3<2
+            TabContainer.SetTabTitle(3, Loc.GetString("humanoid-profile-editor-traits-tab"));
 
             if (traits.Count < 1)
             {
@@ -667,7 +723,7 @@ namespace Content.Client.Lobby.UI
         public void RefreshAntags()
         {
             // Frontier: no antags
-            /*
+            
             AntagList.DisposeAllChildren();
             var items = new[]
             {
@@ -726,7 +782,7 @@ namespace Content.Client.Lobby.UI
 
                 AntagList.AddChild(antagContainer);
             }
-            */
+            
             // End Frontier: no antags
         }
 

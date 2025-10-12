@@ -56,7 +56,7 @@
     - id: BluespaceSyndicateFTLInterception
     #- id: BluespaceWizardFederationScout
     #- id: BluespaceBloodMoon
-    #- id: BluespaceDungeonBasalt
+    - id: BluespaceDungeonBasalt
     - id: BluespaceDungeonChromite
     - id: BluespaceDungeonSnow
     - id: BluespaceDungeonCave
@@ -96,11 +96,11 @@
     - id: KingRatMigration
     - id: NinjaSpawn
     - id: ParadoxCloneSpawn
-    - id: RevenantSpawn
+    #- id: RevenantSpawn
     - id: SleeperAgents
     - id: ZombieOutbreak
     - id: LoneOpsSpawn
-    - id: WizardSpawn
+    #- id: WizardSpawn
     - id: LoneOpsSpawn
     - id: UnknownShuttleManOWar
     - id: UnknownShuttleInstigator

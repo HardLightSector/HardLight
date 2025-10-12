@@ -49,6 +49,7 @@ using YamlDotNet.Core;
 using Robust.Shared.Serialization;
 using Content.Shared.Storage.Components;
 using Robust.Shared.GameStates;
+using Content.Shared.Wall; // WallMountComponent for preserving wall-mounted fixtures
 
 // Suppress RA0004 for this file. There is no Task<Result> usage here, but the analyzer
 // occasionally reports a false positive during Release/integration builds.
@@ -287,8 +288,11 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
 
     /// <summary>
     /// Deletes entities on the grid that should not be persisted with the ship:
-    ///  - Any entity whose Transform is not Anchored
+    ///  - Any entity whose Transform is not Anchored ("loose on the floor")
     ///  - Any entity that is currently inside any container (including nested)
+    ///
+    /// IMPORTANT: Anchored entities are never deleted, even if they appear inside containers due to edge cases.
+    ///            Only unanchored entities are eligible for deletion. Contents of preserved bluespace stashes are also kept.
     /// Excludes the grid root itself.
     /// </summary>
     private void PurgeTransientEntities(EntityUid gridUid)
@@ -440,16 +444,23 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
             return false; // preserve stash root outright
         if (_entityManager.HasComponent<MapGridComponent>(ent))
             return false; // never delete grid root or nested grids here
+        // Preserve wall-mounted fixtures (buttons, levers, posters, etc.) regardless of anchored state
+        if (_entityManager.HasComponent<WallMountComponent>(ent))
+            return false;
         var anchored = false;
         if (_entityManager.TryGetComponent<TransformComponent>(ent, out var xform))
             anchored = xform.Anchored;
         var inContainer = _containerSystem.IsEntityInContainer(ent);
+        // Per updated requirements: anchored entities must never be deleted under any circumstance.
+        if (anchored)
+            return false;
         if (inContainer)
         {
             // If this entity (at any ancestor depth) is ultimately inside a secret stash preserve it.
             if (IsInsideSecretStash(ent))
                 return false;
         }
+        // Only unanchored entities are eligible for deletion. If it's unanchored (loose) or unanchored-in-container, delete.
         if (!anchored || inContainer)
         {
             list.Add(ent);
@@ -473,7 +484,16 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
             // If this entity (or an ancestor) is inside a secret stash we preserve it (do not queue) but still must not descend further since entire subtree should be kept.
             if (IsInsideSecretStash(ent))
                 continue;
-            aggregate.Add(ent);
+            // Preserve wall-mounted fixtures explicitly but still traverse their child containers.
+            var isWallMount = _entityManager.HasComponent<WallMountComponent>(ent);
+            // Preserve anchored entities even if they appear within containers; still traverse their child containers.
+            var isAnchored = false;
+            if (_entityManager.TryGetComponent<TransformComponent>(ent, out var xform))
+                isAnchored = xform.Anchored;
+            if (!isAnchored && !isWallMount)
+            {
+                aggregate.Add(ent);
+            }
             if (_entityManager.TryGetComponent<ContainerManagerComponent>(ent, out var manager))
             {
                 foreach (var container in manager.Containers.Values)
@@ -631,8 +651,20 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
                     continue;
                 }
 
+                // Determine if this entity is the grid root (has MapGrid component)
+                var hasMapGrid = false;
+                var compsNotNull = comps!; // Assert non-null for analyzer; guarded above.
+                foreach (var c in compsNotNull)
+                {
+                    if (c is MappingDataNode cm && cm.TryGet("type", out ValueDataNode? t) && t != null && t.Value == "MapGrid")
+                    {
+                        hasMapGrid = true;
+                        break;
+                    }
+                }
+
                 var newComps = new SequenceDataNode();
-                foreach (var compNode in comps)
+                foreach (var compNode in compsNotNull)
                 {
                     if (compNode is not MappingDataNode compMap)
                         continue;
@@ -649,7 +681,18 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
                     if (filteredTypes.Contains(typeName))
                         continue;
 
-                    // Preserve rotation: do NOT remove Transform.rot so entities keep their orientation on load.
+                    // Transform: remove rotation on the grid root to match blueprint expectations
+                    if (typeName == "Transform" && hasMapGrid)
+                    {
+                        compMap.Remove("rot");
+                    }
+
+                    // Gravity: strip runtime 'enabled' flag to match blueprint outputs
+                    if (typeName == "Gravity")
+                    {
+                        compMap.Remove("enabled");
+                        compMap.Remove("Enabled");
+                    }
 
                     // SpreaderGrid: strip accumulator fields
                     if (typeName == "SpreaderGrid")

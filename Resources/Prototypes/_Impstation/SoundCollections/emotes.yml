@@ -17,3 +17,6 @@
   id: ReptilianHiss
   files:
     - /Audio/_Impstation/Voice/Reptillian/reptillian_hiss1.ogg
+    - /Audio/_RMC14/Voice/Reptilian/lizard_hiss_1.ogg # RMC14
+    - /Audio/_RMC14/Voice/Reptilian/lizard_hiss_2.ogg # RMC14
+    - /Audio/_RMC14/Voice/Reptilian/lizard_hiss_3.ogg # RMC14

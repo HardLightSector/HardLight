@@ -35,9 +35,7 @@ namespace Content.Shared.Preferences
 
         public const int DefaultBalance = 30000;
 
-        //private readonly Dictionary<string, JobPriority> _jobPriorities; // Frontier: commented out during merge.
-        //private readonly List<string> _antagPreferences; // Frontier: commented out during merge.
-        //private readonly List<string> _traitPreferences; // Frontier: commented out during merge.
+    // Note: Legacy fields removed during merge; current fields are defined below with [DataField].
 
         /// <summary>
         /// Job preferences for initial spawn.
@@ -383,7 +381,7 @@ namespace Content.Shared.Preferences
         {
             return new(this)
             {
-                _antagPreferences = new (antagPreferences),
+                _antagPreferences = new(antagPreferences),
             };
         }
 

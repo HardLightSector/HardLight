@@ -251,16 +251,16 @@
         whitelist:
           components:
           - Airlock
-    # - objective: StealResearchObjective # Frontier
-    #   components: # Frontier
-    #   - type: ResearchStealer # Frontier
-    # - objective: TerrorObjective # Frontier
-    #   components: # Frontier
-    #   - type: CommsHacker # Frontier
-    #     threats: NinjaThreats # Frontier
-    # - objective: MassArrestObjective # Frontier
-    #   components: # Frontier
-    #   - type: CriminalRecordsHacker # Frontier
+    - objective: StealResearchObjective # Frontier
+      components: # Frontier
+      - type: ResearchStealer # Frontier
+    - objective: TerrorObjective # Frontier
+      components: # Frontier
+      - type: CommsHacker # Frontier
+        threats: NinjaThreats # Frontier
+    - objective: MassArrestObjective # Frontier
+      components: # Frontier
+      - type: CriminalRecordsHacker # Frontier
 
 - type: entity
   parent: [ ClothingHandsGlovesColorBlack, BaseC1Contraband ] # BaseSecurityEngineeringContraband<BaseC1Contraband

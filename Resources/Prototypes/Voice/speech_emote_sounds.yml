@@ -122,6 +122,10 @@
       collection: DeathGasp
     Belch: # Frontier
       collection: Belch # Frontier
+    Purr: # RMC14
+      path: /Audio/_RMC14/Voice/Reptilian/lizard_purr.ogg
+      params:
+        variation: 0.125
 
 - type: emoteSounds
   id: FemaleReptilian
@@ -154,6 +158,11 @@
       collection: FemaleDeathGasp
     Belch: # Frontier
       collection: Belch # Frontier
+    Purr: # RMC14
+      path: /Audio/_RMC14/Voice/Reptilian/lizard_purr.ogg
+      params:
+        variation: 0.125
+        volume: -5
 
 - type: emoteSounds
   id: MaleSlime
@@ -601,6 +610,11 @@
       collection: Salutes
     Crack: # Imp
       collection: Cracks # Imp
+    RMCReptileRattle: # RMC14
+      path: /Audio/_RMC14/Voice/Reptilian/lizard_rattle.ogg
+      params:
+        variation: 0.125
+        volume: -1
 
 # mobs
 - type: emoteSounds

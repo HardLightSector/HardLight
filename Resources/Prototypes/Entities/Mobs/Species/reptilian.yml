@@ -31,7 +31,7 @@
   - type: Speech
     speechSounds: Lizard
     speechVerb: Reptilian
-    allowedEmotes: ['Thump', 'ReptilianHiss'] # Imp: add ReptilianHiss
+    allowedEmotes: ['Thump', 'ReptilianHiss', 'Purr', 'RMCReptileRattle'] # Imp: add ReptilianHiss, RMC14: add Reptile Purr and Rattle
   - type: TypingIndicator
     proto: lizard
   - type: Vocal

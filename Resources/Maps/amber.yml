@@ -148328,11 +148328,6 @@ entities:
     - type: Door
       secondsUntilStateChange: -191878.86
       state: Opening
-  - uid: 23356
-    components:
-    - type: Transform
-      pos: 5.5,-46.5
-      parent: 2
   - uid: 13395
     components:
     - type: Transform

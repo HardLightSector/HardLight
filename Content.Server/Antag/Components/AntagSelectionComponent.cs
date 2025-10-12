@@ -132,7 +132,7 @@ public partial struct AntagSelectionDefinition()
     /// If true, players that latejoin into a round have a chance of being converted into antagonists.
     /// </summary>
     [DataField]
-    public bool LateJoinAdditional = false;
+    public bool LateJoinAdditional = true;
 
     //todo: find out how to do this with minimal boilerplate: filler department, maybe?
     //public HashSet<ProtoId<JobPrototype>> JobBlacklist = new()
@@ -141,7 +141,7 @@ public partial struct AntagSelectionDefinition()
     /// Mostly just here for legacy compatibility and reducing boilerplate
     /// </remarks>
     [DataField]
-    public bool AllowNonHumans = false;
+    public bool AllowNonHumans = true;
 
     /// <summary>
     /// A whitelist for selecting which players can become this antag.

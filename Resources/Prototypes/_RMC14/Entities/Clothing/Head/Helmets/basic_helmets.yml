@@ -1,0 +1,58 @@
+# base
+- type: entity
+  parent: ClothingHeadBase
+  id: RMCHelmetBase
+  abstract: true
+  name: helmet
+  components:
+  - type: Item
+    size: Normal
+    storedRotation: 0
+  - type: Storage
+    maxItemSize: Tiny
+    grid:
+    - 0,0,2,1
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        ents: [ ]
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+  - type: EmitSoundOnPickup
+    sound:
+      collection: RMCEquipArmor
+  - type: EmitSoundOnLand
+    sound:
+      collection: RMCEquipArmor
+  - type: Appearance
+
+- type: entity
+  parent: RMCHelmetBase
+  id: RMCMarineHelmetBase
+  abstract: true
+  components:
+  - type: Armor # Bulkier than default security helmets
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.85
+        Piercing: 0.85
+        Heat: 0.9
+
+- type: entity
+  id: RMCFoldableHelmetBase
+  abstract: true
+  components:
+  - type: Foldable
+    unfoldVerbText: "rmc-untuck"
+    foldVerbText: "rmc-tuck"
+    canFoldInsideContainer: true
+  - type: FoldableClothing
+    foldedHideLayers:
+    - Hair
+    - HeadTop
+    - HeadSide
+    unfoldedHideLayers: [ ]
+  - type: HideLayerClothing

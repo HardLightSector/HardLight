@@ -65,6 +65,7 @@ using Robust.Shared.Physics; // Physics Transform
 using Robust.Shared.Utility; // Box2 helpers
 using Robust.Shared.Map.Events; // For BeforeEntityReadEvent
 using Robust.Shared.Containers; // For SharedContainerSystem, ContainerManagerComponent
+using Content.Server.Gravity; // For GravitySystem
 
 // Suppress naming rule for _NF namespace prefix (modding convention)
 #pragma warning disable IDE1006
@@ -100,6 +101,7 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
     [Dependency] private readonly EntityLookupSystem _lookup = default!; // For physics overlap checks
     [Dependency] private readonly SharedContainerSystem _container = default!; // For safe container removal before deletion
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!; // For user feedback popups
+    [Dependency] private readonly GravitySystem _gravitySystem = default!; // For post-load gravity refresh
 
     public MapId? ShipyardMap { get; private set; }
     private float _shuttleIndex;
@@ -358,6 +360,16 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
                 PurgeJointsAndResetDocks(loadedGrid.Value);
                 CleanupDuplicateLooseParts(loadedGrid.Value);
                 AutoAnchorInfrastructure(loadedGrid.Value);
+                // Ensure gravity state is properly reflected after load so generators work without manual re-anchoring.
+                try
+                {
+                    if (TryComp<Content.Shared.Gravity.GravityComponent>(loadedGrid.Value, out var grav))
+                        _gravitySystem.RefreshGravity(loadedGrid.Value, grav);
+                }
+                catch (Exception gravEx)
+                {
+                    _sawmill.Warning($"[ShipLoad] Gravity refresh failed on {loadedGrid.Value}: {gravEx.Message}");
+                }
 
                 // IMPORTANT:
                 // Previously we removed the StationMemberComponent from loaded ships so that station-wide
