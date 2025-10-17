@@ -388,6 +388,7 @@
   - GasPipeSensorAlt2
 
 - type: construction
+  hide: true
   name: gas pipe sensor
   id: GasPipeSensorAlt1
   graph: GasPipeSensor
@@ -407,6 +408,7 @@
   - GasPipeSensorAlt2
 
 - type: construction
+  hide: true
   name: gas pipe sensor
   id: GasPipeSensorAlt2
   graph: GasPipeSensor
@@ -445,6 +447,7 @@
     state: pipeHalf
 
 - type: construction
+  hide: true
   name: gas pipe half
   id: GasPipeHalfAlt1
   description: Half of a gas pipe. No skateboards.
@@ -463,6 +466,7 @@
     state: pipeHalf
 
 - type: construction
+  hide: true
   name: gas pipe half
   id: GasPipeHalfAlt2
   description: Half of a gas pipe. No skateboards.
@@ -499,6 +503,7 @@
     state: pipeStraight
 
 - type: construction
+  hide: true
   name: gas pipe straight
   id: GasPipeStraightAlt1
   description: A straight pipe segment.
@@ -517,6 +522,7 @@
     state: pipeStraight
 
 - type: construction
+  hide: true
   name: gas pipe straight
   id: GasPipeStraightAlt2
   description: A straight pipe segment.
@@ -553,6 +559,7 @@
     state: pipeBend
 
 - type: construction
+  hide: true
   name: gas pipe bend
   id: GasPipeBendAlt1
   description: A pipe segment bent at a 90 degree angle.
@@ -571,6 +578,7 @@
     state: pipeBend
 
 - type: construction
+  hide: true
   name: gas pipe bend
   id: GasPipeBendAlt2
   description: A pipe segment bent at a 90 degree angle.
@@ -607,6 +615,7 @@
     state: pipeTJunction
 
 - type: construction
+  hide: true
   name: gas pipe T junction
   id: GasPipeTJunctionAlt1
   description: A pipe segment with a T junction.
@@ -625,6 +634,7 @@
     state: pipeTJunction
 
 - type: construction
+  hide: true
   name: gas pipe T junction
   id: GasPipeTJunctionAlt2
   description: A pipe segment with a T junction.
@@ -661,6 +671,7 @@
     state: pipeFourway
 
 - type: construction
+  hide: true
   name: gas pipe fourway
   id: GasPipeFourwayAlt1
   description: A pipe segment with a fourway junction.
@@ -679,6 +690,7 @@
     state: pipeFourway
 
 - type: construction
+  hide: true
   name: gas pipe fourway
   id: GasPipeFourwayAlt2
   description: A pipe segment with a fourway junction.
@@ -822,6 +834,7 @@
   - GasPressurePumpAlt2
 
 - type: construction
+  hide: true
   name: gas pump
   id: GasPressurePumpAlt1
   description: A pump that moves gas by pressure.
@@ -847,6 +860,7 @@
   - GasPressurePumpAlt2
 
 - type: construction
+  hide: true
   name: gas pump
   id: GasPressurePumpAlt2
   description: A pump that moves gas by pressure.
@@ -897,6 +911,7 @@
   - GasVolumePumpAlt2
 
 - type: construction
+  hide: true
   name: volumetric gas pump
   description: A pump that moves gas by volume.
   id: GasVolumePumpAlt1
@@ -922,6 +937,7 @@
   - GasVolumePumpAlt2
 
 - type: construction
+  hide: true
   name: volumetric gas pump
   description: A pump that moves gas by volume.
   id: GasVolumePumpAlt2
@@ -972,6 +988,7 @@
   - GasPassiveGateAlt2
 
 - type: construction
+  hide: true
   id: GasPassiveGateAlt1
   name: passive gate
   description: A one-way air valve that does not require power.
@@ -997,6 +1014,7 @@
   - GasPassiveGateAlt2
 
 - type: construction
+  hide: true
   id: GasPassiveGateAlt2
   name: passive gate
   description: A one-way air valve that does not require power.
@@ -1047,6 +1065,7 @@
   - GasPressureRegulatorAlt2
 
 - type: construction
+  hide: true
   id: GasPressureRegulatorAlt1
   name: inlet pressure regulator
   description: A handy regulator that opens if pressure is too high to let off excess gas.
@@ -1072,6 +1091,7 @@
   - GasPressureRegulatorAlt2
 
 - type: construction
+  hide: true
   id: GasPressureRegulatorAlt2
   name: inlet pressure regulator
   description: A handy regulator that opens if pressure is too high to let off excess gas.
@@ -1122,6 +1142,7 @@
   - GasValveAlt2
 
 - type: construction
+  hide: true
   id: GasValveAlt1
   name: manual valve
   description: A pipe with a valve that can be used to disable the flow of gas through it.
@@ -1147,6 +1168,7 @@
   - GasValveAlt2
 
 - type: construction
+  hide: true
   id: GasValveAlt2
   name: manual valve
   description: A pipe with a valve that can be used to disable the flow of gas through it.
@@ -1197,6 +1219,7 @@
   - SignalControlledValveAlt2
 
 - type: construction
+  hide: true
   id: SignalControlledValveAlt1
   name: signal valve
   description: Valve controlled by signal inputs.
@@ -1222,6 +1245,7 @@
   - SignalControlledValveAlt2
 
 - type: construction
+  hide: true
   id: SignalControlledValveAlt2
   name: signal valve
   description: Valve controlled by signal inputs.

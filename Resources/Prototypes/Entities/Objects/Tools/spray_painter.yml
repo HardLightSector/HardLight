@@ -26,10 +26,23 @@
       white: '#FFFFFFFF'
       black: '#333333FF'
       # standard atmos pipes
+      # altered for Hardlight
       waste: '#990000'
-      distro: '#0055cc'
+      distro: '#0335FC'
       air: '#03fcd3'
       mix: '#947507'
+      oxygen: '#00CCCC'
+      nitrogen: '#6666FF'
+      carbon dioxide: '#404040'
+      water vapor: '#AAAAAA'
+      plasma: '#9900CC'
+      tritium: '#00AA00'
+      ammonia: '#A8C600'
+      nitrous oxide: '#CC3399'
+      frezon: '#00AACC'
+      hot loop: '#FF1212'
+      cold loop: '#0055CC'
+      burn chamber: '#FF9900'
   - type: StaticPrice
     price: 40
   - type: LimitedCharges
