@@ -143,6 +143,11 @@
   text: "/ServerInfo/Guidebook/Engineering/PassiveGate.xml"
 
 - type: guideEntry
+  id: PressureRegulator
+  name: guide-entry-ressureregulator
+  text: "/ServerInfo/Guidebook/Engineering/PressureRegulator.xml"
+
+- type: guideEntry
   id: MixingAndFiltering
   name: guide-entry-mixingandfiltering
   text: "/ServerInfo/Guidebook/Engineering/MixingAndFiltering.xml"

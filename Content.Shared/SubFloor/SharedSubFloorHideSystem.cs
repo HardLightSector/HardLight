@@ -221,7 +221,8 @@ namespace Content.Shared.SubFloor
         /// </summary>
         ScannerRevealed,
     }
-
+    
+    [Serializable, NetSerializable]
     public enum SubfloorLayers : byte
     {
         FirstLayer

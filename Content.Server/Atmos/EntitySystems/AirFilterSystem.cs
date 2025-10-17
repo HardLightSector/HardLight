@@ -32,8 +32,9 @@ public sealed class AirFilterSystem : EntitySystem
             return;
 
         // Frontier: check running gas extraction
-        if (!_atmosphere.AtmosInputCanRunOnMap(args.Map))
-            return;
+        // Hardlight:  Disabled.
+        // if (!_atmosphere.AtmosInputCanRunOnMap(args.Map))
+        //    return;
         // End Frontier
 
         var environment = _atmosphere.GetContainingMixture(uid, args.Grid, args.Map, true, true);
@@ -69,7 +70,7 @@ public sealed class AirFilterSystem : EntitySystem
         var gases = oxygen >= filter.TargetOxygen ? filter.Gases : filter.OverflowGases;
 
         GasMixture? destination = null;
-        if (args.Grid is {} grid)
+        if (args.Grid is { } grid)
         {
             var position = _transform.GetGridTilePositionOrDefault(uid);
             destination = _atmosphere.GetTileMixture(grid, args.Map, position, true);

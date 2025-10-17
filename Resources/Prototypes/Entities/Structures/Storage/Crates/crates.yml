@@ -12,6 +12,8 @@
     - Energy
     reflectProb: 0.2
     spread: 90
+  - type: Paintable
+    group: CrateSteel
   - type: RadiationBlockingContainer
     resistance: 2.5
 
@@ -29,6 +31,8 @@
     node: crateplastic
     containers:
     - entity_storage
+  - type: Paintable
+    group: CratePlastic
   - type: StaticPrice
     price: 80 # Frontier: 100<80 - TODO: material value rework
 
@@ -49,6 +53,8 @@
     node: done
     containers:
     - entity_storage
+  - type: Paintable
+    group: null
 
 - type: entity
   parent: CratePlastic
@@ -830,6 +836,8 @@
       map: ["enum.PaperLabelVisuals.Layer"]
   - type: AccessReader
 #    access: [["Janitor"]]
+  - type: Paintable
+    group: null
 
 - type: entity
   parent: CrateBaseWeldable

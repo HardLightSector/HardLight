@@ -107,6 +107,7 @@
       - id: ClothingBeltUtilityEngineering # Frontier
 #     - id: RCD # Frontier
 #     - id: RCDAmmo # Frontier
+      - id: AirGrenade
 
 - type: entity
   id: LockerAtmosphericsFilled
@@ -125,6 +126,7 @@
       - id: ClothingHandsGlovesColorYellow # Frontier
       - id: trayScanner # Frontier
       - id: ClothingBeltUtilityEngineering # Frontier
+      - id: AirGrenade
 #      - id: RCD
 #      - id: RCDAmmo
 
@@ -169,3 +171,31 @@
         amount: 2
       - id: GeigerCounter
         amount: 2
+
+- type: entity
+  parent: LockerEvacRepair
+  id: LockerEvacRepairFilled
+  suffix: Filled
+  components:
+  - type: StorageFill
+    contents:
+    - id: BoxInflatable
+    - id: HolofanProjector
+    - id: MetalFoamGrenade
+      amount: 3
+    - id: AirGrenade
+      amount: 3
+
+- type: entity
+  parent: LockerWallEvacRepair
+  id: LockerWallEvacRepairFilled
+  suffix: Filled
+  components:
+  - type: StorageFill
+    contents:
+    - id: BoxInflatable
+    - id: HolofanProjector
+    - id: MetalFoamGrenade
+      amount: 3
+    - id: AirGrenade
+      amount: 3

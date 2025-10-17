@@ -379,9 +379,51 @@
   icon:
     sprite: Structures/Piping/Atmospherics/gas_pipe_sensor.rsi
     state: icon
-  placementMode: SnapgridCenter
+  placementMode: AlignAtmosPipeLayers
   objectType: Structure
   canRotate: true
+  alternativePrototypes:
+  - GasPipeSensor
+  - GasPipeSensorAlt1
+  - GasPipeSensorAlt2
+
+- type: construction
+  name: gas pipe sensor
+  id: GasPipeSensorAlt1
+  graph: GasPipeSensor
+  startNode: start
+  targetNode: sensorAlt1
+  category: construction-category-structures
+  description: Reports on the status of the gas within the attached pipe network.
+  icon:
+    sprite: Structures/Piping/Atmospherics/gas_pipe_sensor.rsi
+    state: icon
+  placementMode: AlignAtmosPipeLayers
+  objectType: Structure
+  canRotate: true
+  alternativePrototypes:
+  - GasPipeSensor
+  - GasPipeSensorAlt1
+  - GasPipeSensorAlt2
+
+- type: construction
+  name: gas pipe sensor
+  id: GasPipeSensorAlt2
+  graph: GasPipeSensor
+  startNode: start
+  targetNode: sensorAlt2
+  category: construction-category-structures
+  description: Reports on the status of the gas within the attached pipe network.
+  icon:
+    sprite: Structures/Piping/Atmospherics/gas_pipe_sensor.rsi
+    state: icon
+  placementMode: AlignAtmosPipeLayers
+  objectType: Structure
+  canRotate: true
+  alternativePrototypes:
+  - GasPipeSensor
+  - GasPipeSensorAlt1
+  - GasPipeSensorAlt2
 
 # ATMOS PIPES
 - type: construction
@@ -392,8 +434,48 @@
   startNode: start
   targetNode: half
   category: construction-category-utilities
-  placementMode: SnapgridCenter
+  placementMode: AlignAtmosPipeLayers
   canBuildInImpassable: true
+  alternativePrototypes:
+  - GasPipeHalf
+  - GasPipeHalfAlt1
+  - GasPipeHalfAlt2
+  icon:
+    sprite: Structures/Piping/Atmospherics/pipe.rsi
+    state: pipeHalf
+
+- type: construction
+  name: gas pipe half
+  id: GasPipeHalfAlt1
+  description: Half of a gas pipe. No skateboards.
+  graph: GasPipe
+  startNode: start
+  targetNode: halfAlt1
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: true
+  alternativePrototypes:
+  - GasPipeHalf
+  - GasPipeHalfAlt1
+  - GasPipeHalfAlt2
+  icon:
+    sprite: Structures/Piping/Atmospherics/pipe.rsi
+    state: pipeHalf
+
+- type: construction
+  name: gas pipe half
+  id: GasPipeHalfAlt2
+  description: Half of a gas pipe. No skateboards.
+  graph: GasPipe
+  startNode: start
+  targetNode: halfAlt2
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: true
+  alternativePrototypes:
+  - GasPipeHalf
+  - GasPipeHalfAlt1
+  - GasPipeHalfAlt2
   icon:
     sprite: Structures/Piping/Atmospherics/pipe.rsi
     state: pipeHalf
@@ -406,8 +488,48 @@
   startNode: start
   targetNode: straight
   category: construction-category-utilities
-  placementMode: SnapgridCenter
+  placementMode: AlignAtmosPipeLayers
   canBuildInImpassable: true
+  alternativePrototypes:
+  - GasPipeStraight
+  - GasPipeStraightAlt1
+  - GasPipeStraightAlt2
+  icon:
+    sprite: Structures/Piping/Atmospherics/pipe.rsi
+    state: pipeStraight
+
+- type: construction
+  name: gas pipe straight
+  id: GasPipeStraightAlt1
+  description: A straight pipe segment.
+  graph: GasPipe
+  startNode: start
+  targetNode: straightAlt1
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: true
+  alternativePrototypes:
+  - GasPipeStraight
+  - GasPipeStraightAlt1
+  - GasPipeStraightAlt2
+  icon:
+    sprite: Structures/Piping/Atmospherics/pipe.rsi
+    state: pipeStraight
+
+- type: construction
+  name: gas pipe straight
+  id: GasPipeStraightAlt2
+  description: A straight pipe segment.
+  graph: GasPipe
+  startNode: start
+  targetNode: straightAlt2
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: true
+  alternativePrototypes:
+  - GasPipeStraight
+  - GasPipeStraightAlt1
+  - GasPipeStraightAlt2
   icon:
     sprite: Structures/Piping/Atmospherics/pipe.rsi
     state: pipeStraight
@@ -420,8 +542,48 @@
   startNode: start
   targetNode: bend
   category: construction-category-utilities
-  placementMode: SnapgridCenter
+  placementMode: AlignAtmosPipeLayers
   canBuildInImpassable: true
+  alternativePrototypes:
+  - GasPipeBend
+  - GasPipeBendAlt1
+  - GasPipeBendAlt2
+  icon:
+    sprite: Structures/Piping/Atmospherics/pipe.rsi
+    state: pipeBend
+
+- type: construction
+  name: gas pipe bend
+  id: GasPipeBendAlt1
+  description: A pipe segment bent at a 90 degree angle.
+  graph: GasPipe
+  startNode: start
+  targetNode: bendAlt1
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: true
+  alternativePrototypes:
+  - GasPipeBend
+  - GasPipeBendAlt1
+  - GasPipeBendAlt2
+  icon:
+    sprite: Structures/Piping/Atmospherics/pipe.rsi
+    state: pipeBend
+
+- type: construction
+  name: gas pipe bend
+  id: GasPipeBendAlt2
+  description: A pipe segment bent at a 90 degree angle.
+  graph: GasPipe
+  startNode: start
+  targetNode: bendAlt2
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: true
+  alternativePrototypes:
+  - GasPipeBend
+  - GasPipeBendAlt1
+  - GasPipeBendAlt2
   icon:
     sprite: Structures/Piping/Atmospherics/pipe.rsi
     state: pipeBend
@@ -434,8 +596,48 @@
   startNode: start
   targetNode: tjunction
   category: construction-category-utilities
-  placementMode: SnapgridCenter
+  placementMode: AlignAtmosPipeLayers
   canBuildInImpassable: true
+  alternativePrototypes:
+  - GasPipeTJunction
+  - GasPipeTJunctionAlt1
+  - GasPipeTJunctionAlt2
+  icon:
+    sprite: Structures/Piping/Atmospherics/pipe.rsi
+    state: pipeTJunction
+
+- type: construction
+  name: gas pipe T junction
+  id: GasPipeTJunctionAlt1
+  description: A pipe segment with a T junction.
+  graph: GasPipe
+  startNode: start
+  targetNode: tjunctionAlt1
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: true
+  alternativePrototypes:
+  - GasPipeTJunction
+  - GasPipeTJunctionAlt1
+  - GasPipeTJunctionAlt2
+  icon:
+    sprite: Structures/Piping/Atmospherics/pipe.rsi
+    state: pipeTJunction
+
+- type: construction
+  name: gas pipe T junction
+  id: GasPipeTJunctionAlt2
+  description: A pipe segment with a T junction.
+  graph: GasPipe
+  startNode: start
+  targetNode: tjunctionAlt2
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: true
+  alternativePrototypes:
+  - GasPipeTJunction
+  - GasPipeTJunctionAlt1
+  - GasPipeTJunctionAlt2
   icon:
     sprite: Structures/Piping/Atmospherics/pipe.rsi
     state: pipeTJunction
@@ -448,11 +650,65 @@
   startNode: start
   targetNode: fourway
   category: construction-category-utilities
-  placementMode: SnapgridCenter
+  placementMode: AlignAtmosPipeLayers
   canBuildInImpassable: true
+  alternativePrototypes:
+  - GasPipeFourway
+  - GasPipeFourwayAlt1
+  - GasPipeFourwayAlt2
   icon:
     sprite: Structures/Piping/Atmospherics/pipe.rsi
     state: pipeFourway
+
+- type: construction
+  name: gas pipe fourway
+  id: GasPipeFourwayAlt1
+  description: A pipe segment with a fourway junction.
+  graph: GasPipe
+  startNode: start
+  targetNode: fourwayAlt1
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: true
+  alternativePrototypes:
+  - GasPipeFourway
+  - GasPipeFourwayAlt1
+  - GasPipeFourwayAlt2
+  icon:
+    sprite: Structures/Piping/Atmospherics/pipe.rsi
+    state: pipeFourway
+
+- type: construction
+  name: gas pipe fourway
+  id: GasPipeFourwayAlt2
+  description: A pipe segment with a fourway junction.
+  graph: GasPipe
+  startNode: start
+  targetNode: fourwayAlt2
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: true
+  alternativePrototypes:
+  - GasPipeFourway
+  - GasPipeFourwayAlt1
+  - GasPipeFourwayAlt2
+  icon:
+    sprite: Structures/Piping/Atmospherics/pipe.rsi
+    state: pipeFourway
+
+- type: construction
+  name: gas manifold
+  id: GasPipeManifold
+  description: A gas manifold that allows you to transfer gas between pipe layers.
+  graph: GasPipe
+  startNode: start
+  targetNode: manifold
+  category: construction-category-utilities
+  placementMode: SnapgridCenter
+  canBuildInImpassable: true
+  icon:
+    sprite: Structures/Piping/Atmospherics/manifold.rsi
+    state: storageManifold
 
 # ATMOS UNARY
 - type: construction
@@ -474,7 +730,7 @@
   - sprite: _NF/Structures/Piping/Atmospherics/vent.rsi # Frontier
     state: vent_off
   conditions:
-    - !type:NoUnstackableInTile
+  - !type:NoUnstackableInTile
 
 - type: construction
   name: passive vent
@@ -495,7 +751,7 @@
   - sprite: _NF/Structures/Piping/Atmospherics/vent.rsi # Frontier
     state: vent_passive
   conditions:
-    - !type:NoUnstackableInTile
+  - !type:NoUnstackableInTile
 
 - type: construction
   name: air scrubber
@@ -516,7 +772,7 @@
   - sprite: _NF/Structures/Piping/Atmospherics/scrubber.rsi # Frontier
     state: scrub_off
   conditions:
-    - !type:NoUnstackableInTile
+  - !type:NoUnstackableInTile
 
 - type: construction
   name: air injector
@@ -537,7 +793,7 @@
   - sprite: Structures/Piping/Atmospherics/outletinjector.rsi
     state: injector
   conditions:
-    - !type:NoUnstackableInTile
+  - !type:NoUnstackableInTile
 
 # ATMOS BINARY
 - type: construction
@@ -548,7 +804,7 @@
   startNode: start
   targetNode: pressurepump
   category: construction-category-utilities
-  placementMode: SnapgridCenter
+  placementMode: AlignAtmosPipeLayers
   canBuildInImpassable: false
   icon:
     sprite: Structures/Piping/Atmospherics/pump.rsi
@@ -559,7 +815,61 @@
   - sprite: Structures/Piping/Atmospherics/pump.rsi
     state: pumpPressure
   conditions:
-    - !type:NoUnstackableInTile
+  - !type:NoUnstackableInTile
+  alternativePrototypes:
+  - GasPressurePump
+  - GasPressurePumpAlt1
+  - GasPressurePumpAlt2
+
+- type: construction
+  name: gas pump
+  id: GasPressurePumpAlt1
+  description: A pump that moves gas by pressure.
+  graph: GasBinary
+  startNode: start
+  targetNode: pressurepumpAlt1
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: false
+  icon:
+    sprite: Structures/Piping/Atmospherics/pump.rsi
+    state: pumpPressure
+  layers:
+  - sprite: Structures/Piping/Atmospherics/pipe.rsi
+    state: pipeStraight
+  - sprite: Structures/Piping/Atmospherics/pump.rsi
+    state: pumpPressure
+  conditions:
+  - !type:NoUnstackableInTile
+  alternativePrototypes:
+  - GasPressurePump
+  - GasPressurePumpAlt1
+  - GasPressurePumpAlt2
+
+- type: construction
+  name: gas pump
+  id: GasPressurePumpAlt2
+  description: A pump that moves gas by pressure.
+  graph: GasBinary
+  startNode: start
+  targetNode: pressurepumpAlt2
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: false
+  icon:
+    sprite: Structures/Piping/Atmospherics/pump.rsi
+    state: pumpPressure
+  layers:
+  - sprite: Structures/Piping/Atmospherics/pipe.rsi
+    state: pipeStraight
+  - sprite: Structures/Piping/Atmospherics/pump.rsi
+    state: pumpPressure
+  conditions:
+  - !type:NoUnstackableInTile
+  alternativePrototypes:
+  - GasPressurePump
+  - GasPressurePumpAlt1
+  - GasPressurePumpAlt2
 
 - type: construction
   name: volumetric gas pump
@@ -569,7 +879,7 @@
   startNode: start
   targetNode: volumepump
   category: construction-category-utilities
-  placementMode: SnapgridCenter
+  placementMode: AlignAtmosPipeLayers
   canBuildInImpassable: false
   icon:
     sprite: Structures/Piping/Atmospherics/pump.rsi
@@ -580,7 +890,61 @@
   - sprite: Structures/Piping/Atmospherics/pump.rsi
     state: pumpVolume
   conditions:
-    - !type:NoUnstackableInTile
+  - !type:NoUnstackableInTile
+  alternativePrototypes:
+  - GasVolumePump
+  - GasVolumePumpAlt1
+  - GasVolumePumpAlt2
+
+- type: construction
+  name: volumetric gas pump
+  description: A pump that moves gas by volume.
+  id: GasVolumePumpAlt1
+  graph: GasBinary
+  startNode: start
+  targetNode: volumepumpAlt1
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: false
+  icon:
+    sprite: Structures/Piping/Atmospherics/pump.rsi
+    state: pumpVolume
+  layers:
+  - sprite: Structures/Piping/Atmospherics/pipe.rsi
+    state: pipeStraight
+  - sprite: Structures/Piping/Atmospherics/pump.rsi
+    state: pumpVolume
+  conditions:
+  - !type:NoUnstackableInTile
+  alternativePrototypes:
+  - GasVolumePump
+  - GasVolumePumpAlt1
+  - GasVolumePumpAlt2
+
+- type: construction
+  name: volumetric gas pump
+  description: A pump that moves gas by volume.
+  id: GasVolumePumpAlt2
+  graph: GasBinary
+  startNode: start
+  targetNode: volumepumpAlt2
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: false
+  icon:
+    sprite: Structures/Piping/Atmospherics/pump.rsi
+    state: pumpVolume
+  layers:
+  - sprite: Structures/Piping/Atmospherics/pipe.rsi
+    state: pipeStraight
+  - sprite: Structures/Piping/Atmospherics/pump.rsi
+    state: pumpVolume
+  conditions:
+  - !type:NoUnstackableInTile
+  alternativePrototypes:
+  - GasVolumePump
+  - GasVolumePumpAlt1
+  - GasVolumePumpAlt2
 
 - type: construction
   id: GasPassiveGate
@@ -590,7 +954,7 @@
   startNode: start
   targetNode: passivegate
   category: construction-category-utilities
-  placementMode: SnapgridCenter
+  placementMode: AlignAtmosPipeLayers
   canBuildInImpassable: false
   icon:
     sprite: Structures/Piping/Atmospherics/pump.rsi
@@ -601,7 +965,136 @@
   - sprite: Structures/Piping/Atmospherics/pump.rsi
     state: pumpPassiveGate
   conditions:
-    - !type:NoUnstackableInTile
+  - !type:NoUnstackableInTile
+  alternativePrototypes:
+  - GasPassiveGate
+  - GasPassiveGateAlt1
+  - GasPassiveGateAlt2
+
+- type: construction
+  id: GasPassiveGateAlt1
+  name: passive gate
+  description: A one-way air valve that does not require power.
+  graph: GasBinary
+  startNode: start
+  targetNode: passivegateAlt1
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: false
+  icon:
+    sprite: Structures/Piping/Atmospherics/pump.rsi
+    state: pumpPassiveGate
+  layers:
+  - sprite: Structures/Piping/Atmospherics/pipe.rsi
+    state: pipeStraight
+  - sprite: Structures/Piping/Atmospherics/pump.rsi
+    state: pumpPassiveGate
+  conditions:
+  - !type:NoUnstackableInTile
+  alternativePrototypes:
+  - GasPassiveGate
+  - GasPassiveGateAlt1
+  - GasPassiveGateAlt2
+
+- type: construction
+  id: GasPassiveGateAlt2
+  name: passive gate
+  description: A one-way air valve that does not require power.
+  graph: GasBinary
+  startNode: start
+  targetNode: passivegateAlt2
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: false
+  icon:
+    sprite: Structures/Piping/Atmospherics/pump.rsi
+    state: pumpPassiveGate
+  layers:
+  - sprite: Structures/Piping/Atmospherics/pipe.rsi
+    state: pipeStraight
+  - sprite: Structures/Piping/Atmospherics/pump.rsi
+    state: pumpPassiveGate
+  conditions:
+  - !type:NoUnstackableInTile
+  alternativePrototypes:
+  - GasPassiveGate
+  - GasPassiveGateAlt1
+  - GasPassiveGateAlt2
+
+- type: construction
+  id: GasPressureRegulator
+  name: inlet pressure regulator
+  description: A handy regulator that opens if pressure is too high to let off excess gas.
+  graph: GasBinary
+  startNode: start
+  targetNode: pressureregulator
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: false
+  icon:
+    sprite: Structures/Piping/Atmospherics/pump.rsi
+    state: pumpPressure
+  layers:
+  - sprite: Structures/Piping/Atmospherics/pipe.rsi
+    state: pipeStraight
+  - sprite: Structures/Piping/Atmospherics/pump.rsi
+    state: pumpPressure
+  conditions:
+  - !type:NoUnstackableInTile
+  alternativePrototypes:
+  - GasPressureRegulator
+  - GasPressureRegulatorAlt1
+  - GasPressureRegulatorAlt2
+
+- type: construction
+  id: GasPressureRegulatorAlt1
+  name: inlet pressure regulator
+  description: A handy regulator that opens if pressure is too high to let off excess gas.
+  graph: GasBinary
+  startNode: start
+  targetNode: pressureregulatorAlt1
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: false
+  icon:
+    sprite: Structures/Piping/Atmospherics/pump.rsi
+    state: pumpPressure
+  layers:
+  - sprite: Structures/Piping/Atmospherics/pipe.rsi
+    state: pipeStraight
+  - sprite: Structures/Piping/Atmospherics/pump.rsi
+    state: pumpPressure
+  conditions:
+  - !type:NoUnstackableInTile
+  alternativePrototypes:
+  - GasPressureRegulator
+  - GasPressureRegulatorAlt1
+  - GasPressureRegulatorAlt2
+
+- type: construction
+  id: GasPressureRegulatorAlt2
+  name: inlet pressure regulator
+  description: A handy regulator that opens if pressure is too high to let off excess gas.
+  graph: GasBinary
+  startNode: start
+  targetNode: pressureregulatorAlt2
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: false
+  icon:
+    sprite: Structures/Piping/Atmospherics/pump.rsi
+    state: pumpPressure
+  layers:
+  - sprite: Structures/Piping/Atmospherics/pipe.rsi
+    state: pipeStraight
+  - sprite: Structures/Piping/Atmospherics/pump.rsi
+    state: pumpPressure
+  conditions:
+  - !type:NoUnstackableInTile
+  alternativePrototypes:
+  - GasPressureRegulator
+  - GasPressureRegulatorAlt1
+  - GasPressureRegulatorAlt2
 
 - type: construction
   id: GasValve
@@ -611,7 +1104,7 @@
   startNode: start
   targetNode: valve
   category: construction-category-utilities
-  placementMode: SnapgridCenter
+  placementMode: AlignAtmosPipeLayers
   canBuildInImpassable: false
   icon:
     sprite: Structures/Piping/Atmospherics/pump.rsi
@@ -622,7 +1115,61 @@
   - sprite: Structures/Piping/Atmospherics/pump.rsi
     state: pumpManualValve
   conditions:
-    - !type:NoUnstackableInTile
+  - !type:NoUnstackableInTile
+  alternativePrototypes:
+  - GasValve
+  - GasValveAlt1
+  - GasValveAlt2
+
+- type: construction
+  id: GasValveAlt1
+  name: manual valve
+  description: A pipe with a valve that can be used to disable the flow of gas through it.
+  graph: GasBinary
+  startNode: start
+  targetNode: valveAlt1
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: false
+  icon:
+    sprite: Structures/Piping/Atmospherics/pump.rsi
+    state: pumpManualValve
+  layers:
+  - sprite: Structures/Piping/Atmospherics/pipe.rsi
+    state: pipeStraight
+  - sprite: Structures/Piping/Atmospherics/pump.rsi
+    state: pumpManualValve
+  conditions:
+  - !type:NoUnstackableInTile
+  alternativePrototypes:
+  - GasValve
+  - GasValveAlt1
+  - GasValveAlt2
+
+- type: construction
+  id: GasValveAlt2
+  name: manual valve
+  description: A pipe with a valve that can be used to disable the flow of gas through it.
+  graph: GasBinary
+  startNode: start
+  targetNode: valveAlt2
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: false
+  icon:
+    sprite: Structures/Piping/Atmospherics/pump.rsi
+    state: pumpManualValve
+  layers:
+  - sprite: Structures/Piping/Atmospherics/pipe.rsi
+    state: pipeStraight
+  - sprite: Structures/Piping/Atmospherics/pump.rsi
+    state: pumpManualValve
+  conditions:
+  - !type:NoUnstackableInTile
+  alternativePrototypes:
+  - GasValve
+  - GasValveAlt1
+  - GasValveAlt2
 
 - type: construction
   id: SignalControlledValve
@@ -632,7 +1179,7 @@
   startNode: start
   targetNode: signalvalve
   category: construction-category-utilities
-  placementMode: SnapgridCenter
+  placementMode: AlignAtmosPipeLayers
   canBuildInImpassable: false
   icon:
     sprite: Structures/Piping/Atmospherics/pump.rsi
@@ -644,6 +1191,60 @@
     state: pumpSignalValve
   conditions:
   - !type:NoUnstackableInTile
+  alternativePrototypes:
+  - SignalControlledValve
+  - SignalControlledValveAlt1
+  - SignalControlledValveAlt2
+
+- type: construction
+  id: SignalControlledValveAlt1
+  name: signal valve
+  description: Valve controlled by signal inputs.
+  graph: GasBinary
+  startNode: start
+  targetNode: signalvalveAlt1
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: false
+  icon:
+    sprite: Structures/Piping/Atmospherics/pump.rsi
+    state: pumpSignalValve
+  layers:
+  - sprite: Structures/Piping/Atmospherics/pipe.rsi
+    state: pipeStraight
+  - sprite: Structures/Piping/Atmospherics/pump.rsi
+    state: pumpSignalValve
+  conditions:
+  - !type:NoUnstackableInTile
+  alternativePrototypes:
+  - SignalControlledValve
+  - SignalControlledValveAlt1
+  - SignalControlledValveAlt2
+
+- type: construction
+  id: SignalControlledValveAlt2
+  name: signal valve
+  description: Valve controlled by signal inputs.
+  graph: GasBinary
+  startNode: start
+  targetNode: signalvalveAlt2
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: false
+  icon:
+    sprite: Structures/Piping/Atmospherics/pump.rsi
+    state: pumpSignalValve
+  layers:
+  - sprite: Structures/Piping/Atmospherics/pipe.rsi
+    state: pipeStraight
+  - sprite: Structures/Piping/Atmospherics/pump.rsi
+    state: pumpSignalValve
+  conditions:
+  - !type:NoUnstackableInTile
+  alternativePrototypes:
+  - SignalControlledValve
+  - SignalControlledValveAlt1
+  - SignalControlledValveAlt2
 
 - type: construction
   id: GasPort

@@ -3,6 +3,7 @@ using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Server.Power.Pow3r;
 using Robust.Shared.Utility;
+using Content.Shared.NodeContainer;
 
 namespace Content.Server.Power.NodeGroups;
 

@@ -34,7 +34,12 @@ public sealed class ActivatableUIRequiresAnchorSystem : EntitySystem
 
         if (!Transform(ent.Owner).Anchored)
         {
-            _popup.PopupClient(Loc.GetString("ui-needs-anchor"), args.User); // Frontier: comp-gas-pump-ui-needs-anchor<ui-needs-anchor
+            _popup.PopupClient(Loc.GetString("comp-gas-pump-ui-needs-anchor"), args.User);
+            if (ent.Comp.Popup != null)
+            {
+                _popup.PopupClient(Loc.GetString(ent.Comp.Popup), args.User);
+            }
+
             args.Cancel();
         }
     }

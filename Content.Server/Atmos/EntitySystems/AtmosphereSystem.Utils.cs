@@ -29,7 +29,8 @@ public partial class AtmosphereSystem
 
         // Pay more for gas canisters that are more pure
         float purity = 1;
-        if (totalMoles > 0) {
+        if (totalMoles > 0)
+        {
             purity = maxComponent / totalMoles;
         }
 
@@ -89,7 +90,7 @@ public partial class AtmosphereSystem
 
             fixVacuum |= airtight.FixVacuum;
 
-            if(!airtight.AirBlocked)
+            if (!airtight.AirBlocked)
                 continue;
 
             blockedDirs |= airtight.AirBlockedDirection;
@@ -120,13 +121,16 @@ public partial class AtmosphereSystem
     ///     Checks if atmos input devices are allowed to run on the given map entity.
     /// </summary>
     /// <param name="mapGrid">The map in question.</param>
-    public bool AtmosInputCanRunOnMap(EntityUid? mapUid)
-    {
-        // Frontier: check running gas extraction
-        if (!TryComp<MapComponent>(mapUid, out var mapComp))
-            return false;
+    ///
+    /// Hardlight:  Disabled this because it was causing an error and we don't use it anyway.
+    ///
+    // public bool AtmosInputCanRunOnMap(EntityUid? mapUid)
+    // {
+    // Frontier: check running gas extraction
+    //    if (!TryComp<MapComponent>(mapUid, out var mapComp))
+    //        return false;
 
-        return AllowMapGasExtraction || HasComp<FTLMapComponent>(mapUid) || mapComp.MapId == _gameTicker.DefaultMap;
-    }
+    //    return AllowMapGasExtraction || HasComp<FTLMapComponent>(mapUid) || mapComp.MapId == _gameTicker.DefaultMap;
+    // }
     // End Frontier: disable atmos off maps
 }
