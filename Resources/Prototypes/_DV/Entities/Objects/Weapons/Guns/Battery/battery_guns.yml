@@ -21,9 +21,6 @@
     - Back # Frontier
     - suitStorage # Frontier
     sprite: _DV/Objects/Weapons/Guns/Battery/energygun.rsi
-    slots:
-    - suitStorage
-    - Belt
   - type: Gun
     soundGunshot:
       path: /Audio/_DV/Weapons/Guns/Gunshots/laser.ogg
