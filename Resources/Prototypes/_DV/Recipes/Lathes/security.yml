@@ -196,15 +196,6 @@
     Steel: 400
     Bluespace: 20
 
-- type: latheRecipe
-  id: ClothingNeckShockCollar
-  result: ClothingNeckShockCollar
-  completetime: 2
-  materials:
-    Steel: 300
-    Glass: 100
-    Plastic: 100
-
 # Weapons
 
 - type: latheRecipe
