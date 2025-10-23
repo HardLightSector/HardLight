@@ -8,57 +8,6 @@
     },
     "states": [
         {
-            "name": "chiefjustice"
-        },
-        {
-            "name": "clerk"
-        },
-        {
-            "name": "nyanogladiator"
-        },
-        {
-            "name": "nyanoprisonguard"
-        },
-        {
-            "name": "prosecutor"
-        },
-        {
-            "name": "nyanomailcarrier"
-        },
-        {
-            "name": "nyanomartialartist"
-        },
-        {
-            "name": "nyanomantis"
-        },
-        {
-            "name": "salvagespecialist"
-        },
-        {
-            "name": "mystagogue"
-        },
-        {
-            "name": "scientist"
-        },
-        {
-            "name": "courier"
-        },
-        {
-            "name": "mobster"
-        },
-        {
-            "name": "roboticist"
-        },
-        {
-            "name": "cargoassistant"
-        },
-        {
-            "name": "adminassistant"
-        },
-        {
-            "name": "surgeon"
-        },
-        {
             "name": "ertleadergamma"
         },
         {
