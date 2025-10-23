@@ -21,7 +21,6 @@
     - Back # Frontier
     - suitStorage # Frontier
     sprite: _DV/Objects/Weapons/Guns/Battery/energygun.rsi
-    quickEquip: false
     slots:
     - suitStorage
     - Belt
@@ -132,7 +131,7 @@
   parent: BaseWeaponBatterySmall
   id: WeaponEnergyGunMini
   description: A light version of the Energy gun with a smaller capacity.
-  components: 
+  components:
   - type: Sprite
     sprite: DeltaV/Objects/Weapons/Guns/Battery/mini_energygun.rsi
     layers:
