@@ -164,33 +164,33 @@
 
 # Weapons
 
-- type: latheRecipe
-  parent: BaseWeaponRecipeLong
-  id: WeaponEnergyGun
-  result: WeaponEnergyGun
-  materials:
-    Steel: 2000
-    Glass: 800
-    Plastic: 500
+# - type: latheRecipe
+#   parent: BaseWeaponRecipeLong
+#   id: WeaponEnergyGun
+#   result: WeaponEnergyGun
+#   materials:
+#     Steel: 2000
+#     Glass: 800
+#     Plastic: 500
 
-- type: latheRecipe
-  parent: BaseWeaponRecipeLong
-  id: WeaponEnergyGunMini
-  result: WeaponEnergyGunMini
-  materials:   #Half of Energy Gun Recipe
-    Steel: 1000
-    Glass: 400
-    Plastic: 250
+# - type: latheRecipe
+#   parent: BaseWeaponRecipeLong
+#   id: WeaponEnergyGunMini
+#   result: WeaponEnergyGunMini
+#   materials:   #Half of Energy Gun Recipe
+#     Steel: 1000
+#     Glass: 400
+#     Plastic: 250
 
-- type: latheRecipe
-  parent: BaseWeaponRecipeLong
-  id: WeaponEnergyGunPistol
-  result: WeaponEnergyGunPistol
-  materials:
-    Steel: 1500
-    Glass: 600
-    Plastic: 400
-    Gold: 150
+# - type: latheRecipe
+#   parent: BaseWeaponRecipeLong
+#   id: WeaponEnergyGunPistol
+#   result: WeaponEnergyGunPistol
+#   materials:
+#     Steel: 1500
+#     Glass: 600
+#     Plastic: 400
+#     Gold: 150
 
 - type: latheRecipe
   parent: ClothingShoesBootsMagSci
