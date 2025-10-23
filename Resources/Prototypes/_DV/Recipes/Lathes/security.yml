@@ -192,10 +192,10 @@
 #     Plastic: 400
 #     Gold: 150
 
-- type: latheRecipe
-  parent: ClothingShoesBootsMagSci
-  id: ClothingShoesBootsSecurityMagboots
-  result: ClothingShoesBootsSecurityMagboots
+# - type: latheRecipe
+#   parent: ClothingShoesBootsMagSci
+#   id: ClothingShoesBootsSecurityMagboots
+#   result: ClothingShoesBootsSecurityMagboots
 
 - type: latheRecipe
   parent: BaseWeaponRecipe
