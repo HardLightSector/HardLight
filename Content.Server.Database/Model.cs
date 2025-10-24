@@ -21,6 +21,7 @@ namespace Content.Server.Database
 
         public DbSet<Preference> Preference { get; set; } = null!;
         public DbSet<Profile> Profile { get; set; } = null!;
+        public DbSet<CDModel.CDProfile> CDProfile { get; set; } = null!;
         public DbSet<ConsentSettings> ConsentSettings { get; set; } = null!; // Floofstation
         public DbSet<AssignedUserId> AssignedUserId { get; set; } = null!;
         public DbSet<Player> Player { get; set; } = default!;
@@ -437,6 +438,8 @@ namespace Content.Server.Database
 
         public int PreferenceId { get; set; }
         public Preference Preference { get; set; } = null!;
+
+        public CDModel.CDProfile? CDProfile { get; set; }
     }
     public class ConsentSettings // Floofstation
     {

@@ -531,9 +531,7 @@ namespace Content.Client.Lobby.UI
                 CDCustomSpeciesName.PlaceHolder = Loc.GetString(_species[args.Id].Name);
             };
 
-            #endregion CosmaticRecords
-
-            RefreshFlavorText();
+            #endregion CustomSpeciesName
 
             #region Dummy
 
