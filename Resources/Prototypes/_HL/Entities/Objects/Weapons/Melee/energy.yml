@@ -82,7 +82,7 @@
 
 - type: entity
   name: cartel energy halberd
-  parent: WeaponEnergyHalberd
+  parent: [ WeaponEnergyHalberd, BaseC3CartelContraband ] # Hardlight: marked as Cartel C3 contraband
   id: WeaponEnergyHalberdC
   description: A two-handed polearm, also known as a halberd. This variant uses a purple focusing crystal, and the branding has been painted over.
   components:

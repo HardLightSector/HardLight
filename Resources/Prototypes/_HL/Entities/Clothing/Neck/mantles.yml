@@ -28,7 +28,7 @@
 
 # Dirizher Cartel Mantle
 - type: entity
-  parent: ClothingNeckBase
+  parent: [ ClothingNeckBase, BaseC3CartelContraband ] # Hardlight: marked as Cartel C3 contraband
   id: ClothingNeckMantleCartel
   name: cartel mantle
   description: A distinctive mantle bearing the subtle markings of the Dirizher Cartel.
@@ -40,7 +40,7 @@
 
 # Dirizher Cartel Lieutenant Mantle
 - type: entity
-  parent: ClothingNeckBase
+  parent: [ ClothingNeckBase, BaseC3CartelContraband ] # Hardlight: marked as Cartel C3 contraband
   id: ClothingNeckMantleCartelLieutenant
   name: cartel lieutenant mantle
   description: A mantle denoting the rank of lieutenant within the Dirizher Cartel hierarchy.
@@ -52,7 +52,7 @@
 
 # Dirizher Cartel Command Mantle
 - type: entity
-  parent: ClothingNeckBase
+  parent: [ ClothingNeckBase, BaseC3CartelContraband ] # Hardlight: marked as Cartel C3 contraband
   id: ClothingNeckMantleCartelCommand
   name: cartel command mantle
   description: An ornate mantle reserved for high-ranking commanders within the Dirizher Cartel.

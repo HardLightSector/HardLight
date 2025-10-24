@@ -27,7 +27,7 @@
 
 # Dirizher Cartel Bodysuit
 - type: entity
-  parent: BodysuitBase
+  parent: [ BodysuitBase, BaseC3CartelContraband ] # Hardlight: marked as Cartel C3 contraband
   id: BodysuitCartel
   name: cartel bodysuit
   description: A bodysuit with subtle markings indicating affiliation with the Dirizher Cartel.

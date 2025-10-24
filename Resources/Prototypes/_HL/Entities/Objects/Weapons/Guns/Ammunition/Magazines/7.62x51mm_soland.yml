@@ -1,0 +1,229 @@
+# New Frontiers - This file is licensed under AGPLv3
+# Copyright (c) 2024 New Frontiers Contributors
+# See AGPLv3.txt for details.
+
+# Hardlight: Custom 7.62x51mm magazines that reuse NF Soland-Moss magazine sprites
+# These magazines provide Mono 7.62x51mm compatibility while maintaining visual consistency
+# with the original NF .30 rifle magazine styling
+
+#region Base Magazines
+- type: entity
+  id: HLBaseMagazine762x51mmSoland
+  name: magazine (7.62x51mm FMJ)
+  parent: [ BaseItem, BaseC1Contraband, RecyclableItemSteelTiny ]
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+      - HLMagazine762x51mmSoland
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - Cartridge762x51mmFMJ
+    proto: Cartridge762x51mmFMJ
+    capacity: 30
+  - type: Item
+    size: Small
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: _NF/Objects/Weapons/Guns/Ammunition/Magazine/Rifle/rifle30_mag.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-7
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 8
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity
+  id: HLBaseMagazineLowCapacity762x51mmSoland
+  name: low cap magazine (7.62x51mm FMJ)
+  parent: HLBaseMagazine762x51mmSoland
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+      - HLMagazineLowCapacity762x51mmSoland
+  - type: Item
+    size: Tiny
+  - type: BallisticAmmoProvider
+    capacity: 15
+  - type: Sprite
+    sprite: _NF/Objects/Weapons/Guns/Ammunition/Magazine/Rifle/rifle30_low_cap_mag.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-6
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    steps: 7
+
+#region Standard Capacity Magazines (30 rounds)
+- type: entity
+  id: HLMagazine762x51mmSolandEmpty
+  name: magazine (7.62x51mm any)
+  parent: HLBaseMagazine762x51mmSoland
+  suffix: empty
+  components:
+  - type: BallisticAmmoProvider
+    proto: null
+
+- type: entity
+  id: HLMagazine762x51mmSolandFMJ
+  name: magazine (7.62x51mm FMJ)
+  parent: HLBaseMagazine762x51mmSoland
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge762x51mmFMJ
+
+- type: entity
+  id: HLMagazine762x51mmSolandPractice
+  name: magazine (7.62x51mm practice)
+  parent: HLBaseMagazine762x51mmSoland
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge762x51mmPractice
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: decal-01
+      color: "#dddddd"
+    - state: mag-7
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  id: HLMagazine762x51mmSolandUranium
+  name: magazine (7.62x51mm uranium)
+  parent: HLBaseMagazine762x51mmSoland
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge762x51mmUranium
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: decal-01
+      color: "#00ff00"
+    - state: mag-7
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  id: HLMagazine762x51mmSolandIncendiary
+  name: magazine (7.62x51mm incendiary)
+  parent: HLBaseMagazine762x51mmSoland
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge762x51mmIncendiary
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: decal-01
+      color: "#ff0000"
+    - state: mag-7
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  id: HLMagazine762x51mmSolandRubber
+  name: magazine (7.62x51mm rubber)
+  parent: HLBaseMagazine762x51mmSoland
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge762x51mmRubber
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: decal-01
+      color: "#00b0ff"
+    - state: mag-7
+      map: ["enum.GunVisualLayers.Mag"]
+
+#region Low Capacity Magazines (15 rounds)
+- type: entity
+  id: HLMagazineLowCapacity762x51mmSolandEmpty
+  name: low cap magazine (7.62x51mm any)
+  parent: HLBaseMagazineLowCapacity762x51mmSoland
+  suffix: empty
+  components:
+  - type: BallisticAmmoProvider
+    proto: null
+
+- type: entity
+  id: HLMagazineLowCapacity762x51mmSolandFMJ
+  name: low cap magazine (7.62x51mm FMJ)
+  parent: HLBaseMagazineLowCapacity762x51mmSoland
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge762x51mmFMJ
+
+- type: entity
+  id: HLMagazineLowCapacity762x51mmSolandPractice
+  name: low cap magazine (7.62x51mm practice)
+  parent: HLBaseMagazineLowCapacity762x51mmSoland
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge762x51mmPractice
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: decal-01
+      color: "#dddddd"
+    - state: mag-6
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  id: HLMagazineLowCapacity762x51mmSolandUranium
+  name: low cap magazine (7.62x51mm uranium)
+  parent: HLBaseMagazineLowCapacity762x51mmSoland
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge762x51mmUranium
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: decal-01
+      color: "#00ff00"
+    - state: mag-6
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  id: HLMagazineLowCapacity762x51mmSolandIncendiary
+  name: low cap magazine (7.62x51mm incendiary)
+  parent: HLBaseMagazineLowCapacity762x51mmSoland
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge762x51mmIncendiary
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: decal-01
+      color: "#ff0000"
+    - state: mag-6
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  id: HLMagazineLowCapacity762x51mmSolandRubber
+  name: low cap magazine (7.62x51mm rubber)
+  parent: HLBaseMagazineLowCapacity762x51mmSoland
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge762x51mmRubber
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: decal-01
+      color: "#00b0ff"
+    - state: mag-6
+      map: ["enum.GunVisualLayers.Mag"]

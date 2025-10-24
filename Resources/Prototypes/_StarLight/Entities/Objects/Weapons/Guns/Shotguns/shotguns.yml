@@ -1,6 +1,61 @@
 # Improvised Shotguns Only
 # All regular Starlight shotguns removed - only improvised weapons kept
 
+# Hardlight: Ported AS-12 Minotaur from Starlight as Cartel C3 contraband
+- type: entity
+  name: "AS-12 'Minotaur' Shotgun"
+  parent: [BaseWeaponShotgunAny, BaseGunWieldable, BaseC3CartelContraband] # Hardlight: BaseSyndicateContraband<BaseC3CartelContraband
+  id: WeaponShotgunMinotaur
+  description: Smooth, powerful, highly illegal. The newest full auto shotgun available at the market, utilizes standard 12g drum mags. Property of the Dirizher Cartel. # Hardlight: Gorlex Marauders<Dirizher Cartel
+  components:
+  - type: Sprite
+    sprite: _Starlight/Objects/Weapons/Guns/Shotguns/minotaur.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _Starlight/Objects/Weapons/Guns/Shotguns/minotaur.rsi
+  - type: Item
+    sprite: _Starlight/Objects/Weapons/Guns/Shotguns/minotaur.rsi
+  - type: GunRequiresWield
+  - type: Gun
+    spread: 20
+    fireRate: 2
+    burstFireRate: 4
+    burstCooldown: 1
+    selectedMode: Burst
+    shotsPerBurst: 3
+    availableModes:
+    - Burst
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/_Starlight/Weapons/Guns/Gunshots/minotaur.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineShotgun
+        priority: 2
+        whitelist:
+          tags:
+          - MagazineShotgun
+        whitelistFailPopup: gun-magazine-whitelist-fail
+        insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: ChamberMagazineAmmoProvider
+    autoEject: true
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+
 - type: entity
   name: forged double-barrel shotgun
   parent: [BaseWeaponShotgun, BaseGunWieldable, BaseC1Contraband]
