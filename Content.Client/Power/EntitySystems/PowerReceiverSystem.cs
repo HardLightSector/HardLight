@@ -31,10 +31,6 @@ public sealed class PowerReceiverSystem : SharedPowerReceiverSystem
         component.Powered = state.Powered;
         component.NeedsPower = state.NeedsPower;
         component.PowerDisabled = state.PowerDisabled;
-        // SO client systems can handle it. The main reason for this is we can't guarantee compstate ordering.
-
-        if (powerChanged)
-            RaisePower((uid, component));
     }
 
     protected override void RaisePower(Entity<SharedApcPowerReceiverComponent> entity)

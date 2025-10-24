@@ -215,5 +215,12 @@ public sealed partial class CCVars : CVars
             CVarDef.Create("supermatter.rads_modifier", 1f, CVar.SERVER);
 
         #endregion
+
+        #region Item Offering
+
+        public static readonly CVarDef<bool> OfferModeIndicatorsPointShow =
+            CVarDef.Create("hud.offer_mode_indicators_point_show", true, CVar.ARCHIVE | CVar.CLIENTONLY);
+
+        #endregion
     }
 #endregion

@@ -11,11 +11,7 @@
     components:
     - BorgChassis
   chatMessages: [honks.]
-  chatTriggers:
-    - honk
-    - honks
-    - honking
-    - honked
+  # chatTriggers removed to avoid duplicates; base 'Honk' emote owns these triggers
 
 - type: emote
   id: HarpyRing
@@ -83,11 +79,7 @@
     components:
     - BorgChassis
   chatMessages: [beeps.]
-  chatTriggers:
-    - beep
-    - beeps
-    - beeping
-    - beeped
+  # chatTriggers removed to avoid duplicates; base 'Beep' emote owns these triggers
 
 - type: emote
   id: HarpyRev

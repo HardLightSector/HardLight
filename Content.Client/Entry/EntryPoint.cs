@@ -1,8 +1,8 @@
+using Content.Client._Common.Consent; // Consent system
 using Content.Client.Administration.Managers;
 using Content.Client.Changelog;
 using Content.Client.Chat.Managers;
 using Content.Client.DebugMon;
-using Content.Client.Consent; // Floofstation
 using Content.Client.Eui;
 using Content.Client.Fullscreen;
 using Content.Client.GameTicking.Managers;
@@ -44,6 +44,7 @@ namespace Content.Client.Entry
 {
     public sealed class EntryPoint : GameClient
     {
+        [Dependency] private readonly IClientConsentManager _clientConsentManager = default!; // Consent system
         [Dependency] private readonly IBaseClient _baseClient = default!;
         [Dependency] private readonly IGameController _gameController = default!;
         [Dependency] private readonly IStateManager _stateManager = default!;
@@ -58,7 +59,6 @@ namespace Content.Client.Entry
         [Dependency] private readonly ChangelogManager _changelogManager = default!;
         [Dependency] private readonly ViewportManager _viewportManager = default!;
         [Dependency] private readonly IUserInterfaceManager _userInterfaceManager = default!;
-        [Dependency] private readonly IClientConsentManager _clientConsentManager = default!; // Floofstation
         [Dependency] private readonly IInputManager _inputManager = default!;
         [Dependency] private readonly IOverlayManager _overlayManager = default!;
         [Dependency] private readonly IChatManager _chatManager = default!;

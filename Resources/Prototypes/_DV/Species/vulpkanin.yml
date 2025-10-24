@@ -34,6 +34,7 @@
     RLeg: MobVulpkaninRLeg
     LFoot: MobVulpkaninLFoot
     RFoot: MobVulpkaninRFoot
+    RArmExtension: MobHumanoidAnyMarking # Hardlight: enables harpy/bat wings
 
 - type: markingPoints
   id: MobVulpkaninMarkingLimits

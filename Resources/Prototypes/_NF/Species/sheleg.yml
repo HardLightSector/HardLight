@@ -34,6 +34,7 @@
     RLeg: MobShelegRLeg
     LFoot: MobShelegLFoot
     RFoot: MobShelegRFoot
+    RArmExtension: MobHumanoidAnyMarking # Hardlight: enables harpy/bat wings
 
 - type: markingPoints
   id: MobShelegMarkingLimits

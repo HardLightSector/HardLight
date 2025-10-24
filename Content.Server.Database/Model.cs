@@ -22,7 +22,8 @@ namespace Content.Server.Database
         public DbSet<Preference> Preference { get; set; } = null!;
         public DbSet<Profile> Profile { get; set; } = null!;
         public DbSet<CDModel.CDProfile> CDProfile { get; set; } = null!;
-        public DbSet<ConsentSettings> ConsentSettings { get; set; } = null!; // Floofstation
+        public DbSet<ConsentSettings> ConsentSettings { get; set; } = null!; // Consent system
+        public DbSet<ConsentFreetextReadReceipt> ConsentFreetextReadReceipt { get; set; } = null!; // Consent system
         public DbSet<AssignedUserId> AssignedUserId { get; set; } = null!;
         public DbSet<Player> Player { get; set; } = default!;
         public DbSet<Admin> Admin { get; set; } = null!;
@@ -59,15 +60,37 @@ namespace Content.Server.Database
                 .HasIndex(p => new {p.Slot, PrefsId = p.PreferenceId})
                 .IsUnique();
 
-            // Floofstation start
+            // Consent system start
             modelBuilder.Entity<ConsentSettings>()
-                .HasIndex(c => c.UserId)
+                .HasIndex(c => new { c.UserId, c.ProfileId })
                 .IsUnique();
+
+            modelBuilder.Entity<ConsentSettings>()
+                .HasOne(c => c.Profile)
+                .WithOne(p => p.ConsentSettings)
+                .HasForeignKey<ConsentSettings>(c => c.ProfileId)
+                .IsRequired(false);
 
             modelBuilder.Entity<ConsentToggle>()
                 .HasIndex(c => new { c.ConsentSettingsId, c.ToggleProtoId })
                 .IsUnique();
-            // Floofstation end
+
+            modelBuilder.Entity<ConsentToggle>()
+                .HasOne(c => c.ConsentSettings)
+                .WithMany(c => c.ConsentToggles)
+                .HasForeignKey(c => c.ConsentSettingsId)
+                .IsRequired();
+
+            modelBuilder.Entity<ConsentFreetextReadReceipt>()
+                .HasIndex(c => new { c.ReaderUserId, c.ReadConsentSettingsId })
+                .IsUnique();
+
+            modelBuilder.Entity<ConsentFreetextReadReceipt>()
+                .HasOne(c => c.ReadConsentSettings)
+                .WithMany(c => c.ReadReceipts)
+                .HasForeignKey(c => c.ReadConsentSettingsId)
+                .IsRequired();
+            // Consent system end
 
             modelBuilder.Entity<Antag>()
                 .HasIndex(p => new {HumanoidProfileId = p.ProfileId, p.AntagName})
@@ -440,26 +463,67 @@ namespace Content.Server.Database
         public Preference Preference { get; set; } = null!;
 
         public CDModel.CDProfile? CDProfile { get; set; }
+        public ConsentSettings? ConsentSettings { get; set; } // Consent system
     }
-    public class ConsentSettings // Floofstation
+
+    #region Consent Settings
+
+    public class ConsentSettings
     {
+        [Key]
         public int Id { get; set; }
+
+        [ForeignKey("Player")]
         public Guid UserId { get; set; }
 
+        // If this is non-null it means these settings are specific to that character rather than global.
+        [ForeignKey("Profile")]
+        public int? ProfileId { get; set; }
+
+        [Required]
         public string ConsentFreetext { get; set; } = null!;
+
+        [Required]
+        public DateTime ConsentFreetextUpdatedAt { get; set; }
+
+        // Relations
         public List<ConsentToggle> ConsentToggles { get; set; } = null!;
+        public List<ConsentFreetextReadReceipt> ReadReceipts { get; set; } = null!;
+        public Profile? Profile { get; set; }
     }
 
-    public class ConsentToggle // Floofstation
+    public class ConsentToggle
+    {
+        [Key]
+        public int Id { get; set; }
+
+        [ForeignKey("ConsentSettings")]
+        public int ConsentSettingsId { get; set; }
+
+        [Required]
+        public string ToggleProtoId { get; set; } = null!;
+
+        [Required]
+        public string ToggleProtoState { get; set; } = null!;
+
+        // Relations
+        public ConsentSettings ConsentSettings { get; set; } = null!;
+    }
+
+    public class ConsentFreetextReadReceipt
     {
         public int Id { get; set; }
 
-        public int ConsentSettingsId { get; set; }
-        public ConsentSettings ConsentSettings { get; set; } = null!;
+        public int ReadConsentSettingsId { get; set; }
+        public Guid ReaderUserId { get; set; }
 
-        public string ToggleProtoId { get; set; } = null!;
-        public string ToggleProtoState { get; set; } = null!;
+        public DateTime ReadAt { get; set; }
+
+        // Relations
+        public ConsentSettings ReadConsentSettings { get; set; } = null!;
     }
+
+    #endregion
 
     public class Job
     {

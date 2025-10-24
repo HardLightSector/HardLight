@@ -73,6 +73,9 @@
     sprite: _HL/Clothing/Neck/mantles/highcommmantle.rsi
   - type: Clothing
     sprite: _HL/Clothing/Neck/mantles/highcommmantle.rsi
+  - type: Tag
+    tags:
+    - ClothMade
 
 # Interdyne Mantle
 - type: entity

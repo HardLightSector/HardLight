@@ -66,6 +66,7 @@ namespace Content.Shared.Input
         public static readonly BoundKeyFunction ToggleStanding = "ToggleStanding"; // EE
         public static readonly BoundKeyFunction ToggleCrawlingUnder = "ToggleCrawlingUnder"; // EE
         public static readonly BoundKeyFunction LookUp = "LookUp"; // EE
+        public static readonly BoundKeyFunction OfferItem = "OfferItem"; // EE
 
         // Shitmed Change Start
         public static readonly BoundKeyFunction TargetHead = "TargetHead";

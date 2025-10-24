@@ -418,11 +418,7 @@
     tags:
     - SiliconEmotes
   chatMessages: ["chat-emote-msg-chirp"]
-  chatTriggers:
-    - chirp
-    - chirps
-    - chirped
-    - chirping
+  # chatTriggers removed to avoid duplicates with base 'Chirp'
 
 # Machine Emotes
 - type: emote

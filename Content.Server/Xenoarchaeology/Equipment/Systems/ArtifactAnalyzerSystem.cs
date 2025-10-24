@@ -1,5 +1,4 @@
 using System.Linq;
-using Content.Server.Construction;
 using Content.Server.Power.Components;
 using Content.Server.Research.Systems;
 using Content.Shared.UserInterface;
@@ -13,6 +12,7 @@ using Content.Shared.Paper;
 using Content.Shared.Placeable;
 using Content.Shared.Popups;
 using Content.Shared.Power;
+using Content.Shared.Power.EntitySystems;
 using Content.Shared.Research.Components;
 using Content.Shared.Xenoarchaeology.Equipment;
 using Content.Shared.Xenoarchaeology.XenoArtifacts;
@@ -23,7 +23,6 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
-using Content.Shared.Psionics.Glimmer; //Nyano - Summary:.
 
 namespace Content.Server.Xenoarchaeology.Equipment.Systems;
 
@@ -35,16 +34,16 @@ public sealed class ArtifactAnalyzerSystem : EntitySystem
 {
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly SharedAmbientSoundSystem _ambientSound = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly UserInterfaceSystem _ui = default!;
     [Dependency] private readonly ArtifactSystem _artifact = default!;
+    [Dependency] private readonly MetaDataSystem _metaSystem = default!;
     [Dependency] private readonly PaperSystem _paper = default!;
     [Dependency] private readonly ResearchSystem _research = default!;
-    [Dependency] private readonly MetaDataSystem _metaSystem = default!;
+    [Dependency] private readonly SharedAmbientSoundSystem _ambientSound = default!;
+    [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private readonly SharedPowerReceiverSystem _receiver = default!;
     [Dependency] private readonly TraversalDistorterSystem _traversalDistorter = default!;
-    [Dependency] private readonly GlimmerSystem _glimmerSystem = default!; //Nyano - Summary: pulls in the glimmer system.
+    [Dependency] private readonly UserInterfaceSystem _ui = default!;
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -57,7 +56,6 @@ public sealed class ArtifactAnalyzerSystem : EntitySystem
 
         SubscribeLocalEvent<ArtifactAnalyzerComponent, ItemPlacedEvent>(OnItemPlaced);
         SubscribeLocalEvent<ArtifactAnalyzerComponent, ItemRemovedEvent>(OnItemRemoved);
-        SubscribeLocalEvent<ArtifactAnalyzerComponent, RefreshPartsEvent>(OnRefreshParts);
 
         SubscribeLocalEvent<ArtifactAnalyzerComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<AnalysisConsoleComponent, NewLinkEvent>(OnNewLink);
@@ -154,14 +152,6 @@ public sealed class ArtifactAnalyzerSystem : EntitySystem
     {
         if (!TryComp<DeviceLinkSinkComponent>(uid, out var sink))
             return;
-
-        // Frontier: disable analyzer power draw when off
-        if (TryComp<ApcPowerReceiverComponent>(uid, out var apcPower))
-        {
-            component.OriginalLoad = apcPower.Load;
-            SetPowerSwitch(component, apcPower, false);
-        }
-        // End Frontier
 
         foreach (var source in sink.LinkedSources)
         {
@@ -385,14 +375,6 @@ public sealed class ArtifactAnalyzerSystem : EntitySystem
         _research.ModifyServerPoints(server.Value, pointValue, serverComponent);
         _artifact.AdjustConsumedPoints(artifact.Value, pointValue);
 
-        // Nyano - Summary - Begin modified code block: tie artifacts to glimmer.
-        if (TryComp<ArtifactAnalyzerComponent>(component.AnalyzerEntity.Value, out var analyzer) &&
-            analyzer != null)
-        {
-            _glimmerSystem.Glimmer += (int)((int)pointValue / analyzer.ExtractRatio);
-        }
-        // Nyano - End modified code block.
-
         _audio.PlayPvs(component.ExtractSound, component.AnalyzerEntity.Value, AudioParams.Default.WithVolume(2f));
 
         _popup.PopupEntity(Loc.GetString("analyzer-artifact-extract-popup"),
@@ -478,17 +460,12 @@ public sealed class ArtifactAnalyzerSystem : EntitySystem
             UpdateUserInterface(component.Console.Value);
     }
 
-    private void OnRefreshParts(EntityUid uid, ArtifactAnalyzerComponent component, RefreshPartsEvent args)
-    {
-        var extractRating = args.PartRatings[component.MachinePartExtractRatio];
-        component.ExtractRatio = (int)(400 + (extractRating * component.PartRatingExtractRatioMultiplier));
-    }
-
     [PublicAPI]
     public void ResumeScan(EntityUid uid, ArtifactAnalyzerComponent? component = null, ActiveArtifactAnalyzerComponent? active = null)
     {
         if (!Resolve(uid, ref component, ref active) || !active.AnalysisPaused)
             return;
+
         active.StartTime = _timing.CurTime;
         active.AnalysisPaused = false;
 
@@ -517,31 +494,13 @@ public sealed class ArtifactAnalyzerSystem : EntitySystem
 
     private void OnAnalyzeStart(EntityUid uid, ActiveArtifactAnalyzerComponent component, ComponentStartup args)
     {
-        // Frontier: enable power before running
-        if (!TryComp<ApcPowerReceiverComponent>(uid, out var powa))
-            return;
-
-        if (!TryComp<ArtifactAnalyzerComponent>(uid, out var analyzer))
-            return;
-
-        SetPowerSwitch(analyzer, powa, true);
-        // End Frontier
-
+        _receiver.SetNeedsPower(uid, true);
         _ambientSound.SetAmbience(uid, true);
     }
 
     private void OnAnalyzeEnd(EntityUid uid, ActiveArtifactAnalyzerComponent component, ComponentShutdown args)
     {
-        // Frontier: disable power when not running
-        if (!TryComp<ApcPowerReceiverComponent>(uid, out var powa))
-            return;
-
-        if (!TryComp<ArtifactAnalyzerComponent>(uid, out var analyzer))
-            return;
-
-        SetPowerSwitch(analyzer, powa, false);
-        // End Frontier
-
+        _receiver.SetNeedsPower(uid, false);
         _ambientSound.SetAmbience(uid, false);
     }
 
@@ -556,15 +515,5 @@ public sealed class ArtifactAnalyzerSystem : EntitySystem
             ResumeScan(uid, null, active);
         }
     }
-
-    // Frontier: reduce analyzer load when not running
-    private void SetPowerSwitch(ArtifactAnalyzerComponent analyzer, ApcPowerReceiverComponent apc, bool state)
-    {
-        if (state)
-            apc.Load = analyzer.OriginalLoad;
-        else
-            apc.Load = 1;
-    }
-    // End Frontier
 }
 

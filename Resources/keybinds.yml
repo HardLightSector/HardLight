@@ -1,4 +1,4 @@
-version: 1 # Not used right now, whatever.
+﻿version: 1 # Not used right now, whatever.
 binds:
 - function: UIClick
   type: State
@@ -640,4 +640,7 @@ binds:
 - function: LookUp
   type: State
   key: Space
+- function: OfferItem
+  type: State
+  key: F
 # endregion EE

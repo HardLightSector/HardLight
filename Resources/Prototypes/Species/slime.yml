@@ -29,6 +29,7 @@
     LFoot: MobSlimeLFoot
     RFoot: MobSlimeRFoot
     Tail: MobHumanoidAnyMarking # Hardlight
+    RArmExtension: MobHumanoidAnyMarking # Hardlight: enables harpy/bat wings
 
 - type: markingPoints
   id: MobSlimeMarkingLimits
