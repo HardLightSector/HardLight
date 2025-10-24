@@ -95,7 +95,7 @@
     containers:
       key_slots:
       - EncryptionKeyCommon
-
+  - type: OfferItem # HL
   - type: ActiveRadio
   - type: IntrinsicRadioReceiver
   - type: IntrinsicRadioTransmitter

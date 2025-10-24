@@ -21,6 +21,8 @@
           - "reagent-effect-aphrodisiac-mild5"
         probability: 0.035
         conditions:
+          - !type:ConsentCondition
+            consent: Aphrodisiacs
           - !type:ReagentThreshold
             max: 50
       - !type:PopupMessage # Overdose causes nausea and vomiting
@@ -30,10 +32,14 @@
           - "reagent-effect-aphrodisiac-mildoverdose"
         probability: 0.06
         conditions:
+          - !type:ConsentCondition
+            consent: Aphrodisiacs
           - !type:ReagentThreshold
             min: 50
       - !type:Drunk
         conditions:
+        - !type:ConsentCondition
+          consent: Aphrodisiacs
         - !type:ReagentThreshold
           min: 50
       - !type:ChemVomit
@@ -48,6 +54,8 @@
           - "reagent-effect-aphrodisiac-fade" # A decent chance to notify the player when their meds run out, but could happen silently.
         probability: 0.35
         conditions:
+          - !type:ConsentCondition
+            consent: Aphrodisiacs
           - !type:ReagentThreshold
             max: 0.1
 
@@ -74,6 +82,8 @@
           - "reagent-effect-aphrodisiac-normal5"
         probability: 0.04
         conditions:
+        - !type:ConsentCondition
+          consent: Aphrodisiacs
         - !type:ReagentThreshold
           max: 16.5
       - !type:PopupMessage
@@ -88,10 +98,14 @@
           - "reagent-effect-aphrodisiac-normaloverdose6"
         probability: 0.06
         conditions:
+        - !type:ConsentCondition
+          consent: Aphrodisiacs
         - !type:ReagentThreshold
           min: 16.5
       - !type:Emote
         conditions:
+        - !type:ConsentCondition
+          consent: Aphrodisiacs
         - !type:ReagentThreshold
           min: 16.5
         emote: Yawn
@@ -101,10 +115,14 @@
         walkSpeedModifier: 0.8
         sprintSpeedModifier: 0.8
         conditions:
+        - !type:ConsentCondition
+          consent: Aphrodisiacs
         - !type:ReagentThreshold
           min: 16.5
       - !type:GenericStatusEffect
         conditions:
+        - !type:ConsentCondition
+          consent: Aphrodisiacs
         - !type:ReagentThreshold
           min: 30.0
         key: ForcedSleep
@@ -126,5 +144,7 @@
           - "reagent-effect-aphrodisiac-fade" # A decent chance to notify the player when their meds run out, but could happen silently.
         probability: 0.32
         conditions:
+          - !type:ConsentCondition
+            consent: Aphrodisiacs
           - !type:ReagentThreshold
             max: 0.1

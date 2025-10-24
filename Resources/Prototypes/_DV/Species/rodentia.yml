@@ -33,6 +33,7 @@
     RLeg: MobRodentiaRLeg
     LFoot: MobRodentiaLFoot
     RFoot: MobRodentiaRFoot
+    RArmExtension: MobHumanoidAnyMarking # Hardlight: enables harpy/bat wings
 
 - type: markingPoints
   id: MobRodentiaMarkingLimits

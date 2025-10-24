@@ -12,6 +12,9 @@
     sprite: _HL/Clothing/Uniforms/highcommsuit.rsi
   - type: Clothing
     sprite: _HL/Clothing/Uniforms/highcommsuit.rsi
+  - type: Tag
+    tags:
+    - ClothMade
 
 # Cybersun Suit
 - type: entity

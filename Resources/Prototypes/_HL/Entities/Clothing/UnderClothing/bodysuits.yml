@@ -72,7 +72,9 @@
     sprite: _HL/Clothing/UnderClothing/highcommskinsuit.rsi
   - type: Clothing
     sprite: _HL/Clothing/UnderClothing/highcommskinsuit.rsi
-
+  - type: Tag
+    tags:
+    - ClothMade
 # Interdyne Bodysuit
 - type: entity
   parent: BodysuitBase

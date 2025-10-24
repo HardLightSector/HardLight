@@ -102,6 +102,9 @@ namespace Content.Client.Input
             human.AddFunction(ContentKeyFunctions.TargetRightLeg);
             human.AddFunction(ContentKeyFunctions.TargetRightFoot);
             // Shitmed Change End
+            // Hardlight change start
+            human.AddFunction(ContentKeyFunctions.OfferItem);
+            // Hardlight change end
 
             // actions should be common (for ghosts, mobs, etc)
             common.AddFunction(ContentKeyFunctions.OpenActionsMenu);

@@ -34,6 +34,7 @@
     RLeg: MobMothRLeg
     LFoot: MobMothLFoot
     RFoot: MobMothRFoot
+    RArmExtension: MobHumanoidAnyMarking # Hardlight: enables harpy/bat wings
 
 - type: humanoidBaseSprite
   id: MobMothEyes

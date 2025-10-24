@@ -9,6 +9,7 @@ using Content.Shared.Disposal.Components;
 using Content.Shared.Disposal.Unit.Events;
 using Content.Shared.DoAfter;
 using Content.Shared.DragDrop;
+using Content.Shared.Emag.Systems;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.IdentityManagement;
@@ -30,7 +31,6 @@ using Robust.Shared.Physics.Systems;
 using Robust.Shared.Serialization;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
-using Content.Shared.Emag.Systems; // Frontier
 
 namespace Content.Shared.Disposal.Unit;
 
@@ -48,7 +48,6 @@ public abstract class SharedDisposalUnitSystem : EntitySystem
     [Dependency] protected readonly SharedAudioSystem Audio = default!;
     [Dependency] protected readonly IGameTiming GameTiming = default!;
     [Dependency] private   readonly ISharedAdminLogManager _adminLog = default!;
-    [Dependency] private   readonly EmagSystem _emag = default!;
     [Dependency] private   readonly ClimbSystem _climb = default!;
     [Dependency] protected readonly SharedContainerSystem Containers = default!;
     [Dependency] protected readonly SharedJointSystem Joints = default!;
@@ -83,7 +82,6 @@ public abstract class SharedDisposalUnitSystem : EntitySystem
         SubscribeLocalEvent<DisposalUnitComponent, DisposalUnitComponent.UiButtonPressedMessage>(OnUiButtonPressed);
 
         SubscribeLocalEvent<DisposalUnitComponent, GotEmaggedEvent>(OnEmagged);
-        SubscribeLocalEvent<DisposalUnitComponent, GotUnEmaggedEvent>(OnUnemagged); // Frontier
         SubscribeLocalEvent<DisposalUnitComponent, AnchorStateChangedEvent>(OnAnchorChanged);
         SubscribeLocalEvent<DisposalUnitComponent, PowerChangedEvent>(OnPowerChange);
         SubscribeLocalEvent<DisposalUnitComponent, ComponentInit>(OnDisposalInit);
@@ -266,11 +264,6 @@ public abstract class SharedDisposalUnitSystem : EntitySystem
 
     private void OnDragDropOn(EntityUid uid, DisposalUnitComponent component, ref DragDropTargetEvent args)
     {
-        // Frontier: check handled
-        if (args.Handled)
-            return;
-        // End Frontier
-
         args.Handled = TryInsert(uid, args.Dragged, args.User);
     }
 
@@ -439,34 +432,9 @@ public abstract class SharedDisposalUnitSystem : EntitySystem
 
     protected void OnEmagged(EntityUid uid, DisposalUnitComponent component, ref GotEmaggedEvent args)
     {
-        // Frontier: return emag check
-        if (!_emag.CompareFlag(args.Type, EmagType.Interaction))
-            return;
-
-        if (component.DisablePressure == true)
-            return;
-        // End Frontier: return emag check
-
         component.DisablePressure = true;
         args.Handled = true;
     }
-
-    // Frontier: demag
-    protected void OnUnemagged(EntityUid uid, DisposalUnitComponent component, ref GotUnEmaggedEvent args)
-    {
-        if (!_emag.CompareFlag(args.Type, EmagType.Interaction))
-            return;
-
-        if (!_emag.CheckFlag(uid, EmagType.Interaction))
-            return;
-
-        if (!component.DisablePressure)
-            return;
-
-        component.DisablePressure = false;
-        args.Handled = true;
-    }
-    // End Frontier: demag
 
     public virtual bool CanInsert(EntityUid uid, DisposalUnitComponent component, EntityUid entity)
     {
@@ -768,7 +736,7 @@ public abstract class SharedDisposalUnitSystem : EntitySystem
                 _adminLog.Add(LogType.Action, LogImpact.Low, $"{ToPrettyString(player):player} hit flush button on {ToPrettyString(uid)}, it's now {(component.Engaged ? "on" : "off")}");
                 break;
             case DisposalUnitComponent.UiButton.Power:
-                _power.TryTogglePower(uid, user: args.Actor); // Frontier: Upstream - #28984 (TogglePower<TryTogglePower)
+                _power.TogglePower(uid, user: args.Actor);
                 break;
             default:
                 throw new ArgumentOutOfRangeException($"{ToPrettyString(player):player} attempted to hit a nonexistant button on {ToPrettyString(uid)}");

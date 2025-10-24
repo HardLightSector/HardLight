@@ -126,7 +126,7 @@ internal sealed class NoosphericFryRule : StationEventSystem<NoosphericFryRuleCo
 
             // If it's been turned off, turn it back on.
             if (power.PowerDisabled)
-                _powerReceiverSystem.TryTogglePower(reactive, false);
+                _powerReceiverSystem.TogglePower(reactive, false);
         }
     }
 }

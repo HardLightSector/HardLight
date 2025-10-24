@@ -1,0 +1,4 @@
+- type: consentToggle
+  id: Aphrodisiacs
+  name: Aphrodisiacs
+  description: Lets your character be affected by chemicals with aphrodisiac effects.

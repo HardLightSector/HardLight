@@ -1,7 +1,9 @@
 - type: construction
-  id: CrassKnuckles
+  name: crafting-menu-name-CRASS
+  id: WeaponBrassKnucklesWhoopie
   graph: GraphWeaponBrassKnucklesWhoopie
   startNode: start
   targetNode: WeaponBrassKnucklesWhoopie
   category: construction-category-weapons
+  description: crafting-menu-text-CRASS
   objectType: Item

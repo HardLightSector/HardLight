@@ -54,7 +54,7 @@ public sealed class ShipSerializationTest : ContentUnitTest
             // Spawn a couple of simple prototypes that should serialize (avoid ones filtered like vending machines).
             var coords = new EntityCoordinates(gridUid, new Vector2(0.5f, 0.5f));
             var ent1 = entManager.SpawnEntity("AirlockShuttle", coords); // has Transform + is a clear prototype
-            var ent2 = entManager.SpawnEntity("ChairOffice", new EntityCoordinates(gridUid, new Vector2(1.5f, 0.5f)));
+            var ent2 = entManager.SpawnEntity("ChairOfficeLight", new EntityCoordinates(gridUid, new Vector2(1.5f, 0.5f))); // HL - Change to a prototype that actually exists
 
             // Sanity: they exist and are children of the grid.
             Assert.That(entManager.EntityExists(ent1));
@@ -77,7 +77,7 @@ public sealed class ShipSerializationTest : ContentUnitTest
             Assert.That(g.Entities.Count >= 2, $"Expected at least 2 entities, got {g.Entities.Count}");
             var protos = g.Entities.Select(e => e.Prototype).ToHashSet();
             Assert.That(protos.Contains("AirlockShuttle"), "Serialized entities missing AirlockShuttle prototype");
-            Assert.That(protos.Contains("ChairOffice"), "Serialized entities missing ChairOffice prototype");
+            Assert.That(protos.Contains("ChairOfficeLight"), "Serialized entities missing ChairOffice prototype"); // HL - Change to a prototype that actually exists
         });
 
         await pair.CleanReturnAsync();

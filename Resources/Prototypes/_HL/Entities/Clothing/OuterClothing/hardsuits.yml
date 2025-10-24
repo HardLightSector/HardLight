@@ -102,6 +102,9 @@
         Caustic: 0.375  # 25% better than 0.5
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitSyndicateHighCommand
+  - type: Tag
+    tags:
+    - ClothMade
 
 # Interdyne Hardsuit (Lighter)
 - type: entity
@@ -290,6 +293,9 @@
         Heat: 0.675     # 25% better than 0.9
         Radiation: 0.675 # 25% better than 0.9
         Caustic: 0.675  # 25% better than 0.9
+  - type: Tag
+    tags:
+    - ClothMade
 
 # Interdyne Hardsuit Helmet (Enhanced bio resistance)
 - type: entity

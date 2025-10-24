@@ -26,7 +26,7 @@ public sealed class DumpableSystem : EntitySystem
     [Dependency] private readonly SharedDisposalUnitSystem _disposalUnitSystem = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
     [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
-    [Dependency] private readonly SmartFridgeSystem _smartFridge = default!; // Frontier
+    [Dependency] private readonly SmartFridgeSystem _fridge = default!; // DeltaV - ough why do you not use events for this
 
     private EntityQuery<ItemComponent> _itemQuery;
 
@@ -86,7 +86,7 @@ public sealed class DumpableSystem : EntitySystem
         if (!TryComp<StorageComponent>(uid, out var storage) || !storage.Container.ContainedEntities.Any())
             return;
 
-        if (HasComp<DisposalUnitComponent>(args.Target) || HasComp<SmartFridgeComponent>(args.Target)) // DeltaV - ough why do you not use events for this)
+        if (HasComp<DisposalUnitComponent>(args.Target))
         {
             UtilityVerb verb = new()
             {
@@ -189,12 +189,7 @@ public sealed class DumpableSystem : EntitySystem
         else if (TryComp<SmartFridgeComponent>(target, out var fridge))
         {
             dumped = true;
-            // Frontier: go through the fridge's interface
-            foreach (var entity in dumpQueue)
-            {
-                _smartFridge.TryInsertObject((target!.Value, fridge), entity, user); // Frontier
-            }
-            // End Frontier
+            _fridge.TryAddItem((target.Value, fridge), dumpQueue, user);
         }
         // End DeltaV - ough why do you not use events for this
         else
@@ -213,5 +208,4 @@ public sealed class DumpableSystem : EntitySystem
             _audio.PlayPredicted(component.DumpSound, uid, user);
         }
     }
-    // End DeltaV: Refactor to allow dumping that doesn't require a verb
 }

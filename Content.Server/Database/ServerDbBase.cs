@@ -8,9 +8,10 @@ using System.Threading;
 using System.Threading.Tasks;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
+using Content.Shared._Common.Consent; // Consent system
 using Content.Shared.Administration.Logs;
+using Content.Shared.Construction.Prototypes;
 using Content.Shared.Database;
-using Content.Shared.Consent;
 using Content.Shared.Ghost.Roles;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
@@ -1179,23 +1180,6 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
 
         #endregion
 
-        #region Consent Settings
-
-        // Default no-op persistence for consent settings; can be overridden by concrete DB implementations.
-        public virtual Task SavePlayerConsentSettingsAsync(NetUserId userId, PlayerConsentSettings consentSettings)
-        {
-            // Intentionally no-op in base.
-            return Task.CompletedTask;
-        }
-
-        public virtual Task<PlayerConsentSettings> GetPlayerConsentSettingsAsync(NetUserId userId)
-        {
-            // Return an empty consent settings by default.
-            return Task.FromResult(new PlayerConsentSettings());
-        }
-
-        #endregion
-
         #region Uploaded Resources Logs
 
         public async Task AddUploadedResourceLogAsync(NetUserId user, DateTimeOffset date, string path, byte[] data)
@@ -1894,6 +1878,137 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
 
             await db.DbContext.SaveChangesAsync();
             return true;
+        }
+
+        #endregion
+
+        #region Consent Settings
+
+        private static async Task DeletePlayerConsentSettings(ServerDbContext db, NetUserId userId)
+        {
+            var consentSettings = await db.ConsentSettings
+                .Where(c => c.UserId == userId.UserId)
+                .SingleOrDefaultAsync();
+
+            if (consentSettings is null)
+            {
+                return;
+            }
+
+            db.ConsentSettings.Remove(consentSettings);
+        }
+
+        public async Task SavePlayerConsentSettingsAsync(NetUserId userId, PlayerConsentSettings? consentSettings)
+        {
+            await using var db = await GetDb();
+
+            if (consentSettings is null)
+            {
+                await DeletePlayerConsentSettings(db.DbContext, userId);
+                await db.DbContext.SaveChangesAsync();
+                return;
+            }
+
+            // Get current consent settings so we know if freetext needs updating and which toggles to add or remove
+            var currentConsentSettings = await db.DbContext.ConsentSettings
+                .Include(c => c.ConsentToggles)
+                .AsSplitQuery()
+                .SingleOrDefaultAsync(c => c.UserId == userId);
+
+            if (currentConsentSettings is null)
+            {
+                currentConsentSettings = new ConsentSettings() {
+                    UserId = userId,
+                    ConsentToggles = new(),
+                    ConsentFreetext = consentSettings.Freetext,
+                    ConsentFreetextUpdatedAt = DateTime.Now,
+                };
+
+                db.DbContext.ConsentSettings.Add(currentConsentSettings);
+            }
+            else if (currentConsentSettings.ConsentFreetext != consentSettings.Freetext)
+            {
+                currentConsentSettings.ConsentFreetext = consentSettings.Freetext;
+                currentConsentSettings.ConsentFreetextUpdatedAt = DateTime.Now;
+            }
+
+            Dictionary<ProtoId<ConsentTogglePrototype>, string> currentConsentToggles = currentConsentSettings.ConsentToggles.ToDictionary(
+                keySelector: t => new ProtoId<ConsentTogglePrototype>(t.ToggleProtoId),
+                elementSelector: t => t.ToggleProtoState
+            );
+
+            // Remove and update toggles
+            foreach (var toggle in currentConsentToggles)
+            {
+                if (consentSettings.Toggles.TryGetValue(toggle.Key, out var toggleState))
+                {
+                    currentConsentSettings.ConsentToggles.Where(t => t.ToggleProtoId == toggle.Key).First().ToggleProtoState = toggleState;
+                }
+                else
+                {
+                    currentConsentSettings.ConsentToggles.RemoveAll(t => t.ToggleProtoId == toggle.Key);
+                }
+            }
+            // Add new toggles
+            foreach (var toggle in consentSettings.Toggles)
+            {
+                if (currentConsentToggles.ContainsKey(toggle.Key))
+                    continue;
+
+                currentConsentSettings.ConsentToggles.Add(new ()
+                {
+                    ToggleProtoId = toggle.Key,
+                    ToggleProtoState = toggle.Value,
+                });
+            }
+
+            await db.DbContext.SaveChangesAsync();
+        }
+
+        public async Task<ConsentSettings> GetPlayerConsentSettingsAsync(NetUserId userId)
+        {
+            await using var db = await GetDb();
+
+            var consentSettings = await db.DbContext.ConsentSettings
+                .Include(c => c.ConsentToggles)
+                .Include(c => c.ReadReceipts)
+                .SingleOrDefaultAsync(c => c.UserId == userId);
+
+            if (consentSettings is null)
+                return new();
+
+            return consentSettings;
+        }
+
+        public async Task<ConsentFreetextReadReceipt?> GetPlayerConsentReadReceipt(NetUserId readerUserId, int consentSettingsId)
+        {
+            await using var db = await GetDb();
+
+            return await db.DbContext.ConsentFreetextReadReceipt
+                .SingleOrDefaultAsync(c => c.ReaderUserId == readerUserId && c.ReadConsentSettingsId == consentSettingsId);
+        }
+
+        public async Task<ConsentFreetextReadReceipt> UpdatePlayerConsentReadReceipt(NetUserId readerUserId, int readConsentSettingsId)
+        {
+            await using var db = await GetDb();
+
+            var readRecipe = await db.DbContext.ConsentFreetextReadReceipt
+                .SingleOrDefaultAsync(c => c.ReaderUserId == readerUserId && c.ReadConsentSettingsId == readConsentSettingsId);
+
+            if (readRecipe is null)
+            {
+                readRecipe = new ConsentFreetextReadReceipt
+                {
+                    ReaderUserId = readerUserId,
+                    ReadConsentSettingsId = readConsentSettingsId,
+                    ReadAt = DateTime.Now,
+                };
+            }
+            else {
+                readRecipe.ReadAt = DateTime.Now;
+            }
+
+            return readRecipe;
         }
 
         #endregion

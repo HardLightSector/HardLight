@@ -15,13 +15,7 @@
     components:
     - BorgChassis
   chatMessages: ["chat-emote-msg-growl"]
-  chatTriggers:
-  - growl
-  - growl.
-  - growl!
-  - growls
-  - growls.
-  - growls!
+  # chatTriggers removed to avoid duplicates; base or other pack owns these triggers
 
 - type: emote
   id: Yip
@@ -59,15 +53,7 @@
     components:
     - BorgChassis
   chatMessages: ["chat-emote-msg-mew"]
-  chatTriggers:
-    - mew
-    - mew.
-    - mew!
-    - mew?
-    - mews
-    - mews.
-    - mews!
-    - mews?
+  # chatTriggers removed to avoid duplicates; Nyanotrasen pack owns these triggers
 
 - type: emote
   id: Hisses
@@ -82,19 +68,7 @@
     components:
     - BorgChassis
   chatMessages: ["chat-emote-msg-hiss"]
-  chatTriggers:
-  - hiss
-  - hiss.
-  - hiss!
-  - hiss?
-  - hissing
-  - hissing.
-  - hissing!
-  - hissing?
-  - hisses
-  - hisses.
-  - hisses!
-  - hisses?
+  # chatTriggers removed to avoid duplicates; Nyanotrasen pack owns these triggers
 
 - type: emote
   id: Meow
@@ -109,19 +83,7 @@
     components:
     - BorgChassis
   chatMessages: ["chat-emote-msg-meow"]
-  chatTriggers:
-    - meow
-    - meow.
-    - meow!
-    - meow?
-    - meows
-    - meows.
-    - meows!
-    - meows?
-    - meowing
-    - meowing.
-    - meowing!
-    - meowing?
+  # chatTriggers removed to avoid duplicates; Nyanotrasen pack owns these triggers
 
 - type: emote
   id: Purr
@@ -136,19 +98,7 @@
     components:
     - BorgChassis
   chatMessages: ["chat-emote-msg-purr"]
-  chatTriggers:
-    - purr
-    - purr.
-    - purr!
-    - purr?
-    - purrs
-    - purrs.
-    - purrs!
-    - purrs?
-    - purring
-    - purring.
-    - purring?
-    - purring!
+  # chatTriggers removed to avoid duplicates; Nyanotrasen pack owns these triggers
 
 - type: emote
   id: Trill

@@ -201,6 +201,7 @@ namespace Content.Client.Options.UI.Tabs
             AddButton(ContentKeyFunctions.RotateStoredItem);
             AddButton(ContentKeyFunctions.SaveItemLocation);
             // EE section
+            AddButton(ContentKeyFunctions.OfferItem);
             AddButton(ContentKeyFunctions.ToggleStanding);
             AddButton(ContentKeyFunctions.ToggleCrawlingUnder);
             AddButton(ContentKeyFunctions.LookUp);

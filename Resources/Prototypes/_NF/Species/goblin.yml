@@ -34,6 +34,7 @@
     RLeg: MobGoblinRLeg
     LFoot: MobGoblinLFoot
     RFoot: MobGoblinRFoot
+    RArmExtension: MobHumanoidAnyMarking # Hardlight: enables harpy/bat wings
 
 - type: markingPoints
   id: MobGoblinMarkingLimits

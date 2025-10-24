@@ -17,6 +17,7 @@ namespace Content.Server.Power.EntitySystems
     public sealed class PowerReceiverSystem : SharedPowerReceiverSystem
     {
         [Dependency] private readonly IAdminManager _adminManager = default!;
+
         private EntityQuery<ApcPowerReceiverComponent> _recQuery;
         private EntityQuery<ApcPowerProviderComponent> _provQuery;
 
@@ -130,7 +131,7 @@ namespace Content.Server.Power.EntitySystems
             {
                 Act = () =>
                 {
-                    TryTogglePower(uid, user: args.User); // Frontier: Upstream - #28984 (TogglePower<TryTogglePower)
+                    TogglePower(uid, user: args.User); // Frontier: Upstream - #28984 (TogglePower<TryTogglePower)
                 },
                 Icon = new SpriteSpecifier.Texture(new ("/Textures/Interface/VerbIcons/Spare/poweronoff.svg.192dpi.png")),
                 Text = Loc.GetString("power-switch-component-toggle-verb"),
