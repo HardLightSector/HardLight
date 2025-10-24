@@ -1,0 +1,129 @@
+# New Frontiers - This file is licensed under AGPLv3
+# Copyright (c) 2024 New Frontiers Contributors
+# See AGPLv3.txt for details.
+
+# Hardlight: Ported .45 magnum rifle magazines from Starlight for Pitbull rifle
+
+- type: entity
+  id: BaseMagazineMagnumRifle
+  name: rifle magazine (.45 magnum)
+  parent: [BaseItem, BaseC3CartelContraband] # Hardlight: Added BaseC3CartelContraband
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+      - MagazineMagnumRifle # Hardlight: New tag for rifle magazines
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - CartridgeMagnum
+    capacity: 20 # Hardlight: 20 rounds for balance vs 25-round SMG magazines
+  - type: Item
+    size: Small
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: _StarLight/Objects/Weapons/Guns/Ammunition/Magazine/Magnum/magnum_rifle_mag.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+
+- type: entity
+  id: MagazineMagnumRifleEmpty
+  name: rifle magazine (.45 magnum any)
+  suffix: empty
+  parent: BaseMagazineMagnumRifle
+  description: 20-round rifle magazine for .45 magnum. Empty.
+  components:
+  - type: BallisticAmmoProvider
+    proto: null
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  id: MagazineMagnumRifle
+  name: rifle magazine (.45 magnum)
+  parent: BaseMagazineMagnumRifle
+  description: 20-round rifle magazine for .45 magnum. Loaded with standard full metal jacket rounds.
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeMagnum # Hardlight: Using standard Magnum instead of SP variant
+  - type: Sprite
+    layers:
+    - state: red
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  id: MagazineMagnumRiflePractice
+  name: rifle magazine (.45 magnum practice)
+  parent: BaseMagazineMagnumRifle
+  description: 20-round rifle magazine for .45 magnum. Loaded with non-lethal practice rounds.
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeMagnumPractice
+  - type: Sprite
+    layers:
+    - state: practice # Hardlight: Sprite state needs to be created
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  id: MagazineMagnumRifleAP
+  name: rifle magazine (.45 magnum armor-piercing)
+  parent: BaseMagazineMagnumRifle
+  description: 20-round rifle magazine for .45 magnum. Loaded with armor-piercing rounds.
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeMagnumAP
+  - type: Sprite
+    layers:
+    - state: piercing # Hardlight: Sprite state needs to be created
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  id: MagazineMagnumRifleUranium
+  name: rifle magazine (.45 magnum uranium)
+  parent: BaseMagazineMagnumRifle
+  description: 20-round rifle magazine for .45 magnum. Loaded with exotic uranium-tipped rounds.
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeMagnumUranium
+  - type: Sprite
+    layers:
+    - state: uranium # Hardlight: Sprite state needs to be created
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  id: MagazineMagnumRifleIncendiary
+  name: rifle magazine (.45 magnum incendiary)
+  parent: BaseMagazineMagnumRifle
+  description: 20-round rifle magazine for .45 magnum. Loaded with incendiary rounds.
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeMagnumIncendiary
+  - type: Sprite
+    layers:
+    - state: incendiary # Hardlight: Sprite state needs to be created
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]

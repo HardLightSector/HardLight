@@ -30,17 +30,17 @@
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: MagazineMagnumRifleSP
+        startingItem: MagazineMagnumRifle # Hardlight: MagazineMagnumRifleSP<MagazineMagnumRifle
         insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
         priority: 2
         whitelist:
           tags:
-          - MagazineMagnumSubMachineGun
+          - MagazineMagnumRifle # Hardlight: MagazineMagnumSubMachineGun<MagazineMagnumRifle for proper magazine type
         whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
         name: Chamber
-        startingItem: CartridgeMagnumSP
+        startingItem: CartridgeMagnum # Hardlight: CartridgeMagnumSP<CartridgeMagnum
         priority: 1
         whitelist:
           tags:
