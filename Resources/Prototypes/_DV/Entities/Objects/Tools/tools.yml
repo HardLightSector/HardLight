@@ -6,4 +6,4 @@
   components:
   - type: LimitedCharges
     maxCharges: 500
-    charges: 500
+    charge: 500

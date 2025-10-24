@@ -23,7 +23,7 @@
         Radiation: 0.75
         Caustic: 0.75
         Heat: 0.75
-    staminaDamageCoefficient: 0.3 # It's a hardsuit, duh
+    # staminaDamageCoefficient: 0.3 # It's a hardsuit, duh
   - type: ClothingSpeedModifier
     walkModifier: 0.75
     sprintModifier: 0.75

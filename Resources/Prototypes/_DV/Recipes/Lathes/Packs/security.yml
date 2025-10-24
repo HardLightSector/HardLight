@@ -48,16 +48,16 @@
 
 ## Dynamic
 
-- type: latheRecipePack
-  id: SecurityAmmoDeltaV
-  recipes:
-  - BoxShellSoulbreaker
-  - SpeedLoaderSpecialUranium
-  - MagazineBoxSpecialIncendiary
-  - MagazineBoxSpecialUranium
-  - MagazineBoxSpecialHoly
-  - MagazineBoxSpecialMindbreaker
-  - GamblagatorCapacitor
+# - type: latheRecipePack
+#   id: SecurityAmmoDeltaV
+#   recipes:
+#   - BoxShellSoulbreaker
+#   - SpeedLoaderSpecialUranium
+#   - MagazineBoxSpecialIncendiary
+#   - MagazineBoxSpecialUranium
+#   - MagazineBoxSpecialHoly
+#   - MagazineBoxSpecialMindbreaker
+#   - GamblagatorCapacitor
 
 # - type: latheRecipePack
 #   parent: SecurityHardsuits

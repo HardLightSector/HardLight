@@ -10,7 +10,7 @@
     gloves: ClothingHandsGlovesCombat
     outerClothing: ClothingOuterArmorBasicSlim
     id: ERTLeaderPDA
-    ears: ClothingHeadsetAltCentCom
+    ears: ClothingHeadsetCentCom
     belt: WeaponEnergyGun
     pocket1: CrowbarRed
     pocket2: FlashlightSeclite
@@ -19,7 +19,6 @@
     - PinpointerNuclear
     - Zipties
     - Zipties
-    - DoorRemoteOmni
 
 - type: startingGear
   parent: ERTLeaderGearAmber
@@ -33,11 +32,7 @@
   storage:
     back:
     - CrowbarRed
-    - DoorRemoteOmni
     - PinpointerNuclear
-    - MagazineUniversalMagnum
-    - MagazineUniversalMagnum
-    - WeaponPistolUniversal
     belt:
     - Zipties
     - Zipties
@@ -56,11 +51,8 @@
     - MagazineLaser
     - MagazineLaser
     - MagazineLaser
-    - MagazineUniversalMagnum
-    - MagazineUniversalMagnum
     - CrowbarRed
     - PinpointerNuclear
-    - DoorRemoteOmni
     - FlashlightSeclite
 
 # Chaplain
@@ -74,9 +66,8 @@
     eyes: ClothingEyesGlassesSecurity
     neck: ClothingNeckStoleChaplain
     gloves: ClothingHandsGlovesCombat
-    outerClothing: ClothingOuterVestPlateCarrierAdv
     id: ERTChaplainPDA
-    ears: ClothingHeadsetAltCentCom
+    ears: ClothingHeadsetCentCom
     belt: ClothingBeltSecurityFilled
     pocket1: FlashlightSeclite
     pocket2: WeaponDisabler
@@ -86,7 +77,6 @@
     - Lantern
     - Bible
     - CrowbarRed
-    - CosmicCenser
     belt:
     - Zipties
     - Zipties
@@ -124,7 +114,7 @@
     gloves: ClothingHandsGlovesCombat
     outerClothing: ClothingOuterHardsuitERTEngineerBase
     id: ERTEngineerPDA
-    ears: ClothingHeadsetAltCentCom
+    ears: ClothingHeadsetCentCom
     belt: ClothingBeltChiefEngineerFilled
     pocket1: WeaponEnergyGunMini
     pocket2: FlashlightSeclite
@@ -167,7 +157,6 @@
     - CableApcStack
     - SheetPlasteel
     - SheetSteel
-    - WeaponBeamCannon
     belt:
     - RCDCombat
 
@@ -184,7 +173,7 @@
     gloves: ClothingHandsGlovesCombat
     outerClothing: ClothingOuterVestPlateCarrierAdv
     id: ERTSecurityPDA
-    ears: ClothingHeadsetAltCentCom
+    ears: ClothingHeadsetCentCom
     belt: ClothingBeltSecurityFilled
     pocket1: WeaponDisabler
     pocket2: FlashlightSeclite
@@ -201,7 +190,7 @@
   parent: ERTSecurityGearAmber
   id: ERTSecurityGearRed
   equipment:
-    shoes: ClothingShoesBootsSecurityMagboots
+    shoes: ClothingShoesBootsMagAdv
     mask: ClothingMaskGasERT
     outerClothing: ClothingOuterHardsuitERTSecurityBase
     pocket1: WeaponEnergyGunPistol
@@ -241,7 +230,7 @@
     gloves: ClothingHandsGlovesNitrile
     outerClothing: ClothingOuterVestPlateCarrierAdv
     id: ERTMedicPDA
-    ears: ClothingHeadsetAltCentCom
+    ears: ClothingHeadsetCentCom
     belt: ClothingBeltMedicalFilled
     pocket1: Hypospray
     pocket2: FlashlightSeclite
@@ -252,7 +241,6 @@
     - CrowbarRed
     - ChemistryBottleEpinephrine
     belt:
-    - Portafib
     - ChemistryBottleEpinephrine
 
 - type: startingGear
@@ -261,7 +249,6 @@
   equipment:
     shoes: ClothingShoesBootsMag
     mask: ClothingMaskGasERT
-    eyes: ClothingEyesGlassesCorpsman
     outerClothing: ClothingOuterHardsuitERTMedicalBase
   inhand:
   - WeaponEnergyGun
@@ -306,7 +293,7 @@
     gloves: ClothingHandsGlovesCombat
     outerClothing: ClothingOuterVestPlateCarrierAdv
     id: ERTJanitorPDA
-    ears: ClothingHeadsetAltCentCom
+    ears: ClothingHeadsetCentCom
     belt: ClothingBeltJanitorFilled
     pocket1: WeaponDisabler
     pocket2: FlashlightSeclite
@@ -333,8 +320,6 @@
     - WeaponLauncherHydra
     - CleanadeGrenadeBox
     - CrowbarRed
-    belt:
-    - TrashBagOfHolding
 
 - type: startingGear
   parent: ERTJanitorGearRed
