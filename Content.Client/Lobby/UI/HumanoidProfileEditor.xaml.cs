@@ -509,6 +509,8 @@ namespace Content.Client.Lobby.UI
             // Ensure tab titles are correct after initial setup.
             UpdateTabTitles();
 
+            #region CustomSpeciesName
+
             CDCustomSpeciesNameCheck.OnToggled += args =>
             {
                 CDCustomSpeciesName.Editable = args.Pressed;
@@ -1642,7 +1644,7 @@ namespace Content.Client.Lobby.UI
             CDCustomSpeciesName.Editable = true;
         }
 
-        private void UpdateSpawnPriorityControls()
+        private void UpdateWidthControls()
         {
             if (Profile == null)
             {

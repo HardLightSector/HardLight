@@ -165,7 +165,7 @@ namespace Content.Client.HealthAnalyzer.UI
             SpeciesLabel.Text =
                 _entityManager.TryGetComponent<HumanoidAppearanceComponent>(_target.Value,
                     out var humanoidAppearanceComponent)
-                    ? _cdCustomSpecies.GetSpeciesName(new Entity<HumanoidAppearanceComponent>(target.Value, humanoidAppearanceComponent))
+                    ? _cdCustomSpecies.GetSpeciesName(new Entity<HumanoidAppearanceComponent>(_target.Value, humanoidAppearanceComponent))
                     : Loc.GetString("health-analyzer-window-entity-unknown-species-text");
 
             // Basic Diagnostic
