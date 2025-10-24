@@ -144,7 +144,6 @@
   equipment:
     shoes: ClothingShoesBootsMagAdv
     mask: ClothingMaskGasERT
-    pocket1: WeaponEnergyGunPistol
   inhand:
   - JetpackVoid
   storage:
@@ -283,8 +282,6 @@
   equipment:
     shoes: ClothingShoesBootsMagAdv
     outerClothing: ClothingOuterHardsuitERTMedicalElite
-  inhand:
-  - WeaponEnergyGunPistol
   storage:
     back:
     - MedkitCombatFilled
@@ -353,4 +350,3 @@
     - CrowbarRed
     - BoxCleanerGrenades
     - WeaponEnergyGun
-    pocket1: WeaponEnergyGunPistol
