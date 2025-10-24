@@ -51,7 +51,6 @@ namespace Content.Server.Database
                 .Include(p => p.Profiles).ThenInclude(h => h.Jobs)
                 .Include(p => p.Profiles).ThenInclude(h => h.Antags)
                 .Include(p => p.Profiles).ThenInclude(h => h.Traits)
-                .Include(p => p.Profiles).ThenInclude(h => h.CDProfile)
                 .Include(p => p.Profiles)
                     .ThenInclude(h => h.Loadouts)
                     .ThenInclude(l => l.Groups)
@@ -279,7 +278,7 @@ namespace Content.Server.Database
                 antags.ToHashSet(),
                 traits.ToHashSet(),
                 loadouts,
-                profile.CDProfile?.CustomSpeciesName
+                profile.CustomSpeciesName
             );
         }
 
@@ -334,10 +333,8 @@ namespace Content.Server.Database
                         .Select(t => new Trait {TraitName = t})
             );
 
-            // CD: CD Character Data
-            profile.CDProfile ??= new CDModel.CDProfile();
-            profile.CDProfile.Height = appearance.Height;
-            profile.CDProfile.CustomSpeciesName = humanoid.CDCustomSpeciesName;
+            // CD: Custom Species Name
+            profile.CustomSpeciesName = humanoid.CDCustomSpeciesName;
             // END CD
 
             profile.Loadouts.Clear();
