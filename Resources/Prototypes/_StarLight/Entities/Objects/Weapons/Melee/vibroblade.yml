@@ -42,7 +42,7 @@
 
 #Longswords
 - type: entity
-  parent: [ BaseSword, BaseC3CartelContraband ] # Hardlight: BaseCentcommContraband<BaseC3CartelContraband
+  parent: [ BaseSword, BaseCentcommContraband]
   id: CentcommVibroblade
   name: SCSPT-111 vibroblade
   description: Vulcan Industries was contracted by the Corporate Consortium to design and mass-produce weaponry focusing more on existing crusher-weaponry technology. Through this research, the SCS-111 Corporate Consortium Variant was born, a blade of pure precision relying on a subsonic slashing design and material that can hold it's own against weaponry made of phoron.
