@@ -323,9 +323,6 @@
       amount: 2
     - id: AmmoBox46x30mmFMJ
       amount: 1
-    - id: NFMagazineSubMachineGunTopMounted35
-      amount: 3
-
 - type: entity
   parent: WeaponCaseLong
   id: WeaponCaseLongAtreidesExpedition
@@ -355,8 +352,6 @@
       amount: 2
     - id: AmmoBox45_ACPFMJ
       amount: 1
-    - id: NFMagazineSubMachineGun35
-      amount: 3
 
 - type: entity
   parent: WeaponCaseLong
@@ -383,9 +378,9 @@
     contents:
     - id: NFWeaponSubMachineGunTypewriterExpedition
       amount: 1
-    - id: Magazine45_ACPSubMachineGunFMJ
+    - id: Magazine9x19mmSubMachineGunFMJ
       amount: 2
-    - id: AmmoBox45_ACPFMJ
+    - id: AmmoBox9x19mmFMJ
       amount: 2
 
 #region Rifles
