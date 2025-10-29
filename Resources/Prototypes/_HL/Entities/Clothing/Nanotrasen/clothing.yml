@@ -6,9 +6,9 @@
   description: A lightweight hardsuit developed by Nanotrasen's research department for the Crew of the NSV Shield of Perseus
   components:
   - type: Sprite
-    sprite: _HL/Nanotrasen/ntstandardsuit.rsi
+    sprite: _HL/Clothing/Nanotrasen/ntstandardsuit.rsi
   - type: Clothing
-    sprite: _HL/Nanotrasen/ntstandardsuit.rsi
+    sprite: _HL/Clothing/Nanotrasen/ntstandardsuit.rsi
   - type: PressureProtection
     highPressureMultiplier: 0.05
     lowPressureMultiplier: 1000
@@ -39,11 +39,11 @@
   description: A pressure resistant and fireproof hood worn by special cleanup units.
   components:
   - type: Sprite
-    sprite: _HL/Nanotrasen/ntstandardhelm.rsi
+    sprite: _HL/Clothing/Nanotrasen/ntstandardhelm.rsi
     layers:
     - state: icon
   - type: Clothing
-    sprite: _HL/Nanotrasen/ntstandardhelm.rsi
+    sprite: _HL/Clothing/Nanotrasen/ntstandardhelm.rsi
   - type: PressureProtection
     highPressureMultiplier: 0.08
     lowPressureMultiplier: 1000
@@ -68,7 +68,7 @@
   description: A satchel produced by Nanotrasen.
   components:
   - type: Sprite
-    sprite: _HL/Nanotrasen/nanosatchel.rsi
+    sprite: _HL/Clothing/Nanotrasen/nanosatchel.rsi
 
 - type: entity
   id: ClothingBackpackDuffelNT
@@ -77,7 +77,7 @@
   description: A duffelbag produced by Nanotrasen.
   components:
   - type: Sprite
-    sprite: _HL/Nanotrasen/nanotrasenduff.rsi
+    sprite: _HL/Clothing/Nanotrasen/nanotrasenduff.rsi
 
 #NT Bottom clothes
 - type: entity
@@ -87,9 +87,9 @@
   description: A cute Nanotrasen branded collar.
   components:
   - type: Sprite
-    sprite: _HL/Nanotrasen/collar_nano.rsi
+    sprite: __HL/Clothing/Nanotrasen/collar_nano.rsi
   - type: Clothing
-    sprite: _HL/Nanotrasen/collar_nano.rsi
+    sprite: _HL/Clothing/Nanotrasen/collar_nano.rsi
 
 - type: entity
   parent: ClothingUniformBaseThongs
@@ -98,9 +98,9 @@
   description: A Nanotrasen branded thong! but is this even considered a piece of clothing?
   components:
   - type: Sprite
-    sprite: _HL/Nanotrasen/nanotrasenthong.rsi
+    sprite: _HL/Clothing/Nanotrasen/nanotrasenthong.rsi
   - type: Clothing
-    sprite: _HL/Nanotrasen/nanotrasenthong.rsi
+    sprite: _HL/Clothing/Nanotrasen/nanotrasenthong.rsi
 
 - type: entity
   parent: ClothingHandsBase
@@ -109,9 +109,9 @@
   description: A pair of rather nice Nanotrasen branded arm-warmers.
   components:
   - type: Sprite
-    sprite: _HL/Nanotrasen/nanotrasenwarmer.rsi
+    sprite: _HL/Clothing/Nanotrasen/nanotrasenwarmer.rsi
   - type: Clothing
-    sprite: _HL/Nanotrasen/nanotrasenwarmer.rsi
+    sprite: _HL/Clothing/Nanotrasen/nanotrasenwarmer.rsi
   - type: Fiber
     fiberMaterial: fibers-synthetic
     fiberColor: fibers-black
@@ -124,9 +124,9 @@
   description: A pair of thigh-high socks.
   components:
   - type: Sprite
-    sprite: _HL/Nanotrasen/nanotrasensocks.rsi
+    sprite: _HL/Clothing/Nanotrasen/nanotrasensocks.rsi
   - type: Clothing
-    sprite: _HL/Nanotrasen/nanotrasensocks.rsi
+    sprite: _HL/Clothing/Nanotrasen/nanotrasensocks.rsi
 #NT Winter clothes
 - type: entity
   parent: ClothingScarfBase
@@ -135,9 +135,9 @@
   description: A stylish Nanotrasen blue scarf. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their necks.
   components:
   - type: Sprite
-    sprite: _HL/Nanotrasen/nanotrasenscarf.rsi
+    sprite: _HL/Clothing/Nanotrasen/nanotrasenscarf.rsi
   - type: Clothing
-    sprite: _HL/Nanotrasen/nanotrasenscarf.rsi
+    sprite: _HL/Clothing/Nanotrasen/nanotrasenscarf.rsi
 
 - type: entity
   parent: [ ClothingShoesBaseWinterBoots ] # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable
@@ -145,9 +145,9 @@
   name: Nanotrasen winter boots
   components:
   - type: Sprite
-    sprite: _HL/Nanotrasen/winterbootsnano.rsi
+    sprite: _HL/Clothing/Nanotrasen/winterbootsnano.rsi
   - type: Clothing
-    sprite: _HL/Nanotrasen/winterbootsnano.rsi
+    sprite: _HL/Clothing/Nanotrasen/winterbootsnano.rsi
 
 - type: entity
   parent: ClothingOuterWinterCoatToggleable
@@ -155,7 +155,7 @@
   name: Nanotrasen winter coat
   components:
   - type: Sprite
-    sprite: _HL/Nanotrasen/nanocoat.rsi
+    sprite: _HL/Clothing/Nanotrasen/nanocoat.rsi
     layers:
     - state: icon
   - type: Item
@@ -165,7 +165,7 @@
       right:
       - state: inhand-right
   - type: Clothing
-    sprite: _HL/Nanotrasen/nanocoat.rsi
+    sprite: _HL/Clothing/Nanotrasen/nanocoat.rsi
     clothingVisuals:
       outerClothing:
       - state: equipped-OUTERCLOTHING
@@ -179,9 +179,9 @@
   name: Nanotrasen winter coat hood
   components:
   - type: Sprite
-    sprite: _HL/Nanotrasen/hoodnano.rsi
+    sprite: _HL/Clothing/Nanotrasen/hoodnano.rsi
   - type: Clothing
-    sprite: _HL/Nanotrasen/hoodnano.rsi
+    sprite: _HL/Clothing/Nanotrasen/hoodnano.rsi
 
 - type: entity
   parent: ClothingNeckBase
@@ -190,9 +190,9 @@
   description: A soft Nanotrasen branded mantle, made with the same luxurious animal furs of the iconic winter coat.
   components:
   - type: Sprite
-    sprite: _HL/Nanotrasen/nanotrasenmantle.rsi
+    sprite: _HL/Clothing/Nanotrasen/nanotrasenmantle.rsi
   - type: Clothing
-    sprite: _HL/Nanotrasen/nanotrasenmantle.rsi
+    sprite: _HL/Clothing/Nanotrasen/nanotrasenmantle.rsi
 
 #NT jumpsuit/skirt
 - type: entity
@@ -202,9 +202,9 @@
   description: A jumpsuit designed and produced by Nanotrasen factory workers. it feels soft.
   components:
   - type: Sprite
-    sprite: _HL/Nanotrasen/nanotrasenjumpsuit.rsi
+    sprite: _HL/Clothing/Nanotrasen/nanotrasenjumpsuit.rsi
   - type: Clothing
-    sprite: _HL/Nanotrasen/nanotrasenjumpsuit.rsi
+    sprite: _HL/Clothing/Nanotrasen/nanotrasenjumpsuit.rsi
 
 - type: entity
   parent: ClothingUniformSkirtBase
@@ -213,9 +213,9 @@
   description: A jumpskirt designed and produced by Nanotrasen factory workers. it feels soft.
   components:
   - type: Sprite
-    sprite: _HL/Nanotrasen/nanotrasenjumpskirt.rsi
+    sprite: _HL/Clothing/Nanotrasen/nanotrasenjumpskirt.rsi
   - type: Clothing
-    sprite: _HL/Nanotrasen/nanotrasenjumpskirt.rsi
+    sprite: _HL/Clothing/Nanotrasen/nanotrasenjumpskirt.rsi
 
 #NT Caps
 - type: entity
@@ -225,9 +225,9 @@
   description: A NT beret, Usually worn by Gunnys.
   components:
   - type: Sprite
-    sprite: _HL/Nanotrasen/beret_nanotrasen.rsi
+    sprite: _HL/Clothing/Nanotrasen/beret_nanotrasen.rsi
   - type: Clothing
-    sprite: _HL/Nanotrasen/beret_nanotrasen.rsi
+    sprite: _HL/Clothing/Nanotrasen/beret_nanotrasen.rsi
   - type: Tag
     tags:
     - ClothMade
@@ -240,9 +240,9 @@
   description: A stylish NT cap.
   components:
   - type: Sprite
-    sprite: _HL/Nanotrasen/nanotrasen_cap.rsi
+    sprite: _HL/Clothing/Nanotrasen/nanotrasen_cap.rsi
   - type: Clothing
-    sprite: _HL/Nanotrasen/nanotrasen_cap.rsi
+    sprite: _HL/Clothing/Nanotrasen/nanotrasen_cap.rsi
   - type: Tag
     tags:
     - ClothMade
@@ -255,9 +255,9 @@
   description: A stylish NT Baseball cap.
   components:
   - type: Sprite
-    sprite: _HL/Nanotrasen/nanohat.rsi
+    sprite: _HL/Clothing/Nanotrasen/nanohat.rsi
   - type: Clothing
-    sprite: _HL/Nanotrasen/nanohat.rsi
+    sprite: _HL/Clothing/Nanotrasen/nanohat.rsi
   - type: Tag
     tags:
     - ClothMade
