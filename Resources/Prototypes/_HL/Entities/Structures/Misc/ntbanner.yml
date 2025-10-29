@@ -5,4 +5,4 @@
   description: A banner displaying the Nanotrasen logo.
   components:
   - type: Sprite
-    sprite: _HL/Nanotrasen/banner.rsi # Frontier - unique sprites
+    sprite: _HL/Clothing/Nanotrasen/banner.rsi # Frontier - unique sprites
