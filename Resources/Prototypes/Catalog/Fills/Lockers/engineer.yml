@@ -107,6 +107,7 @@
       - id: ClothingBeltUtilityEngineering # Frontier
 #     - id: RCD # Frontier
 #     - id: RCDAmmo # Frontier
+      - id: AirGrenade
 
 - type: entity
   id: LockerAtmosphericsFilled
@@ -127,6 +128,7 @@
       - id: ClothingBeltUtilityEngineering # Frontier
 #      - id: RCD
 #      - id: RCDAmmo
+      - id: AirGrenade
 
 - type: entity
   id: LockerEngineerFilledHardsuit
@@ -163,9 +165,46 @@
   parent: ClosetRadiationSuit
   suffix: Filled
   components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: FillRadiationSuit
+
+- type: entityTable
+  id: FillRadiationSuit
+  table: !type:AllSelector
+    children:
+    - id: ClothingOuterSuitRad
+      amount: !type:ConstantNumberSelector
+        value: 2
+    - id: GeigerCounter
+      amount: !type:ConstantNumberSelector
+        value: 2
+
+- type: entity
+  parent: LockerEvacRepair
+  id: LockerEvacRepairFilled
+  suffix: Filled
+  components:
   - type: StorageFill
     contents:
-      - id: ClothingOuterSuitRad
-        amount: 2
-      - id: GeigerCounter
-        amount: 2
+      - id: BoxInflatable
+      - id: HolofanProjector
+      - id: MetalFoamGrenade
+        amount: 3
+      - id: AirGrenade
+        amount: 3
+
+- type: entity
+  parent: LockerWallEvacRepair
+  id: LockerWallEvacRepairFilled
+  suffix: Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: BoxInflatable
+      - id: HolofanProjector
+      - id: MetalFoamGrenade
+        amount: 3
+      - id: AirGrenade
+        amount: 3

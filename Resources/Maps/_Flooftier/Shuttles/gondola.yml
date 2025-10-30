@@ -350,7 +350,6 @@ entities:
     - type: Transform
       pos: 0.5,5.5
       parent: 1
-    - type: PaintableAirlock
       department: Command
 - proto: AirlockGlass
   entities:

@@ -21,8 +21,6 @@
   components:
   - type: Sprite
     sprite: _HL/Structures/Doors/Airlocks/Standard/eidocargo.rsi
-  - type: PaintableAirlock
-    department: Cargo
   - type: Wires
     layoutId: AirlockCargo
 
@@ -63,8 +61,6 @@
   components:
   - type: Sprite
     sprite: _HL/Structures/Doors/Airlocks/Standard/eidomedical.rsi
-  - type: PaintableAirlock
-    department: Medical
   - type: Wires
     layoutId: AirlockMedical
 
@@ -91,8 +87,6 @@
   components:
   - type: Sprite
     sprite: _HL/Structures/Doors/Airlocks/Standard/eidoscience.rsi
-  - type: PaintableAirlock
-    department: Science
   - type: Wires
     layoutId: AirlockScience
 
@@ -105,8 +99,6 @@
     sprite: _HL/Structures/Doors/Airlocks/Standard/eidocommand.rsi
   - type: WiresPanelSecurity
     securityLevel: medSecurity
-  - type: PaintableAirlock
-    department: Command
   - type: Wires
     layoutId: AirlockCommand
 
@@ -117,8 +109,6 @@
   components:
   - type: Sprite
     sprite: _HL/Structures/Doors/Airlocks/Standard/eidosecurity.rsi
-  - type: PaintableAirlock
-    department: Security
   - type: Wires
     layoutId: AirlockSecurity
 
@@ -130,8 +120,6 @@
   components:
   - type: Sprite
     sprite: _HL/Structures/Doors/Airlocks/Glass/eidoengineering.rsi
-  - type: PaintableAirlock
-    department: Engineering
   - type: Wires
     layoutId: AirlockEngineering
 
@@ -150,8 +138,6 @@
   components:
   - type: Sprite
     sprite: _HL/Structures/Doors/Airlocks/Glass/eidocargo.rsi
-  - type: PaintableAirlock
-    department: Cargo
   - type: Wires
     layoutId: AirlockCargo
 
@@ -192,8 +178,6 @@
   components:
   - type: Sprite
     sprite: _HL/Structures/Doors/Airlocks/Glass/eidomedical.rsi
-  - type: PaintableAirlock
-    department: Medical
   - type: Wires
     layoutId: AirlockMedical
 
@@ -220,8 +204,6 @@
   components:
   - type: Sprite
     sprite: _HL/Structures/Doors/Airlocks/Glass/eidoscience.rsi
-  - type: PaintableAirlock
-    department: Science
   - type: Wires
     layoutId: AirlockScience
 
@@ -232,8 +214,6 @@
   components:
   - type: Sprite
     sprite: _HL/Structures/Doors/Airlocks/Glass/eidocommand.rsi
-  - type: PaintableAirlock
-    department: Command
   - type: WiresPanelSecurity
     securityLevel: medSecurity
   - type: Wires
@@ -246,11 +226,9 @@
   components:
   - type: Sprite
     sprite: _HL/Structures/Doors/Airlocks/Glass/eidosecurity.rsi
-  - type: PaintableAirlock
-    department: Security
   - type: Wires
     layoutId: AirlockSecurity
-    
+
 - type: entity
   parent: AirlockShuttle
   id: AirlockShuttleMining

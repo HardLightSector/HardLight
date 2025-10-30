@@ -1762,49 +1762,42 @@ entities:
     - type: Transform
       pos: 15.5,-12.5
       parent: 1
-    - type: PaintableAirlock
       department: Cargo
   - uid: 105
     components:
     - type: Transform
       pos: 10.5,-17.5
       parent: 1
-    - type: PaintableAirlock
       department: Cargo
   - uid: 106
     components:
     - type: Transform
       pos: 16.5,-20.5
       parent: 1
-    - type: PaintableAirlock
       department: Cargo
   - uid: 107
     components:
     - type: Transform
       pos: 21.5,-17.5
       parent: 1
-    - type: PaintableAirlock
       department: Cargo
   - uid: 108
     components:
     - type: Transform
       pos: 21.5,-19.5
       parent: 1
-    - type: PaintableAirlock
       department: Cargo
   - uid: 109
     components:
     - type: Transform
       pos: 16.5,-12.5
       parent: 1
-    - type: PaintableAirlock
       department: Cargo
   - uid: 110
     components:
     - type: Transform
       pos: 10.5,-19.5
       parent: 1
-    - type: PaintableAirlock
       department: Cargo
   - uid: 111
     components:

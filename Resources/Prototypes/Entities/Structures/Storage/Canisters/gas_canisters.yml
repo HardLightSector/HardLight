@@ -114,6 +114,8 @@
     - type: GuideHelp
       guides:
       - GasCanisters
+    - type: Paintable
+      group: Canisters
     - type: Climbable # mono
     - type: FootstepModifier # mono
       footstepSoundCollection:
