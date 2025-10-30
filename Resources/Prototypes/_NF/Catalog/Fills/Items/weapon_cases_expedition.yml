@@ -454,6 +454,19 @@
     - id: Magazine762x39mmFMJ
       amount: 2
 
+- type: entity # HL
+  parent: WeaponCaseLong
+  id: WeaponCaseLongAK502Expedition
+  suffix: Dungeon, AK502
+  # categories: [ HideSpawnMenu ]
+  components:
+  - type: StorageFill
+    contents:
+    - id: WeaponRifleAK502Expedition
+      amount: 1
+    - id: Magazine762x39mmFMJ
+      amount: 2
+
 - type: entity
   parent: WeaponCaseLong
   id: WeaponCaseLongM90Expedition

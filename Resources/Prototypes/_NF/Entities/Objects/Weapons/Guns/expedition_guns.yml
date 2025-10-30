@@ -276,6 +276,15 @@
   #  categories: [ HideSpawnMenu ]
   id: WeaponRifleAkExpedition
   name: worn AKM
+
+- type: entity # HL
+  parent:
+  - BaseExpeditionWeaponTier3Syndicate
+  - WeaponRifleAK502
+#  categories: [ HideSpawnMenu ]
+  id: WeaponRifleAK502Expedition
+  name: worn AK502
+
 ## Snipers
 - type: entity
   parent:
