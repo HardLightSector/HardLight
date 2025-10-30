@@ -174,7 +174,8 @@
     radius: 5
     power: 30
     color: "#b00000"
-  - type: DamageContacts
+  - type: DamageContacts #Damages others around you, but you as well. Better have healing
     damage:
       types:
-        Radiation: 3
+        Slash: 1.5
+        Piercing: 1.5
