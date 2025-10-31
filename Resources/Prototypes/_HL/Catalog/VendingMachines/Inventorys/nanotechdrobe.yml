@@ -1,0 +1,36 @@
+- type: vendingMachineInventory
+  id: NTDrobeInventory
+  startingInventory:
+    ClothingBackpackMessengerSyndicate: 3 # Frontier
+    ClothingHeadHatOutlawHat: 3
+    ClothingHeadHatSyndie: 5
+    ClothingMaskNeckGaiter: 5
+    ClothingOuterWinterSyndie: 5
+    ClothingHeadHatSyndieMAA: 3
+    ClothingOuterWinterSyndieCap: 3
+    ClothingOuterCoatSyndieCap: 3
+    ClothingUniformJumpsuitSyndieFormal: 5
+    ClothingUniformJumpskirtSyndieFormalDress: 5
+    ClothingUniformJumpsuitOperativeCrop: 5
+    ClothingUniformJumpskirtOperativeCrop: 5
+    ClothingUniformJumpsuitOperativeCropSleeves: 5
+    ClothingUniformJumpskirtOperativeCropSleeves: 5
+    ClothingUniformJumpsuitOperative: 5
+    ClothingUniformJumpskirtOperative: 5
+    ClothingNeckScarfStripedSyndieGreen: 2
+    ClothingNeckScarfStripedSyndieRed: 2
+    ClothingShoesBootsWinterSyndicate: 2
+    ClothingNeckCollarSyndi: 2 # Floofstation - Collar addition
+    ClothingHandsCoderValidWarmers: 2
+    ClothingUnderSocksCoderValid: 2
+    ClothingUniformCoderValidThong: 2
+  contrabandInventory:
+    ToyFigurineFootsoldier: 1
+    ToyFigurineNukieElite: 1
+    ToyFigurineNukieCommander: 1
+  emaggedInventory:
+    ClothingOuterCoatSyndieCapArmored: 1
+    ClothingOuterWinterSyndieCapArmored: 1
+    ClothingHeadHatTacticalMaidHeadband: 5
+    ClothingUniformJumpskirtTacticalMaid: 5
+    ClothingHandsTacticalMaidGloves: 5

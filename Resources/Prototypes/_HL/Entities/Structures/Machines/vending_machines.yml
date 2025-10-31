@@ -53,7 +53,7 @@
   description: Wardrobe machine encoded by the SESWC, contains elite outfits for various operations.
   components:
   - type: VendingMachine
-    pack: SyndieDrobeInventory
+    pack: NTDrobeInventory
     offState: off
     brokenState: broken
     normalState: normal-unshaded
@@ -62,7 +62,7 @@
   - type: SpeakOnUIClosed
     pack: SyndieDrobeGoodbyes
   - type: Sprite
-    sprite: Structures/Machines/VendingMachines/syndiedrobe.rsi
+    sprite: _HL/Structures/Machines/VendingMachines/nanotech.rsi
     layers:
     - state: "off"
       map: ["enum.VendingMachineVisualLayers.Base"]
