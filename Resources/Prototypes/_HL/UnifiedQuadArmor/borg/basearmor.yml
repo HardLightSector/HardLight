@@ -12,12 +12,12 @@
   - type: Clothing
     sprite: _HL/Objects/BorgArmor/physarmor/defaultarmor.rsi
     clothingVisuals:
-      BORGARMOR:
+      armor:
       - state: on-equipped-BORGARMOR
         shader: unshaded
     quickEquip: false # Has to be put on for borgs by someone else
     slots:
-    - BORGARMOR # No free NFSD tier armor for anyone who prints it.
+    - armor # No free NFSD tier armor for anyone who prints it.
   - type: ExplosionResistance
     damageCoefficient: 0.4
   - type: Armor

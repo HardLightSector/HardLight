@@ -34,7 +34,7 @@
       components:
       - BorgChassis
     position: Stand
-    buckleOffset: "0,0.5"
+    buckleOffset: "0,-0.2"
     buckleSelfDoafterTime: 4.5 # people attempting to buckle to the borg will have a doafter
   - type: Sanitized
   - type: Hands
