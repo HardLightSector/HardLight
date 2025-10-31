@@ -210,7 +210,7 @@
 - type: entity
   parent:
   - BaseExpeditionWeaponTier2
-  - WeaponShotgunKammerer
+  - WeaponShotgunKammerer # HL
 #  categories: [ HideSpawnMenu ]
   id: NFWeaponShotgunKammererExpedition
   name: worn Kammerer
