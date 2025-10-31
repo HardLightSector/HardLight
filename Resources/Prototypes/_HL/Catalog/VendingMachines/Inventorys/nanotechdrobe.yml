@@ -1,36 +1,56 @@
 - type: vendingMachineInventory
   id: NTDrobeInventory
   startingInventory:
-    ClothingBackpackMessengerSyndicate: 3 # Frontier
-    ClothingHeadHatOutlawHat: 3
-    ClothingHeadHatSyndie: 5
-    ClothingMaskNeckGaiter: 5
-    ClothingOuterWinterSyndie: 5
-    ClothingHeadHatSyndieMAA: 3
-    ClothingOuterWinterSyndieCap: 3
-    ClothingOuterCoatSyndieCap: 3
-    ClothingUniformJumpsuitSyndieFormal: 5
-    ClothingUniformJumpskirtSyndieFormalDress: 5
-    ClothingUniformJumpsuitOperativeCrop: 5
-    ClothingUniformJumpskirtOperativeCrop: 5
-    ClothingUniformJumpsuitOperativeCropSleeves: 5
-    ClothingUniformJumpskirtOperativeCropSleeves: 5
-    ClothingUniformJumpsuitOperative: 5
-    ClothingUniformJumpskirtOperative: 5
-    ClothingNeckScarfStripedSyndieGreen: 2
-    ClothingNeckScarfStripedSyndieRed: 2
-    ClothingShoesBootsWinterSyndicate: 2
-    ClothingNeckCollarSyndi: 2 # Floofstation - Collar addition
-    ClothingHandsCoderValidWarmers: 2
-    ClothingUnderSocksCoderValid: 2
-    ClothingUniformCoderValidThong: 2
+    ClothingBackpackDuffelNT: 3
+    ClothingBackpackSatchelNT: 3
+    # ClothingBackpackNT: 3 todo
+    #ClothingBackpackMessengerSyndicate: 3 to do
+
+    #ClothingHeadHatOutlawHat: 3 todod
+    ClothingHeadHatNTBaseballCap: 5
+
+    ClothingHeadHatNTCap: 3
+    #ClothingMaskNeckGaiter: 5 todo
+
+    ClothingOuterWinterNT: 5
+
+    #Long coats
+   # ClothingOuterWinterSyndieCap: 3
+   # ClothingOuterCoatSyndieCap: 3
+
+   #ClothingUniformJumpsuitSyndieFormal: 5
+   #ClothingUniformJumpskirtSyndieFormalDress: 5
+
+    #ClothingUniformJumpsuitOperativeCrop: 5
+    #ClothingUniformJumpskirtOperativeCrop: 5
+
+    #ClothingUniformJumpsuitOperativeCropSleeves: 5
+    #ClothingUniformJumpskirtOperativeCropSleeves: 5
+
+    ClothingUniformJumpsuitNT: 5
+    ClothingUniformJumpskirtNT: 5
+
+    #ClothingNeckScarfStripedSyndieGreen: 2 todo um make a  ClothingNeckScarfStripedBlue - possible replacement
+    ClothingNeckScarfNT: 2
+    ClothingNeckMantleNT: 2
+    # ClothingNeckCloakNanotrasen: 2 todo change color scheme
+
+    ClothingShoesBootsWinterNTd: 2
+    ClothingShoesBootsLaceup: 2
+
+    #ClothingNeckCollarSyndi: 2 todo
+    ClothingHandsNTWarmers: 2
+    ClothingUnderSocksNT: 2
+    ClothingUniformNTThong: 2
   contrabandInventory:
-    ToyFigurineFootsoldier: 1
-    ToyFigurineNukieElite: 1
-    ToyFigurineNukieCommander: 1
-  emaggedInventory:
-    ClothingOuterCoatSyndieCapArmored: 1
-    ClothingOuterWinterSyndieCapArmored: 1
-    ClothingHeadHatTacticalMaidHeadband: 5
-    ClothingUniformJumpskirtTacticalMaid: 5
-    ClothingHandsTacticalMaidGloves: 5
+  # TODO re-add these items when sprites are made
+   # ToyFigurineFootsoldier: 1
+   # ToyFigurineNukieElite: 1
+   # ToyFigurineNukieCommander: 1
+  e#maggedInventory:
+  # TODO: re-add these items when sprites are made
+   #ClothingOuterCoatSyndieCapArmored: 1
+   #ClothingOuterWinterSyndieCapArmored: 1
+   #ClothingHeadHatTacticalMaidHeadband: 5
+   #ClothingUniformJumpskirtTacticalMaid: 5
+   #ClothingHandsTacticalMaidGloves: 5
