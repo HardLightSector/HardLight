@@ -1,9 +1,10 @@
+using Content.Shared._HL.Clothing.Components;
 using Content.Shared.Clothing.Components;
 using Content.Shared.Examine;
 using Content.Shared.Inventory;
 using Content.Shared.Inventory.Events;
 
-namespace Content.Shared.Clothing.EntitySystems;
+namespace Content.Shared._HL.Clothing.EntitySystems;
 
 /// <summary>
 ///     A system for the operation of a component that prohibits anyone from taking off clothes that have this component.

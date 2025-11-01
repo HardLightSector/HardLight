@@ -1,7 +1,7 @@
-using Content.Shared.Clothing.EntitySystems;
+using Content.Shared._HL.Clothing.EntitySystems;
 using Robust.Shared.GameStates;
 
-namespace Content.Shared.Clothing.Components;
+namespace Content.Shared._HL.Clothing.Components;
 
 /// <summary>
 ///     The component prohibits ANYONE from taking off clothes that have this component.

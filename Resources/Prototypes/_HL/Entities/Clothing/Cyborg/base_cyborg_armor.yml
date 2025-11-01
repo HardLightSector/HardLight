@@ -3,6 +3,7 @@
   id: SyntheticBorgArmorBase # Base Armor Type for borgs
   name: Experimental Synthetic Plating
   description: This is a test item. How did you get ahold of it?!
+  suffix: DO NOT MAP
   components:
   #- type: Contraband
   #  severity: Class2
@@ -33,6 +34,10 @@
   - type: ClothingSpeedModifier  # Stacks with other slowdowns. Be careful!
     walkModifier: 0.9
     sprintModifier: 0.9
+  - type: HLClothingWhitelist # Only borgs may equip this item on their head slot
+    whitelist:
+      components:
+      - BorgChassis
   - type: Tag
     tags:
     - BorgWearable # Required for all variants, as this is what controls wearability!
