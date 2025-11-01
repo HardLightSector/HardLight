@@ -1,5 +1,5 @@
 - type: entity
-  parent: ClothingHeadHelmetHardsuitSyndieCommander #Inherit all changes from this. Hopefully will prevent compatability issues in the future
+  parent: ClothingOuterHardsuitSyndieCommander #Inherit all changes from this. Hopefully will prevent compatability issues in the future
   id: SyntheticBorgArmorBase # Base Armor Type for borgs
   name: Experimental Synthetic Plating
   description: This is a test item. How did you get ahold of it?!
@@ -15,10 +15,12 @@
   - type: Clothing
     sprite: _HL/Objects/BorgArmor/physarmor/defaultarmor.rsi
     clothingVisuals:
-      head:
+      HEAD:
       - state: on-equipped-HEAD
         shader: unshaded
     quickEquip: false # Has to be put on for borgs by someone else
+    slots:
+    - Head # No free NFSD tier armor for anyone who prints it.
   - type: ExplosionResistance
     damageCoefficient: 0.4
   - type: Armor
