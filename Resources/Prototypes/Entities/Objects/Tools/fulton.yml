@@ -51,6 +51,14 @@
       price: 100
 
 - type: entity
+  id: RescueBeacon
+  parent: FultonBeacon
+  name: Rescue beacon
+  description: Beacon to receive rescue extractions.
+  components:
+    - type: RescueBeacon
+
+- type: entity
   id: Fulton
   parent: BaseItem
   suffix: Full

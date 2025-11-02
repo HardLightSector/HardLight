@@ -8,6 +8,11 @@
 #  categories: [ HideSpawnMenu ]
   components:
     - type: SubdermalImplant
+    # Plays med radio alerts on critical/dead and now also schedules evac teleport on death
+    - type: MedicalTeleportImplant
+      teleportDelay: 10
+      teleportSound:
+        path: /Audio/Effects/teleport_departure.ogg
 #    - type: SuitSensor
 #      randomMode: false
 #      controlsLocked: true

@@ -1,5 +1,9 @@
 using System.Numerics;
 using Content.Shared.Salvage.Fulton;
+using Content.Shared._NF.Implants.Components;
+using Content.Shared.Implants.Components;
+using Content.Shared._HL.Rescue.Rescue;
+using Content.Server.Radio.EntitySystems;
 using Robust.Shared.Containers;
 using Robust.Shared.Map;
 using Robust.Shared.Random;
@@ -12,6 +16,7 @@ namespace Content.Server.Salvage;
 public sealed class FultonSystem : SharedFultonSystem
 {
     [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly RadioSystem _radio = default!;
 
     public override void Initialize()
     {
