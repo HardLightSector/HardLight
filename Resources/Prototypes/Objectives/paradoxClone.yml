@@ -13,6 +13,11 @@
   - type: Tag
     tags:
     - ParadoxCloneObjectiveBlacklist # don't copy the objectives from other clones
+  - type: ObjectiveReward
+    # Reward for obtaining this objective
+    amount: 10000
+    popupMessage: "Nicely done, $10000 paid."
+    onlyAtRoundEnd: true
 
 - type: entity
   parent: [BaseParadoxCloneObjective, BaseLivingObjective]

@@ -21,6 +21,10 @@
     icon:
       sprite: Clothing/Head/Hats/wizardhat.rsi
       state: icon
+  - type: ObjectiveReward
+    amount: 150000
+    popupMessage: "You survived as the Wizard. Paid $150,000."
+    onlyAtRoundEnd: true
 
 - type: entity
   parent: [BaseWizardObjective, BaseFreeObjective]

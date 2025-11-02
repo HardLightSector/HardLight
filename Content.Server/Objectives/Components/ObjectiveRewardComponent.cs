@@ -26,4 +26,11 @@ public sealed partial class ObjectiveRewardComponent : Component
     /// </summary>
     [DataField]
     public bool NotifyPlayer = true;
+
+    /// <summary>
+    /// If true, the reward is only paid during the final round-end sweep and not during periodic progress scans.
+    /// Useful for survive-style objectives so players aren't paid immediately mid-round.
+    /// </summary>
+    [DataField]
+    public bool OnlyAtRoundEnd = false;
 }

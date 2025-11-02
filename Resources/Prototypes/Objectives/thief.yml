@@ -8,6 +8,11 @@
   - type: RoleRequirement
     roles:
     - ThiefRole
+  - type: ObjectiveReward
+    # Reward for obtaining this objective
+    amount: 10000
+    popupMessage: "nice, $10000 paid."
+    onlyAtRoundEnd: true
 
 - type: entity
   abstract: true

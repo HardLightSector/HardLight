@@ -100,10 +100,10 @@ public sealed class ObjectiveRewardSystem : EntitySystem
     private void OnRoundEndTextAppend(RoundEndTextAppendEvent ev)
     {
         // Do a final pass to award anything that just completed.
-        ScanAndReward();
+        ScanAndReward(isRoundEnd: true);
     }
 
-    private void ScanAndReward()
+    private void ScanAndReward(bool isRoundEnd = false)
     {
         // Copy keys since we may mutate tracking on the fly.
         var objectives = ArrayPool<EntityUid>.Shared.Rent(_objectiveToMind.Count);
@@ -123,6 +123,10 @@ public sealed class ObjectiveRewardSystem : EntitySystem
 
             if (!TryComp(objective, out ObjectiveRewardComponent? reward))
                 continue; // No reward configured
+
+            // For objectives marked as round-end only, skip early periodic payment
+            if (reward.OnlyAtRoundEnd && !isRoundEnd)
+                continue;
 
             if (!_objectiveToMind.TryGetValue(objective, out var mindId) || !TryComp(mindId, out MindComponent? mind))
             {

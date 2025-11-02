@@ -21,8 +21,8 @@
       state: icon_blue
   - type: ObjectiveReward
     # Pay the dragon for creating the required three rifts
-    amount: 2500
-    popupMessage: "You completed your Dragon objective: Carp Rifts. Paid $2,500."
+    amount: 250000
+    popupMessage: "You completed your Dragon objective: Carp Rifts. Paid $250,000."
   - type: NumberObjective
     # dragon can only spawn 3 rifts so keep objective the same
     min: 3
@@ -43,5 +43,6 @@
       state: alive
   - type: ObjectiveReward
     # Reward for surviving the round as the dragon
-    amount: 1500
-    popupMessage: "You survived as the Dragon. Paid $1,500."
+    amount: 150000
+    popupMessage: "You survived as the Dragon. Paid $150,000."
+    onlyAtRoundEnd: true

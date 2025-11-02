@@ -25,6 +25,10 @@
     title: objective-condition-doorjack-title
     description: objective-condition-doorjack-description
   - type: DoorjackCondition
+  - type: ObjectiveReward
+    # Reward for obtaining this objective
+    amount: 10000
+    popupMessage: "nicely done, $10000 paid."
 
 - type: entity
   parent: BaseNinjaObjective
@@ -40,6 +44,10 @@
     max: 13
     title: objective-condition-steal-research-title
   - type: StealResearchCondition
+  - type: ObjectiveReward
+    # Reward for obtaining this objective
+    amount: 25000
+    popupMessage: "We'll make use of that, $25000 paid."
 
 - type: entity
   parent: [BaseNinjaObjective, BaseCodeObjective]
@@ -51,6 +59,10 @@
       sprite: Objects/Weapons/Bombs/spidercharge.rsi
       state: icon
   - type: SpiderChargeCondition
+  - type: ObjectiveReward
+    # Reward for obtaining this objective
+    amount: 10000
+    popupMessage: "Boom, $100000 paid."
 
 - type: entity
   parent: [BaseNinjaObjective, BaseSurviveObjective]
@@ -62,6 +74,10 @@
     icon:
       sprite: Clothing/Mask/ninja.rsi
       state: icon
+  - type: ObjectiveReward
+    amount: 25000
+    popupMessage: "You survived as the Ninja. Paid $25000."
+    onlyAtRoundEnd: true
 
 - type: entity
   parent: [BaseNinjaObjective, BaseCodeObjective]
@@ -73,6 +89,11 @@
     icon:
       sprite: Objects/Fun/Instruments/otherinstruments.rsi
       state: red_phone
+  - type: ObjectiveReward
+    # Reward for obtaining this objective
+    amount: 25000
+    popupMessage: "Lets see them handle that, $25000 paid."
+    onlyAtRoundEnd: true
 
 - type: entity
   parent: [BaseNinjaObjective, BaseCodeObjective]
@@ -84,3 +105,8 @@
     icon:
       sprite: Objects/Weapons/Melee/stunbaton.rsi
       state: stunbaton_on
+  - type: ObjectiveReward
+    # Reward for obtaining this objective
+    amount: 25000
+    popupMessage: "Well done, $25000 paid."
+    onlyAtRoundEnd: true

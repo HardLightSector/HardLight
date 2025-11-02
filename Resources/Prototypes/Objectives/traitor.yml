@@ -46,6 +46,11 @@
       sprite: Structures/Furniture/chairs.rsi
       state: shuttle
   - type: EscapeShuttleCondition
+  - type: ObjectiveReward
+    # Reward for surviving the round
+    amount: 15000
+    popupMessage: "You escaped, $15000 paid."
+    onlyAtRoundEnd: true
 
 - type: entity
   parent: BaseTraitorObjective
@@ -64,6 +69,10 @@
       - EscapeShuttleCondition
       - StealCondition
   - type: DieCondition
+  - type: ObjectiveReward
+    # Reward for dying gloriously
+    amount: 200000
+    popupMessage: "That was epic. You died gloriously. Paid $200,000."
 
 #- type: entity
 #  parent: [BaseTraitorObjective, BaseLivingObjective]
@@ -93,6 +102,11 @@
   - type: PickRandomPerson
   - type: KillPersonCondition
     requireMaroon: true
+  - type: ObjectiveReward
+    # Reward for successful kill
+    amount: 50000
+    popupMessage: "They never made it back, $50000 paid."
+    onlyAtRoundEnd: true
 
 - type: entity
   parent: [BaseTraitorObjective, BaseKillObjective]
@@ -112,6 +126,11 @@
     # if ce flies a shittle to centcom you better find a way onto it
     requireDead: true
     requireMaroon: true
+  - type: ObjectiveReward
+    # Reward for successful kill
+    amount: 100000
+    popupMessage: "They never made it back, $100000 paid."
+    onlyAtRoundEnd: true
 
 # social
 
@@ -125,6 +144,11 @@
   - type: TargetObjective
     title: objective-condition-other-traitor-alive-title
   - type: RandomTraitorAlive
+  - type: ObjectiveReward
+    # Reward for them surviving the round
+    amount: 15000
+    popupMessage: "They escaped, $15000 paid."
+    onlyAtRoundEnd: true
 
 - type: entity
   parent: [BaseTraitorSocialObjective, BaseHelpProgressObjective]
@@ -136,6 +160,11 @@
   - type: TargetObjective
     title: objective-condition-other-traitor-progress-title
   - type: RandomTraitorProgress
+  - type: ObjectiveReward
+    # Reward for them succeeding in their objective
+    amount: 10000
+    popupMessage: "They succeeded, $10000 paid."
+    onlyAtRoundEnd: true
 
 # steal
 
@@ -150,6 +179,11 @@
     job: ChiefMedicalOfficer
   - type: StealCondition
     owner: job-name-cmo
+  - type: ObjectiveReward
+    # Reward for obtaining this objective
+    amount: 10000
+    popupMessage: "nice, $10000 paid."
+    onlyAtRoundEnd: true
 
 - type: entity
   parent: BaseCMOStealObjective
@@ -157,6 +191,11 @@
   components:
   - type: StealCondition
     stealGroup: Hypospray
+  - type: ObjectiveReward
+    # Reward for obtaining this objective
+    amount: 10000
+    popupMessage: "nice, $10000 paid."
+    onlyAtRoundEnd: true
 
 - type: entity
   parent: BaseCMOStealObjective
@@ -164,6 +203,11 @@
   components:
   - type: StealCondition
     stealGroup: HandheldCrewMonitor
+  - type: ObjectiveReward
+    # Reward for obtaining this objective
+    amount: 10000
+    popupMessage: "nice, $10000 paid."
+    onlyAtRoundEnd: true
 
 ## rd
 
@@ -176,6 +220,11 @@
     job: ResearchDirector
   - type: StealCondition
     owner: job-name-rd
+  - type: ObjectiveReward
+    # Reward for obtaining this objective
+    amount: 10000
+    popupMessage: "nice, $10000 paid."
+    onlyAtRoundEnd: true
 
 - type: entity
   parent: BaseRDStealObjective
@@ -186,6 +235,11 @@
   - type: Objective
     # This item must be worn or stored in a slowing duffelbag, very hard to hide.
     difficulty: 3
+  - type: ObjectiveReward
+    # Reward for obtaining this objective
+    amount: 10000
+    popupMessage: "nice, $10000 paid."
+    onlyAtRoundEnd: true
 
 - type: entity
   parent: BaseRDStealObjective
@@ -193,6 +247,11 @@
   components:
   - type: StealCondition
     stealGroup: HandTeleporter
+  - type: ObjectiveReward
+    # Reward for obtaining this objective
+    amount: 10000
+    popupMessage: "nice, $10000 paid."
+    onlyAtRoundEnd: true
 
 ## hos
 
@@ -208,6 +267,11 @@
   - type: StealCondition
     stealGroup: WeaponEnergyShotgun
     owner: job-name-hos
+  - type: ObjectiveReward
+    # Reward for obtaining this objective
+    amount: 10000
+    popupMessage: "nice, $10000 paid."
+    onlyAtRoundEnd: true
 
 ## ce
 
@@ -220,6 +284,11 @@
   - type: StealCondition
     stealGroup: ClothingShoesBootsMagAdv
     owner: job-name-ce
+  - type: ObjectiveReward
+    # Reward for obtaining this objective
+    amount: 10000
+    popupMessage: "nice, $10000 paid."
+    onlyAtRoundEnd: true
 
 ## qm
 
@@ -232,6 +301,11 @@
   - type: StealCondition
     stealGroup: BoxFolderQmClipboard
     owner: job-name-qm
+  - type: ObjectiveReward
+    # Reward for obtaining this objective
+    amount: 10000
+    popupMessage: "nice, $10000 paid."
+    onlyAtRoundEnd: true
 
 - type: entity
   parent: BaseTraitorStealObjective
@@ -242,6 +316,11 @@
   - type: StealCondition
     stealGroup: ClothingHandsKnuckleDustersQM
     owner: job-name-qm
+  - type: ObjectiveReward
+    # Reward for obtaining this objective
+    amount: 10000
+    popupMessage: "nice, $10000 paid."
+    onlyAtRoundEnd: true
 
 ## hop
 
@@ -256,6 +335,11 @@
   - type: StealCondition
     stealGroup: FoodMeatCorgi
     owner: objective-condition-steal-Ian
+  - type: ObjectiveReward
+    # Reward for obtaining this objective
+    amount: 10000
+    popupMessage: "nice, $10000 paid."
+    onlyAtRoundEnd: true
 
 ## cap
 
@@ -269,6 +353,11 @@
     difficulty: 3.5
   - type: NotJobRequirement
     job: Captain
+  - type: ObjectiveReward
+    # Reward for obtaining this objective
+    amount: 10000
+    popupMessage: "nice, $10000 paid."
+    onlyAtRoundEnd: true
 
 - type: entity
   parent: BaseCaptainObjective
@@ -276,6 +365,11 @@
   components:
   - type: StealCondition
     stealGroup: CaptainIDCard
+  - type: ObjectiveReward
+    # Reward for obtaining this objective
+    amount: 10000
+    popupMessage: "nice, $10000 paid."
+    onlyAtRoundEnd: true
 
 - type: entity
   parent: BaseCaptainObjective
@@ -283,6 +377,11 @@
   components:
   - type: StealCondition
     stealGroup: JetpackCaptainFilled
+  - type: ObjectiveReward
+    # Reward for obtaining this objective
+    amount: 10000
+    popupMessage: "nice, $10000 paid."
+    onlyAtRoundEnd: true
 
 - type: entity
   parent: BaseCaptainObjective
@@ -291,6 +390,11 @@
   - type: StealCondition
     stealGroup: WeaponAntiqueLaser
     owner: job-name-captain
+  - type: ObjectiveReward
+    # Reward for obtaining this objective
+    amount: 10000
+    popupMessage: "nice, $10000 paid."
+    onlyAtRoundEnd: true
 
 - type: entity
   parent: BaseCaptainObjective
@@ -305,6 +409,11 @@
   - type: StealCondition
     stealGroup: NukeDisk
     owner: objective-condition-steal-station
+  - type: ObjectiveReward
+    # Reward for obtaining this objective
+    amount: 10000
+    popupMessage: "nice, $10000 paid."
+    onlyAtRoundEnd: true
 
 - type: entity
   abstract: true
@@ -317,3 +426,8 @@
     stealGroup: SupermatterSliver
     objectiveNoOwnerText: objective-condition-steal-smsliver-title
     descriptionText: objective-condition-steal-smsliver-description
+  - type: ObjectiveReward
+    # Reward for obtaining this objective
+    amount: 10000
+    popupMessage: "nice, $10000 paid."
+    onlyAtRoundEnd: true
