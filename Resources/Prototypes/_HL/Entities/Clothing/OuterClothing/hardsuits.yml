@@ -51,6 +51,28 @@
     sprite: _HL/Clothing/OuterClothing/Hardsuits/dirizherHS.rsi
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitCartel
+  - type: ContainerContainer
+    containers:
+      cell_slot: !type:ContainerSlot
+      toggleable-clothing: !type:ContainerSlot
+  - type: PowerCellSlot
+    cellSlotId: cell_slot
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellMicroreactor
+        whitelist:
+          tags:
+            - PowerCell
+  - type: EnergyDomeGenerator
+    damageEnergyDraw: 7
+    domePrototype: EnergyDomeSmallPurple # Intended as a balancing measure to give the volunteer-reliant event cartelistas a fighting chance
+  - type: PowerCellDraw
+    drawRate: 10
+    useRate: 0
+  - type: UseDelay
+    delay: 10.0
 
 # Donk. Co Hardsuit
 - type: entity
