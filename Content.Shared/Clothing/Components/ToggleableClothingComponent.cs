@@ -1,4 +1,5 @@
 using Content.Shared.Clothing.EntitySystems;
+using Content.Shared.Humanoid.Markings;
 using Content.Shared.Inventory;
 using Robust.Shared.Containers;
 using Robust.Shared.GameStates;
@@ -8,7 +9,8 @@ using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototy
 namespace Content.Shared.Clothing.Components;
 
 /// <summary>
-///     This component gives an item an action that will equip or un-equip some clothing e.g. hardsuits and hardsuit helmets.
+///     This component gives an item an action that will toggle the visibility of character markings (tattoos, scars, etc.).
+///     When toggled, it shows/hides markings on the body part that this clothing covers.
 /// </summary>
 [Access(typeof(ToggleableClothingSystem))]
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
@@ -17,7 +19,7 @@ public sealed partial class ToggleableClothingComponent : Component
     public const string DefaultClothingContainerId = "toggleable-clothing";
 
     /// <summary>
-    ///     Action used to toggle the clothing on or off.
+    ///     Action used to toggle the markings on or off.
     /// </summary>
     [DataField, AutoNetworkedField]
     public EntProtoId Action = "ActionToggleSuitPiece";
@@ -26,10 +28,24 @@ public sealed partial class ToggleableClothingComponent : Component
     public EntityUid? ActionEntity;
 
     /// <summary>
-    ///     Default clothing entity prototype to spawn into the clothing container.
+    ///     The marking prototype ID to toggle. If specified, only this specific marking will be toggled.
+    ///     If not specified, all markings on the relevant body part will be toggled.
     /// </summary>
-    [DataField(required: true), AutoNetworkedField]
-    public EntProtoId ClothingPrototype = default!;
+    [DataField, AutoNetworkedField]
+    public ProtoId<MarkingPrototype>? MarkingPrototype = null;
+
+    /// <summary>
+    ///     Legacy support: Default clothing entity prototype to spawn into the clothing container.
+    ///     This is kept for backward compatibility with existing hardsuit definitions.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public EntProtoId? ClothingPrototype = null;
+
+    /// <summary>
+    ///     Whether the markings are currently visible or hidden.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public bool MarkingsVisible = false;
 
     /// <summary>
     ///     The inventory slot that the clothing is equipped to.

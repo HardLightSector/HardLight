@@ -1,6 +1,8 @@
 using Content.Shared.Actions;
 using Content.Shared.Clothing.Components;
 using Content.Shared.DoAfter;
+using Content.Shared.Humanoid;
+using Content.Shared.Humanoid.Markings;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
 using Content.Shared.Inventory;
@@ -10,6 +12,7 @@ using Content.Shared.Strip;
 using Content.Shared.Verbs;
 using Robust.Shared.Containers;
 using Robust.Shared.Network;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
@@ -27,6 +30,8 @@ public sealed class ToggleableClothingSystem : EntitySystem
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     [Dependency] private readonly SharedStrippableSystem _strippable = default!;
+    [Dependency] private readonly SharedHumanoidAppearanceSystem _humanoidSystem = default!;
+    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
 
     public override void Initialize()
     {
@@ -48,6 +53,97 @@ public sealed class ToggleableClothingSystem : EntitySystem
         SubscribeLocalEvent<ToggleableClothingComponent, GetVerbsEvent<EquipmentVerb>>(OnGetVerbs);
         SubscribeLocalEvent<AttachedClothingComponent, GetVerbsEvent<EquipmentVerb>>(OnGetAttachedStripVerbsEvent);
         SubscribeLocalEvent<ToggleableClothingComponent, ToggleClothingDoAfterEvent>(OnDoAfterComplete);
+    }
+
+    /// <summary>
+    ///     Automatically configures the component based on the clothing prototype or marking prototype.
+    ///     For marking mode: Sets RequiredFlags based on this clothing's slots.
+    ///     For legacy clothing mode: Sets both RequiredFlags and target Slot.
+    /// </summary>
+    private void AutoConfigureToggleableClothing(EntityUid uid, ToggleableClothingComponent component)
+    {
+        // Get the clothing component of this item (the hardsuit/jumpsuit/etc)
+        if (TryComp<ClothingComponent>(uid, out var thisClothing))
+        {
+            component.RequiredFlags = thisClothing.Slots;
+        }
+
+        // Legacy mode: configure target slot based on spawned clothing entity
+        if (component.ClothingUid != null && component.ClothingPrototype != null)
+        {
+            // Get the clothing component of the target item (helmet/belt) to determine target slot
+            if (TryComp<ClothingComponent>(component.ClothingUid.Value, out var targetClothing))
+            {
+                component.Slot = GetSlotNameFromFlags(targetClothing.Slots);
+            }
+        }
+        // New marking mode: no additional configuration needed, markings are handled dynamically
+
+        Dirty(uid, component);
+    }
+
+    /// <summary>
+    ///     Toggles the visibility of all markings on a specific body part.
+    /// </summary>
+    private void ToggleMarkingsOnBodyPart(EntityUid target, HumanoidAppearanceComponent humanoid, HumanoidVisualLayers bodyPart, bool visible)
+    {
+        // Get the corresponding marking category for this body part
+        var category = MarkingCategoriesConversion.FromHumanoidVisualLayers(bodyPart);
+
+        // Get all markings in this category and toggle their visibility
+        if (humanoid.MarkingSet.TryGetCategory(category, out var markings))
+        {
+            foreach (var marking in markings)
+            {
+                _humanoidSystem.SetMarkingVisibility(target, humanoid, marking.MarkingId, visible);
+            }
+        }
+    }
+
+    /// <summary>
+    ///     Gets the primary body part covered by the given slot flags.
+    /// </summary>
+    private HumanoidVisualLayers? GetBodyPartFromSlotFlags(SlotFlags slotFlags)
+    {
+        // Map slot flags to their corresponding visual layers/body parts
+        if ((slotFlags & SlotFlags.HEAD) != 0) return HumanoidVisualLayers.Head;
+        if ((slotFlags & SlotFlags.EYES) != 0) return HumanoidVisualLayers.Head;
+        if ((slotFlags & SlotFlags.EARS) != 0) return HumanoidVisualLayers.Head;
+        if ((slotFlags & SlotFlags.MASK) != 0) return HumanoidVisualLayers.Head;
+        if ((slotFlags & SlotFlags.NECK) != 0) return HumanoidVisualLayers.Head;
+        if ((slotFlags & SlotFlags.INNERCLOTHING) != 0) return HumanoidVisualLayers.Chest;
+        if ((slotFlags & SlotFlags.OUTERCLOTHING) != 0) return HumanoidVisualLayers.Chest;
+        if ((slotFlags & SlotFlags.GLOVES) != 0) return HumanoidVisualLayers.LHand; // Could also be RHand, Arms
+        if ((slotFlags & SlotFlags.FEET) != 0) return HumanoidVisualLayers.LFoot; // Could also be RFoot, Legs
+        if ((slotFlags & SlotFlags.BELT) != 0) return HumanoidVisualLayers.Chest; // Belts are worn around waist/chest area
+
+        return null; // Unknown or unsupported slot
+    }
+
+    /// <summary>
+    ///     Converts SlotFlags to the corresponding slot name.
+    /// </summary>
+    private string GetSlotNameFromFlags(SlotFlags slotFlags)
+    {
+        // Return the first matching slot name (most clothing only uses one slot)
+        if ((slotFlags & SlotFlags.HEAD) != 0) return "head";
+        if ((slotFlags & SlotFlags.EYES) != 0) return "eyes";
+        if ((slotFlags & SlotFlags.EARS) != 0) return "ears";
+        if ((slotFlags & SlotFlags.MASK) != 0) return "mask";
+        if ((slotFlags & SlotFlags.NECK) != 0) return "neck";
+        if ((slotFlags & SlotFlags.INNERCLOTHING) != 0) return "jumpsuit";
+        if ((slotFlags & SlotFlags.OUTERCLOTHING) != 0) return "outerClothing";
+        if ((slotFlags & SlotFlags.GLOVES) != 0) return "gloves";
+        if ((slotFlags & SlotFlags.FEET) != 0) return "shoes";
+        if ((slotFlags & SlotFlags.BELT) != 0) return "belt";
+        if ((slotFlags & SlotFlags.BACK) != 0) return "back";
+        if ((slotFlags & SlotFlags.IDCARD) != 0) return "id";
+        if ((slotFlags & SlotFlags.POCKET) != 0) return "pocket";
+        if ((slotFlags & SlotFlags.SUITSTORAGE) != 0) return "suitstorage";
+        if ((slotFlags & SlotFlags.WALLET) != 0) return "wallet";
+
+        // Default fallback
+        return "head";
     }
 
     private void GetRelayedVerbs(EntityUid uid, ToggleableClothingComponent component, InventoryRelayedEvent<GetVerbsEvent<EquipmentVerb>> args)
@@ -236,10 +332,19 @@ public sealed class ToggleableClothingSystem : EntitySystem
 
     public void ToggleClothing(EntityUid user, EntityUid target, ToggleableClothingComponent component) // Frontier: private to public
     {
+        var parent = Transform(target).ParentUid;
+
+        // New marking mode
+        if (component.MarkingPrototype != null)
+        {
+            ToggleMarkings(target, user, parent, component);
+            return;
+        }
+
+        // Legacy clothing mode
         if (component.Container == null || component.ClothingUid == null)
             return;
 
-        var parent = Transform(target).ParentUid;
         if (component.Container.ContainedEntity == null)
             _inventorySystem.TryUnequip(user, parent, component.Slot, force: true);
         else if (_inventorySystem.TryGetSlotEntity(parent, component.Slot, out var existing))
@@ -251,11 +356,76 @@ public sealed class ToggleableClothingSystem : EntitySystem
             _inventorySystem.TryEquip(user, parent, component.ClothingUid.Value, component.Slot, triggerHandContact: true);
     }
 
+    /// <summary>
+    ///     Toggles the visibility of markings. If a specific marking prototype is specified,
+    ///     only that marking is toggled. Otherwise, toggles all markings on the body part
+    ///     that this clothing covers.
+    /// </summary>
+    private void ToggleMarkings(EntityUid clothingItem, EntityUid user, EntityUid target, ToggleableClothingComponent component)
+    {
+        if (!TryComp<HumanoidAppearanceComponent>(target, out var humanoid))
+        {
+            _popupSystem.PopupClient(Loc.GetString("toggleable-clothing-not-humanoid"), user, user);
+            return;
+        }
+
+        // Toggle the marking visibility
+        component.MarkingsVisible = !component.MarkingsVisible;
+
+        if (component.MarkingPrototype != null)
+        {
+            // Toggle specific marking
+            var markingId = component.MarkingPrototype.Value;
+            _humanoidSystem.SetMarkingVisibility(target, humanoid, markingId, component.MarkingsVisible);
+
+            // Show feedback to the user
+            var markingName = "Unknown";
+            if (_prototypeManager.TryIndex(markingId, out MarkingPrototype? markingProto))
+            {
+                markingName = markingProto.Name ?? markingId;
+            }
+
+            var message = component.MarkingsVisible
+                ? Loc.GetString("toggleable-clothing-show-marking", ("marking", markingName))
+                : Loc.GetString("toggleable-clothing-hide-marking", ("marking", markingName));
+
+            _popupSystem.PopupClient(message, user, user);
+        }
+        else
+        {
+            // Toggle all markings on the body part this clothing covers
+            var bodyPart = GetBodyPartFromSlotFlags(component.RequiredFlags);
+            if (bodyPart != null)
+            {
+                ToggleMarkingsOnBodyPart(target, humanoid, bodyPart.Value, component.MarkingsVisible);
+
+                var message = component.MarkingsVisible
+                    ? Loc.GetString("toggleable-clothing-show-all-markings", ("bodyPart", bodyPart.Value.ToString()))
+                    : Loc.GetString("toggleable-clothing-hide-all-markings", ("bodyPart", bodyPart.Value.ToString()));
+
+                _popupSystem.PopupClient(message, user, user);
+            }
+        }
+
+        Dirty(clothingItem, component);
+    }
+
     private void OnGetActions(EntityUid uid, ToggleableClothingComponent component, GetItemActionsEvent args)
     {
-        if (component.ClothingUid != null
-            && component.ActionEntity != null
-            && (args.SlotFlags & component.RequiredFlags) == component.RequiredFlags)
+        if (component.ActionEntity == null)
+            return;
+
+        // For marking mode: show action when item is equipped in its natural slot
+        if (component.MarkingPrototype != null)
+        {
+            // Check if this item is equipped in any of its valid slots
+            if ((args.SlotFlags & component.RequiredFlags) != 0)
+            {
+                args.AddAction(component.ActionEntity.Value);
+            }
+        }
+        // For legacy mode: show action only if clothing entity exists and slot requirements are fully met
+        else if (component.ClothingUid != null && (args.SlotFlags & component.RequiredFlags) == component.RequiredFlags)
         {
             args.AddAction(component.ActionEntity.Value);
         }
@@ -263,40 +433,76 @@ public sealed class ToggleableClothingSystem : EntitySystem
 
     private void OnInit(EntityUid uid, ToggleableClothingComponent component, ComponentInit args)
     {
-        component.Container = _containerSystem.EnsureContainer<ContainerSlot>(uid, component.ContainerId);
+        // Only create container for legacy clothing mode, not for marking mode
+        if (component.ClothingPrototype != null)
+        {
+            // Try to get existing container first, and if it's not a ContainerSlot, use a different ID
+            var containerId = component.ContainerId;
+            if (_containerSystem.TryGetContainer(uid, containerId, out var existingContainer))
+            {
+                if (existingContainer is not ContainerSlot)
+                {
+                    // Use a different container ID to avoid conflicts
+                    containerId = "toggleable-clothing-slot";
+                    component.ContainerId = containerId;
+                }
+                else
+                {
+                    // It's already the correct type, use it
+                    component.Container = (ContainerSlot)existingContainer;
+                    return;
+                }
+            }
+
+            // Create the container with the (possibly updated) container ID
+            component.Container = _containerSystem.EnsureContainer<ContainerSlot>(uid, containerId);
+        }
     }
 
     /// <summary>
-    ///     On map init, either spawn the appropriate entity into the suit slot, or if it already exists, perform some
-    ///     sanity checks. Also updates the action icon to show the toggled-entity.
+    ///     On map init, either spawn the appropriate entity into the suit slot (legacy mode),
+    ///     or setup marking toggle functionality (marking mode). Also sets up the toggle action.
     /// </summary>
     private void OnMapInit(EntityUid uid, ToggleableClothingComponent component, MapInitEvent args)
     {
-        if (component.Container!.ContainedEntity is {} ent)
+        // Legacy clothing mode - spawn clothing entity
+        if (component.ClothingPrototype != null)
         {
-            DebugTools.Assert(component.ClothingUid == ent, "Unexpected entity present inside of a toggleable clothing container.");
-            return;
-        }
+            if (component.Container!.ContainedEntity is { } ent)
+            {
+                DebugTools.Assert(component.ClothingUid == ent, "Unexpected entity present inside of a toggleable clothing container.");
+                return;
+            }
 
-        if (component.ClothingUid != null && component.ActionEntity != null)
-        {
-            DebugTools.Assert(Exists(component.ClothingUid), "Toggleable clothing is missing expected entity.");
-            DebugTools.Assert(TryComp(component.ClothingUid, out AttachedClothingComponent? comp), "Toggleable clothing is missing an attached component");
-            DebugTools.Assert(comp?.AttachedUid == uid, "Toggleable clothing uid mismatch");
+            if (component.ClothingUid != null && component.ActionEntity != null)
+            {
+                DebugTools.Assert(Exists(component.ClothingUid), "Toggleable clothing is missing expected entity.");
+                DebugTools.Assert(TryComp(component.ClothingUid, out AttachedClothingComponent? comp), "Toggleable clothing is missing an attached component");
+                DebugTools.Assert(comp?.AttachedUid == uid, "Toggleable clothing uid mismatch");
+            }
+            else
+            {
+                var xform = Transform(uid);
+                component.ClothingUid = Spawn(component.ClothingPrototype, xform.Coordinates);
+                var attachedClothing = EnsureComp<AttachedClothingComponent>(component.ClothingUid.Value);
+                attachedClothing.AttachedUid = uid;
+                Dirty(component.ClothingUid.Value, attachedClothing);
+                _containerSystem.Insert(component.ClothingUid.Value, component.Container!, containerXform: xform);
+                Dirty(uid, component);
+            }
+
+            // Set action icon to show the spawned clothing entity
+            if (_actionContainer.EnsureAction(uid, ref component.ActionEntity, out var action, component.Action))
+                _actionsSystem.SetEntityIcon(component.ActionEntity.Value, component.ClothingUid, action);
         }
         else
         {
-            var xform = Transform(uid);
-            component.ClothingUid = Spawn(component.ClothingPrototype, xform.Coordinates);
-            var attachedClothing = EnsureComp<AttachedClothingComponent>(component.ClothingUid.Value);
-            attachedClothing.AttachedUid = uid;
-            Dirty(component.ClothingUid.Value, attachedClothing);
-            _containerSystem.Insert(component.ClothingUid.Value, component.Container, containerXform: xform);
-            Dirty(uid, component);
+            // Marking mode - just ensure the action exists, no clothing entity to spawn
+            _actionContainer.EnsureAction(uid, ref component.ActionEntity, component.Action);
         }
 
-        if (_actionContainer.EnsureAction(uid, ref component.ActionEntity, out var action, component.Action))
-            _actionsSystem.SetEntityIcon(component.ActionEntity.Value, component.ClothingUid, action);
+        // Auto-configure the component
+        AutoConfigureToggleableClothing(uid, component);
     }
 }
 

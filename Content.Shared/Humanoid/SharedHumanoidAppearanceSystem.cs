@@ -534,7 +534,62 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         markingObject.Forced = forced;
         humanoid.MarkingSet.AddBack(prototype.MarkingCategory, markingObject);
 
+        if (prototype.BodyPart == HumanoidVisualLayers.Penis
+            && humanoid.MarkingSet.TryGetCategory(MarkingCategories.UndergarmentBottom, out var undies))
+        {
+            // If we're wearing underwear, hide the penis.
+            if (undies.Any(undie => !humanoid.HiddenMarkings.Contains(undie.MarkingId)))
+                humanoid.HiddenMarkings.Add(marking);
+        }
+
+        if (prototype.MarkingCategory == MarkingCategories.UndergarmentBottom
+            && humanoid.MarkingSet.TryGetCategory(MarkingCategories.Genital, out var genitals))
+        {
+            // If we have a penis, hide it.
+            foreach (var genital in genitals)
+            {
+                if (!_markingManager.Markings.TryGetValue(genital.MarkingId, out var genitalProto))
+                    continue;
+                if (genitalProto.BodyPart == HumanoidVisualLayers.Penis)
+                    humanoid.HiddenMarkings.Add(genital.MarkingId);
+            }
+        }
+
         if (sync)
+            Dirty(uid, humanoid);
+    }
+
+    /// <summary>
+    ///     Sets the visibility of a specific marking on this humanoid.
+    /// </summary>
+    /// <param name="uid">Humanoid entity UID (owner of the appearance component).</param>
+    /// <param name="humanoid">The appearance component.</param>
+    /// <param name="markingId">The marking prototype ID.</param>
+    /// <param name="visible">True to show the marking, false to hide it.</param>
+    public virtual void SetMarkingVisibility(EntityUid uid, HumanoidAppearanceComponent? humanoid, string markingId, bool visible)
+    {
+        if (!Resolve(uid, ref humanoid))
+            return;
+
+        // Only toggle if the marking actually exists on this humanoid.
+        var hasMarking = humanoid.MarkingSet.Markings.Values
+            .SelectMany(list => list)
+            .Any(m => m.MarkingId == markingId);
+
+        if (!hasMarking)
+            return;
+
+        var dirty = false;
+        if (visible)
+        {
+            dirty |= humanoid.HiddenMarkings.Remove(markingId);
+        }
+        else
+        {
+            dirty |= humanoid.HiddenMarkings.Add(markingId);
+        }
+
+        if (dirty)
             Dirty(uid, humanoid);
     }
 

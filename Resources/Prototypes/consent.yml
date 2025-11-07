@@ -1,4 +1,35 @@
-# - type: consentToggle
-#   id: Example
-#   category: ExampleCategory
-#   priority: 1
+- type: consentToggle
+  id: Vore
+  priority: 1
+
+- type: consentToggle
+  id: Digestion
+  priority: 2
+
+- type: consentToggle
+  id: Hypno
+  category: Hypno
+  unused: true
+
+- type: consentToggle
+  id: NoClone
+  unused: true
+
+- type: consentToggle
+  id: NSFWDescriptions
+  priority: 3
+
+- type: consentToggle
+  id: GenitalMarkings
+  priority: 4
+
+## Note: 'Aphrodisiacs' toggle is defined in _HL/Consent/aphrodisiacs.yml with name/description.
+
+- type: consentToggle
+  id: Cum
+  priority: 5
+
+- type: consentToggle
+  id: NaturalLubricant
+  priority: 6
+

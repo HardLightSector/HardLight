@@ -43,6 +43,19 @@
     LFoot: MobIPCLFoot
     RFoot: MobIPCRFoot
     RArmExtension: MobHumanoidAnyMarking # Hardlight: enables harpy/bat wings
+  # Removed deprecated TailBehind / TailOversuit / duplicate FacialHair entries. Tail layer already present above.
+  # TailBehind: MobHumanoidAnyMarking
+  # TailOversuit: MobHumanoidAnyMarking
+  # FacialHair: MobHumanoidAnyMarking
+    Snout: MobHumanoidAnyMarking
+    UndergarmentTop: MobHumanoidAnyMarking
+    UndergarmentBottom: MobHumanoidAnyMarking
+  Genital: MobHumanoidAnyMarking
+  # Unsupported layers removed: Penis/UndershirtUnderclothes/UndershirtOverclothes
+  # Penis: MobHumanoidAnyMarking
+  Eyes: MobHumanoidEyes
+  # UndershirtUnderclothes: MobHumanoidAnyMarking
+  # UndershirtOverclothes: MobHumanoidAnyMarking
 
 - type: markingPoints
   id: MobIPCMarkingLimits

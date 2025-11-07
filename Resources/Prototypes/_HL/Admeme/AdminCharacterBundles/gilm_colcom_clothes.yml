@@ -1,0 +1,252 @@
+- type: startingGear
+  id: GilmColcomClothes
+  equipment:
+    pocket1: PocketBluespaceTankGilm
+    pocket2: WeaponPistolN1984Gilm
+    head: ClothingHeadHatNfsdBeretGreen
+    neck: ClothingNeckMantleSheriff
+    mask: CigarPlatinum
+    eyes: ClothingEyesGlassesSunglassesWinter
+    ears: ClothingHeadsetAltColCom
+    gloves: ClothingHandsGlovesCombat
+    shoes: ClothingShoesBootsNfsdBrownFilled
+    outerClothing: ClothingOuterArmorBlueShieldGilm
+    jumpsuit: ClothingUniformJumpsuitCentcomAgent
+    belt: ClothingBeltBlueShieldGilmFilled
+    back: ClothingBackpackSatchelHoldingGilmFilled
+    id: DeathsquadPDA
+
+# pocket1
+- type: entity
+  id: PocketBluespaceTankGilm
+  categories: [ HideSpawnMenu ]
+  parent: SmallBluespaceAirTank
+  # name:
+  # description:
+  suffix: Gilm, Admin
+  components:
+  - type: GasTank
+    outputPressure: 0.3
+    air:
+      # 321 Min, 40 Sec
+      volume: 10
+      moles:
+        - 1203 # oxygen
+      temperature: 1
+
+# pocket2
+- type: entity
+  id: WeaponPistolN1984Gilm
+  categories: [ HideSpawnMenu ]
+  parent: WeaponPistolN1984Arachne
+  # name:
+  description: A modified N1984 customized with a leather grip and a inscription on the slide, The incscription reads; "You may run from the law, but you cant run from me."
+  suffix: Gilm, Admin
+  components:
+  - type: Gun
+    minAngle: 1
+    maxAngle: 15
+    angleIncrease: 5
+    angleDecay: 9
+    fireRate: 5
+
+
+
+# head
+# - type: entity
+#   id:
+#   categories: [ HideSpawnMenu ]
+#   parent:
+#   name:
+#   description:
+#   suffix:
+#   components:
+
+# neck
+# - type: entity
+  # id:
+  # parent:
+  # name:
+  # description:
+  # suffix:
+  # components:
+
+# mask
+# - type: entity
+  # id:
+  # parent:
+  # name:
+  # description:
+  # suffix:
+  # components:
+
+# eyes
+# - type: entity
+#   id:
+#   parent:
+#   name:
+#   description:
+#   suffix:
+#   components:
+
+# ears
+# - type: entity
+  # id:
+  # parent:
+  # name:
+  # description:
+  # suffix:
+  # components:
+
+# gloves
+# - type: entity
+  # id:
+  # parent:
+  # name:
+  # description:
+  # suffix:
+  # components:
+
+# shoes
+# - type: entity
+  # id:
+  # parent:
+  # name:
+  # description:
+  # suffix:
+  # components:
+
+# suitstorage
+# - type: entity
+  # id:
+  # parent:
+  # name:
+  # description:
+  # suffix:
+  # components:
+
+# outerClothing
+- type: entity
+  id: ClothingOuterArmorBlueShieldGilm
+  categories: [ HideSpawnMenu ]
+  parent: ClothingOuterArmorBlueShield
+  suffix: Gilm, Admin
+  components:
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.4
+        Slash: 0.4
+        Piercing: 0.4
+        Heat: 0.45
+  - type: ExplosionResistance
+    damageCoefficient: 0.1
+
+# jumpsuit
+# - type: entity
+  # id:
+  # parent:
+  # name:
+  # description:
+  # suffix:
+  # components:
+
+# wallet
+# - type: entity
+  # id:
+  # parent:
+  # name:
+  # description:
+  # suffix:
+  # components:
+  # - type: StorageFill
+    # contents:
+      # - id:
+        # amount: 1
+
+# belt
+- type: entity
+  id: ClothingBeltBlueShieldGilmFilled
+  categories: [ HideSpawnMenu ]
+  parent: ClothingBeltBlueShield
+  # name:
+  # description:
+  suffix: Gilm, Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: Magazine45_magnumPistolAP
+        amount: 8
+      - id: CombatMedAutoInjectorDisposable
+        amount: 4
+
+# backpack
+- type: entity
+  id: ClothingBackpackSatchelHoldingGilmFilled
+  categories: [ HideSpawnMenu ]
+  parent: ClothingBackpackSatchelHolding
+  # name:
+  # description:
+  suffix: Gilm, Filled
+  components:
+  - type: ExplosionResistance
+    damageCoefficient: 0
+  - type: Storage
+    maxItemSize: Ginormous
+    grid:
+    - 0,0,20,10
+  - type: StorageFill
+    contents:
+      - id: AmmoBox45_magnumAP
+        amount: 4
+      - id: ToolDebug
+      - id: Multitool
+      - id: WelderExperimental
+      - id: CigarPlatinumCase
+        amount: 4
+      - id: MedicalTrackingImplanterDisposable
+      - id: DeathRattleImplanterColcommDisposable
+      - id: MedicalTrackingImplanterDisposable
+      - id: StorageImplanterDisposable
+
+# ID Card
+# - type: entity
+  # id:
+  # parent: IDCardStandard
+  # name:
+  # description:
+  # suffix:
+  # components:
+  # - type: Access
+    # tags:
+    # - Maintenance
+    # - External
+
+- type: entity
+  id: CombatMedAutoInjectorDisposable
+  categories: [ HideSpawnMenu ]
+  parent: [ BaseDisposableAdminItem, AirlossAutoInjector ]
+  name: disposable Combat Medicine auto-injector
+  components:
+  - type: Hypospray
+    solutionName: pen
+    transferAmount: 40
+    onlyAffectsMobs: false
+    injectOnly: true
+  - type: SolutionContainerManager
+    solutions:
+      pen:
+        maxVol: 40
+        reagents:
+        - ReagentId: Mechanites
+          Quantity: 5
+        - ReagentId: Ichor
+          Quantity: 5
+        - ReagentId: Bloodeye
+          Quantity: 10
+        - ReagentId: Pyrazine
+          Quantity: 5
+        - ReagentId: Stellibinin
+          Quantity: 5
+        - ReagentId: PolypyryliumOligomers
+          Quantity: 10

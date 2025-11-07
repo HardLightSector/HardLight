@@ -50,6 +50,8 @@
         state: female_full
         visible: false
       - map: [ "enum.HumanoidVisualLayers.UndergarmentBottom" ]
+      - map: [ "enum.HumanoidVisualLayers.Genital" ]
+      - map: [ "enum.HumanoidVisualLayers.Penis" ]
       - map: [ "enum.HumanoidVisualLayers.UndergarmentTop" ]
       - map: [ "accessory1" ]
       - map: [ "accessory2" ]

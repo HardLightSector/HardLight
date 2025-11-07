@@ -24,6 +24,13 @@ public sealed partial class HumanoidAppearanceComponent : Component
     [DataField, AutoNetworkedField]
     public HashSet<HumanoidVisualLayers> PermanentlyHidden = new();
 
+    /// <summary>
+    ///     A set of marking IDs that are currently hidden on this humanoid.
+    ///     Used to toggle visibility of specific markings (e.g., undergarments/genitals).
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public HashSet<string> HiddenMarkings = new();
+
     // Couldn't these be somewhere else?
 
     [DataField, AutoNetworkedField]

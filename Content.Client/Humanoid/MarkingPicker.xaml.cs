@@ -129,8 +129,9 @@ public sealed partial class MarkingPicker : Control
         IoCManager.InjectDependencies(this);
 
         _sprite = _entityManager.System<SpriteSystem>();
-
-        CMarkingCategoryButton.OnItemSelected +=  OnCategoryChange;
+        
+        // Subscribe to consent changes to refresh categories
+        CMarkingCategoryButton.OnItemSelected += OnCategoryChange;
         CMarkingsUnused.OnItemSelected += item =>
             _selectedUnusedMarking = CMarkingsUnused[item.ItemIndex];
 
@@ -157,8 +158,9 @@ public sealed partial class MarkingPicker : Control
         {
             var category = _markingCategories[i];
             var markings = GetMarkings(category);
-            if (_ignoreCategories.Contains(category) ||
-                markings.Count == 0)
+            
+            // Check if the category should be ignored
+            if (_ignoreCategories.Contains(category) || markings.Count == 0)
             {
                 continue;
             }
