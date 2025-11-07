@@ -36,7 +36,7 @@
   - type: Sprite
     scale: 0.9, 0.9
     layers:
-      - map: [ "enum.HumanoidVisualLayers.TailBehind" ]
+      # - map: [ "enum.HumanoidVisualLayers.TailBehind" ] Layer does not exist yet, HL
       - map: [ "enum.HumanoidVisualLayers.Chest" ]
       - map: [ "enum.HumanoidVisualLayers.Head" ]
       - map: [ "enum.HumanoidVisualLayers.Snout" ]
@@ -49,7 +49,6 @@
       - map: [ "enum.HumanoidVisualLayers.UndergarmentBottom" ]
       - map: [ "enum.HumanoidVisualLayers.Penis" ]
       - map: [ "enum.HumanoidVisualLayers.UndergarmentTop" ]
-      - map: [ "enum.HumanoidVisualLayers.UndershirtUnderclothes" ]
       - map: [ "socks" ]
       - map: [ "jumpsuit" ]
       - map: ["enum.HumanoidVisualLayers.LFoot"]
@@ -69,8 +68,6 @@
       - map: [ "eyes" ]
       - map: [ "belt" ]
       - map: [ "back" ]
-      - map: [ "enum.HumanoidVisualLayers.TailOversuit" ]
-      - map: [ "enum.HumanoidVisualLayers.UndershirtOverclothes" ]
       - map: [ "neck" ]
       - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
       - map: [ "enum.HumanoidVisualLayers.HeadSide" ]

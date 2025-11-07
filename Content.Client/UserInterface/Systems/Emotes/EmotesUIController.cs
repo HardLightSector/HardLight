@@ -25,13 +25,17 @@ public sealed class EmotesUIController : UIController, IOnStateChanged<GameplayS
     private MenuButton? EmotesButton => UIManager.GetActiveUIWidgetOrNull<MenuBar.Widgets.GameTopMenuBar>()?.EmotesButton;
     private SimpleRadialMenu? _menu;
 
-    private static readonly Dictionary<EmoteCategory, (string Tooltip, SpriteSpecifier Sprite)> EmoteGroupingInfo
-        = new Dictionary<EmoteCategory, (string Tooltip, SpriteSpecifier Sprite)>
+    private static readonly Dictionary<EmoteCategory, (string Tooltip, SpriteSpecifier Sprite)> EmoteGroupingInfo =
+        new()
         {
-            [EmoteCategory.Sex] = ("emote-menu-category-sex", new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/Emotes/lewdemotes.png"))),
-            [EmoteCategory.General] = ("emote-menu-category-general", new SpriteSpecifier.Texture(new ResPath("/Textures/Clothing/Head/Soft/mimesoft.rsi/icon.png"))),
-            [EmoteCategory.Hands] = ("emote-menu-category-hands", new SpriteSpecifier.Texture(new ResPath("/Textures/Clothing/Hands/Gloves/latex.rsi/icon.png"))),
-            [EmoteCategory.Vocal] = ("emote-menu-category-vocal", new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/Emotes/vocal.png"))),
+            [EmoteCategory.General] = ("emote-menu-category-general",
+                new SpriteSpecifier.Rsi(new ResPath("/Textures/Clothing/Head/Soft/mimesoft.rsi"), "icon")),
+            [EmoteCategory.Hands] = ("emote-menu-category-hands",
+                new SpriteSpecifier.Rsi(new ResPath("/Textures/Clothing/Hands/Gloves/latex.rsi"), "icon")),
+            [EmoteCategory.Vocal] = ("emote-menu-category-vocal",
+                new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/Emotes/vocal.png"))),
+            [EmoteCategory.Sex] = ("emote-menu-category-sex",
+                new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/Emotes/lewdemotes.png"))),
         };
 
     public void OnStateEntered(GameplayState state)
