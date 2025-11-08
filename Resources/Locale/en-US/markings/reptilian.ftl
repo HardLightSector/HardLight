@@ -11,17 +11,21 @@ marking-LizardFrillsAquatic = Lizard Frills (Aquatic)
 marking-LizardHornsAngler-horns_angler = Lizard Horns (Angler)
 marking-LizardHornsAngler = Lizard Horns (Angler)
 
-marking-LizardHornsCurled-horns_curled = Lizard Horns (Curled)
 marking-LizardHornsCurled = Lizard Horns (Curled)
+marking-LizardHornsCurled-horns_curled_l = Left Horn
+marking-LizardHornsCurled-horns_curled_r = Right Horn
 
-marking-LizardHornsRam-horns_ram = Lizard Horns (Ram)
 marking-LizardHornsRam = Lizard Horns (Ram)
+marking-LizardHornsRam-horns_ram_l = Left Horn
+marking-LizardHornsRam-horns_ram_r = Right Horn
 
-marking-LizardHornsShort-horns_short = Lizard Horns (Short)
 marking-LizardHornsShort = Lizard Horns (Short)
+marking-LizardHornsShort-horns_short_l = Left Horn
+marking-LizardHornsShort-horns_short_r = Right Horn
 
-marking-LizardHornsSimple-horns_simple = Lizard Horns
-marking-LizardHornsSimple = Lizard Horns
+marking-LizardHornsSimple = Lizard Horns (Simple)
+marking-LizardHornsSimple-horns_simple_l = Left Horn
+marking-LizardHornsSimple-horns_simple_r = Right Horn
 
 marking-LizardTailSmooth-tail_smooth_primary = Lizard Tail
 marking-LizardTailSmooth-tail_smooth_secondary = Under Tone
@@ -75,8 +79,9 @@ marking-LizardFrillsBig = Lizard Frills (Big)
 marking-LizardFrillsNeckfull-frills_neckfull = Lizard Frills (Neckfull)
 marking-LizardFrillsNeckfull = Lizard Frills (Neckfull)
 
-marking-LizardHornsDouble-horns_double = Lizard Horns (Double)
 marking-LizardHornsDouble = Lizard Horns (Double)
+marking-LizardHornsDouble-horns_double_l = Left Horn
+marking-LizardHornsDouble-horns_double_r = Right Horn
 
 marking-LizardFrillsAxolotl-frills_axolotl = Lizard Frills (Axolotl)
 marking-LizardFrillsAxolotl = Lizard Frills (Axolotl)
@@ -85,20 +90,25 @@ marking-LizardFrillsHood-frills_hood_primary = Outer Hood
 marking-LizardFrillsHood-frills_hood_secondary = Inner Hood
 marking-LizardFrillsHood = Lizard Frills (Hood)
 
-marking-LizardHornsArgali-horns_argali = Lizard Horns (Argali)
 marking-LizardHornsArgali = Lizard Horns (Argali)
+marking-LizardHornsArgali-horns_argali_l = Left Horn
+marking-LizardHornsArgali-horns_argali_r = Right Horn
 
-marking-LizardHornsAyrshire-horns_ayrshire = Lizard Horns (Ayrshire)
 marking-LizardHornsAyrshire = Lizard Horns (Ayrshire)
+marking-LizardHornsAyrshire-horns_ayrshire_l = Left Horn
+marking-LizardHornsAyrshire-horns_ayrshire_r = Right Horn
 
-marking-LizardHornsMyrsore-horns_myrsore = Lizard Horns (Myrsore)
 marking-LizardHornsMyrsore = Lizard Horns (Myrsore)
+marking-LizardHornsMyrsore-horns_myrsore_l = Left Horn
+marking-LizardHornsMyrsore-horns_myrsore_r = Right Horn
 
-marking-LizardHornsBighorn-horns_bighorn = Lizard Horns (Bighorn)
 marking-LizardHornsBighorn = Lizard Horns (Bighorn)
+marking-LizardHornsBighorn-horns_bighorn_l = Left Horn
+marking-LizardHornsBighorn-horns_bighorn_r = Right Horn
 
-marking-LizardHornsDemonic-horns_demonic = Lizard Horns (Demonic)
 marking-LizardHornsDemonic = Lizard Horns (Demonic)
+marking-LizardHornsDemonic-horns_demonic_l = Left Horn
+marking-LizardHornsDemonic-horns_demonic_r = Right Horn
 
 marking-LizardHornsKoboldEars-horns_kobold_ears = Lizard Ears (Kobold)
 marking-LizardHornsKoboldEars = Lizard Ears (Kobold)

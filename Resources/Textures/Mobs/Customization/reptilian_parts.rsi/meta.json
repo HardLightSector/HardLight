@@ -658,19 +658,35 @@
       "directions": 4
     },
     {
-      "name": "horns_simple",
+      "name": "horns_simple_l",
       "directions": 4
     },
     {
-      "name": "horns_short",
+      "name": "horns_simple_r",
       "directions": 4
     },
     {
-      "name": "horns_curled",
+      "name": "horns_short_l",
       "directions": 4
     },
     {
-      "name": "horns_ram",
+      "name": "horns_short_r",
+      "directions": 4
+    },
+    {
+      "name": "horns_curled_l",
+      "directions": 4
+    },
+    {
+      "name": "horns_curled_r",
+      "directions": 4
+    },
+    {
+      "name": "horns_ram_l",
+      "directions": 4
+    },
+    {
+      "name": "horns_ram_r",
       "directions": 4
     },
     {
@@ -694,7 +710,11 @@
       "directions": 4
     },
     {
-      "name": "horns_double",
+      "name": "horns_double_l",
+      "directions": 4
+    },
+    {
+      "name": "horns_double_r",
       "directions": 4
     },
     {
@@ -734,23 +754,43 @@
       "directions": 4
     },
     {
-      "name": "horns_argali",
+      "name": "horns_argali_l",
       "directions": 4
     },
     {
-      "name": "horns_ayrshire",
+      "name": "horns_argali_r",
       "directions": 4
     },
     {
-      "name": "horns_myrsore",
+      "name": "horns_ayrshire_l",
       "directions": 4
     },
     {
-      "name": "horns_bighorn",
+      "name": "horns_ayrshire_r",
       "directions": 4
     },
     {
-      "name": "horns_demonic",
+      "name": "horns_myrsore_l",
+      "directions": 4
+    },
+    {
+      "name": "horns_myrsore_r",
+      "directions": 4
+    },
+    {
+      "name": "horns_bighorn_l",
+      "directions": 4
+    },
+    {
+      "name": "horns_bighorn_r",
+      "directions": 4
+    },
+    {
+      "name": "horns_demonic_l",
+      "directions": 4
+    },
+    {
+      "name": "horns_demonic_r",
       "directions": 4
     },
     {
