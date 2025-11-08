@@ -1,0 +1,20 @@
+﻿- type: entity
+  parent: [ ClothingUniformBase, BaseMajorContraband ]
+  id: ClothingUniformJumpsuitLegionnaire
+  name: legionnaire jumpsuit
+  description: A tight-fitting jumpsuit lined with technology allowing the wearer to nullphase.
+  components:
+    - type: Sprite
+      sprite: _Afterlight/Clothing/Uniforms/Jumpsuit/chrono_uniform.rsi
+      layers:
+        - state: icon
+        - state: icon-unshaded
+          shader: unshaded
+    - type: Clothing
+      sprite: _Afterlight/Clothing/Uniforms/Jumpsuit/chrono_uniform.rsi
+      clothingVisuals:
+        jumpsuit:
+          - state: equipped-INNERCLOTHING
+          - state: equipped-INNERCLOTHING-unshaded
+            shader: unshaded
+    - type: NullPhase

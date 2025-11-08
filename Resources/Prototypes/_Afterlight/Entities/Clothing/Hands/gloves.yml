@@ -1,0 +1,13 @@
+﻿- type: entity
+  parent: [ ClothingHandsBase, BaseMajorContraband ]
+  id: ClothingHandsChronoGloves
+  name: legionnaire gloves
+  components:
+    - type: Sprite
+      sprite: _Afterlight/Clothing/Hands/Gloves/chronogloves.rsi
+    - type: Clothing
+      sprite: _Afterlight/Clothing/Hands/Gloves/chronogloves.rsi
+    - type: FingerprintMask
+    - type: Thieving
+      stripTimeReduction: 10 #very fast. not quite instant
+      stealthy: true

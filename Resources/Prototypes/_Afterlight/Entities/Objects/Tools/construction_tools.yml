@@ -1,0 +1,12 @@
+﻿- type: entity
+  id: ChronoRCD
+  parent: RCD
+  name: chrono RCD
+  description: A nullspace-enhanced rapid construction device that rapidly generates its own compressed matter.
+  components:
+    - type: Sprite
+      sprite: _Afterlight/Objects/Tools/chrono_rcd.rsi
+    - type: Item
+      sprite: _Afterlight/Objects/Tools/chrono_rcd.rsi
+    - type: AutoRecharge
+      rechargeDuration: 1

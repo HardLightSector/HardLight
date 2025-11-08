@@ -1,0 +1,14 @@
+﻿- type: entity
+  parent: [ EncryptionKey, BaseMajorContraband ]
+  id: EncryptionKeyChrono
+  name: chrono encryption key
+  description: An encryption key that hears everything.
+  components:
+    - type: EncryptionKey
+      defaultChannel: Command
+      allComms: true
+    - type: Sprite
+      sprite: _Afterlight/Objects/Devices/encryption_keys.rsi
+      layers:
+        - state: crypt_chrono
+        - state: chrono_label

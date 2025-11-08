@@ -1,0 +1,31 @@
+﻿- type: job
+  id: ChronoLegionnaire
+  name: job-name-legionnaire
+  description: job-description-legionnaire
+  playTimeTracker: JobLegionnaire
+  setPreference: false
+  startingGear: ChronoLegionnaireGear
+  icon: JobIconLegionnaire
+  supervisors: job-supervisors-tsf
+  canBeAntag: false
+  accessGroups:
+    - AllAccess
+  access:
+    - CentralCommand
+
+- type: startingGear
+  id: ChronoLegionnaireGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitLegionnaire
+    back: ClothingBackpackChrono
+    shoes: ClothingShoesBootsMagChrono
+    outerClothing: ClothingOuterHardsuitLegionnaire
+    id: ChronoPDA
+    eyes: ClothingEyesHudChrono
+    ears: ClothingHeadsetChrono
+    gloves: ClothingHandsChronoGloves
+    suitstorage: Chronoprod
+    pocket1: TheriacHypogun
+  storage:
+    back:
+      - ChronoRCD

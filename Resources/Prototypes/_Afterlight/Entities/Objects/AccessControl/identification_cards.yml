@@ -1,0 +1,32 @@
+﻿- type: entity
+  parent: [ IDCardStandard, BaseMajorContraband ]
+  id: ChronoIDCard
+  description: a ID of the far future. has access to everything.
+  name: legionnaire ID card
+  components:
+    - type: Sprite
+      sprite: _Afterlight/Objects/AccessControl/id_cards.rsi
+      layers:
+        - state: chrono
+        - state: chrono-unshaded
+          shader: unshaded
+    - type: Item
+      sprite: _Afterlight/Objects/AccessControl/id_cards.rsi
+      heldPrefix: chrono
+    - type: IdCard
+      jobTitle: job-name-Chrono
+      jobIcon: JobIconLegionnaire
+      bypassLogging: true # leave no trace.
+    - type: Access
+      groups:
+        - AllAccess
+        - Silicon
+      tags:
+        - CentralCommand
+        - NuclearOperative
+        - SyndicateAgent
+        - Wizard
+        - Xenoborg
+    - type: Tag #  Ignore Chameleon tags
+      tags:
+        - DoorBumpOpener

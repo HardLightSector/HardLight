@@ -1,0 +1,21 @@
+- type: entity
+  parent: Jump
+  id: JumpLagomorph
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Action
+    useDelay: 1
+    itemIconStyle: NoItem
+    icon:
+      sprite: _Afterlight/Actions/resomi.rsi
+      state: jump
+  - type: LimitedCharges
+    maxCharges: 3
+  - type: AutoRecharge
+    rechargeDuration: 10
+  - type: WorldTargetAction
+    event: !type:JumpActionEvent
+      distance: 10
+      speed: 10
+      sound:
+        path: /Audio/_Afterlight/Effects/lagomorph_jump.ogg

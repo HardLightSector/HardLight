@@ -1,0 +1,43 @@
+﻿# Taken from https://github.com/RMC-14/RMC-14
+- type: entity
+  parent: BaseItem
+  id: ALCassettePlayer
+  name: cassette player
+  description: A cassette player that first hit the market over 100 years ago. Crazy how these never went out of style.
+  components:
+  - type: Sprite
+    sprite: _Afterlight/Objects/Devices/cassette_player.rsi
+    state: walkman
+  - type: Item
+    size: Small
+  - type: Clothing
+    slots:
+    - neck
+  - type: CassettePlayer
+
+- type: entity
+  abstract: true
+  parent: BaseItem
+  id: ALCassetteTapeBase
+  name: cassette
+  description: A plastic cassette tape.
+  components:
+  - type: Sprite
+    sprite: _Afterlight/Objects/Devices/cassette_player.rsi
+    state: cassette_blue
+  - type: Item
+    size: Small
+  - type: CassetteTape
+
+- type: entity
+  parent: ALCassetteTapeBase
+  id: ALCassetteTapeCustom
+  name: custom cassette
+  components:
+  - type: Sprite
+    state: cassette_rising_sun
+  - type: Item
+    size: Small
+  - type: CassetteTape
+    songs: []
+    custom: true

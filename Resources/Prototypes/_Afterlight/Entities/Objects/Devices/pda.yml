@@ -1,0 +1,22 @@
+﻿- type: entity
+  parent: AdminPDA
+  id: ChronoPDA
+  name: legionnaire PDA
+  components:
+    - type: Pda
+      id: ChronoIDCard
+      penSlot:
+        startingItem: ChronoPen
+        priority: -1
+        whitelist:
+          tags:
+            - Write
+    - type: Appearance
+      appearanceDataInit:
+        enum.PdaVisuals.PdaType:
+          !type:String
+          pda-chronoagent
+    - type: PdaBorderColor
+      borderColor: "#32e5f1"
+    - type: Icon
+      state: pda-chronoagent
