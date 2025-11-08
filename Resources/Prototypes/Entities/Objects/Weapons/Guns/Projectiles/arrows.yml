@@ -172,7 +172,7 @@
     maxIntensity: 1.5
     intensitySlope: 1.25
     totalIntensity: 2.75
-    maxTileBreak: 1
+    maxTileBreak: 0
   - type: PointLight
     radius: 1.3
     color: orange
