@@ -1,5 +1,7 @@
+using Content.Shared.Radio;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared._NF.Implants.Components;
 
@@ -10,11 +12,19 @@ namespace Content.Shared._NF.Implants.Components;
 [RegisterComponent, NetworkedComponent]
 public sealed partial class MedicalTeleportImplantComponent : Component
 {
+    #region Hardlight: Add separate teleport delay and duration
     /// <summary>
     /// Delay before teleporting after death.
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite), DataField("teleportDelay")]
-    public TimeSpan TeleportDelay = TimeSpan.FromSeconds(10);
+    public TimeSpan TeleportDelay = TimeSpan.FromSeconds(30);
+
+    /// <summary>
+    /// Time it takes to teleport.
+    /// </summary>
+    [ViewVariables(VVAccess.ReadWrite), DataField("teleportDuration")]
+    public TimeSpan TeleportDuration = TimeSpan.FromSeconds(5);
+    #endregion
 
     /// <summary>
     /// Sound played when the teleport occurs.
@@ -45,4 +55,18 @@ public sealed partial class MedicalTeleportImplantComponent : Component
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite), DataField("nextAllowedTeleport", customTypeSerializer: typeof(Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.TimeOffsetSerializer))]
     public TimeSpan NextAllowedTeleport = TimeSpan.Zero;
+
+    #region HardLight: Add localisable and configurable radio messages
+    // The radio channel the message will be sent to
+    [ViewVariables(VVAccess.ReadWrite), DataField("radioChannel")]
+    public ProtoId<RadioChannelPrototype> RadioChannel = "Medical";
+
+    // The message that the implant will send when the patient dies
+    [ViewVariables(VVAccess.ReadWrite), DataField("deathMessage")]
+    public LocId DeathMessage = "medical-teleport-implant-death-message";
+
+    // The message that the implant will send when the patient is teleported
+    [ViewVariables(VVAccess.ReadWrite), DataField("teleportMessage")]
+    public LocId TeleportMessage = "medical-teleport-implant-teleport-message";
+    #endregion
 }

@@ -10,7 +10,10 @@
     - type: SubdermalImplant
     # Plays med radio alerts on critical/dead and now also schedules evac teleport on death
     - type: MedicalTeleportImplant
-      teleportDelay: 10
+      # HL start: Add separate delay and duration, increase delay
+      teleportDelay: 30
+      teleportDuration: 5
+      # HL end
       teleportSound:
         path: /Audio/Effects/teleport_departure.ogg
 #    - type: SuitSensor
