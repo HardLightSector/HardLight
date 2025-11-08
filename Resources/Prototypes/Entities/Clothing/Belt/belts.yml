@@ -750,18 +750,18 @@
       # tags:
     # - WizardWand
 
-- type: entity
-  parent: ClothingBeltBase
-  id: ClothingBeltCock
-  name: AA chameleon cock
-  description: Universal unloading system for fun in space.
-  components:
-    - type: Sprite
-      sprite: Mobs/Customization/Markings/Genital/cock.rsi
-    - type: ChameleonClothing
-      slot: [belt]
-      default: ClothingBeltBase
-    - type: UserInterface
-      interfaces:
-        enum.ChameleonUiKey.Key:
-          type: ChameleonBoundUserInterface
+#- type: entity
+#  parent: ClothingBeltBase
+#  id: ClothingBeltCock
+#  name: AA chameleon cock
+#  description: Universal unloading system for fun in space.
+#  components:
+#    - type: Sprite
+#      sprite: Mobs/Customization/Markings/Genital/cock.rsi
+#    - type: ChameleonClothing
+#      slot: [belt]
+#      default: ClothingBeltBase
+#    - type: UserInterface
+#      interfaces:
+#        enum.ChameleonUiKey.Key:
+#          type: ChameleonBoundUserInterface

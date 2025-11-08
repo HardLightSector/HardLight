@@ -1,0 +1,1839 @@
+{
+  "version": 1,
+  "license": null,
+  "copyright": null,
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "amputated_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "BRC-Knotted",
+      "directions": 4
+    },
+    {
+      "name": "penis_nondescript_1_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_nondescript_1_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_nondescript_1_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_nondescript_2_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_nondescript_2_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_nondescript_2_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_nondescript_3_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_nondescript_3_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_nondescript_3_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_nondescript_4_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_nondescript_4_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_nondescript_4_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_nondescript_5_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_nondescript_5_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_nondescript_5_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_human_1_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_human_1_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_human_1_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_human_2_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_human_2_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_human_2_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_human_3_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_human_3_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_human_3_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_human_4_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_human_4_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_human_4_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_human_5_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_human_5_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_human_5_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_knotted_1_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_knotted_1_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_knotted_1_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_knotted_2_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_knotted_2_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_knotted_2_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_knotted_3_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_knotted_3_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_knotted_3_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_knotted_4_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_knotted_4_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_knotted_4_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_knotted_5_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_knotted_5_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_knotted_5_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_flared_1_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_flared_1_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_flared_1_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_flared_2_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_flared_2_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_flared_2_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_flared_3_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_flared_3_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_flared_3_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_flared_4_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_flared_4_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_flared_4_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_flared_5_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_flared_5_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_flared_5_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_barbknot_1_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_barbknot_1_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_barbknot_1_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_barbknot_2_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_barbknot_2_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_barbknot_2_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_barbknot_3_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_barbknot_3_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_barbknot_3_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_barbknot_4_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_barbknot_4_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_barbknot_4_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_barbknot_5_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_barbknot_5_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_barbknot_5_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_tentacle_1_0_FRONT",
+      "directions": 4,
+      "delays": [
+        [
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5
+        ]
+      ]
+    },
+    {
+      "name": "penis_tentacle_1_0_BEHIND",
+      "directions": 4,
+      "delays": [
+        [
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5
+        ]
+      ]
+    },
+    {
+      "name": "penis_tentacle_1_1_FRONT",
+      "directions": 4,
+      "delays": [
+        [
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5
+        ]
+      ]
+    },
+    {
+      "name": "penis_tentacle_1_1_BEHIND",
+      "directions": 4,
+      "delays": [
+        [
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5
+        ]
+      ]
+    },
+    {
+      "name": "penis_tentacle_2_0_FRONT",
+      "directions": 4,
+      "delays": [
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.1
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.1
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.1
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.1
+        ]
+      ]
+    },
+    {
+      "name": "penis_tentacle_2_0_BEHIND",
+      "directions": 4,
+      "delays": [
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.1
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.1
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.1
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.1
+        ]
+      ]
+    },
+    {
+      "name": "penis_tentacle_2_1_FRONT",
+      "directions": 4,
+      "delays": [
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.1
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.1
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.1
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.1
+        ]
+      ]
+    },
+    {
+      "name": "penis_tentacle_2_1_BEHIND",
+      "directions": 4,
+      "delays": [
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.1
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.1
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.1
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.1
+        ]
+      ]
+    },
+    {
+      "name": "penis_tentacle_3_0_FRONT",
+      "directions": 4,
+      "delays": [
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.1
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.1
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.1
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.1
+        ]
+      ]
+    },
+    {
+      "name": "penis_tentacle_3_0_BEHIND",
+      "directions": 4,
+      "delays": [
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.1
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.1
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.1
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.1
+        ]
+      ]
+    },
+    {
+      "name": "penis_tentacle_3_1_FRONT",
+      "directions": 4,
+      "delays": [
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.1
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.1
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.1
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.1
+        ]
+      ]
+    },
+    {
+      "name": "penis_tentacle_3_1_BEHIND",
+      "directions": 4,
+      "delays": [
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.1
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.1
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.1
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.1
+        ]
+      ]
+    },
+    {
+      "name": "penis_tentacle_4_0_FRONT",
+      "directions": 4,
+      "delays": [
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ]
+      ]
+    },
+    {
+      "name": "penis_tentacle_4_0_BEHIND",
+      "directions": 4,
+      "delays": [
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ]
+      ]
+    },
+    {
+      "name": "penis_tentacle_4_1_BEHIND",
+      "directions": 4,
+      "delays": [
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ]
+      ]
+    },
+    {
+      "name": "penis_tentacle_4_1_FRONT",
+      "directions": 4,
+      "delays": [
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ]
+      ]
+    },
+    {
+      "name": "penis_tentacle_5_0_FRONT",
+      "directions": 4,
+      "delays": [
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ]
+      ]
+    },
+    {
+      "name": "penis_tentacle_5_0_BEHIND",
+      "directions": 4,
+      "delays": [
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ]
+      ]
+    },
+    {
+      "name": "penis_tentacle_5_1_FRONT",
+      "directions": 4,
+      "delays": [
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ]
+      ]
+    },
+    {
+      "name": "penis_tentacle_5_1_BEHIND",
+      "directions": 4,
+      "delays": [
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ]
+      ]
+    },
+    {
+      "name": "penis_human_1_s_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_human_1_s_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_human_2_s_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_human_2_s_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_human_3_s_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_human_3_s_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_knotted_1_s_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_knotted_1_s_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_knotted_2_s_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_knotted_2_s_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_knotted_3_s_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_knotted_3_s_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_barbknot_1_s_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_barbknot_2_s_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_barbknot_1_s_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_barbknot_2_s_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_barbknot_3_s_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_barbknot_3_s_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_flared_1_s_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_flared_1_s_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_flared_2_s_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_flared_2_s_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_flared_3_s_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_flared_3_s_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_tentacle_1_s_0_FRONT",
+      "directions": 4,
+      "delays": [
+        [
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5
+        ]
+      ]
+    },
+    {
+      "name": "penis_tentacle_2_s_0_FRONT",
+      "directions": 4,
+      "delays": [
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.1
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.1
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.1
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.1
+        ]
+      ]
+    },
+    {
+      "name": "penis_tentacle_2_s_0_BEHIND",
+      "directions": 4,
+      "delays": [
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.1
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.1
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.1
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.1
+        ]
+      ]
+    },
+    {
+      "name": "penis_tentacle_3_s_0_FRONT",
+      "directions": 4,
+      "delays": [
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.1
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.1
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.1
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.1
+        ]
+      ]
+    },
+    {
+      "name": "penis_tentacle_3_s_0_BEHIND",
+      "directions": 4,
+      "delays": [
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.1
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.1
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.1
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.1
+        ]
+      ]
+    },
+    {
+      "name": "penis_human_1_s_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_human_2_s_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_human_3_s_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_knotted_1_s_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_knotted_2_s_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_knotted_3_s_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_barbknot_1_s_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_barbknot_2_s_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_barbknot_3_s_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_flared_1_s_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_flared_2_s_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_flared_3_s_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_human_4_s_0_FRONT",
+      "directions": 4,
+      "delays": [
+        [
+          0.1,
+          0.1
+        ],
+        [
+          0.1,
+          0.1
+        ],
+        [
+          0.1,
+          0.1
+        ],
+        [
+          0.1,
+          0.1
+        ]
+      ]
+    },
+    {
+      "name": "penis_human_4_s_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_human_4_s_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_knotted_4_s_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_knotted_4_s_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_knotted_4_s_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_knotted_4_s_1_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_barbknot_4_s_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_barbknot_4_s_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_barbknot_4_s_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_barbknot_4_s_1_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_flared_4_s_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_flared_4_s_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_flared_4_s_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_flared_4_s_1_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_tentacle_4_s_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_tentacle_4_s_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_tentacle_4_s_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_tentacle_4_s_1_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemi_3_s_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemi_3_s_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemi_3_s_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemi_3_s_1_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemiknot_3_s_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemiknot_3_s_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemiknot_3_s_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemiknot_3_s_1_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemi_1_s_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemi_1_s_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemi_1_s_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemi_1_s_1_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemi_2_s_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemi_2_s_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemi_2_s_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemi_2_s_1_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemi_4_s_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemi_4_s_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemi_4_s_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemi_4_s_1_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemiknot_1_s_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemiknot_1_s_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemiknot_1_s_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemiknot_1_s_1_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemiknot_2_s_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemiknot_2_s_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemiknot_2_s_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemiknot_2_s_1_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemiknot_4_s_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemiknot_4_s_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemiknot_4_s_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemiknot_4_s_1_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_tapered_3_s_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_tapered_3_s_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_tapered_3_s_1_FRONT",
+      "directions": 4,
+      "delays": [
+        [
+          7.5,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          7.5,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          7.5,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          7.5,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ]
+      ]
+    },
+    {
+      "name": "penis_tapered_3_s_1_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_tapered_1_s_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_tapered_1_s_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_tapered_1_s_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_tapered_1_s_1_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_tapered_2_s_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_tapered_2_s_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_tapered_2_s_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_tapered_2_s_1_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_tapered_4_s_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_tapered_4_s_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_tapered_4_s_1_FRONT",
+      "directions": 4,
+      "delays": [
+        [
+          7.5,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          7.5,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          7.5,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          7.5,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ]
+      ]
+    },
+    {
+      "name": "penis_tapered_4_s_1_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_tipknotted_1_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_tipknotted_1_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_tipknotted_2_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_tipknotted_2_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_tipknotted_3_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_tipknotted_3_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_tipknotted_1_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_tipknotted_2_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_tipknotted_3_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_tipknotted_5_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_tipknotted_5_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemi_1_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemi_1_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemi_2_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemi_2_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemi_3_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemi_3_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemi_4_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemi_4_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemi_5_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemi_5_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemi_1_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemi_1_1_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemi_2_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemi_2_1_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemi_3_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemi_3_1_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemi_4_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemi_4_1_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemi_5_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemi_5_1_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemiknot_1_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemiknot_1_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemiknot_2_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemiknot_2_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemiknot_3_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemiknot_3_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemiknot_4_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemiknot_4_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemiknot_5_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemiknot_1_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemiknot_1_1_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemiknot_2_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemiknot_2_1_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemiknot_3_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemiknot_3_1_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemiknot_4_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemiknot_4_1_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemiknot_5_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_hemiknot_5_1_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_tapered_1_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_tapered_1_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_tapered_2_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_tapered_2_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_tapered_3_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_tapered_3_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_tapered_4_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_tapered_4_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_tapered_5_0_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_tapered_5_0_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_tapered_1_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_tapered_1_1_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_tapered_2_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_tapered_2_1_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_tapered_3_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_tapered_3_1_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_tapered_4_1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "penis_tapered_4_1_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_tapered_5_1_BEHIND",
+      "directions": 4
+    },
+    {
+      "name": "penis_tapered_5_1_FRONT",
+      "directions": 4
+    }
+  ]
+}

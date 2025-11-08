@@ -228,6 +228,7 @@
     - AnomalyHost
   - type: Targeting # Shitmed Change
   - type: SurgeryTarget # Shitmed Change
+  - type: ModifyMarkings # Hardlight
 
 - type: entity
   save: false

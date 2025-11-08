@@ -1,12 +1,10 @@
 # - type: consentToggle No mechanics for this
  # id: Vore
-  # priority: 1
   # name: Vore
   # description: Allow yourself to be devoured by anyone... or anything.
 
 # - type: consentToggle
   # id: Digestion
-  # priority: 2
   # name: Digestion
   # description: Allow yourself to be digested. WARNING: BEING DIGESTED WILL ROUND-REMOVE YOU.
 
@@ -25,13 +23,11 @@
 
 # - type: consentToggle No mechanics for this yet
   # id: NSFWDescriptions
-  # priority: 3
   # name: See NSFW Descriptions
   # description: Turn this on to see any temporary descriptions that are flagged as NSFW.
 
 - type: consentToggle
   id: GenitalMarkings
-  priority: 4
   name: See Genital Markings
   description: Turn this on to allow showing/hiding genital markings in-game.
 
@@ -39,13 +35,11 @@
 
 - type: consentToggle
   id: Cum
-  priority: 5
   name: Interact with cum
   description: Turn this on for cum to have any meaningful interaction with you.
 
 - type: consentToggle
   id: NaturalLubricant
-  priority: 6
   name: Interact with natural lubricant
   description: Turn this on for natural lubricant to have any meaningful interaction with you.
 

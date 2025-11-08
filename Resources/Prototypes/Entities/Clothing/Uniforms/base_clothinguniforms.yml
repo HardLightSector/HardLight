@@ -27,6 +27,10 @@
     tags:
     - ClothMade
     - WhitelistChameleon
+  - type: HideLayerClothing
+    slots:
+    - Genital
+    - Penis
 
 - type: entity
   abstract: true
