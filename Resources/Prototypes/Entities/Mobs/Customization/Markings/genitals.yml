@@ -3,7 +3,6 @@
   id: Genital-Balls-Single1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -16,7 +15,6 @@
   id: Genital-Balls-Single2
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -29,7 +27,6 @@
   id: Genital-Balls-Single2Alt
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -42,7 +39,6 @@
   id: Genital-Balls-Single3
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -55,7 +51,6 @@
   id: Genital-Balls-Single4
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -68,7 +63,6 @@
   id: Genital-Balls-Single4Alt
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -81,7 +75,6 @@
   id: Genital-Balls-Single5
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -94,7 +87,6 @@
   id: Genital-Balls-Single5Alt
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -108,7 +100,6 @@
   id: Genital-Balls-Small1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -121,7 +112,6 @@
   id: Genital-Balls-Small2
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -134,7 +124,6 @@
   id: Genital-Balls-Small3
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -148,7 +137,6 @@
   id: Genital-Balls-Sheath1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -161,7 +149,6 @@
   id: Genital-Balls-Sheath1Alt
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -174,7 +161,6 @@
   id: Genital-Balls-Sheath2
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -187,7 +173,6 @@
   id: Genital-Balls-Sheath2Alt
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -200,7 +185,6 @@
   id: Genital-Balls-Sheath3
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -213,7 +197,6 @@
   id: Genital-Balls-Sheath3Alt
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -226,7 +209,6 @@
   id: Genital-Balls-Sheath4
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -239,7 +221,6 @@
   id: Genital-Balls-Sheath4Alt
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -252,7 +233,6 @@
   id: Genital-Balls-Sheath5
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -265,7 +245,6 @@
   id: Genital-Balls-Sheath5Alt
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -279,7 +258,6 @@
   id: GenitalVaginaHuman
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -292,7 +270,6 @@
   id: GenitalVaginaHumanAlt
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -305,7 +282,6 @@
   id: GenitalVaginaHumanSmall
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -318,7 +294,6 @@
   id: GenitalVaginaHumanSmallAlt
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -332,7 +307,6 @@
   id: GenitalVaginaGaping
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -345,7 +319,6 @@
   id: GenitalVaginaGapingAlt
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -358,7 +331,6 @@
   id: GenitalVaginaGapingSmall
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -371,7 +343,6 @@
   id: GenitalVaginaGapingSmallAlt
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -385,7 +356,6 @@
   id: GenitalVaginaTentacle
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -398,7 +368,6 @@
   id: GenitalVaginaTentacleAlt
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -411,7 +380,6 @@
   id: GenitalVaginaTentacleSmall
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -424,7 +392,6 @@
   id: GenitalVaginaTentacleSmallAlt
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -438,7 +405,6 @@
   id: GenitalVaginaDentata
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -451,7 +417,6 @@
   id: GenitalVaginaHairy
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -464,7 +429,6 @@
   id: GenitalVaginaFurred
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -477,7 +441,6 @@
   id: GenitalVaginaSpade
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -491,7 +454,6 @@
   id: GenitalBreastsRoundA
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -504,7 +466,6 @@
   id: GenitalBreastsRoundB
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -517,7 +478,6 @@
   id: GenitalBreastsRoundC
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -530,7 +490,6 @@
   id: GenitalBreastsRoundD
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -543,7 +502,6 @@
   id: GenitalBreastsRoundE
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -556,7 +514,6 @@
   id: GenitalBreastsRoundF
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -570,7 +527,6 @@
   id: GenitalBreastsPairA
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -583,7 +539,6 @@
   id: GenitalBreastsPairB
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -596,7 +551,6 @@
   id: GenitalBreastsPairC
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -609,7 +563,6 @@
   id: GenitalBreastsPairD
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -623,7 +576,6 @@
   id: GenitalBreastsQuadA
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -636,7 +588,6 @@
   id: GenitalBreastsQuadB
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -649,7 +600,6 @@
   id: GenitalBreastsQuadC
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -662,7 +612,6 @@
   id: GenitalBreastsQuadD
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -676,7 +625,6 @@
   id: GenitalBreastsSextupleA
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -689,7 +637,6 @@
   id: GenitalBreastsSextupleB
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -702,7 +649,6 @@
   id: GenitalBreastsSextupleC
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -716,7 +662,6 @@
   id: GenitalBreastsUddersA
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -729,7 +674,6 @@
   id: GenitalBreastsUddersB
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -742,7 +686,6 @@
   id: GenitalBreastsUddersC
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -756,7 +699,6 @@
   id: Genital-Penis-Amputated
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -769,7 +711,6 @@
   id: Genital-Penis-Nondescript-1-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -782,7 +723,6 @@
   id: Genital-Penis-Nondescript-1-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -795,7 +735,6 @@
   id: Genital-Penis-Nondescript-2-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -808,7 +747,6 @@
   id: Genital-Penis-Nondescript-2-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -821,7 +759,6 @@
   id: Genital-Penis-Nondescript-3-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -834,7 +771,6 @@
   id: Genital-Penis-Nondescript-3-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -847,7 +783,6 @@
   id: Genital-Penis-Nondescript-4-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -860,7 +795,6 @@
   id: Genital-Penis-Nondescript-4-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -873,7 +807,6 @@
   id: Genital-Penis-Nondescript-5-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -886,7 +819,6 @@
   id: Genital-Penis-Nondescript-5-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -899,7 +831,6 @@
   id: Genital-Penis-Human-1-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -912,7 +843,6 @@
   id: Genital-Penis-Human-1-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -925,7 +855,6 @@
   id: Genital-Penis-Human-2-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -938,7 +867,6 @@
   id: Genital-Penis-Human-2-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -951,7 +879,6 @@
   id: Genital-Penis-Human-3-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -964,7 +891,6 @@
   id: Genital-Penis-Human-3-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -977,7 +903,6 @@
   id: Genital-Penis-Human-4-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -990,7 +915,6 @@
   id: Genital-Penis-Human-4-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1003,7 +927,6 @@
   id: Genital-Penis-Human-5-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1016,7 +939,6 @@
   id: Genital-Penis-Human-5-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1029,7 +951,6 @@
   id: Genital-Penis-Knotted-1-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1042,7 +963,6 @@
   id: Genital-Penis-Knotted-1-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1055,7 +975,6 @@
   id: Genital-Penis-Knotted-2-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1068,7 +987,6 @@
   id: Genital-Penis-Knotted-2-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1081,7 +999,6 @@
   id: Genital-Penis-Knotted-3-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1094,7 +1011,6 @@
   id: Genital-Penis-Knotted-3-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1107,7 +1023,6 @@
   id: Genital-Penis-Knotted-4-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1120,7 +1035,6 @@
   id: Genital-Penis-Knotted-4-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1133,7 +1047,6 @@
   id: Genital-Penis-Knotted-5-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1146,7 +1059,6 @@
   id: Genital-Penis-Knotted-5-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1159,7 +1071,6 @@
   id: Genital-Penis-Flared-1-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1172,7 +1083,6 @@
   id: Genital-Penis-Flared-1-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1185,7 +1095,6 @@
   id: Genital-Penis-Flared-2-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1198,7 +1107,6 @@
   id: Genital-Penis-Flared-2-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1211,7 +1119,6 @@
   id: Genital-Penis-Flared-3-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1224,7 +1131,6 @@
   id: Genital-Penis-Flared-3-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1237,7 +1143,6 @@
   id: Genital-Penis-Flared-4-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1250,7 +1155,6 @@
   id: Genital-Penis-Flared-4-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1263,7 +1167,6 @@
   id: Genital-Penis-Flared-5-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1276,7 +1179,6 @@
   id: Genital-Penis-Flared-5-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1289,7 +1191,6 @@
   id: Genital-Penis-Barbknot-1-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1302,7 +1203,6 @@
   id: Genital-Penis-Barbknot-1-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1315,7 +1215,6 @@
   id: Genital-Penis-Barbknot-2-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1328,7 +1227,6 @@
   id: Genital-Penis-Barbknot-2-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1341,7 +1239,6 @@
   id: Genital-Penis-Barbknot-3-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1354,7 +1251,6 @@
   id: Genital-Penis-Barbknot-3-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1367,7 +1263,6 @@
   id: Genital-Penis-Barbknot-4-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1380,7 +1275,6 @@
   id: Genital-Penis-Barbknot-4-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1393,7 +1287,6 @@
   id: Genital-Penis-Barbknot-5-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1406,7 +1299,6 @@
   id: Genital-Penis-Barbknot-5-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1419,7 +1311,6 @@
   id: Genital-Penis-Tentacle-1-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1432,7 +1323,6 @@
   id: Genital-Penis-Tentacle-1-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1445,7 +1335,6 @@
   id: Genital-Penis-Tentacle-2-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1458,7 +1347,6 @@
   id: Genital-Penis-Tentacle-2-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1471,7 +1359,6 @@
   id: Genital-Penis-Tentacle-3-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1484,7 +1371,6 @@
   id: Genital-Penis-Tentacle-3-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1497,7 +1383,6 @@
   id: Genital-Penis-Tentacle-4-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1510,7 +1395,6 @@
   id: Genital-Penis-Tentacle-4-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1523,7 +1407,6 @@
   id: Genital-Penis-Tentacle-5-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1536,7 +1419,6 @@
   id: Genital-Penis-Tentacle-5-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1550,7 +1432,6 @@
   id: Genital-Penis-Human-1-S-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1563,7 +1444,6 @@
   id: Genital-Penis-Human-1-S-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1576,7 +1456,6 @@
   id: Genital-Penis-Human-2-S-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1589,7 +1468,6 @@
   id: Genital-Penis-Human-2-S-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1602,7 +1480,6 @@
   id: Genital-Penis-Human-3-S-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1615,7 +1492,6 @@
   id: Genital-Penis-Human-3-S-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1628,7 +1504,6 @@
   id: Genital-Penis-Human-4-S-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1641,7 +1516,6 @@
   id: Genital-Penis-Human-4-S-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1654,7 +1528,6 @@
   id: Genital-Penis-Knotted-1-S-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1667,7 +1540,6 @@
   id: Genital-Penis-Knotted-1-S-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1680,7 +1552,6 @@
   id: Genital-Penis-Knotted-2-S-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1693,7 +1564,6 @@
   id: Genital-Penis-Knotted-2-S-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1706,7 +1576,6 @@
   id: Genital-Penis-Knotted-3-S-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1719,7 +1588,6 @@
   id: Genital-Penis-Knotted-3-S-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1732,7 +1600,6 @@
   id: Genital-Penis-Knotted-4-S-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1745,7 +1612,6 @@
   id: Genital-Penis-Knotted-4-S-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1758,7 +1624,6 @@
   id: Genital-Penis-Barbknot-1-S-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1771,7 +1636,6 @@
   id: Genital-Penis-Barbknot-1-S-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1784,7 +1648,6 @@
   id: Genital-Penis-Barbknot-2-S-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1797,7 +1660,6 @@
   id: Genital-Penis-Barbknot-2-S-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1810,7 +1672,6 @@
   id: Genital-Penis-Barbknot-3-S-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1823,7 +1684,6 @@
   id: Genital-Penis-Barbknot-3-S-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1836,7 +1696,6 @@
   id: Genital-Penis-Barbknot-4-S-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1849,7 +1708,6 @@
   id: Genital-Penis-Barbknot-4-S-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1862,7 +1720,6 @@
   id: Genital-Penis-Flared-1-S-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1875,7 +1732,6 @@
   id: Genital-Penis-Flared-1-S-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1888,7 +1744,6 @@
   id: Genital-Penis-Flared-2-S-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1901,7 +1756,6 @@
   id: Genital-Penis-Flared-2-S-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1914,7 +1768,6 @@
   id: Genital-Penis-Flared-3-S-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1927,7 +1780,6 @@
   id: Genital-Penis-Flared-3-S-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1940,7 +1792,6 @@
   id: Genital-Penis-Flared-4-S-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1953,7 +1804,6 @@
   id: Genital-Penis-Flared-4-S-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1966,7 +1816,6 @@
   id: Genital-Penis-Tentacle-1-S-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1979,7 +1828,6 @@
   id: Genital-Penis-Tentacle-2-S-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -1992,7 +1840,6 @@
   id: Genital-Penis-Tentacle-3-S-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -2005,7 +1852,6 @@
   id: Genital-Penis-Tentacle-4-S-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -2018,7 +1864,6 @@
   id: Genital-Penis-Tentacle-4-S-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -2032,7 +1877,6 @@
   id: Genital-Penis-Hemi-1-S-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -2045,7 +1889,6 @@
   id: Genital-Penis-Hemi-1-S-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -2058,7 +1901,6 @@
   id: Genital-Penis-Hemi-2-S-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -2071,7 +1913,6 @@
   id: Genital-Penis-Hemi-2-S-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -2084,7 +1925,6 @@
   id: Genital-Penis-Hemi-3-S-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -2097,7 +1937,6 @@
   id: Genital-Penis-Hemi-3-S-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -2110,7 +1949,6 @@
   id: Genital-Penis-Hemi-4-S-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -2123,7 +1961,6 @@
   id: Genital-Penis-Hemi-4-S-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -2136,7 +1973,6 @@
   id: Genital-Penis-Hemiknot-1-S-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -2149,7 +1985,6 @@
   id: Genital-Penis-Hemiknot-1-S-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -2162,7 +1997,6 @@
   id: Genital-Penis-Hemiknot-2-S-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -2175,7 +2009,6 @@
   id: Genital-Penis-Hemiknot-2-S-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -2188,7 +2021,6 @@
   id: Genital-Penis-Hemiknot-3-S-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -2201,7 +2033,6 @@
   id: Genital-Penis-Hemiknot-3-S-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -2214,7 +2045,6 @@
   id: Genital-Penis-Hemiknot-4-S-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -2227,7 +2057,6 @@
   id: Genital-Penis-Hemiknot-4-S-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -2240,7 +2069,6 @@
   id: Genital-Penis-Tapered-1-S-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -2253,7 +2081,6 @@
   id: Genital-Penis-Tapered-1-S-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -2266,7 +2093,6 @@
   id: Genital-Penis-Tapered-2-S-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -2279,7 +2105,6 @@
   id: Genital-Penis-Tapered-2-S-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -2292,7 +2117,6 @@
   id: Genital-Penis-Tapered-3-S-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -2305,7 +2129,6 @@
   id: Genital-Penis-Tapered-3-S-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -2318,7 +2141,6 @@
   id: Genital-Penis-Tapered-4-S-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -2331,7 +2153,6 @@
   id: Genital-Penis-Tapered-4-S-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -2344,7 +2165,6 @@
   id: Genital-Penis-Tipknotted-1-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -2357,7 +2177,6 @@
   id: Genital-Penis-Tipknotted-1-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -2370,7 +2189,6 @@
   id: Genital-Penis-Tipknotted-2-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -2383,7 +2201,6 @@
   id: Genital-Penis-Tipknotted-2-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -2396,7 +2213,6 @@
   id: Genital-Penis-Tipknotted-3-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -2409,7 +2225,6 @@
   id: Genital-Penis-Tipknotted-3-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -2422,7 +2237,6 @@
   id: Genital-Penis-Tipknotted-5-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -2435,7 +2249,6 @@
   id: Genital-Penis-Tipknotted-5-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -2449,7 +2262,6 @@
   id: Genital-Penis-Hemi-1-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -2462,7 +2274,6 @@
   id: Genital-Penis-Hemi-1-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -2475,7 +2286,6 @@
   id: Genital-Penis-Hemi-2-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -2488,7 +2298,6 @@
   id: Genital-Penis-Hemi-2-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -2501,7 +2310,6 @@
   id: Genital-Penis-Hemi-3-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -2514,7 +2322,6 @@
   id: Genital-Penis-Hemi-3-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -2527,7 +2334,6 @@
   id: Genital-Penis-Hemi-4-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -2540,7 +2346,6 @@
   id: Genital-Penis-Hemi-4-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -2553,7 +2358,6 @@
   id: Genital-Penis-Hemi-5-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -2566,7 +2370,6 @@
   id: Genital-Penis-Hemi-5-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -2579,7 +2382,6 @@
   id: Genital-Penis-Hemiknot-1-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -2592,7 +2394,6 @@
   id: Genital-Penis-Hemiknot-1-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -2605,7 +2406,6 @@
   id: Genital-Penis-Hemiknot-2-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -2618,7 +2418,6 @@
   id: Genital-Penis-Hemiknot-2-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -2631,7 +2430,6 @@
   id: Genital-Penis-Hemiknot-3-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -2644,7 +2442,6 @@
   id: Genital-Penis-Hemiknot-3-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -2657,7 +2454,6 @@
   id: Genital-Penis-Hemiknot-4-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -2670,7 +2466,6 @@
   id: Genital-Penis-Hemiknot-4-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -2683,7 +2478,6 @@
   id: Genital-Penis-Hemiknot-5-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -2696,7 +2490,6 @@
   id: Genital-Penis-Hemiknot-5-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -2709,7 +2502,6 @@
   id: Genital-Penis-Tapered-1-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -2722,7 +2514,6 @@
   id: Genital-Penis-Tapered-1-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -2735,7 +2526,6 @@
   id: Genital-Penis-Tapered-2-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -2748,7 +2538,6 @@
   id: Genital-Penis-Tapered-2-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -2761,7 +2550,6 @@
   id: Genital-Penis-Tapered-3-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -2774,7 +2562,6 @@
   id: Genital-Penis-Tapered-3-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -2787,7 +2574,6 @@
   id: Genital-Penis-Tapered-4-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -2800,7 +2586,6 @@
   id: Genital-Penis-Tapered-4-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -2813,7 +2598,6 @@
   id: Genital-Penis-Tapered-5-0
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -2826,7 +2610,6 @@
   id: Genital-Penis-Tapered-5-1
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
@@ -2839,7 +2622,6 @@
   id: Knotted-Wolf-Cock
   bodyPart: Genital
   markingCategory: Genital
-  kindAllowance: [BasicHumanlike, BasicFurry, Resomi]
   coloring:
     default:
       type: null
