@@ -27,6 +27,8 @@ using Robust.Client.UserInterface;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
+using Content.Client._CD.Species;
+
 namespace Content.Client.HealthAnalyzer.UI
 {
     [GenerateTypedNameReferences]
@@ -36,6 +38,7 @@ namespace Content.Client.HealthAnalyzer.UI
         private readonly SpriteSystem _spriteSystem;
         private readonly IPrototypeManager _prototypes;
         private readonly IResourceCache _cache;
+        private readonly CustomSpeciesNameSystem _cdCustomSpecies;
 
         // Shitmed Change Start
         public event Action<TargetBodyPart?, EntityUid>? OnBodyPartSelected;
@@ -57,6 +60,8 @@ namespace Content.Client.HealthAnalyzer.UI
             _spriteSystem = _entityManager.System<SpriteSystem>();
             _prototypes = dependencies.Resolve<IPrototypeManager>();
             _cache = dependencies.Resolve<IResourceCache>();
+
+            _cdCustomSpecies = _entityManager.System<CustomSpeciesNameSystem>();
             // Shitmed Change Start
             _bodyPartControls = new Dictionary<TargetBodyPart, TextureButton>
             {
@@ -160,7 +165,7 @@ namespace Content.Client.HealthAnalyzer.UI
             SpeciesLabel.Text =
                 _entityManager.TryGetComponent<HumanoidAppearanceComponent>(_target.Value,
                     out var humanoidAppearanceComponent)
-                    ? Loc.GetString(_prototypes.Index<SpeciesPrototype>(humanoidAppearanceComponent.Species).Name)
+                    ? _cdCustomSpecies.GetSpeciesName(new Entity<HumanoidAppearanceComponent>(_target.Value, humanoidAppearanceComponent))
                     : Loc.GetString("health-analyzer-window-entity-unknown-species-text");
 
             // Basic Diagnostic

@@ -461,6 +461,7 @@ namespace Content.Server.Database
         public int PreferenceId { get; set; }
         public Preference Preference { get; set; } = null!;
 
+        public string? CustomSpeciesName { get; set; }
         public ConsentSettings? ConsentSettings { get; set; } // Consent system
     }
 

@@ -277,7 +277,9 @@ namespace Content.Server.Database
                 (PreferenceUnavailableMode) profile.PreferenceUnavailable,
                 antags.ToHashSet(),
                 traits.ToHashSet(),
-                loadouts);
+                loadouts,
+                profile.CustomSpeciesName
+            );
         }
 
         private static Profile ConvertProfiles(HumanoidCharacterProfile humanoid, int slot, Profile? profile = null)
@@ -330,6 +332,10 @@ namespace Content.Server.Database
                 humanoid.TraitPreferences
                         .Select(t => new Trait {TraitName = t})
             );
+
+            // CD: Custom Species Name
+            profile.CustomSpeciesName = humanoid.CDCustomSpeciesName;
+            // END CD
 
             profile.Loadouts.Clear();
 
