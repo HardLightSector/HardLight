@@ -168,8 +168,8 @@
         volume: -4
   - type: UseDelay
     delay: 1.0
-  # - type: ToggleClothing
-    # action: ActionToggleParamedicSiren
+  - type: ToggleClothing
+    action: ActionToggleParamedicSiren
   - type: ItemTogglePointLight
   - type: PointLight
     enabled: false
