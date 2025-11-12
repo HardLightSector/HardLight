@@ -20,3 +20,71 @@
   name: guide-entry-survival
   text: "/ServerInfo/Guidebook/Survival.xml"
   priority: 3 # Frontier
+
+- type: guideEntry
+  id: SOP
+  name: Standard Operating Procedures
+  text: "/ServerInfo/_HL/Guidebook/SoP/SoP.xml"
+  priority: 1 # Frontier
+  children:
+  - AlertLevels
+
+- type: guideEntry
+  id: AlertLevels
+  name: Station Alert Levels
+  text: "/Serverinfo/_HL/Guidebook/SoP/AlertLevels/AlertLevelsSOP.xml"
+  children:
+  - GreenAlert
+  - BlueAlert
+  - VioletAlert
+  - YellowAlert
+  - RedAlert
+  - GammaAlert
+  - OmicronAlert
+  - DeltaAlert
+  - WhiteAlert
+
+- type: guideEntry
+  id: DeltaAlert
+  name: Delta Alert - COCKED PISTOL
+  text: "/Serverinfo/_HL/Guidebook/SoP/AlertLevels/DeltaAlertSOP.xml"
+
+- type: guideEntry
+  id: GammaAlert
+  name: Gamma Alert - FAST PACE
+  text: "/Serverinfo/_HL/Guidebook/SoP/AlertLevels/GammaAlertSOP.xml"
+
+- type: guideEntry
+  id: OmicronAlert
+  name: Omicron Alert - RAGNARÖK
+  text: "/Serverinfo/_HL/Guidebook/SoP/AlertLevels/OmicronAlertSOP.xml"
+
+- type: guideEntry
+  id: VioletAlert
+  name: Violet Alert - CORRUPTER
+  text: "/Serverinfo/_HL/Guidebook/SoP/AlertLevels/VioletAlertSOP.xml"
+
+- type: guideEntry
+  id: YellowAlert
+  name: Yellow Alert - RAY DOWN
+  text: "/Serverinfo/_HL/Guidebook/SoP/AlertLevels/YellowAlertSOP.xml"
+
+- type: guideEntry
+  id: RedAlert
+  name: Red Alert - ROUND HOUSE
+  text: "/Serverinfo/_HL/Guidebook/SoP/AlertLevels/RedAlertSOP.xml"
+
+- type: guideEntry
+  id: BlueAlert
+  name: Blue Alert - DOUBLE TAKE
+  text: "/Serverinfo/_HL/Guidebook/SoP/AlertLevels/BlueAlertSOP.xml"
+
+- type: guideEntry
+  id: GreenAlert
+  name: Green Alert - FADE OUT
+  text: "/Serverinfo/_HL/Guidebook/SoP/AlertLevels/GreenAlertSOP.xml"
+
+- type: guideEntry
+  id: WhiteAlert
+  name: White Alert - MIND FLAYER
+  text: "/Serverinfo/_HL/Guidebook/SoP/AlertLevels/WhiteAlertSOP.xml"
