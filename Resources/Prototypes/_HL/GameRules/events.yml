@@ -611,6 +611,8 @@
     minimumPlayers: 15
     duration: 1
     reoccurrenceDelay: 200
+    requiredJobs:
+     HeadOfSecurity: 1
   - type: RuleGrids
   - type: LoadMapRule
     gridPath: /Maps/Shuttles/ShuttleEvent/striker.yml
