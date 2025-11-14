@@ -29,7 +29,8 @@
     BondageMitts: 3
     BondageLegSleeve: 3
     BlindfoldBDSM: 3
-    
+    BallGag: 3
+    LeashAdvanced: 2
 	
     
   contrabandInventory:
