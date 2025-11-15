@@ -29,6 +29,7 @@ using Robust.Shared.Physics;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Server.Construction.Components;
+using Content.Shared._HL.Shipyard;
 
 namespace Content.Server._NF.Shipyard.Systems;
 
@@ -51,6 +52,7 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
 
     private EntityQuery<MapGridComponent> _gridQuery;
     private EntityQuery<SecretStashComponent> _secretStashQuery;
+    private EntityQuery<HLPersistOnShipSaveComponent> _persistOnSaveQuery;
     private EntityQuery<TransformComponent> _transformQuery;
 
     public override void Initialize()
@@ -59,6 +61,7 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
 
         _gridQuery = GetEntityQuery<MapGridComponent>();
         _secretStashQuery = GetEntityQuery<SecretStashComponent>();
+        _persistOnSaveQuery = GetEntityQuery<HLPersistOnShipSaveComponent>();
         _transformQuery = GetEntityQuery<TransformComponent>();
 
         // Initialize sawmill for logging
@@ -310,7 +313,7 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
                 if (ent == gridUid)
                     continue;
                 // Preserve any secret stash root or bluespace stash prototype entity itself
-                if (_secretStashQuery.HasComp(ent) || IsBluespaceStashPrototype(ent))
+                if (_secretStashQuery.HasComp(ent) || _persistOnSaveQuery.HasComp(ent))
                     processed.Add(ent); // don't treat stash as loose
                 if (!TryQueueLoose(ent, looseDeletes, processed))
                     continue;
@@ -324,7 +327,7 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
                 if (!TryComp<ContainerManagerComponent>(ent, out var manager))
                     continue;
                 // If this entity is a stash or bluespace stash, preserve its contents entirely.
-                if (_secretStashQuery.HasComp(ent) || IsBluespaceStashPrototype(ent))
+                if (_secretStashQuery.HasComp(ent) || _persistOnSaveQuery.HasComp(ent))
                     continue;
                 foreach (var container in manager.Containers.Values)
                 {
@@ -358,7 +361,7 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
                         continue;
                     if (xform.GridUid != gridUid)
                         continue;
-                    if (_secretStashQuery.HasComp(ent) || IsBluespaceStashPrototype(ent))
+                    if (_secretStashQuery.HasComp(ent) || _persistOnSaveQuery.HasComp(ent))
                     {
                         fallbackProcessed.Add(ent);
                         continue; // stash root preserved
@@ -366,7 +369,7 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
                     TryQueueLoose(ent, fallbackLoose, fallbackProcessed);
                     if (_entityManager.TryGetComponent<ContainerManagerComponent>(ent, out var mgr))
                     {
-                        if (_secretStashQuery.HasComp(ent) || IsBluespaceStashPrototype(ent))
+                        if (_secretStashQuery.HasComp(ent) || _persistOnSaveQuery.HasComp(ent))
                             continue; // don't traverse preserved stash contents
                         foreach (var container in mgr.Containers.Values)
                             CollectContainerContentsRecursive(container.ContainedEntities, fallbackContained, fallbackProcessed);
@@ -416,7 +419,7 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
         // Skip if terminating
         if (_entityManager.GetComponent<MetaDataComponent>(uid).EntityLifeStage >= EntityLifeStage.Terminating)
             return false;
-        if (_secretStashQuery.HasComp(uid) || IsBluespaceStashPrototype(uid))
+        if (_secretStashQuery.HasComp(uid) || _persistOnSaveQuery.HasComp(uid))
             return false; // preserve stash root outright
         if (_gridQuery.HasComp(uid))
             return false; // never delete grid root or nested grids here
@@ -518,25 +521,14 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
                 return false;
             if (_secretStashQuery.HasComp(owner))
                 return true; // Found stash root above.
+            // Also treat persistent entities as a preservation root.
+            if (_persistOnSaveQuery.HasComp(owner))
+                return true; // Found stash root above.
             if (HasComp<MachineComponent>(owner))
                 return true; // This is so machines keep their upgraded parts.
-            // Also treat bluespacestash prototype (storage-based) as a preservation root.
-            if (IsBluespaceStashPrototype(owner))
-                return true; // Found stash root above.
             current = owner;
         }
         return false;
-    }
-
-    /// <summary>
-    /// Returns true if this entity's prototype id matches the explicit bluespace stash prototype we need to preserve.
-    /// </summary>
-    private bool IsBluespaceStashPrototype(EntityUid ent)
-    {
-        if (!_entityManager.TryGetComponent<MetaDataComponent>(ent, out var meta))
-            return false;
-        // Prototype id comparison (case-insensitive) to 'bluespacestash'
-        return meta.EntityPrototype?.ID.Equals("bluespacestash", StringComparison.InvariantCultureIgnoreCase) == true;
     }
 
     private void DeleteEntityList(List<EntityUid> list, string category)
@@ -546,7 +538,7 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
             try
             {
                 if (Exists(ent))
-                    QueueDel(ent);
+                    Del(ent);
             }
             catch (Exception ex)
             {
