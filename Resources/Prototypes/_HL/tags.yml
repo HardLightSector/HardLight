@@ -306,3 +306,9 @@
 - type: Tag
   id: BorgWearable
 
+#bolts
+- type: Tag
+  id: Boltcart
+
+- type: Tag
+  id: Magazine75Bolt

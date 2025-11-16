@@ -45,7 +45,7 @@
         Piercing: 15
         Heat: 25
   - type: IgniteOnCollide
-    firestacks: 1
+    fireStacks: 0.5
 
 - type: entity
   categories: [ HideSpawnMenu ]
