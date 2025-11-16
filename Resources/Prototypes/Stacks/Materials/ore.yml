@@ -10,7 +10,7 @@
   name: stack-rough-diamond
   icon: { sprite: /Textures/Objects/Materials/ore.rsi, state: diamond }
   spawn: DiamondOre1
-  maxCount: 30
+  maxCount: 100
 
 - type: stack
   id: SteelOre

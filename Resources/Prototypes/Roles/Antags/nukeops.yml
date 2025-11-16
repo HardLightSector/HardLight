@@ -7,7 +7,7 @@
   requirements:
   - !type:OverallPlaytimeRequirement
     time: 18000 # 5h
-  # guides: [ NuclearOperatives ] # Frontier: removed, irrelevant
+  guides: [ NuclearOperatives ]
 
 - type: antag
   id: NukeopsMedic
@@ -21,7 +21,7 @@
   - !type:RoleTimeRequirement
     role: JobChemist
     time: 10800 # 3h
-  # guides: [ NuclearOperatives ] # Frontier: removed, irrelevant
+  guides: [ NuclearOperatives ]
 
 - type: antag
   id: NukeopsCommander
@@ -35,8 +35,7 @@
   - !type:DepartmentTimeRequirement
     department: Security
     time: 18000 # 5h
-  # should be changed to nukie playtime when thats tracked (wyci)
-  # guides: [ NuclearOperatives ] # Frontier: removed, irrelevant
+  guides: [ NuclearOperatives ]
 
 - type: startingGear
   id: SyndicateOperativeGearFullNoUplink
@@ -54,7 +53,7 @@
     belt: ClothingBeltMilitaryWebbing
   storage:
     back:
-    - NFWeaponPistolViper # Frontier: WeaponPistolViper<NFWeaponPistolViper
+    - WeaponPistolViper
     - PinpointerSyndicateNuclear
     - DeathAcidifierImplanter
 
@@ -91,7 +90,7 @@
     - SawAdvanced
     - Cautery
     - CombatKnife
-    - NFWeaponPistolViper # Frontier: WeaponPistolViper<NFWeaponPistolViper
+    - WeaponPistolViper
     - PinpointerSyndicateNuclear
     - HandheldHealthAnalyzer
     - CombatMedipen

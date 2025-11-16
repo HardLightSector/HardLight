@@ -73,7 +73,7 @@ public sealed class LightningSystem : SharedLightningSystem
         if (proto.TryGetComponent<LightningComponent>(out var lightningComp, EntityManager.ComponentFactory))
             spawnOnHit = lightningComp.SpawnOnHit;
 
-        ShootLightning(user, target, lightningPrototype, triggerLightningEvents);
+        ShootLightning(user, target, spawnOnHit, lightningPrototype, triggerLightningEvents);
     }
 
     // Mono - for optimisation purposes

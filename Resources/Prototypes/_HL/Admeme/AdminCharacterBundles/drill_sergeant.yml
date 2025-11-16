@@ -41,7 +41,7 @@
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitDrillSergeant
   name: drill sergeant's jumpsuit
-  description: \"If fighting is sure to result in victory, then you must fight! Sun Tzu said that.\" - Jane Doe
+  description: '"If fighting is sure to result in victory, then you must fight! Sun Tzu said that." - Jane Doe'
   suffix: Gilm, Admin
   components:
   - type: Sprite
@@ -65,7 +65,7 @@
   parent: ClothingUniformBase
   id: ClothingUniformJumpskirtDrillSergeant
   name: drill sergeant's jumpskirt
-  description: \"If fighting is sure to result in victory, then you must fight! Sun Tzu said that.\" - Jane Doe
+  description: '"If fighting is sure to result in victory, then you must fight! Sun Tzu said that." - Jane Doe'
   suffix: Jackie, Admin
   components:
   - type: Sprite
@@ -89,19 +89,13 @@
   parent: ClothingOuterStorageBase
   id: ClothingOuterJacketDrillSergeant
   name: drill sergeant's jacket
-  description: \"If fighting will not result in victory, then you must not fight.\" - Sun Tzu
+  description: '"If fighting will not result in victory, then you must not fight." - Sun Tzu'
   suffix: Admin
   components:
   - type: Sprite
     sprite: _HL/Admeme/Clothing/OuterClothing/drilljacket.rsi
     layers:
     - state: icon
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left
-      right:
-      - state: inhand-right
   - type: Clothing
     sprite: _HL/Admeme/Clothing/OuterClothing/drilljacket.rsi
     clothingVisuals:

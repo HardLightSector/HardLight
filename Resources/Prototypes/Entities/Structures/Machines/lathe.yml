@@ -484,6 +484,7 @@
     - NFMedicalBoards # Frontier + Shitmed Change
     - NFServiceBoards # Frontier
     - MechBoardsPlus
+    - MonoAdvancedShuttleComponents # Hardlight
   - type: EmagLatheRecipes
     emagDynamicPacks: # Frontier: empty list
     - SecurityBoards # Frontier
@@ -557,9 +558,9 @@
     emagStaticPacks:
     - WeaponMechCombatArsenal
     # Mono - Space Mecha
-#    - S2Mechs
-#    - SpaceMechaWeapons
-#    - S2MechBoards
+    - S2Mechs
+    - SpaceMechaWeapons
+    - S2MechBoards
     # Hardlight Change
     - BorgArmorEnergy
     - BorgArmorPhys
@@ -663,6 +664,14 @@
     - SMCybernetics
     # Mono - Mechs
     - WeaponMechCombatArsenal
+    - S2Mechs
+    - S2MechBoards
+    - SpaceMechaWeapons
+    - MonoAdvancedShuttleComponents
+    - UniversalMissileAmmo
+    - UniversalRailgunAmmo
+    - UniversalShellAmmo
+    - UniversalOrdinance
   - type: MaterialStorage
     whitelist:
       tags:
@@ -715,6 +724,7 @@
   - type: DeviceLinkSink
     ports:
       - FillbotAnyItem
+  - type: OreSiloClient
 
 - type: entity
   id: MedicalTechFab
@@ -880,6 +890,7 @@
     - NFBioGenSeedsMedicalStatic # Frontier
     - NFBioGenSoil # Frontier
     - NFBioGenAnimalCubesStatic #Frontier
+  - type: OreSiloClient #Hardlight
   # Frontier: emag lathe recipes, item mapper
   - type: EmagLatheRecipes
     emagStaticPacks:

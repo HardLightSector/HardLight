@@ -53,7 +53,7 @@
 
 - type: entity
   id: NFWeaponRevolverRitland45
-  parent: [ NFBaseWeaponRevolverChamber45, NFBaseWeaponFrameRevolverGorlex, BaseC3ExpeditionContraband ]
+  parent: [ NFBaseWeaponRevolverChamber45, NFBaseWeaponFrameRevolverGorlex, BaseC3SyndicateContrabandUnredeemable ]
   name: ritland-45
   description: |-
     An illegal revolver favoured by Syndicate agents.

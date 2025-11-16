@@ -73,7 +73,7 @@
 - type: entity
   parent: HLLockerParamedic
   id: HLLockerParamedicFilled
-  suffix: Filled, Hardsuit
+  suffix: Station, Filled, Hardsuit
   components:
   - type: EntityTableContainerFill
     containers:
@@ -89,7 +89,7 @@
 - type: entity
   parent: HLLockerParamedic
   id: HLLockerParamedicFilledNoHardsuit
-  suffix: Filled
+  suffix: Station, Filled
   components:
   - type: EntityTableContainerFill
     containers:

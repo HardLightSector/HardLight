@@ -8,37 +8,37 @@
   id: ContractorSalvagePDA
   price: 250
   equipment:
-    id: SalvagePDA
+    id: ContractorSalvagePDA
     
 - type: loadout
   id: ContractorResearchAssistantPDA
   price: 250
   equipment:
-    id: ResearchAssistantPDA
+    id: ContractorResearchAssistantPDA
     
 - type: loadout
   id: ContractorCargoPDA
   price: 250
   equipment:
-    id: CargoPDA
+    id: ContractorCargoPDA
     
 - type: loadout
   id: ContractorMedicalInternPDA
   price: 250
   equipment:
-    id: MedicalInternPDA
+    id: ContractorMedicalInternPDA
         
 - type: loadout
   id: ContractorTechnicalAssistantPDA
   price: 250
   equipment:
-    id: TechnicalAssistantPDA
+    id: ContractorTechnicalAssistantPDA
 
 - type: loadout
   id: ContractorServiceWorkerPDA
   price: 250
   equipment:
-    id: ServiceWorkerPDA
+    id: ContractorServiceWorkerPDA
 
 #T1
 - type: loadout
@@ -48,7 +48,7 @@
     proto: ContractorT1
   price: 500
   equipment:
-    id: BartenderPDA
+    id: ContractorBartenderPDA
 
 - type: loadout
   id: ContractorChefPDA
@@ -57,7 +57,7 @@
     proto: ContractorT1
   price: 500
   equipment:
-    id: ChefPDA
+    id: ContractorChefPDA
 
 - type: loadout
   id: ContractorBotanistPDA
@@ -66,7 +66,7 @@
     proto: ContractorT1
   price: 500
   equipment:
-    id: BotanistPDA
+    id: ContractorBotanistPDA
 
 - type: loadout
   id: ContractorChaplainPDA
@@ -75,7 +75,7 @@
     proto: ContractorT1
   price: 500
   equipment:
-    id: ChaplainPDA
+    id: ContractorChaplainPDA
 
 - type: loadout
   id: ContractorLibrarianPDA
@@ -84,7 +84,7 @@
     proto: ContractorT1
   price: 500
   equipment:
-    id: LibrarianPDA
+    id: ContractorLibrarianPDA
 
 - type: loadout
   id: ContractorMedicalPDA
@@ -93,7 +93,7 @@
     proto: ContractorT1
   price: 500
   equipment:
-    id: MedicalPDA
+    id: ContractorMedicalPDA
 
 - type: loadout
   id: ContractorParamedicPDA
@@ -102,7 +102,7 @@
     proto: ContractorT1
   price: 500
   equipment:
-    id: ParamedicPDA
+    id: ContractorParamedicPDA
 
 - type: loadout
   id: ContractorPsychologistPDA
@@ -111,7 +111,7 @@
     proto: ContractorT1
   price: 500
   equipment:
-    id: PsychologistPDA
+    id: ContractorPsychologistPDA
 
 - type: loadout
   id: ContractorChemistryPDA
@@ -120,7 +120,7 @@
     proto: ContractorT1
   price: 500
   equipment:
-    id: ChemistryPDA
+    id: ContractorChemistryPDA
 
 - type: loadout
   id: ContractorSciencePDA
@@ -129,7 +129,7 @@
     proto: ContractorT1
   price: 500
   equipment:
-    id: SciencePDA
+    id: ContractorSciencePDA
 
 - type: loadout
   id: ContractorReporterPDA
@@ -138,7 +138,7 @@
     proto: ContractorT1
   price: 500
   equipment:
-    id: ReporterPDA
+    id: ContractorReporterPDA
 
 - type: loadout
   id: ContractorZookeeperPDA
@@ -147,7 +147,7 @@
     proto: ContractorT1
   price: 500
   equipment:
-    id: ZookeeperPDA
+    id: ContractorZookeeperPDA
 
 - type: loadout
   id: ContractorEngineerPDA
@@ -156,7 +156,7 @@
     proto: ContractorT1
   price: 500
   equipment:
-    id: EngineerPDA
+    id: ContractorEngineerPDA
 
 - type: loadout
   id: ContractorAtmosPDA
@@ -165,7 +165,7 @@
     proto: ContractorT1
   price: 500
   equipment:
-    id: AtmosPDA
+    id: ContractorAtmosPDA
 
 #T2
 - type: loadout
@@ -175,7 +175,7 @@
     proto: ContractorT2
   price: 750
   equipment:
-    id: CaptainPDA
+    id: ContractorCaptainPDA
 
 - type: loadout
   id: ContractorQuartermasterPDA
@@ -184,7 +184,7 @@
     proto: ContractorT2
   price: 750
   equipment:
-    id: QuartermasterPDA
+    id: ContractorQuartermasterPDA
 
 - type: loadout
   id: ContractorSeniorResearcherPDA
@@ -193,7 +193,7 @@
     proto: ContractorT2
   price: 750
   equipment:
-    id: SeniorResearcherPDA
+    id: ContractorSeniorResearcherPDA
 
 - type: loadout
   id: ContractorRnDPDA
@@ -202,7 +202,7 @@
     proto: ContractorT2
   price: 750
   equipment:
-    id: RnDPDA
+    id: ContractorRnDPDA
 
 - type: loadout
   id: ContractorSeniorPhysicianPDA
@@ -211,7 +211,7 @@
     proto: ContractorT2
   price: 750
   equipment:
-    id: SeniorPhysicianPDA
+    id: ContractorSeniorPhysicianPDA
 
 - type: loadout
   id: ContractorCMOPDA
@@ -220,7 +220,7 @@
     proto: ContractorT2
   price: 750
   equipment:
-    id: CMOPDA
+    id: ContractorCMOPDA
 
 - type: loadout
   id: ContractorSeniorEngineerPDA
@@ -229,7 +229,7 @@
     proto: ContractorT2
   price: 750
   equipment:
-    id: SeniorEngineerPDA
+    id: ContractorSeniorEngineerPDA
 
 - type: loadout
   id: ContractorCEPDA
@@ -238,7 +238,7 @@
     proto: ContractorT2
   price: 750
   equipment:
-    id: CEPDA
+    id: ContractorCEPDA
 
 - type: loadout
   id: ContractorBoxerPDA
@@ -247,7 +247,7 @@
     proto: ContractorT2
   price: 750
   equipment:
-    id: BoxerPDA
+    id: ContractorBoxerPDA
 
 - type: loadout
   id: ContractorMimePDA
@@ -256,7 +256,7 @@
     proto: ContractorT2
   price: 750
   equipment:
-    id: MimePDA
+    id: ContractorMimePDA
 
 #T3
 - type: loadout
@@ -266,7 +266,7 @@
     proto: ContractorT3
   price: 1500
   equipment:
-    id: ClownPDA
+    id: ContractorClownPDA
 
 - type: loadout
   id: ContractorMusicianPDA
@@ -275,4 +275,4 @@
     proto: ContractorT3
   price: 1500
   equipment:
-    id: MusicianPDA
+    id: ContractorMusicianPDA

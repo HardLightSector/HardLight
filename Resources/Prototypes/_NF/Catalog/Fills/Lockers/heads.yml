@@ -21,8 +21,8 @@
 #      - id: CigPackGreen # Frontier
 #        prob: 0.50
 #      - id: DoorRemoteCargo # Frontier
-      - id: RubberStampQm
-      - id: ClothingHeadsetAltCargo
+      # - id: RubberStampQm # HardLight
+      # - id: ClothingHeadsetAltCargo # HardLight
 #      - id: BoxEncryptionKeyCargo # Frontier
       - id: ClothingBeltUtilityEngineering # Frontier
 #      - id: NitrogenTankFilled

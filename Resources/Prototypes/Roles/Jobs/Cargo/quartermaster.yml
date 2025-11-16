@@ -34,8 +34,8 @@
   accessGroups: # Frontier
   - GeneralAccess # Frontier
   special:
-  # - !type:AddImplantSpecial
-    # implants: [ MindShieldImplant ]
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
   - !type:AddComponentSpecial
     components:
     - type: CommandStaff

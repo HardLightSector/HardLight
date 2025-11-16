@@ -93,9 +93,7 @@
   - type: MovementAlwaysTouching
   # EXTREMELY slow in gravity. Only really good to taxi, and that's about it.
   - type: MovementSpeedModifier
-    baseWalkSpeed: 0.2
-    baseSprintSpeed: 1
-    baseWeightlessModifier: 20
+    
   - type: RadarBlip
     radarColor: "#CF0E0E"
     scale: 4
@@ -265,8 +263,9 @@
   - type: MovementAlwaysTouching
   # Only ground-based mecha so far. Don't use it in space. Can't move in space.
   - type: MovementSpeedModifier
-    baseWalkSpeed: 3
-    baseSprintSpeed: 6
+    baseWalkSpeed: 0.2
+    baseSprintSpeed: 1
+    baseWeightlessModifier: 30
   - type: Damageable
     damageModifierSet: MediumArmorNT
   - type: RadarBlip

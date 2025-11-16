@@ -3,7 +3,7 @@
   name: trait-synth-name
   description: trait-synth-desc
   category: Physical
-  cost: 10
+  cost: 4
   # Begin DeltaV Additions - blacklist IPCs
   blacklist:
     components:

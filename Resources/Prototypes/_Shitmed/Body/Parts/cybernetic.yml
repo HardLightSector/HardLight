@@ -149,11 +149,11 @@
   description: A cybernetic left leg that allows its wearer to run faster.
   components:
   - type: MovementBodyPart
-    walkSpeed: 3.125
-    sprintSpeed: 5.625
+    walkSpeed: 2.7 # Hardlight speed change
+    sprintSpeed: 5.0 # Hardlight speed change
   - type: BodyPart
     onAdd:
-    - type: NoSlip
+    # - type: NoSlip Hardlight
     - type: ProtectedFromStepTriggers
 
 - type: entity
@@ -163,9 +163,9 @@
   description: A cybernetic left leg that allows its wearer to run faster.
   components:
   - type: MovementBodyPart
-    walkSpeed: 3.125
-    sprintSpeed: 5.625
+    walkSpeed: 2.7 # Hardlight speed change
+    sprintSpeed: 5.0 # Hardlight speed change
   - type: BodyPart
     onAdd:
-    - type: NoSlip
+    # - type: NoSlip Hardlight
     - type: ProtectedFromStepTriggers

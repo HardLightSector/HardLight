@@ -2,7 +2,7 @@
   id: LockerFillQuarterMaster
   table: !type:AllSelector
     children:
-    - id: BoxEncryptionKeyCargo # Frontier
+    #    - id: BoxEncryptionKeyCargo # Frontier
     #    - id: BoxFolderQmClipboard # Frontier
     #    - id: CargoBountyComputerCircuitboard # Frontier
     #    - id: CargoRequestComputerCircuitboard # Frontier
@@ -10,14 +10,14 @@
     #    - id: CargoShuttleComputerCircuitboard # Frontier
     #    - id: CargoShuttleConsoleCircuitboard # Frontier
     #    - id: SalvageMagnetMachineCircuitboard # Frontier
-    - id: CigPackGreen # Frontier
-      prob: 0.50 # Frontier
-    - id: ClothingHeadsetAltCargo
-    - id: DoorRemoteCargo # Frontier
+    #    - id: CigPackGreen # Frontier
+    #      prob: 0.50 # Frontier
+    # - id: ClothingHeadsetAltCargo # HardLight
+    #    - id: DoorRemoteCargo # Frontier
     - id: RubberStampApproved
     - id: RubberStampDenied
-    - id: RubberStampQm
-    - id: AstroNavCartridge
+    #    - id: RubberStampQm # HardLight
+    #    - id: AstroNavCartridge # Frontier
     - id: ClothingHandsKnuckleDustersQM
     - id: MailTeleporterMachineCircuitboard
     - id: ClothingBeltUtilityEngineering # Frontier
@@ -117,30 +117,30 @@
   id: LockerFillHeadOfPersonnel
   table: !type:AllSelector
     children:
-    - id: AccessConfigurator # Frontier
-    - id: BoxEncryptionKeyPassenger # Frontier
-    - id: BoxEncryptionKeyService # Frontier
-    - id: BoxHeadset # Frontier
-    - id: BoxID # Frontier
-    - id: BoxPDA # Frontier
-    - id: CigarGoldCase # Frontier
-      prob: 0.25 # Frontier
+    #    - id: AccessConfigurator # Frontier
+    #    - id: BoxEncryptionKeyPassenger # Frontier
+    #    - id: BoxEncryptionKeyService # Frontier
+    #    - id: BoxHeadset # Frontier
+    #    - id: BoxID # Frontier
+    #    - id: BoxPDA # Frontier
+    #    - id: CigarGoldCase # Frontier
+    #      prob: 0.25 # Frontier
     # Fuck the HoP they don't deserve fucking cigars.
     # Yes they do fuck you.
         # - id: ClothingBackpackIan # Frontier
         #   prob: 0.5 # Frontier
-    - id: ClothingHeadsetCommand # Frontier
-    - id: ClothingNeckGoldmedal # Frontier
-    - id: DoorRemoteService # Frontier
-    - id: HoPIDCard # Frontier
-    - id: IDComputerCircuitboard # Frontier
+        # - id: ClothingHeadsetCommand # Frontier
+        # - id: ClothingNeckGoldmedal # Frontier
+        # - id: DoorRemoteService # Frontier
+        # - id: HoPIDCard # Frontier
+        # - id: IDComputerCircuitboard # Frontier
     # - id: FundingAllocationComputerCircuitboard # Frontier
     # - id: CargoRequestServiceComputerCircuitboard # Frontier
     - id: RubberStampApproved
     - id: RubberStampDenied
-    - id: RubberStampHop # Frontier
-    - id: WeaponDisabler # Frontier
-    - id: ClothingEyesHudCommand # Frontier
+        # - id: RubberStampHop # Frontier
+        # - id: WeaponDisabler # Frontier
+        # - id: ClothingEyesHudCommand # Frontier
 
 - type: entity
   id: LockerHeadOfPersonnelFilled
@@ -157,22 +157,23 @@
   id: LockerFillChiefEngineerNoHardsuit
   table: !type:AllSelector
     children:
-    - id: AccessConfigurator # Frontier
-    - id: BoxEncryptionKeyEngineering # Frontier
-    - id: CigarCase # Frontier
-      prob: 0.15 # Frontier
-    - id: ClothingBeltChiefEngineerFilled # Frontier
+    #    - id: AccessConfigurator # Frontier
+    #    - id: BoxEncryptionKeyEngineering # Frontier
+    #    - id: CigarCase # Frontier
+    #      prob: 0.15 # Frontier
+    #    - id: ClothingBeltChiefEngineerFilled # Frontier
     - id: ClothingEyesGlassesMeson
     - id: ClothingHandsGlovesColorYellow
-    - id: ClothingHeadsetAltEngineering
-    - id: DoorRemoteEngineering # Frontier
+    # - id: ClothingHeadsetAltEngineering # HardLight
+        # - id: DoorRemoteEngineering # Frontier
         # - id: CargoRequestEngineeringComputerCircuitboard # Frontier
-    - id: RCD # Frontier
-    - id: RCDAmmo # Frontier
-    - id: RubberStampCE
+    # - id: RCD # Frontier
+        # - id: RCDAmmo # Frontier
+    # - id: RubberStampCE # HardLight
     - id: ShipyardRCD # Frontier
     - id: ShipyardRCDAmmo # Frontier
     - id: trayScanner # Frontier
+    - id: RubberStampEngineer # HardLight
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable
@@ -181,10 +182,10 @@
     children:
     - id: ClothingMaskGasAtmos
     - id: ClothingOuterHardsuitEngineeringWhite
-    - id: ClothingShoesBootsMagAdv # Frontier
+    #    - id: ClothingShoesBootsMagAdv # Frontier
     - id: ClothingShoesBootsMag # Frontier
     #    - id: JetpackVoidFilled # Frontier
-    - id: OxygenTankFilled # Frontier
+    #    - id: OxygenTankFilled # Frontier
     - id: NFTankO2N2EqualFilled # Frontier
     - id: JetpackMiniFilled # Frontier
 
@@ -219,22 +220,22 @@
   id: LockerFillChiefMedicalOfficerNoHardsuit
   table: !type:AllSelector
     children:
-    - id: BoxEncryptionKeyMedical # Frontier - bloat
-    - id: ClothingBackpackDuffelSurgeryFilled # Frontier - bloat
-    - id: ClothingCloakCmo # Frontier - bloat
+    #    - id: BoxEncryptionKeyMedical # Frontier - bloat
+    #    - id: ClothingBackpackDuffelSurgeryFilled # Frontier - bloat
+    #    - id: ClothingCloakCmo # Frontier - bloat
     - id: ClothingEyesHudMedical
-    - id: ClothingHandsGlovesNitrile # Frontier - bloat
-    - id: ClothingHeadHatBeretCmo # Frontier - bloat
-    - id: ClothingHeadsetAltMedical
-    - id: ClothingMaskSterile # Frontier - bloat
-    - id: DoorRemoteMedical # Frontier - bloat
+    #    - id: ClothingHandsGlovesNitrile # Frontier - bloat
+    #    - id: ClothingHeadHatBeretCmo # Frontier - bloat
+    #    - id: ClothingHeadsetAltMedical # HardLight
+    - id: ClothingMaskSterile
+    #    - id: DoorRemoteMedical # Frontier - bloat
     - id: HandheldCrewMonitor
-    - id: Hypospray # Frontier - balance
+    #    - id: Hypospray # Frontier - balance
     - id: HypoMini # Frontier
-    - id: MedicalTechFabCircuitboard # Frontier - bloat
+        # - id: MedicalTechFabCircuitboard # Frontier - bloat
         # - id: CargoRequestMedicalComputerCircuitboard # Frontier - bloat
     - id: MedkitFilled # Frontier - bloat
-    - id: RubberStampCMO # Frontier - MOM stamp
+        # - id: RubberStampCMO # Frontier - MOM stamp
     - id: MedTekCartridge
     - id: ClothingBeltMedicalFilled # Frontier - add more bloat
     - id: RubberStampDoctor # Frontier
@@ -248,7 +249,7 @@
     children:
     - id: ClothingMaskBreathMedical
     - id: ClothingOuterHardsuitMedical
-    - id: OxygenTankFilled # Frontier
+    #    - id: OxygenTankFilled # Frontier
     - id: NFTankO2N2EqualFilled # Frontier
     - id: JetpackMiniFilled # Frontier
 
@@ -284,17 +285,17 @@
   table: !type:AllSelector
     children:
     #    - id: Intellicard # Frontier
-    - id: BoxEncryptionKeyScience # Frontier
-    - id: CircuitImprinterMachineCircuitboard # Frontier
+    #    - id: BoxEncryptionKeyScience # Frontier
+    #    - id: CircuitImprinterMachineCircuitboard # Frontier
     - id: ClothingBeltUtilityEngineering # Frontier: ClothingBeltUtilityFilled<ClothingBeltUtilityEngineering
-    - id: ClothingHeadsetAltScience
-    - id: DoorRemoteResearch # Frontier
-    - id: HandTeleporter # Frontier
-    - id: ProtolatheMachineCircuitboard # Frontier
-    - id: ResearchComputerCircuitboard # Frontier
+    # - id: ClothingHeadsetAltScience # HardLight
+        # - id: DoorRemoteResearch # Frontier
+        # - id: HandTeleporter # Frontier
+        # - id: ProtolatheMachineCircuitboard # Frontier
+        # - id: ResearchComputerCircuitboard # Frontier
     # - id: CargoRequestScienceComputerCircuitboard # Frontier
     - id: StationAiFixerCircuitboard
-    - id: RubberStampRd
+    # - id: RubberStampRd # HardLight
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable
@@ -303,7 +304,7 @@
     children:
     - id: ClothingMaskBreath
     - id: ClothingOuterHardsuitRd
-    - id: OxygenTankFilled # Frontier
+        # - id: OxygenTankFilled # Frontier
     - id: NFTankO2N2EqualFilled # Frontier
     - id: JetpackMiniFilled # Frontier
 
@@ -339,34 +340,34 @@
   table: !type:AllSelector
     children:
     #    - id: WeaponEnergyShotgun # Frontier
-    #    - id: NFHyperlinkBookSpaceLaw # Frontier: BookSpaceLaw<NFHyperlinkBookSpaceLaw
-    - id: BoxEncryptionKeySecurity # Frontier
+    - id: NFHyperlinkBookSpaceLaw # Frontier: BookSpaceLaw<NFHyperlinkBookSpaceLaw
+    #    - id: BoxEncryptionKeySecurity # Frontier
     #    - id: CigarGoldCase # Frontier
     #      prob: 0.50 # Frontier
-    - id: ClothingBeltSecurityFilled # Frontier
-    - id: ClothingEyesGlassesSecurity # Frontier
+    #    - id: ClothingBeltSecurityFilled # Frontier
+    #    - id: ClothingEyesGlassesSecurity # Frontier
     #    - id: ClothingHeadsetAltSecurity # Frontier
     - id: ClothingMaskNeckGaiter
         # - id: ClothingOuterCoatHoSTrench # Frontier
         # - id: ClothingShoesBootsJack # Frontier
-    - id: DoorRemoteSecurity # Frontier
-    - id: HoloprojectorSecurity # Frontier
-    - id: RubberStampHos # Frontier
-    - id: SecurityTechFabCircuitboard # Frontier
+        # - id: DoorRemoteSecurity # Frontier
+        # - id: HoloprojectorSecurity # Frontier
+        # - id: RubberStampHos # Frontier
+        # - id: SecurityTechFabCircuitboard # Frontier
         # - id: CargoRequestSecurityComputerCircuitboard # Frontier
-    - id: WeaponDisabler # Frontier
+    # - id: WeaponDisabler # Frontier
         # - id: WantedListCartridge # Frontier
     - id: DrinkHosFlask
-    - id: ClothingUniformJumpskirtHoSAlt # Frontier: consistency with old fill
-    - id: ClothingUniformJumpsuitHoSAlt # Frontier: consistency with old fill
-    - id: ClothingHeadHatBeretHoS # Frontier: consistency with old fill
-    - id: ClothingHeadHatHoshat # Frontier: consistency with old fill
-    - id: ClothingUniformJumpskirtHosFormal # Frontier: consistency with old fill
-    - id: ClothingUniformJumpsuitHosFormal # Frontier: consistency with old fill
-    - id: ClothingNeckMantleHOS # Frontier: consistency with old fill
-    - id: ClothingOuterWinterHoS # Frontier: consistency with old fill
-    - id: ClothingShoesBootsWinterHoS # Frontier: consistency with old fill
-    - id: Demag # Frontier
+    # - id: ClothingUniformJumpskirtHoSAlt # HardLight
+    # - id: ClothingUniformJumpsuitHoSAlt # HardLight
+    # - id: ClothingHeadHatBeretHoS # HardLight
+    # - id: ClothingHeadHatHoshat # HardLight
+    # - id: ClothingUniformJumpskirtHosFormal # HardLight
+    # - id: ClothingUniformJumpsuitHosFormal # HardLight
+    # - id: ClothingNeckMantleHOS # HardLight
+    # - id: ClothingOuterWinterHoS # HardLight
+    # - id: ClothingShoesBootsWinterHoS # HardLight
+    # - id: Demag # HardLight
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable
@@ -376,7 +377,8 @@
     - id: ClothingMaskGasSwat
     - id: ClothingOuterHardsuitSecurityRed
     - id: JetpackSecurityFilled
-    - id: OxygenTankFilled
+    # - id: OxygenTankFilled # HardLight
+    - id: NFTankO2N2EqualFilled # HardLight
 
 # No hardsuit locker
 - type: entity

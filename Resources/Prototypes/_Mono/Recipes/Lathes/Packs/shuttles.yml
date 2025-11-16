@@ -8,9 +8,9 @@
 - type: latheRecipePack
   id: MonoAdvancedShuttleComponents
   recipes:
-#  - ShieldControlComputerCircuitboard
+  # - ShieldControlComputerCircuitboard Doesn't exist yet
   - GunneryControlComputerCircuitboard
-#  - MachineShieldMS225Circuitboard
+  # - MachineShieldMS225Circuitboard Doesn't exist yet
   - MachineDriveCTLA25Circuitboard
   - MachineDriveCTLA25sCircuitboard
   - MachineDriveCTLA50Circuitboard

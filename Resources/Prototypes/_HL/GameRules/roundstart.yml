@@ -115,6 +115,8 @@
   components:
   - type: GameRule
     minPlayers: 0
+    requiredJobs:
+      HeadOfSecurity: 1
   - type: LoadMapRule
     mapPath: /Maps/Nonstations/nukieplanet.yml
   - type: AntagSelection
@@ -232,6 +234,9 @@
   components:
   - type: GameRule
     minPlayers: 0
+    requiredJobs:
+      StationCaptain: 1
+      HeadOfSecurity: 1
   - type: RevolutionaryRule
   - type: AntagSelection
     selectionTime: IntraPlayerSpawn
@@ -240,6 +245,7 @@
       min: 1
       max: 3
       playerRatio: 15
+      lateJoinAdditional: true
       briefing:
         text: head-rev-role-greeting
         color: CornflowerBlue

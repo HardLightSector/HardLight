@@ -12,7 +12,7 @@
   id: Stalker
   name: AI Stalker
   description: A sector security corvette designed to do most everything from patrolling to busting smugglers.
-  price: 50000  # ~10k + post init appraisal for dual radar suite
+  price: 60000  # ~2k + markup 
   category: Medium
   group: Security
   access: Security

@@ -116,7 +116,7 @@ public sealed class TraitSystem : EntitySystem
             return;
 
         // Add all components required by the prototype
-        EntityManager.AddComponents(uid, traitPrototype.Components, false);
+        EntityManager.AddComponents(uid, traitPrototype.Components, traitPrototype.ReplaceComponents); // Hardlight, ReplaceComponents change
 
         // Add item required by the trait
         if (traitPrototype.TraitGear != null && TryComp(uid, out HandsComponent? handsComponent))

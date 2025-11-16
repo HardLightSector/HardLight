@@ -99,6 +99,7 @@
     - id: ParadoxCloneSpawn
     #- id: RevenantSpawn
     - id: SleeperAgents
+    - id: SleeperRevolutionaries
     - id: ZombieOutbreak
     - id: LoneOpsSpawn
     #- id: WizardSpawn
@@ -612,7 +613,7 @@
     duration: 1
     reoccurrenceDelay: 200
     requiredJobs:
-     HeadOfSecurity: 1
+      HeadOfSecurity: 1
   - type: RuleGrids
   - type: LoadMapRule
     gridPath: /Maps/Shuttles/ShuttleEvent/striker.yml
@@ -667,6 +668,42 @@
         - AntagImmune
       mindRoles:
       - MindRoleTraitorSleeper
+
+- type: entity
+  parent: Revolutionary
+  id: SleeperRevolutionaries # Midround revs that don't spawn with flashes
+  components:
+  - type: StationEvent
+    earliestStart: 15
+    weight: 6
+    minimumPlayers: 20
+    maxOccurrences: 1 # can only happen once per round
+    startAnnouncement: station-event-communication-interception
+    startAudio:
+      path: /Audio/Announcements/intercept.ogg
+    duration: null # the rule has to last the whole round not 1 second
+    occursDuringRoundEnd: false
+    requiredJobs:
+      StationCaptain: 1 # Can't have a revolution with no captain to mutinize
+      HeadOfSecurity: 1
+  - type: AlertLevelInterceptionRule
+  - type: AntagSelection
+    selectionTime: PostPlayerSpawn
+    definitions:
+    - prefRoles: [ HeadRev ]
+      min: 1
+      max: 3
+      lateJoinAdditional: true
+      playerRatio: 15
+      briefing:
+        text: sleeper-head-rev-role-greeting
+        color: CornflowerBlue
+        sound: "/Audio/Ambience/Antag/headrev_start.ogg"
+      components:
+      - type: Revolutionary
+      - type: HeadRevolutionary
+      mindRoles:
+      - MindRoleHeadRevolutionary
 
 - type: entity
   id: MassHallucinations

@@ -25,7 +25,6 @@
     supervisors: job-supervisors-captain
     requireAdminNotify: true
     canBeAntag: false
-    # Frontier: default access
     access:
     - Command
     - HeadOfPersonnel
@@ -40,6 +39,7 @@
     - External
     - Cryogenics
     - Chemistry
+    - Paramedic # Hardlight: Add Paramedic access
     - Engineering
     - Research
     - Detective
@@ -52,7 +52,7 @@
     - Medical
     - Frontier
     accessGroups:
-    - GeneralAccess
+    - GeneralAccess # Frontier: default access
     - AllAccess
     special:
     - !type:AddImplantSpecial

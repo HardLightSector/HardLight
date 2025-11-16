@@ -4,7 +4,7 @@ meta:
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 11/12/2025 12:03:54
+  time: 11/14/2025 02:48:44
   entityCount: 27237
 maps:
 - 1
@@ -14573,17 +14573,19 @@ entities:
     - type: Transform
       pos: 42.5,-13.5
       parent: 2
-  - uid: 612
-    components:
-    - type: Transform
-      pos: 48.5,-15.5
-      parent: 2
   - uid: 613
     components:
     - type: MetaData
       name: Triage
     - type: Transform
       pos: 33.5,-21.5
+      parent: 2
+- proto: AirlockParamedicLocked
+  entities:
+  - uid: 612
+    components:
+    - type: Transform
+      pos: 48.5,-15.5
       parent: 2
 - proto: AirlockQuartermasterLocked
   entities:
@@ -142269,7 +142271,7 @@ entities:
     - type: Transform
       pos: 34.5,-36.5
       parent: 2
-- proto: SpawnPointCaptain
+- proto: SpawnPointStationCaptain
   entities:
   - uid: 22184
     components:
@@ -167105,6 +167107,8 @@ entities:
     - type: Transform
       pos: 47.5,-26.5
       parent: 2
+- proto: WindoorSecureParamedicLocked
+  entities:
   - uid: 26638
     components:
     - type: Transform

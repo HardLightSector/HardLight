@@ -134,7 +134,7 @@
   - type: EntityTableContainerFill
     containers:
       entity_storage: !type:NestedSelector
-        tableId: FillAtmosphericsHardsuit
+        tableId: FillEngineerHardsuit
   - type: AccessReader
     # access: [["Engineering"]] # Frontier
 

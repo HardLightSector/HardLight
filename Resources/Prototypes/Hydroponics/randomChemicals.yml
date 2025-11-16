@@ -10,6 +10,8 @@
     - Honk
     - BuzzochloricBees
     - Stimulants
+    - Libidozenithizine
+    - Lithium
   - quantity: 5
     weight: 1
     reagents:
@@ -31,6 +33,9 @@
     - ChangelingSting
     - CogChamp
     - JuiceThatMakesYouWeh
+    - JuiceThatMakesYouHew
+    - JuiceThatMakesYouBark
+    - Philterex
   - quantity: 5
     weight: 2
     reagents:
@@ -57,6 +62,7 @@
     - Cola
     - Diphenhydramine
     - Iron
+    - Iodine
   - quantity: 10
     weight: 3
     reagents:

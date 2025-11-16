@@ -12,6 +12,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Configuration;
 using Robust.Shared.Utility;
+using Content.Server._NF.Roles.Systems; // Hardlight
 
 namespace Content.Server.GameTicking.Rules;
 
@@ -22,6 +23,7 @@ public sealed class SecretRuleSystem : GameRuleSystem<SecretRuleComponent>
     [Dependency] private readonly IConfigurationManager _configurationManager = default!;
     [Dependency] private readonly IAdminLogManager _adminLogger = default!;
     [Dependency] private readonly IComponentFactory _compFact = default!;
+    [Dependency] private readonly JobTrackingSystem _jobs = default!; // Hardlight
 
     private string _ruleCompName = default!;
 
@@ -165,6 +167,13 @@ public sealed class SecretRuleSystem : GameRuleSystem<SecretRuleComponent>
 
             if (ruleComp.MinPlayers > players && ruleComp.CancelPresetOnTooFewPlayers)
                 return false;
+
+            // Hardlight: require jobs to run gamerule
+            foreach (var (jobProtoId, numJobs) in ruleComp.RequiredJobs)
+            {
+                if (_jobs.GetNumberOfActiveRoles(jobProtoId, false) < numJobs)
+                    return false;
+            }
         }
 
         return true;

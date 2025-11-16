@@ -3,18 +3,18 @@
   name: stack-fuel-grade-plasma
   icon: { sprite: _NF/Objects/Specific/Fuel/fuelgrade_material.rsi, state: plasma }
   spawn: FuelPlasma1
-  maxCount: 30
+  maxCount: 50
 
 - type: stack
   id: FuelUranium
   name: stack-fuel-grade-uranium
   icon: { sprite: _NF/Objects/Specific/Fuel/fuelgrade_material.rsi, state: uranium }
   spawn: FuelUranium1
-  maxCount: 30
+  maxCount: 50
 
 - type: stack
   id: FuelBananium
   name: stack-fuel-grade-bananium
   icon: { sprite: _NF/Objects/Specific/Fuel/fuelgrade_material.rsi, state: bananium }
   spawn: FuelBananium1
-  maxCount: 30
+  maxCount: 50

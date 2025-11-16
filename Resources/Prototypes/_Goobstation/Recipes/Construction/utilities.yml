@@ -1,0 +1,32 @@
+# SPDX-FileCopyrightText: 2025 Ilya246
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: construction
+  id: GasFilterInline
+  graph: GasTrinary
+  startNode: start
+  targetNode: inline_filter
+  category: construction-category-utilities
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:NoUnstackableInTile
+
+- type: construction
+  id: HeatExchangerInline
+  graph: GasBinary
+  startNode: start
+  targetNode: inlineradiator
+  category: construction-category-utilities
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+
+- type: construction
+  id: HeatExchangerInlineBend
+  graph: GasBinary
+  startNode: start
+  targetNode: bendinlineradiator
+  category: construction-category-utilities
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false

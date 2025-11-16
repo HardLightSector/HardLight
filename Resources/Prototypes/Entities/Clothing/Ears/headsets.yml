@@ -63,7 +63,7 @@
     sprite: Clothing/Ears/Headsets/mining.rsi
 
 - type: entity
-  parent: ClothingHeadsetCargo # Frontier: remove BaseCommandContraband
+  parent: [ClothingHeadsetCargo, BaseCommandContraband]
   id: ClothingHeadsetQM
   name: qm headset
   description: A headset used by the quartermaster.
@@ -72,7 +72,7 @@
     containers:
       key_slots:
       - EncryptionKeyCargo
-#      - EncryptionKeyCommand # Frontier
+      - EncryptionKeyCommand
       - EncryptionKeyCommon
 
 - type: entity
@@ -92,7 +92,7 @@
     sprite: Clothing/Ears/Headsets/centcom.rsi
 
 - type: entity
-  parent: [ClothingHeadset, BaseC2ContrabandUnredeemable] # Frontier: add BaseC2ContrabandUnredeemable as a parent
+  parent: [ClothingHeadset, BaseCommandContraband]
   id: ClothingHeadsetCommand
   name: command headset
   description: A headset with a commanding channel.
@@ -123,7 +123,7 @@
     sprite: Clothing/Ears/Headsets/engineering.rsi
 
 - type: entity
-  parent: ClothingHeadsetEngineering # Frontier: removed BaseCommandContraband
+  parent: [ClothingHeadsetEngineering, BaseCommandContraband]
   id: ClothingHeadsetCE
   name: ce headset
   description: A headset for the chief engineer to ignore all emergency calls on.
@@ -132,7 +132,7 @@
     containers:
       key_slots:
       - EncryptionKeyEngineering
-#      - EncryptionKeyCommand # Frontier
+      - EncryptionKeyCommand
       - EncryptionKeyCommon
 
 - type: entity
@@ -152,7 +152,7 @@
     sprite: Clothing/Ears/Headsets/medical.rsi
 
 - type: entity
-  parent: ClothingHeadsetMedical # Frontier: removed BaseCommandContraband
+  parent: [ClothingHeadsetMedical, BaseCommandContraband]
   id: ClothingHeadsetCMO
   name: cmo headset
   description: A headset used by the CMO.
@@ -161,7 +161,7 @@
     containers:
       key_slots:
       - EncryptionKeyMedical
-#      - EncryptionKeyCommand # Frontier
+      - EncryptionKeyCommand
       - EncryptionKeyCommon
 
 - type: entity
@@ -213,7 +213,7 @@
     sprite: Clothing/Ears/Headsets/robotics.rsi
 
 - type: entity
-  parent: ClothingHeadsetScience # Frontier: removed BaseCommandContraband
+  parent: [ClothingHeadsetScience, BaseCommandContraband]
   id: ClothingHeadsetRD
   name: rd headset
   description: Lamarr used to love chewing on this...
@@ -222,11 +222,11 @@
     containers:
       key_slots:
       - EncryptionKeyScience
-#      - EncryptionKeyCommand # Frontier
+      - EncryptionKeyCommand
       - EncryptionKeyCommon
 
 - type: entity
-  parent: [ClothingHeadset, BaseC2ContrabandUnredeemable] # Frontier: BaseSecurityLawyerContraband<BaseC2ContrabandUnredeemable
+  parent: [ClothingHeadset, BaseSecurityLawyerContraband]
   id: ClothingHeadsetSecurity
   name: security headset
   description: This is used by your elite security force.
@@ -242,7 +242,7 @@
     sprite: Clothing/Ears/Headsets/security.rsi
 
 - type: entity
-  parent: [ClothingHeadset, BaseC2ContrabandUnredeemable] # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable
+  parent: [ClothingHeadset, BaseSecurityContraband]
   id: ClothingHeadsetBrigmedic
   name: brigmedic headset
   description: A headset that helps to hear the death cries.

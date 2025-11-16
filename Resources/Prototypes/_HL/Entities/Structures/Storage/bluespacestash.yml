@@ -2,7 +2,7 @@
   id: bluespacestash
   parent: BaseStructureDynamic
   name: bluespace stash
-  description: TBD
+  description: A storage unit utilizing bluespace technology to maximize capacity. Items inside of this will not be seized by dockyard technicians when a ship is stored.
   components:
   - type: Sprite
     sprite: _HL/Structures/Storage/bluespacestash.rsi
@@ -37,5 +37,4 @@
       - Access
       - Store
       - Cash
-      
-      
+  - type: HLPersistOnShipSave

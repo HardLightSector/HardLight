@@ -1,6 +1,7 @@
 using Content.Shared.Destructible.Thresholds;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
+using Content.Shared.Roles; // Hardlight
 
 namespace Content.Shared.GameTicking.Components;
 
@@ -35,6 +36,12 @@ public sealed partial class GameRuleComponent : Component
     /// </summary>
     [DataField]
     public MinMax? Delay;
+
+    /// <summary>
+    ///     Hardlight: Require active job to run the event.
+    /// </summary>
+    [DataField]
+    public Dictionary<ProtoId<JobPrototype>, int> RequiredJobs = new();
 }
 
 /// <summary>

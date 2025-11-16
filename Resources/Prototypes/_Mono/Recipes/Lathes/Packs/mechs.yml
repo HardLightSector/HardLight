@@ -81,49 +81,49 @@
   - WeaponMechCombatMissileRack8
 
 #Space Mecha stuff
-#- type: latheRecipePack
-#  id: S2Mechs
-#  recipes:
-#  - BroadswordHarness
-#  - BroadswordHead
-#  - BroadswordLArm
-#  - BroadswordLLeg
-#  - BroadswordRArm
-#  - BroadswordRLeg
-#  - HalberdHarness
-#  - SabreHarness
-#  - FlailHarness
-#  - FlailHead
-#  - FlailLArm
-#  - FlailRArm
-#  - FlailLLeg
-#  - FlailRLeg
-#  - SpyglassHarness
-#  - MaceHarness
+- type: latheRecipePack
+  id: S2Mechs
+  recipes:
+  - BroadswordHarness
+  - BroadswordHead
+  - BroadswordLArm
+  - BroadswordLLeg
+  - BroadswordRArm
+  - BroadswordRLeg
+  - HalberdHarness
+  - SabreHarness
+  - FlailHarness
+  - FlailHead
+  - FlailLArm
+  - FlailRArm
+  - FlailLLeg
+  - FlailRLeg
+  - SpyglassHarness
+  - MaceHarness
 
-#- type: latheRecipePack
-#  id: S2MechBoards
-#  recipes:
-#  - BroadswordCentralElectronics
-#  - BroadswordPeripheralsElectronics
-#  - BroadswordTargetingElectronics
-#  - FlailCentralElectronics
-#  - FlailPeripheralsElectronics
-#  - FlailTargetingElectronics
+- type: latheRecipePack
+  id: S2MechBoards
+  recipes:
+  - BroadswordCentralElectronics
+  - BroadswordPeripheralsElectronics
+  - BroadswordTargetingElectronics
+  - FlailCentralElectronics
+  - FlailPeripheralsElectronics
+  - FlailTargetingElectronics
 
-#- type: latheRecipePack
-#  id: SpaceMechaWeapons
-#  recipes:
-#  - LightMechaAutocannon
-#  - LightMechaSMG
-#  - LightMechaShotgun
-#  - MediumMechDMR
-#  - MediumMechCoilgun
-#  - MediumMechTOW
-#  - HeavyMechRPG
-#  - HeavyMechCannon
-#  - HeavyMechProjector
-#  - EWACMechaJammer
-#  - EWACMechaFlares
+- type: latheRecipePack
+  id: SpaceMechaWeapons
+  recipes:
+  - LightMechaAutocannon
+  - LightMechaSMG
+  - LightMechaShotgun
+  - MediumMechDMR
+  - MediumMechCoilgun
+  - MediumMechTOW
+  - HeavyMechRPG
+  - HeavyMechCannon
+  - HeavyMechProjector
+  - EWACMechaJammer
+  - EWACMechaFlares
 
 

@@ -4,7 +4,7 @@ meta:
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 11/12/2025 12:03:03
+  time: 11/14/2025 02:55:10
   entityCount: 23116
 maps:
 - 1
@@ -17799,9 +17799,6 @@ entities:
     - type: Transform
       pos: -8.5,-46.5
       parent: 2
-    - type: Door
-      secondsUntilStateChange: -56457.863
-      state: Opening
   - uid: 392
     components:
     - type: Transform
@@ -18585,11 +18582,11 @@ entities:
     - type: Transform
       pos: -32.5,-24.5
       parent: 2
-  - uid: 532
-    components:
-    - type: Transform
-      pos: -30.5,-23.5
-      parent: 2
+            
+               
+                     
+                      
+               
   - uid: 533
     components:
     - type: Transform
@@ -18655,6 +18652,14 @@ entities:
     components:
     - type: Transform
       pos: -45.5,-47.5
+      parent: 2
+- proto: AirlockParamedicGlassLocked
+  entities:
+  - uid: 532
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -30.5,-23.5
       parent: 2
 - proto: AirlockQuartermasterLocked
   entities:
@@ -128981,7 +128986,7 @@ entities:
     - type: Transform
       pos: -16.5,-33.5
       parent: 2
-- proto: SpawnPointCaptain
+- proto: SpawnPointStationCaptain
   entities:
   - uid: 18978
     components:
@@ -148434,14 +148439,6 @@ entities:
     - type: Transform
       pos: -11.5,-16.5
       parent: 2
-    - type: DeviceLinkSink
-      ports: []
-    - type: Door
-      secondsUntilStateChange: -192750.16
-      sparkSound: !type:SoundCollectionSpecifier
-        collection: sparks
-      currentlyCrushing: []
-      state: Opening
   - uid: 22623
     components:
     - type: Transform

@@ -456,7 +456,7 @@ public sealed class NukeSystem : EntitySystem
             return;
 
         var nukeXform = Transform(uid);
-        var stationUid = _station.GetStationInMap(nukeXform.MapID);
+        var stationUid = _station.GetOwningStation(uid, nukeXform); // Hardlight: Get owning station of the nuke, so announcement properly sends
         // The nuke may not be on a station, so it's more important to just
         // let people know that a nuclear bomb was armed in their vicinity instead.
         // Otherwise, you could set every station to whatever AlertLevelOnActivate is.

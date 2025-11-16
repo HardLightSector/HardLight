@@ -15,6 +15,11 @@
     Head: MobProtogenHead
     Hair: MobHumanoidAnyMarking
     Snout: MobHumanoidAnyMarking
+    UndergarmentTop: MobHumanoidAnyMarking
+    UndergarmentBottom: MobHumanoidAnyMarking
+    Genital: MobHumanoidAnyMarking
+    Penis: MobHumanoidAnyMarking
+    Breasts: MobHumanoidAnyMarking
     Chest: MobProtogenTorso
     HeadTop: MobHumanoidAnyMarking
     HeadSide: MobHumanoidAnyMarking
@@ -28,6 +33,7 @@
     RLeg: MobProtogenRLeg
     LFoot: MobProtogenLFoot
     RFoot: MobProtogenRFoot
+    RArmExtension: MobHumanoidAnyMarking # Hardlight: enables harpy/bat wings for all species
 
 - type: markingPoints
   id: MobProtogenMarkingLimits

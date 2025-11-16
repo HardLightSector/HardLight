@@ -44,6 +44,7 @@
       - Maintenance
       - Medical
       - Mercenary # Frontier
+      - Paramedic # Hardlight: Add Paramedic access
       - Quartermaster # Frontier
       - Research # Frontier
       - ResearchDirector # Frontier
@@ -124,6 +125,7 @@
     - Maintenance
     - Medical
     - Mercenary # Frontier
+    - Paramedic # Hardlight: Add Paramedic access
     - Pirate # Frontier
     - Quartermaster
     - Research

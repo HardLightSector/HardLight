@@ -11,7 +11,7 @@
     equippedPrefix: alt
 
 - type: entity
-  parent: ClothingHeadsetAlt
+  parent: [ClothingHeadsetAlt, BaseCommandContraband]
   id: ClothingHeadsetAltCargo
   name: quartermaster's over-ear headset
   components:
@@ -19,7 +19,7 @@
     containers:
       key_slots:
       - EncryptionKeyCargo
-#      - EncryptionKeyCommand # Frontier
+      - EncryptionKeyCommand
       - EncryptionKeyCommon
   - type: Sprite
     sprite: Clothing/Ears/Headsets/cargo.rsi
@@ -56,7 +56,7 @@
     sprite: Clothing/Ears/Headsets/command.rsi
 
 - type: entity
-  parent: ClothingHeadsetAlt # Frontier: remove BaseCommandContraband
+  parent: [ClothingHeadsetAlt, BaseCommandContraband]
   id: ClothingHeadsetAltEngineering
   name: chief engineer's over-ear headset
   components:
@@ -64,7 +64,7 @@
     containers:
       key_slots:
       - EncryptionKeyEngineering
-#      - EncryptionKeyCommand # Frontier
+      - EncryptionKeyCommand
       - EncryptionKeyCommon
   - type: Sprite
     sprite: Clothing/Ears/Headsets/engineering.rsi
@@ -72,7 +72,7 @@
     sprite: Clothing/Ears/Headsets/engineering.rsi
 
 - type: entity
-  parent: ClothingHeadsetAlt # Frontier: remove BaseCommandContraband
+  parent: [ClothingHeadsetAlt, BaseCommandContraband]
   id: ClothingHeadsetAltMedical
   name: chief medical officer's over-ear headset
   components:
@@ -80,7 +80,7 @@
     containers:
       key_slots:
       - EncryptionKeyMedical
-#      - EncryptionKeyCommand # Frontier
+      - EncryptionKeyCommand
       - EncryptionKeyCommon
   - type: Sprite
     sprite: Clothing/Ears/Headsets/medical.rsi
@@ -90,7 +90,7 @@
     stealGroup: ClothingHeadsetAltMedical
 
 - type: entity
-  parent: [ClothingHeadsetAlt, BaseC2ContrabandUnredeemable] # Frontier: BaseCommandContraband<BaseC2ContrabandUnredeemable
+  parent: [ClothingHeadsetAlt, BaseCommandContraband]
   id: ClothingHeadsetAltSecurity
   name: head of security's over-ear headset
   components:
@@ -106,7 +106,7 @@
     sprite: Clothing/Ears/Headsets/security.rsi
 
 - type: entity
-  parent: ClothingHeadsetAlt # Frontier: remove BaseCommandContraband
+  parent: [ClothingHeadsetAlt, BaseCommandContraband]
   id: ClothingHeadsetAltScience
   name: research director's over-ear headset
   components:
@@ -114,7 +114,7 @@
     containers:
       key_slots:
       - EncryptionKeyScience
-#      - EncryptionKeyCommand # Frontier
+      - EncryptionKeyCommand
       - EncryptionKeyCommon
   - type: Sprite
     sprite: Clothing/Ears/Headsets/science.rsi

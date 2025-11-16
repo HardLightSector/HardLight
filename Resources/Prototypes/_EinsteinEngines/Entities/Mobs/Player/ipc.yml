@@ -169,6 +169,7 @@
   - type: EmitBuzzWhileDamaged
   - type: CanHostGuardian
   - type: WeldingHealable
+  - type: ModifyMarkings # Hardlight
 
 - type: entity
   save: false

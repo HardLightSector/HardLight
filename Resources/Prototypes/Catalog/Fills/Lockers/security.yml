@@ -30,10 +30,12 @@
     children:
     - id: FlashlightSeclite
 #    - id: WeaponDisabler # Frontier
-    - id: NFWeaponEnergyPistolDisabler # Frontier
-    - id: WeaponTaser
+    - id: WeaponEnergyRevolver # HL
+    - id: NFWeaponEnergySubMachineGunDisabler # HL
+    - id: WeaponEnergyShotgun
     - id: ClothingBeltSecurityFilled
     - id: Flash
+    - id: Bola
     - id: ClothingEyesGlassesSecurity
     - id: ClothingHandsGlovesCombat
     - id: ClothingShoesBootsJack
@@ -86,12 +88,13 @@
     - id: FlashlightSeclite
       prob: 0.8
 #    - id: WeaponDisabler # Frontier
-    - id: NFWeaponEnergyPistolDisabler # Frontier
-    - id: WeaponTaser
+    - id: WeaponEnergyRevolver # HL
+    - id: NFWeaponEnergySubMachineGunDisabler # HL
+    - id: Bola
     - id: ClothingUniformJumpsuitSecGrey
       prob: 0.3
     - id: ClothingHeadHelmetBasic
-    - id: ClothingOuterArmorBasic
+    - id: ClothingOuterArmorPlate
     - id: ClothingBeltSecurityFilled
     - id: Flash
       prob: 0.5
@@ -122,9 +125,10 @@
   table: !type:AllSelector
     children:
     - id: ClothingEyesGlassesSecurity
-    - id: WeaponTaser
 #    - id: WeaponDisabler # Frontier
-    - id: NFWeaponEnergyPistolDisabler
+    - id: WeaponEnergyRevolver # HL
+    - id: NFWeaponEnergySubMachineGunDisabler # HL
+    - id: Bola
     - id: TrackingImplanter
     - id: TrackingImplanter
 #    - id: ClothingOuterHardsuitBrigmedic # HL: Moved to HLFillHardsuitBrigmedic
@@ -171,6 +175,7 @@
     - id: ClothingEyesGlassesSecurity
       prob: 0.3
     - id: ClothingHeadHatDetGadget
+    - id: WeaponEnergyRevolver # HL
     - id: ClothingNeckTieDet
     - id: ClothingOuterVestDetective
     - id: ClothingOuterCoatDetectiveLoadout
@@ -220,7 +225,8 @@
     rolls: !type:ConstantNumberSelector
       value: 5
     children:
-    - id: NFWeaponEnergyPistolDisabler # Frontier: WeaponDisabler<NFWeaponEnergyPistolDisabler
+    - id: NFWeaponEnergySubMachineGunDisabler # HL
+    
 
 - type: entity
   parent: [GunSafeBaseSecure, BaseC2ContrabandUnredeemable ] # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable

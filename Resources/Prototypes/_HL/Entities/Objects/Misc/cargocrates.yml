@@ -50,8 +50,8 @@
     layers:
     - state: icon
   - type: TradeCrate
-    valueAtDestination: 500
-    valueElsewhere: 200
+    valueAtDestination: 750
+    valueElsewhere: 250
 
 - type: entity
   parent: BaseTradeItem
@@ -65,7 +65,7 @@
     - state: icon
   - type: TradeCrate
     valueAtDestination: 2500
-    valueElsewhere: 200
+    valueElsewhere: 250
 
 - type: entity
   parent: BaseTradeItem
@@ -79,7 +79,7 @@
     - state: icon
   - type: TradeCrate
     valueAtDestination: 3500
-    valueElsewhere: 500
+    valueElsewhere: 350
 
 - type: entity
   parent: BaseTradeItem
@@ -92,8 +92,8 @@
     layers:
     - state: icon
   - type: TradeCrate
-    valueAtDestination: 15000
-    valueElsewhere: 1500
+    valueAtDestination: 5000
+    valueElsewhere: 750
 
 - type: entity
   parent: BaseTradeItem
@@ -106,8 +106,8 @@
     layers:
     - state: icon
   - type: TradeCrate
-    valueAtDestination: 7500
-    valueElsewhere: 750
+    valueAtDestination: 18000
+    valueElsewhere: 1800
 
 - type: entity
   parent: BaseTradeItem
@@ -120,8 +120,8 @@
     layers:
     - state: icon
   - type: TradeCrate
-    valueAtDestination: 1000
-    valueElsewhere: 100
+    valueAtDestination: 750
+    valueElsewhere: 75
 
 - type: entity
   parent: [BaseTradeItem, BaseC2ContrabandUnredeemable]
@@ -134,8 +134,8 @@
     layers:
     - state: icon
   - type: TradeCrate
-    valueAtDestination: 7500
-    valueElsewhere: 750
+    valueAtDestination: 7250
+    valueElsewhere: 725
 
 - type: entity
   parent: [BaseTradeItem, BaseC2ContrabandUnredeemable]
@@ -148,8 +148,8 @@
     layers:
     - state: icon
   - type: TradeCrate
-    valueAtDestination: 15000
-    valueElsewhere: 1500
+    valueAtDestination: 22000
+    valueElsewhere: 1900
 
 - type: entity
   parent: [BaseTradeItem, BaseC2ContrabandUnredeemable]
@@ -162,8 +162,8 @@
     layers:
     - state: icon
   - type: TradeCrate
-    valueAtDestination: 10000
-    valueElsewhere: 1000
+    valueAtDestination: 8350
+    valueElsewhere: 835
 
 - type: entity
   parent: [BaseTradeItem, BaseC2ContrabandUnredeemable]
@@ -177,7 +177,7 @@
     - state: icon
   - type: TradeCrate
     valueAtDestination: 15000
-    valueElsewhere: 1500
+    valueElsewhere: 1200
 
 # Todo: Rice, wine, and antibiotics
 
