@@ -1,0 +1,87 @@
+- type: entity
+  id: BaseMagazine75Bolt
+  name: Bolt Magazine (.75)
+  parent: [BaseItem, RecyclableItemSteelTiny] # Frontier: added RecyclableItemSteelTiny
+  components:
+  - type: Tag
+    tags:
+      - Magazine75Bolt
+  - type: BallisticAmmoProvider
+    proto: CartridgeBoltBase
+    mayTransfer: true
+    whitelist:
+      tags:
+        - Boltcart
+    capacity: 20
+  - type: Item
+    size: Small
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: _Beestation/Objects/Weapons/Guns/Bolters/bolter.rsi
+    layers:
+    - state: gyropistol_mag
+      map: ["enum.GunVisualLayers.Base"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 2
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity
+  id: Magazine75BoltEmpty
+  name: Bolt Magazine (.75 any)
+  suffix: empty
+  parent: BaseMagazine75Bolt
+  components:
+  - type: BallisticAmmoProvider
+    proto: null
+
+- type: entity
+  id: Magazine75BoltExplosive
+  name: Bolt Magazine (.75 Explosive)
+  parent: BaseMagazine75Bolt
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeBoltExplosive
+
+- type: entity
+  id: Magazine75BoltIncendiary
+  name: Bolt Magazine (.75 Incendiary)
+  parent: BaseMagazine75Bolt
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeBoltIncendiary
+
+- type: entity
+  id: Magazine75BoltCorrosive
+  name: Bolt Magazine (.75 Corrosive)
+  parent: BaseMagazine75Bolt
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeBoltCorrosive
+
+- type: entity
+  id: Magazine75BoltTaser
+  name: Bolt Magazine (.75 Taser)
+  parent: BaseMagazine75Bolt
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeBoltTaser
+
+- type: entity
+  id: Magazine75BoltCryogenic
+  name: Bolt Magazine (.75 Cryogenic)
+  parent: BaseMagazine75Bolt
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeBoltCryogenic
+
+- type: entity
+  id: Magazine75BoltCFusor
+  name: Bolt Magazine (.75 Fusor)
+  parent: BaseMagazine75Bolt
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeBoltFusor

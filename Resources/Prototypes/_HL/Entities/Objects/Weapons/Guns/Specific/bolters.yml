@@ -1,0 +1,82 @@
+- type: entity
+  name: Bolt rifle
+  parent: [BaseWeaponRifle, BaseC2ContrabandUnredeemable]
+  id: WeaponRifleBolter
+  description: A large and powerful rifle that fires explosive rounds known as bolts. Commonly used by elite military forces.
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: BaseMagazine75Bolt
+        insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - Magazine75Bolt
+        whitelistFailPopup: gun-magazine-whitelist-fail
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeBoltBase
+        priority: 1
+        whitelist:
+          tags:
+            - Boltcart
+  - type: Sprite
+    sprite: _Beestation/Objects/Weapons/Guns/Bolters/bolter.rsi
+    layers:
+    - state: energytac
+      map: ["enum.GunVisualLayers.Base"]
+  - type: Gun
+    fireRate: 3
+    selectedMode: FullAuto
+    availableModes:
+      - SemiAuto
+      - FullAuto
+  - type: Clothing
+    sprite: _Mono/Objects/Weapons/Guns/Rifles/ak502.rsi
+  - type: Item
+    size: Large
+    sprite: _Mono/Objects/Weapons/Guns/Rifles/ak502.rsi
+
+- type: entity
+  name: Bolt pistol
+  parent: [BaseWeaponPistol, BaseC2ContrabandUnredeemable]
+  id: WeaponPistolBolter
+  description: A compact sidearm that fires explosive rounds known as bolts. Favored by officers and specialists.
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: BaseMagazine75Bolt
+        insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - Magazine75Bolt
+        whitelistFailPopup: gun-magazine-whitelist-fail
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeBoltBase
+        priority: 1
+        whitelist:
+          tags:
+            - Boltcart
+  - type: Sprite
+    sprite: _Beestation/Objects/Weapons/Guns/Bolters/bolter.rsi
+    layers:
+    - state: gyropistol
+      map: ["enum.GunVisualLayers.Base"]
+  - type: Gun
+    fireRate: 3
+    selectedMode: SemiAuto
+    availableModes:
+      - SemiAuto
+  - type: Clothing
+    sprite: Objects/Weapons/Guns/Pistols/N1984.rsi
+  - type: Item
+    size: Small
+    sprite: Objects/Weapons/Guns/Pistols/N1984.rsi

@@ -1,0 +1,140 @@
+- type: entity
+  parent: [ BaseCartridge, BaseC2Contraband ]
+  id: CartridgeBoltBase
+  name: Bolt cartridge (.75)
+  components:
+  - type: Tag
+    tags:
+    - Boltcart
+  - type: CartridgeAmmo
+    proto: BoltBase
+  - type: Sprite
+    sprite: _Mono/Objects/Weapons/Guns/Ammunition/Casings/145x114mm_casing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+  - type: StaticPrice
+    price: 20
+
+
+- type: entity
+  parent: [ BaseCartridge, BaseC2Contraband ]
+  id: CartridgeBoltExplosive
+  name: Explosive bolt cartridge (.75)
+  components:
+  - type: Tag
+    tags:
+    - Boltcart
+  - type: CartridgeAmmo
+    proto: BoltExplosive
+  - type: Sprite
+    sprite: _Mono/Objects/Weapons/Guns/Ammunition/Casings/145x114mm_casing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+  - type: StaticPrice
+    price: 20
+
+- type: entity
+  parent: [ BaseCartridge, BaseC2Contraband ]
+  id: CartridgeBoltIncendiary
+  name: Incendiary bolt cartridge (.75)
+  components:
+  - type: Tag
+    tags:
+    - Boltcart
+  - type: CartridgeAmmo
+    proto: BoltIncendiary
+  - type: Sprite
+    sprite: _Mono/Objects/Weapons/Guns/Ammunition/Casings/145x114mm_casing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+  - type: StaticPrice
+    price: 20
+
+- type: entity
+  parent: [ BaseCartridge, BaseC2Contraband ]
+  id: CartridgeBoltCorrosive
+  name: Corrosive bolt cartridge (.75)
+  components:
+  - type: Tag
+    tags:
+    - Boltcart
+  - type: CartridgeAmmo
+    proto: BoltCorrosive
+  - type: Sprite
+    sprite: _Mono/Objects/Weapons/Guns/Ammunition/Casings/145x114mm_casing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+  - type: StaticPrice
+    price: 20
+
+- type: entity
+  parent: [ BaseCartridge, BaseC2Contraband ]
+  id: CartridgeBoltTaser
+  name: Taser bolt cartridge (.75)
+  components:
+  - type: Tag
+    tags:
+    - Boltcart
+  - type: CartridgeAmmo
+    proto: BoltTaser
+  - type: Sprite
+    sprite: _Mono/Objects/Weapons/Guns/Ammunition/Casings/145x114mm_casing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+  - type: StaticPrice
+    price: 20
+
+- type: entity
+  parent: [ BaseCartridge, BaseC2Contraband ]
+  id: CartridgeBoltCryogenic
+  name: Cryogenic bolt cartridge (.75)
+  components:
+  - type: Tag
+    tags:
+    - Boltcart
+  - type: CartridgeAmmo
+    proto: BoltCryogenic
+  - type: Sprite
+    sprite: _Mono/Objects/Weapons/Guns/Ammunition/Casings/145x114mm_casing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+  - type: StaticPrice
+    price: 20
+
+- type: entity
+  parent: [ BaseCartridge, BaseC2Contraband ]
+  id: CartridgeBoltFusor
+  name: Fusor bolt cartridge (.75)
+  components:
+  - type: Tag
+    tags:
+    - Boltcart
+  - type: CartridgeAmmo
+    proto: BoltFusor
+  - type: Sprite
+    sprite: _Mono/Objects/Weapons/Guns/Ammunition/Casings/145x114mm_casing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+  - type: StaticPrice
+    price: 20
