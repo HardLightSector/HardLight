@@ -648,6 +648,7 @@
     idleState: icon
     runningState: icon
     staticPacks:
+    - SecurityAmmoStatic
     - SecurityEquipmentStatic
     - SecurityPracticeStatic
     - CivilianAmmoRecipePack

@@ -263,6 +263,36 @@
     Silver: 80
 
 - type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: BaseMagazineRiotgun
+  result: BaseMagazineRiotgun
+  materials:
+    Plastic: 240
+    Steel: 160
+    Glass: 80
+    Plasma: 160
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazineRiotGunStinger
+  result: MagazineRiotGunStinger
+  materials:
+    Plastic: 480
+    Steel: 160
+    Glass: 80
+    Plasma: 160
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazineRiotGunTearGas
+  result: MagazineRiotGunTearGas
+  materials:
+    Plastic: 380
+    Steel: 320
+    Glass: 160
+    Plasma: 160
+
+- type: latheRecipe
   id: TargetHuman
   result: TargetHuman
   completetime: 5

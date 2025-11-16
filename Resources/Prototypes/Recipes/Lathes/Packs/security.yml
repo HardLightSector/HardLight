@@ -24,6 +24,9 @@
   id: SecurityAmmoStatic
   recipes:
   - Wirecutter
+  - MagazineRiotGunTearGas
+  - MagazineRiotGunStinger
+  - BaseMagazineRiotgun
 
 - type: latheRecipePack
   id: SecurityWeaponsStatic

@@ -337,6 +337,7 @@
     idleState: icon
     runningState: icon
     staticPacks:
+    - SecurityAmmoStatic
     - NFNfsdTechfabDeprecatedStatic
     - CivilianAmmoRecipePack
     dynamicPacks:

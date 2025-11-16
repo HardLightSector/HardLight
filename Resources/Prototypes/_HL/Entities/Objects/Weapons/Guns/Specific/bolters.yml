@@ -34,6 +34,8 @@
     availableModes:
       - SemiAuto
       - FullAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/boltshot3.ogg
   - type: Clothing
     sprite: _Mono/Objects/Weapons/Guns/Rifles/ak502.rsi
   - type: Item
@@ -77,6 +79,8 @@
     selectedMode: SemiAuto
     availableModes:
       - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/boltshot2.ogg
   - type: Clothing
     sprite: Objects/Weapons/Guns/Pistols/N1984.rsi
   - type: Item
