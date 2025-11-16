@@ -1,0 +1,41 @@
+- type: entity
+  parent: BaseBulletTrigger
+  id: BulletRiotGunTearGas
+  name: Tear Gas Round
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    layers:
+    - state: cleanade
+  - type: ActiveTimerTrigger
+    timeRemaining: 0.3
+  - type: SmokeOnTrigger
+    duration: 10
+    spreadAmount: 30
+    smokePrototype: Smoke
+    solution:
+      reagents:
+      - ReagentId: TearGas
+        Quantity: 50
+  - type: SoundOnTrigger
+    sound: /Audio/Items/smoke_grenade_smoke.ogg
+
+- type: entity
+  parent: BaseBulletTrigger
+  id: BulletRiotGunStinger
+  name: Stinger Round
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    layers:
+    - state: cleanade
+  - type: ProjectileGrenade
+    fillPrototype: NFPelletClusterRubber # Frontier: use NF variant
+    capacity: 30
+  - type: EmitSoundOnTrigger
+    sound:
+      path: "/Audio/Effects/flash_bang.ogg"
+  - type: SpawnOnTrigger
+    proto: GrenadeFlashEffect

@@ -312,3 +312,10 @@
 
 - type: Tag
   id: Magazine75Bolt
+
+#riotgun
+- type: Tag
+  id: MagazineRiotGun
+
+- type: Tag
+  id: GrenadeRiotGun

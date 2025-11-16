@@ -1,0 +1,57 @@
+- type: entity
+  name: CC-2841 Riotgun
+  parent: [ BaseWeaponLauncher, BaseGunWieldable, BaseC2ContrabandUnredeemable ]
+  id: WeaponLauncherRiotGun
+  description: A multipurpose magazine fed riot control launcher, capable of firing a variety of less-lethal munitions.
+  components:
+  - type: Sprite
+    sprite: _Beestation/Objects/Weapons/Guns/Rifles/riot_gun.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+  - type: Clothing
+    sprite: Objects/Weapons/Guns/Launchers/china_lake.rsi
+  - type: Item
+    sprite: Objects/Weapons/Guns/Launchers/china_lake.rsi
+  - type: Gun
+    projectileSpeed: 45
+    fireRate: 0.5
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/grenade_launcher.ogg
+  - type: ChamberMagazineAmmoProvider
+    autoEject: true
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: BaseMagazineRiotgun
+        insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineRiotGun
+        whitelistFailPopup: gun-magazine-whitelist-fail
+      gun_chamber:
+        name: Chamber
+        startingItem: GrenadeRiotGunBase
+        priority: 1
+        whitelist:
+          tags:
+            - GrenadeRiotGun
+  - type: MagazineVisuals
+    magState: mag
+    steps: 2
+    zeroVisible: false
+  - type: SpeedModifiedOnWield
+    walkModifier: 0.9
+    sprintModifier: 0.75
+  - type: GunRequiresWield
+  - type: WieldedCrosshair
+  - type: WieldDelay
+    baseDelay: 3
+    modifiedDelay: 3
+    preventFiring: true
+  - type: StaticPrice
+    price: 7500
+  - type: Appearance
