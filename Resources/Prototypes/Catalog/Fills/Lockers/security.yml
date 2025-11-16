@@ -46,6 +46,10 @@
     - id: NetworkConfigurator
     - id: Binoculars
     - id: WeaponEnergyHalberdAntique # HL
+    - id: WeaponLauncherRiotGun
+    - id: BaseMagazineRiotgun
+    - id: MagazineRiotGunStinger
+    - id: MagazineRiotGunTearGas
     - !type:AllSelector
       rolls: !type:ConstantNumberSelector
         value: 2

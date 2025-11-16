@@ -96,14 +96,14 @@
       fireCost: 100
       name: disable
       state: disabler
-    - proto: BulletLaser
+    - proto: MultiPhaseLethalBolt
       fireCost: 200
       name: lethal
       state: lethal
-    # - proto: BulletEnergyGunIon
-    #   fireCost: 500
-    #   name: ion
-    #   state: special
+    - proto: BulletTaser
+      fireCost: 400
+      name: taser
+      state: special
   - type: MagazineVisuals
     magState: mag
     steps: 5
