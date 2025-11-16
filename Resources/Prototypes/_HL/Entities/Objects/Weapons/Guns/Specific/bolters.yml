@@ -39,6 +39,8 @@
   - type: Item
     size: Large
     sprite: _Mono/Objects/Weapons/Guns/Rifles/ak502.rsi
+  - type: ChamberMagazineAmmoProvider
+    autoEject: true
 
 - type: entity
   name: Bolt pistol
@@ -80,3 +82,5 @@
   - type: Item
     size: Small
     sprite: Objects/Weapons/Guns/Pistols/N1984.rsi
+  - type: ChamberMagazineAmmoProvider
+    autoEject: true
