@@ -1,0 +1,13 @@
+# Tier 1
+
+- type: technology
+  id: Plumbing
+  name: research-technology-plumbing
+  icon:
+    sprite: Structures/Piping/Atmospherics/pump.rsi
+    state: pumpManualValve
+  discipline: CivilianServices
+  tier: 1
+  cost: 5000
+  recipeUnlocks:
+  - PlumbingAssemblyRecipe
