@@ -1,0 +1,9 @@
+- type: latheRecipe
+  id: PlumbingAssemblyRecipe
+  categories:
+  - Parts
+  completetime: 2
+  result: PlumbingAssembly
+  materials:
+    Steel: 800
+    Plastic: 100
