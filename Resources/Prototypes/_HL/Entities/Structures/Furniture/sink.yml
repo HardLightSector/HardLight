@@ -1,0 +1,76 @@
+- type: entity
+  id: BaseSinkUnfinished
+  parent: BaseStructureDynamic
+  abstract: true
+  name: unfinished sink
+  description: A sink under construction
+  components:
+  - type: Physics
+    bodyType: Dynamic
+    canCollide: false
+  - type: InteractionOutline
+  - type: Sprite
+    sprite: Structures/Furniture/sink.rsi
+    state: sink_stem
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 80
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTrigger
+          damage: 40
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+          - !type:PlaySoundBehavior
+            sound:
+              collection: MetalBreak
+
+- type: entity
+  id: SinkUnfinished
+  parent: BaseSinkUnfinished
+  components:
+  - type: Construction
+    graph: Sink
+    node: body
+
+- type: entity
+  id: SinkStemlessUnfinished
+  parent: BaseSinkUnfinished
+  components:
+  - type: Sprite
+    sprite: Structures/Furniture/sink.rsi
+    state: sink
+  - type: Construction
+    graph: SinkStemless
+    node: body
+
+- type: entity
+  id: SinkWideUnfinished
+  parent: BaseSinkUnfinished
+  components:
+  - type: Sprite
+    sprite: Structures/Furniture/sink.rsi
+    state: sink_wide
+  - type: Construction
+    graph: SinkWide
+    node: body
+
+- type: entity
+  id: SinkWideEmpty
+  parent: SinkWide
+  suffix: Empty
+  components:
+  - type: Sprite
+    sprite: Structures/Furniture/sink.rsi
+    state: sink_wide
+  - type: SolutionContainerManager
+    solutions:
+      drainBuffer:
+        maxVol: 200
+      tank:
+        maxVol: 500

@@ -1,0 +1,209 @@
+# Sink
+- type: constructionGraph
+  id: Sink
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: body
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+
+  - node: body
+    entity: SinkUnfinished
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Screwing
+        doAfter: 1
+    - to: plumbing
+      conditions:
+      - !type:EntityAnchored
+      steps:
+      - tag: PlumbingAssembly
+        name: construction-graph-tag-plumbing-assembly
+        icon:
+          sprite: Structures/Piping/Atmospherics/pump.rsi
+          state: pumpManualValve
+        doAfter: 1
+
+  - node: plumbing
+    entity: SinkUnfinished
+    edges:
+    - to: body
+      completed:
+      - !type:SpawnPrototype
+        prototype: PlumbingAssembly
+      steps:
+      - tool: Prying
+        doAfter: 1
+    - to: sink
+      steps:
+      - tool: Anchoring
+        doAfter: 1
+
+  - node: sink
+    entity: SinkEmpty
+    actions:
+    - !type:EmptySolution
+      solution: tank
+    edges:
+    - to: plumbing
+      completed:
+      - !type:SetAnchor
+      - !type:EmptySolution
+        solution: drainBuffer
+        spill: true
+      steps:
+      - tool: Anchoring
+        doAfter: 1
+
+# Stemless Sink
+- type: constructionGraph
+  id: SinkStemless
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: body
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+
+  - node: body
+    entity: SinkStemlessUnfinished
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Screwing
+        doAfter: 1
+    - to: plumbing
+      conditions:
+      - !type:EntityAnchored
+      steps:
+      - tag: PlumbingAssembly
+        name: construction-graph-tag-plumbing-assembly
+        icon:
+          sprite: Structures/Piping/Atmospherics/pump.rsi
+          state: pumpManualValve
+        doAfter: 1
+
+  - node: plumbing
+    entity: SinkStemlessUnfinished
+    edges:
+    - to: body
+      completed:
+      - !type:SpawnPrototype
+        prototype: PlumbingAssembly
+      steps:
+      - tool: Prying
+        doAfter: 1
+    - to: sinkStemless
+      steps:
+      - tool: Anchoring
+        doAfter: 1
+
+  - node: sinkStemless
+    entity: SinkStemless
+    actions:
+    - !type:EmptySolution
+      solution: tank
+    edges:
+    - to: plumbing
+      completed:
+      - !type:SetAnchor
+      - !type:EmptySolution
+        solution: drainBuffer
+        spill: true
+      steps:
+      - tool: Anchoring
+        doAfter: 1
+
+# Stemless Sink
+- type: constructionGraph
+  id: SinkWide
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: body
+      steps:
+      - material: Steel
+        amount: 4
+        doAfter: 1
+
+  - node: body
+    entity: SinkWideUnfinished
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 4
+      - !type:DeleteEntity
+      steps:
+      - tool: Screwing
+        doAfter: 1
+    - to: plumbing
+      conditions:
+      - !type:EntityAnchored
+      steps:
+      - tag: PlumbingAssembly
+        name: construction-graph-tag-plumbing-assembly
+        icon:
+          sprite: Structures/Piping/Atmospherics/pump.rsi
+          state: pumpManualValve
+        doAfter: 1
+
+  - node: plumbing
+    entity: SinkWideUnfinished
+    edges:
+    - to: body
+      completed:
+      - !type:SpawnPrototype
+        prototype: PlumbingAssembly
+      steps:
+      - tool: Prying
+        doAfter: 1
+    - to: sinkWide
+      steps:
+      - tool: Anchoring
+        doAfter: 1
+
+  - node: sinkWide
+    entity: SinkWideEmpty
+    actions:
+    - !type:EmptySolution
+      solution: tank
+    edges:
+    - to: plumbing
+      completed:
+      - !type:SetAnchor
+      - !type:EmptySolution
+        solution: drainBuffer
+        spill: true
+      steps:
+      - tool: Anchoring
+        doAfter: 1
