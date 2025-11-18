@@ -43,13 +43,36 @@
       thresholds:
       - trigger:
           !type:DamageTrigger
-          damage: 100
+          damage: 80
         behaviors:
-        - !type:DoActsBehavior
-          acts: [ "Destruction" ]
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTrigger
+          damage: 40
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+          - !type:PlaySoundBehavior
+            sound:
+              collection: MetalBreak
     - type: GenericVisualizer
       visuals:
         enum.ToggleVisuals.Toggled:
           enum.ToggleVisuals.Layer:
             True: { visible: true }
             False: { visible: false }
+
+- type: entity
+  id: ShowerUnfinished
+  parent: BaseSinkUnfinished
+  name: unfinished shower
+  description: A shower under construction
+  components:
+    - type: Sprite
+      sprite: _HL/Structures/Furniture/shower.rsi
+      drawdepth: WallMountedItems
+      state: shower
+    - type: Construction
+      graph: Shower
+      node: body
