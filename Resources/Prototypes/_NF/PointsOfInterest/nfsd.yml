@@ -38,8 +38,8 @@
           mapNameTemplate: 'NFSD Outpost'
         - type: ExtraStationInformation
           iconPath: /Textures/_NF/Structures/Decoration/banner.rsi/nfsd-banner.png
-          stationSubtext: 'frontier-lobby-nfsd-subtext'
-          stationDescription: 'frontier-lobby-nfsd-description'
+          stationSubtext: 'frontier-lobby-Colsec-subtext'
+          stationDescription: 'frontier-lobby-Colsec-description'
           lobbySortOrder: 2
         - type: StationJobs
           availableJobs:
