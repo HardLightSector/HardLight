@@ -1,6 +1,6 @@
 - type: entity
   name: frontier uplink coin
-  parent: BaseItem
+  parent: [ BaseItem, Class3Expedition ]
   id: FrontierUplinkCoin
   suffix: 20 TC
   description: A token awarded to the NFSD for turning in contraband. It can be exchanged in an NFSD uplink device for a variety of law enforcement tools.
@@ -48,7 +48,7 @@
 
 # Uplinks
 - type: entity
-  parent: [ BaseItem, StorePresetSecurityUplink ]
+  parent: [ BaseItem, StorePresetSecurityUplink, Class3Expedition ]
   id: BaseSecurityUplinkRadio
   name: NFSD uplink
   description: Retro looking old radio...
@@ -103,7 +103,7 @@
   name: NFSD deployable barrier
   id: NfsdDeployableBarrier
   description: A deployable barrier. Swipe your ID card to lock/unlock it.
-  parent: DeployableBarrier
+  parent: [ DeployableBarrier, Class3Expedition ]
   components:
   - type: Sprite
     sprite: _NF/Objects/Specific/Security/nfsdbarrier.rsi
