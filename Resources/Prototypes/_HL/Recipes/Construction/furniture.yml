@@ -1,5 +1,17 @@
 # Bathroom
 - type: construction
+  id: FloorDrain
+  graph: FloorDrain
+  startNode: start
+  targetNode: floorDrain
+  category: construction-category-furniture
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
   id: Shower
   graph: Shower
   startNode: start
