@@ -23,7 +23,7 @@
   - type: SolutionContainerManager
     solutions:
       drainBuffer:
-        maxVol: 100
+        maxVol: 200 # HardLight: Parity with Sink
       tank:
         maxVol: 500
   - type: SolutionRegeneration
@@ -134,7 +134,7 @@
   - type: SolutionContainerManager
     solutions:
       drainBuffer:
-        maxVol: 100
+        maxVol: 200 # HardLight: Parity with Sink
       tank:
         reagents:
         - ReagentId: Water
