@@ -1,0 +1,8 @@
+- type: construction
+  id: MagazineRailgunImprovisedCrafting
+  graph: MagazineRailgunImprovisedCraftingGraph
+  startNode: start
+  targetNode: mag
+  category: construction-category-weapons
+  description: Using this WILL void the warranty on your fancy gun. But you probably don't have the time to care.
+  objectType: Item

@@ -1,0 +1,47 @@
+- type: entity
+  name: NT-88 Peregrine
+  parent: [BaseC2ContrabandUnredeemable, BaseWeaponPowerCell, BaseGunWieldable]
+  id: WeaponRailgunPeregrine
+  description: From NanoTrasen Skunkworks. Because there is beauty in destruction, there must also be beauty in the delivery of destruction. Uses a specific proprietary cartridge, although it may be possible to jury-rig something workable...
+  components:
+  - type: Item
+    size: Large
+    sprite: _HL/Objects/Weapons/Guns/Rifles/peregrine.rsi #floof
+  - type: Sprite
+    sprite: _HL/Objects/Weapons/Guns/Rifles/peregrine.rsi  #floof
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _HL/Objects/Weapons/Guns/Rifles/peregrine.rsi #floof
+    quickEquip: false
+    slots:
+    - Back
+    - suitStorage
+  - type: HitscanBatteryAmmoProvider
+    proto: RailgunLaser
+    fireCost: 500
+  - type: Gun
+    fireRate: 1
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/_HL/Weapons/Guns/Rifles/peregrineShoot.ogg # Credit: Freesound Community on Pixabay
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: MagazineRailgun
+        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        whitelist:
+          tags:
+            - MagazineRailgunTag
+  - type: GunRequiresWield
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
