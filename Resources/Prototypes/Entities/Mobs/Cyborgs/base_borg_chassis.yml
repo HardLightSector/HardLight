@@ -257,6 +257,21 @@
     interactFailureString: petting-failure-generic-cyborg
     interactSuccessSound:
       path: /Audio/Ambience/Objects/periodic_beep.ogg
+  #region Starlight
+  #- type: CyborgSparkEffect
+  #- type: StationAIShunt #Starlight allow shunting into all borgs
+  #- type: BorgSwitchableSubtype # Afterlight change
+  #- type: Crawler
+  - type: Blindable
+  - type: EyeProtection
+  - type: Stripping
+  #endregion
+  #- type: MobCollision # AFTERLIGHT
+  #- type: ALMobCollision # AFTERLIGHT
+  #- type: ALPose # AFTERLIGHT
+  - type: ALMobInteractable # AFTERLIGHT
+  - type: CanBeVorePredator # AFTERLIGHT
+  - type: CanBeVorePrey # AFTERLIGHT
 
 - type: entity
   abstract: true

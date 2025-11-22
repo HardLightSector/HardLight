@@ -1,0 +1,5 @@
+﻿<controls:ALMobInteractionPreferenceButton
+    xmlns="https://spacestation14.io"
+    xmlns:controls="clr-namespace:Content.Client._Afterlight.MobInteraction"
+    ToggleMode="True" StyleClasses="OpenBoth" HorizontalExpand="True">
+</controls:ALMobInteractionPreferenceButton>

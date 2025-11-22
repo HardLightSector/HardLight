@@ -1,0 +1,14 @@
+﻿<controls:ALMobInteractionControl
+    xmlns="https://spacestation14.io"
+    xmlns:controls="clr-namespace:Content.Client._Afterlight.MobInteraction"
+    xmlns:ui="clr-namespace:Content.Client._Afterlight.UserInterface">
+    <BoxContainer Orientation="Vertical">
+        <RichTextLabel Name="InteractingWithLabel" Access="Public"
+                       Text="Interacting with yourself..." />
+        <ui:BlueHorizontalSeparator />
+        <TabContainer Name="Tabs" Access="Public" VerticalExpand="True">
+            <BoxContainer Name="ContentPreferencesTab" Access="Public"
+                          Orientation="Vertical" />
+        </TabContainer>
+    </BoxContainer>
+</controls:ALMobInteractionControl>

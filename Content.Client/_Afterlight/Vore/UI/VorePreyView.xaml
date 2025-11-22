@@ -1,0 +1,8 @@
+﻿<controls:VorePreyView
+    xmlns="https://spacestation14.io"
+    xmlns:controls="clr-namespace:Content.Client._Afterlight.Vore.UI">
+    <BoxContainer Orientation="Vertical" HorizontalAlignment="Center">
+        <SpriteView Name="View" Access="Public" OverrideDirection="South" MinHeight="64" Stretch="Fill" />
+        <Label Name="Label" Access="Public" />
+    </BoxContainer>
+</controls:VorePreyView>

@@ -1,0 +1,9 @@
+﻿<controls:VoreSpaceRow
+    xmlns="https://spacestation14.io"
+    xmlns:controls="clr-namespace:Content.Client._Afterlight.Vore.UI">
+    <BoxContainer Orientation="Horizontal">
+        <CheckBox Name="Checkbox" Access="Public" />
+        <Button Name="Button" Access="Public" StyleClasses="OpenBoth" ToggleMode="True"
+                ClipText="True" HorizontalExpand="True" />
+    </BoxContainer>
+</controls:VoreSpaceRow>

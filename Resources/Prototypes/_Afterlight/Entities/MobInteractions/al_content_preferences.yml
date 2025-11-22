@@ -1,0 +1,21 @@
+﻿- type: entity
+  id: ALContentPreferenceDummy
+  name: Dummy Preference
+  components:
+  - type: ALContentPreference
+    defaultValue: true
+
+- type: entity
+  abstract: true
+  id: ALContentPreferenceBase
+  name: Preference Name
+  components:
+  - type: ALContentPreference
+    mobInteraction: true
+
+- type: entity
+  parent: ALContentPreferenceBase
+  id: ALContentPreferenceVore
+  name: Vore
+  description: "Enables you being able to ingest, and being ingested by, other players.
+    You will be asked when another player attempts one involving you."

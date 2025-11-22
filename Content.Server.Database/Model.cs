@@ -697,6 +697,12 @@ namespace Content.Server.Database
         public List<ServerRoleBan> AdminServerRoleBansCreated { get; set; } = null!;
         public List<ServerRoleBan> AdminServerRoleBansLastEdited { get; set; } = null!;
         public List<RoleWhitelist> JobWhitelists { get; set; } = null!;
+
+        // Afterlight
+        public List<ALKinks> Kinks { get; set; } = null!;
+        public List<ALVoreSpaces> VoreSpaces { get; set; } = null!;
+        public List<ALContentPreferences> InteractionContentPreferences { get; set; } = null!;
+        // Afterlight
     }
 
     [Table("whitelist")]

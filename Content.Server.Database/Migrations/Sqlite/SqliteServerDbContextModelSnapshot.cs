@@ -17,6 +17,131 @@ namespace Content.Server.Database.Migrations.Sqlite
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.1");
 
+            modelBuilder.Entity("Content.Server.Database.ALContentPreferences", b =>
+                {
+                    b.Property<Guid>("PlayerId")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("player_id");
+
+                    b.Property<string>("PreferenceId")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("preference_id");
+
+                    b.HasKey("PlayerId", "PreferenceId")
+                        .HasName("PK_al_content_preferences");
+
+                    b.HasIndex("PlayerId")
+                        .HasDatabaseName("IX_al_content_preferences_player_id");
+
+                    b.ToTable("al_content_preferences", (string)null);
+                });
+
+            modelBuilder.Entity("Content.Server.Database.ALKinks", b =>
+                {
+                    b.Property<Guid>("PlayerId")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("player_id");
+
+                    b.Property<string>("KinkId")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("kink_id");
+
+                    b.Property<int>("Preference")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("preference");
+
+                    b.HasKey("PlayerId", "KinkId")
+                        .HasName("PK_al_kinks");
+
+                    b.ToTable("al_kinks", (string)null);
+                });
+
+            modelBuilder.Entity("Content.Server.Database.ALVoreSpaces", b =>
+                {
+                    b.Property<Guid>("SpaceId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("space_id");
+
+                    b.Property<double>("BruteDamage")
+                        .HasColumnType("REAL")
+                        .HasColumnName("brute_damage");
+
+                    b.Property<double>("BurnDamage")
+                        .HasColumnType("REAL")
+                        .HasColumnName("burn_damage");
+
+                    b.Property<bool>("CanTaste")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("can_taste");
+
+                    b.Property<int>("ChanceToEscape")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("chance_to_escape");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("description");
+
+                    b.Property<bool>("Fleshy")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("fleshy");
+
+                    b.Property<string>("InsertionSound")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("insertion_sound");
+
+                    b.Property<string>("InsertionVerb")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("insertion_verb");
+
+                    b.Property<bool>("InternalSoundLoop")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("internal_sound_loop");
+
+                    b.Property<int>("Mode")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("mode");
+
+                    b.Property<bool>("MuffleRadio")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("muffle_radio");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("name");
+
+                    b.Property<string>("Overlay")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("overlay");
+
+                    b.Property<Guid>("PlayerId")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("player_id");
+
+                    b.Property<string>("ReleaseSound")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("release_sound");
+
+                    b.Property<string>("ReleaseVerb")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("release_verb");
+
+                    b.Property<TimeSpan>("TimeToEscape")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("time_to_escape");
+
+                    b.HasKey("SpaceId")
+                        .HasName("PK_al_vore_spaces");
+
+                    b.HasIndex("PlayerId")
+                        .HasDatabaseName("IX_al_vore_spaces_player_id");
+
+                    b.ToTable("al_vore_spaces", (string)null);
+                });
+
             modelBuilder.Entity("Content.Server.Database.Admin", b =>
                 {
                     b.Property<Guid>("UserId")
@@ -1486,6 +1611,45 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.ToTable("player_round", (string)null);
                 });
 
+            modelBuilder.Entity("Content.Server.Database.ALContentPreferences", b =>
+                {
+                    b.HasOne("Content.Server.Database.Player", "Player")
+                        .WithMany("InteractionContentPreferences")
+                        .HasForeignKey("PlayerId")
+                        .HasPrincipalKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("FK_al_content_preferences_player_player_id");
+
+                    b.Navigation("Player");
+                });
+
+            modelBuilder.Entity("Content.Server.Database.ALKinks", b =>
+                {
+                    b.HasOne("Content.Server.Database.Player", "Player")
+                        .WithMany("Kinks")
+                        .HasForeignKey("PlayerId")
+                        .HasPrincipalKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("FK_al_kinks_player_player_id");
+
+                    b.Navigation("Player");
+                });
+
+            modelBuilder.Entity("Content.Server.Database.ALVoreSpaces", b =>
+                {
+                    b.HasOne("Content.Server.Database.Player", "Player")
+                        .WithMany("VoreSpaces")
+                        .HasForeignKey("PlayerId")
+                        .HasPrincipalKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("FK_al_vore_spaces_player_player_id");
+
+                    b.Navigation("Player");
+                });
+
             modelBuilder.Entity("Content.Server.Database.Admin", b =>
                 {
                     b.HasOne("Content.Server.Database.AdminRank", "AdminRank")
@@ -2146,7 +2310,13 @@ namespace Content.Server.Database.Migrations.Sqlite
 
                     b.Navigation("AdminWatchlistsReceived");
 
+                    b.Navigation("InteractionContentPreferences");
+
                     b.Navigation("JobWhitelists");
+
+                    b.Navigation("Kinks");
+
+                    b.Navigation("VoreSpaces");
                 });
 
             modelBuilder.Entity("Content.Server.Database.Preference", b =>

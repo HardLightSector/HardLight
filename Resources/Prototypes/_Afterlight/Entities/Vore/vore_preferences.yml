@@ -1,0 +1,48 @@
+﻿- type: entity
+  abstract: true
+  id: ALContentPreferenceVoreBase
+  name: Vore Preference
+  components:
+  - type: ALContentPreference
+    vore: true
+    defaultValue: true
+
+- type: entity
+  parent: ALContentPreferenceVoreBase
+  id: ALContentPreferenceEatingNoises
+  name: Eating Noises
+
+#- type: entity
+#  parent: ALContentPreferenceVoreBase
+#  id: ALContentPreferenceDigestionNoises
+#  name: Digestion Noises
+#
+#- type: entity
+#  parent: ALContentPreferenceVoreBase
+#  id: ALContentPreferenceBelchNoises
+#  name: Belch Noises
+#
+#- type: entity
+#  parent: ALContentPreferenceVoreBase
+#  id: ALContentPreferenceTakeDigestionDamage
+#  name: Take Digestion Damage
+#
+#- type: entity
+#  parent: ALContentPreferenceVoreBase
+#  id: ALContentPreferenceDeletedAfterDigestion
+#  name: Deleted After Digestion
+#
+#- type: entity
+#  parent: ALContentPreferenceVoreBase
+#  id: ALContentPreferenceAbsorptionAllowed
+#  name: Absorption Allowed
+#
+#- type: entity
+#  parent: ALContentPreferenceVoreBase
+#  id: ALContentPreferenceFullscreenOverlays
+#  name: Fullscreen Overlays
+#
+#- type: entity
+#  parent: ALContentPreferenceVoreBase
+#  id: ALContentPreferenceCyborgSleepers
+#  name: Cyborg Sleepers

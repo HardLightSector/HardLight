@@ -1,0 +1,17 @@
+﻿{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from S.P.L.U.R.T-tg at https://github.com/SPLURT-Station/S.P.L.U.R.T-tg/blob/cb9535e7bb39d594d3ab6547be3411314783e894/modular_zubbers/icons/mob/actions/vore.dmi",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "nom"
+    },
+    {
+      "name": "nom_centered"
+    }
+  ]
+}

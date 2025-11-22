@@ -1,0 +1,150 @@
+﻿- type: entity
+  abstract: true
+  id: ALVoreOverlayBase
+  name: vore overlay
+  components:
+  - type: VoreOverlay
+
+- type: entity
+  parent: ALVoreOverlayBase
+  id: ALVoreOverlayInternals
+  name: internals 1
+  components:
+  - type: VoreOverlay
+    overlay: _Afterlight/Vore/vore_overlays/brown_internals.png
+
+- type: entity
+  parent: ALVoreOverlayBase
+  id: ALVoreOverlayInternals2Somewhat
+  name: internals 2 (outside somewhat visible)
+  components:
+  - type: VoreOverlay
+    overlay: _Afterlight/Vore/vore_overlays/a_tumby.png
+
+- type: entity
+  parent: ALVoreOverlayBase
+  id: ALVoreOverlayInternasl2Barely
+  name: internals 2 (outside barely visible)
+  components:
+  - type: VoreOverlay
+    overlay: _Afterlight/Vore/vore_overlays/another_tumby.png
+
+- type: entity
+  parent: ALVoreOverlayBase
+  id: ALVoreOverlayInternals3
+  name: internals 3
+  components:
+  - type: VoreOverlay
+    overlay: _Afterlight/Vore/vore_overlays/da_tumby.png
+
+- type: entity
+  parent: ALVoreOverlayBase
+  id: ALVoreOverlayInternals4
+  name: internals 4
+  components:
+  - type: VoreOverlay
+    overlay: _Afterlight/Vore/vore_overlays/yet_another_tumby.png
+
+- type: entity
+  parent: ALVoreOverlayBase
+  id: ALVoreOverlayInternals5
+  name: internals 5
+  components:
+  - type: VoreOverlay
+    overlay: _Afterlight/Vore/vore_overlays/a_bright_tumby.png
+
+- type: entity
+  parent: ALVoreOverlayBase
+  id: ALVoreOverlayStomach
+  name: stomach
+  components:
+  - type: VoreOverlay
+    overlay: _Afterlight/Vore/vore_overlays/destination_tumby_fluidless.png
+
+- type: entity
+  parent: ALVoreOverlayBase
+  id: ALVoreOverlayStomachFluids
+  name: stomach (with fluids)
+  components:
+  - type: VoreOverlay
+    overlay: _Afterlight/Vore/vore_overlays/destination_tumby.png
+
+- type: entity
+  parent: ALVoreOverlayBase
+  id: ALVoreOverlayCleavage
+  name: cleavage
+  components:
+  - type: VoreOverlay
+    overlay: _Afterlight/Vore/vore_overlays/a_kind_of_tumby.png
+
+- type: entity
+  parent: ALVoreOverlayBase
+  id: ALVoreOverlayCleavageClothing
+  name: cleavage (clothing)
+  components:
+  - type: VoreOverlay
+    overlay: _Afterlight/Vore/vore_overlays/a_kind_of_tumby_b.png
+
+- type: entity
+  parent: ALVoreOverlayBase
+  id: ALVoreOverlayCoils
+  name: coils
+  components:
+  - type: VoreOverlay
+    overlay: _Afterlight/Vore/vore_overlays/a_kind_of_coils.png
+
+- type: entity
+  parent: ALVoreOverlayBase
+  id: ALVoreOverlayCoilsTight
+  name: coils (tight)
+  components:
+  - type: VoreOverlay
+    overlay: _Afterlight/Vore/vore_overlays/a_kind_of_coils_tight.png
+
+- type: entity
+  parent: ALVoreOverlayBase
+  id: ALVoreOverlayMaw
+  name: maw
+  components:
+  - type: VoreOverlay
+    overlay: _Afterlight/Vore/vore_overlays/entrance_to_a_tumby.png
+
+- type: entity
+  parent: ALVoreOverlayBase
+  id: ALVoreOverlayThroat
+  name: throat
+  components:
+  - type: VoreOverlay
+    overlay: _Afterlight/Vore/vore_overlays/passage_to_a_tumby.png
+
+- type: entity
+  parent: ALVoreOverlayBase
+  id: ALVoreOverlayVagina
+  name: vagina
+  components:
+  - type: VoreOverlay
+    overlay: _Afterlight/Vore/vore_overlays/you_know_what_this_is.png
+
+- type: entity
+  parent: ALVoreOverlayBase
+  id: ALVoreOverlaySynthInternals
+  name: synth internals
+  components:
+  - type: VoreOverlay
+    overlay: _Afterlight/Vore/vore_overlays/synth_tumby.png
+
+- type: entity
+  parent: ALVoreOverlayBase
+  id: ALVoreOverlaySynthInternals2
+  name: synth internals 2
+  components:
+  - type: VoreOverlay
+    overlay: _Afterlight/Vore/vore_overlays/a_synth_flesh_mono.png
+
+- type: entity
+  parent: ALVoreOverlayBase
+  id: ALVoreOverlaySynthInternals2VisibilityHole
+  name: synth internals 2 (visibility hole)
+  components:
+  - type: VoreOverlay
+    overlay: _Afterlight/Vore/vore_overlays/a_synth_flesh_mono_hole.png

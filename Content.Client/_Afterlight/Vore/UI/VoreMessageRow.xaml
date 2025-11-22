@@ -1,0 +1,15 @@
+﻿<controls:VoreMessageRow
+    xmlns="https://spacestation14.io"
+    xmlns:controls="clr-namespace:Content.Client._Afterlight.Vore.UI"
+    xmlns:cb="clr-namespace:Content.Client.UserInterface.Controls"
+    xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client">
+    <BoxContainer Orientation="Horizontal">
+        <PanelContainer HorizontalExpand="True">
+            <PanelContainer.PanelOverride>
+                <graphics:StyleBoxFlat BorderColor="#6392C2" BorderThickness="1" />
+            </PanelContainer.PanelOverride>
+            <LineEdit Name="MessageEdit" Access="Public" HorizontalExpand="True" />
+        </PanelContainer>
+        <cb:ConfirmButton Text="🗑️"></cb:ConfirmButton>
+    </BoxContainer>
+</controls:VoreMessageRow>

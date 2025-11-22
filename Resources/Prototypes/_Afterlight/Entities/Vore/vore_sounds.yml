@@ -1,0 +1,76 @@
+﻿- type: entity
+  abstract: true
+  id: ALVoreSoundsBase
+  name: Vore Sounds
+  components:
+  - type: VoreSoundCollection
+
+- type: entity
+  parent: ALVoreSoundsBase
+  id: ALVoreSoundsInsert
+  suffix: Insert
+  components:
+  - type: VoreSoundCollection
+    collectionType: Insert
+    sounds:
+    - Gulp:
+        path: /Audio/_Afterlight/Vore/gulp.ogg
+    - Insert:
+        path: /Audio/_Afterlight/Vore/insert.ogg
+    - Insertion 1:
+        path: /Audio/_Afterlight/Vore/insertion1.ogg
+    - Insertion 2:
+        path: /Audio/_Afterlight/Vore/insertion2.ogg
+    - Insertion 3:
+        path: /Audio/_Afterlight/Vore/insertion3.ogg
+    - Schlorp:
+        path: /Audio/_Afterlight/Vore/schlorp.ogg
+    - Squish 1:
+        path: /Audio/_Afterlight/Vore/squish1.ogg
+    - Squish 2:
+        path: /Audio/_Afterlight/Vore/squish2.ogg
+    - Squish 3:
+        path: /Audio/_Afterlight/Vore/squish3.ogg
+    - Squish 4:
+        path: /Audio/_Afterlight/Vore/squish4.ogg
+    - Rustle (cloth):
+        path: /Audio/_Afterlight/Vore/rustle1.ogg
+    - Rustle 2 (cloth):
+        path: /Audio/_Afterlight/Vore/rustle2.ogg
+    - Rustle 3 (cloth):
+        path: /Audio/_Afterlight/Vore/rustle3.ogg
+    - Rustle 4 (cloth):
+        path: /Audio/_Afterlight/Vore/rustle4.ogg
+    - Rustle 5 (cloth):
+        path: /Audio/_Afterlight/Vore/rustle5.ogg
+    - Rustle 5 (cloth):
+        path: /Audio/_Afterlight/Vore/rustle5.ogg
+    - Zipper:
+        path: /Audio/_Afterlight/Vore/zip.ogg
+    - None: null
+
+- type: entity
+  parent: ALVoreSoundsBase
+  id: ALVoreSoundsRelease
+  suffix: Release
+  components:
+  - type: VoreSoundCollection
+    collectionType: Release
+    sounds:
+    - Splatter:
+        path: /Audio/_Afterlight/Vore/splat.ogg
+    - Rustle (cloth):
+        path: /Audio/_Afterlight/Vore/rustle1.ogg
+    - Rustle 2 (cloth):
+        path: /Audio/_Afterlight/Vore/rustle2.ogg
+    - Rustle 3 (cloth):
+        path: /Audio/_Afterlight/Vore/rustle3.ogg
+    - Rustle 4 (cloth):
+        path: /Audio/_Afterlight/Vore/rustle4.ogg
+    - Rustle 5 (cloth):
+        path: /Audio/_Afterlight/Vore/rustle5.ogg
+    - Rustle 5 (cloth):
+        path: /Audio/_Afterlight/Vore/rustle5.ogg
+    - Zipper:
+        path: /Audio/_Afterlight/Vore/zip.ogg
+    - None: null

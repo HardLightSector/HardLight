@@ -146,6 +146,23 @@ public sealed class UserDbDataManager : IPostInjectInit
         _onPlayerDisconnect.Add(action);
     }
 
+    // Afterlight
+    public void RemoveOnLoadPlayer(OnLoadPlayer action)
+    {
+        _onLoadPlayer.Remove(action);
+    }
+
+    public void RemoveOnFinishLoad(OnFinishLoad action)
+    {
+        _onFinishLoad.Remove(action);
+    }
+
+    public void RemoveOnPlayerDisconnect(OnPlayerDisconnect action)
+    {
+        _onPlayerDisconnect.Remove(action);
+    }
+    // Afterlight
+
     void IPostInjectInit.PostInject()
     {
         _sawmill = _logManager.GetSawmill("userdb");

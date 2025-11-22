@@ -1,0 +1,212 @@
+﻿- type: entity
+  abstract: true
+  id: ALVoreMessagesBase
+  name: Vore Messages
+  components:
+  - type: VoreMessageCollection
+
+- type: entity
+  parent: ALVoreMessagesBase
+  id: ALVoreMessagesDigestOwner
+  name: Digest Messages (Owner)
+  components:
+  - type: VoreMessageCollection
+    messageType: DigestOwner
+    messages:
+    - "You feel %prey's body succumb to your digestive system, which breaks it apart into soft slurry."
+    - "You hear a lewd glorp as your %space muscles grind %prey into a warm pulp."
+    - "Your %space lets out a rumble as it melts %prey into sludge."
+    - "You feel a soft gurgle as %prey's body loses form in your %space. They're nothing but a soft mass of churning slop now."
+    - "Your %space begins gushing %prey's remains through your system, adding some extra weight to your thighs."
+    - "Your %space begins gushing %prey's remains through your system, adding some extra weight to your rump."
+    - "Your %space begins gushing %prey's remains through your system, adding some extra weight to your belly."
+    - "Your %space groans as %prey falls apart into a thick soup. You can feel their remains soon flowing deeper into your body to be absorbed."
+    - "Your %space kneads on every fiber of %prey, softening them down into mush to fuel your next hunt."
+    - "Your %space churns %prey down into a hot slush. You can feel the nutrients coursing through your digestive track with a series of long, wet glorps."
+
+- type: entity
+  parent: ALVoreMessagesBase
+  id: ALVoreMessagesDigestPrey
+  name: Digest Messages (Prey)
+  components:
+  - type: VoreMessageCollection
+    messageType: DigestPrey
+    messages:
+    - "Your body succumbs to %pred's digestive system, which breaks you apart into soft slurry."
+    - "%pred's %space lets out a lewd glorp as their muscles grind you into a warm pulp."
+    - "%pred's %space lets out a rumble as it melts you into sludge."
+    - "%pred feels a soft gurgle as your body loses form in their %space. You're nothing but a soft mass of churning slop now."
+    - "%pred's %space begins gushing your remains through their system, adding some extra weight to %pred's thighs."
+    - "%pred's %space begins gushing your remains through their system, adding some extra weight to %pred's rump."
+    - "%pred's %space begins gushing your remains through their system, adding some extra weight to %pred's belly."
+    - "%pred's %space groans as you fall apart into a thick soup. Your remains soon flow deeper into %pred's body to be absorbed."
+    - "%pred's %space kneads on every fiber of your body, softening you down into mush to fuel their next hunt."
+    - "%pred's %space churns you down into a hot slush. Your nutrient-rich remains course through their digestive track with a series of long, wet glorps."
+
+- type: entity
+  parent: ALVoreMessagesBase
+  id: ALVoreMessagesAbsorbOwner
+  name: Absorb Messages (Owner)
+  components:
+  - type: VoreMessageCollection
+    messageType: AbsorbOwner
+    messages:
+    - "You feel %prey becoming part of you."
+
+- type: entity
+  parent: ALVoreMessagesBase
+  id: ALVoreMessagesAbsorbPrey
+  name: Absorb Messages (Prey)
+  components:
+  - type: VoreMessageCollection
+    messageType: AbsorbPrey
+    messages:
+    - "You feel yourself becoming part of %pred's %space!"
+
+- type: entity
+  parent: ALVoreMessagesBase
+  id: ALVoreMessagesUnabsorbOwner
+  name: Unabsorb Messages (Owner)
+  components:
+  - type: VoreMessageCollection
+    messageType: UnabsorbOwner
+    messages:
+    - "You feel %prey reform into a recognizable state again."
+
+- type: entity
+  parent: ALVoreMessagesBase
+  id: ALVoreMessagesUnabsorbPrey
+  name: Unabsorb Messages (Prey)
+  components:
+  - type: VoreMessageCollection
+    messageType: UnabsorbPrey
+    messages:
+    - "You are released from being part of %pred's %space."
+
+- type: entity
+  parent: ALVoreMessagesBase
+  id: ALVoreMessagesStruggleOutside
+  name: Struggle Messages (Outside)
+  components:
+  - type: VoreMessageCollection
+    messageType: StruggleOutside
+    messages:
+    - "%pred's %space wobbles with a squirming meal."
+    - "%pred's %space jostles with movement."
+    - "%pred's %space briefly swells outward as someone pushes from inside."
+    - "%pred's %space fidgets with a trapped victim."
+    - "%pred's %space jiggles with motion from inside."
+    - "%pred's %space sloshes around."
+    - "%pred's %space gushes softly."
+    - "%pred's %space lets out a wet squelch."
+
+- type: entity
+  parent: ALVoreMessagesBase
+  id: ALVoreMessagesStruggleInside
+  name: Struggle Messages (Inside)
+  components:
+  - type: VoreMessageCollection
+    messageType: StruggleInside
+    messages:
+    - "Your useless squirming only causes %pred's slimy %space to squelch over your body."
+    - "Your struggles only cause %pred's %space to gush softly around you."
+    - "Your movement only causes %pred's %space to slosh around you."
+    - "Your motion causes %pred's %space to jiggle."
+    - "You fidget around inside of %pred's %space."
+    - "You shove against the walls of %pred's %space, making it briefly swell outward."
+    - "You jostle %pred's %space with movement."
+    - "You squirm inside of %pred's %space, making it wobble around."
+
+- type: entity
+  parent: ALVoreMessagesBase
+  id: ALVoreMessagesAbsorbedStruggleOutside
+  name: Absorbed Struggle Messages (Outside)
+  components:
+  - type: VoreMessageCollection
+    messageType: AbsorbedStruggleOutside
+    messages:
+    - "%pred's %space wobbles, seemingly on its own."
+    - "%pred's %space jiggles without apparent cause."
+    - "%pred's %space seems to shake for a second without an obvious reason."
+
+- type: entity
+  parent: ALVoreMessagesBase
+  id: ALVoreMessagesAbsorbedStruggleInside
+  name: Absorbed Struggle Messages (Inside)
+  components:
+  - type: VoreMessageCollection
+    messageType: AbsorbedStruggleInside
+    messages:
+    - "You try and resist %pred's %space, but only cause it to jiggle slightly."
+    - "Your fruitless mental struggles only shift %pred's %space a tiny bit."
+    - "You can't make any progress freeing yourself from %pred's %space."
+
+- type: entity
+  parent: ALVoreMessagesBase
+  id: ALVoreMessagesEscapeAttemptOwner
+  name: Escape Attempt Messages (Owner)
+  components:
+  - type: VoreMessageCollection
+    messageType: EscapeAttemptOwner
+    messages:
+    - "%prey is attempting to free themselves from your %space!"
+
+- type: entity
+  parent: ALVoreMessagesBase
+  id: ALVoreMessagesEscapeAttemptPrey
+  name: Escape Attempt Messages (Prey)
+  components:
+  - type: VoreMessageCollection
+    messageType: EscapeAttemptPrey
+    messages:
+    - "You start to climb out of %pred's %space."
+
+- type: entity
+  parent: ALVoreMessagesBase
+  id: ALVoreMessagesEscapeOwner
+  name: Escape Messages (Owner)
+  components:
+  - type: VoreMessageCollection
+    messageType: EscapeOwner
+    messages:
+    - "%prey climbs out of your %space!"
+
+- type: entity
+  parent: ALVoreMessagesBase
+  id: ALVoreMessagesEscapePrey
+  name: Escape Messages (Prey)
+  components:
+  - type: VoreMessageCollection
+    messageType: EscapePrey
+    messages:
+    - "You climb out of %pred's %space."
+
+- type: entity
+  parent: ALVoreMessagesBase
+  id: ALVoreMessagesEscapeOutside
+  name: Escape Messages (Outside)
+  components:
+  - type: VoreMessageCollection
+    messageType: EscapeOutside
+    messages:
+    - "%prey climbs out of %pred's %space!"
+
+- type: entity
+  parent: ALVoreMessagesBase
+  id: ALVoreMessagesEscapeFailOwner
+  name: Escape Fail Messages (Owner)
+  components:
+  - type: VoreMessageCollection
+    messageType: EscapeFailOwner
+    messages:
+    - "%prey's attempt to escape from your %space has failed!"
+
+- type: entity
+  parent: ALVoreMessagesBase
+  id: ALVoreMessagesEscapeFailPrey
+  name: Escape Fail Messages (Prey)
+  components:
+  - type: VoreMessageCollection
+    messageType: EscapeFailPrey
+    messages:
+    - "Your attempt to escape %pred's %space has failed!"

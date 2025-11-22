@@ -1,0 +1,10 @@
+﻿- type: entity
+  id: ALActionVore
+  name: Vore Settings
+  components:
+  - type: Action
+    icon:
+      sprite: _Afterlight/Vore/vore_action.rsi
+      state: nom_centered
+  - type: InstantAction
+    event: !type:VoreActionEvent

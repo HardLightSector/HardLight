@@ -1,0 +1,144 @@
+﻿<vore:VoreControl
+    xmlns="https://spacestation14.io"
+    xmlns:vore="clr-namespace:Content.Client._Afterlight.Vore.UI"
+    xmlns:ui="clr-namespace:Content.Client._Afterlight.UserInterface"
+    xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls">
+    <BoxContainer Orientation="Vertical">
+        <BoxContainer Orientation="Horizontal">
+            <RichTextLabel Name="SlotNameLabel" Access="Public" />
+            <!-- TODO afterlight -->
+            <Button Name="ManagementButton" Access="Public" StyleClasses="OpenBoth"
+                    Text="{Loc al-vore-ui-savefile-management}" Visible="False" />
+        </BoxContainer>
+        <ui:HorizontalYellowSeparator />
+        <TabContainer Name="PanelTabs" Access="Public" VerticalExpand="True">
+            <BoxContainer Name="SpacesTab" Access="Public" Orientation="Horizontal">
+                <BoxContainer Orientation="Vertical" MinWidth="200">
+                    <ScrollContainer HScrollEnabled="False" VScrollEnabled="True"
+                                     VerticalExpand="True">
+                        <BoxContainer Name="SpacesContainer" Access="Public" Orientation="Vertical" />
+                    </ScrollContainer>
+                    <Button Name="AddSpaceButton" Access="Public" Text="{Loc al-vore-ui-space-add}"
+                            StyleClasses="OpenBoth" />
+                </BoxContainer>
+                <BoxContainer Orientation="Horizontal" HorizontalExpand="True"
+                              VerticalExpand="True">
+                    <TabContainer Name="SpaceTabs" Access="Public" HorizontalExpand="True" VerticalExpand="True" Visible="False">
+                        <BoxContainer Name="SpaceContentsTab" Access="Public" Orientation="Vertical">
+                            <Label Name="SpaceContentsEmptyLabel" Access="Public"
+                                   Text="{Loc al-vore-ui-contents-empty}" />
+                            <ScrollContainer HorizontalExpand="True" VerticalExpand="True"
+                                             VScrollEnabled="True">
+                                <GridContainer Name="SpaceContentsContainer" Access="Public"
+                                               Columns="4" HorizontalExpand="True"
+                                               HorizontalAlignment="Center" />
+                            </ScrollContainer>
+                        </BoxContainer>
+                        <!-- <BoxContainer Name="SpaceMessagesTab" Access="Public" -->
+                        <!--               Orientation="Vertical" Visible="False"> -->
+                        <!--     <ScrollContainer Name="SpaceMessagesContainer" Access="Public" -->
+                        <!--                      VScrollEnabled="True" HorizontalExpand="True" -->
+                        <!--                      VerticalExpand="True" /> -->
+                        <!-- </BoxContainer> --> <!-- TODO AFTERLIGHT -->
+                        <ScrollContainer Name="SpaceSettingsTab" Access="Public" VScrollEnabled="True">
+                            <BoxContainer Orientation="Vertical" SeparationOverride="5">
+                                <BoxContainer Orientation="Horizontal">
+                                    <Label Text="{Loc al-vore-ui-name}" MinWidth="175" />
+                                    <LineEdit Name="SpaceNameEdit" Access="Public" MinWidth="175" />
+                                    <Control HorizontalExpand="True" />
+                                    <controls:ConfirmButton Name="DeleteButton" Access="Public"
+                                                            Text="{Loc al-vore-ui-delete}" StyleClasses="OpenBoth" />
+                                </BoxContainer>
+                                <BoxContainer Orientation="Horizontal">
+                                    <RichTextLabel Text="{Loc al-vore-ui-description}" MinWidth="175"
+                                                   VerticalAlignment="Top" />
+                                    <PanelContainer HorizontalExpand="True" MinHeight="100">
+                                        <PanelContainer.PanelOverride>
+                                            <graphics:StyleBoxFlat BorderColor="#6392C2" BorderThickness="1" />
+                                        </PanelContainer.PanelOverride>
+                                        <TextEdit Name="SpaceDescription" Access="Public"
+                                                  HorizontalExpand="True" />
+                                    </PanelContainer>
+                                </BoxContainer>
+                                <BoxContainer Orientation="Horizontal">
+                                    <vore:VoreSettingsRowName Text="{Loc al-vore-ui-mode}" MinWidth="175" />
+                                    <OptionButton Name="SpaceMode" Access="Public" StyleClasses="OpenBoth" />
+                                </BoxContainer>
+                                <BoxContainer Orientation="Horizontal" Visible="False">
+                                    <vore:VoreSettingsRowName Text="{Loc al-vore-ui-burn-damage}" MinWidth="175" />
+                                    <FloatSpinBox Name="SpaceBurnDamage" Access="Public" />
+                                </BoxContainer>
+                                <BoxContainer Orientation="Horizontal" Visible="False">
+                                    <vore:VoreSettingsRowName Text="{Loc al-vore-ui-brute-damage}" MinWidth="175" />
+                                    <FloatSpinBox Name="SpaceBruteDamage" Access="Public" />
+                                </BoxContainer>
+                                <BoxContainer Orientation="Horizontal" Visible="False">
+                                    <vore:VoreSettingsRowName Text="{Loc al-vore-ui-muffle-radio}" MinWidth="175" />
+                                    <CheckBox Name="SpaceMuffleRadio" Access="Public" />
+                                </BoxContainer>
+                                <BoxContainer Orientation="Horizontal" Visible="False">
+                                    <vore:VoreSettingsRowName Text="{Loc al-vore-ui-chance-to-escape}" MinWidth="175" />
+                                    <SpinBox Name="SpaceChanceToEscape" Access="Public" />
+                                    <Label Text="{Loc al-vore-percentage}" />
+                                </BoxContainer>
+                                <BoxContainer Orientation="Horizontal">
+                                    <vore:VoreSettingsRowName Text="{Loc al-vore-ui-time-to-escape}" MinWidth="175" />
+                                    <SpinBox Name="SpaceTimeToEscape" Access="Public" />
+                                    <Label Text="{Loc al-vore-seconds}" />
+                                </BoxContainer>
+                                <BoxContainer Orientation="Horizontal" Visible="False">
+                                    <vore:VoreSettingsRowName Text="{Loc al-vore-ui-can-taste}" MinWidth="175" />
+                                    <CheckBox Name="SpaceCanTaste" Access="Public" />
+                                </BoxContainer>
+                                <BoxContainer Orientation="Horizontal">
+                                    <vore:VoreSettingsRowName Text="{Loc al-vore-ui-insertion-verb}" MinWidth="175" />
+                                    <LineEdit Name="SpaceInsertionVerb" Access="Public" MinWidth="150" />
+                                </BoxContainer>
+                                <BoxContainer Orientation="Horizontal">
+                                    <vore:VoreSettingsRowName Text="{Loc al-vore-ui-release-verb}" MinWidth="175" />
+                                    <LineEdit Name="SpaceReleaseVerb" Access="Public" MinWidth="150" />
+                                </BoxContainer>
+                                <!-- <BoxContainer Orientation="Horizontal"> -->
+                                <!--     <vore:VoreSettingsRowName Text="{Loc al-vore-ui-fancy-sounds}" MinWidth="175" /> -->
+                                <!--     <CheckBox Name="SpaceFancySounds" Access="Public" /> -->
+                                <!-- </BoxContainer> -->
+                                <BoxContainer Orientation="Horizontal" Visible="False">
+                                    <vore:VoreSettingsRowName Text="{Loc al-vore-ui-fleshy-space}" MinWidth="175" />
+                                    <CheckBox Name="SpaceFleshy" Access="Public" />
+                                </BoxContainer>
+                                <BoxContainer Orientation="Horizontal" Visible="False">
+                                    <vore:VoreSettingsRowName Text="{Loc al-vore-ui-internal-sound-loop}" MinWidth="175" />
+                                    <CheckBox Name="SpaceInternalSoundLoop" Access="Public" />
+                                </BoxContainer>
+                                <BoxContainer Orientation="Horizontal">
+                                    <vore:VoreSettingsRowName Text="{Loc al-vore-ui-insertion-sound}" MinWidth="175" />
+                                    <OptionButton Name="SpaceInsertionSoundButton" Access="Public" StyleClasses="OpenBoth" />
+                                    <Button Name="SpaceInsertionSoundPlay" Access="Public" Text="🔊" StyleClasses="OpenBoth" />
+                                </BoxContainer>
+                                <BoxContainer Orientation="Horizontal">
+                                    <vore:VoreSettingsRowName Text="{Loc al-vore-ui-release-sound}" MinWidth="175" />
+                                    <OptionButton Name="SpaceReleaseSoundButton" Access="Public" StyleClasses="OpenBoth" />
+                                    <Button Name="SpaceReleaseSoundPlay" Access="Public" Text="🔊" StyleClasses="OpenBoth" />
+                                </BoxContainer>
+                                <RichTextLabel Text="[bold]More settings coming soon![/bold]" />
+                            </BoxContainer>
+                        </ScrollContainer>
+                        <!-- <BoxContainer Name="SpaceVisualsTab" Access="Public" -->
+                        <!--               Orientation="Vertical" Visible="False" />  --> <!-- TODO AFTERLIGHT -->
+                    </TabContainer>
+                </BoxContainer>
+            </BoxContainer>
+            <ScrollContainer Name="InsideTab" Access="Public"
+                             HorizontalExpand="True" VerticalExpand="True" VScrollEnabled="True">
+                <BoxContainer Orientation="Vertical">
+                        <Label Name="InsideLabel" Access="Public"
+                               Text="{Loc al-vore-ui-not-inside-anyone}" />
+                        <GridContainer Name="InsideContainer" Access="Public" Columns="4"
+                                       HorizontalExpand="True" HorizontalAlignment="Center" />
+                </BoxContainer>
+            </ScrollContainer>
+            <GridContainer Name="PreferencesTab" Access="Public" Columns="3" />
+        </TabContainer>
+    </BoxContainer>
+</vore:VoreControl>

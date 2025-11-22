@@ -1,0 +1,7 @@
+﻿<controls:VoreWindow
+    xmlns="https://spacestation14.io"
+    xmlns:controls="clr-namespace:Content.Client._Afterlight.Vore.UI"
+    Title="{Loc al-vore-ui-panel}"
+    MinSize="750 550">
+    <controls:VoreControl Name="Control" Access="Public" />
+</controls:VoreWindow>

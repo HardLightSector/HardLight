@@ -1,0 +1,137 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from S.P.L.U.R.T-tg at https://github.com/SPLURT-Station/S.P.L.U.R.T-tg/blob/8982d9e5a458d85d80e6881b0336a766e2980af9/modular_skyrat/master_files/icons/mob/carrier_fullscreen.dmi",
+  "size": {
+    "x": 480,
+    "y": 480
+  },
+  "states": [
+    {
+      "name": "dark"
+    },
+    {
+      "name": "base",
+      "delays": [
+        [
+          25,
+          0.1,
+          0.1,
+          0.1
+        ]
+      ]
+    },
+    {
+      "name": "brown_internals"
+    },
+    {
+      "name": "a_tumby"
+    },
+    {
+      "name": "another_tumby"
+    },
+    {
+      "name": "da_tumby"
+    },
+    {
+      "name": "yet_another_tumby"
+    },
+    {
+      "name": "synth_tumby"
+    },
+    {
+      "name": "you_know_what_this_is"
+    },
+    {
+      "name": "you_know_what_this_is_b"
+    },
+    {
+      "name": "a_kind_of_tumby"
+    },
+    {
+      "name": "a_kind_of_tumby_b"
+    },
+    {
+      "name": "a_kind_of_coils"
+    },
+    {
+      "name": "a_kind_of_coils_tight"
+    },
+    {
+      "name": "a_kind_of_vines"
+    },
+    {
+      "name": "a_synth_flesh_mono"
+    },
+    {
+      "name": "a_synth_flesh_mono_hole"
+    },
+    {
+      "name": "a_anim_belly",
+      "delays": [
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ]
+      ]
+    },
+    {
+      "name": "a_bright_tumby"
+    },
+    {
+      "name": "multi_layer_test_tummy"
+    },
+    {
+      "name": "gematically_angular"
+    },
+    {
+      "name": "entrance_to_a_tumby"
+    },
+    {
+      "name": "passage_to_a_tumby"
+    },
+    {
+      "name": "destination_tumby"
+    },
+    {
+      "name": "destination_tumby_fluidless"
+    },
+    {
+      "name": "post_tumby_passage"
+    },
+    {
+      "name": "post_tumby_passage_fluidless"
+    },
+    {
+      "name": "not_quite_tumby"
+    },
+    {
+      "name": "could_it_be_a_tumby"
+    }
+  ]
+}

@@ -1,5 +1,6 @@
 using System.Numerics;
 using Content.Client.Stylesheets;
+using Content.Shared._Afterlight.Input;
 using Content.Shared.CCVar;
 using Content.Shared.Floofstation;
 using Content.Shared.Input;
@@ -165,6 +166,9 @@ namespace Content.Client.Options.UI.Tabs
 
                 KeybindsContainer.AddChild(newCheckBox);
             }
+
+            AddHeader("al-ui-options-header-afterlight");
+            AddButton(ALKeyFunctions.ALOpenMobInteraction);
 
             AddHeader("ui-options-header-general");
             AddCheckBox("ui-options-hotkey-keymap", _cfg.GetCVar(CVars.DisplayUSQWERTYHotkeys), HandleToggleUSQWERTYCheckbox);

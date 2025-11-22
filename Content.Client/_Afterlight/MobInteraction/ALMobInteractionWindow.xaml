@@ -1,0 +1,7 @@
+﻿<controls:ALMobInteractionWindow
+    xmlns="https://spacestation14.io"
+    xmlns:controls="clr-namespace:Content.Client._Afterlight.MobInteraction"
+    Title="Mob Interaction"
+    MinSize="500 700">
+    <controls:ALMobInteractionControl Name="Control" Access="Public" />
+</controls:ALMobInteractionWindow>

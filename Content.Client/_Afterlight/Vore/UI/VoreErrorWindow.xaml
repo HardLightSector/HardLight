@@ -1,0 +1,10 @@
+﻿<controls:VoreErrorWindow
+    xmlns="https://spacestation14.io"
+    xmlns:controls="clr-namespace:Content.Client._Afterlight.Vore.UI"
+    MinSize="200 100"
+    Title="{Loc al-vore-error-title}">
+    <BoxContainer Orientation="Vertical">
+        <Label Text="{Loc al-vore-error-description}" />
+        <Button Name="Retry" Access="Public" Text="{Loc al-vore-error-retry}" StyleClasses="OpenBoth" Margin="0 10 0 0" />
+    </BoxContainer>
+</controls:VoreErrorWindow>
