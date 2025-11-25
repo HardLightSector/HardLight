@@ -31,7 +31,6 @@
     - Resomi
     - Protogen # Monolith
     - Avali
-    - Chitinid
     - Feroxi
 
 - type: guideEntry
@@ -96,7 +95,4 @@
   name: species-name-protogen
   text: "/ServerInfo/Guidebook/Mobs/Protogen.xml"
 
-- type: guideEntry
-  id: Chitinid
-  name: species-name-protogen
-  text: "/ServerInfo/Guidebook/Mobs/Chitinid.xml"
+
