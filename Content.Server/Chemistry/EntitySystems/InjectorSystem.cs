@@ -17,6 +17,7 @@ using Content.Shared.Interaction;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Stacks;
 using Content.Shared.Nutrition.EntitySystems;
+using Content.Shared._DV.Chemistry.Components;
 using System.Linq; // Frontier
 using Robust.Server.Player;
 
