@@ -1,14 +1,3 @@
-- type: entity  
-  id: ActionOpenMouthStorage
-  name: Open cheek storage
-  description: Allows you to store items in your cheeks.
-  components:
-  - type: InstantAction
-    itemIconStyle: BigAction
-    priority: -10
-    icon: DeltaV/Interface/Actions/mouthStorageOpen.png
-    event: !type:OpenStorageImplantEvent
-    
 - type: entity
   id: ActionChitzite
   name: Cough Up Chitzite
