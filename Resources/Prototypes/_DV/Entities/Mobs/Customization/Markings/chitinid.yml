@@ -175,7 +175,7 @@
 
 - type: marking
   id: ChitinidLLegCharred
-  bodyPart: Legs
+  bodyPart: LLeg
   markingCategory: LeftLeg
   speciesRestriction: [Chitinid]
   sprites:
@@ -184,7 +184,7 @@
 
 - type: marking
   id: ChitinidRLegCharred
-  bodyPart: Legs
+  bodyPart: RLeg
   markingCategory: RightLeg
   speciesRestriction: [Chitinid]
   sprites:
@@ -193,7 +193,7 @@
 
 - type: marking
   id: ChitinidLArmCharred
-  bodyPart: Arms
+  bodyPart: LArm
   markingCategory: LeftArm
   speciesRestriction: [Chitinid]
   sprites:
@@ -202,7 +202,7 @@
 
 - type: marking
   id: ChitinidRArmCharred
-  bodyPart: Arms
+  bodyPart: RArm
   markingCategory: RightArm
   speciesRestriction: [Chitinid]
   sprites:
@@ -221,7 +221,7 @@
 
 - type: marking
   id: ChitinidLArmPlated
-  bodyPart: Arms
+  bodyPart: LArm
   markingCategory: LeftArm
   speciesRestriction: [Chitinid]
   sprites:
@@ -230,7 +230,7 @@
 
 - type: marking
   id: ChitinidRArmPlated
-  bodyPart: Arms
+  bodyPart: RArm
   markingCategory: RightArm
   speciesRestriction: [Chitinid]
   sprites:
@@ -258,7 +258,7 @@
 
 - type: marking
   id: ChitinidLLegStripes
-  bodyPart: Legs
+  bodyPart: LLeg
   markingCategory: LeftLeg
   speciesRestriction: [Chitinid]
   sprites:
@@ -267,7 +267,7 @@
 
 - type: marking
   id: ChitinidRLegStripes
-  bodyPart: Legs
+  bodyPart: RLeg
   markingCategory: RightLeg
   speciesRestriction: [Chitinid]
   sprites:
@@ -276,7 +276,7 @@
 
 - type: marking
   id: ChitinidLArmStripes
-  bodyPart: Arms
+  bodyPart: LArm
   markingCategory: LeftArm
   speciesRestriction: [Chitinid]
   sprites:
@@ -285,7 +285,7 @@
 
 - type: marking
   id: ChitinidRArmStripes
-  bodyPart: Arms
+  bodyPart: RArm
   markingCategory: RightArm
   speciesRestriction: [Chitinid]
   sprites:
@@ -313,7 +313,7 @@
 
 - type: marking
   id: ChitinidLLegRadiant
-  bodyPart: Legs
+  bodyPart: LLeg
   markingCategory: LeftLeg
   speciesRestriction: [Chitinid]
   sprites:
@@ -322,7 +322,7 @@
 
 - type: marking
   id: ChitinidRLegRadiant
-  bodyPart: Legs
+  bodyPart: RLeg
   markingCategory: RightLeg
   speciesRestriction: [Chitinid]
   sprites:
@@ -331,7 +331,7 @@
 
 - type: marking
   id: ChitinidLArmRadiant
-  bodyPart: Arms
+  bodyPart: LArm
   markingCategory: LeftArm
   speciesRestriction: [Chitinid]
   sprites:
@@ -340,7 +340,7 @@
 
 - type: marking
   id: ChitinidRArmRadiant
-  bodyPart: Arms
+  bodyPart: RArm
   markingCategory: RightArm
   speciesRestriction: [Chitinid]
   sprites:
@@ -368,7 +368,7 @@
 
 - type: marking
   id: ChitinidLLegToxic
-  bodyPart: Legs
+  bodyPart: LLeg
   markingCategory: LeftLeg
   speciesRestriction: [Chitinid]
   sprites:
@@ -377,7 +377,7 @@
 
 - type: marking
   id: ChitinidRLegToxic
-  bodyPart: Legs
+  bodyPart: RLeg
   markingCategory: RightLeg
   speciesRestriction: [Chitinid]
   sprites:
@@ -386,7 +386,7 @@
 
 - type: marking
   id: ChitinidLArmToxic
-  bodyPart: Arms
+  bodyPart: LArm
   markingCategory: LeftArm
   speciesRestriction: [Chitinid]
   sprites:
@@ -395,7 +395,7 @@
 
 - type: marking
   id: ChitinidRArmToxic
-  bodyPart: Arms
+  bodyPart: RArm
   markingCategory: RightArm
   speciesRestriction: [Chitinid]
   sprites:
@@ -423,7 +423,7 @@
 
 - type: marking
   id: ChitinidLLegSpotted
-  bodyPart: Legs
+  bodyPart: LLeg
   markingCategory: LeftLeg
   speciesRestriction: [Chitinid]
   sprites:
@@ -432,7 +432,7 @@
 
 - type: marking
   id: ChitinidRLegSpotted
-  bodyPart: Legs
+  bodyPart: RLeg
   markingCategory: RightLeg
   speciesRestriction: [Chitinid]
   sprites:
@@ -441,7 +441,7 @@
 
 - type: marking
   id: ChitinidLArmSpotted
-  bodyPart: Arms
+  bodyPart: LArm
   markingCategory: LeftArm
   speciesRestriction: [Chitinid]
   sprites:
@@ -450,7 +450,7 @@
 
 - type: marking
   id: ChitinidRArmSpotted
-  bodyPart: Arms
+  bodyPart: RArm
   markingCategory: RightArm
   speciesRestriction: [Chitinid]
   sprites:
