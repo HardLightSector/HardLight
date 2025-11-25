@@ -45,3 +45,35 @@
 - type: font
   id: Emoji
   path: /Fonts/NotoEmoji.ttf
+
+- type: font
+  id: RubikBubbles
+  path: /Fonts/RubikBubbles.ttf
+
+- type: font
+  id: Copperplate
+  path: /Fonts/Copperplate.otf
+
+- type: font
+  id: Manga
+  path: /Fonts/Mangat.ttf
+
+- type: font
+  id: Noganas
+  path: /Fonts/Noganas.ttf
+
+- type: font
+  id: StrawSerif
+  path: /Fonts/StrawSerifRegular.ttf
+
+- type: font
+  id: Lymphatic
+  path: /Fonts/Lymphatic.ttf
+
+- type: font
+  id: Cambria
+  path: /Fonts/Cambria.ttf
+
+- type: font
+  id: OnlyYou
+  path: /Fonts/Only_You.otf
