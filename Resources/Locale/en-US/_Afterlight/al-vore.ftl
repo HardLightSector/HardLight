@@ -55,9 +55,9 @@ al-vore-seconds = seconds
 al-vore-error-no-space-found = No space found with that id.
 
 al-vore-verb-category = Vore
-al-vore-verb-vore = Vore {OBJECT($prey)}
-al-vore-verb-feed-yourself-to-predator = Feed yourself to them
-al-vore-verb-feed-pulled-to-predator = Feed {$name} to them
+al-vore-verb-vore = Vore {OBJECT($prey)} into your {$space}
+al-vore-verb-feed-yourself-to-predator = Feed yourself to {$predator}'s {$space}
+al-vore-verb-feed-pulled-to-predator = Feed {$prey} to {$predator}'s {$space}
 
 al-vore-player-not-online = {$name} isn't online!
 al-vore-player-not-pulling = You must pull {$name} to do vore!
@@ -69,3 +69,5 @@ al-vore-prey-start-feeding-self-others = {$prey} is attempting to make {$predato
 al-vore-prey-start-feeding-others = {$user} is attempting to make {$predator} ingest {$prey} into their {$space}!
 
 al-vore-predator-ate-others = {$predator} ingests {$prey} into their {$space}!
+
+al-vore-selected-active-space = Now using {$space} for interactions!

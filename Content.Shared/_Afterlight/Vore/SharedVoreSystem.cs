@@ -295,33 +295,37 @@ public abstract class SharedVoreSystem : EntitySystem
         _ui.OpenUi(ent.Owner, VoreUi.Key, ent);
     }
 
-    private void OnPredatorVerbs(Entity<VorePredatorComponent> ent, ref GetVerbsEvent<Verb> args)
+    private void OnPredatorVerbs(Entity<VorePredatorComponent> predator, ref GetVerbsEvent<Verb> args)
     {
         if (!args.CanInteract)
             return;
 
-        var user = args.User;
-        if (user == args.Target)
+        var prey = args.User;
+        if (prey == args.Target)
             return;
 
-        if (!TryComp(user, out VorePreyComponent? userPrey))
+        if (!TryComp(prey, out VorePreyComponent? userPrey) ||
+            !TryGetActiveSpace(predator.AsNullable(), out var space))
+        {
             return;
+        }
 
         args.Verbs.Add(new Verb
         {
-            Text = Loc.GetString("al-vore-verb-feed-yourself-to-predator"),
+            Text = Loc.GetString("al-vore-verb-feed-yourself-to-predator", ("predator", predator), ("space", space.Name)),
             Category = VoreCategory,
-            Act = () => StartVorePrompt(ent, (user, userPrey), user),
+            Act = () => StartVorePrompt(predator, (prey, userPrey), prey),
         });
 
-        if (TryComp(user, out PullerComponent? puller) &&
+        if (TryComp(prey, out PullerComponent? puller) &&
+            puller.Pulling != predator.Owner &&
             TryComp(puller.Pulling, out VorePreyComponent? pullingPrey))
         {
             args.Verbs.Add(new Verb
             {
-                Text = Loc.GetString("al-vore-verb-feed-yourself-to-predator"),
+                Text = Loc.GetString("al-vore-verb-feed-pulled-to-predator", ("predator", predator), ("space", space.Name)),
                 Category = VoreCategory,
-                Act = () => StartVorePrompt(ent, (puller.Pulling.Value, pullingPrey), user),
+                Act = () => StartVorePrompt(predator, (puller.Pulling.Value, pullingPrey), prey),
             });
         }
     }
@@ -374,7 +378,7 @@ public abstract class SharedVoreSystem : EntitySystem
         EjectPrey(ent);
     }
 
-    private void OnPreyVerbs(Entity<VorePreyComponent> ent, ref GetVerbsEvent<Verb> args)
+    private void OnPreyVerbs(Entity<VorePreyComponent> prey, ref GetVerbsEvent<Verb> args)
     {
         if (!args.CanInteract)
             return;
@@ -383,14 +387,15 @@ public abstract class SharedVoreSystem : EntitySystem
         if (user == args.Target)
             return;
 
-        if (!TryComp(user, out VorePredatorComponent? predator))
+        if (!TryComp(user, out VorePredatorComponent? predator) ||
+            !TryGetActiveSpace((user, predator), out var space))
             return;
 
         args.Verbs.Add(new Verb
         {
-            Text = Loc.GetString("al-vore-verb-vore", ("prey", user)),
+            Text = Loc.GetString("al-vore-verb-vore", ("prey", prey), ("space", space.Name)),
             Category = VoreCategory,
-            Act = () => StartVorePrompt((user, predator), ent, user),
+            Act = () => StartVorePrompt((user, predator), prey, user),
         });
     }
 
@@ -533,11 +538,13 @@ public abstract class SharedVoreSystem : EntitySystem
 
     private void OnSetActiveSpaceMsg(Entity<VorePredatorComponent> ent, ref VoreSetActiveSpaceBuiMsg args)
     {
-        if (!TryGetSpace(ent.AsNullable(), args.Index, out _))
+        if (!TryGetSpace(ent.AsNullable(), args.Index, out var space))
             return;
 
         ent.Comp.ActiveSpace = args.Index;
         Dirty(ent);
+
+        _popup.PopupPredictedCursor(Loc.GetString("al-vore-selected-active-space", ("space", space.Name)), ent, PopupType.LargeCaution);
     }
 
     private void ReloadPrototypes()

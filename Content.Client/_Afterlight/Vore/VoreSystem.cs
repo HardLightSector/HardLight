@@ -40,7 +40,7 @@ public sealed class VoreSystem : SharedVoreSystem
     private void OnPrompt(VorePromptEvent ev)
     {
         if (GetEntity(ev.Predator) is not { Valid: true } predator ||
-            GetEntity(ev.Predator) is not { Valid: true } prey ||
+            GetEntity(ev.Prey) is not { Valid: true } prey ||
             GetEntity(ev.User) is not { Valid: true } user)
         {
             return;
