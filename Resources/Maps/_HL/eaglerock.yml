@@ -4,8 +4,8 @@ meta:
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 11/29/2025 18:30:24
-  entityCount: 21209
+  time: 11/29/2025 20:28:57
+  entityCount: 21214
 maps:
 - 1
 grids:
@@ -7871,7 +7871,7 @@ entities:
       pos: -21.5,45.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -20254.953
+      secondsUntilStateChange: -20302.62
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -8622,7 +8622,7 @@ entities:
       pos: -23.5,-12.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -106569.41
+      secondsUntilStateChange: -106617.07
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -8634,7 +8634,7 @@ entities:
       pos: -23.5,-13.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -106759.805
+      secondsUntilStateChange: -106807.47
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -8667,7 +8667,7 @@ entities:
       pos: -23.5,-1.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -98398.46
+      secondsUntilStateChange: -98446.125
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -8752,7 +8752,7 @@ entities:
       pos: 21.5,-13.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -87788.91
+      secondsUntilStateChange: -87836.57
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -8798,7 +8798,7 @@ entities:
       pos: 23.5,-5.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -57759.613
+      secondsUntilStateChange: -57807.277
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -9032,7 +9032,7 @@ entities:
       pos: 20.5,17.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -57307.547
+      secondsUntilStateChange: -57355.21
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -9773,7 +9773,7 @@ entities:
       pos: -23.5,39.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -14732.69
+      secondsUntilStateChange: -14780.356
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -110621,6 +110621,28 @@ entities:
     - type: Transform
       pos: -25.5,21.5
       parent: 2
+- proto: MachineMedicalBountyRedemption
+  entities:
+  - uid: 21210
+    components:
+    - type: Transform
+      pos: 3.5,66.5
+      parent: 2
+  - uid: 21211
+    components:
+    - type: Transform
+      pos: 6.5,66.5
+      parent: 2
+  - uid: 21212
+    components:
+    - type: Transform
+      pos: 6.5,65.5
+      parent: 2
+  - uid: 21213
+    components:
+    - type: Transform
+      pos: 3.5,65.5
+      parent: 2
 - proto: MachineParticleAcceleratorEmitterForeCircuitboard
   entities:
   - uid: 12383
@@ -111102,6 +111124,14 @@ entities:
     components:
     - type: Transform
       pos: 18.89698,49.25672
+      parent: 2
+- proto: MemorialDisplay
+  entities:
+  - uid: 21214
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 2.5,66.5
       parent: 2
 - proto: MicrowaveMachineCircuitboard
   entities:
