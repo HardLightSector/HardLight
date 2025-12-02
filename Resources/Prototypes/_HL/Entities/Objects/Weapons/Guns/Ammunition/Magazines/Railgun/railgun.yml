@@ -29,5 +29,5 @@
     graph: MagazineRailgunImprovisedCraftingGraph
     node: mag
   - type: Battery
-    maxcharge: 2500 # way more than a highcap but we'll cross that bridge
+    maxCharge: 2500 # way more than a highcap but we'll cross that bridge
     startingCharge: 2500
