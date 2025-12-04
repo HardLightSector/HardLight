@@ -43,8 +43,8 @@
 
 - type: listing
   id: UplinkSecurityRailgun
-  name:  uplink-Weapons-railgun-name
-  description: uplink-Weapons-railgun-desc
+  name:  uplink-security-Weapons-railgun-name
+  description: uplink-security-Weapons-railgun-desc
   productEntity: WeaponRailgunPeregrine
   icon: { sprite: _HL/Objects/Weapons/Guns/Rifles/peregrine.rsi, state: icon }
   cost:
