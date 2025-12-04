@@ -117,7 +117,7 @@
   reward: 4
   description: pirate-bounty-description-generic
   entries:
-  - name: pirate-bounty-item-nfsdCampaign
+  - name: pirate-bounty-item-ColsecCampaign
     amount: 2
     id: CampaignHat
 

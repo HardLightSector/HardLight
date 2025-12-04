@@ -55,7 +55,7 @@ public sealed partial class GatewayComponent : Component
     /// Cooldown between opening portal / closing.
     /// </summary>
     [DataField]
-    public TimeSpan Cooldown = TimeSpan.FromSeconds(30);
+    public TimeSpan Cooldown = TimeSpan.FromSeconds(5);
 
     /// <summary>
     /// The time at which the portal can next be opened.

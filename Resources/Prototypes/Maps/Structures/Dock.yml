@@ -1,0 +1,14 @@
+- type: gameMap
+  id: Dock
+  mapName: 'Docking arm'
+  mapPath: /Maps/Structures/dock.yml
+  minPlayers: 0
+  stations:
+    Crossroads:
+      stationProto: StandardFrontierVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Dock {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'

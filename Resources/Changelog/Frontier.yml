@@ -69,7 +69,7 @@ Entries:
   time: '2024-02-21T04:21:06.0000000+00:00'
 - author: Cheackraze
   changes:
-    - message: NFSD now has their own bank account for payroll
+    - message: Colsec now has their own bank account for payroll
       type: Tweak
   id: 4837
   time: '2024-02-21T18:35:17.0000000+00:00'
@@ -300,7 +300,7 @@ Entries:
   time: '2024-03-14T22:47:33.0000000+00:00'
 - author: cite2000
   changes:
-    - message: NFSD medical ship "Whiskey"
+    - message: Colsecec medical ship "Whiskey"
       type: Add
   id: 4868
   time: '2024-03-16T21:53:36.0000000+00:00'
@@ -523,7 +523,7 @@ Entries:
   time: '2024-03-30T21:30:21.0000000+00:00'
 - author: Leander
   changes:
-    - message: Fix NFSD job icons
+    - message: Fix Colsecec job icons
       type: Tweak
   id: 4896
   time: '2024-03-30T22:24:37.0000000+00:00'
@@ -553,7 +553,7 @@ Entries:
   time: '2024-04-03T09:49:12.0000000+00:00'
 - author: Leander
   changes:
-    - message: NFSD hour requirements have been updated.
+    - message: Colsec hour requirements have been updated.
       type: Tweak
   id: 4900
   time: '2024-04-04T14:38:28.0000000+00:00'
@@ -606,7 +606,7 @@ Entries:
       type: Tweak
     - message: >-
         Incapacitated (put in crit) hostile agents can be exchanged for Frontier
-        Uplink Coins at NFSD Outpost.
+        Uplink Coins at Colsecec Outpost.
       type: Tweak
     - message: >-
         Reclassified some items as contraband: wizard items (hard suits, armor,
@@ -622,7 +622,7 @@ Entries:
   time: '2024-04-08T21:40:38.0000000+00:00'
 - author: Leander
   changes:
-    - message: 'NFSD got a new color on their radio with new frequency. '
+    - message: 'Colsecec got a new color on their radio with new frequency. '
       type: Add
   id: 4908
   time: '2024-04-08T21:43:54.0000000+00:00'
@@ -642,7 +642,7 @@ Entries:
   time: '2024-04-08T22:40:38.0000000+00:00'
 - author: Leander
   changes:
-    - message: NFSD hours requirements increased upon majority request.
+    - message: Colsececec hours requirements increased upon majority request.
       type: Tweak
   id: 4911
   time: '2024-04-15T15:10:06.0000000+00:00'
@@ -655,7 +655,7 @@ Entries:
 - author: Leander
   changes:
     - message: >-
-        added grenade bundles to the NFSD uplink and make the experimental
+        added grenade bundles to the Colsecec uplink and make the experimental
         combat hardsuit available.
       type: Add
   id: 4913
@@ -694,25 +694,25 @@ Entries:
   time: '2024-04-18T20:49:44.0000000+00:00'
 - author: Leander
   changes:
-    - message: NFSD now has access to breaching charges.
+    - message: Colsec now has access to breaching charges.
       type: Add
   id: 4918
   time: '2024-04-18T21:59:45.0000000+00:00'
 - author: Kesiath
   changes:
-    - message: Added NFSD combat and command hardsuits.
+    - message: Added Colsec combat and command hardsuits.
       type: Add
   id: 4919
   time: '2024-04-19T17:57:57.0000000+00:00'
 - author: Salvantrix
   changes:
-    - message: Removed NFSD ships awaiting rework. (Interceptor and Whiskey.)
+    - message: Removed Colsec ships awaiting rework. (Interceptor and Whiskey.)
       type: Remove
   id: 4920
   time: '2024-04-19T22:32:58.0000000+00:00'
 - author: Kesiath
   changes:
-    - message: Changed the Hospitaller and Templar to include NFSD changes.
+    - message: Changed the Hospitaller and Templar to include Colsec changes.
       type: Tweak
   id: 4921
   time: '2024-04-20T01:22:08.0000000+00:00'
@@ -794,7 +794,7 @@ Entries:
   time: '2024-04-23T21:36:50.0000000+00:00'
 - author: dvir001
   changes:
-    - message: NFSD Fixed the colors and machines on the NFSD base
+    - message: Colsec Fixed the colors and machines on the Colsec base
       type: Tweak
   id: 4932
   time: '2024-04-24T22:36:54.0000000+00:00'
@@ -854,7 +854,7 @@ Entries:
       type: Tweak
     - message: Added void-capable hoverbike. Buy one at cargo today!
       type: Add
-    - message: Added void-capable hoverbikes for NFSD and Mail Carrier.
+    - message: Added void-capable hoverbikes for Colsec and Mail Carrier.
       type: Add
   id: 4939
   time: '2024-04-26T04:32:41.0000000+00:00'
@@ -862,10 +862,10 @@ Entries:
   changes:
     - message: >-
         Mail carrier hoverbike flatpack that can be bought from vendomat. and
-        NFSD
+        Colsec
       type: Add
     - message: >-
-        NFSD hoverbike flatpack that can be bought from uplink (utility
+        Colsec hoverbike flatpack that can be bought from uplink (utility
         category).
       type: Add
     - message: >-
@@ -1014,7 +1014,7 @@ Entries:
   changes:
     - message: >-
         You can now sell antagonist human like AI like the Syndicate agents to
-        NFSD, as long as they are alive, for NFSD coins.
+        Colsec, as long as they are alive, for Colsec coins.
       type: Tweak
   id: 4961
   time: '2024-04-29T17:48:22.0000000+00:00'
@@ -1246,7 +1246,7 @@ Entries:
 - author: dvir001
   changes:
     - message: >-
-        Cappy has joined the NFSD, a veteran war hero cat augmented for tactical
+        Cappy has joined the Colsec, a veteran war hero cat augmented for tactical
         operations.
       type: Add
     - message: Installed radio inside Clippy for Service radio.
@@ -1350,7 +1350,7 @@ Entries:
       type: Add
     - message: >-
         Resprited some messenger bags a bit (engineering, janitor, cultist, both
-        NFSD).
+        Colsec).
       type: Tweak
   id: 5000
   time: '2024-06-01T14:44:45.0000000+00:00'
@@ -1467,7 +1467,7 @@ Entries:
 - author: whatston3
   changes:
     - message: >-
-        Rubber bullets can be printed in the NFSD techfab with Nonlethal
+        Rubber bullets can be printed in the Colsec techfab with Nonlethal
         Ammunition researched.
       type: Add
   id: 5016
@@ -1609,14 +1609,14 @@ Entries:
 - author: Leander
   changes:
     - message: >-
-        Nanotrasen has developed new tracking methods for the NFSD and packed it
+        Nanotrasen has developed new tracking methods for the Colsec and packed it
         all in a nice bundle.
       type: Add
     - message: >-
-        Nanotrasen has reverse engineered the china lake for the NFSD to deliver
+        Nanotrasen has reverse engineered the china lake for the Colsec to deliver
         high speed justice.
       type: Add
-    - message: Organized the NFSD Uplink a little more into a bundles category.
+    - message: Organized the Colsec Uplink a little more into a bundles category.
       type: Tweak
   id: 5031
   time: '2024-06-13T22:56:14.0000000+00:00'
@@ -1636,7 +1636,7 @@ Entries:
         Contraband appraisal guns are available to appraise contraband items'
         value in FUCs.
       type: Add
-    - message: The contraband appraisal gun is now included in the NFSD tool kit.
+    - message: The contraband appraisal gun is now included in the Colsececec tool kit.
       type: Add
   id: 5033
   time: '2024-06-13T23:06:44.0000000+00:00'
@@ -1968,7 +1968,7 @@ Entries:
   time: '2024-07-04T23:22:41.0000000+00:00'
 - author: Kesiath
   changes:
-    - message: Reworked the NFSD Marauder.
+    - message: Reworked the Colsecececec Marauder.
       type: Tweak
   id: 5076
   time: '2024-07-05T00:25:45.0000000+00:00'
@@ -2183,7 +2183,7 @@ Entries:
     - message: Added locked buttons to the empress, replacing the old ones.
       type: Tweak
     - message: >-
-        fix small NFSD gyroscope with the correct amount of force for a small
+        fix small Colsec gyroscope with the correct amount of force for a small
         ship.
       type: Tweak
   id: 5103
@@ -2220,7 +2220,7 @@ Entries:
   time: '2024-07-12T16:04:04.0000000+00:00'
 - author: whatston3 and Salvantrix
   changes:
-    - message: Pirates and NFSD now have more round-start job slots.
+    - message: Pirates and Colsec now have more round-start job slots.
       type: Add
     - message: >-
         Sergeants and Bailiffs start with ship vouchers that allow for free ship
@@ -2545,7 +2545,7 @@ Entries:
     - message: Added magazine fed ballistic turret. Obtainable from expeditions.
       type: Add
     - message: >-
-        Added heavy weapon cases with turrets to SR's gun safe and to NFSD
+        Added heavy weapon cases with turrets to SR's gun safe and to Colsec
         armory.
       type: Add
   id: 5151
@@ -2582,7 +2582,7 @@ Entries:
   time: '2024-07-30T23:35:51.0000000+00:00'
 - author: dvir001
   changes:
-    - message: The NFSD Outpost now has a FuelVend vendor in the lobby.
+    - message: The Colsec Outpost now has a FuelVend vendor in the lobby.
       type: Add
   id: 5156
   time: '2024-08-01T19:34:21.0000000+00:00'
@@ -2612,7 +2612,7 @@ Entries:
   time: '2024-08-02T20:52:44.0000000+00:00'
 - author: erhardsteinhauer
   changes:
-    - message: Experimental NFSD hardsuit is no longer targeted by CDET.
+    - message: Experimental Colsec hardsuit is no longer targeted by CDET.
       type: Fix
   id: 5161
   time: '2024-08-02T21:26:33.0000000+00:00'
@@ -2652,9 +2652,9 @@ Entries:
   changes:
     - message: Mapped sell-only Shipyard Consoles on the Trade Outpost.
       type: Add
-    - message: Added ASMGT heavy weapon case to NFSD turret safe.
+    - message: Added ASMGT heavy weapon case to Colsec turret safe.
       type: Tweak
-    - message: Replaced NFSD room with Station Guard room on the Trade Outpost.
+    - message: Replaced Colsec room with Station Guard room on the Trade Outpost.
       type: Tweak
   id: 5166
   time: '2024-08-03T22:29:01.0000000+00:00'
@@ -2799,7 +2799,7 @@ Entries:
   changes:
     - message: >-
         Bureaucracy loadout options are now available for all jobs apart from
-        NFSD and antag roles.
+        Colsec and antag roles.
       type: Add
   id: 5185
   time: '2024-08-10T17:07:24.0000000+00:00'
@@ -2819,7 +2819,7 @@ Entries:
   time: '2024-08-11T15:56:44.0000000+00:00'
 - author: whatston3
   changes:
-    - message: NFSD and Security intercoms can no longer be disassembled.
+    - message: Colsec and Security intercoms can no longer be disassembled.
       type: Tweak
   id: 5188
   time: '2024-08-11T19:53:26.0000000+00:00'
@@ -3025,7 +3025,7 @@ Entries:
         0, 0.
       type: Fix
     - message: >-
-        NFSD Outpost will no longer spawn weirdly close to or inside Frontier
+        Colsec Outpost will no longer spawn weirdly close to or inside Frontier
         Outpost.
       type: Fix
   id: 5212
@@ -3112,11 +3112,11 @@ Entries:
 - author: Salvantrix
   changes:
     - message: >-
-        NFSD time requirements have been increased, with alternate time
+        Colsec time requirements have been increased, with alternate time
         requirements for players with more overall, but less security playtime.
       type: Tweak
     - message: >-
-        Pirate, First Mate and Prisoner now require 3 hours of NFSD playtime,
+        Pirate, First Mate and Prisoner now require 3 hours of Colsec playtime,
         and Pirate Captain needs 3 hours of Sergeant playtime.
       type: Tweak
     - message: Station Representative now requires 3 hours of Security Guard playtime.
@@ -3239,7 +3239,7 @@ Entries:
   time: '2024-09-05T18:57:52.0000000+00:00'
 - author: whatston3
   changes:
-    - message: The NFSD has a new, more appropriate set of medals to be given out.
+    - message: The Colsec has a new, more appropriate set of medals to be given out.
       type: Add
     - message: >-
         A new medal, the Glorious Order of the Frontier, 1st Class can now be
@@ -3467,7 +3467,7 @@ Entries:
       type: Add
     - message: Added medical chest rig to loadouts.
       type: Add
-    - message: All NFSD/SR armor classified as C2-contraband.
+    - message: All Colsec/SR armor classified as C2-contraband.
       type: Fix
     - message: All mercenary gear available from loadouts classified as C1-contraband.
       type: Fix
@@ -3476,15 +3476,15 @@ Entries:
 - author: Salvantrix
   changes:
     - message: >-
-        The NFSD has a new civilian role, the Public Affairs Liaison, who
-        interacts with the public and handles NFSD bureaucracy.
+        The Colsec has a new civilian role, the Public Affairs Liaison, who
+        interacts with the public and handles Colsec bureaucracy.
       type: Add
     - message: >-
         The Lawyer role has been removed, and all lawyer-related items are now
         available in Contractor/Pilot/Mercenary loadouts.
       type: Remove
     - message: >-
-        The NFSD now has a new set of forms available in the PAL's folder, and
+        The Colsec now has a new set of forms available in the PAL's folder, and
         some standard SR forms have been updated.
       type: Tweak
   id: 5260
@@ -3590,7 +3590,7 @@ Entries:
         from other events.
       type: Fix
     - message: >-
-        False alarms are more rare, NFSD/Frontier bank accounts are rewarded
+        False alarms are more rare, Colsec/Frontier bank accounts are rewarded
         less for event completion.
       type: Tweak
     - message: The CentDrobe has been removed from the Vault bluespace event.
@@ -3633,9 +3633,9 @@ Entries:
   time: '2024-09-16T12:49:23.0000000+00:00'
 - author: MagnusCrowe and GhostPrinceLost
   changes:
-    - message: Added NFSD docking ports and external airlocks!
+    - message: Added Colsec docking ports and external airlocks!
       type: Add
-    - message: Added 9 NFSD themed signs!
+    - message: Added 9 Colsec themed signs!
       type: Add
   id: 5278
   time: '2024-09-16T21:37:35.0000000+00:00'
@@ -3733,7 +3733,7 @@ Entries:
   time: '2024-09-20T12:13:33.0000000+00:00'
 - author: dvir001
   changes:
-    - message: NFSD EMP Grenades box now has EMP Grenades
+    - message: Colsec EMP Grenades box now has EMP Grenades
       type: Fix
   id: 5290
   time: '2024-09-20T14:27:42.0000000+00:00'
@@ -3823,11 +3823,11 @@ Entries:
         spesos & FUCs on scanning dead drops and pods.
       type: Add
     - message: >-
-        Adds smuggling guidebook entry with a better (NFSD-side) explanation of
+        Adds smuggling guidebook entry with a better (Colsec-side) explanation of
         mechanics.
       type: Add
     - message: >-
-        Both pirates and NFSD may receive the location of a drop pod about 15
+        Both pirates and Colsec may receive the location of a drop pod about 15
         minutes after a smuggling note is taken.
       type: Add
     - message: >-
@@ -4700,7 +4700,7 @@ Entries:
   changes:
     - type: Remove
       message: >-
-        Removed Inquisitor from the nfsd shipyard, as there are new ships to
+        Removed Inquisitor from the Colsec shipyard, as there are new ships to
         replace it.
   id: 5422
   time: '2024-10-17T22:46:06.0000000+00:00'
@@ -5022,7 +5022,7 @@ Entries:
 - author: Tych0theSynth
   changes:
     - type: Add
-      message: Added access-locked shelves for the NFSD.
+      message: Added access-locked shelves for the Colsec.
   id: 5468
   time: '2024-11-01T20:55:35.0000000+00:00'
 - author: dvir001
@@ -5389,7 +5389,7 @@ Entries:
   changes:
     - type: Tweak
       message: >-
-        The Frontier and NFSD accounts can now be accessed off-station through
+        The Frontier and Colsec accounts can now be accessed off-station through
         station admin consoles.
     - type: Tweak
       message: The Station Administration UI has been reworked.
@@ -5586,7 +5586,7 @@ Entries:
 - author: Leander
   changes:
     - type: Add
-      message: add the paladin NFSD small ship
+      message: add the paladin Colsec small ship
   id: 5539
   time: '2024-11-27T00:43:06.0000000+00:00'
 - author: PeccNeck
@@ -5717,8 +5717,8 @@ Entries:
   changes:
     - type: Tweak
       message: >-
-        Added less-lethal ammunition to NFSD techfab by default, with additional
-        NFSD items.
+        Added less-lethal ammunition to Colsec techfab by default, with additional
+        Colsec items.
   id: 5559
   time: '2024-12-06T18:23:50.0000000+00:00'
 - author: whatston3
@@ -5906,7 +5906,7 @@ Entries:
 - author: whatston3
   changes:
     - type: Fix
-      message: The cargo pallet in the NFSD Outpost now works properly.
+      message: The cargo pallet in the Colsec Outpost now works properly.
   id: 5585
   time: '2024-12-14T22:28:35.0000000+00:00'
 - author: dvir001
@@ -6018,7 +6018,7 @@ Entries:
 - author: whatston3
   changes:
     - type: Fix
-      message: Removed duplicate location hints from NFSD radio callouts.
+      message: Removed duplicate location hints from Colsec radio callouts.
   id: 5601
   time: '2024-12-20T18:16:13.0000000+00:00'
 - author: whatston3
@@ -6313,7 +6313,7 @@ Entries:
 - author: blackknight954
   changes:
     - type: Add
-      message: Added shotgun slugs and rubber magazines to the NFSD and Mercfabs
+      message: Added shotgun slugs and rubber magazines to the Colsec and Mercfabs
   id: 5643
   time: '2025-01-10T21:16:43.0000000+00:00'
 - author: dustylens
@@ -6347,7 +6347,7 @@ Entries:
 - author: dvir001
   changes:
     - type: Fix
-      message: Paladin NFSD Shuttle locker isn't locked to detective only anymore.
+      message: Paladin Colsec Shuttle locker isn't locked to detective only anymore.
   id: 5648
   time: '2025-01-11T16:10:51.0000000+00:00'
 - author: whatston3
@@ -6361,7 +6361,7 @@ Entries:
 - author: Jakumba
   changes:
     - type: Tweak
-      message: Updates NFSD PTech with additional items
+      message: Updates Colsec PTech with additional items
   id: 5650
   time: '2025-01-12T12:44:54.0000000+00:00'
 - author: dustylens
@@ -6407,7 +6407,7 @@ Entries:
 - author: dustylens
   changes:
     - type: Tweak
-      message: Add chem lab to NFSD HQ.
+      message: Add chem lab to Colsec HQ.
   id: 5657
   time: '2025-01-16T23:39:48.0000000+00:00'
 - author: whatston3
@@ -6429,13 +6429,13 @@ Entries:
 - author: dustylens
   changes:
     - type: Fix
-      message: Replaced faulty atmos pipe in NFSD interrogation room.
+      message: Replaced faulty atmos pipe in Colsec interrogation room.
   id: 5661
   time: '2025-01-18T02:03:41.0000000+00:00'
 - author: dustylens
   changes:
     - type: Tweak
-      message: Adjusted NFSD vents/scrubbers to create more of a breathable space.
+      message: Adjusted Colsec vents/scrubbers to create more of a breathable space.
   id: 5662
   time: '2025-01-18T08:31:56.0000000+00:00'
 - author: dvir001
@@ -6527,11 +6527,11 @@ Entries:
 - author: MagnusCrowe
   changes:
     - type: Add
-      message: Added morgue and crematorium back to the NFSD outpost.
+      message: Added morgue and crematorium back to the Colsec outpost.
     - type: Add
-      message: Added an ATM and sell only shipyard to NFSD outpost brig.
+      message: Added an ATM and sell only shipyard to Colsec outpost brig.
     - type: Fix
-      message: Medical locked NFSD medbay.
+      message: Medical locked Colsec medbay.
     - type: Fix
       message: Gave brigmedic medical and chemistry access.
   id: 5675
@@ -6569,7 +6569,7 @@ Entries:
 - author: Jakumba
   changes:
     - type: Tweak
-      message: Update NFSD uplink inventory
+      message: Update Colsec uplink inventory
   id: 5681
   time: '2025-01-21T08:35:12.0000000+00:00'
 - author: MagnusCrowe
@@ -6767,7 +6767,7 @@ Entries:
 - author: Cheackraze
   changes:
     - type: Tweak
-      message: added holopads to NFSD and Exped ships
+      message: added holopads to Colsec and Exped ships
   id: 5710
   time: '2025-02-01T21:28:42.0000000+00:00'
 - author: Cheackraze
@@ -6886,7 +6886,7 @@ Entries:
   changes:
     - type: Tweak
       message: >-
-        NFSD space suits have had their names, descriptions, and uplink info
+        Colsec space suits have had their names, descriptions, and uplink info
         updated to more accurately represent their purpose and properties.
   id: 5726
   time: '2025-02-04T17:08:37.0000000+00:00'
@@ -7001,7 +7001,7 @@ Entries:
     - type: Add
       message: Added several items to the Sheriff's Locker, including a Demag.
     - type: Add
-      message: The PTech and NFSD PTech now both have 2 access configurators.
+      message: The PTech and Colsec PTech now both have 2 access configurators.
     - type: Remove
       message: >-
         The Station Representative no longer spawns with an access configurator
@@ -7559,9 +7559,9 @@ Entries:
 - author: Jakumba
   changes:
     - type: Add
-      message: Prisoner headsets to NFSD prisoner lockers.
+      message: Prisoner headsets to Colsec prisoner lockers.
     - type: Add
-      message: Prisoner lockers to NFSD shuttles where missing
+      message: Prisoner lockers to Colsec shuttles where missing
   id: 5818
   time: '2025-03-02T21:34:23.0000000+00:00'
 - author: dvir001
@@ -8214,7 +8214,7 @@ Entries:
 - author: blackknight954
   changes:
     - type: Tweak
-      message: NFSD no longer get notified about the purchase of black market ships
+      message: Colsec no longer get notified about the purchase of black market ships
   id: 5903
   time: '2025-03-26T06:11:07.0000000+00:00'
 - author: whatston3
@@ -8822,7 +8822,7 @@ Entries:
 - author: BramvanZijp
   changes:
     - type: Add
-      message: Added a lock to NFSD Weapon, Pistol, and Melee racks.
+      message: Added a lock to Colsec Weapon, Pistol, and Melee racks.
     - type: Fix
       message: Wallmount Weapon/Pistol/Melee racks are now directional.
   id: 5985
@@ -8947,7 +8947,7 @@ Entries:
   changes:
     - type: Add
       message: >-
-        Added tool vending machines to NFSDO and toolboxes to the Broadhead and
+        Added tool vending machines to ColsecO and toolboxes to the Broadhead and
         Hypnos
   id: 6003
   time: '2025-05-03T22:48:55.0000000+00:00'
@@ -9128,14 +9128,14 @@ Entries:
         decreased.
     - type: Tweak
       message: >-
-        [NFSD] Removed explosive grenades, Death Squad/ERT weapons, and energy
-        sword from NFSD uplink, added laser cannon.
+        [Colsec] Removed explosive grenades, Death Squad/ERT weapons, and energy
+        sword from Colsec uplink, added laser cannon.
     - type: Tweak
       message: >-
-        [NFSD] NFSD jobs start with a mk32 with extended +P mag. NFSD also
+        [Colsec] Colsec jobs start with a mk32 with extended +P mag. Colsec also
         starts with access to +P ammo.
     - type: Tweak
-      message: '[NFSD] Increased the price of the thruster upgrade pack in NFSD Uplink.'
+      message: '[Colsec] Increased the price of the thruster upgrade pack in Colsec Uplink.'
     - type: Tweak
       message: >-
         [SCI] Removed weapons, added new ammo and extended magazines to arsenal

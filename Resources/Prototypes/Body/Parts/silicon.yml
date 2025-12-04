@@ -10,6 +10,7 @@
   - type: Damageable
     damageContainer: Inorganic
   - type: BodyPart
+  - type: AntiRottingContainer
   - type: ContainerContainer
     containers:
       bodypart: !type:Container

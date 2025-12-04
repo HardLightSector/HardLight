@@ -193,7 +193,7 @@
             - PowerCell
 
 - type: entity
-  parent: ClothingOuterBase
+  parent: [ClothingOuterBase, ClothingConcealsBody] # HardLight: Add ClothingConcealsBody
   id: ClothingOuterSuitChicken
   name: chicken suit
   description: Bok bok bok!
@@ -206,7 +206,7 @@
     slots: WITHOUT_POCKET
 
 - type: entity
-  parent: ClothingOuterBase
+  parent: [ClothingOuterBase, ClothingConcealsBody] # HardLight: Add ClothingConcealsBody
   id: ClothingOuterSuitShrineMaiden
   name: shrine maiden outfit
   description: Makes you want to go deal with some troublesome youkai.
@@ -217,7 +217,7 @@
     sprite: Clothing/OuterClothing/Suits/shrine-maiden.rsi
 
 - type: entity
-  parent: ClothingOuterBase
+  parent: [ClothingOuterBase, ClothingConcealsBody] # HardLight: Add ClothingConcealsBody
   id: ClothingOuterSuitWitchRobes
   name: witch robes
   description: Magic is all about the spell power, ZE!
@@ -228,7 +228,7 @@
     sprite: Clothing/OuterClothing/Suits/witchrobe.rsi
 
 - type: entity
-  parent: ClothingOuterBase
+  parent: [ClothingOuterBase, ClothingConcealsBody] # HardLight: Add ClothingConcealsBody
   id: ClothingOuterSuitMonkey
   name: monkey suit
   description: A suit that looks like a primate.
@@ -244,7 +244,7 @@
     slots: WITHOUT_POCKET
 
 - type: entity
-  parent: ClothingOuterBase
+  parent: [ClothingOuterBase, ClothingConcealsBody] # HardLight: Add ClothingConcealsBody
   id: ClothingOuterSuitIan
   name: ian suit
   description: Who's a good boy?
@@ -267,7 +267,7 @@
     slots: WITHOUT_POCKET
 
 - type: entity
-  parent: ClothingOuterBase
+  parent: [ClothingOuterBase, ClothingConcealsBody] # HardLight: Add ClothingConcealsBody
   id: ClothingOuterSuitCarp
   name: carp suit
   description: A special suit that makes you look just like a space carp, if your eyesight is bad.

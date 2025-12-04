@@ -1,0 +1,103 @@
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: BaseBullet
+  id: BoltBase
+  name: bolt (.75)
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 45
+        Structural: 50
+    penetrationThreshold: 360
+    penetrationDamageTypeRequirement:
+    - Structural
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: BoltBase
+  id: BoltExplosive
+  name: explosive bolt (.75)
+  components:
+  - type: TriggerOnProjectileHit
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 2
+    intensitySlope: 2
+    totalIntensity: 9
+    maxTileBreak: 0
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 45
+        Heat: 10
+        Structural: 50
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: BoltBase
+  id: BoltIncendiary
+  name: incendiary bolt (.75)
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 45
+        Heat: 25
+        Structural: 50
+  - type: IgniteOnCollide
+    fireStacks: 0.5
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: BoltBase
+  id: BoltCorrosive
+  name: corrosive bolt (.75)
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 45
+        Caustic: 15
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: BoltBase
+  id: BoltTaser
+  name: taser bolt (.75)
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 15
+  - type: StunOnCollide
+    stunAmount: 2
+    knockdownAmount: 3
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: BoltBase
+  id: BoltCryogenic
+  name: cryogenic bolt (.75)
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 30
+        Cold: 30
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: BoltBase
+  id: BoltFusor
+  name: fusor bolt (.75)
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 30
+        Slash: 30
+        Blunt: 30
+        Heat: 30
+        Structural: 50

@@ -35,7 +35,7 @@ public sealed partial class MaterialStorageComponent : Component
     /// Whether or not to drop contained materials when deconstructed.
     /// </summary>
     [DataField]
-    public bool DropOnDeconstruct = true;
+    public bool DropOnDeconstruct = false;
 
     /// <summary>
     /// Whitelist generated on runtime for what specific materials can be inserted into this entity.
@@ -65,8 +65,8 @@ public sealed partial class MaterialStorageComponent : Component
     /// <summary>
     /// Whether the storage can eject the materials stored within it
     /// </summary>
-    [DataField]
-    public bool CanEjectStoredMaterials = true;
+    [DataField, AutoNetworkedField]
+    public bool CanEjectStoredMaterials = false;
 }
 
 [Serializable, NetSerializable]

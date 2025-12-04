@@ -1,0 +1,35 @@
+- type: vessel
+  id: Natisk
+  parent: BaseVesselAntag
+  name: NCS Natisk
+  description: A tank with a layer of reinforced walls under its exterior hull, ensuring its able to send out obscene amounts of firepower.
+  price: 63500
+  category: Medium
+  group: Ussp
+  shuttlePath: /Maps/_Mono/Shuttles/USSP/natisk.yml
+  guidebookPage: Null
+  class:
+  - Pursuit
+  engine:
+  - AME
+
+- type: gameMap
+  id: Natisk
+  mapName: 'Natisk'
+  mapPath: /Maps/_Mono/Shuttles/USSP/natisk.yml
+  minPlayers: 0
+  stations:
+    Natisk:
+      stationProto: StandardFrontierVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Natisk USSP{1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            USSPSergeant: [0, 0]
+            USSPCorporal: [0, 0]
+            USSPMedic: [0, 0]
+            USSPRifleman: [0, 0]

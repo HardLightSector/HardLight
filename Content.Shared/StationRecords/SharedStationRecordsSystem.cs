@@ -18,7 +18,11 @@ public abstract class SharedStationRecordsSystem : EntitySystem
     }
     public (NetEntity, uint) Convert(StationRecordKey input)
     {
-        return (GetNetEntity(input.OriginStation), input.Id);
+        // Use TryGetNetEntity to avoid errors when the origin station entity is deleted/invalid
+        if (!TryGetNetEntity(input.OriginStation, out var netEntity))
+            netEntity = NetEntity.Invalid;
+
+        return (netEntity.Value, input.Id);
     }
 
     public List<(NetEntity, uint)> Convert(ICollection<StationRecordKey> input)

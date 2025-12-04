@@ -12,8 +12,8 @@
   id: ThePit
   parent: BasePOI
   name: "The Pit"
-  minimumDistance: 2200
-  maximumDistance: 4200
+  minimumDistance: 5200
+  maximumDistance: 6200
   spawnGroup: MarketStation
   gridPath: /Maps/_NF/POI/arena.yml
   addComponents:

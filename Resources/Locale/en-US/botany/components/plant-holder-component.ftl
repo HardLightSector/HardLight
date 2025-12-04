@@ -2,6 +2,7 @@
 
 plant-holder-component-plant-success-message = You plant the {$seedName} {$seedNoun}.
 plant-holder-component-already-seeded-message = The {$name} already has seeds in it!
+plant-holder-component-seed-not-yours = These seeds were extracted by someone else and can only be used by them!
 plant-holder-component-remove-weeds-message = You remove the weeds from the {$name}.
 plant-holder-component-remove-weeds-others-message = {$otherName} starts uprooting the weeds.
 plant-holder-component-no-weeds-message = This plot is devoid of weeds! It doesn't need uprooting.

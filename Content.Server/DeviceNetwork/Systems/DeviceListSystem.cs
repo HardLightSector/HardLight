@@ -115,11 +115,11 @@ public sealed class DeviceListSystem : SharedDeviceListSystem
     public void OnDeviceShutdown(Entity<DeviceListComponent?> list, Entity<DeviceNetworkComponent> device)
     {
         device.Comp.DeviceLists.Remove(list.Owner);
-        if (!Resolve(list.Owner, ref list.Comp))
+        if (!TryComp<DeviceListComponent>(list.Owner, out var listComp))
             return;
 
-        list.Comp.Devices.Remove(device);
-        Dirty(list);
+        listComp.Devices.Remove(device);
+        Dirty(list.Owner, listComp);
     }
 
     private void OnMapSave(BeforeSerializationEvent ev)

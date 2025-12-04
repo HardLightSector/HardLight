@@ -479,6 +479,12 @@ public enum LogType
     /// <summary>
     /// An admin spawns a refund for a player.
     /// </summary>
+    ShuttleImpact = 102,
+
+    /// <summary>
+    /// Events relating to midi playback.
+    /// </summary>
+    Instrument = 103,
     AdminRefund = 203,
     /// <summary>
     /// An atmos device's direction was changed.

@@ -54,6 +54,7 @@
     - id: GoldRing # 300 spesos for one
     - id: GoldRingDiamond # 1500 spesos for one
     - id: GoldRingGem # 2100 spesos for one
+    - id: GoldRingJade # 2200 spesos for one
     - id: SilverRing # 275 spesos for one
     - id: SilverRingDiamond # 1400 spesos for one
     - id: SilverRingGem # 2000 spesos for one

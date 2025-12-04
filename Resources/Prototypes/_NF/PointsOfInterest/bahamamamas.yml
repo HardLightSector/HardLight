@@ -12,8 +12,8 @@
   id: Bahama
   parent: BasePOI
   name: "Bahama Mama's"
-  minimumDistance: 1200
-  maximumDistance: 2900
+  minimumDistance: 3400
+  maximumDistance: 5800
   spawnGamePreset: [ NFAdventure, NFPirate ]
   spawnGroup: MarketStation
   gridPath: /Maps/_NF/POI/bahama.yml

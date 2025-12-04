@@ -200,7 +200,7 @@
 
 # Suplus
 - type: entity
-  parent: [ BaseC1Contraband, NFWeaponShotgunKammerer]
+  parent: [ BaseC1Contraband, WeaponShotgunKammerer]
   id: WeaponShotgunSurpKammerer
   suffix: Surplus
   components:

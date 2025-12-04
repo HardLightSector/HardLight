@@ -20,7 +20,7 @@
 - type: entity
   parent: TelecomServer
   id: TelecomServerFilledNfsd
-  suffix: Ship, NFSD
+  suffix: Ship, TSFMC
   components:
   - type: ContainerFill
     containers:

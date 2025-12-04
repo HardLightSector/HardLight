@@ -1,0 +1,5 @@
+- type: loadout
+  id: TsfmcGasmask
+  storage:
+    back:
+    - ClothingMaskGasSecurity

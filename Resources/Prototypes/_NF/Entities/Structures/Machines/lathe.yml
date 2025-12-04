@@ -314,8 +314,8 @@
 - type: entity
   id: NfsdTechFab
   parent: [ BlueprintReceiverBase, SecurityTechFab ]
-  name: NFSD techfab
-  description: Prints equipment for use by NFSD.
+  name: TSFMC techfab
+  description: Prints equipment for use by TSFMC.
   components:
   - type: Sprite
     sprite: _NF/Structures/Machines/techfab.rsi
@@ -337,6 +337,7 @@
     idleState: icon
     runningState: icon
     staticPacks:
+    - SecurityAmmoStatic
     - NFNfsdTechfabDeprecatedStatic
     - CivilianAmmoRecipePack
     dynamicPacks:

@@ -276,14 +276,14 @@
   - type: Flatpack
     entity: MachineArtifactCrusher
 
-# - type: entity
-#   parent: ExosuitFabricatorFlatpack
-#   id: MachineAnomalySynchronizerFlatpack
-#   name: anomaly synchronizer flatpack
-#   description: A flatpack used for constructing an anomaly synchronizer.
-#   components:
-#   - type: Flatpack
-#     entity: MachineAnomalySynchronizer
+- type: entity
+  parent: ExosuitFabricatorFlatpack
+  id: MachineAnomalySynchronizerFlatpack
+  name: anomaly synchronizer flatpack
+  description: A flatpack used for constructing an anomaly synchronizer.
+  components:
+  - type: Flatpack
+    entity: MachineAnomalySynchronizer
 
 - type: entity
   parent: ProtolatheFlatpack
@@ -893,8 +893,8 @@
 - type: entity
   parent: UniformPrinterFlatpack
   id: NfsdTechFabFlatpack
-  name: NFSD techfab flatpack
-  description: A flatpack used for constructing an NFSD techfab.
+  name: TSFMC techfab flatpack
+  description: A flatpack used for constructing an TSFMC techfab.
   components:
   - type: Flatpack
     entity: NfsdTechFab
@@ -944,7 +944,7 @@
 - type: entity
   parent: HoverbikeFlatpack
   id: HoverbikeNfsdFlatpack
-  name: NFSD hoverbike flatpack
+  name: TSFMC hoverbike flatpack
   description: A flatpack used for constructing a hoverbike. Keys already slotted in the ignition.
   components:
   - type: Flatpack

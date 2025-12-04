@@ -1,7 +1,7 @@
 #region WizDen
 - type: entity
   id: NFWeaponLauncherChinaLake
-  parent: [ NFBaseWeaponLauncherChamber40mmGrenades, NFBaseWeaponFrameLauncherGorlex ]
+  parent: [ NFBaseWeaponLauncherChamber40mmGrenades, NFBaseWeaponFrameLauncherGorlex, BaseC3ExpeditionContraband ]
   name: GP-40 grenade launcher
   description: PLOOP.
   components:
@@ -22,7 +22,7 @@
 
 - type: entity
   id: NFWeaponLauncherRocket
-  parent: [ NFBaseWeaponLauncherChamberRockets, NFBaseWeaponFrameLauncherGorlex ]
+  parent: [ NFBaseWeaponLauncherChamberRockets, NFBaseWeaponFrameLauncherGorlex, BaseC3ExpeditionContraband ]
   name: GSW rocket launcher mk4
   description: A modified ancient rocket-propelled grenade launcher.
   components:
@@ -47,7 +47,7 @@
 
 - type: entity
   suffix: EMP
-  parent: [ BaseC2ContrabandUnredeemable, NFWeaponLauncherRocket ]
+  parent: [ BaseC3ExpeditionContraband, NFWeaponLauncherRocket ]
   id: NFWeaponLauncherRocketEmp
   components:
   - type: BallisticAmmoProvider
@@ -78,10 +78,10 @@
     manufacturer: weapon-details-manufacturer-nanotrasen-munitions
 
 - type: entity
-  parent: [ BaseC2ContrabandUnredeemable, NFBaseWeaponLauncherChamber40mmGrenadesNfsdSingleShot, NFBaseWeaponFrameLauncherNanotrasen ]
-  id: NFWeaponLauncherGrenadeNfsd
-  name: NGP-40 projector
-  description: Single shot grenade launcher able to lob both grenades and darts!
+  name: TSFMC grenade launcher
+  parent: [BaseC2ContrabandUnredeemable, WeaponLauncherChinaLake]
+  id: WeaponLauncherNfsdLake
+  description: Able to lob both grenades and darts!
   components:
   - type: Sprite
     sprite: _NF/Objects/Weapons/Guns/Launchers/nfsd_lake.rsi
@@ -94,3 +94,9 @@
     price: 50
   - type: NFWeaponDetails
     manufacturer: weapon-details-manufacturer-nanotrasen-munitions
+
+- type: entity
+  name: NFSD grenade launcher
+  parent: WeaponLauncherNfsdLake
+  id: NFWeaponLauncherGrenadeNfsd
+  description: A standardized grenade launcher issued to NFSD personnel.

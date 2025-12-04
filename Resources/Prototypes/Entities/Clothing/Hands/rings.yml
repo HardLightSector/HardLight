@@ -86,3 +86,18 @@
     available:
       - gemColor:
           gem: Rainbow
+
+- type: entity
+  parent: [ RingBase, GoldRingBase ]
+  id: GoldRingJade
+  name: gold jade ring
+  description: Made from ethically mined space ja- Wait a minute... That's not jade.
+  components:
+  - type: Sprite
+    layers:
+      - state: ring
+        color: "#ffc833"
+      - state: gem
+        color: "#ffbbff"
+  - type: StaticPrice
+    price: 2200

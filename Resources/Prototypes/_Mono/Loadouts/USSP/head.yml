@@ -1,0 +1,9 @@
+- type: loadout
+  id: USSPHelmet
+  equipment:
+    head: ClothingHeadHelmetMercenaryBlack
+
+- type: loadout
+  id: USSPBeret
+  equipment:
+    head: ClothingHeadHatBeretSecurity

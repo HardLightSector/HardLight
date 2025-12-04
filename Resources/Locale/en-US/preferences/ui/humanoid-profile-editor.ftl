@@ -59,6 +59,10 @@ humanoid-profile-editor-naming-rules-warning = Warning: Offensive or LRP IC name
 humanoid-profile-editor-markings-tab = Markings
 humanoid-profile-editor-flavortext-tab = Description
 
+# Company
+humanoid-profile-editor-company-tab = Company
+humanoid-profile-editor-company-label = Company:
+
 # Traits
 humanoid-profile-editor-traits-tab = Traits
 humanoid-profile-editor-no-traits = No traits available

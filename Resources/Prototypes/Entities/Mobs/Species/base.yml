@@ -35,9 +35,9 @@
     - map: [ "shoes" ]
     - map: [ "ears" ]
     - map: [ "eyes" ]
-    - map: [ "belt" ]
     - map: [ "id" ]
     - map: [ "outerClothing" ]
+    - map: [ "belt" ] # HL: change belt over outerclothing
     - map: [ "back" ]
     - map: [ "neck" ]
     - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
@@ -237,6 +237,7 @@
   - type: Targeting # Shitmed Change
   - type: SurgeryTarget # Shitmed Change
   - type: ModifyMarkings # Hardlight
+  - type: ExaminableCharacter # WWDP
 
 - type: entity
   save: false
@@ -355,9 +356,9 @@
     - map: [ "shoes" ]
     - map: [ "ears" ]
     - map: [ "eyes" ]
-    - map: [ "belt" ]
     - map: [ "id" ]
     - map: [ "outerClothing" ]
+    - map: [ "belt" ] # HL: change belt over outerclothing
     - map: [ "back" ]
     - map: [ "neck" ]
     - map: [ "enum.HumanoidVisualLayers.FacialHair" ]

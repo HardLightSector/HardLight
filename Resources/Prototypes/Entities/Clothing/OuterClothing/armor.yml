@@ -3,7 +3,7 @@
 
 #Basic armor vest for inheritance
 - type: entity
-  parent: [RecyclableItemClothArmor, ClothingOuterBaseMedium, AllowSuitStorageClothing, BaseC1Contraband] # Frontier: BaseSecurityContraband<BaseC1Contraband, added RecyclableItemClothArmor
+  parent: [ClothingBottomless, RecyclableItemClothArmor, ClothingOuterBaseMedium, AllowSuitStorageClothing, BaseC1Contraband] # Frontier: BaseSecurityContraband<BaseC1Contraband, added RecyclableItemClothArmor # HardLight: Add ClothingBottomless
   id: ClothingOuterArmorBase
   name: armor vest
   abstract: true
@@ -273,7 +273,7 @@
     sprite: Clothing/OuterClothing/Armor/magusred.rsi
 
 - type: entity
-  parent: [ClothingOuterBaseLarge, AllowSuitStorageClothing, BaseC1Contraband] # Frontier: BaseCommandContraband<BaseC1Contraband
+  parent: [ClothingBottomless, ClothingOuterBaseLarge, AllowSuitStorageClothing, BaseC1Contraband] # Frontier: BaseCommandContraband<BaseC1Contraband; # HardLight: Add ClothingBottomless
   id: ClothingOuterArmorCaptainCarapace
   name: "captain's carapace"
   description: "An armored chestpiece that provides protection whilst still offering maximum mobility and flexibility. Issued only to the captains of luxury vessels." # Frontier
@@ -375,7 +375,7 @@
     slots: WITHOUT_POCKET
 
 - type: entity
-  parent: [ClothingOuterBaseLarge, BaseC3WizardContraband, AllowSuitStorageClothing, ContrabandClothing] # Frontier: BaseMajorContraband<BaseC3CultContraband, added ContrabandClothing as parent
+  parent: [ClothingNude, ClothingOuterBaseLarge, BaseC3WizardContraband, AllowSuitStorageClothing, ContrabandClothing] # Frontier: BaseMajorContraband<BaseC3CultContraband, added ContrabandClothing as parent # HardLight: Add ClothingNude
   id: ClothingOuterArmorChameleon
   name: emperor's new armour
   suffix: Chameleon

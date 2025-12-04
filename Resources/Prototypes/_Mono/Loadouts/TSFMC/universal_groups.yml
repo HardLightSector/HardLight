@@ -1,0 +1,145 @@
+- type: loadoutGroup
+  id: TsfmcBackpack
+  name: loadout-group-contractor-backpack
+  hidden: true # No point in showing this, it gets auto-selected.
+  minLimit: 1
+  loadouts:
+  - TsfmcClothingBackpack
+  fallbacks:
+  - TsfmcClothingBackpack
+
+- type: loadoutGroup
+  id: TsfmcJumpsuit
+  name: loadout-group-contractor-jumpsuit
+  hidden: true # No point in showing this, it gets auto-selected.
+  minLimit: 1
+  loadouts:
+  - TsfmcClothingJumpsuit
+  fallbacks:
+  - TsfmcClothingJumpsuit
+
+- type: loadoutGroup
+  id: TsfmcShoes
+  name: loadout-group-contractor-shoes
+  hidden: true # No point in showing this, it gets auto-selected.
+  minLimit: 1
+  loadouts:
+  - TsfmcCombatBoots
+  fallbacks:
+  - TsfmcCombatBoots
+
+- type: loadoutGroup
+  id: TsfmcGloves
+  name: loadout-group-contractor-gloves
+  hidden: true # No point in showing this, it gets auto-selected.
+  minLimit: 1
+  loadouts:
+  - TsfmcCombatGloves
+  fallbacks:
+  - TsfmcCombatGloves
+
+- type: loadoutGroup
+  id: TsfmcBrigmedicGloves
+  name: loadout-group-contractor-gloves
+  minLimit: 1
+  loadouts:
+  - TsfmcCombatGloves
+  - TsfmcNitrileGloves
+  fallbacks:
+  - TsfmcCombatGloves
+
+- type: loadoutGroup
+  id: TsfmcBelt
+  name: loadout-group-contractor-belt
+  hidden: true # No point in showing this, it gets auto-selected.
+  minLimit: 1
+  loadouts:
+  - TsfmcCombatWebbing
+  fallbacks:
+  - TsfmcCombatWebbing
+
+- type: loadoutGroup
+  id: TsfmcBrigmedicBelt
+  name: loadout-group-contractor-belt
+  minLimit: 1
+  loadouts:
+  - TsfmcCombatWebbing
+  - TsfmcCombatWebbingMedical
+  fallbacks:
+  - TsfmcCombatWebbingMedical
+
+- type: loadoutGroup
+  id: TsfmcFace
+  name: loadout-group-contractor-face
+  hidden: true # No point in showing this, it gets auto-selected.
+  loadouts:
+  - TsfmcGasmask
+  fallbacks:
+  - TsfmcGasmask
+
+- type: loadoutGroup
+  id: TsfmcGlasses
+  name: loadout-group-contractor-glasses
+  hidden: true # No point in showing this, it gets auto-selected.
+  loadouts:
+  - TsfmcHud
+  fallbacks:
+  - TsfmcHud
+
+- type: loadoutGroup
+  id: TsfmcNeck
+  name: loadout-group-contractor-neck
+  minLimit: 1
+  loadouts:
+  - ContractorClothingNeckIFFCyan
+  fallbacks:
+  - ContractorClothingNeckIFFCyan
+
+- type: loadoutGroup
+  id: TsfmcBrigmedicGlasses
+  name: loadout-group-contractor-glasses
+  minLimit: 1
+  loadouts:
+  - TsfmcHud
+  - TsfmcMedSec
+  fallbacks:
+  - TsfmcHud
+
+- type: loadoutGroup
+  id: TsfmcHead
+  name: loadout-group-contractor-head
+  loadouts:
+  - TsfmcHelmet
+  - TsfmcBeret
+
+# Grunt headsets
+- type: loadoutGroup
+  id: TsfmcEars
+  name: loadout-group-contractor-ears
+  minLimit: 1
+  loadouts:
+  - TsfmcHeadsetGrunt
+  fallbacks:
+  - TsfmcHeadsetGrunt
+
+# Senior officer headsets
+- type: loadoutGroup
+  id: TsfmcEarsSenior
+  name: loadout-group-contractor-ears
+  minLimit: 1
+  loadouts:
+  - TsfmcHeadsetSenior
+  fallbacks:
+  - TsfmcHeadsetSenior
+
+# vests
+- type: loadoutGroup
+  id: TsfmcOuterClothing
+  name: loadout-group-contractor-outerclothing
+  minLimit: 1
+  loadouts:
+  - TsfmcVestSlim
+  - TsfmcVestNormal
+  fallbacks:
+  - TsfmcVestNormal
+

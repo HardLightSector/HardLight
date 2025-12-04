@@ -56,7 +56,7 @@
         - IdCard
   - type: PdaVisuals
   - type: Item
-    size: Small
+    size: Ginormous
   - type: ContainerContainer
     containers:
       PDA-id: !type:ContainerSlot {}
@@ -185,17 +185,17 @@
   parent: BasePDA
   id: BaseMedicalPDA
   abstract: true
-  # Frontier: cartridges moved to loadouts
-  # components:
-  # - type: CartridgeLoader
-  #   uiKey: enum.PdaUiKey.Key
-  #   preinstalled:
-  #     - CrewManifestCartridge
-  #     - NotekeeperCartridge
-  #     - NanoTaskCartridge
-  #     - NewsReaderCartridge
-  #     - MedTekCartridge
-  # End Frontier
+  components:
+  - type: CartridgeLoader
+    uiKey: enum.PdaUiKey.Key
+    preinstalled:
+      - CrewManifestCartridge
+      - NotekeeperCartridge
+      - NanoTaskCartridge
+      - NewsReaderCartridge
+      - BountyContractsCartridge # HardLight
+      - AstroNavCartridge # HardLight
+      - MedTekCartridge
 
 - type: entity
   parent: BasePDA
@@ -562,16 +562,15 @@
     accentVColor: "#8900c9"
   - type: Icon
     state: pda-miner
-  # Frontier: cartridges moved to loadouts
-  # - type: CartridgeLoader
-  #   uiKey: enum.PdaUiKey.Key
-  #   preinstalled:
-  #     - CrewManifestCartridge
-  #     - NotekeeperCartridge
-  #     - NanoTaskCartridge
-  #     - NewsReaderCartridge
-  #     - AstroNavCartridge
-  # End Frontier
+  - type: CartridgeLoader
+    uiKey: enum.PdaUiKey.Key
+    preinstalled:
+      - CrewManifestCartridge
+      - NotekeeperCartridge
+      - NanoTaskCartridge
+      - NewsReaderCartridge
+      - BountyContractsCartridge # HardLight
+      - AstroNavCartridge
 
 - type: entity
   parent: BasePDA
@@ -945,6 +944,8 @@
     - NotekeeperCartridge
     - NanoTaskCartridge
     - NewsReaderCartridge
+    - BountyContractsCartridge # HardLight
+    - AstroNavCartridge # HardLight
     - WantedListCartridge
     - LogProbeCartridge
 
@@ -1014,10 +1015,11 @@
       - NotekeeperCartridge
       - NanoTaskCartridge
       - NewsReaderCartridge
+      - AstroNavCartridge
+      - BountyContractsCartridge # HardLight
       - MedTekCartridge
       - WantedListCartridge
       - LogProbeCartridge
-      - AstroNavCartridge
 
 - type: entity
   parent: CentcomPDA
@@ -1041,10 +1043,11 @@
       - NotekeeperCartridge
       - NanoTaskCartridge
       - NewsReaderCartridge
+      - BountyContractsCartridge # HardLight
+      - AstroNavCartridge
       - LogProbeCartridge
       - WantedListCartridge
       - MedTekCartridge
-      - AstroNavCartridge
   - type: Tag #  Ignore Chameleon tags
     tags:
     - DoorBumpOpener
@@ -1080,8 +1083,8 @@
   - type: Instrument
     allowPercussion: false
     handheld: true
-    bank: 1
     program: 2
+    bank: 100 # Defined in space-station-14.sf2
 
 - type: entity
   parent: MusicianPDA
@@ -1193,10 +1196,11 @@
       - NotekeeperCartridge
       - NanoTaskCartridge
       - NewsReaderCartridge
+      - BountyContractsCartridge # HardLight
+      - AstroNavCartridge
       - MedTekCartridge
       - WantedListCartridge
       - LogProbeCartridge
-      - AstroNavCartridge
       - MailMetricsCartridge # Frontier
 
 - type: entity
@@ -1347,7 +1351,6 @@
   id: DetectivePDA
   name: detective PDA
   description: Smells like rain... pouring down the rooftops...
-  categories: [ HideSpawnMenu ] # Frontier
   components:
   - type: Pda
     id: DetectiveIDCard
@@ -1366,6 +1369,8 @@
     - NotekeeperCartridge
     - NanoTaskCartridge
     - NewsReaderCartridge
+    - BountyContractsCartridge # HardLight
+    - AstroNavCartridge # HardLight
     - WantedListCartridge
     - LogProbeCartridge
 
@@ -1394,6 +1399,8 @@
     - NotekeeperCartridge
     - NanoTaskCartridge
     - NewsReaderCartridge
+    - BountyContractsCartridge # HardLight
+    - AstroNavCartridge # HardLight
     - WantedListCartridge
     - MedTekCartridge
 

@@ -7,9 +7,6 @@
   whitelist:
     components:
     - Vocal
-  blacklist:
-    tags:
-    - SiliconEmotes
   chatMessages: ["chat-emote-msg-scream"]
   chatTriggers:
     - scream
@@ -37,9 +34,6 @@
   whitelist:
     components:
     - Vocal
-  blacklist:
-    tags:
-    - SiliconEmotes
   chatMessages: ["chat-emote-msg-laugh"]
   chatTriggers:
     - laugh

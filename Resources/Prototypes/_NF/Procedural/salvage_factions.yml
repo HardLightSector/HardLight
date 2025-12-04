@@ -4,51 +4,51 @@
   desc: nf-salvage-faction-xenos
   entries:
     - proto: MobXeno
-      cost: 2
+      cost: 4
     - proto: MobXenoDroneNPC
-      cost: 2
+      cost: 4
     - proto: MobLesserDrone
-      cost: 2
+      cost: 4
     - proto: MobXenoPraetorianNPC
-      cost: 2
+      cost: 6
       prob: 0.2
     - proto: MobXenoQueenNPC
-      cost: 4
+      cost: 8
       prob: 0.1
     - proto: MobXenoRavagerNPC
-      cost: 2
-    - proto: MobXenoRunnerNPC
-      cost: 2
-    - proto: MobXenoRounyNPC 
-      cost: 2
-    - proto: MobXenoAcidRunner 
-      cost: 2
-    - proto: MobXenoAcidRunnerPrimed 
-      cost: 2
-    - proto: MobXenoBoiler 
-      cost: 3
-    - proto: MobXenoBoxerWarrior 
-      cost: 3
-    - proto: MobXenoCarrier 
-      cost: 2
-    - proto: MobXenoCrusher 
-      cost: 2
-    - proto: MobXenoChargerCrusher 
-      cost: 2
-    - proto: MobXenoDancerPraetorian 
-      cost: 2
-    - proto: MobXenoDefender 
-      cost: 2
-    - proto: MobXenoSentinel 
-      cost: 2
-    - proto: MobXenoHivelord 
       cost: 4
+    - proto: MobXenoRunnerNPC
+      cost: 4
+    - proto: MobXenoRounyNPC 
+      cost: 4
+    - proto: MobXenoAcidRunner 
+      cost: 6
+    - proto: MobXenoAcidRunnerPrimed 
+      cost: 7
+    - proto: MobXenoBoiler 
+      cost: 7
+    - proto: MobXenoBoxerWarrior 
+      cost: 7
+    - proto: MobXenoCarrier 
+      cost: 6
+    - proto: MobXenoCrusher 
+      cost: 6
+    - proto: MobXenoChargerCrusher 
+      cost: 6
+    - proto: MobXenoDancerPraetorian 
+      cost: 6
+    - proto: MobXenoDefender 
+      cost: 6
+    - proto: MobXenoSentinel 
+      cost: 4
+    - proto: MobXenoHivelord 
+      cost: 8
     - proto: SpawnFloorTrapXenoBurrower 
-      cost: 2
+      cost: 1
     - proto: SpawnFloorTrapXenoDrone 
-      cost: 2
+      cost: 1
     - proto: MobXenoSpitterNPC
-      cost: 2
+      cost: 4
     - proto: XenoEggSpawner
       cost: 1
     - proto: WeaponTurretXeno

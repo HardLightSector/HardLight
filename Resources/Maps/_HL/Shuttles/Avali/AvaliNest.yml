@@ -28,7 +28,7 @@ entities:
   - uid: 1
     components:
     - type: MetaData
-      name: Nest
+      name: TSF Solarsail
     - type: Transform
       pos: -0.65625,-3.2790961
       parent: invalid

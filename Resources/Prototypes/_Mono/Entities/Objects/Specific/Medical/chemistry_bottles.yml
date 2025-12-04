@@ -1,0 +1,15 @@
+- type: entity
+  parent: BaseChemistryEmptyBottle
+  id: OmnizineChemistryBottle
+  name: omnizine bottle
+  description: A small bottle containing omnizine reagent.
+  components:
+  - type: Label
+    currentLabel: omnizine
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        maxVol: 30
+        reagents:
+        - ReagentId: Omnizine
+          Quantity: 30

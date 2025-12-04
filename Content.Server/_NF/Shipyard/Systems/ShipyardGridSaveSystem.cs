@@ -1,35 +1,14 @@
-using Content.Server._NF.Shipyard.Components;
 using Content.Shared._NF.Shipyard.Components;
 using Content.Shared._NF.Shipyard.Events;
+using Content.Shared.DeviceLinking;
 using Content.Shared.DeviceLinking.Components;
 using Content.Shared.Shuttles.Save; // For SendShipSaveDataClientMessage
-using Content.Server.Maps;
-using Content.Server.Atmos.Components;
-using Content.Server.Atmos.EntitySystems;
 using Content.Server.Atmos.Piping.Components;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
-using Content.Shared.Access.Components;
-using Content.Shared.Atmos.Components;
-using Content.Shared.Movement.Components;
-using Content.Shared.Power.Components;
 using Content.Shared.VendingMachines;
-using Content.Shared.Hands.Components;
-using Content.Shared.Hands.EntitySystems;
-using Content.Shared.CriminalRecords.Components;
-using Content.Shared._NF.ShuttleRecords.Components;
-using Content.Server.StationRecords.Components;
-// using Content.Shared.Access.Components; // duplicate using removed
-using System.Diagnostics.CodeAnalysis;
-using Robust.Server.GameObjects;
-using Robust.Shared.GameObjects;
-using Robust.Shared.IoC;
-using Robust.Shared.Log;
-using Robust.Shared.Network;
 using Robust.Shared.Player;
-using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
-using System.Numerics;
 using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.Utility;
 using Robust.Shared.ContentPack;
@@ -37,14 +16,8 @@ using Robust.Server.Player;
 using Robust.Shared.EntitySerialization;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Containers;
-using System;
 using System.IO;
-using System.Linq;
-using System.Collections.Generic;
 using System.Threading.Tasks;
-using Robust.Shared.Configuration;
-using Content.Shared.HL.CCVar;
-using Robust.Shared.Serialization.Markdown;
 using Robust.Shared.Serialization.Markdown.Mapping;
 using Robust.Shared.Serialization.Markdown.Sequence;
 using Robust.Shared.Serialization.Markdown.Value;
@@ -52,18 +25,13 @@ using YamlDotNet.RepresentationModel;
 using YamlDotNet.Core;
 using Robust.Shared.Serialization;
 using Content.Shared.Storage.Components;
-using Robust.Shared.GameStates;
 using Content.Shared.Wall; // WallMountComponent for preserving wall-mounted fixtures
 using Robust.Shared.Physics;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Server.Construction.Components;
+using Content.Shared._HL.Shipyard;
 
-// Suppress RA0004 for this file. There is no Task<Result> usage here, but the analyzer
-// occasionally reports a false positive during Release/integration builds.
-#pragma warning disable RA0004
-// Suppress naming rule for _NF namespace prefix (modding convention)
-#pragma warning disable IDE1006
 namespace Content.Server._NF.Shipyard.Systems;
 
 /// <summary>
@@ -71,33 +39,38 @@ namespace Content.Server._NF.Shipyard.Systems;
 /// Saves ships as complete YAML files similar to savegrid command,
 /// after cleaning them of problematic components and moving to exports folder.
 /// </summary>
-[SuppressMessage("Usage", "RA0004:Risk of deadlock from accessing Task<T>.Result", Justification = "No Task.Result used; false positive during Release/integration builds.")]
 public sealed class ShipyardGridSaveSystem : EntitySystem
 {
     [Dependency] private readonly IEntityManager _entityManager = default!;
     [Dependency] private readonly IEntitySystemManager _entitySystemManager = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
-    [Dependency] private readonly IMapManager _mapManager = default!;
-    [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
     [Dependency] private readonly IResourceManager _resourceManager = default!;
     [Dependency] private readonly SharedContainerSystem _containerSystem = default!;
-    [Dependency] private readonly Content.Server.Shuttles.Save.ShipSerializationSystem _shipSerialization = default!;
-    [Dependency] private readonly IConfigurationManager _configManager = default!;
+    [Dependency] private readonly EntityLookupSystem _lookup = default!;
+    [Dependency] private readonly SharedDeviceLinkSystem _deviceLink = default!;
 
     private ISawmill _sawmill = default!;
     private MapLoaderSystem _mapLoader = default!;
-    private SharedMapSystem _mapSystem = default!;
+
+    private EntityQuery<MapGridComponent> _gridQuery;
+    private EntityQuery<SecretStashComponent> _secretStashQuery;
+    private EntityQuery<HLPersistOnShipSaveComponent> _persistOnSaveQuery;
+    private EntityQuery<TransformComponent> _transformQuery;
 
     public override void Initialize()
     {
         base.Initialize();
+
+        _gridQuery = GetEntityQuery<MapGridComponent>();
+        _secretStashQuery = GetEntityQuery<SecretStashComponent>();
+        _persistOnSaveQuery = GetEntityQuery<HLPersistOnShipSaveComponent>();
+        _transformQuery = GetEntityQuery<TransformComponent>();
 
         // Initialize sawmill for logging
         _sawmill = Logger.GetSawmill("shipyard.gridsave");
 
         // Get the MapLoaderSystem reference
         _mapLoader = _entitySystemManager.GetEntitySystem<MapLoaderSystem>();
-        _mapSystem = _entitySystemManager.GetEntitySystem<SharedMapSystem>();
 
         // Subscribe to shipyard console events
         SubscribeLocalEvent<ShipyardConsoleComponent, ShipyardConsoleSaveMessage>(OnSaveShipMessage);
@@ -126,7 +99,7 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
             return;
         }
 
-        if (!_entityManager.TryGetComponent<MapGridComponent>(shuttleUid.Value, out var gridComponent))
+        if (!_gridQuery.TryComp(shuttleUid.Value, out var gridComponent))
         {
             _sawmill.Warning("Shuttle entity is not a valid grid");
             return;
@@ -192,7 +165,7 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
     /// </summary>
     public bool TrySaveGridAsShip(EntityUid gridUid, string shipName, string playerUserId, ICommonSession playerSession)
     {
-        if (!_entityManager.HasComponent<MapGridComponent>(gridUid))
+        if (!_gridQuery.HasComp(gridUid))
         {
             _sawmill.Error($"Entity {gridUid} is not a valid grid");
             return false;
@@ -203,6 +176,10 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
             // Per user request: before purging / serializing, add SecretStashComponent to any entity contained
             // directly within a secret stash so that they are also considered preserved.
             TagStashContents(gridUid);
+
+            // Clean up broken device links before serialization
+            CleanupBrokenDeviceLinks(gridUid);
+
             // Purge transient entities (unanchored or inside containers) before serialization.
             // This mutates the live grid, but only removes objects explicitly deemed non-persistent by design.
             PurgeTransientEntities(gridUid);
@@ -278,11 +255,11 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
                 if (hidden == null)
                     continue;
                 // If already a stash, skip.
-                if (_entityManager.HasComponent<SecretStashComponent>(hidden.Value))
+                if (_secretStashQuery.HasComp(hidden.Value))
                     continue;
                 // Dynamically add the component. OnInit won't run automatically here for networked comps
                 // when added at runtime; EnsureComp will construct and initialize it.
-                _entityManager.EnsureComponent<SecretStashComponent>(hidden.Value);
+                EnsureComp<SecretStashComponent>(hidden.Value);
                 tagged++;
             }
             if (tagged > 0)
@@ -291,6 +268,55 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
         catch (Exception e)
         {
             _sawmill.Warning($"TagStashContents: Exception while tagging stash contents on grid {gridUid}: {e.Message}");
+        }
+    }
+
+
+
+    /// <summary>
+    /// Cleans up broken device links where one or both linked entities no longer exist.
+    /// Preserves valid links where both source and sink entities are still present.
+    /// </summary>
+    private void CleanupBrokenDeviceLinks(EntityUid gridUid)
+    {
+        try
+        {
+            var linksRemoved = 0;
+            var sourcesProcessed = 0;
+
+            // Collect all entities on the grid with device link source components
+            var sourceQuery = _entityManager.EntityQueryEnumerator<DeviceLinkSourceComponent, TransformComponent>();
+            while (sourceQuery.MoveNext(out var sourceEnt, out var sourceComp, out var xform))
+            {
+                if (xform.GridUid != gridUid)
+                    continue;
+
+                sourcesProcessed++;
+
+                // Check LinkedPorts and remove links to entities that no longer exist
+                var brokenSinks = new List<EntityUid>();
+                foreach (var sinkEnt in sourceComp.LinkedPorts.Keys)
+                {
+                    if (!_entityManager.EntityExists(sinkEnt) || _entityManager.IsQueuedForDeletion(sinkEnt))
+                    {
+                        brokenSinks.Add(sinkEnt);
+                    }
+                }
+
+                // Use the DeviceLinkSystem to properly remove broken links
+                foreach (var brokenSink in brokenSinks)
+                {
+                    _deviceLink.RemoveSinkFromSource(sourceEnt, brokenSink, sourceComp);
+                    linksRemoved++;
+                }
+            }
+
+            if (linksRemoved > 0)
+                _sawmill.Info($"CleanupBrokenDeviceLinks: Removed {linksRemoved} broken device link(s) from {sourcesProcessed} source(s) on grid {gridUid}");
+        }
+        catch (Exception e)
+        {
+            _sawmill.Warning($"CleanupBrokenDeviceLinks: Exception while cleaning device links on grid {gridUid}: {e.Message}");
         }
     }
 
@@ -307,9 +333,8 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
     {
         try
         {
-            if (!_entityManager.TryGetComponent<MapGridComponent>(gridUid, out var grid))
+            if (!_gridQuery.TryComp(gridUid, out var grid))
                 return;
-            var lookupSystem = _entitySystemManager.GetEntitySystem<EntityLookupSystem>();
             var looseDeletes = new List<EntityUid>();
             var containerContentDeletes = new List<EntityUid>();
             var processed = new HashSet<EntityUid>();
@@ -338,26 +363,26 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
             _sawmill.Info($"PurgeTransientEntities: Scanning grid {gridUid} for transient entities (loose + contained)");
 
             // 1. Collect all entities spatially present on the grid (this won't include items inside containers)
-            foreach (var ent in lookupSystem.GetEntitiesIntersecting(gridUid, grid.LocalAABB))
+            foreach (var ent in _lookup.GetEntitiesIntersecting(gridUid, grid.LocalAABB))
             {
                 if (ent == gridUid)
                     continue;
                 // Preserve any secret stash root or bluespace stash prototype entity itself
-                if (_entityManager.HasComponent<SecretStashComponent>(ent) || IsBluespaceStashPrototype(ent))
+                if (_secretStashQuery.HasComp(ent) || _persistOnSaveQuery.HasComp(ent))
                     processed.Add(ent); // don't treat stash as loose
                 if (!TryQueueLoose(ent, looseDeletes, processed))
                     continue;
             }
 
             // 2. Traverse container graphs on every anchored entity to collect ALL contained descendants
-            foreach (var ent in lookupSystem.GetEntitiesIntersecting(gridUid, grid.LocalAABB))
+            foreach (var ent in _lookup.GetEntitiesIntersecting(gridUid, grid.LocalAABB))
             {
                 if (ent == gridUid)
                     continue;
-                if (!_entityManager.TryGetComponent<ContainerManagerComponent>(ent, out var manager))
+                if (!TryComp<ContainerManagerComponent>(ent, out var manager))
                     continue;
                 // If this entity is a stash or bluespace stash, preserve its contents entirely.
-                if (_entityManager.HasComponent<SecretStashComponent>(ent) || IsBluespaceStashPrototype(ent))
+                if (_secretStashQuery.HasComp(ent) || _persistOnSaveQuery.HasComp(ent))
                     continue;
                 foreach (var container in manager.Containers.Values)
                 {
@@ -391,7 +416,7 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
                         continue;
                     if (xform.GridUid != gridUid)
                         continue;
-                    if (_entityManager.HasComponent<SecretStashComponent>(ent) || IsBluespaceStashPrototype(ent))
+                    if (_secretStashQuery.HasComp(ent) || _persistOnSaveQuery.HasComp(ent))
                     {
                         fallbackProcessed.Add(ent);
                         continue; // stash root preserved
@@ -399,7 +424,7 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
                     TryQueueLoose(ent, fallbackLoose, fallbackProcessed);
                     if (_entityManager.TryGetComponent<ContainerManagerComponent>(ent, out var mgr))
                     {
-                        if (_entityManager.HasComponent<SecretStashComponent>(ent) || IsBluespaceStashPrototype(ent))
+                        if (_secretStashQuery.HasComp(ent) || _persistOnSaveQuery.HasComp(ent))
                             continue; // don't traverse preserved stash contents
                         foreach (var container in mgr.Containers.Values)
                             CollectContainerContentsRecursive(container.ContainedEntities, fallbackContained, fallbackProcessed);
@@ -444,29 +469,29 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
     /// </summary>
     private bool IsInvalidEntity(EntityUid uid)
     {
-        if (!_entityManager.EntityExists(uid))
+        if (!Exists(uid))
             return false;
         // Skip if terminating
         if (_entityManager.GetComponent<MetaDataComponent>(uid).EntityLifeStage >= EntityLifeStage.Terminating)
             return false;
-        if (_entityManager.HasComponent<SecretStashComponent>(uid) || IsBluespaceStashPrototype(uid))
+        if (_secretStashQuery.HasComp(uid) || _persistOnSaveQuery.HasComp(uid))
             return false; // preserve stash root outright
-        if (_entityManager.HasComponent<MapGridComponent>(uid))
+        if (_gridQuery.HasComp(uid))
             return false; // never delete grid root or nested grids here
         // Preserve wall-mounted fixtures (buttons, posters, etc.) regardless of anchored state
-        if (_entityManager.HasComponent<WallMountComponent>(uid))
+        if (HasComp<WallMountComponent>(uid))
             return false;
         // Preserve levers
-        if (_entityManager.HasComponent<TwoWayLeverComponent>(uid))
+        if (HasComp<TwoWayLeverComponent>(uid))
             return false;
         // Preserve entities with static body types, such as drains or sinks.
-        if (_entityManager.TryGetComponent<PhysicsComponent>(uid, out var physics) && physics.BodyType == BodyType.Static)
+        if (TryComp<PhysicsComponent>(uid, out var physics) && physics.BodyType == BodyType.Static)
             return false;
         // Preserve solutions
-        if (_entityManager.HasComponent<ContainedSolutionComponent>(uid) || _entityManager.HasComponent<SolutionComponent>(uid))
+        if (HasComp<ContainedSolutionComponent>(uid) || HasComp<SolutionComponent>(uid))
             return false;
         var anchored = false;
-        if (_entityManager.TryGetComponent<TransformComponent>(uid, out var xform))
+        if (_transformQuery.TryComp(uid, out var xform))
             anchored = xform.Anchored;
         var inContainer = _containerSystem.IsEntityInContainer(uid);
         // Per updated requirements: anchored entities must never be deleted under any circumstance.
@@ -485,7 +510,7 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
 
     private bool TryQueueLoose(EntityUid ent, List<EntityUid> list, HashSet<EntityUid> processed)
     {
-        if (!_entityManager.EntityExists(ent))
+        if (!Exists(ent))
             return false;
         if (!processed.Add(ent))
             return false; // already processed
@@ -516,7 +541,7 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
             var isWallMount = _entityManager.HasComponent<WallMountComponent>(ent);
             // Preserve anchored entities even if they appear within containers; still traverse their child containers.
             var isAnchored = false;
-            if (_entityManager.TryGetComponent<TransformComponent>(ent, out var xform))
+            if (_transformQuery.TryComp(ent, out var xform))
                 isAnchored = xform.Anchored;
             if (!isAnchored && !isWallMount)
             {
@@ -547,29 +572,18 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
         while (safety++ < 64 && _containerSystem.TryGetContainingContainer(current, out var container))
         {
             var owner = container.Owner;
-            if (!_entityManager.EntityExists(owner))
+            if (!Exists(owner))
                 return false;
-            if (_entityManager.HasComponent<SecretStashComponent>(owner))
+            if (_secretStashQuery.HasComp(owner))
                 return true; // Found stash root above.
-            if (_entityManager.HasComponent<MachineComponent>(owner))
+            // Also treat persistent entities as a preservation root.
+            if (_persistOnSaveQuery.HasComp(owner))
+                return true; // Found stash root above.
+            if (HasComp<MachineComponent>(owner))
                 return true; // This is so machines keep their upgraded parts.
-            // Also treat bluespacestash prototype (storage-based) as a preservation root.
-            if (IsBluespaceStashPrototype(owner))
-                return true; // Found stash root above.
             current = owner;
         }
         return false;
-    }
-
-    /// <summary>
-    /// Returns true if this entity's prototype id matches the explicit bluespace stash prototype we need to preserve.
-    /// </summary>
-    private bool IsBluespaceStashPrototype(EntityUid ent)
-    {
-        if (!_entityManager.TryGetComponent<MetaDataComponent>(ent, out var meta))
-            return false;
-        // Prototype id comparison (case-insensitive) to 'bluespacestash'
-        return meta.EntityPrototype?.ID.Equals("bluespacestash", StringComparison.InvariantCultureIgnoreCase) == true;
     }
 
     private void DeleteEntityList(List<EntityUid> list, string category)
@@ -578,17 +592,8 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
         {
             try
             {
-                // If it is still in a container, remove it cleanly first to clear flags
-                if (_containerSystem.IsEntityInContainer(ent) && _entityManager.TryGetComponent<TransformComponent>(ent, out var _))
-                {
-                    // We need the container instance; brute force via manager (cheap for small counts)
-                    if (_entityManager.TryGetComponent<ContainerManagerComponent>(ent, out var _))
-                    {
-                        // If the entity itself owns containers we don't care; removal is for when entity is inside one.
-                    }
-                }
-                if (_entityManager.EntityExists(ent))
-                    _entityManager.DeleteEntity(ent);
+                if (Exists(ent))
+                    Del(ent);
             }
             catch (Exception ex)
             {
@@ -628,6 +633,13 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
             "ShuttleDeed",
             "IFF",
             "LinkedLifecycleGridParent",
+            "AccessReader", // Door logs
+            "DeviceList",
+            "DeviceNetwork",
+            "DeviceNetworkComponent",
+            "UserInterface", // Contains invalid EntityUid references
+            "Docking", // Contains invalid EntityUid references to docked entities
+            "ActionGrant", // Contains invalid EntityUid references to granted actions
         };
 
         // Prototype-level exclusions for obvious non-ship entities.
@@ -638,7 +650,409 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
             "AdminObserver",
             "AdminObserverDummy",
             "Ghost",
+            "Forensics",
+            "DnaComponent",
+            "DNA",
+            "Store",
+            "MindContainer",
+            "GhostRole",
+            "GhostTakeoverAvailable",
+            "PayloadCase",
             "GhostRoleMob",
+            "HumanoidAppearance",
+            "GeneralStationRecordConsole",
+            // Uplinks and bundled items
+            "BaseMercenaryUplinkRadio",
+            "BriefcaseSyndieLobbyingBundleFilled",
+            "BriefcaseThiefBribingBundleFilled",
+            "VendingMachineRobotics",
+            "MachineFlatpacker",
+            "ClothingBackpackDuffelEVABundleAtmosTech",
+            "ClothingBackpackDuffelEVABundleBoxerBlue",
+            "ClothingBackpackDuffelEVABundleBoxerGreen",
+            "ClothingBackpackDuffelEVABundleBoxerRandom",
+            "ClothingBackpackDuffelEVABundleBoxerRed",
+            "ClothingBackpackDuffelEVABundleBoxerYellow",
+            "ClothingBackpackDuffelEVABundleCaptain",
+            "ClothingBackpackDuffelEVABundleCargo",
+            "ClothingBackpackDuffelEVABundleChaplain",
+            "ClothingBackpackDuffelEVABundleContractor",
+            "ClothingBackpackDuffelEVABundleEngineer",
+            "ClothingBackpackDuffelEVABundleJanitor",
+            "ClothingBackpackDuffelEVABundleMail",
+            "ClothingBackpackDuffelEVABundleMedical",
+            "ClothingBackpackDuffelEVABundleMercenary",
+            "ClothingBackpackDuffelEVABundleNfsd",
+            "ClothingBackpackDuffelEVABundlePilot",
+            "ClothingBackpackDuffelEVABundlePrivateSec",
+            "ClothingBackpackDuffelEVABundleSalvage",
+            "ClothingBackpackDuffelEVABundleScientist",
+            "ClothingBackpackDuffelEVABundleServiceWorker",
+            "ClothingBackpackDuffelEVABundleSr",
+            "ClothingBackpackDuffelHoldingNitchFilled",
+            "ClothingBackpackDuffelHoldingShiftTheGlaceon",
+            "ClothingBackpackDuffelHoldingVulrikFilled",
+            "ClothingBackpackDuffelSurgeryAdvancedFilled",
+            "ClothingBackpackDuffelSurgeryFilled",
+            "ClothingBackpackDuffelSurgeryImpovFilled",
+            "ClothingBackpackDuffelSyndicateAmmoFilled",
+            "ClothingBackpackDuffelSyndicateDecoyKitFilled",
+            "ClothingBackpackDuffelSyndicateFilledAtreides",
+            "ClothingBackpackDuffelSyndicateFilledCarbine",
+            "ClothingBackpackDuffelSyndicateFilledGrenadeLauncher",
+            "ClothingBackpackDuffelSyndicateFilledLMG",
+            "ClothingBackpackDuffelSyndicateFilledMedical",
+            "ClothingBackpackDuffelSyndicateFilledRevolver",
+            "ClothingBackpackDuffelSyndicateFilledShotgun",
+            "ClothingBackpackDuffelSyndicateFilledSMG",
+            "ClothingBackpackDuffelSyndicateFilledWSPR",
+            "ClothingBackpackDuffelSyndicateMedicalBundleFilled",
+            "ClothingBackpackMessengerChaplainMarrikFilled",
+            "ClothingBackpackMessengerColorGreenJosephFilled",
+            "ClothingBackpackPirateBundle",
+            "ClothingBackpackSatchelHoldingNirouFilled",
+            "ClothingBackpackSatchelLeatherWinterFilled",
+            "ClothingBackpackSatchelSmugglerFilled",
+            "ClothingBeltArcadiaArachneFilled",
+            "ClothingBeltAssaultMarrikFilled",
+            "ClothingBeltChaplainSashFilled",
+            "ClothingBeltChefFilled",
+            "ClothingBeltChiefEngineerFilled",
+            "ClothingBeltHolsterFilled",
+            "ClothingBeltHolsterJosephFilled",
+            "ClothingBeltJanitorFilled",
+            "ClothingBeltMedicalEMTFilled",
+            "ClothingBeltMedicalFilled",
+            "ClothingBeltMedicalNitchFilled",
+            "ClothingBeltMilitaryWebbingGrenadeFilled",
+            "ClothingBeltMilitaryWebbingMedFilled",
+            "ClothingBeltNfsdFilled",
+            "ClothingBeltNfsdWebbingFilled",
+            "ClothingBeltNfsdWebbingFilledBrigmedic",
+            "ClothingBeltPilotFilled",
+            "ClothingBeltSalvageWebbingFilledNF",
+            "ClothingBeltSecurityFilled",
+            "ClothingBeltSecurityWebbingFilled",
+            "ClothingBeltWandFilled",
+            "ClothingWalletLeatherBlackArachneFilled",
+            "ComputerContrabandPalletConsole",
+            "ComputerContrabandPalletConsolePirate",
+            "ComputerCriminalRecords",
+            "ComputerEmergencyShuttle",
+            "ComputerMarketConsoleNFHigh",
+            "ComputerMarketConsoleNFLow",
+            "ComputerMarketConsoleNFNormal",
+            "ComputerMedicalRecords",
+            "ComputerPalletConsoleNFHighMarket",
+            "ComputerPalletConsoleNFLowMarket",
+            "ComputerPalletConsoleNFNormalMarket",
+            "ComputerPalletConsoleNFVeryHighMarket",
+            "ComputerPalletConsoleNFVeryLowMarket",
+            "ComputerPsionicsRecords",
+            "ComputerRoboticsControl",
+            "ComputerShipyard",
+            "ComputerShipyardBlackMarket",
+            "ComputerShipyardExpedition",
+            "ComputerShipyardMedical",
+            "ComputerShipyardNfsd",
+            "ComputerShipyardScrap",
+            "ComputerShipyardSecurity",
+            "ComputerShipyardSr",
+            "ComputerShipyardSyndicate",
+            "ComputerShuttleRecords",
+            "ComputerStationRecords",
+            "ComputerTabletopContrabandPalletConsole",
+            "ComputerTabletopContrabandPalletConsolePirate",
+            "ComputerTabletopCriminalRecords",
+            "ComputerTabletopMarketConsoleNFHigh",
+            "ComputerTabletopMarketConsoleNFLow",
+            "ComputerTabletopMarketConsoleNFNormal",
+            "ComputerTabletopMedicalRecords",
+            "ComputerTabletopPalletConsoleNFHighMarket",
+            "ComputerTabletopPalletConsoleNFLowMarket",
+            "ComputerTabletopPalletConsoleNFNormalMarket",
+            "ComputerTabletopPalletConsoleNFVeryLowMarket",
+            "ComputerTabletopShipyardBlackMarket",
+            "ComputerTabletopShipyardExpedition",
+            "ComputerTabletopShipyardNfsd",
+            "ComputerTabletopShipyardScrap",
+            "ComputerTabletopShipyardSecurity",
+            "ComputerTabletopShuttleAntag",
+            "ComputerTabletopStationRecords",
+            "ComputerWallmountStationRecords",
+            "CowToolboxFilled",
+            "CrateCybersunDarkGygaxBundle",
+            "CrateCybersunJuggernautBundle",
+            "CrateCybersunMaulerBundle",
+            "CrateFunToyBox",
+            "CrateMaterialsBasicFilled",
+            "DEBUGVendingMachineAmmoBoxes",
+            "DEBUGVendingMachineMagazines",
+            "DEBUGVendingMachineRangedWeapons",
+            "LessLethalVendingMachine",
+            "LessLethalVendingMachinePOI",
+            "LockerMaterialsBasicFilled",
+            "LockerWallMaterialsBasicFilled",
+            "ClosetFsbEvaFilled",
+            "LockerWallEVAColorFsbFilled",
+            "LockerWallEVAColorChaplainFilled",
+            "LockerChemistryFilled",
+            "LockerClownFilled",
+            "LockerEvacRepairFilled",
+            "LockerWallEVAColorMailFilled",
+            "ClosetFscEvaFilled",
+            "LockerWallEVAColorFscFilled",
+            "LockerWallColorL1FireFilled",
+            "LockerWallEVAColorCargoFilled",
+            "HLLockerChemistryFilled",
+            "LockerWallEVAColorContractorFilled",
+            "LockerWallEvacRepairFilled",
+            "LockerMailCarrierFilled",
+            "LockerMaterialsBasic10Filled",
+            "LockerWallColorL2RadiationFilled",
+            "LockerWallColorL3BiohazardFilled",
+            "LockerWallColorL4BombFilled",
+            "HLLockerCaptainFilledLaser",
+            "LockerWallColorChemistryFilled",
+            "HLLockerDetectiveFilled",
+            "LockerFreezerSushi",
+            "LockerWallEVAColorLvhiFilled",
+            "LockerWallEVAColorNfsdFilled",
+            "LockerNfsdBailiff",
+            "HLLockerCaptainFilledHardsuit",
+            "LockerChiefEngineerFilled",
+            "LockerWallEVAColorMedicalFilled",
+            "LockerWallEVAColorGoblinFilled",
+            "LockerWallMaterialsBasic10Filled",
+            "LockerMedicalFilled",
+            "LockerNfsdBrigmedic",
+            "LockerNfsdSheriff",
+            "LockerNfsdCopper",
+            "HLLockerCaptainFilledNoLaser",
+            "LockerChiefEngineerFilledHardsuit",
+            "LockerElectricalSuppliesFilled",
+            "LockerHeadOfPersonnelFilled",
+            "HLLockerMedicalFilled",
+            "LockerWallMedicalDoctorFilled",
+            "LockerCaptainFilledHardsuit",
+            "LockerCaptainFilled",
+            "LockerCaptainFilledNoLaser",
+            "HLLockerChiefEngineerFilled",
+            "HLLockerChiefEngineerFilledHardsuit",
+            "LockerHeadOfSecurityFilled",
+            "LockerHeadOfSecurityFilledHardsuit",
+            "HLLockerHeadOfSecurityFilled",
+            "HLLockerHeadOfSecurityFilledHardsuit",
+            "HLLockerBrigmedicFilled",
+            "HLLockerBrigmedicFilledNoHardsuit",
+            "HLLockerHeadOfPersonnelFilled",
+            "LockerChiefMedicalOfficerFilled",
+            "LockerChiefMedicalOfficerFilledHardsuit",
+            "HLLockerChiefMedicalOfficerFilled",
+            "HLLockerChiefMedicalOfficerFilledHardsuit",
+            "LockerSalvageSpecialistFilled",
+            "HLLockerResearchDirectorFilled",
+            "HLLockerResearchDirectorFilledHardsuit",
+            "LockerResearchDirectorFilled",
+            "LockerResearchDirectorFilledHardsuit",
+            "LockerQuarterMasterFilled",
+            "LockerQuarterMasterFilledHardsuit",
+            "HLLockerQuarterMasterFilled",
+            "HLLockerSalvageSpecialistFilled",
+            "HLLockerWardenFilled",
+            "HLLockerWardenFilledHardsuit",
+            "HLLockerSecurityFilled",
+            "NFLockerSecurityFilled",
+            "HLLockerSalvageSpecialistFilledHardsuit",
+            "LockerSalvageSpecialistFilled",
+            "LockerWallColorSalvageFilled",
+            "LockerWallEVAColorSalvageFilled",
+            "LockerWallEVAColorSrFilled",
+            "LockerStationRepresentativeFilled",
+            "LockerNfsdSilverDetectiveFilled",
+            "LockerNfsdSheriffFilled",
+            "LockerNfsdSergeant",
+            "HLLockerElectricalSuppliesFilled",
+            "LockerWallColorMedicalDoctorFilled",
+            "HLLockerWallMedicalDoctorFilled",
+            "LockerNfsdSilver",
+            "LockerSyndicatePersonalFilled",
+            "LockerWallEVAColorAtmosTechFilled",
+            "LockerWallEVAColorEmergencyFilled",
+            "LockerMedicineFilled",
+            "HLLockerMedicineFilled",
+            "LockerAtmosphericsFilled",
+            "LockerAtmosphericsFilledHardsuit",
+            "HLLockerAtmosphericsFilled",
+            "LockerWallEVAColorEngineerFilled",
+            "LockerWallMedicalFilled",
+            "LockerWallColorMedicalFilled",
+            "HLLockerAtmosphericsFilledHardsuit",
+            "LockerWallMaterialsFuelBananiumFilled",
+            "LockerWallMaterialsFuelBananiumFilled2",
+            "LockerWallEVAColorCaptainFilled",
+            "LockerEngineerFilled",
+            "HLLockerWallMedicalFilled",
+            "LockerWallEVAColorMercenaryFilled",
+            "LockerBoozeFilled",
+            "HLLockerBoozeFilled",
+            "LockerWallEVAColorHydroponicsFilled",
+            "LockerEngineerFilledHardsuit",
+            "LockerMercenaryFilled",
+            "LockerWallEVAColorParamedicFilled",
+            "LockerWallColorHydroponicsFilled",
+            "LockerBotanistFilled",
+            "HLLockerBotanistFilled",
+            "HLLockerEngineerFilled",
+            "LockerWallEVAColorJanitorFilled",
+            "LockerParamedicFilled",
+            "LockerParamedicFilledHardsuit",
+            "LockerWallMaterialsFuelWeldingFilled",
+            "LockerWallEVAColorStcFilled",
+            "LockerWeldingSuppliesFilled",
+            "HLLockerWeldingSuppliesFilled",
+            "HLLockerScienceFilled",
+            "NFLockerScienceFilled",
+            "LockerWallEVAColorScientistFilled",
+            "LockerWallEVAColorServiceWorkerFilled",
+            "LockerWallMaterialsFuelUraniumFilled",
+            "LockerWallMaterialsFuelUraniumFilled2",
+            "LockerWallEVAColorBoxerBlueFilled",
+            "LockerWallEVAColorBoxerGreenFilled",
+            "LockerWallEVAColorBoxerRandomFilled",
+            "LockerWallEVAColorBoxerRedFilled",
+            "LockerWallEVAColorBoxerYellowFilled",
+            "HLLockerEngineerFilledHardsuit",
+            "LockerJanitorFilled",
+            "HLLockerParamedicFilledNoHardsuit",
+            "HLLockerParamedicFilled",
+            "LockerWallColorParamedicFilled",
+            "LockerWallEVAColorPilotFilled",
+            "LockerPilotFilled",
+            "LockerWallMaterialsFuelPlasmaFilled",
+            "LockerWallMaterialsFuelPlasmaFilled2",
+            "LockerWallEVAColorPrivateSecFilled",
+            "LockerPsychologistFilled",
+            "MedicalPodFilled",
+            "NFPouchMercenaryArachneFilled",
+            "NFTelecomServerFilled",
+            "NFVendingMachineCart",
+            "NFVendingMachineCartNfsd",
+            "NonLethalVendingMachine",
+            "PsionicsRecordsComputerCircuitboard",
+            "StationAiUploadComputer",
+            "StructureRackBloodCultFilled",
+            "StructureRackWallmountedSalvageFilled",
+            "StructurePistolRackPiratesFilled",
+            "StructurePistolRackWallmountedMercenaryFilled",
+            "TelecomServerFilledArcadia",
+            "TelecomServerFilledCartel",
+            "TelecomServerFilledColComm",
+            "TelecomServerFilledEvent",
+            "TelecomServerFilledFreelance",
+            "TelecomServerFilledNotrasen",
+            "TelecomServerFilledNfsd",
+            "TelecomServerFilledShuttle",
+            "TelecomServerFilledStatic",
+            "TelecomServerFilledSyndicate",
+            "TelecomServerFilledViperCell",
+            "ToolboxElectricalFilled",
+            "ToolboxElectricalTurretFilled",
+            "ToolboxMechanicalFilled",
+            "ToolboxMechanicalFilledAllTools",
+            "ToolboxSyndicateFilled",
+            "VendingBarDrobe",
+            "VendingMachineAmmo",
+            "VendingMachineAmmoPOI",
+            "VendingMachineArcadia",
+            "VendingMachineAstroVend",
+            "VendingMachineAstroVendPOI",
+            "VendingMachineAtmosDrobe",
+            "VendingMachineAutoTuneVend",
+            "VendingMachineBooze",
+            "VendingMachineBoozePOI",
+            "VendingMachineBoozeSyndicate",
+            "VendingMachineBountyVend",
+            "VendingMachineBountyVendPOI",
+            "VendingMachineBountyVendPunk",
+            "VendingMachineBoxingDrobe",
+            "VendingMachineCargoDrobe",
+            "VendingMachineCart",
+            "VendingMachineCentDrobe",
+            "VendingMachineChang",
+            "VendingMachineChapel",
+            "VendingMachineChefDrobe",
+            "VendingMachineChefvend",
+            "VendingMachineChemDrobe",
+            "VendingMachineChemicals",
+            "VendingMachineChemicalsSyndicate",
+            "VendingMachineCigs",
+            "VendingMachineCigsPOI",
+            "VendingMachineCiviMed",
+            "VendingMachineCiviMedPlus",
+            "VendingMachineClothing",
+            "VendingMachineClothingPunk",
+            "VendingMachineCoffee",
+            "VendingMachineCola",
+            "VendingMachineColaBlack",
+            "VendingMachineColaRed",
+            "VendingMachineCondim",
+            "VendingMachineCuddlyCritterVend",
+            "VendingMachineCuraDrobe",
+            "VendingMachineDetDrobe",
+            "VendingMachineDinnerware",
+            "VendingMachineDiscount",
+            "VendingMachineDonut",
+            "VendingMachineDrGibb",
+            "VendingMachineEngiDrobe",
+            "VendingMachineEngivend",
+            "VendingMachineEngivendPOI",
+            "VendingMachineExpeditionaryFlatpackVend",
+            "VendingMachineFlatpackVend",
+            "VendingMachineFuelVend",
+            "VendingMachineGames",
+            "VendingMachineGamesPOI",
+            "VendingMachineGeneDrobe",
+            "VendingMachineHappyHonk",
+            "VendingMachineHydrobe",
+            "VendingMachineJaniDrobe",
+            "VendingMachineLawDrobe",
+            "VendingMachineMagivend",
+            "VendingMachineMailDrobe",
+            "VendingMachineMailVend",
+            "VendingMachineMedical",
+            "VendingMachineMediDrobe",
+            "VendingMachineMediDrobePOI",
+            "VendingMachineMercVend",
+            "VendingMachineSyndieDrobe",
+            "VendingMachineTankDisserEngineering",
+            "VendingMachineTankDisserEVA",
+            "VendingMachineTankDisserEVAPOI",
+            "VendingMachineTheater",
+            "VendingMachineValetDrobe",
+            "VendingMachineVendomat",
+            "VendingMachineVendomatPOI",
+            "VendingMachineViroDrobe",
+            "VendingMachineWallMedical",
+            "VendingMachineWinter",
+            "VendingMachineYarrrDrobe",
+            "VendingMachineYouTool",
+            "VendingMachineYouToolPOI",
+            "BaseMercenaryUplinkRadio",
+            "BaseUplinkRadio",
+            "BaseUplinkRadio20TC",
+            "BaseUplinkRadio25TC",
+            "BaseUplinkRadio40TC",
+            "BaseUplinkRadio60TC",
+            "UplinkImplanter",
+            "BaseSecurityUplinkRadio",
+            "BaseSecurityUplinkRadioSheriff",
+            "BaseSecurityUplinkRadioOfficer",
+            "BaseSecurityUplinkRadioDeputy",
+            "BasePirateUplink",
+            "BasePirateUplinkRadioPirateCaptain",
+            "BasePirateUplinkPirateCrew",
+
         };
 
         foreach (var protoNode in protoSeq)
@@ -717,12 +1131,8 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
                         compMap.Remove("rot");
                     }
 
-                    // Gravity: strip runtime 'enabled' flag to match blueprint outputs
-                    if (typeName == "Gravity")
-                    {
-                        compMap.Remove("enabled");
-                        compMap.Remove("Enabled");
-                    }
+                    // Gravity: preserve enabled state so gravity persists on ship load
+                    // (Removed stripping of enabled field)
 
                     // SpreaderGrid: strip accumulator fields
                     if (typeName == "SpreaderGrid")
@@ -744,6 +1154,57 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
                         compMap.Remove("NextEmpEject");
                         compMap.Remove("EjectRandomCounter");
                     }
+
+                    // DeviceLink: Keep device links intact - they should persist
+                    // (Removed clearing of linkedPorts and links)
+
+                    // Solution/SolutionContainer: Keep solution contents - they should persist
+                    // (Removed clearing of solutions and contents)
+
+                    // ResearchServer: reset research server state
+                    if (typeName == "ResearchServer")
+                    {
+                        compMap.Remove("points");
+                        compMap.Remove("Points");
+                        compMap.Remove("pointsPerSecond");
+                        compMap.Remove("PointsPerSecond");
+                    }
+
+                    // TechnologyDatabase: reset unlocked technologies and recipes
+                    if (typeName == "TechnologyDatabase")
+                    {
+                        compMap.Remove("unlockedTechnologies");
+                        compMap.Remove("UnlockedTechnologies");
+                        compMap.Remove("unlockedRecipes");
+                        compMap.Remove("UnlockedRecipes");
+                        compMap.Remove("currentTechnologyCards");
+                        compMap.Remove("CurrentTechnologyCards");
+                        compMap.Remove("mainDiscipline");
+                        compMap.Remove("MainDiscipline");
+                    }
+
+                    // Battery: reset charge to 0
+                    if (typeName == "Battery")
+                    {
+                        compMap["currentCharge"] = new ValueDataNode("0");
+                        compMap["CurrentCharge"] = new ValueDataNode("0");
+                    }
+
+                    // DeviceNetwork: clear device lists that contain invalid EntityUid references
+                    if (typeName == "DeviceNetwork")
+                    {
+                        compMap.Remove("devices");
+                        compMap.Remove("Devices");
+                    }
+
+                    // UserInterface: remove to prevent invalid EntityUid references
+                    // (This is handled by filteredTypes but adding explicit note)
+
+                    // Docking: remove to prevent invalid EntityUid references to docked entities
+                    // (This is handled by filteredTypes but adding explicit note)
+
+                    // ActionGrant: remove to prevent invalid EntityUid references to granted actions
+                    // (This is handled by filteredTypes but adding explicit note)
 
                     newComps.Add(compMap);
                 }
@@ -772,425 +1233,6 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
         return writer.ToString();
     }
 
-    #region 5-Step Ship Save Process
-
-    /// <summary>
-    /// STEP 1: Create a blank map and teleport the ship to it for saving
-    /// </summary>
-    private async Task<MapId?> Step1_CreateBlankMapAndTeleportShip(EntityUid gridUid, string shipName, ICommonSession playerSession)
-    {
-        MapId tempMapId = default;
-        try
-        {
-            _sawmill.Info("Step 1: Creating blank map and teleporting ship");
-
-            // Create a temporary blank map for saving
-            tempMapId = _mapManager.CreateMap();
-            _sawmill.Info($"Created temporary map {tempMapId}");
-
-            // Step 2: Move the grid to the temporary map and clean it
-            var tempGridUid = await MoveAndCleanGrid(gridUid, tempMapId);
-            if (tempGridUid == null)
-            {
-                _sawmill.Error("Failed to move and clean grid");
-                return null;
-            }
-
-            _sawmill.Info($"Successfully moved and cleaned grid to {tempGridUid}");
-
-            // Step 3: Save the grid using MapLoaderSystem to a temporary file
-            var fileName = $"{shipName}.yml";
-            var tempFilePath = new ResPath("/") / "UserData" / fileName;
-            _sawmill.Info($"Attempting to save grid as {fileName}");
-
-            bool success = _mapLoader.TrySaveGrid(tempGridUid.Value, tempFilePath);
-
-            if (success)
-            {
-                _sawmill.Info($"Successfully saved grid to {fileName}");
-
-                // Step 4: Read the YAML file and send to client
-                try
-                {
-                    using var fileStream = _resourceManager.UserData.OpenRead(tempFilePath);
-                    using var reader = new StreamReader(fileStream);
-                    var yamlContent = await reader.ReadToEndAsync();
-
-                    // Send the YAML data to the client for local saving
-                    var saveMessage = new SendShipSaveDataClientMessage(shipName, yamlContent);
-                    RaiseNetworkEvent(saveMessage, playerSession);
-
-                    _sawmill.Info($"Sent ship data '{shipName}' to client {playerSession.Name} for local saving");
-
-                    // Clean up the temporary server file with retry logic
-                    await TryDeleteFileWithRetry(tempFilePath);
-                }
-                catch (Exception ex)
-                {
-                    _sawmill.Error($"Failed to read/send YAML file: {ex}");
-                    success = false;
-                }
-            }
-            else
-            {
-                _sawmill.Error($"Failed to save grid to {fileName}");
-            }
-
-            return success ? tempMapId : null;
-        }
-        catch (Exception ex)
-        {
-            _sawmill.Error($"Exception during ship save: {ex}");
-            return null;
-        }
-        finally
-        {
-            // Step 6: Clean up temporary resources with proper timing
-            if (tempMapId != default)
-            {
-                // Give all systems significant time to finish processing the map deletion
-                await Task.Delay(500);
-
-                try
-                {
-                    _mapManager.DeleteMap(tempMapId);
-                    _sawmill.Info($"Cleaned up temporary map {tempMapId}");
-                }
-                catch (Exception ex)
-                {
-                    _sawmill.Error($"Failed to clean up temporary map {tempMapId}: {ex}");
-                }
-            }
-
-            // Delete the original grid after all processing is complete
-            if (_entityManager.EntityExists(gridUid))
-            {
-                // Additional delay to ensure all systems finish processing entity changes
-                await Task.Delay(300);
-
-                try
-                {
-                    _entityManager.DeleteEntity(gridUid);
-                    _sawmill.Info($"Deleted original grid entity {gridUid}");
-                }
-                catch (Exception ex)
-                {
-                    _sawmill.Error($"Failed to delete original grid entity {gridUid}: {ex}");
-                }
-            }
-        }
-    }
-
-    /// <summary>
-    /// STEP 2: Empty the contents of any container on the grid, then clean the grid of problematic components
-    /// and delete freefloating entities that are not anchored or connected to the grid
-    /// </summary>
-    private async Task<bool> Step2_EmptyContainersAndCleanGrid(EntityUid gridUid)
-    {
-        try
-        {
-            _sawmill.Info("Step 2: Emptying containers and cleaning grid");
-
-            var allEntities = new HashSet<EntityUid>();
-
-            // Get all entities on the grid
-            if (_entityManager.TryGetComponent<MapGridComponent>(gridUid, out var grid))
-            {
-                var gridBounds = grid.LocalAABB;
-                var lookupSystem = _entitySystemManager.GetEntitySystem<EntityLookupSystem>();
-                foreach (var entity in lookupSystem.GetEntitiesIntersecting(gridUid, gridBounds))
-                {
-                    if (entity != gridUid) // Don't include the grid itself
-                        allEntities.Add(entity);
-                }
-            }
-
-            _sawmill.Info($"Found {allEntities.Count} entities to process");
-
-            var entitiesRemoved = 0;
-            var containersEmptied = 0;
-
-            // First pass: Empty all containers
-            foreach (var entity in allEntities.ToList())
-            {
-                if (!_entityManager.EntityExists(entity))
-                    continue;
-
-                // Empty any containers by removing their contents first (to clear InContainer flags client-side), then delete
-                if (_entityManager.TryGetComponent<ContainerManagerComponent>(entity, out var containerManager))
-                {
-                    foreach (var container in containerManager.Containers.Values)
-                    {
-                        var containedEntities = container.ContainedEntities.ToList();
-                        foreach (var containedEntity in containedEntities)
-                        {
-                            try
-                            {
-                                // Properly remove from the container to ensure MetaDataFlags.InContainer is cleared everywhere
-                                _containerSystem.Remove(containedEntity, container, force: true);
-                                _entityManager.DeleteEntity(containedEntity);
-                                entitiesRemoved++;
-                            }
-                            catch (Exception ex)
-                            {
-                                _sawmill.Warning($"Failed to delete contained entity {containedEntity}: {ex}");
-                            }
-                        }
-                        if (containedEntities.Count > 0)
-                        {
-                            containersEmptied++;
-                            _sawmill.Info($"Emptied container with {containedEntities.Count} items");
-                        }
-                    }
-                }
-            }
-
-            // Second pass: Delete freefloating entities (not anchored or connected to grid)
-            var freefloatingEntities = new List<EntityUid>();
-            foreach (var entity in allEntities)
-            {
-                if (!_entityManager.EntityExists(entity))
-                    continue;
-
-                // Skip structural grid components
-                if (_entityManager.HasComponent<MapGridComponent>(entity))
-                    continue;
-
-                // Check if entity is anchored or in a container
-                if (_entityManager.TryGetComponent<TransformComponent>(entity, out var transform))
-                {
-                    // If not anchored and not in a container, mark for deletion
-                    if (!transform.Anchored && !_containerSystem.IsEntityInContainer(entity))
-                    {
-                        freefloatingEntities.Add(entity);
-                    }
-                }
-            }
-
-            // Delete freefloating entities
-            foreach (var entity in freefloatingEntities)
-            {
-                try
-                {
-                    if (_entityManager.EntityExists(entity))
-                    {
-                        _entityManager.DeleteEntity(entity);
-                        entitiesRemoved++;
-                    }
-                }
-                catch (Exception ex)
-                {
-                    _sawmill.Warning($"Failed to delete freefloating entity {entity}: {ex}");
-                }
-            }
-
-            _sawmill.Info($"Step 2 complete: Emptied {containersEmptied} containers, removed {entitiesRemoved} entities");
-            return true;
-        }
-        catch (Exception ex)
-        {
-            _sawmill.Error($"Step 2 failed: {ex}");
-            return false;
-        }
-    }
-
-    /// <summary>
-    /// STEP 3: Delete any vending machines or remaining structures that would pose a problem to ship saving
-    /// </summary>
-    private async Task<bool> Step3_DeleteProblematicStructures(EntityUid gridUid)
-    {
-        try
-        {
-            _sawmill.Info("Step 3: Deleting problematic structures");
-
-            var allEntities = new HashSet<EntityUid>();
-
-            // Get all remaining entities on the grid
-            if (_entityManager.TryGetComponent<MapGridComponent>(gridUid, out var grid))
-            {
-                var gridBounds = grid.LocalAABB;
-                var lookupSystem = _entitySystemManager.GetEntitySystem<EntityLookupSystem>();
-                foreach (var entity in lookupSystem.GetEntitiesIntersecting(gridUid, gridBounds))
-                {
-                    if (entity != gridUid) // Don't include the grid itself
-                        allEntities.Add(entity);
-                }
-            }
-
-            var structuresRemoved = 0;
-            var componentsRemoved = 0;
-
-            foreach (var entity in allEntities.ToList())
-            {
-                if (!_entityManager.EntityExists(entity))
-                    continue;
-
-                // Delete vending machines completely
-                if (_entityManager.HasComponent<VendingMachineComponent>(entity))
-                {
-                    _sawmill.Info($"Removing vending machine entity {entity}");
-                    _entityManager.DeleteEntity(entity);
-                    structuresRemoved++;
-                    continue;
-                }
-                if (_entityManager.HasComponent<CriminalRecordsConsoleComponent>(entity))
-                {
-                    _sawmill.Info($"Removing criminal records console entity {entity}");
-                    _entityManager.DeleteEntity(entity);
-                    structuresRemoved++;
-                    continue;
-                }
-                if (_entityManager.HasComponent<GeneralStationRecordConsoleComponent>(entity))
-                {
-                    _sawmill.Info($"Removing general station records console entity {entity}");
-                    _entityManager.DeleteEntity(entity);
-                    structuresRemoved++;
-                    continue;
-                }
-                // Remove problematic components from remaining entities
-
-                // Note: Removed PhysicsComponent deletion that was causing collision issues in loaded ships
-                // PhysicsComponent and FixturesComponent are needed for proper collision detection
-
-                // Remove atmospheric components that hold runtime state
-
-                // Reset power components to clean state
-            }
-
-            _sawmill.Info($"Step 3 complete: Removed {structuresRemoved} problematic structures, cleaned {componentsRemoved} components");
-            return true;
-        }
-        catch (Exception ex)
-        {
-            _sawmill.Error($"Step 3 failed: {ex}");
-            return false;
-        }
-    }
-
-    /// <summary>
-    /// STEP 4: Save the grid
-    /// </summary>
-    private async Task<bool> Step4_SaveGrid(EntityUid gridUid, string shipName, ICommonSession playerSession)
-    {
-        try
-        {
-            _sawmill.Info($"Step 4: Saving grid as '{shipName}'");
-
-            // Save the grid using MapLoaderSystem to a temporary file
-            var fileName = $"{shipName}.yml";
-            var tempFilePath = new ResPath("/") / "UserData" / fileName;
-
-            bool success = _mapLoader.TrySaveGrid(gridUid, tempFilePath);
-
-            if (success)
-            {
-                _sawmill.Info($"Successfully saved grid to {fileName}");
-
-                // Read the YAML file and send to client
-                try
-                {
-                    using var fileStream = _resourceManager.UserData.OpenRead(tempFilePath);
-                    using var reader = new StreamReader(fileStream);
-                    var yamlContent = await reader.ReadToEndAsync();
-
-                    // Send the YAML data to the client for local saving
-                    var saveMessage = new SendShipSaveDataClientMessage(shipName, yamlContent);
-                    RaiseNetworkEvent(saveMessage, playerSession);
-
-                    _sawmill.Info($"Sent ship data '{shipName}' to client {playerSession.Name} for local saving");
-
-                    // Clean up the temporary server file
-                    await TryDeleteFileWithRetry(tempFilePath);
-                }
-                catch (Exception ex)
-                {
-                    _sawmill.Error($"Failed to read/send YAML file: {ex}");
-                    success = false;
-                }
-            }
-            else
-            {
-                _sawmill.Error($"Failed to save grid to {fileName}");
-            }
-
-            return success;
-        }
-        catch (Exception ex)
-        {
-            _sawmill.Error($"Step 4 failed: {ex}");
-            return false;
-        }
-    }
-
-    /// <summary>
-    /// STEP 5: Throw event to say grid was saved, remove shuttle deed from player's ID, and update console
-    /// </summary>
-    private async Task<bool> Step5_PostSaveCleanupAndEvents(EntityUid originalGridUid, string shipName, string playerUserId, ICommonSession playerSession)
-    {
-        try
-        {
-            _sawmill.Info("Step 5: Post-save cleanup and events");
-
-            // Fire grid saved event
-            var gridSavedEvent = new ShipSavedEvent
-            {
-                GridUid = originalGridUid,
-                ShipName = shipName,
-                PlayerUserId = playerUserId,
-                PlayerSession = playerSession
-            };
-            RaiseLocalEvent(gridSavedEvent);
-            _sawmill.Info($"Fired ShipSavedEvent for '{shipName}'");
-
-            // Deed removal is handled where the save is initiated (console slot entity) after success
-
-            // Delete the original grid entity now that save is complete
-            if (_entityManager.EntityExists(originalGridUid))
-            {
-                await Task.Delay(100); // Brief delay to ensure all events are processed
-                _entityManager.DeleteEntity(originalGridUid);
-                _sawmill.Info($"Deleted original grid entity {originalGridUid}");
-            }
-
-            _sawmill.Info("Step 5 complete: Events fired, deed removed, grid deleted");
-            return true;
-        }
-        catch (Exception ex)
-        {
-            _sawmill.Error($"Step 5 failed: {ex}");
-            return false;
-        }
-    }
-
-    #endregion
-
-    /// <summary>
-    /// Legacy method - replaced by 5-step process above</summary>
-    private async Task<EntityUid?> MoveAndCleanGrid(EntityUid originalGridUid, MapId targetMapId)
-    {
-        try
-        {
-            // Move the grid to the temporary map and normalize its rotation
-            var gridTransform = _entityManager.GetComponent<TransformComponent>(originalGridUid);
-            _transformSystem.SetCoordinates(originalGridUid, new EntityCoordinates(_mapManager.GetMapEntityId(targetMapId), Vector2.Zero));
-
-            // Normalize grid rotation to 0 degrees
-            _transformSystem.SetLocalRotation(originalGridUid, Angle.Zero);
-
-            _sawmill.Info($"Moved grid {originalGridUid} to temporary map {targetMapId} and normalized rotation");
-
-            // Clean the grid of problematic components
-            CleanGridForSaving(originalGridUid);
-
-            return originalGridUid;
-        }
-        catch (Exception ex)
-        {
-            _sawmill.Error($"Failed to move and clean grid: {ex}");
-            return null;
-        }
-    }
-
     /// <summary>
     /// Removes problematic components from a grid before saving.
     /// This includes session-specific data, vending machines, runtime state, etc.
@@ -1203,11 +1245,10 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
         var allEntities = new HashSet<EntityUid>();
 
         // Get all entities on the grid
-        if (_entityManager.TryGetComponent<MapGridComponent>(gridUid, out var grid))
+        if (_gridQuery.TryComp(gridUid, out var grid))
         {
             var gridBounds = grid.LocalAABB;
-            var lookupSystem = _entitySystemManager.GetEntitySystem<EntityLookupSystem>();
-            foreach (var entity in lookupSystem.GetEntitiesIntersecting(gridUid, gridBounds))
+            foreach (var entity in _lookup.GetEntitiesIntersecting(gridUid, gridBounds))
             {
                 if (entity != gridUid) // Don't include the grid itself
                     allEntities.Add(entity);
@@ -1230,11 +1271,10 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
 
         var remainingEntities = new HashSet<EntityUid>();
 
-        if (_entityManager.TryGetComponent<MapGridComponent>(gridUid, out grid))
+        if (_gridQuery.TryComp(gridUid, out grid))
         {
             var gridBounds = grid.LocalAABB;
-            var lookupSystem = _entitySystemManager.GetEntitySystem<EntityLookupSystem>();
-            foreach (var entity in lookupSystem.GetEntitiesIntersecting(gridUid, gridBounds))
+            foreach (var entity in _lookup.GetEntitiesIntersecting(gridUid, gridBounds))
             {
                 if (entity != gridUid) // Don't include the grid itself
                     remainingEntities.Add(entity);
@@ -1313,36 +1353,4 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
             return false;
         }
     }
-
-    /// <summary>
-    /// Attempts to delete a file with retry logic to handle file access conflicts
-    /// </summary>
-    private async Task TryDeleteFileWithRetry(ResPath filePath, int maxRetries = 3, int delayMs = 100)
-    {
-        for (int attempt = 0; attempt < maxRetries; attempt++)
-        {
-            try
-            {
-                _resourceManager.UserData.Delete(filePath);
-                _sawmill.Info($"Successfully deleted temporary server file {filePath}");
-                return;
-            }
-            catch (IOException ex) when (attempt < maxRetries - 1)
-            {
-                _sawmill.Warning($"File deletion attempt {attempt + 1} failed for {filePath}: {ex.Message}. Retrying in {delayMs}ms...");
-                await Task.Delay(delayMs);
-                delayMs *= 2; // Exponential backoff
-            }
-            catch (Exception ex)
-            {
-                _sawmill.Error($"Failed to delete temporary file {filePath} on attempt {attempt + 1}: {ex}");
-                if (attempt == maxRetries - 1)
-                {
-                    _sawmill.Error($"Giving up on deleting {filePath} after {maxRetries} attempts");
-                }
-                break;
-            }
-        }
-    }
-
 }

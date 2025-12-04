@@ -124,7 +124,7 @@
   - type: RevolverAmmoProvider
     whitelist:
       tags:
-        - Cartridge45_ACPFMJ
+        - Cartridge45_magnumFMJ
         - SpeedLoader45_magnumFMJ
     proto: Cartridge45_ACPFMJ
 

@@ -8,6 +8,24 @@
 
 # Notes:
 # just a little loot n shoot POI. Pretty much the second POI to even exist
+- type: pointOfInterest
+  id: LPBravo
+  parent: BasePOI
+  name: 'Listening Point Bravo'
+  minimumDistance: 9000
+  maximumDistance: 10000
+  spawnGroup: MarketStation
+  gridPath: /Maps/_NF/POI/lpbravo.yml
+  hideWarp: true
+  addComponents:
+  - type: IFF
+    color: "#C83737"
+    flags: [HideLabel, Hide]
+    readOnly: false
+  - type: SyndicateFOB # For pinpointer
+  - type: SolarPoweredGrid
+    trackOnInit: true
+    doNotCull: true
 
 
 # HL: Commented out

@@ -12,7 +12,7 @@
     - idcard
     sprite: Objects/Misc/id_cards.rsi
   - type: Item
-    size: Small
+    size: Ginormous
     heldPrefix: default
     storedRotation: -90
   - type: Access
@@ -124,31 +124,6 @@
     - WhitelistChameleon
     - WhitelistChameleonIdCard
     - HighRiskItem
-  # - type: StealTarget
-  #   stealGroup: CaptainIDCard
-
-- type: entity # Move this to _HL later
-  parent: [IDCardStandard, BaseC2ContrabandUnredeemable] # Frontier: BaseSecurityCommandContraband<BaseC2ContrabandUnredeemable
-  id: StationCaptainIDCard
-  name: station captain ID card
-  components:
-  - type: Sprite
-    layers:
-    - state: gold
-    - state: idcaptain
-  - type: Item
-    heldPrefix: gold
-  - type: PresetIdCard
-    job: StationCaptain
-  - type: Tag
-    tags:
-    - DoorBumpOpener
-    - WhitelistChameleon
-    - WhitelistChameleonIdCard
-    - HighRiskItem
-  - type: Access
-    groups:
-    - AllAccess
   - type: StealTarget
     stealGroup: CaptainIDCard
 
@@ -408,9 +383,6 @@
     layers:
     - state: silver
     - state: idheadofpersonnel
-  - type: Access
-    groups:
-    - AllAccess
   - type: Item
     heldPrefix: silver
   - type: PresetIdCard
@@ -676,7 +648,7 @@
     job: AtmosphericTechnician
 
 - type: entity
-  parent: [ BaseC3SyndicateContraband, IDCardStandard ] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband
+  parent: [IDCardStandard, BaseC3SyndicateContraband] # Frontier: added BaseC3SyndicateContraband
   id: SyndicateIDCard
   name: syndicate ID card
   components:
@@ -689,7 +661,7 @@
     - SyndicateAgent
 
 - type: entity
-  parent: [ BaseC3PirateContraband, IDCardStandard ] # Frontier: BaseMajorContraband<BaseC3PirateContraband
+  parent: [IDCardStandard, BaseC3PirateContraband] # Frontier: added BaseC3PirateContraband
   id: PirateIDCard
   name: pirate ID card
   categories: [ HideSpawnMenu ] # Frontier
@@ -761,41 +733,6 @@
     - state: iddetective
   - type: PresetIdCard
     job: Detective
-
-- type: entity
-  parent: IDCardStandard
-  id: PrisonerIDCard
-  name: prisoner ID card
-  categories: [HideSpawnMenu] # Frontier: use NF variant
-  description: A generically printed ID card for scummy prisoners.
-  components:
-  - type: Sprite
-    layers:
-    - state: orange
-  - type: Item
-    heldPrefix: orange
-  - type: Access
-    tags:
-    - GenpopEnter
-  - type: GenpopIdCard
-  - type: IdCard
-    jobTitle: job-name-prisoner
-    jobIcon: JobIconPrisoner
-    canMicrowave: false
-  - type: ExpireIdCard
-    expireMessage: genpop-prisoner-id-expire
-    expiredAccess:
-    - GenpopLeave
-  - type: Speech
-    speechVerb: Robotic
-  - type: Tag
-    tags:
-    - DoorBumpOpener
-    - WhitelistChameleon
-    - WhitelistChameleonIdCard
-    - Recyclable
-  - type: StaticPrice # these are infinitely producible.
-    price: 0
 
 - type: entity
   parent: CentcomIDCard
@@ -904,14 +841,13 @@
   - type: Access
     groups:
     - AllAccess
-    - Silicon
+    - USSPAA # Mono
     tags:
     - CentralCommand
     - NuclearOperative
     - SyndicateAgent
     - Wizard
-    - Xenoborg
-    - Pirate # Frontier
+    - Pirate # Mono
   - type: Tag #  Ignore Chameleon tags
     tags:
     - DoorBumpOpener
@@ -923,4 +859,3 @@
     interfaces:
       enum.AgentIDCardUiKey.Key:
         type: AgentIDCardBoundUserInterface
-

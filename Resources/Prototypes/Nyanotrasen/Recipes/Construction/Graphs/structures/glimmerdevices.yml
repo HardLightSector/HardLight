@@ -21,17 +21,17 @@
           conditions:
             - !type:EntityAnchored {}
           steps:
-            - material: Diamond
-              amount: 2
+            - material: Bluespace
+              amount: 25
               doAfter: 10
             - tool: Welding
-              doAfter: 5
+              doAfter: 20
         - to: glimmerDrain
           conditions:
             - !type:EntityAnchored {}
           steps:
-            - material: Bluespace
-              amount: 5
+            - material: Diamond
+              amount: 2
               doAfter: 10
             - tool: Welding
               doAfter: 5

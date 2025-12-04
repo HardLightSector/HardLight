@@ -1,5 +1,5 @@
 - type: entity
-  parent: ClothingOuterHardsuitSyndieCommander #Inherit all changes from this. Hopefully will prevent compatability issues in the future
+  parent: [ ClothingOuterHardsuitSyndieCommander, BaseC3ContrabandUnredeemable ] #Inherit all changes from this. Hopefully will prevent compatability issues in the future
   id: SyntheticBorgArmorBase # Base Armor Type for borgs
   name: Experimental Synthetic Plating
   description: This is a test item. How did you get ahold of it?!

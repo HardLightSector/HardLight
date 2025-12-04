@@ -1,0 +1,106 @@
+- type: entity
+  parent: StorageTank
+  id: BluespaceBarrel
+  name: bluespace barrel
+  description: Why do you need this much?
+  components:
+  - type: Sprite
+    sprite: _HL/Objects/Tools/bluespacebarrel.rsi
+    layers:
+    - state: icon
+    - state: icon_open
+      map: ["enum.OpenableVisuals.Layer"]
+      visible: false
+    - state: paper
+      map: ["enum.PaperLabelVisuals.Layer"]
+      visible: false
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        maxVol: 15000
+  - type: Item
+    size: Huge
+    shape:
+    - 0,0,3,5
+  - type: ExaminableSolution
+    solution: tank
+  - type: UserInterface
+    interfaces:
+      enum.TransferAmountUiKey.Key:
+        type: TransferAmountBoundUserInterface
+  - type: MixableSolution
+    solution: tank
+  - type: DrawableSolution
+    solution: tank
+  - type: InjectableSolution
+    solution: tank
+  - type: Spillable
+    solution: tank
+    spillDelay: 10
+  - type: RefillableSolution
+    solution: tank
+  - type: DrainableSolution
+    solution: tank
+  - type: SolutionItemStatus
+    solution: tank
+  - type: DumpableSolution
+    solution: tank
+  - type: SolutionTransfer
+    transferAmount: 1000
+    maxTransferAmount: 15000
+    minTransferAmount: 100
+    canChangeTransferAmount: true
+  - type: Transform
+    noRot: false
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.2,-0.3,0.2,0.4"
+        density: 200
+        mask:
+        - SmallMobMask #this is so they can go under plastic flaps
+        layer:
+        - MachineLayer
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: Metallic
+  - type: GenericVisualizer
+    visuals:
+      enum.OpenableVisuals.Opened:
+        enum.OpenableVisuals.Layer:
+          True: { visible: true }
+          False: { visible: false }
+      enum.PaperLabelVisuals.HasLabel:
+        enum.PaperLabelVisuals.Layer:
+          True: { visible: true }
+          False: { visible: false }
+      enum.PaperLabelVisuals.LabelType:
+        enum.PaperLabelVisuals.Layer:
+          Paper: { state: paper }
+          Bounty: { state: paper }
+          CaptainsPaper: { state: paper }
+          Invoice: { state: paper }
+  - type: Appearance
+  - type: PaperLabel
+    labelSlot:
+      insertVerbText: comp-paper-label-insert
+      ejectVerbText: comp-paper-label-eject
+      whitelist:
+        components:
+        - Paper
+  - type: ItemSlots
+  - type: ContainerContainer
+    containers:
+      paper_label: !type:ContainerSlot
+  - type: MultiHandedItem
+  - type: Openable
+    sound:
+      collection: valveSqueak
+    closeable: true
+    closeSound:
+      collection: valveSqueak
+  - type: Sealable
+  - type: StaticPrice
+    price: 1000

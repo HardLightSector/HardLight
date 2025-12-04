@@ -144,6 +144,18 @@
                         <BoxContainer Name="TraitsList" Orientation="Vertical" />
                     </ScrollContainer>
                 </BoxContainer>
+                <BoxContainer Orientation="Vertical" Margin="10">
+                    <!-- Company -->
+                    <ScrollContainer VerticalExpand="True">
+                        <BoxContainer Orientation="Vertical">
+                            <BoxContainer Margin="10" Orientation="Horizontal" HorizontalExpand="True">
+                                <Label Text="{Loc 'humanoid-profile-editor-company-label'}" />
+                                <Control HorizontalExpand="True"/>
+                                <OptionButton Name="CompanyButton" HorizontalAlignment="Right" />
+                            </BoxContainer>
+                        </BoxContainer>
+                    </ScrollContainer>
+                </BoxContainer>
                 <BoxContainer Name="MarkingsTab" Orientation="Vertical" Margin="10">
                     <!-- Markings -->
                     <ScrollContainer VerticalExpand="True">

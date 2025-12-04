@@ -29,6 +29,10 @@ public sealed partial class XenoComponent : Component
     [DataField]
     public EntityUid? EvolveAction;
 
+    // AI auto-evolution scheduling (server-side): when set, XenoSystem.Update will auto-evolve after this time.
+    [DataField]
+    public TimeSpan? PendingAutoEvolveTime;
+
     // Actions
     [DataField, AutoNetworkedField]
     public List<EntProtoId> ActionIds = new();

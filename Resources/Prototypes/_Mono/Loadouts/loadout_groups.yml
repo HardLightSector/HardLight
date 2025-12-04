@@ -1,0 +1,13 @@
+- type: loadoutGroup
+  id: ContractorFun
+  name: loadout-group-contractor-fun
+  minLimit: 0
+  maxLimit: 3
+  loadouts: []
+
+- type: loadoutGroup
+  id: SeniorOfficerTrinkets
+  name: loadout-group-senior-officer-trinkets
+  minLimit: 0
+  maxLimit: 3
+  loadouts: []

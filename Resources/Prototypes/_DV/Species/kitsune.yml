@@ -1,0 +1,45 @@
+- type: species
+  id: Kitsune
+  name: Kitsune
+  roundStart: true
+  prototype: MobKitsune
+  sprites: MobHumanSprites
+  markingLimits: MobKitsuneMarkingLimits
+  dollPrototype: MobKitsuneDummy
+  skinColoration: HumanToned
+
+- type: markingPoints
+  id: MobKitsuneMarkingLimits
+  points:
+    Hair:
+      points: 3
+      required: false
+    FacialHair:
+      points: 3
+      required: false
+    Snout:
+      points: 3
+      required: false
+    Tail:
+      points: 3
+      required: true
+      defaultMarkings: [ KitsuneTailDefault ]
+    HeadTop:
+      points: 3
+      required: true
+      defaultMarkings: [ KitsuneEarsDefault ]
+    UndergarmentTop:
+      points: 1
+      required: false
+    UndergarmentBottom:
+      points: 1
+      required: false
+    Chest:
+      points: 6
+      required: false
+    Legs:
+      points: 6
+      required: false
+    Arms:
+      points: 6
+      required: false

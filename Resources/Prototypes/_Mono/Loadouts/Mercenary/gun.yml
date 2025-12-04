@@ -30,12 +30,12 @@
     back:
     - WeaponShotgunEnforcerPMC
 
-- type: loadout
-  id: MercenaryC20rLoadout
-  price: 44000
-  storage:
-    back:
-    - WeaponSubMachineGunC20rPMC
+#- type: loadout
+#  id: MercenaryC20rLoadout
+#  price: 44000
+#  storage:
+#    back:
+#    - WeaponSubMachineGunC20rPMC
 
 - type: loadout
   id: MercenaryWt550Loadout

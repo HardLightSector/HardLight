@@ -1,0 +1,23 @@
+- type: trait
+  id: HLRoboticVoice
+  name: hl-trait-robot-voice-name
+  description: hl-trait-robot-voice-desc
+  replaceComponents: true
+  cost: 1
+  category: SpeechTraits
+  components:
+  - type: Speech
+    speechSounds: Pai
+    speechVerb: Robotic
+
+- type: trait
+  id: HLBorgVoice
+  name: hl-trait-borg-voice-name
+  description: hl-trait-borg-voice-desc
+  replaceComponents: true
+  cost: 1
+  category: SpeechTraits
+  components:
+  - type: Speech
+    speechSounds: Borg
+    speechVerb: Robotic

@@ -34,6 +34,7 @@ public sealed class XenoConstructionServerSystem : SharedXenoConstructionSystem
         Log.Info("[XenoWeeds] (server) XenoConstructionSystem.Initialize()");
 
         SubscribeLocalEvent<XenoWeedsComponent, SpreadNeighborsEvent>(OnWeedsSpreadNeighbors);
+        SubscribeLocalEvent<XenoWeedsComponent, AnchorStateChangedEvent>(OnWeedsAnchorChanged);
         SubscribeLocalEvent<XenoWeedableComponent, AnchorStateChangedEvent>(OnWeedableAnchorStateChanged);
         // Server-side guarantee: perform weeds spawn & mark handled.
         SubscribeLocalEvent<XenoComponent, XenoPlantWeedsEvent>(OnXenoPlantWeedsServer);
@@ -43,6 +44,12 @@ public sealed class XenoConstructionServerSystem : SharedXenoConstructionSystem
 
         // Fallback: Intercept action requests and handle weeds planting even if action wasn't fully registered server-side yet.
         SubscribeAllEvent<RequestPerformActionEvent>(OnWeedsActionRequest);
+    }
+
+    private void OnWeedsAnchorChanged(Entity<XenoWeedsComponent> ent, ref AnchorStateChangedEvent args)
+    {
+        if (!args.Anchored)
+            QueueDel(ent);
     }
 
     private void EnsureWeedsAction(Entity<XenoComponent> ent)

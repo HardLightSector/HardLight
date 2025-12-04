@@ -18,8 +18,8 @@
   supervisors: job-supervisors-bailiff
   weight: 110
   displayWeight: 20
-  setPreference: false # Frontier
   canBeAntag: false
+  setPreference: false
   access:
   - Detective
   accessGroups:

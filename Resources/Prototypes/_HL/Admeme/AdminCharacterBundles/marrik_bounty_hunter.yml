@@ -328,7 +328,7 @@
 - type: entity
   id: SergeantIDCardMarrik
   parent: IDCardStandard
-  name: NFSD sergeant ID card
+  name: Colsec sergeant ID card
   suffix: Marrik, Admin
   components:
   - type: IdCard

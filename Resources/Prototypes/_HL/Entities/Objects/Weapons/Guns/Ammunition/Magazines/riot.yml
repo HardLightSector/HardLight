@@ -1,0 +1,44 @@
+- type: entity
+  id: BaseMagazineRiotgun
+  name: Riot Gun Magazine (Flash)
+  parent: [BaseItem, RecyclableItemSteelTiny] # Frontier: added RecyclableItemSteelTiny
+  components:
+  - type: Tag
+    tags:
+      - MagazineRiotGun
+  - type: BallisticAmmoProvider
+    proto: GrenadeRiotGunBase
+    mayTransfer: true
+    whitelist:
+      tags:
+        - GrenadeRiotGun
+    capacity: 6
+  - type: Item
+    size: Small
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: _Beestation/Objects/Weapons/Guns/Rifles/riot_gun.rsi
+    layers:
+    - state: flash
+      map: ["enum.GunVisualLayers.Base"]
+  - type: Appearance
+
+- type: entity
+  id: MagazineRiotGunStinger
+  name: Riot Gun Magazine (Stinger)
+  parent: BaseMagazineRiotgun
+  components:
+  - type: BallisticAmmoProvider
+    proto: GrenadeRiotStinger
+    capacity: 6
+
+- type: entity
+  id: MagazineRiotGunTearGas
+  name: Riot Gun Magazine (Tear Gas)
+  parent: BaseMagazineRiotgun
+  components:
+  - type: BallisticAmmoProvider
+    proto: GrenadeRiotGas
+    capacity: 6

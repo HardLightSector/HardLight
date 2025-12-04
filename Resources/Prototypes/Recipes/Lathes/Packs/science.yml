@@ -87,14 +87,14 @@
   - AutolatheHyperConvectionMachineCircuitboard
   - ProtolatheHyperConvectionMachineCircuitboard
   - CircuitImprinterHyperConvectionMachineCircuitboard
-  # - TechDiskComputerCircuitboard # Frontier: no tech disks
+  - TechDiskComputerCircuitboard
   - FlatpackerMachineCircuitboard
   - SheetifierMachineCircuitboard
   - PowerCageRechargerCircuitboard
   - AnalysisComputerCircuitboard
   - AnomalyVesselCircuitboard
   - AnomalyVesselExperimentalCircuitboard
-  # - AnomalySynchronizerCircuitboard # Frontier: no synchronizer
+  - AnomalySynchronizerCircuitboard
   - APECircuitboard
   - ArtifactAnalyzerMachineCircuitboard
   - ArtifactCrusherMachineCircuitboard

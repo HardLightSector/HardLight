@@ -4,8 +4,8 @@ meta:
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 11/13/2025 21:56:33
-  entityCount: 729
+  time: 11/15/2025 23:51:39
+  entityCount: 730
 maps: []
 grids:
 - 1
@@ -1735,7 +1735,7 @@ entities:
   - uid: 461
     components:
     - type: Transform
-      pos: -4.5,-0.5
+      pos: -3.5,0.5
       parent: 1
   - uid: 536
     components:
@@ -3994,7 +3994,7 @@ entities:
       parent: 1
     - type: Physics
       bodyType: Static
-- proto: LockerWallMaterialsFuelUraniumFilled
+- proto: LockerWallMaterialsFuelUraniumFilled2
   entities:
   - uid: 181
     components:
@@ -4208,8 +4208,11 @@ entities:
     - type: Transform
       pos: -4.5,0.5
       parent: 1
-    - type: FuelGenerator
-      targetPower: 50000
+  - uid: 691
+    components:
+    - type: Transform
+      pos: -3.5,0.5
+      parent: 1
 - proto: PosterContrabandFunPolice
   entities:
   - uid: 499

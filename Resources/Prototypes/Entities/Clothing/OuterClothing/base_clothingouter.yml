@@ -13,7 +13,7 @@
 
 - type: entity
   abstract: true
-  parent: ClothingOuterBase
+  parent: [ClothingOuterBase, ClothingConcealsBody] # HardLight: Add ClothingConcealsBody
   id: ClothingOuterBaseLarge
   components:
   - type: Item
@@ -103,7 +103,7 @@
 
 - type: entity
   abstract: true
-  parent: [RecyclableItemClothHardsuit, ClothingOuterBase, GeigerCounterClothing, AllowSuitStorageClothing] # Frontier: added RecyclableItemClothHardsuit
+  parent: [RecyclableItemClothHardsuit, ClothingOuterBase, GeigerCounterClothing, AllowSuitStorageClothing, ClothingConcealsBody] # Frontier: added RecyclableItemClothHardsuit; # HardLight: Add ClothingConcealsBody
   id: ClothingOuterHardsuitBase
   name: base hardsuit
   components:
@@ -157,7 +157,7 @@
 
 - type: entity
   abstract: true
-  parent: [ClothingOuterBase, AllowSuitStorageClothing]
+  parent: [ClothingOuterBase, AllowSuitStorageClothing, ClothingConcealsBody] # HardLight: Add ClothingConcealsBody
   id: ClothingOuterEVASuitBase
   name: base EVA Suit
   components:

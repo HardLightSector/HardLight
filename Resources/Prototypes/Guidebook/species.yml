@@ -16,6 +16,7 @@
     - Arachnid
     - Diona # Note: Frontier changes inside
     - Dwarf # Note: Frontier changes inside
+    - Dwarf
     - Human
     - Moth
     - Reptilian
@@ -27,10 +28,13 @@
     - Harpy # DeltaV
     - Felinid # DeltaV
     - Oni # DeltaV
+    - Chitinid # DeltaV
     - Feroxi # Flooftier
     - Resomi
     - Protogen # Monolith
     - Avali
+    - Feroxi
+    - Kitsune # DeltaV
 
 - type: guideEntry
   id: Arachnid
@@ -67,6 +71,18 @@
   name: species-name-slime
   text: "/ServerInfo/Guidebook/Mobs/SlimePerson.xml"
 
+# DeltaV
+
+- type: guideEntry
+  id: Kitsune
+  name: species-name-kitsune
+  text: "/ServerInfo/Guidebook/Mobs/_DV/Kitsune.xml" # DeltaV
+
+- type: guideEntry
+  id: Chitinid
+  name: species-name-chitinid
+  text: "/ServerInfo/Guidebook/Mobs/_DV/Chitinid.xml" # DeltaV
+
 # Goobstation
 - type: guideEntry
   id: Vox
@@ -84,12 +100,18 @@
   text: "/ServerInfo/Guidebook/Mobs/Resomi.xml"
 
 - type: guideEntry
+  id: Harpy
+  name: species-name-harpy
+  text: "/ServerInfo/Guidebook/Mobs/_DV/Harpy.xml" # DeltaV
+
+- type: guideEntry
   id: Avali
   name: species-name-avali
   text: "/ServerInfo/Guidebook/Mobs/Avali.xml"
-
 
 - type: guideEntry
   id: Protogen
   name: species-name-protogen
   text: "/ServerInfo/Guidebook/Mobs/Protogen.xml"
+
+

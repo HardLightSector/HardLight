@@ -12,8 +12,8 @@
   id: Grifty
   parent: BasePOI
   name: "Grifty's Gas n Grub"
-  minimumDistance: 3250
-  maximumDistance: 5600
+  minimumDistance: 6250
+  maximumDistance: 8600
   spawnGroup: MarketStation
   gridPath: /Maps/_NF/POI/grifty.yml
   addComponents:

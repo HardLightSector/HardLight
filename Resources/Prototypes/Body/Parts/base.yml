@@ -8,6 +8,7 @@
     damageContainer: OrganicPart # Shitmed Change
   - type: BodyPart
   - type: Gibbable
+  - type: AntiRottingContainer
   - type: ContainerContainer
     containers:
       bodypart: !type:Container

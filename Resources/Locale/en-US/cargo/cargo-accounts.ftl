@@ -19,5 +19,5 @@ cargo-account-service-code = SRV
 cargo-account-frontier-name = Frontier Account
 cargo-account-frontier-code = FTR
 
-cargo-account-nfsd-name = NFSD Account
-cargo-account-nfsd-code = NSD
+cargo-account-Colsec-name = Colsec Account
+cargo-account-Colsec-code = CSC

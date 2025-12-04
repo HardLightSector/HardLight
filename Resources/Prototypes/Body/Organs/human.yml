@@ -34,7 +34,16 @@
   abstract: true
   components:
   - type: Gibbable
-
+  - type: Perishable
+    rotAfter: 300 # 5 minutes outside a body until rotting, 15 to completely perish
+    molsPerSecondPerUnitMass: 0
+  - type: RotInto
+    entity: Ash
+    stage: 2
+  - type: AtmosExposed
+  - type: Temperature
+    currentTemperature: 290 # copied from meat
+    
 - type: entity
   id: OrganHumanBrain
   parent: BaseHumanOrganUnGibbable

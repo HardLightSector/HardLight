@@ -457,6 +457,8 @@ namespace Content.Server.Database
         public List<ProfileRoleLoadout> Loadouts { get; } = new();
 
         [Column("pref_unavailable")] public DbPreferenceUnavailableMode PreferenceUnavailable { get; set; }
+        
+        public string Company { get; set; } = "None";
 
         public int PreferenceId { get; set; }
         public Preference Preference { get; set; } = null!;

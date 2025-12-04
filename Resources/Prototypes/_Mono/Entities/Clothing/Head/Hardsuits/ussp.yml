@@ -1,0 +1,28 @@
+- type: entity
+  parent: [ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase, ShowMedicalIcons]
+  id: ClothingHeadHelmetHardsuitUsspL27
+  name: USSP L-27 tacsuit helmet
+  description: The standard combat suit of USSP naval operations, outfitted with a medical hud too!
+  components:
+  - type: Sprite
+    sprite: _Mono/Clothing/Head/Hardsuits/ussp_combat.rsi
+  - type: Clothing
+    sprite: _Mono/Clothing/Head/Hardsuits/ussp_combat.rsi
+  - type: PointLight
+    color: "#4e88a6"
+  - type: PressureProtection
+    highPressureMultiplier: 0.08
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.95
+        Slash: 0.95
+        Piercing: 0.95
+        Heat: 0.95
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - Snout
+    - HeadTop
+    - HeadSide

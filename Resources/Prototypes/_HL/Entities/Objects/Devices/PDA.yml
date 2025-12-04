@@ -87,3 +87,182 @@
     borderColor: "#5c00b3"
   - type: Icon
     state: pda-cartel-lieutenant
+
+# Contractor cosmetic PDAs
+- type: entity
+  abstract: true
+  id: BaseContractorPDA
+  components:
+  - type: Pda
+    id: ContractorIDCard
+  - type: CartridgeLoader
+    preinstalled:
+      - CrewManifestCartridge
+      - NotekeeperCartridge
+      - NanoTaskCartridge
+      - NewsReaderCartridge
+      - BountyContractsCartridge
+      - AstroNavCartridge
+  - type: Tag #  Ignore Chameleon tags
+    tags:
+    - DoorBumpOpener
+
+- type: entity
+  parent: [BaseContractorPDA, SalvagePDA]
+  id: ContractorSalvagePDA
+  suffix: Contractor
+
+- type: entity
+  parent: [BaseContractorPDA, ResearchAssistantPDA]
+  id: ContractorResearchAssistantPDA
+  suffix: Contractor
+
+- type: entity
+  parent: [BaseContractorPDA, CargoPDA]
+  id: ContractorCargoPDA
+  suffix: Contractor
+
+- type: entity
+  parent: [BaseContractorPDA, MedicalInternPDA]
+  id: ContractorMedicalInternPDA
+  suffix: Contractor
+
+- type: entity
+  parent: [BaseContractorPDA, TechnicalAssistantPDA]
+  id: ContractorTechnicalAssistantPDA
+  suffix: Contractor
+
+- type: entity
+  parent: [BaseContractorPDA, ServiceWorkerPDA]
+  id: ContractorServiceWorkerPDA
+  suffix: Contractor
+
+- type: entity
+  parent: [BaseContractorPDA, BartenderPDA]
+  id: ContractorBartenderPDA
+  suffix: Contractor
+
+- type: entity
+  parent: [BaseContractorPDA, ChefPDA]
+  id: ContractorChefPDA
+  suffix: Contractor
+
+- type: entity
+  parent: [BaseContractorPDA, BotanistPDA]
+  id: ContractorBotanistPDA
+  suffix: Contractor
+
+- type: entity
+  parent: [BaseContractorPDA, ChaplainPDA]
+  id: ContractorChaplainPDA
+  suffix: Contractor
+
+- type: entity
+  parent: [BaseContractorPDA, LibrarianPDA]
+  id: ContractorLibrarianPDA
+  suffix: Contractor
+
+- type: entity
+  parent: [BaseContractorPDA, MedicalPDA]
+  id: ContractorMedicalPDA
+  suffix: Contractor
+
+- type: entity
+  parent: [BaseContractorPDA, ParamedicPDA]
+  id: ContractorParamedicPDA
+  suffix: Contractor
+
+- type: entity
+  parent: [BaseContractorPDA, PsychologistPDA]
+  id: ContractorPsychologistPDA
+  suffix: Contractor
+
+- type: entity
+  parent: [BaseContractorPDA, ChemistryPDA]
+  id: ContractorChemistryPDA
+  suffix: Contractor
+
+- type: entity
+  parent: [BaseContractorPDA, SciencePDA]
+  id: ContractorSciencePDA
+  suffix: Contractor
+
+- type: entity
+  parent: [BaseContractorPDA, ReporterPDA]
+  id: ContractorReporterPDA
+  suffix: Contractor
+
+- type: entity
+  parent: [BaseContractorPDA, ZookeeperPDA]
+  id: ContractorZookeeperPDA
+  suffix: Contractor
+
+- type: entity
+  parent: [BaseContractorPDA, EngineerPDA]
+  id: ContractorEngineerPDA
+  suffix: Contractor
+
+- type: entity
+  parent: [BaseContractorPDA, AtmosPDA]
+  id: ContractorAtmosPDA
+  suffix: Contractor
+
+- type: entity
+  parent: [BaseContractorPDA, CaptainPDA]
+  id: ContractorCaptainPDA
+  suffix: Contractor
+
+- type: entity
+  parent: [BaseContractorPDA, QuartermasterPDA]
+  id: ContractorQuartermasterPDA
+  suffix: Contractor
+
+- type: entity
+  parent: [BaseContractorPDA, SeniorResearcherPDA]
+  id: ContractorSeniorResearcherPDA
+  suffix: Contractor
+
+- type: entity
+  parent: [BaseContractorPDA, RnDPDA]
+  id: ContractorRnDPDA
+  suffix: Contractor
+
+- type: entity
+  parent: [BaseContractorPDA, SeniorPhysicianPDA]
+  id: ContractorSeniorPhysicianPDA
+  suffix: Contractor
+
+- type: entity
+  parent: [BaseContractorPDA, CMOPDA]
+  id: ContractorCMOPDA
+  suffix: Contractor
+
+- type: entity
+  parent: [BaseContractorPDA, SeniorEngineerPDA]
+  id: ContractorSeniorEngineerPDA
+  suffix: Contractor
+
+- type: entity
+  parent: [BaseContractorPDA, CEPDA]
+  id: ContractorCEPDA
+  suffix: Contractor
+
+- type: entity
+  parent: [BaseContractorPDA, BoxerPDA]
+  id: ContractorBoxerPDA
+  suffix: Contractor
+
+- type: entity
+  parent: [BaseContractorPDA, MimePDA]
+  id: ContractorMimePDA
+  suffix: Contractor
+
+- type: entity
+  parent: [BaseContractorPDA, ClownPDA]
+  id: ContractorClownPDA
+  suffix: Contractor
+
+- type: entity
+  parent: [BaseContractorPDA, MusicianPDA]
+  id: ContractorMusicianPDA
+  suffix: Contractor

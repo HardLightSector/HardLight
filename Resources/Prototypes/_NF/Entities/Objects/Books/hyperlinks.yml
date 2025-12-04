@@ -31,8 +31,8 @@
 - type: entity
   parent: BaseHyperlinkBook
   id: HyperlinkBookNfsdSop
-  name: NFSD SOP manual
-  description: A book defining NFSD standard operating procedures.
+  name: Colsec SOP manual
+  description: A book defining Colsec standard operating procedures.
   components:
   - type: Sprite
     sprite: _NF/Objects/Misc/books.rsi

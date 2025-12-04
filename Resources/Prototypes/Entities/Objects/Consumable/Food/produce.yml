@@ -6,6 +6,12 @@
   id: ProduceBase
   abstract: true
   components:
+  - type: Perishable
+    rotAfter: 300 # 5 minutes outside a body until rotting, 15 to completely perish
+    molsPerSecondPerUnitMass: 0
+  - type: RotInto
+    entity: Ash
+    stage: 2
   - type: SolutionContainerManager
   - type: Sprite
     state: produce
@@ -286,7 +292,7 @@
   - type: Extractable
     grindableSolutionName: food
   - type: DamageOnInteract
-    damage: 
+    damage:
       types:
         Heat: 4
         Caustic: 4
@@ -313,7 +319,7 @@
             volume: -5
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-  - type: DamageOnHit 
+  - type: DamageOnHit
     damage:
       types:
         Blunt: 5 # The nettle will "wilt" after 5 hits.
@@ -1817,6 +1823,9 @@
     entries:
       Taco: Glasstle
       Burger: GlasstleBurger
+  - type: PhysicalComposition # Frontier
+    materialComposition:
+      Glass: 100
 
 - type: entity
   name: fly amanita

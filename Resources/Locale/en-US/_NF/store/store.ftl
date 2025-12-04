@@ -1,5 +1,5 @@
 # Security Uplink
-store-preset-name-nfsd-uplink = NFSD Uplink Catalogue
+store-preset-name-Colsec-uplink = Colsec Uplink Catalogue
 store-category-sechardsuits = EVA Suits
 store-category-secweapons = Weapons
 store-category-secutility = Utility

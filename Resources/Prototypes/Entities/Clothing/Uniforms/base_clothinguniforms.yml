@@ -1,6 +1,6 @@
 - type: entity
   abstract: true
-  parent: [Clothing, RecyclableItemClothBasic] # Frontier: added RecyclableItemClothBasic
+  parent: [Clothing, RecyclableItemClothBasic, ClothingConcealsBody] # Frontier: added RecyclableItemClothBasic; # HardLight: Conceals full body
   id: UnsensoredClothingUniformBase
   components:
   - type: Sprite
@@ -27,11 +27,6 @@
     tags:
     - ClothMade
     - WhitelistChameleon
-  - type: HideLayerClothing
-    slots:
-    - Genital
-    - Penis
-    - Breasts # HL: Jumpsuits hide breasts
 
 - type: entity
   abstract: true

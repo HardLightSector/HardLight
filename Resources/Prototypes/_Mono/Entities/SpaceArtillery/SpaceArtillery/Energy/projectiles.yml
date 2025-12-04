@@ -355,7 +355,7 @@
       Heat: 100
       Structural: 100
   - type: HitscanBasicRaycast
-    maxDistance: 400
+    maxDistance: 1200
 
 # Apollo
 
@@ -384,7 +384,7 @@
   - type: HitscanSpawnEntity
     spawnedEntity: ApolloExplosion
   - type: HitscanBasicRaycast
-    maxDistance: 600
+    maxDistance: 1200
 
 # Reaper
 
@@ -442,7 +442,7 @@
   - type: HitscanSpawnEntity
     spawnedEntity: SunderExplosion
   - type: HitscanBasicRaycast
-    maxDistance: 750
+    maxDistance: 1200
 
 # Flayer
 
@@ -471,7 +471,7 @@
       Heat: 25
       Structural: 200
   - type: HitscanBasicRaycast
-    maxDistance: 500
+    maxDistance: 1200
 
 # Hitscan Explosions
 

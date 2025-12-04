@@ -24,6 +24,7 @@
     <ProjectReference Include="..\Content.Shared\Content.Shared.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="_Impstation\" />
     <Folder Include="_Starlight\Achievement\" />
     <Folder Include="_Starlight\Actions\" />
     <Folder Include="_Starlight\Audio\" />

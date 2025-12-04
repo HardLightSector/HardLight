@@ -14,7 +14,7 @@ ledger-balance = Balance:
 ledger-no-balance = N/A
 
 ledger-tab-Frontier = Station
-ledger-tab-Nfsd = NFSD
+ledger-tab-Colsec = Colsec
 ledger-tab-Medical = Med
 ledger-tab-Science = Sci
 ledger-tab-Service = Serv

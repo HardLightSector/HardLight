@@ -65,7 +65,7 @@
 
 #region chamber
 - type: entity
-  id: NFBaseWeaponEnergyRifleSniperHitScan
+  id: NFBaseWeaponEnergyRifleCannonHitScan
   abstract: true
   components:
   - type: Gun
@@ -73,9 +73,22 @@
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
   - type: HitscanBatteryAmmoProvider
-    proto: NFRedSpecialLaser
-    fireCost: 120
+    proto: RedShuttleLaser
+    fireCost: 150
 
+- type: entity
+  id: NFBaseWeaponEnergyRifleSniperHitScan
+  abstract: true
+  components:
+  - type: Gun
+    examineCaliber: gun-examine-hitscan-high-p
+    fireRate: 0.6
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
+  - type: HitscanBatteryAmmoProvider
+    proto: NFRedSpecialLaser
+    fireCost: 1000
+    
 - type: entity
   id: NFBaseWeaponEnergyRifleSniperHitScanXray
   abstract: true

@@ -36,6 +36,7 @@ public sealed class GatewaySystem : EntitySystem
         SubscribeLocalEvent<GatewayComponent, ActivatableUIOpenAttemptEvent>(OnGatewayOpenAttempt);
         SubscribeLocalEvent<GatewayComponent, BoundUIOpenedEvent>(UpdateUserInterface);
         SubscribeLocalEvent<GatewayComponent, GatewayOpenPortalMessage>(OnOpenPortal);
+        SubscribeLocalEvent<GatewayComponent, GatewaySpawnDockingArmMessage>(OnSpawnDockingArm);
     }
 
     public void SetEnabled(EntityUid uid, bool value, GatewayComponent? component = null)
@@ -104,6 +105,9 @@ public sealed class GatewaySystem : EntitySystem
 
             // Show destination if either no destination comp on the map or it's ours.
             TryComp<GatewayGeneratorDestinationComponent>(destXform.MapUid, out var gatewayDestination);
+            var isDockingArm = HasComp<DockingArmDestinationComponent>(destUid);
+
+            Log.Debug($"Gateway {ToPrettyString(uid)} found destination {ToPrettyString(destUid)} - IsDockingArm: {isDockingArm}, HasDockingArmComp: {HasComp<DockingArmDestinationComponent>(destUid)}, DestName: {MetaData(destUid).EntityName}");
 
             destinations.Add(new GatewayDestinationData()
             {
@@ -114,7 +118,8 @@ public sealed class GatewaySystem : EntitySystem
                 // If NextUnlock < CurTime it's unlocked, however
                 // we'll always send the client if it's locked
                 // It can just infer unlock times locally and not have to worry about it here.
-                Locked = gatewayDestination != null && gatewayDestination.Locked
+                Locked = gatewayDestination != null && gatewayDestination.Locked,
+                IsDockingArm = isDockingArm
             });
         }
 
@@ -164,6 +169,59 @@ public sealed class GatewaySystem : EntitySystem
         // TODO: admin log???
         ClosePortal(uid, comp, false);
         OpenPortal(uid, comp, desto, dest);
+    }
+
+    private void OnSpawnDockingArm(EntityUid uid, GatewayComponent comp, GatewaySpawnDockingArmMessage args)
+    {
+        if (GetNetEntity(uid) == args.Destination ||
+            !comp.Enabled || !comp.Interactable)
+        {
+            return;
+        }
+
+        // if the gateway has an access reader check it before allowing spawning
+        var user = args.Actor;
+        if (CheckAccess(user, uid, comp))
+            return;
+
+        var desto = GetEntity(args.Destination);
+
+        // Verify it's a valid docking arm destination
+        if (!TryComp<GatewayComponent>(desto, out var dest) ||
+            !dest.Enabled)
+        {
+            return;
+        }
+
+        // Check if it has a DockingArmDestinationComponent
+        if (!TryComp<DockingArmDestinationComponent>(desto, out var dockingArmDest))
+        {
+            Log.Warning($"Gateway spawn docking arm: {ToPrettyString(desto)} does not have DockingArmDestinationComponent");
+            return;
+        }
+
+        // Check if already loaded
+        if (dockingArmDest.Loaded)
+        {
+            _popup.PopupEntity(Loc.GetString("gateway-docking-arm-already-spawned"), user, user);
+            return;
+        }
+
+        // Raise the gateway open event which will trigger the docking arm to spawn
+        var ev = new AttemptGatewayOpenEvent(uid, desto);
+        RaiseLocalEvent(desto, ref ev);
+
+        if (ev.Cancelled)
+        {
+            _popup.PopupEntity(Loc.GetString("gateway-docking-arm-spawn-failed"), user, user);
+            return;
+        }
+
+        var openEv = new GatewayOpenEvent(uid, desto);
+        RaiseLocalEvent(desto, ref openEv);
+
+        _popup.PopupEntity(Loc.GetString("gateway-docking-arm-spawned"), user, user);
+        UpdateAllGateways();
     }
 
     private void OpenPortal(EntityUid uid, GatewayComponent comp, EntityUid dest, GatewayComponent destComp, TransformComponent? destXform = null)

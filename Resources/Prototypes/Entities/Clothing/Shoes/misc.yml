@@ -146,7 +146,7 @@
   - type: StaticPrice
     price: 500
   - type: PowerCellDraw
-    drawRate: 30 # DeltaV 4>30, you have to turn off micro reactor at somepoint
+    drawRate: 40 # Hardlight 30>40, you have to turn off micro reactor and antique cell at somepoint
   - type: ToggleCellDraw
   - type: ItemSlots
     slots:

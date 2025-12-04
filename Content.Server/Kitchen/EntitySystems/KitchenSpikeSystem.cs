@@ -235,6 +235,12 @@ namespace Content.Server.Kitchen.EntitySystems
                 return false;
             }
 
+            if (HasComp<HumanoidAppearanceComponent>(victimUid))
+            {
+                _popupSystem.PopupEntity(Loc.GetString("comp-kitchen-spike-deny-butcher", ("victim", Identity.Entity(victimUid, EntityManager)), ("this", uid)), victimUid, userUid);
+                return false;
+            }
+            
             switch (butcherable.Type)
             {
                 case ButcheringType.Spike:

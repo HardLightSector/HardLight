@@ -24,6 +24,7 @@
       visible: false
       sprite: Structures/Storage/closet_labels.rsi
       map: ["enum.PaperLabelVisuals.Layer"]
+  - type: Anchorable
   - type: MovedByPressure
   - type: PaperLabel
     labelSlot:
@@ -242,8 +243,8 @@
   components:
   - type: AccessReader
   - type: Lock
-  - type: Anchorable
-    delay: 2
+  #- type: Anchorable
+  #  delay: 2
   - type: StaticPrice
     price: 80
   - type: ResistLocker

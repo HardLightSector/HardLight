@@ -1,27 +1,27 @@
 # region Security
 uplink-security-hardsuit-name = Bronze Patrol Suit
-uplink-security-hardsuit-desc = The standard-issue NFSD space proof suit for patrol duty. This bronze variant has cadet rank markings.
+uplink-security-hardsuit-desc = The standard-issue Colsec space proof suit for patrol duty. This bronze variant has cadet rank markings.
 
 uplink-security-hardsuit-patrol-name = Silver Patrol Suit
-uplink-security-hardsuit-patrol-desc = The standard-issue NFSD space proof suit for patrol duty. This silver variant has officer rank markings.
+uplink-security-hardsuit-patrol-desc = The standard-issue Colsec space proof suit for patrol duty. This silver variant has officer rank markings.
 
 uplink-security-hardsuit-brigmedic-name = Brigmedic Patrol Suit
-uplink-security-hardsuit-brigmedic-desc = The standard-issue NFSD space proof suit for patrol duty. This brighter variant has brigmedic rank markings.
+uplink-security-hardsuit-brigmedic-desc = The standard-issue Colsec space proof suit for patrol duty. This brighter variant has brigmedic rank markings.
 
 uplink-security-hardsuit-warden-name = Gold Patrol Suit
-uplink-security-hardsuit-warden-desc = The standard-issue NFSD space proof suit for patrol duty. This gold variant has supervisor rank markings.
+uplink-security-hardsuit-warden-desc = The standard-issue Colsec space proof suit for patrol duty. This gold variant has supervisor rank markings.
 
 uplink-security-hardsuit-experimental-name = Experimental Combat Suit
-uplink-security-hardsuit-experimental-desc = A very heavily armored NFSD suit. This space proof marvel of engineering uses state of the art alloys to provide immense protection while sacrificing little mobility.
+uplink-security-hardsuit-experimental-desc = A very heavily armored Colsec suit. This space proof marvel of engineering uses state of the art alloys to provide immense protection while sacrificing little mobility.
 
 uplink-security-hardsuit-sheriff-name = Sheriff's Patrol Suit
-uplink-security-hardsuit-sheriff-desc = The standard-issue NFSD space proof suit for patrol duty. This gold variant has sheriff rank markings.
+uplink-security-hardsuit-sheriff-desc = The standard-issue Colsec space proof suit for patrol duty. This gold variant has sheriff rank markings.
 
 uplink-security-hardsuit-combat-name = Combat Suit
-uplink-security-hardsuit-combat-desc = A heavily armored NFSD suit. Space proof, with thick armor plating at the expense of mobility.
+uplink-security-hardsuit-combat-desc = A heavily armored Colsec suit. Space proof, with thick armor plating at the expense of mobility.
 
 uplink-security-hardsuit-commmand-name = Command Combat Suit
-uplink-security-hardsuit-commmand-desc = A heavily armored NFSD suit. Space proof, with thick armor plating at the expense of mobility. This variant has supervisor rank markings.
+uplink-security-hardsuit-commmand-desc = A heavily armored Colsec suit. Space proof, with thick armor plating at the expense of mobility. This variant has supervisor rank markings.
 
 uplink-security-lethalarmory-name = Lethal Armory Stock Crate
 uplink-security-lethalarmory-desc = A crate containing weapons necessary to fill an armory.
@@ -75,14 +75,14 @@ uplink-security-holo-desc = A battery powered holoprojecter that places temporar
 uplink-security-jetpack-name = Jetpack
 uplink-security-jetpack-desc = A pre-filled jetpack for EVA. Comes in a fashionable green.
 
-uplink-security-magboots-name = NFSD Magboots
+uplink-security-magboots-name = Colsec Magboots
 uplink-security-magboots-desc = Light weight magboots designed to keep the wearer grounded in low and no gravity environments.
 
-uplink-security-techfab-name = NFSD Techfab
-uplink-security-techfab-desc = A circuit board for a NFSD Techfab. Allows the production of ammunition, magazines, weapons, and numerous other utilities. Uses raw resources. Can be upgraded.
+uplink-security-techfab-name = Colsec Techfab
+uplink-security-techfab-desc = A circuit board for a Colsec Techfab. Allows the production of ammunition, magazines, weapons, and numerous other utilities. Uses raw resources. Can be upgraded.
 
-uplink-security-key-name = NFSD Encryption Keys
-uplink-security-key-desc = A box of 4 encryption keys that give access to the NFSD radio channel.
+uplink-security-key-name = Colsec Encryption Keys
+uplink-security-key-desc = A box of 4 encryption keys that give access to the Colsec radio channel.
 
 uplink-security-emprocket-name = EMP Rocket
 uplink-security-emprocket-desc = An EMP rocket for the RPG-7.
@@ -185,8 +185,8 @@ uplink-security-stingergrenade-box-desc = A box containing 4 stinger grenades.
 uplink-security-breachingcharge-box-name = Breaching Charge Box
 uplink-security-breachingcharge-box-desc = A box containing 4 breaching charges.
 
-uplink-security-hoverbike-name = NFSD Hoverbike Flatpack
-uplink-security-hoverbike-desc = Flatpack containing NFSD issued turbine with bike handles. Keys already slotted in the ignition. Very safe.
+uplink-security-hoverbike-name = Colsec Hoverbike Flatpack
+uplink-security-hoverbike-desc = Flatpack containing Colsec issued turbine with bike handles. Keys already slotted in the ignition. Very safe.
 
 uplink-security-trackingdart-bundle-name = Tracking Dart Bundle
 uplink-security-trackingdart-bundle-desc = A bundle containing a Lake type launcher, 3 tracking darts and 3 pinpointers.

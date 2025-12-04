@@ -95,13 +95,13 @@
     - id: ClosetSkeleton
     - id: DragonSpawn
     - id: KingRatMigration
-    - id: NinjaSpawn
+    #- id: NinjaSpawn
     - id: ParadoxCloneSpawn
     #- id: RevenantSpawn
     - id: SleeperAgents
     - id: SleeperRevolutionaries
     - id: ZombieOutbreak
-    - id: LoneOpsSpawn
+    #- id: LoneOpsSpawn
     #- id: WizardSpawn
     - id: LoneOpsSpawn
     - id: UnknownShuttleManOWar
@@ -738,7 +738,7 @@
   - type: StationEvent
     earliestStart: 0
     minimumPlayers: 20
-    maxOccurrences: 1 # this event has diminishing returns on interesting-ness, so we cap it
+    maxOccurrences: 2 # this event has diminishing returns on interesting-ness, so we cap it
     weight: 5
   - type: MobReplacementRule
 
@@ -771,7 +771,7 @@
     earliestStart: 0
     duration: 1
     minimumPlayers: 1
-    maxOccurrences: 2
+    maxOccurrences: 15
     weight: 10
   - type: RandomSpawnRule
     prototype: RandomSatchelSpawner
@@ -938,7 +938,7 @@
     earliestStart: 20
     weight: 5
     duration: 35
-    maximumPlayers: 20
+    maximumPlayers: 40
     reoccurrenceDelay: 180
   - type: BluespaceCargoRule
     spawnerPrototype: CrateFoodMcCargo
@@ -957,7 +957,7 @@
     duration: 35
     earliestStart: 90
     minimumPlayers: 10 # Floof - we ball
-    reoccurrenceDelay: 480 # 8 hours
+    reoccurrenceDelay: 180 # 3 hours
   - type: BluespaceCargoRule
     spawnerPrototype: CrateSyndicateSurplusBundle
     maximumSpawns: 1
@@ -1027,8 +1027,8 @@
       grid: !type:GridSpawnGroup
         nameDataset: NamesScrap
         nameDatasetType: Nanotrasen # they're shuttles
-        minCount: 2
-        maxCount: 3
+        minCount: 3
+        maxCount: 5
         minimumDistance: 1000
         maximumDistance: 2000
         addComponents:
@@ -1070,7 +1070,7 @@
     weight: 5
     duration: 1350
     maxDuration: 1560
-    reoccurrenceDelay: 360 # 6 hours
+    reoccurrenceDelay: 120 # 2 hours
 #    requiredJobs:
 #      Sheriff: 1
   - type: BluespaceErrorRule
@@ -1113,7 +1113,7 @@
     weight: 5
     duration: 1020
     maxDuration: 1350
-    reoccurrenceDelay: 360 # 6 hours
+    reoccurrenceDelay: 120 # 2 hours
 #    requiredJobs:
 #      Sheriff: 1
   - type: BluespaceErrorRule
@@ -1156,7 +1156,7 @@
     weight: 5
     duration: 590
     maxDuration: 780
-    reoccurrenceDelay: 360 # 6 hours
+    reoccurrenceDelay: 180 # 3 hours
 #    requiredJobs:
 #      Sheriff: 1
   - type: BluespaceErrorRule
@@ -1199,7 +1199,7 @@
     weight: 1
     duration: 1800
     maxDuration: 2400
-    reoccurrenceDelay: 360 # 6 hours
+    reoccurrenceDelay: 120 # 2 hours
   - type: BluespaceErrorRule
     groups:
       grid: !type:GridSpawnGroup
@@ -1315,7 +1315,7 @@
     weight: 1
     duration: 1800
     maxDuration: 2400
-    maxOccurrences: 1
+    reoccurrenceDelay: 120 # 2 Hours
   - type: BluespaceErrorRule
     groups:
       grid: !type:GridSpawnGroup
@@ -1353,7 +1353,7 @@
     weight: 5
     duration: 900
     maxDuration: 1800
-    reoccurrenceDelay: 240 # once per 4 hours
+    reoccurrenceDelay: 120 # once per 2 hours
   - type: BluespaceErrorRule
     groups:
       grid: !type:GridSpawnGroup
@@ -1390,7 +1390,7 @@
     weight: 5
     duration: 1800 # 30 minutes
     maxDuration: 1800 # 30 minutes
-    reoccurrenceDelay: 120 # 2 hours (some variety - at worst, alternates between four dungeon types)
+    reoccurrenceDelay: 60 # 1 hour (some variety - at worst, alternates between four dungeon types)
   - type: ActiveRadio
     channels:
     - Supply
@@ -1692,12 +1692,14 @@
     duration: 60
   - type: VentCrittersRule
     entries:
+    - id: XenoEggSpawner
+      prob: 0.01
     - id: MobXenoPraetorianNPC
-      prob: 0.05
+      prob: 0.001
     - id: MobXenoDroneNPC
       prob: 0.001
     - id: MobXenoQueenNPC
-      prob: 0.001
+      prob: 0.0001
     - id: MobXenoRavagerNPC
       prob: 0.001
     - id: MobXenoRunnerNPC

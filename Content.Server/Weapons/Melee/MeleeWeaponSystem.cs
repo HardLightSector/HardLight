@@ -86,8 +86,24 @@ public sealed class MeleeWeaponSystem : SharedMeleeWeaponSystem
 
     protected override void DoDamageEffect(List<EntityUid> targets, EntityUid? user, TransformComponent targetXform)
     {
-        var filter = Filter.Pvs(targetXform.Coordinates, entityMan: EntityManager).RemoveWhereAttachedEntity(o => o == user);
-        _color.RaiseEffect(Color.Red, targets, filter);
+        // Filter out any deleted entities that may have been destroyed by the damage
+        var validTargets = targets.Where(t => !Deleted(t)).ToList();
+        
+        if (validTargets.Count == 0)
+            return;
+        
+        // Use coordinates from the targetXform if valid, otherwise fall back to user coordinates
+        var coordinates = targetXform.Coordinates;
+        if (!coordinates.IsValid(EntityManager))
+        {
+            if (user != null && TryComp<TransformComponent>(user.Value, out var userXform))
+                coordinates = userXform.Coordinates;
+            else
+                return; // No valid coordinates available
+        }
+        
+        var filter = Filter.Pvs(coordinates, entityMan: EntityManager).RemoveWhereAttachedEntity(o => o == user);
+        _color.RaiseEffect(Color.Red, validTargets, filter);
     }
 
     public override void DoLunge(EntityUid user, EntityUid weapon, Angle angle, Vector2 localPos, string? animation, bool predicted = true)

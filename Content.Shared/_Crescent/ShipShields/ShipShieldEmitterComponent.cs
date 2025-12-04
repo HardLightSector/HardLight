@@ -53,6 +53,9 @@ public sealed partial class ShipShieldEmitterComponent : Component
     [DataField]
     public bool Recharging = false;
 
+    // Note: Shield and Shielded are intentionally NOT DataFields - they reference entities
+    // that won't exist after deserialization. The system will recreate shields on load.
+
     /// <summary>
     /// Damage threshold that triggers overload protection.
     /// </summary>

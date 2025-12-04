@@ -27,6 +27,7 @@
           True: { visible: true }
           False: { visible: false }
   - type: InteractionOutline
+  - type: WorldLoader
   - type: Physics
     bodyType: Static
   - type: Transform

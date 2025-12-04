@@ -52,7 +52,15 @@ public sealed class SeedExtractorSystem : EntitySystem
 
         for (var i = 0; i < amount; i++)
         {
-            _botanySystem.SpawnSeedPacket(packetSeed, coords, args.User);
+            var seedPacket = _botanySystem.SpawnSeedPacket(packetSeed, coords, args.User);
+            
+            // Add ownership component to track who extracted this seed
+            // Store the player's NetUserId from their ActorComponent so ownership persists across body changes
+            if (TryComp<ActorComponent>(args.User, out var actor))
+            {
+                var ownerComp = EnsureComp<ExtractedSeedOwnerComponent>(seedPacket);
+                ownerComp.Owner = actor.PlayerSession.UserId;
+            }
         }
     }
 

@@ -19,9 +19,9 @@
     sprite: _NF/Clothing/Ears/Headsets/pilot.rsi
 
 - type: entity
-  parent: ClothingHeadsetAlt
+  parent: [ ClothingHeadsetAlt, BaseC3ContrabandUnredeemable ]
   id: ClothingHeadsetAltNfsdBrown
-  name: NFSD over-ear headset
+  name: TSFMC over-ear headset
   components:
   - type: ContainerFill
     containers:

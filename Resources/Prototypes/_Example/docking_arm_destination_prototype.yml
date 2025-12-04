@@ -1,0 +1,17 @@
+# Manual Docking Arm Destination Prototype
+# Use this to create a docking arm destination without needing DockingArmGenerator
+# This creates a virtual gateway destination that spawns a grid when selected
+
+- type: entity
+  id: DockingArmDestinationExample
+  name: Example Docking Arm
+  description: A manually-configured docking arm destination
+  components:
+  - type: DockingArmDestination
+    gridPath: /Maps/Structures/dock.yml
+    locked: false  # Set to true to require unlocking
+    loaded: false  # Will be set to true after first spawn
+    name: Example Docking Arm
+  - type: Gateway
+    enabled: true
+

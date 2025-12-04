@@ -19,8 +19,8 @@ uplink-security-surgery-duffel-desc = A large duffel bag for holding extra medic
 uplink-security-thrusterkit-name = Thruster Upgrade Kit
 uplink-security-thrusterkit-desc = Contains 12 super capaciters. Perfect for upgrading three thrusters.
 
-uplink-security-hardsuit-command-name = NFSD command combat suit
-uplink-security-hardsuit-command-desc = A heavily armored NFSD suit. Space proof, with thick armor plating at the expense of mobility. This variant has supervisor rank markings.
+uplink-security-hardsuit-command-name = Colsec command combat suit
+uplink-security-hardsuit-command-desc = A heavily armored Colsec suit. Space proof, with thick armor plating at the expense of mobility. This variant has supervisor rank markings.
 # Security Vending machine
 
 # Weapons

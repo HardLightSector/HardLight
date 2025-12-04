@@ -1,0 +1,63 @@
+- type: entity
+  parent: BaseItem
+  id: BluespaceBucket
+  name: bluespace bucket
+  description: For the janitor who has everything, or the biggest of spills.  Do not wear on head.
+  components:
+  - type: Drink
+    solution: bucket
+    ignoreEmpty: true
+  - type: Clickable
+  - type: Sprite
+    sprite: _HL/Objects/Tools/bluespacebucket.rsi
+    layers:
+    - state: icon
+    - map: ["enum.SolutionContainerLayers.Fill"]
+      state: fill-1
+      visible: false
+  - type: Item
+    size: Normal
+  - type: SolutionContainerManager
+    solutions:
+      bucket:
+        maxVol: 2500
+  - type: MixableSolution
+    solution: bucket
+  - type: SolutionTransfer
+    transferAmount: 1000
+    maxTransferAmount: 2500
+    minTransferAmount: 5
+    canChangeTransferAmount: true
+  - type: UserInterface
+    interfaces:
+      enum.TransferAmountUiKey.Key:
+        type: TransferAmountBoundUserInterface
+  - type: MeleeWeapon
+    soundNoDamage:
+      path: "/Audio/Effects/Fluids/splat.ogg"
+    damage:
+      types:
+        Blunt: 0
+  - type: Spillable
+    solution: bucket
+  - type: DrawableSolution
+    solution: bucket
+  - type: RefillableSolution
+    solution: bucket
+  - type: DrainableSolution
+    solution: bucket
+  - type: SolutionItemStatus
+    solution: bucket
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 3
+    fillBaseName: fill-
+  - type: ExaminableSolution
+    solution: bucket
+  - type: Tag
+    tags:
+      - Bucket
+  # - type: PhysicalComposition # Frontier
+  #   materialComposition:
+  #     Plastic: 50
+  - type: DnaSubstanceTrace

@@ -11,9 +11,9 @@
 - type: pointOfInterest
   id: Cove
   parent: BasePOI
-  name: Pirate Cove
-  minimumDistance: 10000
-  maximumDistance: 15000
+  name: Rogue Insurgency Hideout
+  minimumDistance: 12500 # Mono
+  maximumDistance: 18500 # Mono
   spawnGamePreset: [ NFPirate ]
   spawnGroup: Required
   gridPath: /Maps/_NF/POI/cove.yml
@@ -21,8 +21,8 @@
   addComponents:
   - type: IFF
     color: "#C83737"
-    flags: [HideLabel, Hide]
-    readOnly: false
+    flags: [HideLabel]
+    readOnly: true # mono
 
 - type: gameMap
   id: Cove

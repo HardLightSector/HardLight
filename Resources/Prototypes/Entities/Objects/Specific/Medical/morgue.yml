@@ -121,6 +121,8 @@
   - type: Sprite
     sprite: Objects/Materials/materials.rsi
     state: ash
+  - type: TimedDespawn
+    lifetime: 120
   - type: Tag
     tags:
     - Trash

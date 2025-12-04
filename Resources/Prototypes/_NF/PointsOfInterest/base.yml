@@ -1,8 +1,8 @@
 - type: pointOfInterest
   id: BasePOI
   abstract: true
-  minimumDistance: 2000 # Some sane defaults
-  maximumDistance: 4000
+  minimumDistance: 4000 # Some sane defaults
+  maximumDistance: 8000
   spawnGamePreset: [ NFAdventure, NFPirate ]
   spawnGroup: Optional
   addComponents:

@@ -61,7 +61,7 @@
 - type: entity
   id: IntercomNfsd
   parent: IntercomSecurity
-  suffix: NFSD
+  suffix: TSFMC
   components:
   - type: ContainerFill
     containers:

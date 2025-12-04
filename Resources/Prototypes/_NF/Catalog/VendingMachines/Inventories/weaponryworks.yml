@@ -126,7 +126,7 @@
   id: WeaponryWorksVendPOIMercInventory
   startingInventory:
 # SMGs
-    WeaponSubMachineGunC20rPMC: 4294967295
+    #WeaponSubMachineGunC20rPMC: 4294967295
     WeaponSubMachineGunWt550PMC: 4294967295
     WeaponRifleLecterPMC: 4294967295
     WeaponSubMachineGunDrozdPMC: 4294967295

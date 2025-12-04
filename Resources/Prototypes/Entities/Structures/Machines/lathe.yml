@@ -286,6 +286,7 @@
   - type: Machine
     board: AutolatheMachineCircuitboard
   - type: MaterialStorage
+    canEjectStoredMaterials: true
     whitelist:
       tags:
       - Sheet
@@ -372,6 +373,7 @@
   - type: Machine
     board: ProtolatheMachineCircuitboard
   - type: MaterialStorage
+    canEjectStoredMaterials: true
     whitelist:
       tags:
       - Sheet
@@ -489,6 +491,7 @@
     emagDynamicPacks: # Frontier: empty list
     - SecurityBoards # Frontier
   - type: MaterialStorage
+    canEjectStoredMaterials: true
     whitelist:
       tags:
       - Sheet
@@ -565,6 +568,7 @@
     - BorgArmorEnergy
     - BorgArmorPhys
   - type: MaterialStorage
+    canEjectStoredMaterials: true
     whitelist:
       tags:
       - Sheet
@@ -604,6 +608,7 @@
   - type: Machine
     board: BiofabricatorMachineCircuitboard
   - type: MaterialStorage
+    canEjectStoredMaterials: true
     ignoreColor: true
     whitelist:
       tags:
@@ -623,7 +628,7 @@
 
 - type: entity
   id: SecurityTechFab
-  parent: BaseLatheLube
+  parent: [ BaseLatheLube, BaseC3ContrabandUnredeemable ]
   name: security techfab
   description: Prints equipment for use by security crew.
   categories: [ HideSpawnMenu ] # Frontier
@@ -648,6 +653,7 @@
     idleState: icon
     runningState: icon
     staticPacks:
+    - SecurityAmmoStatic
     - SecurityEquipmentStatic
     - SecurityPracticeStatic
     - CivilianAmmoRecipePack
@@ -664,7 +670,16 @@
     - SMCybernetics
     # Mono - Mechs
     - WeaponMechCombatArsenal
+    - S2Mechs
+    - S2MechBoards
+    - SpaceMechaWeapons
+    - MonoAdvancedShuttleComponents
+    - UniversalMissileAmmo
+    - UniversalRailgunAmmo
+    - UniversalShellAmmo
+    - UniversalOrdinance
   - type: MaterialStorage
+    canEjectStoredMaterials: true
     whitelist:
       tags:
       - Sheet
@@ -716,6 +731,7 @@
   - type: DeviceLinkSink
     ports:
       - FillbotAnyItem
+  - type: OreSiloClient
 
 - type: entity
   id: MedicalTechFab
@@ -881,6 +897,7 @@
     - NFBioGenSeedsMedicalStatic # Frontier
     - NFBioGenSoil # Frontier
     - NFBioGenAnimalCubesStatic #Frontier
+  - type: OreSiloClient #Hardlight
   # Frontier: emag lathe recipes, item mapper
   - type: EmagLatheRecipes
     emagStaticPacks:

@@ -1,0 +1,13 @@
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatSolidHeadband
+  name: solid headband
+  description: A fashionable headband in a solid color.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/solidheadband.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/solidheadband.rsi
+  - type: Tag
+    tags:
+    - ClothMade

@@ -157,8 +157,6 @@
   - type: StaticPrice
     price: 30
   - type: DnaSubstanceTrace
-  - type: TrashOnSolutionEmpty # Frontier
-    solution: beaker # Frontier
 
 - type: entity
   name: beaker

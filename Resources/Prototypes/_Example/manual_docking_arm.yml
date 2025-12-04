@@ -1,0 +1,39 @@
+# Example: How to manually create a docking arm destination
+# This approach does NOT require a DockingArmGenerator component on the station
+
+# Step 1: Create a destination map file (e.g., Maps/Misc/docking_arm_dest.yml)
+# with a small grid containing a Gateway entity
+
+# Step 2: Load that map and add DockingArmDestinationComponent to it
+
+# Here's an example you can paste directly into your main map file:
+
+# entities:
+# - uid: 1000  # Your main station
+#   type: BaseStation
+#   components:
+#   - type: Transform
+#     pos: 0,0
+#
+# - uid: 2000  # Docking arm destination map
+#   type: entity
+#   components:
+#   - type: Map
+#   - type: MapGrid
+#   - type: DockingArmDestination
+#     gridPath: /Maps/Structures/my_docking_arm.yml  # Path to the actual docking arm structure
+#     locked: false  # Set to false so it's immediately available
+#     loaded: false  # Will become true after first spawn
+#   - type: Transform
+#
+# - uid: 2001  # Gateway on the destination map
+#   type: Gateway
+#   components:
+#   - type: Transform
+#     parent: 2000  # Parent to the destination map
+#     pos: 0,0
+#   - type: Gateway
+#     name: "Docking Arm Alpha"
+#     enabled: true
+
+# IMPORTANT: You also need to create the actual docking arm grid file at the gridPath location

@@ -18,6 +18,7 @@
     containers:
       bodypart: !type:Container
         ents: []
+  - type: AntiRottingContainer
   - type: StaticPrice
     price: 5 # Why will anyone pay big money for animal organs
   - type: Tag

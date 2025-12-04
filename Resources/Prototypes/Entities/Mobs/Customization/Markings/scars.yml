@@ -2,7 +2,7 @@
   id: ScarEyeRight
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid] # Frontier: added Felinid, Oni, Goblin, Rodentia
+  speciesRestriction: [Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune] # Frontier: added Felinid, Oni, Goblin, Rodentia
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/scars.rsi
@@ -12,7 +12,7 @@
   id: ScarEyeLeft
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid] # Frontier: added Felinid, Oni, Goblin, Rodentia
+  speciesRestriction: [Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune] # Frontier: added Felinid, Oni, Goblin, Rodentia
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/scars.rsi
@@ -22,7 +22,7 @@
   id: ScarTopSurgeryShort
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid] # Frontier: added Felinid, Oni, Goblin
+  speciesRestriction: [Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune] # Frontier: added Felinid, Oni, Goblin
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/scars.rsi
@@ -32,7 +32,7 @@
   id: ScarTopSurgeryLong
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid] # Frontier: added Felinid, Oni, Goblin
+  speciesRestriction: [Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune] # Frontier: added Felinid, Oni, Goblin
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/scars.rsi
@@ -42,7 +42,7 @@
   id: ScarChest
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid] # Frontier: added Felinid, Oni, Goblin
+  speciesRestriction: [Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune] # Frontier: added Felinid, Oni, Goblin
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/scars.rsi

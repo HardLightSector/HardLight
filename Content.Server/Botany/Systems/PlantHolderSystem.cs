@@ -119,6 +119,20 @@ public sealed class PlantHolderSystem : EntitySystem
                                 ? "plant-holder-component-plant-old-adjective"
                                 : "plant-holder-component-plant-unhealthy-adjective"))));
                 }
+
+                // For future reference, mutations should only appear on examine if they apply to a plant, not to produce.
+
+                if (component.Seed.Ligneous)
+                    args.PushMarkup(Loc.GetString("mutation-plant-ligneous"));
+
+                if (component.Seed.TurnIntoKudzu)
+                    args.PushMarkup(Loc.GetString("mutation-plant-kudzu"));
+
+                if (component.Seed.CanScream)
+                    args.PushMarkup(Loc.GetString("mutation-plant-scream"));
+
+                if (component.Seed.Viable == false)
+                    args.PushMarkup(Loc.GetString("mutation-plant-unviable"));
             }
             else
             {
@@ -164,6 +178,18 @@ public sealed class PlantHolderSystem : EntitySystem
         {
             if (component.Seed == null)
             {
+                // Check if this seed was extracted and if so, verify ownership
+                if (TryComp(args.Used, out ExtractedSeedOwnerComponent? ownerComp))
+                {
+                    // Compare the player's NetUserId from their ActorComponent with the stored owner
+                    if (!TryComp<ActorComponent>(args.User, out var actor) || ownerComp.Owner != actor.PlayerSession.UserId)
+                    {
+                        _popup.PopupCursor(Loc.GetString("plant-holder-component-seed-not-yours"),
+                            args.User, PopupType.MediumCaution);
+                        return;
+                    }
+                }
+
                 // Frontier
                 if (TryComp<BindToStationComponent>(entity.Owner, out var bindToStation)
                     && bindToStation.Enabled

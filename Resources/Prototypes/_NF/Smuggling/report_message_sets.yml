@@ -6,18 +6,18 @@
     messages:
     - hourlyThreshold: 1
       type: General
-      message: smuggling-report-nfsd-general
+      message: smuggling-report-Colsec-general
     - hourlyThreshold: 2
       type: DeadDropStationWithRandomAlt
-      message: smuggling-report-nfsd-alternative
+      message: smuggling-report-Colsec-alternative
     - type: DeadDropStation
-      message: smuggling-report-nfsd-specific
+      message: smuggling-report-Colsec-specific
   - prob: 0.8
     minDelay: 14
     maxDelay: 16
     messages:
     - type: PodLocation
-      message: smuggling-report-nfsd-pod
+      message: smuggling-report-Colsec-pod
       maxError: 900 # Should be slightly larger than the giant radar range
 
 - type: smugglingReportMessageSet

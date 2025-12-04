@@ -7,7 +7,7 @@
 
 - type: radioChannel
   id: Nfsd
-  name: chat-radio-nfsd
+  name: chat-radio-Colsec
   keycode: 'g'
   frequency: 1023
   color: "#7eac69" 

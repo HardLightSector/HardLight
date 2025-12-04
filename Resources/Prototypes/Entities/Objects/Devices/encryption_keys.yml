@@ -63,7 +63,7 @@
     - state: colcomm_label
 
 - type: entity
-  parent: [EncryptionKey, BaseC2ContrabandUnredeemable] # Frontier: BaseColcommCommandContraband<BaseC2ContrabandUnredeemable
+  parent: [EncryptionKey, BaseC3ContrabandUnredeemable] # Frontier: BaseColcommCommandContraband<BaseC2ContrabandUnredeemable
   id: EncryptionKeyStationMaster
   name: station master encryption key
   categories: [ DoNotMap ] # Frontier
@@ -88,7 +88,7 @@
     - state: cap_label
 
 - type: entity
-  parent: [EncryptionKey, BaseC2ContrabandUnredeemable] # Frontier: BaseCommandContraband<BaseC2ContrabandUnredeemable
+  parent: [EncryptionKey, BaseC3ContrabandUnredeemable] # Frontier: BaseCommandContraband<BaseC2ContrabandUnredeemable
   id: EncryptionKeyCommand
   name: command encryption key
   categories: [ DoNotMap ] # Frontier

@@ -62,7 +62,7 @@
   parent: [ClothingHeadBase, BaseC2ContrabandUnredeemable] # Frontier: added BaseC2ContrabandUnredeemable
   id: ClothingHeadHatSecurityTrooper
   name: trooper hat
-  description: A campaign hat for the Nanotrasen Troopers, comes with a case too, but you lost it.
+  description: A campaign hat for the TSF Troopers.
   components:
   - type: Sprite
     sprite: Clothing/Head/Hats/security_trooper_hat.rsi
@@ -1217,14 +1217,3 @@
     sprite: Clothing/Head/Hats/beret_medic.rsi
   - type: Clothing
     sprite: Clothing/Head/Hats/beret_medic.rsi
-
-- type: entity
-  parent: ClothingHeadBase
-  id: ClothingHeadHatSolidHeadband
-  name: solid headband
-  description: "You'll feel like you're Invisible while wearing this! (DISCLAIMER: DOES NOT ACTUALLY MAKE THE WEARER INVISIBLE)"
-  components:
-  - type: Sprite
-    sprite: Clothing/Head/Hats/solidheadband.rsi
-  - type: Clothing
-    sprite: Clothing/Head/Hats/solidheadband.rsi

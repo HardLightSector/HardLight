@@ -1,0 +1,27 @@
+# Syndicate Hardsuit Stub
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitSyndicate
+  name: syndicate hardsuit
+  description: A tactical hardsuit used by syndicate operatives.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Hardsuits/syndicate.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Hardsuits/syndicate.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitBasic
+
+# Pirate SCAF Hardsuit Stub
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitPirateScaf
+  name: pirate SCAF hardsuit
+  description: A rugged hardsuit favored by SCAF pirate crews.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Hardsuits/piratecaptain.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Hardsuits/piratecaptain.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitPirateCap

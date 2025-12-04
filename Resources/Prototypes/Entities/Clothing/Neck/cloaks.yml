@@ -99,7 +99,7 @@
   parent: ClothingNeckBase
   id: ClothingNeckCloakNanotrasen
   name: nanotrasen cloak
-  description: A stately blue cloak to represent NanoTrasen.
+  description: A stately blue cloak to represent the NT.
   components:
   - type: Sprite
     sprite: Clothing/Neck/Cloaks/nanotrasen.rsi
@@ -212,7 +212,7 @@
   parent: ClothingNeckBase
   id: ClothingNeckCloakAce
   name: pilot's cloak
-  description: Cloak awarded to Nanotrasen's finest space aces.
+  description: Cloak awarded to the TSF's finest space aces.
   components:
   - type: Sprite
     sprite: Clothing/Neck/Cloaks/ace.rsi

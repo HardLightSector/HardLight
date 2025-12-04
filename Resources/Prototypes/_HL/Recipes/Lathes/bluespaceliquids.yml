@@ -1,0 +1,21 @@
+- type: latheRecipe
+  id: BluespaceBucket
+  completetime: 5
+  result: BluespaceBucket
+  materials:
+    Steel: 500
+    Plastic: 500
+    Plasma: 125
+    Silver: 125
+    Bluespace: 250
+
+- type: latheRecipe
+  id: BluespaceBarrel
+  completetime: 30
+  result: BluespaceBarrel
+  materials:
+    Steel: 3000
+    Plastic: 3000
+    Plasma: 750
+    Silver: 750
+    Bluespace: 1500

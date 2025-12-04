@@ -97,26 +97,44 @@ public sealed partial class SpaceArtillerySystem : EntitySystem
     {
         var xform = Transform(uid);
 
+        if (xform.GridUid == null && !xform.MapUid.HasValue)
+        {
+            return;
+        }
+
+        var parentGrid = xform.GridUid;
+        if (!xform.Anchored)
+        {
+            return;
+        }
+
         if (!_gun.TryGetGun(uid, out var gunUid, out var gun))
         {
             OnMalfunction(uid, component);
             return;
         }
 
-    var worldPosX = _xform.GetWorldPosition(uid).X;
-    var worldPosY = _xform.GetWorldPosition(uid).Y;
-    var worldRot = (float)_xform.GetWorldRotation(uid).Theta + MathF.PI;
-    var targetSpot = new Vector2(worldPosX - DISTANCE * MathF.Sin(worldRot), worldPosY + DISTANCE * MathF.Cos(worldRot));
+        // Check if ShootCoordinates is already set (e.g., by fire control system)
+        // If not, calculate a default target based on the gun's facing direction
+        EntityCoordinates targetCoordinates;
 
-    var targetCoordinates = new EntityCoordinates(xform.MapUid!.Value, targetSpot);
+        if (gun.ShootCoordinates != null)
+        {
+            // Use the coordinates provided by the fire control system
+            targetCoordinates = gun.ShootCoordinates.Value;
+        }
+        else
+        {
+            // No fire control - calculate target based on gun's facing direction
+            var localRot = xform.LocalRotation;
+            var localDirection = localRot.ToVec();
+            var localTargetPos = xform.LocalPosition + localDirection * DISTANCE;
+            targetCoordinates = new EntityCoordinates(xform.ParentUid, localTargetPos);
+            gun.ShootCoordinates = targetCoordinates;
+        }
 
-        // We need to set the ShootCoordinates for the gun component
-        // This is important to ensure it uses the proper calculations in SharedGunSystem
-    gun.ShootCoordinates = targetCoordinates;
-
-        // Call AttemptShoot with the correct signature that includes target coordinates
-        // This will eventually call GunSystem.Shoot which correctly handles grid velocity
-    _gun.AttemptShoot(uid, gunUid, gun, targetCoordinates);
+        // Call AttemptShoot with the target coordinates
+        _gun.AttemptShoot(uid, gunUid, gun, targetCoordinates);
     }
 
     private void OnShotEvent(EntityUid uid, SpaceArtilleryComponent component, AmmoShotEvent args)

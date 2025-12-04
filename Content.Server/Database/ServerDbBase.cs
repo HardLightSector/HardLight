@@ -245,6 +245,9 @@ namespace Content.Server.Database
                 loadouts[role.RoleName] = loadout;
             }
 
+            // Get the company with fallback to default "None"
+            var company = profile.Company ?? "None";
+
             // Company field removed; ignore if present in older data.
 
             // Validate height and width to prevent sprite scale errors
@@ -277,7 +280,8 @@ namespace Content.Server.Database
                 (PreferenceUnavailableMode) profile.PreferenceUnavailable,
                 antags.ToHashSet(),
                 traits.ToHashSet(),
-                loadouts);
+                loadouts,
+                company);
         }
 
         private static Profile ConvertProfiles(HumanoidCharacterProfile humanoid, int slot, Profile? profile = null)
@@ -310,7 +314,7 @@ namespace Content.Server.Database
             profile.Markings = markings;
             profile.Slot = slot;
             profile.PreferenceUnavailable = (DbPreferenceUnavailableMode) humanoid.PreferenceUnavailable;
-            // Company property no longer exists on profile/humanoid; skipped.
+            profile.Company = humanoid.Company;
 
             profile.Jobs.Clear();
             profile.Jobs.AddRange(

@@ -43,7 +43,7 @@
   parent: PosterBase
   id: NFPosterLegitWantedClarpy
   name: "Wanted: Clarpy"
-  description: Wanted for piracy and assault. If you can help end this biting spree, please contact the NFSD.
+  description: Wanted for insurgency. Spot them? You can help deal a blow to the Rogue Sector, contact the TSFMC.
   components:
   - type: Sprite
     sprite: _NF/Structures/Wallmounts/posters.rsi
@@ -63,7 +63,7 @@
   parent: PosterBase
   id: NFPosterLegitHaveYouSeenThisEgg
   name: "Have You Seen This Egg?"
-  description: Please inform NFSD personnel of any strange sightings like roaming space monsters, gigantic purple eggs, and strange notes left behind posters or vending machines.
+  description: Please inform TSF personnel of any strange sightings like roaming space monsters, gigantic purple eggs, and strange notes left behind posters or vending machines.
   components:
   - type: Sprite
     sprite: _NF/Structures/Wallmounts/posters.rsi
@@ -73,7 +73,7 @@
   parent: PosterBase
   id: NFPosterLegitGunTurnIn
   name: "Turn In Your Guns!"
-  description: The NFSD reminds you to give in your unregistered guns found planetside. The FUCs these are worth help keep the department running. Do your duty!
+  description: The Colsec reminds you to give in your unregistered guns found planetside. The FUCs these are worth help keep the department running. Do your duty!
   components:
   - type: Sprite
     sprite: _NF/Structures/Wallmounts/posters.rsi

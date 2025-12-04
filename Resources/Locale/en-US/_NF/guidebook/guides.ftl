@@ -17,7 +17,7 @@ guide-entry-preflightchecklist = Preflight Checklist
 guide-entry-offshore-gas-mining = Offshore Gas Mining
 
 # Security entries
-guide-entry-nfsd-smuggling = Smuggling
+guide-entry-Colsec-smuggling = Smuggling
 
 # Medical entries
 guide-entry-medical-bounties = Medical Bounties

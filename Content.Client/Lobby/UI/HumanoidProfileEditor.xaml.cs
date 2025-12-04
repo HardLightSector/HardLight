@@ -75,12 +75,11 @@ using Content.Client.Lobby.UI.Roles;
 using Content.Client.Message;
 using Content.Client.Players.PlayTimeTracking;
 using Content.Client.Sprite;
-using Content.Client.Stylesheets;
 using Content.Client.UserInterface.Systems.Guidebook;
 using Content.Client.UserInterface.Controls;
+using Content.Shared._Mono.Company;
 using Content.Shared.CCVar;
 using Content.Shared.Clothing;
-using Content.Shared.GameTicking;
 using Content.Shared.Guidebook;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
@@ -120,6 +119,7 @@ namespace Content.Client.Lobby.UI
         private readonly MarkingManager _markingManager;
         private readonly JobRequirementsManager _requirements;
         private readonly LobbyUIController _controller;
+        private readonly EntityWhitelistSystem _whitelist; // Frontier
         private readonly SpriteSystem _sprite;
 
         private FlavorText.FlavorText? _flavorText;
@@ -175,58 +175,6 @@ namespace Content.Client.Lobby.UI
 
         private ISawmill _sawmill;
 
-        /// <summary>
-        /// Safely sets a tab title for the specified child control by resolving its current index in the TabContainer.
-        /// This avoids hard-coding tab indices that can drift if tabs are added or removed dynamically.
-        /// </summary>
-        /// <param name="child">The direct child control of the TabContainer representing a tab.</param>
-        /// <param name="title">The title to set.</param>
-        private void SetTabTitleForChild(Control? child, string title)
-        {
-            if (child == null)
-                return;
-
-            for (var i = 0; i < TabContainer.ChildCount; i++)
-            {
-                if (TabContainer.GetChild(i) == child)
-                {
-                    TabContainer.SetTabTitle(i, title);
-                    return;
-                }
-            }
-        }
-
-        /// <summary>
-        /// Updates all tab titles based on the current TabContainer children.
-        /// </summary>
-        private void UpdateTabTitles()
-        {
-            // Appearance is the first tab in XAML
-            var appearanceTab = TabContainer.ChildCount > 0 ? TabContainer.GetChild(0) as Control : null;
-            SetTabTitleForChild(appearanceTab, Loc.GetString("humanoid-profile-editor-appearance-tab"));
-
-            // Jobs tab: ancestor of JobList
-            var jobsTab = JobList?.Parent?.Parent as Control;
-            SetTabTitleForChild(jobsTab, Loc.GetString("humanoid-profile-editor-jobs-tab"));
-
-            // Antags tab: ancestor of AntagList
-            var antagsTab = AntagList?.Parent?.Parent as Control;
-            SetTabTitleForChild(antagsTab, Loc.GetString("humanoid-profile-editor-antags-tab"));
-
-            // Traits tab: ancestor of TraitsList
-            var traitsTab = TraitsList?.Parent?.Parent as Control;
-            SetTabTitleForChild(traitsTab, Loc.GetString("humanoid-profile-editor-traits-tab"));
-
-            // Markings tab: explicitly named in XAML as MarkingsTab
-            SetTabTitleForChild(MarkingsTab, Loc.GetString("humanoid-profile-editor-markings-tab"));
-
-            // Flavor text (description) tab is dynamically added as the last child when enabled
-            if (_flavorText != null)
-            {
-                TabContainer.SetTabTitle(TabContainer.ChildCount - 1, Loc.GetString("humanoid-profile-editor-flavortext-tab"));
-            }
-        }
-
         public HumanoidProfileEditor(
             IClientPreferencesManager preferencesManager,
             IConfigurationManager configurationManager,
@@ -251,6 +199,8 @@ namespace Content.Client.Lobby.UI
             _resManager = resManager;
             _requirements = requirements;
             _controller = UserInterfaceManager.GetUIController<LobbyUIController>();
+
+            _whitelist = _entManager.System<EntityWhitelistSystem>(); // Frontier
             _sprite = _entManager.System<SpriteSystem>();
 
             ImportButton.OnPressed += args =>
@@ -557,14 +507,66 @@ namespace Content.Client.Lobby.UI
 
             #endregion Jobs
 
-            // Ensure tab titles match XAML order: 0 Appearance, 1 Jobs, 2 Antags, 3 Traits, 4 Markings
-            TabContainer.SetTabTitle(2, Loc.GetString("humanoid-profile-editor-antags-tab")); // Frontier: show proper label if present
-
             RefreshTraits();
+
+            #region Company
+
+            TabContainer.SetTabTitle(3, Loc.GetString("humanoid-profile-editor-company-tab"));
+
+            // Clear any existing items
+            CompanyButton.Clear();
+
+            var username = _playerManager.LocalPlayer?.Session?.Name; //Lua modified - company login support
+
+            // Add all companies from prototypes - use consistent sorting with UpdateCompanyControls
+            var companies = _prototypeManager.EnumeratePrototypes<CompanyPrototype>()
+                //.Where(c => !c.Disabled) // Filter out disabled companies
+                .Where(c => !c.Disabled || (username != null && c.Logins.Contains(username))) //Lua modified - company login support
+                .ToList();
+            companies.Sort((a, b) => string.Compare(a.Name, b.Name, StringComparison.Ordinal));
+
+            // Make sure "None" is first in the list
+            var noneIndex = companies.FindIndex(c => c.ID == "None");
+            if (noneIndex != -1)
+            {
+                var none = companies[noneIndex];
+                companies.RemoveAt(noneIndex);
+                companies.Insert(0, none);
+            }
+
+            // Add to TSF company dropdown
+            for (var i = 0; i < companies.Count; i++)
+            {
+                CompanyButton.AddItem(companies[i].Name, i);
+                Logger.Debug($"Added company to dropdown: {i} - {companies[i].ID} - {companies[i].Name}");
+            }
+
+            CompanyButton.OnItemSelected += args =>
+            {
+                CompanyButton.SelectId(args.Id);
+                if (args.Id >= 0 && args.Id < companies.Count)
+                {
+                    string companyId = companies[args.Id].ID;
+                    
+                    // Get the current profile for comparison
+                    var oldCompany = Profile?.Company;
+                    
+                    // Update the profile with the new company
+                    Profile = Profile?.WithCompany(companyId);
+                    
+                    // Debug logging to verify selection
+                    Logger.Debug($"Company changed from {oldCompany} to {companyId}");
+                    
+                    // Explicitly call SetDirty to update save button state
+                    SetDirty();
+                }
+            };
+
+            #endregion Company
 
             #region Markings
 
-            TabContainer.SetTabTitle(4, Loc.GetString("humanoid-profile-editor-markings-tab")); // Frontier: Markings is the 5th tab in XAML
+            TabContainer.SetTabTitle(4, Loc.GetString("humanoid-profile-editor-markings-tab"));
 
             Markings.OnMarkingAdded += OnMarkingChange;
             Markings.OnMarkingRemoved += OnMarkingChange;
@@ -574,9 +576,6 @@ namespace Content.Client.Lobby.UI
             #endregion Markings
 
             RefreshFlavorText();
-
-            // Ensure tab titles are correct after initial setup.
-            UpdateTabTitles();
 
             #region Dummy
 
@@ -603,6 +602,7 @@ namespace Content.Client.Lobby.UI
             SpeciesInfoButton.OnPressed += OnSpeciesInfoButtonPressed;
 
             UpdateSpeciesGuidebookIcon();
+            UpdateCompanyControls();
             IsDirty = false;
         }
 
@@ -647,7 +647,7 @@ namespace Content.Client.Lobby.UI
             EnforceSpeciesTraitRestrictions();
 
             var traits = _prototypeManager.EnumeratePrototypes<TraitPrototype>().OrderBy(t => Loc.GetString(t.Name)).ToList();
-            TabContainer.SetTabTitle(3, Loc.GetString("humanoid-profile-editor-traits-tab"));
+            TabContainer.SetTabTitle(2, Loc.GetString("humanoid-profile-editor-traits-tab"));
 
             if (traits.Count < 1)
             {
@@ -1169,15 +1169,32 @@ namespace Content.Client.Lobby.UI
 
         private void SetDirty()
         {
-            // If it equals default then reset the button.
-            if (Profile == null || _preferencesManager.Preferences?.SelectedCharacter.MemberwiseEquals(Profile) == true)
+            // If profile is null, we can't be dirty
+            if (Profile == null)
             {
                 IsDirty = false;
                 return;
             }
 
-            // TODO: Check if profile matches default.
-            IsDirty = true;
+            // If we have no selected character to compare against, we're dirty
+            if (_preferencesManager.Preferences?.SelectedCharacter == null)
+            {
+                IsDirty = true;
+                return;
+            }
+
+            // Get the selected character for comparison
+            var selectedCharacter = (HumanoidCharacterProfile)_preferencesManager.Preferences.SelectedCharacter;
+            
+            // Check explicitly if company changed
+            if (selectedCharacter.Company != Profile.Company)
+            {
+                IsDirty = true;
+                return;
+            }
+
+            // Check if entire profile matches
+            IsDirty = !selectedCharacter.MemberwiseEquals(Profile);
         }
 
         /// <summary>
@@ -1245,6 +1262,7 @@ namespace Content.Client.Lobby.UI
             UpdateHairPickers();
             UpdateCMarkingsHair();
             UpdateCMarkingsFacialHair();
+            UpdateCompanyControls();
 
             RefreshAntags();
             RefreshJobs();
@@ -2131,8 +2149,9 @@ namespace Content.Client.Lobby.UI
 
         private void UpdateSaveButton()
         {
-            SaveButton.Disabled = Profile is null || !IsDirty;
-            ResetButton.Disabled = Profile is null || !IsDirty;
+            var canSave = Profile is not null;
+            SaveButton.Disabled = !canSave || !IsDirty;
+            ResetButton.Disabled = !canSave || !IsDirty;
         }
 
         private void SetPreviewRotation(Direction direction)
@@ -2245,6 +2264,58 @@ namespace Content.Client.Lobby.UI
             _exporting = false;
             ImportButton.Disabled = false;
             ExportButton.Disabled = false;
+        }
+
+        private void UpdateCompanyControls()
+        {
+            if (Profile is null)
+                return;
+
+            var username = _playerManager.LocalPlayer?.Session?.Name; //Lua modified - company login support
+
+            var companies = _prototypeManager.EnumeratePrototypes<CompanyPrototype>()
+                //.Where(c => !c.Disabled) // Filter out disabled companies
+                .Where(c => !c.Disabled || (username != null && c.Logins.Contains(username))) //Lua modified - company login support
+                .ToList();
+            companies.Sort((a, b) => string.Compare(a.Name, b.Name, StringComparison.Ordinal));
+            
+            // Make sure "None" is first in the list
+            var noneIndex = companies.FindIndex(c => c.ID == "None");
+            if (noneIndex != -1)
+            {
+                var none = companies[noneIndex];
+                companies.RemoveAt(noneIndex);
+                companies.Insert(0, none);
+            }
+
+            Logger.Debug($"Updating company controls. Current profile company: {Profile.Company}");
+
+            // Find the company in the list and select it
+            bool found = false;
+            for (var i = 0; i < companies.Count; i++)
+            {
+                if (companies[i].ID != Profile.Company)
+                    continue; // Short circuit.
+
+                Logger.Debug($"Found company at index {i}: {companies[i].ID} - {companies[i].Name}");
+                CompanyButton.SelectId(i);
+
+                found = true;
+                break;
+            }
+            
+            // If company wasn't found, default to "None" (index 0)
+            if (!found)
+            {
+                Logger.Debug($"Company {Profile.Company} not found in list, defaulting to None");
+                CompanyButton.SelectId(0);
+                
+                // Also reset the profile's company to None if the current one is disabled
+                if (_prototypeManager.TryIndex<CompanyPrototype>(Profile.Company, out var companyProto) && companyProto.Disabled)
+                {
+                    Profile = Profile.WithCompany("None");
+                }
+            }
         }
     }
 }

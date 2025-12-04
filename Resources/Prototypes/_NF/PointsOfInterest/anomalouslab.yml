@@ -12,8 +12,8 @@
   id: AnomalousLab
   parent: BasePOI
   name: 'Anomalous Lab'
-  minimumDistance: 2100
-  maximumDistance: 3800
+  minimumDistance: 7000
+  maximumDistance: 10800
   spawnGroup: MarketStation
   gridPath: /Maps/_NF/POI/anomalouslab.yml
   addComponents:

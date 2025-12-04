@@ -1,0 +1,31 @@
+- type: entity
+  parent: BaseItem
+  id: PlumbingAssembly
+  name: plumbing assembly
+  description: A heavy array of various pipes and connectors for connecting a device to plumbing.
+  components:
+  - type: Item
+    size: Large
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Items/crowbar_drop.ogg
+# Placeholder sprite, but has to be good enough in case it isn't replaced for a long time
+  - type: Sprite
+    sprite: Structures/Piping/Atmospherics/pump.rsi
+    state: PumpManualValve
+    rotation: 90 # Rotated 90 degrees to best match default rotation when stored.
+    layers:
+      - sprite: Structures/Piping/Atmospherics/pipe.rsi
+        state: pipeStraight
+      - state: pumpManualValve
+  - type: StaticPrice
+    price: 55
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 400
+  - type: Tag
+    tags:
+    - PlumbingAssembly
+
+- type: Tag
+  id: PlumbingAssembly

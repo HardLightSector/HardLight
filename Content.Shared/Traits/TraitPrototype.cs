@@ -125,6 +125,12 @@ public sealed partial class TraitPrototype : IPrototype, IComparable<TraitProtot
     public List<JobRequirement> Requirements { get; private set; } = new();
 
     /// <summary>
+    ///     If this trait should replace the added components. Hardlight change.
+    /// </summary>
+    [DataField]
+    public bool ReplaceComponents = false;
+
+    /// <summary>
     ///     Comparison for sorting traits by cost.
     /// </summary>
     public int CompareTo(TraitPrototype? other)

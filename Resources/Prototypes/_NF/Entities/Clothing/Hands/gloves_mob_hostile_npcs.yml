@@ -8,6 +8,8 @@
 #  categories: [ HideSpawnMenu ]
   components:
   - type: Unremoveable
+  - type: Tag # HL
+    tags: [] # ignore "WhitelistChameleon" tag
   - type: Sprite
     sprite: Clothing/Hands/Gloves/Color/color.rsi
     layers:
@@ -318,6 +320,8 @@
 #  categories: [ HideSpawnMenu ]
   components:
   - type: Unremoveable
+  - type: Tag # HL
+    tags: [] # ignore "WhitelistChameleon" tag
   - type: Sprite
     sprite: Clothing/Hands/Gloves/Color/color.rsi
     layers:

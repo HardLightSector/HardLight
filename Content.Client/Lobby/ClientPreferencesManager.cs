@@ -1,9 +1,11 @@
 using System.Linq;
+using Content.Shared._Mono.Company;
 using Content.Shared.Preferences;
 using Robust.Client;
 using Robust.Client.Player;
 using Robust.Shared.Network;
 using Robust.Shared.Utility;
+using Robust.Shared.Prototypes;
 
 namespace Content.Client.Lobby
 {
@@ -60,6 +62,19 @@ namespace Content.Client.Lobby
         public void UpdateCharacter(ICharacterProfile profile, int slot)
         {
             var collection = IoCManager.Instance!;
+
+            // Verify company exists if this is a humanoid profile
+            if (profile is HumanoidCharacterProfile humanoidProfile)
+            {
+                var protoManager = IoCManager.Resolve<IPrototypeManager>();
+                if (!string.IsNullOrEmpty(humanoidProfile.Company) &&
+                    humanoidProfile.Company != "None" &&
+                    !protoManager.HasIndex<CompanyPrototype>(humanoidProfile.Company))
+                {
+                    profile = humanoidProfile.WithCompany("None");
+                }
+            }
+
             profile.EnsureValid(_playerManager.LocalSession!, collection);
             var characters = new Dictionary<int, ICharacterProfile>(Preferences.Characters) {[slot] = profile};
             Preferences = new PlayerPreferences(characters, Preferences.SelectedCharacterIndex, Preferences.AdminOOCColor);
@@ -110,6 +125,47 @@ namespace Content.Client.Lobby
         {
             Preferences = message.Preferences;
             Settings = message.Settings;
+
+            // Check if any character profiles have invalid companies and fix them
+            if (Preferences != null)
+            {
+                var protoManager = IoCManager.Resolve<IPrototypeManager>();
+                var needsUpdate = false;
+                var characters = new Dictionary<int, ICharacterProfile>();
+
+                foreach (var (slot, profile) in Preferences.Characters)
+                {
+                    var updatedProfile = profile;
+
+                    if (profile is HumanoidCharacterProfile humanoidProfile &&
+                        !string.IsNullOrEmpty(humanoidProfile.Company) &&
+                        humanoidProfile.Company != "None" &&
+                        !protoManager.HasIndex<CompanyPrototype>(humanoidProfile.Company))
+                    {
+                        updatedProfile = humanoidProfile.WithCompany("None");
+                        needsUpdate = true;
+                    }
+
+                    characters[slot] = updatedProfile;
+                }
+
+                if (needsUpdate)
+                {
+                    Preferences = new PlayerPreferences(characters, Preferences.SelectedCharacterIndex, Preferences.AdminOOCColor);
+
+                    // Update the selected character on the server if needed
+                    var selectedIndex = Preferences.SelectedCharacterIndex;
+                    if (characters.TryGetValue(selectedIndex, out var selectedProfile))
+                    {
+                        var msg = new MsgUpdateCharacter
+                        {
+                            Profile = selectedProfile,
+                            Slot = selectedIndex
+                        };
+                        _netManager.ClientSendMessage(msg);
+                    }
+                }
+            }
 
             OnServerDataLoaded?.Invoke();
         }

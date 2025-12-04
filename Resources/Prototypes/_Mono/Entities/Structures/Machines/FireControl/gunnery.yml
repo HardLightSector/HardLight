@@ -73,6 +73,8 @@
     idleLoad: 5
     batteryRechargeRate: 300
     batteryRechargeEfficiency: 0.95
+  - type: PirateBountyItem
+    id: GunneryServer
 
 - type: entity
   id: GunneryServerMedium

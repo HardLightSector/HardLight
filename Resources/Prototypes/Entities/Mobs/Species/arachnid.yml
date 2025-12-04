@@ -95,9 +95,9 @@
       - map: [ "shoes" ]
       - map: [ "ears" ]
       - map: [ "eyes" ]
-      - map: [ "belt" ]
       - map: [ "id" ]
       - map: [ "outerClothing" ]
+      - map: [ "belt" ] # HL: change belt over outerclothing
       - map: [ "enum.HumanoidVisualLayers.Tail" ] # Mentioned in moth code: This needs renaming lol.
       - map: [ "back" ]
       - map: [ "neck" ]

@@ -1,0 +1,16 @@
+- type: entity
+  parent: BaseHyperlinkBook
+  id: HyperlinkBookSpaceLaw
+  name: space law
+  description: A big book of laws for space courts.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/books.rsi
+    layers:
+    - state: book_icon
+  - type: HyperlinkBook
+    url: https://frontierstation.wiki.gg/wiki/Space_Law
+  - type: Tag
+    tags:
+    - Book
+    - BookSpaceLaw

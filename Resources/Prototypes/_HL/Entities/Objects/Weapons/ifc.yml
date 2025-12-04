@@ -1,0 +1,30 @@
+- type: entity
+  name: Internal-Fusion Charge
+  description: Used to decommission heavy shuttles and structures. Stick it to a surface, set the timer, and get to a safe distance.
+  parent: [BasePlasticExplosive, BaseC3SyndicateContraband] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband
+  id: IFC
+  components:
+  - type: Sprite
+    sprite: _HL/Objects/Weapons/Grenades/fusioncharge.rsi
+    state: icon
+    layers:
+    - state: icon
+      map: ["base"]
+  - type: OnUseTimerTrigger
+    delay: 10
+    delayOptions: [10, 30, 60, 120, 300]
+    initialBeepDelay: 0
+    beepSound: /Audio/Machines/Nuke/general_beep.ogg
+    startOnStick: false
+    canToggleStartOnStick: false
+  - type: TimerStartOnSignal
+  - type: DeviceLinkSink
+    ports:
+      - Timer
+  - type: Explosive
+    explosionType: DemolitionCharge
+    totalIntensity: 960
+    intensitySlope: 2
+    maxIntensity: 60
+    canCreateVacuum: false
+  - type: ExplodeOnTrigger

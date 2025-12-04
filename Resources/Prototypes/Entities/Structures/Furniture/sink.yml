@@ -23,7 +23,7 @@
   - type: SolutionContainerManager
     solutions:
       drainBuffer:
-        maxVol: 100
+        maxVol: 200 # HardLight: Parity with Sink
       tank:
         maxVol: 500
   - type: SolutionRegeneration
@@ -68,6 +68,9 @@
   - type: Physics # Hardlight
     bodyType: Static
     canCollide: false
+  - type: Construction
+    graph: Sink
+    node: sink
 
 - type: entity
   name: sink
@@ -100,6 +103,9 @@
       maxFillLevels: 1
       fillBaseName: sink_wide-fill-
       solutionName: drainBuffer
+    - type: Construction
+      graph: SinkWide
+      node: sinkWide
 
 #Stemless Sink
 
@@ -115,6 +121,9 @@
       - map: [ "enum.SolutionContainerLayers.Fill" ]
         state: sink-fill-1
         visible: false
+  - type: Construction
+    graph: SinkStemless
+    node: sinkStemless
 
 - type: entity
   name: sink
@@ -125,7 +134,7 @@
   - type: SolutionContainerManager
     solutions:
       drainBuffer:
-        maxVol: 100
+        maxVol: 200 # HardLight: Parity with Sink
       tank:
         reagents:
         - ReagentId: Water

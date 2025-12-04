@@ -1,0 +1,10 @@
+- type: entity
+  id: StationCaptainIDCard
+  parent: IDCardStandard
+  name: station captain ID card
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/id_cards.rsi
+    layers:
+    - state: gold
+    - state: idcaptain

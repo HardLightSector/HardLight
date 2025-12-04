@@ -11,7 +11,7 @@
   id: MachineFTLDrive
   parent: BaseMachinePowered
   name: CTLA-25 bluespace drive
-  description: A FTL drive that extends a ship's FTL range to ~2.5 kilometers.
+  description: A FTL drive that extends a ship's FTL range to ~5 kilometers (5000 meters). Does not stack.
   placement:
     mode: SnapgridCenter
   components:
@@ -31,42 +31,6 @@
         color: "#349BEB"
     - type: FTLDrive
       range: 5000
-      thermalSignature: 2000000 # ~2828m range
-    - type: ThermalSignature
-    - type: Destructible
-      thresholds:
-      - trigger:
-          !type:DamageTrigger
-          damage: 1500
-        behaviors:
-        - !type:DoActsBehavior
-          acts: ["Destruction"]
-        - !type:ExplodeBehavior
-        - !type:SpawnGasBehavior
-          gasMixture:
-            volume: 1000
-            moles:
-            - 194 # oxygen
-            - 0 # nitrogen
-            - 0 # carbon dioxide
-            - 6 # plasma
-            temperature: 752.48
-      - trigger:
-          !type:DamageTrigger
-          damage: 500
-        behaviors:
-        - !type:SpawnEntitiesBehavior
-          spawn:
-            SheetSteel1:
-              min: 1
-              max: 2
-        - !type:DoActsBehavior
-          acts: ["Destruction"]
-    - type: Explosive
-      explosionType: Default
-      maxIntensity: 4000
-      intensitySlope: 4
-      totalIntensity: 300
     - type: ApcPowerReceiver
       powerLoad: 2000
     - type: PointLight

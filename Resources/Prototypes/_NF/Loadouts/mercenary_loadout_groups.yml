@@ -165,7 +165,7 @@
   minLimit: 0
   loadouts:
   - MercenaryWt550Loadout
-  - MercenaryC20rLoadout
+  #- MercenaryC20rLoadout
   - MercenaryKammererLoadout
   - MercenaryEnforcerLoadout
   - MercenaryLecterLoadout

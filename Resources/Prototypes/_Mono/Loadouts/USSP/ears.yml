@@ -1,0 +1,9 @@
+- type: loadout
+  id: USSPHeadset
+  equipment:
+    ears: ClothingHeadsetUSSP
+
+- type: loadout
+  id: USSPHeadsetCommand
+  equipment:
+    ears: ClothingHeadsetUSSPCommand

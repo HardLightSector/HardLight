@@ -9,6 +9,7 @@ using Robust.Client.Graphics;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
+using Robust.Shared.Log;
 using Robust.Shared.Timing;
 
 namespace Content.Client.Gateway.UI;
@@ -20,6 +21,7 @@ public sealed partial class GatewayWindow : FancyWindow,
     private readonly IGameTiming _timing;
 
     public event Action<NetEntity>? OpenPortal;
+    public event Action<NetEntity>? SpawnDockingArm;
     private List<GatewayDestinationData> _destinations = new();
 
     public NetEntity Owner;
@@ -100,6 +102,8 @@ public sealed partial class GatewayWindow : FancyWindow,
             var name = dest.Name;
             var locked = dest.Locked && _nextUnlock > _timing.CurTime;
 
+            Logger.Debug($"Gateway UI: Destination {name} - IsDockingArm: {dest.IsDockingArm}, Locked: {locked}");
+
             var box = new BoxContainer()
             {
                 Orientation = BoxContainer.LayoutOrientation.Horizontal,
@@ -142,19 +146,22 @@ public sealed partial class GatewayWindow : FancyWindow,
 
             var openButton = new Button()
             {
-                Text = Loc.GetString("gateway-window-open-portal"),
+                Text = Loc.GetString(dest.IsDockingArm ? "gateway-window-spawn-docking-arm" : "gateway-window-open-portal"),
                 Pressed = Pressable(),
-                ToggleMode = true,
-                Disabled = now < _nextReady || Pressable(),
+                ToggleMode = !dest.IsDockingArm,
+                Disabled = now < _nextReady || Pressable() || (dest.IsDockingArm && locked),
                 HorizontalAlignment = HAlignment.Right,
                 Margin = new Thickness(10f, 0f, 0f, 0f),
-                Visible = !locked,
+                Visible = !locked || dest.IsDockingArm,
                 SetHeight = 32f,
             };
 
             openButton.OnPressed += args =>
             {
-                OpenPortal?.Invoke(ent);
+                if (dest.IsDockingArm)
+                    SpawnDockingArm?.Invoke(ent);
+                else
+                    OpenPortal?.Invoke(ent);
             };
 
             if (Pressable())

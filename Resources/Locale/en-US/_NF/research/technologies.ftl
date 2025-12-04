@@ -1,7 +1,7 @@
 nf-research-discipline-engineering = Engineering
 nf-research-discipline-medical = Medical
 nf-research-discipline-arsenal-mercenary = Mercenary
-nf-research-discipline-arsenal-nfsd = NFSD
+nf-research-discipline-arsenal-Colsec = Colsec
 nf-research-discipline-salvage = Salvage
 nf-research-discipline-science = Science
 nf-research-discipline-service = Service

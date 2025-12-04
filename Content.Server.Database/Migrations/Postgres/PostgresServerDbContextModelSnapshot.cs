@@ -938,6 +938,11 @@ namespace Content.Server.Database.Migrations.Postgres
                         .HasColumnType("text")
                         .HasColumnName("char_name");
 
+                    b.Property<string>("Company")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("company");
+
                     b.Property<string>("EyeColor")
                         .IsRequired()
                         .HasColumnType("text")

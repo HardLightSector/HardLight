@@ -42,8 +42,8 @@ frontier-lobby-medical-description = Frontier's medical dispatch hub. Here you c
    - Drop off medical bounties
  Some of the roles on this station are whitelist-only and require an application in the discord to be accepted.
 
-frontier-lobby-nfsd-subtext = The center of operations for the Sheriffs department.
-frontier-lobby-nfsd-description = The New Frontier Sheriff's Department is the center of operations for the Sheriffs department. Here you can:
+frontier-lobby-Colsec-subtext = The center of operations for the Sheriffs department.
+frontier-lobby-Colsec-description = The New Frontier Sheriff's Department is the center of operations for the Sheriffs department. Here you can:
    - Join the Sheriffs department
    - Apply for a bounty hunting license
    - Report crimes

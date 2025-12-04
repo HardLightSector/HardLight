@@ -1,0 +1,76 @@
+- type: npcFaction
+  id: TSFMC
+  hostile:
+  - SimpleHostile
+  - Syndicate
+  - Xeno
+  - Zombie
+  - Revolutionary
+  - Dragon
+  - AllHostile
+  - Wizard
+  - WizFedFaction # Frontier
+  - BloodCultNF # Frontier
+  - PirateNF # Frontier
+  - ExplorersExpeditionNF # Frontier
+  - ArtifactConstruct # Frontier
+  - StreetGangNF # Frontier
+  - DinosaursNF # Frontier
+  - MercenariesExpeditionNF # Frontier
+  - SiliconsExpeditionNF # Frontier
+  - AberrantFleshExpeditionNF # Frontier
+  - USSP
+
+- type: npcFaction
+  id: TSFMCTurret
+  hostile:
+  - SimpleHostile
+  - Syndicate
+  - Xeno
+  - Zombie
+  - Revolutionary
+  - Dragon
+  - AllHostile
+  - Wizard
+  - WizFedFaction # Frontier
+  - BloodCultNF # Frontier
+  - PirateNF # Frontier
+  - ExplorersExpeditionNF # Frontier
+  - ArtifactConstruct # Frontier
+  - StreetGangNF # Frontier
+  - DinosaursNF # Frontier
+  - MercenariesExpeditionNF # Frontier
+  - SiliconsExpeditionNF # Frontier
+  - AberrantFleshExpeditionNF # Frontier
+  - PetsNT
+  - USSP
+
+- type: npcFaction
+  id: USSP
+  hostile:
+  ## SS14 factions
+  - Dragon
+  - Mouse
+  - Passive
+  - PetsNT
+  - SimpleHostile
+  - Syndicate
+  - Xeno
+  - Zombie
+  - Wizard
+  ## Frontier Factions
+  - SyndicateNF
+  - WizFedFaction
+  - BloodCultNF
+  - PirateNF
+  - ExplorersExpeditionNF
+  - ArtifactConstruct
+  - StreetGangNF
+  - DinosaursNF
+  - MercenariesExpeditionNF
+  - SiliconsExpeditionNF
+  - AberrantFleshExpeditionNF
+  - ContrabandClothing
+  - ContrabandDetection
+  - TSFMC # Mono
+  - TSFMCTurret # Mono

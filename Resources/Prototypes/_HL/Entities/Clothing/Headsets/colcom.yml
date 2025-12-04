@@ -1,0 +1,9 @@
+- type: entity
+  id: ClothingHeadsetColCom
+  parent: ClothingHeadset
+  name: ColCom headset
+  components:
+  - type: Sprite
+    sprite: Clothing/Ears/Headsets/centcom.rsi
+  - type: Clothing
+    sprite: Clothing/Ears/Headsets/centcom.rsi

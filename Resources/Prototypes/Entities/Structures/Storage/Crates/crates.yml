@@ -184,7 +184,7 @@
 # Secure Crates
 
 - type: entity
-  parent: [ CrateBaseSecure, BaseC2ContrabandUnredeemable ] # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable
+  parent: [ CrateBaseSecure, BaseC3ContrabandUnredeemable ] # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable
   id: CrateSecgear
   name: secgear crate
   components:
@@ -300,7 +300,7 @@
     access: [["Armory"]]
 
 - type: entity
-  parent: [ CrateBaseSecure, BaseC2ContrabandUnredeemable ] # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable
+  parent: [ CrateBaseSecure, BaseC3ContrabandUnredeemable ] # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable
   suffix: Armory, Secure
   id: CrateContrabandStorageSecure
   name: contraband storage crate

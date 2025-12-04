@@ -1,0 +1,8 @@
+- type: entity
+  parent: WindoorSecureMedicalLocked
+  id: WindoorSecureParamedicLocked
+  suffix: Paramedic, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsParamedic ]

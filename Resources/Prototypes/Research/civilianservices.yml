@@ -104,6 +104,7 @@
   - FatExtractorMachineCircuitboard
   - BiogeneratorMachineCircuitboard # Frontier BiofabricatorMachineCircuitboard<BiogeneratorMachineCircuitboard
   - BiomassReclaimerMachineCircuitboard
+  - SlopDispenserMachineCircuitboard
 
 # Tier 2
 

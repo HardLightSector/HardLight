@@ -4,8 +4,8 @@ meta:
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 11/01/2025 23:48:31
-  entityCount: 2982
+  time: 11/24/2025 22:30:52
+  entityCount: 2976
 maps:
 - 1
 grids:
@@ -7268,18 +7268,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: 3.5,-13.5
       parent: 2
-- proto: ComputerBankATM
-  entities:
-  - uid: 2958
-    components:
-    - type: Transform
-      pos: -6.5,-4.5
-      parent: 2
-  - uid: 2959
-    components:
-    - type: Transform
-      pos: -5.5,-4.5
-      parent: 2
 - proto: ComputerCargoBounty
   entities:
   - uid: 2134
@@ -7368,21 +7356,11 @@ entities:
       parent: 2
 - proto: ComputerRadar
   entities:
-  - uid: 928
-    components:
-    - type: Transform
-      pos: -6.5,-1.5
-      parent: 2
   - uid: 947
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 25.5,-0.5
-      parent: 2
-  - uid: 1678
-    components:
-    - type: Transform
-      pos: -5.5,-1.5
       parent: 2
 - proto: ComputerResearchAndDevelopment
   entities:
@@ -7399,14 +7377,6 @@ entities:
     - type: Transform
       pos: 25.5,2.5
       parent: 2
-- proto: ComputerShipyard
-  entities:
-  - uid: 2954
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -3.5,-4.5
-      parent: 2
 - proto: ComputerShipyardBlackMarket
   entities:
   - uid: 1693
@@ -7414,22 +7384,6 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 9.5,-8.5
-      parent: 2
-- proto: ComputerShipyardExpedition
-  entities:
-  - uid: 2956
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -3.5,-2.5
-      parent: 2
-- proto: ComputerShipyardMedical
-  entities:
-  - uid: 2955
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -3.5,-3.5
       parent: 2
 - proto: ComputerShuttle
   entities:
@@ -13104,6 +13058,19 @@ entities:
       parent: 2
     - type: AtmosPipeColor
       color: '#FF1212FF'
+- proto: Gateway
+  entities:
+  - uid: 928
+    components:
+    - type: Transform
+      pos: -5.5,-3.5
+      parent: 2
+    - type: Gateway
+      enabled: True
+    - type: DockingArmGenerator
+      dockingArmGrids:
+      - /Maps/Structures/dock.yml
+      generated: []
 - proto: GeigerCounter
   entities:
   - uid: 1517
@@ -13695,23 +13662,6 @@ entities:
     - type: Transform
       pos: -10.5,10.5
       parent: 2
-- proto: HLGunSafeBaseSecure
-  entities:
-  - uid: 868
-    components:
-    - type: Transform
-      pos: 21.5,2.5
-      parent: 2
-  - uid: 869
-    components:
-    - type: Transform
-      pos: 21.5,1.5
-      parent: 2
-  - uid: 870
-    components:
-    - type: Transform
-      pos: 21.5,-0.5
-      parent: 2
 - proto: Gyroscope
   entities:
   - uid: 1618
@@ -13738,6 +13688,51 @@ entities:
     - type: Transform
       pos: 20.5,0.5
       parent: 2
+- proto: HLGunSafeBaseSecure
+  entities:
+  - uid: 868
+    components:
+    - type: Transform
+      pos: 21.5,2.5
+      parent: 2
+  - uid: 869
+    components:
+    - type: Transform
+      pos: 21.5,1.5
+      parent: 2
+  - uid: 870
+    components:
+    - type: Transform
+      pos: 21.5,-0.5
+      parent: 2
+- proto: HLLockerAtmosphericsFilledHardsuit
+  entities:
+  - uid: 2499
+    components:
+    - type: Transform
+      pos: 4.5,-11.5
+      parent: 2
+- proto: HLLockerBoozeFilled
+  entities:
+  - uid: 1645
+    components:
+    - type: Transform
+      pos: -10.5,5.5
+      parent: 2
+- proto: HLLockerBotanistFilled
+  entities:
+  - uid: 1646
+    components:
+    - type: Transform
+      pos: -14.5,4.5
+      parent: 2
+- proto: HLLockerCaptainFilledHardsuit
+  entities:
+  - uid: 1647
+    components:
+    - type: Transform
+      pos: 21.5,-2.5
+      parent: 2
 - proto: HLLockerChemistryFilled
   entities:
   - uid: 1648
@@ -13745,12 +13740,59 @@ entities:
     - type: Transform
       pos: 10.198524,-0.49005228
       parent: 2
+- proto: HLLockerEngineerFilledHardsuit
+  entities:
+  - uid: 1649
+    components:
+    - type: Transform
+      pos: -18.5,-2.5
+      parent: 2
+  - uid: 1650
+    components:
+    - type: Transform
+      pos: -18.5,-4.5
+      parent: 2
+- proto: HLLockerFreezerVaultFilled
+  entities:
+  - uid: 1652
+    components:
+    - type: Transform
+      pos: 24.5,-0.5
+      parent: 2
 - proto: HLLockerHeadOfSecurityFilledHardsuit
   entities:
   - uid: 1653
     components:
     - type: Transform
       pos: 22.5,4.5
+      parent: 2
+- proto: HLLockerMedicalFilled
+  entities:
+  - uid: 1654
+    components:
+    - type: Transform
+      pos: 4.5,-4.5
+      parent: 2
+- proto: HLLockerMedicineFilled
+  entities:
+  - uid: 1655
+    components:
+    - type: Transform
+      pos: 12.5,-2.5
+      parent: 2
+- proto: HLLockerSecurityFilled
+  entities:
+  - uid: 1656
+    components:
+    - type: Transform
+      pos: 14.5,-3.5
+      parent: 2
+- proto: HLSuitStorageSec
+  entities:
+  - uid: 2020
+    components:
+    - type: Transform
+      pos: 17.5,-4.5
       parent: 2
 - proto: HolofanProjector
   entities:
@@ -13955,46 +13997,6 @@ entities:
     - type: Transform
       pos: 11.5,3.5
       parent: 2
-- proto: HLLockerAtmosphericsFilledHardsuit
-  entities:
-  - uid: 2499
-    components:
-    - type: Transform
-      pos: 4.5,-11.5
-      parent: 2
-- proto: HLLockerBoozeFilled
-  entities:
-  - uid: 1645
-    components:
-    - type: Transform
-      pos: -10.5,5.5
-      parent: 2
-- proto: HLLockerBotanistFilled
-  entities:
-  - uid: 1646
-    components:
-    - type: Transform
-      pos: -14.5,4.5
-      parent: 2
-- proto: HLLockerCaptainFilledHardsuit
-  entities:
-  - uid: 1647
-    components:
-    - type: Transform
-      pos: 21.5,-2.5
-      parent: 2
-- proto: HLLockerEngineerFilledHardsuit
-  entities:
-  - uid: 1649
-    components:
-    - type: Transform
-      pos: -18.5,-2.5
-      parent: 2
-  - uid: 1650
-    components:
-    - type: Transform
-      pos: -18.5,-4.5
-      parent: 2
 - proto: LockerEvidence
   entities:
   - uid: 1651
@@ -14008,34 +14010,6 @@ entities:
     components:
     - type: Transform
       pos: -5.5,3.5
-      parent: 2
-- proto: HLLockerFreezerVaultFilled
-  entities:
-  - uid: 1652
-    components:
-    - type: Transform
-      pos: 24.5,-0.5
-      parent: 2
-- proto: HLLockerMedicalFilled
-  entities:
-  - uid: 1654
-    components:
-    - type: Transform
-      pos: 4.5,-4.5
-      parent: 2
-- proto: HLLockerMedicineFilled
-  entities:
-  - uid: 1655
-    components:
-    - type: Transform
-      pos: 12.5,-2.5
-      parent: 2
-- proto: HLLockerSecurityFilled
-  entities:
-  - uid: 1656
-    components:
-    - type: Transform
-      pos: 14.5,-3.5
       parent: 2
 - proto: LockerWallColorMedicalFilled
   entities:
@@ -16499,13 +16473,6 @@ entities:
     components:
     - type: Transform
       pos: -16.5,4.5
-      parent: 2
-- proto: HLSuitStorageSec
-  entities:
-  - uid: 2020
-    components:
-    - type: Transform
-      pos: 17.5,-4.5
       parent: 2
 - proto: SurveillanceCameraRouterSecurity
   entities:

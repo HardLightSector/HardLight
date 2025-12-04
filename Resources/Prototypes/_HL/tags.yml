@@ -310,3 +310,21 @@
 - type: Tag
   id: MagazineRailgunTag
 
+#bolts
+- type: Tag
+  id: Boltcart
+
+- type: Tag
+  id: Magazine75Bolt
+
+#riotgun
+- type: Tag
+  id: MagazineRiotGun
+
+- type: Tag
+  id: GrenadeRiotGun
+
+#tider anvil
+
+- type: Tag
+  id: TiderAnvilParts

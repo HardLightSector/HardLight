@@ -49,7 +49,7 @@
   parent: GunSafe
   id: GunSafeTurrets
   name: turret safe
-  suffix: NFSD, Filled
+  suffix: TSFMC, Filled
   components:
   - type: StorageFill
     contents:

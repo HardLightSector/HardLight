@@ -2,8 +2,8 @@
 # WizDen
 #region Laser
 - type: entity
-  id: NFWeaponEnergyRifleSniperCannon
-  parent: [ BaseC2ContrabandUnredeemable, NFBaseWeaponEnergyRifleSniperHitScan, NFBaseWeaponFrameEnergyRifleSniperNanotrasen ]
+  id: NFWeaponEnergyRifleCannon
+  parent: [ BaseC2ContrabandUnredeemable, NFBaseWeaponEnergyRifleCannonHitScan, NFBaseWeaponFrameEnergyRifleSniperNanotrasen ]
   name: laser cannon
   suffix: Frontier
   description: |-
@@ -17,6 +17,22 @@
     tags:
     - TurretCompatibleWeapon
 
+- type: entity
+  id: NFWeaponEnergyRifleSniperCannon
+  parent: [ BaseC3ContrabandUnredeemable, NFBaseWeaponEnergyRifleSniperHitScan, NFBaseWeaponFrameEnergyRifleSniperNanotrasen ]
+  name: Beam Rifle
+  suffix: Frontier
+  description: |-
+    An extremely powerful weapon that hums with power, perhaps you should be careful with it. 
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Snipers/beam.rsi
+  - type: Clothing
+    sprite: Objects/Weapons/Guns/Snipers/beam.rsi
+  - type: Tag #Hardlight change
+    tags:
+    - TurretCompatibleWeapon
+    
 - type: entity
   id: NFWeaponEnergyRifleSniperXrayCannon
   parent: [ BaseC3Contraband, NFBaseWeaponEnergyRifleSniperHitScanXray, NFBaseWeaponFrameEnergyRifleSniperNanotrasen ]

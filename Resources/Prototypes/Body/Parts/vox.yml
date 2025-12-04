@@ -9,6 +9,7 @@
   - type: Damageable
     damageContainer: OrganicPart # Shitmed Change
   - type: BodyPart
+  - type: AntiRottingContainer
   - type: ContainerContainer
     containers:
       bodypart: !type:Container

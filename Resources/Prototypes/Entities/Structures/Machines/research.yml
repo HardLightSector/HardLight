@@ -14,6 +14,9 @@
       - state: server_o
         map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: ResearchServer
+  - type: Anchorable
+    flags:
+    - Unanchorable 
   - type: TechnologyDatabase
     supportedDisciplines:
     - Industrial

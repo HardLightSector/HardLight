@@ -193,7 +193,7 @@
   parent: PosterBase
   id: PosterContrabandPower
   name: "Power"
-  description: "A poster that positions the seat of power outside Nanotrasen."
+  description: "A poster that positions the seat of power inside the Trans-Solar Federation's central government. Pfft! As if!"
   components:
   - type: Sprite
     state: poster16_contraband
@@ -256,7 +256,7 @@
   parent: PosterBase
   id: PosterContrabandRebelsUnite
   name: "Rebels Unite"
-  description: "A poster urging the viewer to rebel against Nanotrasen."
+  description: "A poster urging the viewer to rebel against the TSF on the side of the Rogue Sector."
   components:
   - type: Sprite
     state: poster23_contraband
@@ -938,7 +938,7 @@
   parent: PosterBase
   id: PosterLegitThereIsNoGasGiant
   name: "There Is No Gas Giant"
-  description: "Nanotrasen has issued posters, like this one, to all stations reminding them that rumours of a gas giant are false."
+  description: "To remind colonial civilians that rumours of gas giants existing in the rogue are false. Is this... TSF approved?"
   components:
   - type: Sprite
     state: poster37_legit

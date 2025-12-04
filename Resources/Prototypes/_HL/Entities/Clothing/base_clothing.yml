@@ -1,0 +1,33 @@
+- type: entity
+  abstract: true
+  id: ClothingTopless
+  components:
+  - type: HideLayerClothing
+    slots:
+    - Genital
+    - Penis
+
+- type: entity
+  abstract: true
+  id: ClothingBottomless
+  components:
+  - type: HideLayerClothing
+    slots:
+    - Breasts
+
+- type: entity
+  abstract: true
+  id: ClothingNude
+  components:
+  - type: HideLayerClothing
+    slots: []
+
+- type: entity
+  abstract: true
+  id: ClothingConcealsBody
+  components:
+  - type: HideLayerClothing
+    slots:
+    - Genital
+    - Penis
+    - Breasts

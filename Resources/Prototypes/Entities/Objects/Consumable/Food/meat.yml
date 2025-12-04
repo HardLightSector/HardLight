@@ -60,8 +60,7 @@
     - Raw
     - Meat
   - type: Perishable
-    # raw meat rots in 15 mins like all meats from other species
-    # don't want meat giving off ammonia only bodies
+    rotAfter: 300 # 5 minutes outside a body until rotting, 15 to completely perish
     molsPerSecondPerUnitMass: 0
   - type: RotInto
     entity: FoodMeatRotten
@@ -456,6 +455,12 @@
     - Recyclable
   - type: Sprite
     state: rotten
+  - type: Perishable
+    rotAfter: 300 # 5 minutes outside a body until rotting, 15 to completely perish
+    molsPerSecondPerUnitMass: 0
+  - type: RotInto
+    entity: Ash
+    stage: 2
   - type: SolutionContainerManager
     solutions:
       food:
