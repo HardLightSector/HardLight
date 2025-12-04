@@ -306,3 +306,7 @@
 - type: Tag
   id: BorgWearable
 
+# Peregrine
+- type: Tag
+  id: MagazineRailgunTag
+

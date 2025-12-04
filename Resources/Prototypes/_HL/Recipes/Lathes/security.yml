@@ -1,0 +1,9 @@
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagRailgun
+  result: MagazineRailgun
+  completetime: 5
+  materials:
+    Plasteel: 500
+    Gold: 50
+    Plasma: 500

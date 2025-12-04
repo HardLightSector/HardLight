@@ -2,7 +2,7 @@
   name: NT-88 Peregrine
   parent: [BaseC2ContrabandUnredeemable, BaseWeaponPowerCell, BaseGunWieldable]
   id: WeaponRailgunPeregrine
-  description: From NanoTrasen Skunkworks. Because there is beauty in destruction, there must also be beauty in the delivery of destruction. Uses a specific proprietary cartridge, although it may be possible to jury-rig something workable...
+  description: From NanoTrasen Skunkworks. Uses a specific proprietary cartridge, although it may be possible to jury-rig something workable...
   components:
   - type: Item
     size: Large
@@ -24,7 +24,7 @@
     proto: RailgunLaser
     fireCost: 500
   - type: Gun
-    fireRate: 1
+    fireRate: 1.2
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto

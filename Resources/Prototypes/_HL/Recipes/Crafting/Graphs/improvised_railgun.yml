@@ -9,7 +9,7 @@
           - material: Plasma
             amount: 5
             doAfter: 0.5
-          - material: Rod
+          - material: MetalRod
             amount: 5
             doAfter: 0.5
           - material: Plasteel
