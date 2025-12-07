@@ -9,6 +9,33 @@
   "states": [
     {
       "name": "thaslop"
+    },
+    {
+      "name": "veggiepaste"
+    },
+    {
+      "name": "meatpaste"
+    },
+    {
+      "name": "slopcan"
+    },
+    {
+      "name": "emptyslopcan"
+    },
+    {
+      "name": "meatslopcan"
+    },
+    {
+      "name": "veggieslopcan"
+    },
+    {
+      "name": "slopbrick"
+    },
+    {
+      "name": "meatbrick"
+    },
+    {
+      "name": "veggiebrick"
     }
   ]
 }

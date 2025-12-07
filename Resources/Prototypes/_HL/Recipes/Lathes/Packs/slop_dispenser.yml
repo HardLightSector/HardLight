@@ -2,3 +2,11 @@
   id: SlopStatic
   recipes:
     - NutrientPasteDispenserSlop
+    - NutrientPasteDispenserVeggieSlop
+    - NutrientPasteDispenserMeatSlop
+    - NutrientPasteDispenserSlopDrink
+    - NutrientPasteDispenserVeggieSlopDrink
+    - NutrientPasteDispenserMeatSlopDrink
+    - NutrientPasteDispenserSlopBrick
+    - NutrientPasteDispenserSlopBrickVeggie
+    - NutrientPasteDispenserSlopBrickMeat
