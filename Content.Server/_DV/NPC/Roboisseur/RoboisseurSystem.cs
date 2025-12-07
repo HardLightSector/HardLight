@@ -2,6 +2,7 @@ using Content.Server.Administration.Logs;
 using Content.Shared.Interaction;
 using Content.Shared.Mobs.Components;
 using Content.Server.Chat.Systems;
+using Content.Shared.Chat;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Content.Shared.Random.Helpers;
