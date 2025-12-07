@@ -64,7 +64,7 @@
   components:
     - type: Tag
       tags:
-      - vegetable
+      - Vegetable
     - type: Sprite
       layers:
         - state: veggieslopcan
@@ -77,7 +77,7 @@
   components:
     - type: Tag
       tags:
-        - meat
+        - Meat
     - type: Sprite
       layers:
         - state: meatslopcan
@@ -90,7 +90,7 @@
   components:
     - type: Tag
       tags:
-      - vegetable
+      - Vegetable
     - type: Sprite
       layers:
         - state: veggiepaste
@@ -103,7 +103,7 @@
   components:
     - type: Tag
       tags:
-      - meat
+      - Meat
     - type: Sprite
       layers:
         - state: meatpaste
