@@ -1,0 +1,26 @@
+- type: entity
+  parent: BaseStructureDynamic
+  id: Roboisseur
+  name: Roboisseur
+  description: A sleek service machine that enthusiastically sells gourmet food items. It demands rare ingredients in exchange for culinary rewards and credits.
+  # Make spawnable in the spawn menu by not hiding it
+  components:
+  - type: Sprite
+    sprite: _DV/Structures/Machines/roboisseur.rsi
+    snapCardinals: true
+    layers:
+    - state: roboisseur-1
+    - state: roboisseur-2
+  - type: Transform
+    anchored: true
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Roboisseur
+  - type: UseDelay
+    delay: 1
+  - type: Appearance
+  - type: PointLight
+    radius: 2
+    energy: 1.5
+    color: "#FFD700"
+

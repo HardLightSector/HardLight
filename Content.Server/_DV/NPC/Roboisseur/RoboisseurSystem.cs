@@ -28,11 +28,12 @@ namespace Content.Server.Roboisseur.Roboisseur
         public override void Initialize()
         {
             base.Initialize();
-
+            Log.Info("RoboisseurSystem: Initialize - subscribing events");
 
             SubscribeLocalEvent<RoboisseurComponent, ComponentInit>(OnInit);
             SubscribeLocalEvent<RoboisseurComponent, InteractHandEvent>(OnInteractHand);
             SubscribeLocalEvent<RoboisseurComponent, InteractUsingEvent>(OnInteractUsing);
+            SubscribeLocalEvent<RoboisseurComponent, ActivateInWorldEvent>(OnActivateInWorld);
         }
 
 
@@ -91,6 +92,8 @@ namespace Content.Server.Roboisseur.Roboisseur
 
         private void OnInteractHand(EntityUid uid, RoboisseurComponent component, InteractHandEvent args)
         {
+            Log.Info($"Roboisseur: OnInteractHand triggered on {uid} by {args.User}");
+
             if (!TryComp<ActorComponent>(args.User, out var actor))
                 return;
 
@@ -106,8 +109,33 @@ namespace Content.Server.Roboisseur.Roboisseur
             _chat.TrySendInGameICMessage(component.Owner, message, InGameICChatType.Speak, true);
         }
 
+        private void OnActivateInWorld(EntityUid uid, RoboisseurComponent component, ActivateInWorldEvent args)
+        {
+            // Only respond to complex activates (i.e. explicit player activate)
+            if (!args.Complex)
+                return;
+
+            Log.Info($"Roboisseur: OnActivateInWorld triggered on {uid} by {args.User}");
+
+            if (!TryComp<ActorComponent>(args.User, out var actor))
+                return;
+
+            if (_timing.CurTime < component.StateTime)
+                return;
+
+            component.StateTime = _timing.CurTime + component.StateCD;
+
+            string message = Loc.GetString(_random.Pick(component.DemandMessages), ("item", component.DesiredPrototype?.Name ?? "?"));
+            if (CheckTier(component.DesiredPrototype?.ID ?? string.Empty, component) > 1)
+                message = Loc.GetString(_random.Pick(component.DemandMessagesTier2), ("item", component.DesiredPrototype?.Name ?? "?"));
+
+            _chat.TrySendInGameICMessage(component.Owner, message, InGameICChatType.Speak, true);
+        }
+
         private void OnInteractUsing(EntityUid uid, RoboisseurComponent component, InteractUsingEvent args)
         {
+            Log.Info($"Roboisseur: OnInteractUsing triggered on {uid} by {args.User} using {args.Used}");
+
             if (HasComp<MobStateComponent>(args.Used) ||
                 MetaData(args.Used)?.EntityPrototype == null)
                 return;
@@ -166,6 +194,8 @@ namespace Content.Server.Roboisseur.Roboisseur
             component.Accumulator = 0;
             component.BarkAccumulator = 0;
             var protoString = GetDesiredItem(component);
+
+            Log.Info($"Roboisseur: NextItem picked prototype '{protoString}' for entity {component.Owner}");
 
             if (_prototypeManager.TryIndex<EntityPrototype>(protoString, out var proto))
                 component.DesiredPrototype = proto;
