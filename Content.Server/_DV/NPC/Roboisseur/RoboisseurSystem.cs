@@ -1,15 +1,13 @@
-using Content.Server.Administration.Logs;
 using Content.Shared.Interaction;
 using Content.Shared.Mobs.Components;
 using Content.Server.Chat.Systems;
-using Content.Shared.Chat;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Content.Shared.Random.Helpers;
 using Content.Shared.Kitchen;
 using Robust.Server.GameObjects;
 using Content.Server.Materials;
-using Content.Shared.Database;
+using Content.Shared.Chat;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
 
@@ -23,17 +21,15 @@ namespace Content.Server.Roboisseur.Roboisseur
         [Dependency] private readonly MaterialStorageSystem _material = default!;
         [Dependency] private readonly AppearanceSystem _appearance = default!;
         [Dependency] private readonly IGameTiming _timing = default!;
-        [Dependency] private readonly IAdminLogManager _adminLog = default!;
 
         public override void Initialize()
         {
             base.Initialize();
-            Log.Info("RoboisseurSystem: Initialize - subscribing events");
+
 
             SubscribeLocalEvent<RoboisseurComponent, ComponentInit>(OnInit);
             SubscribeLocalEvent<RoboisseurComponent, InteractHandEvent>(OnInteractHand);
             SubscribeLocalEvent<RoboisseurComponent, InteractUsingEvent>(OnInteractUsing);
-            SubscribeLocalEvent<RoboisseurComponent, ActivateInWorldEvent>(OnActivateInWorld);
         }
 
 
@@ -76,7 +72,7 @@ namespace Content.Server.Roboisseur.Roboisseur
         private void RewardServicer(EntityUid uid, RoboisseurComponent component, int tier)
         {
             var r = new Random();
-            int rewardToDispense = r.Next(750, 1250) + 550 * tier;
+            int rewardToDispense = r.Next(100, 350) + 250 * tier;
 
             _material.SpawnMultipleFromMaterial(rewardToDispense, "Credit", Transform(uid).Coordinates);
             if(tier > 1)
@@ -92,8 +88,6 @@ namespace Content.Server.Roboisseur.Roboisseur
 
         private void OnInteractHand(EntityUid uid, RoboisseurComponent component, InteractHandEvent args)
         {
-            Log.Info($"Roboisseur: OnInteractHand triggered on {uid} by {args.User}");
-
             if (!TryComp<ActorComponent>(args.User, out var actor))
                 return;
 
@@ -106,36 +100,11 @@ namespace Content.Server.Roboisseur.Roboisseur
             if (CheckTier(component.DesiredPrototype.ID, component) > 1)
                 message = Loc.GetString(_random.Pick(component.DemandMessagesTier2), ("item", component.DesiredPrototype.Name));
 
-            _chat.TrySendInGameICMessage(roboisseur.Owner, message, InGameICChatType.Speak, true);
-        }
-
-        private void OnActivateInWorld(EntityUid uid, RoboisseurComponent component, ActivateInWorldEvent args)
-        {
-            // Only respond to complex activates (i.e. explicit player activate)
-            if (!args.Complex)
-                return;
-
-            Log.Info($"Roboisseur: OnActivateInWorld triggered on {uid} by {args.User}");
-
-            if (!TryComp<ActorComponent>(args.User, out var actor))
-                return;
-
-            if (_timing.CurTime < component.StateTime)
-                return;
-
-            component.StateTime = _timing.CurTime + component.StateCD;
-
-            string message = Loc.GetString(_random.Pick(component.DemandMessages), ("item", component.DesiredPrototype?.Name ?? "?"));
-            if (CheckTier(component.DesiredPrototype?.ID ?? string.Empty, component) > 1)
-                message = Loc.GetString(_random.Pick(component.DemandMessagesTier2), ("item", component.DesiredPrototype?.Name ?? "?"));
-
             _chat.TrySendInGameICMessage(component.Owner, message, InGameICChatType.Speak, true);
         }
 
         private void OnInteractUsing(EntityUid uid, RoboisseurComponent component, InteractUsingEvent args)
         {
-            Log.Info($"Roboisseur: OnInteractUsing triggered on {uid} by {args.User} using {args.Used}");
-
             if (HasComp<MobStateComponent>(args.Used) ||
                 MetaData(args.Used)?.EntityPrototype == null)
                 return;
@@ -158,10 +127,6 @@ namespace Content.Server.Roboisseur.Roboisseur
             if (tier > 1)
                 message = Loc.GetString(_random.Pick(component.RewardMessagesTier2));
             _chat.TrySendInGameICMessage(uid, message, InGameICChatType.Speak, true);
-
-            _adminLog.Add(LogType.InteractHand,
-                LogImpact.Medium,
-                $"{ToPrettyString(args.User):player} sold {ToPrettyString(args.Used)} to {ToPrettyString(uid)}.");
 
             RewardServicer(args.User, component, tier);
 
@@ -194,8 +159,6 @@ namespace Content.Server.Roboisseur.Roboisseur
             component.Accumulator = 0;
             component.BarkAccumulator = 0;
             var protoString = GetDesiredItem(component);
-
-            Log.Info($"Roboisseur: NextItem picked prototype '{protoString}' for entity {component.Owner}");
 
             if (_prototypeManager.TryIndex<EntityPrototype>(protoString, out var proto))
                 component.DesiredPrototype = proto;
