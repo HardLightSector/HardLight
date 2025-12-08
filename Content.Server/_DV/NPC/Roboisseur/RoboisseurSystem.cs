@@ -30,21 +30,6 @@ namespace Content.Server.Roboisseur.Roboisseur
             SubscribeLocalEvent<RoboisseurComponent, ComponentInit>(OnInit);
             SubscribeLocalEvent<RoboisseurComponent, InteractHandEvent>(OnInteractHand);
             SubscribeLocalEvent<RoboisseurComponent, InteractUsingEvent>(OnInteractUsing);
-            SubscribeLocalEvent<RoboisseurComponent, ActivateInWorldEvent>(OnActivateInWorld);
-        }
-
-        private void OnActivateInWorld(EntityUid uid, RoboisseurComponent component, ActivateInWorldEvent args)
-        {
-            if (_timing.CurTime < component.StateTime)
-                return;
-
-            component.StateTime = _timing.CurTime + component.StateCD;
-
-            string message = Loc.GetString(_random.Pick(component.DemandMessages), ("item", component.DesiredPrototype.Name));
-            if (CheckTier(component.DesiredPrototype.ID, component) > 1)
-                message = Loc.GetString(_random.Pick(component.DemandMessagesTier2), ("item", component.DesiredPrototype.Name));
-
-            _chat.TrySendInGameICMessage(component.Owner, message, InGameICChatType.Speak, true);
         }
 
 
@@ -188,12 +173,16 @@ namespace Content.Server.Roboisseur.Roboisseur
 
         public List<string> GetAllProtos(RoboisseurComponent component)
         {
+
             var allRecipes = _prototypeManager.EnumeratePrototypes<FoodRecipePrototype>();
             var allProtos = new List<String>();
+
             foreach (var recipe in allRecipes)
                 allProtos.Add(recipe.Result);
+
             foreach (var proto in component.BlacklistedProtos)
                 allProtos.Remove(proto);
+
             return allProtos;
         }
     }

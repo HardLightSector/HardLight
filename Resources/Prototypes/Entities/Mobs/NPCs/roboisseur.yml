@@ -1,26 +1,42 @@
 - type: entity
-  parent: BaseStructureDynamic
+  parent: BaseStructure
   id: Roboisseur
-  name: Roboisseur
-  description: A sleek service machine that enthusiastically sells gourmet food items. It demands rare ingredients in exchange for culinary rewards and credits.
-  # Make spawnable in the spawn menu by not hiding it
+  name: Mr. Butlertron
+  description: It asks for food to deliver to exotic customers across the cosmos. Powered by the latest technology in bluespace food delivery.
   components:
+  - type: Anchorable
+  - type: Pullable
   - type: Sprite
-    sprite: _DV/Structures/Machines/roboisseur.rsi
-    snapCardinals: true
+    noRot: true
+    drawdepth: Mobs
+    sprite: DeltaV/Structures/Machines/roboisseur.rsi
     layers:
     - state: roboisseur-1
-    - state: roboisseur-2
-  - type: Transform
-    anchored: true
-  - type: Clickable
-  - type: InteractionOutline
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1000
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
   - type: Roboisseur
-  - type: UseDelay
-    delay: 1
+  - type: Speech
+    speechSounds: Pai
   - type: Appearance
-  - type: PointLight
-    radius: 2
-    energy: 1.5
-    color: "#FFD700"
-
+  - type: Grammar
+    attributes:
+      gender: male
+      proper: true
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.15,-0.15,0.15,0.15"
+        density: 60
+        mask:
+        - MachineMask
+        layer:
+        - MidImpassable
+        - LowImpassable

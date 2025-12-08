@@ -34,8 +34,8 @@ namespace Content.Server.Roboisseur.Roboisseur
         [ViewVariables(VVAccess.ReadWrite)]
         public EntityPrototype DesiredPrototype = default!;
 
-        [DataField]
-        public List<LocId> DemandMessages = new()
+        [DataField("demandMessages")]
+        public IReadOnlyList<string> DemandMessages = new[]
         {
             "roboisseur-request-1",
             "roboisseur-request-2",
@@ -45,24 +45,24 @@ namespace Content.Server.Roboisseur.Roboisseur
             "roboisseur-request-6"
         };
 
-        [DataField]
-        public List<LocId> ImpatientMessages = new()
+        [DataField("impatientMessages")]
+        public IReadOnlyList<string> ImpatientMessages = new[]
         {
             "roboisseur-request-impatient-1",
             "roboisseur-request-impatient-2",
             "roboisseur-request-impatient-3",
         };
 
-        [DataField]
-        public List<LocId> DemandMessagesTier2 = new()
+        [DataField("demandMessagesTier2")]
+        public IReadOnlyList<string> DemandMessagesTier2 = new[]
         {
             "roboisseur-request-second-1",
             "roboisseur-request-second-2",
             "roboisseur-request-second-3"
         };
 
-        [DataField]
-        public List<LocId> RewardMessages = new()
+        [DataField("rewardMessages")]
+        public IReadOnlyList<String> RewardMessages = new[]
         {
             "roboisseur-thanks-1",
             "roboisseur-thanks-2",
@@ -71,8 +71,8 @@ namespace Content.Server.Roboisseur.Roboisseur
             "roboisseur-thanks-5"
         };
 
-        [DataField]
-        public List<LocId> RewardMessagesTier2 = new()
+        [DataField("rewardMessagesTier2")]
+        public IReadOnlyList<String> RewardMessagesTier2 = new[]
         {
             "roboisseur-thanks-second-1",
             "roboisseur-thanks-second-2",
@@ -81,101 +81,56 @@ namespace Content.Server.Roboisseur.Roboisseur
             "roboisseur-thanks-second-5"
         };
 
-        [DataField]
-        public List<LocId> RejectMessages = new()
+        [DataField("rejectMessages")]
+        public IReadOnlyList<String> RejectMessages = new[]
         {
             "roboisseur-deny-1",
             "roboisseur-deny-2",
             "roboisseur-deny-3"
         };
-        /// <summary>
-        ///    these protos need to be updated when new food is added
-        /// </summary>
-        [DataField]
-        public List<EntProtoId> Tier2Protos = new()
+
+        [DataField("tier2Protos")]
+        public List<String> Tier2Protos = new()
         {
             "FoodBurgerEmpowered",
             "FoodSoupClown",
-            "FoodPiePumpkin",
-            "FoodSoupTomato",
-            "FoodBreadMeat",
-            "FoodBreadCreamcheese",
-            "FoodBreadTofu",
-            "FoodCheeseCurds",
+            "FoodSoupChiliClown",
             "FoodBurgerSuper",
             "FoodNoodlesCopy",
+            // "FoodMothMallow",
+            "FoodPizzaCorncob",
+            "FoodPizzaDonkpocket",
             "FoodSoupMonkey",
-            "FoodCakeCarrot",
-            "FoodBreadBaguette",
+            "FoodMothSeedSoup",
             "FoodTartGrape",
+            "FoodMealCubancarp",
             "FoodMealSashimi",
-            "FoodBakedChevreChaud",
-            "FoodMealPotatoLoaded",
-            "FoodMealRibs",
-            "FoodMealQueso",
+            "FoodBurgerCarp",
+            "FoodMealSoftTaco",
+            "FoodMothMacBalls",
             "FoodSoupNettle",
-            "FoodMealEnchiladas",
-            "FoodBurgerBaseball",
-            "FoodMealNachosCheesy",
-            "FoodSoupChiliHot",
-            "FoodMothCapreseSalad",
+            "FoodBurgerDuck",
+            "FoodBurgerBaseball"
         };
 
-        [DataField]
-        public List<EntProtoId> Tier3Protos = new()
+        [DataField("tier3Protos")]
+        public List<String> Tier3Protos = new()
         {
-            "FoodSoupChiliClown",
-            "FoodCakeCheese",
-            "FoodCakeLemoon",
-            "FoodTartGapple",
-            "FoodMealNachosCuban",
+            "FoodBurgerGhost",
             "FoodSaladWatermelonFruitBowl",
-            "FoodBakedDumplings",
-            "FoodMealCubancarp",
             "FoodBakedCannabisBrownieBatch",
-            "FoodBreadFrenchToast",
-            "FoodMothSeedSoup",
-            "FoodPieFrosty",
-            "FoodBreadBanana",
-            "FoodBreadCotton",
-            "FoodBurgerCarp",
-            "FoodBurgerMcguffin",
-            "FoodBurgerMcrib",
-            "FoodMothFleetSalad",
+            "FoodPizzaDank",
+            "FoodBurgerBear",
+            "FoodBurgerMime",
             "FoodCakeSuppermatter",
-            "FoodBurgerFive",
-            "FoodPieBaklava",
-            "FoodNoodlesMeatball",
-            "FoodSaladValid",
-            "FoodSaladKimchi",
-            "FoodSaladCitrus",
-            "FoodSoupMeatball",
-            "FoodSoupWingFangChu",
-            "FoodTacoChickenSupreme",
-            "FoodTacoBeefSupreme",
-            "FoodBakedGrilledCheeseSandwich",
-            "FoodMothCheesecakeBalls",
             "FoodSoupChiliCold",
-            "FoodMothKachumbariSalad",
-            "FoodMothChiliCabbageWrap",
-            "FoodMothHeartburnSoup",
             "FoodSoupBisque",
             "FoodCakeSlime",
-            "FoodBurgerCrazy",
-            "FoodMealPoachedPears",
-            "FoodMealPearsBelleHelene",
-            "FoodTartPearCheese",
-            "FoodMeatSnailCooked",
-            "FoodSoupEscargot",
-            "FoodMealNachosCuban",
-            "FoodSaladHerb",
-            "FoodSaladColeslaw",
-            "FoodSaladCaesar",
-            "FoodSaladFruit",
+            "FoodBurgerCrazy"
         };
 
-        [DataField]
-        public List<EntProtoId> RobossuierRewards = new()
+        [DataField("robossuierRewards")]
+        public IReadOnlyList<String> RobossuierRewards = new[]
         {
             "DrinkIceCreamGlass",
             "FoodFrozenPopsicleOrange",
@@ -193,29 +148,26 @@ namespace Content.Server.Roboisseur.Roboisseur
             "FoodFrozenSandwich",
         };
 
-        [DataField]
-        public List<EntProtoId> BlacklistedProtos = new()
+        [DataField("blacklistedProtos")]
+        public IReadOnlyList<String> BlacklistedProtos = new[]
         {
             "FoodBurgerSpell",
+            "FoodBreadBanana",
             "FoodMothSqueakingFry",
-            "FoodBurgerMime",
-            "FoodPizzaCorncob",
-            "FoodBurgerGhost",
-            "FoodCakeClown",
-            "FoodCakeSpaceman",
-            "MobCatCake",
-            "MobBreadDog",
-            "FoodBreadMimana",
+            "FoodMothFleetSalad",
             "FoodBreadMeatSpider",
             "FoodBurgerHuman",
             "FoodNoodlesBoiled",
-            "FoodPizzaDonkpocket",
             "FoodMothOatStew",
+            "FoodKebabSkewer",
+            "FoodSoupTomato",
             "FoodDonkpocketBerryWarm",
             "FoodBreadButteredToast",
             "FoodMothCottonSoup",
             "LeavesTobaccoDried",
             "FoodSoupEyeball",
+            "FoodMothKachumbariSalad",
+            "FoodMeatRatdoubleKebab",
             "FoodBurgerCorgi",
             "FoodBreadPlain",
             "FoodBreadBun",
@@ -223,6 +175,7 @@ namespace Content.Server.Roboisseur.Roboisseur
             "FoodSoupTomatoBlood",
             "FoodMothSaladBase",
             "FoodPieXeno",
+            "FoodPiePumpkin",
             "FoodPiePumpkinSlice",
             "FoodDonkpocketTeriyakiWarm",
             "FoodMothBakedCheese",
@@ -236,23 +189,24 @@ namespace Content.Server.Roboisseur.Roboisseur
             // "FoodBreadMoldySlice",
             "FoodRiceBoiled",
             "FoodMothEyeballSoup",
+            "FoodBreadCreamcheese",
+            "FoodSoupOnion",
             "FoodBurgerAppendix",
             "FoodBurgerRat",
-            "FoodBurgerRobot",
             "RegenerativeMesh",
+            "FoodCheeseCurds",
             "FoodDonkpocketHonkWarm",
             "FoodOatmeal",
             "FoodBreadJellySlice",
             "FoodMothCottonSalad",
             // "FoodBreadMoldy",
             "FoodDonkpocketSpicyWarm",
-            "FoodPizzaDank",
             "FoodCannabisButter",
             "FoodNoodles",
+            "FoodBreadMeat",
             "LeavesCannabisDried",
             "FoodBurgerCheese",
             "FoodDonkpocketDankWarm",
-            "FoodDonkpocketDank",
             "FoodSpaceshroomCooked",
             "FoodMealFries",
             "MedicatedSuture",
@@ -260,65 +214,13 @@ namespace Content.Server.Roboisseur.Roboisseur
             "FoodCakePlain",
             "DisgustingSweptSoup",
             "FoodBurgerPlain",
+            "FoodBreadGarlicSlice",
             "FoodSoupMushroom",
-            "FoodDonkpocketCarp",
-            "FoodDonkpocketCarpWarm",
-            "FoodDonkpocketDink",
-            "FoodDonkpocketStonkWarm",
-            "FoodDonkpocketStonk",
-            "FoodDonkpocketBerryWarm",
-            "FoodDonkpocketBerry",
-            "FoodDonkpocketHonkWarm",
-            "FoodDonkpocketHonk",
-            "FoodDonkpocketPizzaWarm",
-            "FoodDonkpocketPizza",
+            "FoodSoupWingFangChu",
             "FoodBreadMeatXeno",
-            "FoodBakedNugget",
-            "FoodBakedPancake",
-            "FoodBakedPancakeBb",
-            "FoodBakedPancakeCc",
-            "FoodBakedWaffle",
-            "FoodBakedWaffleSoy",
-            "FoodBakedWaffleSoylent",
-            "FoodBakedWaffleRoffle",
-            "FoodBakedBrownieBatch",
-            "FoodBakedBrownie",
-            "FoodBakedCannabisBrownieBatch",
-            "FoodBakedCannabisBrownie",
-            "FoodTartMime",
-            "FoodPieAmanita",
-            "FoodPizzaMargherita", // pizza lovers in shambles
-            "FoodPizzaMeat",
-            "FoodPizzaMushroom",
-            "FoodPizzaVegetable",
-            "FoodPizzaDank",
-            "FoodPizzaSassysage",
-            "FoodPizzaPineapple",
-            "FoodPizzaArnold",
-            "FoodPizzaMoldySlice",
-            "FoodPizzaUranium",
-            "FoodPizzaCotton",
-            "FoodMothPizzaFirecracker",
-            "FoodMothPizzaFiveCheese",
-            "FoodMothPizzaPesto",
-            "FoodBurgerDuck",
-            "FoodBurgerBear",
-            "FoodBurgerClown",
-            "FoodBurgerCrab",
-            "FoodBurgerXeno",
-            "FoodMealMemoryleek",
-            "FoodMothMacBalls",
-            "FoodJellyAmanita",
-            "FoodSoupMiso",
-            "FoodSoupTomatoBlue",
-            "FoodBoritoPie",
-            "LeavesCannabisRainbowDried",
-            "LeavesCannabisDried",
             "FoodCakeBrain",
             "FoodBurgerBrain",
-            "FoodMeatAnomaly",
-            "FoodMothBeanStew",
-            "FoodPizzaWorldpeas",
+            "FoodSaladCaesar"
         };
     }
 }
