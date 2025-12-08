@@ -6,6 +6,7 @@ using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Serialization;
 using Robust.Shared.Timing;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Gravity
 {
@@ -14,8 +15,7 @@ namespace Content.Shared.Gravity
         [Dependency] protected readonly IGameTiming Timing = default!;
         [Dependency] private readonly AlertsSystem _alerts = default!;
 
-        [ValidatePrototypeId<AlertPrototype>]
-        public const string WeightlessAlert = "Weightless";
+        public static readonly ProtoId<AlertPrototype> WeightlessAlert = "Weightless";
 
         private EntityQuery<GravityComponent> _gravityQuery;
 

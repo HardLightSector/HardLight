@@ -19,9 +19,6 @@ namespace Content.Client._Impstation.Thaven;
 [GenerateTypedNameReferences]
 public sealed partial class MoodDisplay : Control
 {
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-    [Dependency] private readonly IChatManager _chatManager = default!;
-    [Dependency] private readonly EntityManager _entityManager = default!;
 
     private string GetSharedString()
     {

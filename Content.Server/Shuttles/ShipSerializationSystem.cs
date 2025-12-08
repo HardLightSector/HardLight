@@ -58,13 +58,10 @@ namespace Content.Server.Shuttles.Save
         [Dependency] private readonly ISerializationManager _serializationManager = default!;
         [Dependency] private readonly ITileDefinitionManager _tileDefManager = default!;
         [Dependency] private readonly MapSystem _map = default!;
-        [Dependency] private readonly AtmosphereSystem _atmosphere = default!;
         [Dependency] private readonly IConsoleHost _consoleHost = default!;
         [Dependency] private readonly DecalSystem _decalSystem = default!;
         [Dependency] private readonly IConfigurationManager _configManager = default!;
-        [Dependency] private readonly IServerNetManager _netManager = default!;
         [Dependency] private readonly SharedContainerSystem _containerSystem = default!;
-        [Dependency] private readonly ServerIdentityService _serverIdentity = default!;
         [Dependency] private readonly SharedTransformSystem _transform = default!;
         [Dependency] private readonly IGameTiming _gameManager = default!;
         [Dependency] private readonly MapLoaderSystem _mapLoader = default!; // For refactored serializer path
@@ -960,18 +957,18 @@ namespace Content.Server.Shuttles.Save
             // Primary grid entities
             // Primary grid tiles
 
-            var newGrid = _mapManager.CreateGrid(targetMap);
+            var newGrid = _mapManager.CreateGridEntity(targetMap);
             // Ensure the reconstructed grid participates in physics so docking can create an actual joint.
             // Without a PhysicsComponent on the grid, DockingSystem.Dock will set DockedWith but skip joint creation.
             // Ensure a PhysicsComponent exists so DockingSystem can create a weld joint between grids.
-            _entityManager.EnsureComponent<Robust.Shared.Physics.Components.PhysicsComponent>(newGrid.Owner);
+            _entityManager.EnsureComponent<Robust.Shared.Physics.Components.PhysicsComponent>(newGrid);
             // Created new grid
 
             // Note: Grid splitting prevention would require internal access
             // TODO: Investigate alternative approaches to prevent grid splitting
 
             // Move grid to the specified offset position
-            var gridXform = Transform(newGrid.Owner);
+            var gridXform = Transform(newGrid);
             gridXform.WorldPosition = offset;
             // Apply original saved rotation (if any) before spawning entities/tiles so local positions remain valid.
             var savedRot = Angle.Zero;

@@ -43,7 +43,6 @@ public sealed class HolopadSystem : SharedHolopadSystem
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly PvsOverrideSystem _pvs = default!;
     [Dependency] private readonly StationRenameHolopadsSystem _renameHolopads = default!; // Frontier
-    [Dependency] private readonly MobStateSystem _mobState = default!;
 
     private float _updateTimer = 1.0f;
     private const float UpdateTime = 1.0f;

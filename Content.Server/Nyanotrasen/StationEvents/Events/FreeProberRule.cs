@@ -15,7 +15,6 @@ namespace Content.Server.StationEvents.Events;
 internal sealed class FreeProberRule : StationEventSystem<FreeProberRuleComponent>
 {
     [Dependency] private readonly IRobustRandom _robustRandom = default!;
-    [Dependency] private readonly IMapManager _mapManager = default!;
     [Dependency] private readonly AnchorableSystem _anchorable = default!;
     [Dependency] private readonly GlimmerSystem _glimmerSystem = default!;
     [Dependency] private readonly StationSystem _stationSystem = default!;

@@ -22,7 +22,6 @@ namespace Content.Server.Objectives.Systems;
 public sealed class ObjectiveRewardSystem : EntitySystem
 {
     [Dependency] private readonly SharedObjectivesSystem _objectives = default!;
-    [Dependency] private readonly SharedMindSystem _mindSystem = default!;
     [Dependency] private readonly BankSystem _bank = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly IAdminLogManager _adminLog = default!;

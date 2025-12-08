@@ -39,7 +39,6 @@ public sealed class ProjectileSystem : SharedProjectileSystem
     [Dependency] private readonly ChatSystem _chat = default!; // Frontier
 
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
 
     /// <summary>

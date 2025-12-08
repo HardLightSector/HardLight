@@ -21,7 +21,6 @@ namespace Content.Server.PsionicsRecords.Systems;
 /// </summary>
 public sealed class PsionicsRecordsSystem : EntitySystem
 {
-    [Dependency] private readonly GameTicker _ticker = default!;
     [Dependency] private readonly StationRecordsSystem _stationRecords = default!;
 
     public override void Initialize()

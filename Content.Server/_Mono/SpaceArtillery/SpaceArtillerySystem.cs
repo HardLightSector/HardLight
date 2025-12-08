@@ -22,7 +22,6 @@ namespace Content.Server._Mono.SpaceArtillery;
 public sealed partial class SpaceArtillerySystem : EntitySystem
 {
     [Dependency] private readonly GunSystem _gun = default!;
-    [Dependency] private readonly DeviceLinkSystem _deviceLink = default!;
     [Dependency] private readonly BatterySystem _battery = default!;
     [Dependency] private readonly SharedTransformSystem _xform = default!;
     [Dependency] private readonly SharedCameraRecoilSystem _recoilSystem = default!;

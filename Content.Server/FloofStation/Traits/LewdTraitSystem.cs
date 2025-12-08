@@ -1,4 +1,5 @@
 using Content.Server.Chemistry.Containers.EntitySystems;
+using Content.Shared.Chemistry.EntitySystems;
 using Content.Server.Popups;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.DoAfter;
@@ -22,7 +23,7 @@ public sealed class LewdTraitSystem : EntitySystem
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
     [Dependency] private readonly PopupSystem _popupSystem = default!;
-    [Dependency] private readonly SolutionContainerSystem _solutionContainer = default!;
+    [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
 
     public override void Initialize()
     {
@@ -48,7 +49,11 @@ public sealed class LewdTraitSystem : EntitySystem
     #region event handling
     private void OnComponentInitCum(Entity<CumProducerComponent> entity, ref ComponentStartup args)
     {
-        var solutionCum = _solutionContainer.EnsureSolution(entity.Owner, entity.Comp.SolutionName);
+        if (!_solutionContainer.EnsureSolution(entity.Owner,
+                entity.Comp.SolutionName,
+                out var solutionCum))
+            return;
+
         solutionCum.MaxVolume = entity.Comp.MaxVolume;
 
         solutionCum.AddReagent(entity.Comp.ReagentId, entity.Comp.MaxVolume - solutionCum.Volume);
@@ -56,7 +61,11 @@ public sealed class LewdTraitSystem : EntitySystem
 
     private void OnComponentInitMilk(Entity<MilkProducerComponent> entity, ref ComponentStartup args)
     {
-        var solutionMilk = _solutionContainer.EnsureSolution(entity.Owner, entity.Comp.SolutionName);
+        if (!_solutionContainer.EnsureSolution(entity.Owner,
+                entity.Comp.SolutionName,
+                out var solutionMilk))
+            return;
+
         solutionMilk.MaxVolume = entity.Comp.MaxVolume;
 
         solutionMilk.AddReagent(entity.Comp.ReagentId, entity.Comp.MaxVolume - solutionMilk.Volume);
@@ -78,7 +87,7 @@ public sealed class LewdTraitSystem : EntitySystem
              !EntityManager.HasComponent<RefillableSolutionComponent>(args.Using.Value)) //see if removing this part lets you milk on the ground.
             return;
 
-        _solutionContainer.EnsureSolution(entity.Owner, entity.Comp.SolutionName);
+        _solutionContainer.EnsureSolution(entity.Owner, entity.Comp.SolutionName, out _);
 
         var user = args.User;
         var used = args.Using.Value;
@@ -97,7 +106,7 @@ public sealed class LewdTraitSystem : EntitySystem
         if (!args.CanInteract || !TryComp<CumProducerComponent>(args.User, out var cumProducer))
             return;
 
-        _solutionContainer.EnsureSolution(args.User, cumProducer.SolutionName);
+        _solutionContainer.EnsureSolution(args.User, cumProducer.SolutionName, out _);
 
         var user = args.User;
         var target = uid;
@@ -119,7 +128,7 @@ public sealed class LewdTraitSystem : EntitySystem
              !EntityManager.HasComponent<RefillableSolutionComponent>(args.Using.Value)) //see if removing this part lets you milk on the ground.
             return;
 
-        _solutionContainer.EnsureSolution(entity.Owner, entity.Comp.SolutionName);
+        _solutionContainer.EnsureSolution(entity.Owner, entity.Comp.SolutionName, out _);
 
         var user = args.User;
         var used = args.Using.Value;

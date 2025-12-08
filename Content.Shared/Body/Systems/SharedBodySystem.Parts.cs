@@ -16,10 +16,8 @@ using Content.Shared._Shitmed.Body.Events;
 using Content.Shared._Shitmed.Body.Part;
 using Content.Shared._Shitmed.BodyEffects;
 using Content.Shared._Shitmed.Targeting.Events;
-using Content.Shared.Humanoid;
 using Content.Shared.Inventory;
 using Content.Shared.Random;
-using Content.Shared._Shitmed.Targeting.Events;
 
 namespace Content.Shared.Body.Systems;
 
@@ -1161,10 +1159,10 @@ public partial class SharedBodySystem
             return string.Empty;
 
         var hashCode = part.GetHashCode().ToString();
-        
+
         if (part.Symmetry != BodyPartSymmetry.None)
             return $"{part.Symmetry.ToString().ToLower()} {hashCode}";
-            
+
         return hashCode;
     }
 }

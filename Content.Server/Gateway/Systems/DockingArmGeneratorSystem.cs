@@ -27,13 +27,11 @@ namespace Content.Server.Gateway.Systems;
 public sealed class DockingArmGeneratorSystem : EntitySystem
 {
     [Dependency] private readonly IConfigurationManager _cfgManager = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IPrototypeManager _protoManager = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly GatewaySystem _gateway = default!;
     [Dependency] private readonly MetaDataSystem _metadata = default!;
     [Dependency] private readonly MapLoaderSystem _loader = default!;
-    [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly IMapManager _mapManager = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
@@ -151,13 +149,13 @@ public sealed class DockingArmGeneratorSystem : EntitySystem
     private void OnDockingArmOpen(Entity<DockingArmDestinationComponent> ent, ref GatewayOpenEvent args)
     {
         Log.Info($"OnDockingArmOpen called for {ToPrettyString(ent)} - Source Gateway: {ToPrettyString(args.MapUid)}");
-        
+
         // Check if we've hit the maximum dock limit
         if (ent.Comp.Generator != null && TryComp(ent.Comp.Generator, out DockingArmGeneratorComponent? genComp))
         {
             // Clean up deleted docks from the list
             genComp.SpawnedDocks.RemoveAll(dock => !Exists(dock));
-            
+
             if (genComp.SpawnedDocks.Count >= genComp.MaxDocks)
             {
                 Log.Warning($"Cannot spawn dock - maximum limit of {genComp.MaxDocks} docks reached");
@@ -166,7 +164,7 @@ public sealed class DockingArmGeneratorSystem : EntitySystem
                 return;
             }
         }
-        
+
         // Select a random grid path if not specified
         string gridPath = ent.Comp.GridPath;
         if (string.IsNullOrEmpty(gridPath) && ent.Comp.Generator != null && TryComp(ent.Comp.Generator, out DockingArmGeneratorComponent? generatorComp))
@@ -292,7 +290,7 @@ public sealed class DockingArmGeneratorSystem : EntitySystem
 
             // Add IFF component so the dock shows up on mass scanners
             EnsureComp<IFFComponent>(dockingArmGrid.Value);
-            
+
             // Track this dock in the generator component
             if (ent.Comp.Generator != null && TryComp<DockingArmGeneratorComponent>(ent.Comp.Generator, out genComp))
             {

@@ -19,7 +19,6 @@ namespace Content.Server.Worldgen.Systems.Debris;
 /// </summary>
 public sealed class DebrisFeaturePlacerSystem : BaseWorldSystem
 {
-    [Dependency] private readonly GCQueueSystem _gc = default!;
     [Dependency] private readonly NoiseIndexSystem _noiseIndex = default!;
     [Dependency] private readonly PoissonDiskSampler _sampler = default!;
     [Dependency] private readonly TransformSystem _xformSys = default!;

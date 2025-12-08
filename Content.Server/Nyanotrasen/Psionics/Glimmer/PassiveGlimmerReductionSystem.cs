@@ -17,7 +17,6 @@ namespace Content.Server.Psionics.Glimmer
         [Dependency] private readonly IRobustRandom _random = default!;
         [Dependency] private readonly IGameTiming _timing = default!;
         [Dependency] private readonly IConfigurationManager _cfg = default!;
-        [Dependency] private readonly GlimmerMonitorCartridgeSystem _cartridgeSys = default!;
 
         /// List of glimmer values spaced by minute.
         public List<int> GlimmerValues = new();

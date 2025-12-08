@@ -45,7 +45,6 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
     [Dependency] private readonly IResourceManager _resources = default!;
     [Dependency] private readonly SharedContainerSystem _container = default!; // For safe container removal before deletion
     [Dependency] private readonly UseDelaySystem _useDelay = default!;
-    [Dependency] private readonly GravitySystem _gravitySystem = default!; // For post-load gravity refresh
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
 
     private EntityQuery<TransformComponent> _transformQuery;

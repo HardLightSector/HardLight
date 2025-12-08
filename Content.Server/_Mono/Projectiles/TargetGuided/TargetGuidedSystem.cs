@@ -16,7 +16,6 @@ public sealed class TargetGuidedSystem : EntitySystem
     [Dependency] private readonly SharedTransformSystem _transform = null!;
     [Dependency] private readonly RotateToFaceSystem _rotateToFace = null!;
     [Dependency] private readonly PhysicsSystem _physics = null!;
-    [Dependency] private readonly FireControlSystem _fireControl = null!;
 
     public override void Initialize()
     {

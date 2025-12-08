@@ -22,7 +22,6 @@ public sealed class KitsuneSystem : SharedKitsuneSystem
     [Dependency] private readonly AccessSystem _access = default!;
     [Dependency] private readonly AccessReaderSystem _reader = default!;
     [Dependency] private readonly NpcFactionSystem _faction = default!;
-    [Dependency] private readonly ActionsSystem _actions = default!;
     [Dependency] private readonly SharedChargesSystem _charges = default!;
 
     public override void Initialize()

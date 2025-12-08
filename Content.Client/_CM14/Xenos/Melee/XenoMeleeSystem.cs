@@ -15,7 +15,6 @@ namespace Content.Client.CM14.Xenos.Melee;
 public sealed class XenoMeleeSystem : SharedXenoMeleeSystem
 {
     [Dependency] private readonly AnimationPlayerSystem _animation = default!;
-    [Dependency] private readonly IConsoleHost _console = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IOverlayManager _overlays = default!;
     [Dependency] private readonly TransformSystem _transform = default!;

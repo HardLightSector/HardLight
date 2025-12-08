@@ -51,29 +51,21 @@ public sealed partial class ThavenMoodsSystem : SharedThavenMoodSystem
     private readonly List<ThavenMood> _sharedMoods = new();
 
 
-    [ValidatePrototypeId<DatasetPrototype>]
-    private const string SharedDataset = "ThavenMoodsShared";
+    private static readonly ProtoId<DatasetPrototype> SharedDataset = "ThavenMoodsShared";
 
-    [ValidatePrototypeId<DatasetPrototype>]
-    private const string YesAndDataset = "ThavenMoodsYesAnd";
+    private static readonly ProtoId<DatasetPrototype> YesAndDataset = "ThavenMoodsYesAnd";
 
-    [ValidatePrototypeId<DatasetPrototype>]
-    private const string NoAndDataset = "ThavenMoodsNoAnd";
+    private static readonly ProtoId<DatasetPrototype> NoAndDataset = "ThavenMoodsNoAnd";
 
-    [ValidatePrototypeId<DatasetPrototype>]
-    private const string WildcardDataset = "ThavenMoodsWildcard";
+    private static readonly ProtoId<DatasetPrototype> WildcardDataset = "ThavenMoodsWildcard";
 
-    [ValidatePrototypeId<DatasetPrototype>]
-    private const string HornyDataset = "ThavenMoodsHorny";
+    private static readonly ProtoId<DatasetPrototype> HornyDataset = "ThavenMoodsHorny";
 
-    [ValidatePrototypeId<DatasetPrototype>]
-    private const string HornyWildcardDataset = "ThavenMoodsHornyEmag";
+    private static readonly ProtoId<DatasetPrototype> HornyWildcardDataset = "ThavenMoodsHornyEmag";
 
-    [ValidatePrototypeId<EntityPrototype>]
-    private const string ActionViewMoods = "ActionViewMoods";
+    private static readonly EntProtoId ActionViewMoods = "ActionViewMoods";
 
-    [ValidatePrototypeId<WeightedRandomPrototype>]
-    private const string RandomThavenMoodDataset = "RandomThavenMoodDataset";
+    private static readonly ProtoId<WeightedRandomPrototype> RandomThavenMoodDataset = "RandomThavenMoodDataset";
 
     public override void Initialize()
     {

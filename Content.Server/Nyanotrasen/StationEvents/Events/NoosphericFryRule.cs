@@ -27,7 +27,6 @@ namespace Content.Server.StationEvents.Events;
 /// </summary>
 internal sealed class NoosphericFryRule : StationEventSystem<NoosphericFryRuleComponent>
 {
-    [Dependency] private readonly IMapManager _mapManager = default!;
     [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
     [Dependency] private readonly InventorySystem _inventorySystem = default!;
     [Dependency] private readonly SharedAudioSystem _audioSystem = default!;

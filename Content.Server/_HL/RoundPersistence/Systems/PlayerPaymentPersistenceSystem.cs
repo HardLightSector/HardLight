@@ -25,8 +25,6 @@ namespace Content.Server.HL.RoundPersistence.Systems;
 public sealed class PlayerPaymentPersistenceSystem : EntitySystem
 {
     [Dependency] private readonly IPlayerManager _playerManager = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly MindSystem _mind = default!;
     [Dependency] private readonly StationSystem _station = default!;
 
     private ISawmill _sawmill = default!;

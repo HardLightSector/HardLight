@@ -77,7 +77,7 @@ namespace Content.Client.VendingMachines.UI
 
         private void GenerateButton(ListData data, ListContainerButton button)
         {
-            if (data is not VendorItemsListData { ItemProtoID: var protoID, ItemText: var text })
+            if (data is not VendorItemsListData { ItemProtoId: var protoID, ItemText: var text })
                 return;
 
             var item = new VendingMachineItem(protoID, text);
@@ -296,7 +296,7 @@ namespace Content.Client.VendingMachines.UI
     }
     // End Frontier
 
-    public record VendorItemsListData(EntProtoId ItemProtoID, int ItemIndex) : ListData
+    public record VendorItemsListData(EntProtoId ItemProtoId, int ItemIndex) : ListData
     {
         public string ItemText = string.Empty;
     }

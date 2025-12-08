@@ -13,7 +13,6 @@ namespace Content.Server._Mono.Company;
 public sealed class CompanySystem : EntitySystem
 {
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-    [Dependency] private readonly SharedJobSystem _job = default!;
 
     // Dictionary to store original company preferences for players
     private readonly Dictionary<string, string> _playerOriginalCompanies = new();

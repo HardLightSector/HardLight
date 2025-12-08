@@ -22,7 +22,6 @@ namespace Content.Server.Research.Systems
         [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
         [Dependency] private readonly SharedPopupSystem _popup = default!;
         // [Dependency] private readonly RadioSystem _radio = default!; // Frontier
-        [Dependency] private readonly StationSystem _station = default!;
         [Dependency] private readonly EntityLookupSystem _lookup = default!;
 
         public override void Initialize()

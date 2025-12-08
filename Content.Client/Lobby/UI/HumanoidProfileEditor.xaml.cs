@@ -547,16 +547,16 @@ namespace Content.Client.Lobby.UI
                 if (args.Id >= 0 && args.Id < companies.Count)
                 {
                     string companyId = companies[args.Id].ID;
-                    
+
                     // Get the current profile for comparison
                     var oldCompany = Profile?.Company;
-                    
+
                     // Update the profile with the new company
                     Profile = Profile?.WithCompany(companyId);
-                    
+
                     // Debug logging to verify selection
                     Logger.Debug($"Company changed from {oldCompany} to {companyId}");
-                    
+
                     // Explicitly call SetDirty to update save button state
                     SetDirty();
                 }
@@ -1185,7 +1185,7 @@ namespace Content.Client.Lobby.UI
 
             // Get the selected character for comparison
             var selectedCharacter = (HumanoidCharacterProfile)_preferencesManager.Preferences.SelectedCharacter;
-            
+
             // Check explicitly if company changed
             if (selectedCharacter.Company != Profile.Company)
             {
@@ -2033,17 +2033,14 @@ namespace Content.Client.Lobby.UI
             {
                 return;
             }
-            var hairMarking = Profile.Appearance.HairStyleId switch
-            {
-                HairStyles.DefaultHairStyle => new List<Marking>(),
-                _ => new() { new(Profile.Appearance.HairStyleId, new List<Color>() { Profile.Appearance.HairColor }) },
-            };
+            //All hail copypaste.  I suck at coding.
+            var hairMarking = Profile.Appearance.HairStyleId == HairStyles.DefaultHairStyle
+                ? new List<Marking>()
+                : new() { new(Profile.Appearance.HairStyleId, new List<Color>() { Profile.Appearance.HairColor }) };
 
-            var facialHairMarking = Profile.Appearance.FacialHairStyleId switch
-            {
-                HairStyles.DefaultFacialHairStyle => new List<Marking>(),
-                _ => new() { new(Profile.Appearance.FacialHairStyleId, new List<Color>() { Profile.Appearance.FacialHairColor }) },
-            };
+            var facialHairMarking = Profile.Appearance.FacialHairStyleId == HairStyles.DefaultFacialHairStyle
+                ? new List<Marking>()
+                : new() { new(Profile.Appearance.FacialHairStyleId, new List<Color>() { Profile.Appearance.FacialHairColor }) };
 
             HairStylePicker.UpdateData(
                 hairMarking,
@@ -2278,7 +2275,7 @@ namespace Content.Client.Lobby.UI
                 .Where(c => !c.Disabled || (username != null && c.Logins.Contains(username))) //Lua modified - company login support
                 .ToList();
             companies.Sort((a, b) => string.Compare(a.Name, b.Name, StringComparison.Ordinal));
-            
+
             // Make sure "None" is first in the list
             var noneIndex = companies.FindIndex(c => c.ID == "None");
             if (noneIndex != -1)
@@ -2303,13 +2300,13 @@ namespace Content.Client.Lobby.UI
                 found = true;
                 break;
             }
-            
+
             // If company wasn't found, default to "None" (index 0)
             if (!found)
             {
                 Logger.Debug($"Company {Profile.Company} not found in list, defaulting to None");
                 CompanyButton.SelectId(0);
-                
+
                 // Also reset the profile's company to None if the current one is disabled
                 if (_prototypeManager.TryIndex<CompanyPrototype>(Profile.Company, out var companyProto) && companyProto.Disabled)
                 {

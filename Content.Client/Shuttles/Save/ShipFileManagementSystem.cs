@@ -14,7 +14,6 @@ namespace Content.Client.Shuttles.Save
 {
     public sealed class ShipFileManagementSystem : EntitySystem
     {
-        [Dependency] private readonly IClientNetManager _netManager = default!;
         [Dependency] private readonly IResourceManager _resourceManager = default!;
 
         // Static data shared across all instances to handle multiple system instances
