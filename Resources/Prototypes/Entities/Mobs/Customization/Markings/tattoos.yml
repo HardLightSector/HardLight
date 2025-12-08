@@ -2,7 +2,7 @@
   id: TattooHiveChest
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Thaven, Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid # Frontier: added Goblin and afterwards
+  speciesRestriction: [Thaven, Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid] # Frontier: added Goblin and afterwards
   coloring:
     default:
       type:
