@@ -103,7 +103,6 @@ public sealed class PermaPardonCommand : LocalizedCommands
     [Dependency] private readonly JobWhitelistManager _jobWhitelist = default!;
     [Dependency] private readonly IPlayerLocator _playerLocator = default!;
     [Dependency] private readonly IPlayerManager _players = default!;
-    [Dependency] private readonly IPrototypeManager _prototypes = default!;
     [Dependency] private readonly IBanManager _bans = default!;
 
     public override string Command => "permapardon";

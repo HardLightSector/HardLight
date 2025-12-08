@@ -16,7 +16,6 @@ namespace Content.Server._NF.Shipyard.Systems;
 /// </summary>
 public sealed class ShipEventHandlerSystem : EntitySystem
 {
-    [Dependency] private readonly IEntityManager _entityManager = default!;
     [Dependency] private readonly UserInterfaceSystem _userInterface = default!;
 
     private ISawmill _sawmill = default!;

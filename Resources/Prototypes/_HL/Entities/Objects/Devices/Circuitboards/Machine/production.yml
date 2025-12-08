@@ -8,8 +8,10 @@
       state: service
     - type: MachineBoard
       prototype: SlopDispenser
-      stackRequirements:
+      requirements:
+        MatterBin: 1
         Manipulator: 4
+      stackRequirements:
         Glass: 1
 
 - type: entity
@@ -33,3 +35,23 @@
   - type: Construction
     graph: AssortedForgeParts
     node: finish
+
+- type: entity
+  id: CargoCratePrinterMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: Cargo Crate Printer machine board
+  components:
+  - type: Sprite
+    state: science
+  - type: MachineBoard
+    prototype: CratePrinter
+    requirements: # Frontier
+      MatterBin: 4 # Frontier stackRequirements<requirements
+      Manipulator: 4 # Frontier stackRequirements<requirements
+    stackRequirements:
+      Glass: 20
+      Steel: 20
+      Gold: 10
+      Silver: 10
+      Diamond: 5
+      Bluespace: 5

@@ -24,7 +24,6 @@ public sealed partial class RadarBlipsSystem : EntitySystem
     private const float MaxBlipRenderDistance = 1000f;
 
     [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly SharedTransformSystem _xform = default!;
 
     private TimeSpan _lastUpdatedTime;
     private List<(NetCoordinates Position, Vector2 Vel, float Scale, Color Color, RadarBlipShape Shape)> _blips = new();

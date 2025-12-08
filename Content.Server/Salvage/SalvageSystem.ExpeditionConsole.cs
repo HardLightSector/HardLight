@@ -35,7 +35,6 @@ public sealed partial class SalvageSystem
     public const string CoordinatesDisk = "CoordinatesDisk";
 
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!; // Frontier
-    [Dependency] private readonly SalvageSystem _salvage = default!; // Frontier
     [Dependency] private readonly ChatSystem _chatSystem = default!; // HARDLIGHT
 
     private const float ShuttleFTLMassThreshold = 50f; // Frontier

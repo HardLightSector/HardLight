@@ -17,20 +17,13 @@ namespace Content.Shared.Cybernetics
     {
 
         [Dependency] private readonly SharedActionsSystem _actions = default!;
-
-        [Dependency] private readonly GibbingSystem _gibbing = default!;
-
-        [Dependency] private readonly BodySystem _body = default!;
-
         [Dependency] private readonly SharedHandsSystem _hands = default!;
         [Dependency] private readonly PopupSystem _popup = default!;
 
         [Dependency] private readonly IRobustRandom _rand = default!;
         [Dependency] private readonly AudioSystem _audio = default!;
 
-        [Dependency] private readonly ExplosionSystem _explosion = default!;
 
-        [Dependency] private readonly InventorySystem _inventory = default!;
         public override void Initialize()
         {
             base.Initialize();

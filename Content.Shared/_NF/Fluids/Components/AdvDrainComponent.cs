@@ -2,6 +2,7 @@ using Content.Shared.Chemistry.Components;
 using Content.Shared.Tag;
 using Robust.Shared.Audio;
 using Content.Shared.Fluids;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared._NF.Fluids.Components;
 
@@ -18,8 +19,7 @@ public sealed partial class AdvDrainComponent : Component
 {
     public const string SolutionName = "drainBuffer";
 
-    [ValidatePrototypeId<TagPrototype>]
-    public const string PlungerTag = "Plunger";
+    public static readonly ProtoId<TagPrototype> PlungerTag = "Plunger";
 
     [ViewVariables]
     public Entity<SolutionComponent>? Solution = null;

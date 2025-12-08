@@ -1,21 +1,19 @@
 using Content.Client.Rotation;
 using Content.Shared.Buckle;
 using Content.Shared.Buckle.Components;
+using Content.Shared.Movement.Systems;
 using Content.Shared.Rotation;
 using Robust.Client.GameObjects;
-using Robust.Client.Player;
-using Robust.Shared.GameStates;
-using Robust.Shared.Timing;
-
+using Robust.Client.Graphics;
 
 namespace Content.Client.Buckle;
 
 internal sealed class BuckleSystem : SharedBuckleSystem
 {
     [Dependency] private readonly RotationVisualizerSystem _rotationVisualizerSystem = default!;
-    [Dependency] private readonly IPlayerManager _player = default!; // Floof
-    [Dependency] private readonly IGameTiming _timing = default!; // Floof
-    [Dependency] private readonly SharedTransformSystem _xform = default!; // Floof
+    [Dependency] private readonly IEyeManager _eye = default!;
+    [Dependency] private readonly SharedTransformSystem _xformSystem = default!;
+    [Dependency] private readonly SpriteSystem _sprite = default!;
 
     public override void Initialize()
     {
@@ -25,49 +23,14 @@ internal sealed class BuckleSystem : SharedBuckleSystem
         SubscribeLocalEvent<StrapComponent, MoveEvent>(OnStrapMoveEvent);
         SubscribeLocalEvent<BuckleComponent, BuckledEvent>(OnBuckledEvent);
         SubscribeLocalEvent<BuckleComponent, UnbuckledEvent>(OnUnbuckledEvent);
+        SubscribeLocalEvent<BuckleComponent, AttemptMobCollideEvent>(OnMobCollide);
     }
 
-    // Floof section - update the draw depths of all buckled entities
-    public override void FrameUpdate(float frameTime)
+    private void OnMobCollide(Entity<BuckleComponent> ent, ref AttemptMobCollideEvent args)
     {
-        var query = EntityQueryEnumerator<StrapComponent>();
-        while (query.MoveNext(out var uid, out var strap))
+        if (ent.Comp.Buckled)
         {
-            UpdateBucklesDrawDepth(uid, strap);
-        }
-        query.Dispose();
-    }
-    // Floof section end
-
-    /// <summary>
-    /// Is the strap entity already rotated north? Lower the draw depth of the buckled entity.
-    /// </summary>
-    private void OnBuckledEvent(Entity<BuckleComponent> ent, ref BuckledEvent args)
-    {
-        if (!TryComp<SpriteComponent>(args.Strap, out var strapSprite) ||
-            !TryComp<SpriteComponent>(ent.Owner, out var buckledSprite))
-            return;
-
-        if (GetEntityOrientation(args.Strap.Owner) == Direction.North)  // Floof - replaced with a method call
-        {
-            ent.Comp.OriginalDrawDepth ??= buckledSprite.DrawDepth;
-            buckledSprite.DrawDepth = strapSprite.DrawDepth - 1;
-        }
-    }
-
-    /// <summary>
-    /// Was the draw depth of the buckled entity lowered? Reset it upon unbuckling.
-    /// </summary>
-    private void OnUnbuckledEvent(Entity<BuckleComponent> ent, ref UnbuckledEvent args)
-    {
-        if (!TryComp<SpriteComponent>(ent.Owner, out var buckledSprite))
-            return;
-
-        if (ent.Comp.OriginalDrawDepth.HasValue)
-        {
-            buckledSprite.DrawDepth = ent.Comp.OriginalDrawDepth.Value;
-            // Floof - do not reset original draw depth here because prediction FUCKING SUCKS
-            // ent.Comp.OriginalDrawDepth = null;
+            args.Cancelled = true;
         }
     }
 
@@ -80,25 +43,24 @@ internal sealed class BuckleSystem : SharedBuckleSystem
         // This code is garbage, it doesn't work with rotated viewports. I need to finally get around to reworking
         // sprite rendering for entity layers & direction dependent sorting.
 
+        // Future notes:
+        // Right now this doesn't handle: other grids, other grids rotating, the camera rotation changing, and many other fun rotation specific things
+        // The entire thing should be a concern of the engine, or something engine helps to implement properly.
+        // Give some of the sprite rotations their own drawdepth, maybe as an offset within the rsi, or something like this
+        // And we won't ever need to set the draw depth manually
+
         if (args.NewRotation == args.OldRotation)
             return;
 
-        // Floof - everything that was below was separated into that method in order to allow calling it from other places
-        UpdateBucklesDrawDepth(uid, component);
-    }
-
-    private void UpdateBucklesDrawDepth(EntityUid uid, StrapComponent component) {
         if (!TryComp<SpriteComponent>(uid, out var strapSprite))
             return;
 
-        // Floof - man, fuck prediction.
-        if (!_timing.IsFirstTimePredicted)
-            return;
+        var angle = _xformSystem.GetWorldRotation(uid) + _eye.CurrentEye.Rotation; // Get true screen position, or close enough
 
-        var isNorth = GetEntityOrientation(uid) == Direction.North; // Floof - replaced with a method call
+        var isNorth = angle.GetCardinalDir() == Direction.North;
         foreach (var buckledEntity in component.BuckledEntities)
         {
-            if (!TryComp<BuckleComponent>(buckledEntity, out var buckle) || buckle.BuckledTo != uid)
+            if (!TryComp<BuckleComponent>(buckledEntity, out var buckle))
                 continue;
 
             if (!TryComp<SpriteComponent>(buckledEntity, out var buckledSprite))
@@ -106,44 +68,69 @@ internal sealed class BuckleSystem : SharedBuckleSystem
 
             if (isNorth)
             {
+                // This will only assign if empty, it won't get overwritten by new depth on multiple calls, which do happen easily
                 buckle.OriginalDrawDepth ??= buckledSprite.DrawDepth;
-                buckledSprite.DrawDepth = strapSprite.DrawDepth - 1;
+                _sprite.SetDrawDepth((buckledEntity, buckledSprite), strapSprite.DrawDepth - 1);
             }
             else if (buckle.OriginalDrawDepth.HasValue)
             {
-                buckledSprite.DrawDepth = buckle.OriginalDrawDepth.Value;
+                _sprite.SetDrawDepth((buckledEntity, buckledSprite), buckle.OriginalDrawDepth.Value);
                 buckle.OriginalDrawDepth = null;
             }
         }
     }
 
+    /// <summary>
+    /// Lower the draw depth of the buckled entity without needing for the strap entity to rotate/move.
+    /// Only do so when the entity is facing screen-local north
+    /// </summary>
+    private void OnBuckledEvent(Entity<BuckleComponent> ent, ref BuckledEvent args)
+    {
+        if (!TryComp<SpriteComponent>(args.Strap, out var strapSprite))
+            return;
+
+        if (!TryComp<SpriteComponent>(ent.Owner, out var buckledSprite))
+            return;
+
+        var angle = _xformSystem.GetWorldRotation(args.Strap) + _eye.CurrentEye.Rotation; // Get true screen position, or close enough
+
+        if (angle.GetCardinalDir() != Direction.North)
+            return;
+
+        ent.Comp.OriginalDrawDepth ??= buckledSprite.DrawDepth;
+        _sprite.SetDrawDepth((ent.Owner, buckledSprite), strapSprite.DrawDepth - 1);
+    }
+
+    /// <summary>
+    /// Was the draw depth of the buckled entity lowered? Reset it upon unbuckling.
+    /// </summary>
+    private void OnUnbuckledEvent(Entity<BuckleComponent> ent, ref UnbuckledEvent args)
+    {
+        if (!TryComp<SpriteComponent>(ent.Owner, out var buckledSprite))
+            return;
+
+        if (!ent.Comp.OriginalDrawDepth.HasValue)
+            return;
+
+        _sprite.SetDrawDepth((ent.Owner, buckledSprite), ent.Comp.OriginalDrawDepth.Value);
+        ent.Comp.OriginalDrawDepth = null;
+    }
+
     private void OnAppearanceChange(EntityUid uid, BuckleComponent component, ref AppearanceChangeEvent args)
     {
-        if (!TryComp<RotationVisualsComponent>(uid, out var rotVisuals)
-            || !Appearance.TryGetData<bool>(uid, BuckleVisuals.Buckled, out var buckled, args.Component)
-            || !buckled || args.Sprite == null)
+        if (!TryComp<RotationVisualsComponent>(uid, out var rotVisuals))
             return;
+
+        if (!Appearance.TryGetData<bool>(uid, BuckleVisuals.Buckled, out var buckled, args.Component) ||
+            !buckled ||
+            args.Sprite == null)
+        {
+            _rotationVisualizerSystem.SetHorizontalAngle((uid, rotVisuals), rotVisuals.DefaultRotation);
+            return;
+        }
 
         // Animate strapping yourself to something at a given angle
         // TODO: Dump this when buckle is better
         _rotationVisualizerSystem.AnimateSpriteRotation(uid, args.Sprite, rotVisuals.HorizontalRotation, 0.125f);
     }
-
-    // Floof section - method for getting the direction of an entity perceived by the local player
-    private Direction GetEntityOrientation(EntityUid uid)
-    {
-        var xform = Transform(uid);
-        var ownRotation = xform.LocalRotation;
-        var eyeRotation =
-            TryComp<EyeComponent>(_player.LocalEntity, out var eye) ? eye.Eye.Rotation : Angle.Zero;
-
-        // This is TOTALLY dumb, but the eye stores camera rotation relative to the WORLD, so we need to convert it to local rotation as well
-        // Cameras are also relative to grids (NOT direct parents), so we cannot just GetWorldRotation of the entity or something similar.
-        if (xform.GridUid is { Valid: true } grid)
-            eyeRotation += _xform.GetWorldRotation(grid);
-
-        // Note: we subtract instead of adding because e.g. rotating an eye +90° visually rotates all entities in vision by -90°
-        return (ownRotation + eyeRotation).GetCardinalDir();
-    }
-    // Floof section end
 }

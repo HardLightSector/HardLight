@@ -11,11 +11,6 @@ namespace Content.Server.Cloning;
 /// </summary>
 public sealed class RandomCloneSpawnerSystem : EntitySystem
 {
-    [Dependency] private readonly CloningSystem _cloning = default!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
-    [Dependency] private readonly SharedMindSystem _mind = default!;
 
     public override void Initialize()
     {

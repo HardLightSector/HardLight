@@ -82,7 +82,6 @@ namespace Content.Server.Cloning
         [Dependency] private readonly IPlayerManager _playerManager = default!;
         [Dependency] private readonly CloningPodSystem _cloningPodSystem = default!;
         [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
-        [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
         [Dependency] private readonly PowerReceiverSystem _powerReceiverSystem = default!;
         [Dependency] private readonly SharedMindSystem _mindSystem = default!;
 

@@ -10,7 +10,6 @@ namespace Content.Client._Common.Consent;
 public sealed class ClientConsentManager : IClientConsentManager
 {
     [Dependency] private readonly IClientNetManager _netManager = default!;
-    [Dependency] private readonly IPlayerManager _playerManager = default!;
 
     private PlayerConsentSettings? _consent;
 
