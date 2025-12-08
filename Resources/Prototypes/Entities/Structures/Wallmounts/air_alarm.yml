@@ -119,7 +119,7 @@
 
 - type: entity
   parent: AirAlarm
-  id: ScienceAirAlarm
+  id: ArtifactAirAlarm
   suffix: Science
   - type: AccessReader
     access: [["Atmospherics"], ["Captain"], ["Research"]]
