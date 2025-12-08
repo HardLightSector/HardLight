@@ -322,13 +322,13 @@
   components:
   - type: Sprite
     sprite: _HL/Objects/Tools/syndie_drill.rsi
-    state: syn_drill_screw
+    state: drill_screw
   - type: Item
     inhandVisuals:
       left:
-      - state: syn_inhand-left
+      - state: inhand-left
       right:
-      - state: syn_inhand-right
+      - state: inhand-right
     size: Normal
   - type: Screwing
     speedModifier: 3.0
@@ -336,14 +336,14 @@
     entries:
       - behavior: Screwing
         sprite:
-          sprite: Objects/Tools/drill.rsi
-          state: syn_drill_screw
+          sprite: _HL/Objects/Tools/syndie_drill.rsi
+          state: drill_screw
         useSound: /Audio/Items/drill_use.ogg
         changeSound: /Audio/Items/change_drill.ogg
       - behavior: Anchoring
         sprite:
-          sprite: Objects/Tools/drill.rsi
-          state: syn_drill_bolt
+          sprite: _HL/Objects/Tools/syndie_drill.rsi
+          state: drill_bolt
         useSound: /Audio/Items/drill_use.ogg
         changeSound: /Audio/Items/change_drill.ogg
   - type: MeleeWeapon
