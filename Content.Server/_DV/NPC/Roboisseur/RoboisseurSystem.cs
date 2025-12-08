@@ -38,36 +38,7 @@ namespace Content.Server.Roboisseur.Roboisseur
             NextItem(component);
         }
 
-        public override void Update(float frameTime)
-        {
-            base.Update(frameTime);
-
-
-            foreach (var roboisseur in EntityQuery<RoboisseurComponent>())
-            {
-                roboisseur.Accumulator += frameTime;
-                roboisseur.BarkAccumulator += frameTime;
-                if (roboisseur.BarkAccumulator >= roboisseur.BarkTime.TotalSeconds)
-                {
-                    roboisseur.BarkAccumulator = 0;
-                    string message = Loc.GetString(_random.Pick(roboisseur.DemandMessages), ("item", roboisseur.DesiredPrototype.Name));
-                    if (roboisseur.ResetTime.TotalSeconds - roboisseur.Accumulator < 120)
-                    {
-                        roboisseur.Impatient = true;
-                        message = Loc.GetString(_random.Pick(roboisseur.ImpatientMessages), ("item", roboisseur.DesiredPrototype.Name));
-                    }
-                    else if (CheckTier(roboisseur.DesiredPrototype.ID, roboisseur) > 2)
-                        message = Loc.GetString(_random.Pick(roboisseur.DemandMessagesTier2), ("item", roboisseur.DesiredPrototype.Name));
-                    _chat.TrySendInGameICMessage(roboisseur.Owner, message, InGameICChatType.Speak, true);
-                }
-
-                if (roboisseur.Accumulator >= roboisseur.ResetTime.TotalSeconds)
-                {
-                    roboisseur.Impatient = false;
-                    NextItem(roboisseur);
-                }
-            }
-        }
+        // Removed interval-based message output. Roboisseur now only talks on interaction.
 
         private void RewardServicer(EntityUid uid, RoboisseurComponent component, int tier)
         {
