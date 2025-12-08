@@ -331,3 +331,14 @@
 
 - type: Tag
   id: UnFlatpackable
+
+# syndie tools
+
+- type: Tag
+  id: Syndie_Powerdrill
+
+- type: Tag
+  id: Syndie_JawsOfLife
+
+- type: Tag
+  id: Syndie_Multitool

@@ -86,3 +86,6 @@
     damage:
       types:
         Blunt: 14
+  - type: Tag
+    tags:
+    - Syndie_JawsOfLife

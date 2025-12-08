@@ -100,96 +100,43 @@
   parent: [NFClothingBeltStorageBase, ContentsExplosionResistanceBase, BaseC3SyndicateContraband]
   id: ClothingBeltUtilitySyndicate
   name: blood-red utility belt
-  description: Can hold various things while looking fresh as fuck.
+  description: It can hold various tools while looking fresh as fuck.
   components:
   - type: Sprite
     sprite: _HL/Clothing/Belt/utility.rsi
   - type: Clothing
     sprite: _HL/Clothing/Belt/utility.rsi
   - type: Storage
-      #maxItemSize: Normal# Frontier
-      # TODO: Fill this out more.
-      # whitelist: # Frontier: commented out whitelist
-      # tags:
-      #   - Powerdrill
-      #   - Wirecutter
-      #   - Crowbar
-      #   - Screwdriver
-      #   - Flashlight
-      #   - Wrench
-      #   - GeigerCounter
-      #   - Flare
-      #   - CableCoil
-      #   - CigPack
-      #   - Radio
-      #   - HolofanProjector
-      #   - Multitool
-      #   - AppraisalTool
-      #   - JawsOfLife
-      #   - GPS
-      #   - WeldingMask
-      # components:
-      #   - StationMap
-      #   - SprayPainter
-      #   - NetworkConfigurator
-      #   - RCD
-      #   - RCDAmmo
-      #   - Welder
-      #   - PowerCell
-      #   - Geiger
-      #   - TrayScanner
-      #   - GasAnalyzer
-    #   - HandLabeler
   - type: ItemMapper
     mapLayers:
       drill:
         whitelist:
           tags:
-          - Powerdrill
-      cutters_red:
-        whitelist:
-          tags:
-          - Wirecutter
-
-          #Starlight
-          - ImprovisedWirecutter
-      crowbar:
-        whitelist:
-          tags:
-          - Crowbar
-
-          #Starlight
-          - ImprovisedCrowbar
-      crowbar_red:
-        whitelist:
-          tags:
-          - CrowbarRed
+          - Syndie_Powerdrill
       jaws:
         whitelist:
           tags:
-          - JawsOfLife
-      screwdriver_nuke:
-        whitelist:
-          tags:
-          - Screwdriver
-
-          #Starlight
-          - ImprovisedScrewdriver
-      wrench:
-        whitelist:
-          tags:
-          - Wrench
-
-          #Starlight
-          - ImprovisedWrench
+          - Syndie_JawsOfLife
       multitool:
         whitelist:
           tags:
-          - Multitool
-          #Starlight
-          - ImprovisedMultitool
-    sprite: Clothing/Belt/belt_overlay.rsi
+          - Syndie_Multitool
+    sprite: _HL/Clothing/Belt/belt_overlay.rsi
   - type: Appearance
+
+- type: entity
+  parent: ClothingBeltUtilitySyndicate
+  id: ClothingBeltUtilitySyndicateFilled
+  suffix: filled
+  components:
+  - type: StorageFill
+    contents:
+    - id: SyndicateJawsOfLife
+    - id: SyndicateWelderExperimental
+    - id: SyndicatePowerDrill
+    - id: SyndicateMultitool
+    - id: ClothingHandsGlovesCombat
+    - id: ClothingMaskGasSyndicate
 # HL end
 
 - type: entity

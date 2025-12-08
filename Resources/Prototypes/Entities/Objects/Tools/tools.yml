@@ -329,8 +329,10 @@
       - state: inhand-left
       right:
       - state: inhand-right
-    size: Normal
-  - type: Screwing
+    size: Small
+  - type: Tool
+    qualities:
+    - Screwing
     speedModifier: 3.0
   - type: MultipleTool
     entries:
@@ -350,6 +352,9 @@
     damage:
       types:
         Piercing: 14
+  - type: Tag
+    tags:
+    - Syndie_Powerdrill
 
 - type: entity
   name: multitaser
@@ -390,7 +395,7 @@
         type: NetworkConfiguratorBoundUserInterface
   - type: Tag
     tags:
-    - Multitool
+    - Syndie_Multitool
     - DoorElectronicsConfigurator
   - type: PhysicalComposition
     materialComposition:

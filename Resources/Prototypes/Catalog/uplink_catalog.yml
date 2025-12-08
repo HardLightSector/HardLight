@@ -1001,6 +1001,21 @@
   categories:
   - UplinkDisruption
 
+# HL start
+- type: listing
+  id: UplinkToolbelt
+  name: uplink-toolbelt-name
+  description: uplink-toolbelt-desc
+  productEntity: ClothingBeltUtilitySyndicateFilled
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Telecrystal: 3
+  cost:
+    Telecrystal: 5
+  categories:
+  - UplinkDisruption
+# HL end
+
 - type: listing
   id: UplinkSyndicateJawsOfLife
   name: uplink-syndicate-jaws-of-life-name
