@@ -1011,7 +1011,7 @@
   discountDownTo:
     Telecrystal: 3
   cost:
-    Telecrystal: 5
+    Telecrystal: 6
   categories:
   - UplinkDisruption
 # HL end
