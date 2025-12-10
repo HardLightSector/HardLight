@@ -1,0 +1,15 @@
+- type: latheRecipe
+  parent: [ BaseCircuitboardRecipe ]
+  id: NuclearFabricatorMachineCircuitboard
+  result: NuclearFabricatorMachineCircuitboard
+
+- type: latheRecipe
+  parent: [ BaseCircuitboardRecipe ]
+  id: NuclearCentrifugeMachineCircuitboard
+  result: NuclearCentrifugeMachineCircuitboard
+
+- type: latheRecipePack
+  id: nuclearboards
+  recipes:
+  - NuclearFabricatorMachineCircuitboard
+  - NuclearCentrifugeMachineCircuitboard
