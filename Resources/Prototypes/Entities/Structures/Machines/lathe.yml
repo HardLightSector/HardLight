@@ -648,8 +648,22 @@
       map: ["enum.MaterialStorageVisualLayers.Inserting"]
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
   - type: Machine
     board: SecurityTechFabCircuitboard
+  - type: DisableToolUse
+    anchoring: true
+    prying: true
   - type: Lathe
     idleState: icon
     runningState: icon

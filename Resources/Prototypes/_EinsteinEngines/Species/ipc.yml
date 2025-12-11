@@ -68,7 +68,7 @@
       points: 1 # Hard light change
       required: false
     Head:
-      points: 1
+      points: 4
       required: true
       defaultMarkings: [ MobIPCHeadDefault ]
     Chest:
@@ -76,11 +76,11 @@
       required: true
       defaultMarkings: [ MobIPCTorsoDefault ]
     Legs:
-      points: 4
+      points: 8
       required: true
       defaultMarkings: [ MobIPCLLegDefault, MobIPCLFootDefault, MobIPCRLegDefault, MobIPCRFootDefault ]
     Arms:
-      points: 4
+      points: 8
       required: true
       defaultMarkings: [ MobIPCLArmDefault, MobIPCLHandDefault, MobIPCRArmDefault, MobIPCRHandDefault ]
     HeadSide:

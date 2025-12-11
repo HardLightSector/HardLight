@@ -30,11 +30,12 @@ public sealed partial class GatherableSystem
             return;
         }
         // Too strong (e.g. overpen) - gathers ore but destroys it
-        if (TryComp<OreVeinComponent>(args.OtherEntity, out var oreVein)
-            && _whitelistSystem.IsWhitelistPass(oreVein.GatherDestructionWhitelist, gathering.Owner))
-        {
-            oreVein.PreventSpawning = true;
-        }
+        // HL - Removed this because it's dumb and makes no sense
+        // if (TryComp<OreVeinComponent>(args.OtherEntity, out var oreVein)
+        //    && _whitelistSystem.IsWhitelistPass(oreVein.GatherDestructionWhitelist, gathering.Owner))
+        // {
+        //    oreVein.PreventSpawning = true;
+        //}
         // End Frontier: gathering changes
 
         Gather(args.OtherEntity, gathering, gatherable);

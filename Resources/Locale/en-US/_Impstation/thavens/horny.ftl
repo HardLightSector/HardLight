@@ -57,3 +57,6 @@ thaven-mood-sexpert-desc = There is a right way to have sex and you know what it
 
 thaven-mood-fuck-rock-name = Married To A Rock
 thaven-mood-fuck-rock-desc = One of your inanimate possessions is very dear to you. It is your lover, and it has thoughts, feelings, and needs.
+
+thaven-mood-attractive-species-name = {$species} Infatuation
+thaven-mood-attractive-species-desc = {$species} are the most attractive species you've ever seen. You can't help but infatuated with them every time you see them.

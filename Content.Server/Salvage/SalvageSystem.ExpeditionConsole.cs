@@ -52,8 +52,23 @@ public sealed partial class SalvageSystem
 
         station ??= _station.GetOwningStation(consoleUid);
 
-        if (station != null && TryComp<SalvageExpeditionDataComponent>(station.Value, out var expeditionData))
-            return expeditionData;
+        if (station != null)
+        {
+            // Prefer station-local expedition data; create if missing so consoles don't share global state.
+            if (TryComp<SalvageExpeditionDataComponent>(station.Value, out var expeditionData))
+                return expeditionData;
+
+            // Initialize per-station expedition data on-demand to avoid cross-station sharing after restarts.
+            var newData = EnsureComp<SalvageExpeditionDataComponent>(station.Value);
+            // Default timings: allow immediate mission generation; system will populate missions on next update.
+            newData.Cooldown = false;
+            newData.CanFinish = false;
+            newData.ActiveMission = 0;
+            newData.CooldownTime = TimeSpan.Zero;
+            newData.NextOffer = _timing.CurTime; // ready now
+            Dirty(station.Value, newData);
+            return newData;
+        }
 
         // HARDLIGHT: Fallback for shuttle consoles after round restarts.
         // Some purchased shuttles have their own station entity without expedition data.
@@ -62,11 +77,50 @@ public sealed partial class SalvageSystem
         var gridUid = xform?.GridUid ?? Transform(consoleUid).GridUid;
         if (gridUid != null && HasComp<ShuttleComponent>(gridUid.Value))
         {
-            var query = EntityQueryEnumerator<SalvageExpeditionDataComponent, StationDataComponent>();
-            while (query.MoveNext(out var stationUid, out var data, out _))
+            // If console is on a shuttle without a station association, try to resolve its owning station via transform.
+            var owningStation = _station.GetOwningStation(consoleUid, xform);
+            if (owningStation != null)
             {
-                return data; // Use the first available expedition data as a pragmatic fallback
+                if (TryComp<SalvageExpeditionDataComponent>(owningStation.Value, out var data))
+                    return data;
+
+                // Create per-station data to prevent different shuttles from sharing.
+                var created = EnsureComp<SalvageExpeditionDataComponent>(owningStation.Value);
+                created.Cooldown = false;
+                created.CanFinish = false;
+                created.ActiveMission = 0;
+                created.CooldownTime = TimeSpan.Zero;
+                created.NextOffer = _timing.CurTime;
+                Dirty(owningStation.Value, created);
+                return created;
             }
+
+            // Fallback: try to resolve via the shuttle grid's owning station.
+            var gridStation = _station.GetOwningStation(gridUid.Value);
+            if (gridStation != null)
+            {
+                if (TryComp<SalvageExpeditionDataComponent>(gridStation.Value, out var gridData))
+                    return gridData;
+
+                var createdGridData = EnsureComp<SalvageExpeditionDataComponent>(gridStation.Value);
+                createdGridData.Cooldown = false;
+                createdGridData.CanFinish = false;
+                createdGridData.ActiveMission = 0;
+                createdGridData.CooldownTime = TimeSpan.Zero;
+                createdGridData.NextOffer = _timing.CurTime;
+                Dirty(gridStation.Value, createdGridData);
+                return createdGridData;
+            }
+
+            // Ultimate fallback: attach expedition data to the shuttle grid itself so refresh/claim works.
+            var gridExpData = EnsureComp<SalvageExpeditionDataComponent>(gridUid.Value);
+            gridExpData.Cooldown = false;
+            gridExpData.CanFinish = false;
+            gridExpData.ActiveMission = 0;
+            gridExpData.CooldownTime = TimeSpan.Zero;
+            gridExpData.NextOffer = _timing.CurTime;
+            Dirty(gridUid.Value, gridExpData);
+            return gridExpData;
         }
 
         return null;
@@ -142,12 +196,10 @@ public sealed partial class SalvageSystem
 
         // Mark as claimed and active - console handles its own state
         data.ActiveMission = args.Index;
-        data.CanFinish = false; // Will be set to true when FTL completes
+        // Do not forcibly reset CanFinish here; preserve existing early-leave availability
 
         var mission = GetMission(missionparams.MissionType, _prototypeManager.Index<SalvageDifficultyPrototype>(missionparams.Difficulty), missionparams.Seed);
-        // No timer - missions are always available for independent consoles
-        data.NextOffer = _timing.CurTime + TimeSpan.FromSeconds(_cooldown);
-        data.CooldownTime = TimeSpan.FromSeconds(_cooldown);
+        // Do not modify offer timers on claim to avoid regenerating/changing offers prematurely
 
         UpdateConsole((uid, component));
 
@@ -236,8 +288,9 @@ public sealed partial class SalvageSystem
                 return;
             }
 
-            // Mark expedition as completed
-            expComp.Completed = true;
+            // Do NOT mark as completed here; reward should only be granted
+            // when mission objectives are actually complete. The runner logic
+            // updates expComp.Completed based on objectives.
 
             // Trigger the same FTL process as normal expedition timeout
             TriggerExpeditionFTLHome(expeditionMapUid.Value, expComp);
@@ -362,6 +415,14 @@ public sealed partial class SalvageSystem
             );
             _ui.SetUiState(uid, SalvageConsoleUiKey.Expedition, emptyState);
             return;
+        }
+
+        // Sanitize ActiveMission against current mission list to avoid UI/index errors
+        if (data.ActiveMission != 0 && !data.Missions.ContainsKey(data.ActiveMission))
+        {
+            Log.Warning($"Console {ToPrettyString(uid)} had ActiveMission={data.ActiveMission} not in mission list; resetting.");
+            data.ActiveMission = 0;
+            data.CanFinish = false;
         }
 
         // HARDLIGHT: Only generate missions if truly needed and not already generating

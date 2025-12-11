@@ -24,7 +24,7 @@
     proto: RailgunLaser
     fireCost: 500
   - type: Gun
-    fireRate: 1.2
+    fireRate: 0.8
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto

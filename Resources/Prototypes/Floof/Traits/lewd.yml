@@ -7,7 +7,7 @@
     - type: CumProducer
       maxVol: 25
       reVol: 5
-      reHunger: 10
+      reHunger: 1
     ##  solutionname: "penis"
     ##- type: SolutionContainerManager
       ##solutions:
@@ -32,7 +32,7 @@
     - type: CumProducer
       maxVol: 100
       reVol: 20
-      reHunger: 10
+      reHunger: 1
 
 - type: trait
   id: CumFlood
@@ -47,7 +47,7 @@
     - type: CumProducer
       maxVol: 250
       reVol: 50
-      reHunger: 10
+      reHunger: 1
 
 - type: trait
   id: BluespaceBalls
@@ -62,7 +62,7 @@
     - type: CumProducer
       maxVol: 1000
       reVol: 200
-      reHunger: 10
+      reHunger: 1
 
 ##- type: trait
   ##id: MilkProducer
@@ -97,7 +97,7 @@
     - type: MilkProducer
       maxVol: 50
       reVol: 10
-      reHunger: 10
+      reHunger: 1
 
 - type: trait
   id: MilkCascade
@@ -112,7 +112,7 @@
     - type: MilkProducer
       maxVol: 100
       reVol: 20
-      reHunger: 10
+      reHunger: 1
 
 - type: trait
   id: MilkFlood
@@ -127,7 +127,7 @@
     - type: MilkProducer
       maxVol: 250
       reVol: 50
-      reHunger: 10
+      reHunger: 1
 
 - type: trait
   id: BluespaceBreasts
@@ -142,7 +142,7 @@
     - type: MilkProducer
       maxVol: 1000
       reVol: 200
-      reHunger: 10
+      reHunger: 1
 
 # WIP - Needs a Reagent
 # - type: trait

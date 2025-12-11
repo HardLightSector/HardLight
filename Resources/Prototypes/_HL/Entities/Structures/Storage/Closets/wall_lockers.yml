@@ -21,7 +21,7 @@
     stateDoorOpen: bluespace_open
     stateDoorClosed: icon
   - type: StaticPrice
-    price: 150000
+    price: 500000
   - type: CargoSellBlacklist
   - type: Storage
     maxItemSize: Huge
@@ -40,6 +40,8 @@
     graph: LockerWallBluespace
     node: done
   - type: HLPersistOnShipSave
+  - type: ShipyardSellCondition # Frontier: Teleport to shipyard console on sale
+    preserveOnSale: true
 
 - type: entity
   id: HLLockerWallMedical

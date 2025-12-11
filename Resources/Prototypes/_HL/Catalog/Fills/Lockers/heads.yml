@@ -344,7 +344,6 @@
     - id: DoorRemoteSecurity
     - id: HoloprojectorSecurity
     - id: RubberStampHos
-    - id: SecurityTechFabCircuitboard
     - id: CargoRequestSecurityComputerCircuitboard
     - id: NFWeaponEnergyPistolDisabler
     - id: WantedListCartridge

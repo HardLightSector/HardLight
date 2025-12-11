@@ -21,6 +21,7 @@
   - Cuck
   - Sexpert
   - FuckRock
+  - AttractiveSpecies
 
 # Jumpsuits are uncomfortable, your skin needs to breathe. You should strive to be nude at all times.
 - type: thavenMood
@@ -118,13 +119,17 @@
   id: HornyCollector
   moodName: thaven-mood-horny-collector-name
   moodDesc: thaven-mood-horny-collector-desc
+  moodVars:
+    hornyitem: MoodHornyItems
 
 # You have a sexual fascination with {$department}. Try your best to be intimate and submissive for them.
 - type: thavenMood
   id: HornyDepartment
   moodName: thaven-mood-horny-department-name
   moodDesc: thaven-mood-horny-department-desc
-
+  moodVars:
+    department: MoodDepartments
+    
 # Technology is just so attractive... You are compelled to masturbate with machinery and have sex with IPCs, Protogens, and anyone with cybernetic limbs.
 - type: thavenMood
   id: Technophilia
@@ -150,3 +155,11 @@
   moodDesc: thaven-mood-fuck-rock-desc
   conflicts:
   - PetRock
+
+# {$species} are the most attractive species you've ever seen. You can't help but infatuated with them every time you see them.
+- type: thavenMood
+  id: AttractiveSpecies
+  moodName: thaven-mood-attractive-species-name
+  moodDesc: thaven-mood-attractive-species-desc
+  moodVars:
+    species: MoodSpecies

@@ -42,6 +42,7 @@
         layer:
         - MobLayer
   - type: Stamina
+    critThreshold: 125
   - type: NpcFactionMember
     factions:
     - NanoTrasen

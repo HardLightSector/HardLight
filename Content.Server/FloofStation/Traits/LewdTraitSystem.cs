@@ -2,6 +2,7 @@ using Content.Server.Chemistry.Containers.EntitySystems;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Server.Popups;
 using Content.Shared.Chemistry.Components;
+using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.DoAfter;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Mobs.Systems;
@@ -37,6 +38,7 @@ public sealed class LewdTraitSystem : EntitySystem
         //Verbs
         SubscribeLocalEvent<CumProducerComponent, GetVerbsEvent<InnateVerb>>(AddCumVerb);
         SubscribeLocalEvent<RefillableSolutionComponent, GetVerbsEvent<AlternativeVerb>>(AddCumInsideVerb);
+        SubscribeLocalEvent<InjectableSolutionComponent, GetVerbsEvent<AlternativeVerb>>(AddCumInsideInjectableVerb);
         SubscribeLocalEvent<MilkProducerComponent, GetVerbsEvent<InnateVerb>>(AddMilkVerb);
         //SubscribeLocalEvent<SquirtProducerComponent, GetVerbsEvent<InnateVerb>>(AddSquirtVerb); //Unused-Trait is WIP
 
@@ -120,6 +122,26 @@ public sealed class LewdTraitSystem : EntitySystem
         args.Verbs.Add(verbCumInside);
     }
 
+    // Handle cumming inside entities with InjectableSolutionComponent (e.g., players)
+    public void AddCumInsideInjectableVerb(EntityUid uid, InjectableSolutionComponent component, GetVerbsEvent<AlternativeVerb> args)
+    {
+        if (!args.CanInteract || !TryComp<CumProducerComponent>(args.User, out var cumProducer))
+            return;
+
+        _solutionContainer.EnsureSolution(args.User, cumProducer.SolutionName, out _);
+
+        var user = args.User;
+        var target = uid;
+
+        AlternativeVerb verbCumInside = new()
+        {
+            Act = () => AttemptCum((args.User, cumProducer), user, target),
+            Text = Loc.GetString("cum-verb-inside-text"),
+            Priority = 2
+        };
+        args.Verbs.Add(verbCumInside);
+    }
+
     public void AddMilkVerb(Entity<MilkProducerComponent> entity, ref GetVerbsEvent<InnateVerb> args)
     {
         if (args.Using == null ||
@@ -171,23 +193,45 @@ public sealed class LewdTraitSystem : EntitySystem
         if (!_solutionContainer.ResolveSolution(entity.Owner, entity.Comp.SolutionName, ref entity.Comp.Solution, out var solution))
             return;
 
-        if (!_solutionContainer.TryGetRefillableSolution(args.Args.Used.Value, out var targetSoln, out var targetSolution))
-            return;
-
-        args.Handled = true;
-        var quantity = solution.Volume;
-        if (quantity == 0)
+        // Try refillable solution first (containers like beakers)
+        if (_solutionContainer.TryGetRefillableSolution(args.Args.Used.Value, out var targetSoln, out var targetSolution))
         {
-            _popupSystem.PopupEntity(Loc.GetString("cum-verb-dry"), entity.Owner, args.Args.User);
+            args.Handled = true;
+            var quantity = solution.Volume;
+            if (quantity == 0)
+            {
+                _popupSystem.PopupEntity(Loc.GetString("cum-verb-dry"), entity.Owner, args.Args.User);
+                return;
+            }
+
+            if (quantity > targetSolution.AvailableVolume)
+                quantity = targetSolution.AvailableVolume;
+
+            var split = _solutionContainer.SplitSolution(entity.Comp.Solution.Value, quantity);
+            _solutionContainer.TryAddSolution(targetSoln.Value, split);
+            _popupSystem.PopupEntity(Loc.GetString("cum-verb-success", ("amount", quantity), ("target", Identity.Entity(args.Args.Used.Value, EntityManager))), entity.Owner, args.Args.User, PopupType.Medium);
             return;
         }
 
-        if (quantity > targetSolution.AvailableVolume)
-            quantity = targetSolution.AvailableVolume;
+        // Try injectable solution (entities like players with stomachs)
+        if (_solutionContainer.TryGetInjectableSolution(args.Args.Used.Value, out var injectSoln, out var injectSolution))
+        {
+            args.Handled = true;
+            var quantity = solution.Volume;
+            if (quantity == 0)
+            {
+                _popupSystem.PopupEntity(Loc.GetString("cum-verb-dry"), entity.Owner, args.Args.User);
+                return;
+            }
 
-        var split = _solutionContainer.SplitSolution(entity.Comp.Solution.Value, quantity);
-        _solutionContainer.TryAddSolution(targetSoln.Value, split);
-        _popupSystem.PopupEntity(Loc.GetString("cum-verb-success", ("amount", quantity), ("target", Identity.Entity(args.Args.Used.Value, EntityManager))), entity.Owner, args.Args.User, PopupType.Medium);
+            if (quantity > injectSolution.AvailableVolume)
+                quantity = injectSolution.AvailableVolume;
+
+            var split = _solutionContainer.SplitSolution(entity.Comp.Solution.Value, quantity);
+            _solutionContainer.TryAddSolution(injectSoln.Value, split);
+            _popupSystem.PopupEntity(Loc.GetString("cum-verb-success", ("amount", quantity), ("target", Identity.Entity(args.Args.Used.Value, EntityManager))), entity.Owner, args.Args.User, PopupType.Medium);
+            return;
+        }
     }
 
     private void OnDoAfterMilk(Entity<MilkProducerComponent> entity, ref MilkingDoAfterEvent args)

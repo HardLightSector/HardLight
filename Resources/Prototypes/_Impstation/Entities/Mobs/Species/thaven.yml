@@ -121,10 +121,10 @@
             state: hands
   - type: UserInterface
     interfaces:
-      ##enum.HumanoidMarkingModifierKey.Key:
-      ##  type: HumanoidMarkingModifierBoundUserInterface
-      ##enum.StrippingUiKey.Key:
-      ##  type: StrippableBoundUserInterface
+      enum.HumanoidMarkingModifierKey.Key:
+        type: HumanoidMarkingModifierBoundUserInterface
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
       # Goobstation - changelings
       ##enum.StoreUiKey.Key:
       ##  type: StoreBoundUserInterface
@@ -137,8 +137,8 @@
       ##  type: SpellsBoundUserInterface
       ##  requireInputValidation: false
       # Shitmed
-      ##enum.SurgeryUIKey.Key:
-      ##  type: SurgeryBui
+      enum.SurgeryUIKey.Key:
+        type: SurgeryBui
       enum.ThavenMoodsUiKey.Key: # impstation edit
         type: ThavenMoodsBoundUserInterface
         requireInputValidation: false

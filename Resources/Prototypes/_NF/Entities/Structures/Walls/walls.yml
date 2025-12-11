@@ -11,7 +11,13 @@
   abstract: true
   components:
   - type: Destructible
-    thresholds: []
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 10000 #HL - No longer invulnerable to concentrated artillery fire.
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
   - type: SoundOnGather
   - type: Gatherable
     toolWhitelist:
@@ -23,52 +29,42 @@
   parent: [NFAsteroidWall, WallIce]
   id: NFWallIce
   name: supercompacted ice # special name
-  categories: [ HideSpawnMenu ]
 
 - type: entity
   parent: [NFAsteroidWall, WallSandstone]
   id: NFWallSandstone
-  categories: [ HideSpawnMenu ]
 
 - type: entity
   parent: [NFAsteroidWall, WallNecropolis]
   id: NFWallNecropolis
-  categories: [ HideSpawnMenu ]
 
 - type: entity
   parent: [NFAsteroidWall, WallCobblebrick]
   id: NFWallCobblebrick
-  categories: [ HideSpawnMenu ]
 
 - type: entity
   parent: [NFAsteroidWall, WallBasaltCobblebrick]
   id: NFWallBasaltCobblebrick
-  categories: [ HideSpawnMenu ]
 
 - type: entity
   parent: [NFAsteroidWall, WallSnowCobblebrick]
   id: NFWallSnowCobblebrick
-  categories: [ HideSpawnMenu ]
 
 - type: entity
   parent: [NFAsteroidWall, WallAsteroidCobblebrick]
   id: NFWallAsteroidCobblebrick
-  categories: [ HideSpawnMenu ]
 
 - type: entity
   parent: [NFAsteroidWall, WallSandCobblebrick]
   id: NFWallSandCobblebrick
-  categories: [ HideSpawnMenu ]
 
 - type: entity
   parent: [NFAsteroidWall, WallChromiteCobblebrick]
   id: NFWallChromiteCobblebrick
-  categories: [ HideSpawnMenu ]
 
 - type: entity
   parent: [NFAsteroidWall, WallAndesiteCobblebrick]
   id: NFWallAndesiteCobblebrick
-  categories: [ HideSpawnMenu ]
 # endregion Base Walls
 
 # region Cobblebrick Ores

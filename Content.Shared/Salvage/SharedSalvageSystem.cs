@@ -51,11 +51,20 @@ public abstract partial class SharedSalvageSystem : EntitySystem
         var factionProtos = _proto.EnumeratePrototypes<SalvageFactionPrototype>()
             .Where(x =>
                 {
-                    return !x.Configs.TryGetValue("Difficulties", out var difficulties)
-                        || string.IsNullOrWhiteSpace(difficulties)
-                        || difficulties.Split(",").Contains(difficulty.ID.ToString());
+                    // Accept if no filter is set
+                    if (!x.Configs.TryGetValue("Difficulties", out var difficulties) || string.IsNullOrWhiteSpace(difficulties))
+                        return true;
+
+                    // Robust parsing: trim items, ignore empty entries, and compare case-insensitively
+                    var target = difficulty.ID.ToString();
+                    var tokens = difficulties.Split(',', StringSplitOptions.RemoveEmptyEntries)
+                                              .Select(t => t.Trim());
+                    return tokens.Any(t => string.Equals(t, target, StringComparison.OrdinalIgnoreCase));
                 }
             ).ToList();
+        // Fallback: if no factions match the difficulty filter, allow any faction to avoid crashes
+        if (factionProtos.Count == 0)
+            factionProtos = _proto.EnumeratePrototypes<SalvageFactionPrototype>().ToList();
         // End Frontier: difficulties per faction
         factionProtos.Sort((x, y) => string.Compare(x.ID, y.ID, StringComparison.Ordinal));
         var faction = factionProtos[rand.Next(factionProtos.Count)];

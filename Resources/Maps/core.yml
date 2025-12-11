@@ -19824,7 +19824,6 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 147
-      - invalid
   - uid: 996
     components:
     - type: Transform
@@ -19865,8 +19864,6 @@ entities:
       pos: -69.5,-46.5
       parent: 2
     - type: DeviceNetwork
-      deviceLists:
-      - invalid
   - uid: 1016
     components:
     - type: Transform
@@ -19919,8 +19916,6 @@ entities:
       pos: 27.5,48.5
       parent: 2
     - type: DeviceNetwork
-      deviceLists:
-      - invalid
   - uid: 1044
     components:
     - type: Transform
@@ -19928,8 +19923,6 @@ entities:
       pos: 27.5,41.5
       parent: 2
     - type: DeviceNetwork
-      deviceLists:
-      - invalid
   - uid: 1046
     components:
     - type: Transform
@@ -79442,8 +79435,6 @@ entities:
       pos: -63.5,-49.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 451
       - 623
@@ -79454,8 +79445,6 @@ entities:
       pos: -60.5,-56.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 451
       - 623
@@ -104451,8 +104440,6 @@ entities:
       pos: 34.5,48.5
       parent: 2
     - type: DeviceNetwork
-      deviceLists:
-      - invalid
     - type: AtmosPipeColor
       color: '#0055CCFF'
   - uid: 18027
@@ -104461,8 +104448,6 @@ entities:
       pos: 20.5,48.5
       parent: 2
     - type: DeviceNetwork
-      deviceLists:
-      - invalid
     - type: AtmosPipeColor
       color: '#0055CCFF'
   - uid: 18053
@@ -105605,7 +105590,6 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 147
-      - invalid
     - type: AtmosPipeColor
       color: '#0055CCFF'
   - uid: 18195
@@ -105671,8 +105655,6 @@ entities:
       pos: 27.5,42.5
       parent: 2
     - type: DeviceNetwork
-      deviceLists:
-      - invalid
     - type: AtmosPipeColor
       color: '#0055CCFF'
   - uid: 18202
@@ -105729,7 +105711,6 @@ entities:
       parent: 2
     - type: DeviceNetwork
       deviceLists:
-      - invalid
       - 200
     - type: AtmosPipeColor
       color: '#0055CCFF'
@@ -105740,7 +105721,6 @@ entities:
       parent: 2
     - type: DeviceNetwork
       deviceLists:
-      - invalid
       - 200
     - type: AtmosPipeColor
       color: '#0055CCFF'
@@ -105867,8 +105847,6 @@ entities:
       pos: 21.5,48.5
       parent: 2
     - type: DeviceNetwork
-      deviceLists:
-      - invalid
     - type: AtmosPipeColor
       color: '#990000FF'
   - uid: 18239
@@ -105878,8 +105856,6 @@ entities:
       pos: 33.5,48.5
       parent: 2
     - type: DeviceNetwork
-      deviceLists:
-      - invalid
     - type: AtmosPipeColor
       color: '#990000FF'
   - uid: 18253
@@ -107048,7 +107024,6 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 147
-      - invalid
     - type: AtmosPipeColor
       color: '#990000FF'
   - uid: 18396
@@ -107119,8 +107094,6 @@ entities:
       pos: 27.5,40.5
       parent: 2
     - type: DeviceNetwork
-      deviceLists:
-      - invalid
     - type: AtmosPipeColor
       color: '#990000FF'
   - uid: 18404
@@ -107130,8 +107103,6 @@ entities:
       pos: 27.5,32.5
       parent: 2
     - type: DeviceNetwork
-      deviceLists:
-      - invalid
     - type: AtmosPipeColor
       color: '#990000FF'
   - uid: 18405
@@ -107178,7 +107149,6 @@ entities:
       parent: 2
     - type: DeviceNetwork
       deviceLists:
-      - invalid
       - 200
     - type: AtmosPipeColor
       color: '#990000FF'
@@ -107189,7 +107159,6 @@ entities:
       parent: 2
     - type: DeviceNetwork
       deviceLists:
-      - invalid
       - 200
     - type: AtmosPipeColor
       color: '#990000FF'
@@ -161821,8 +161790,6 @@ entities:
     - type: Battery
       startingCharge: 0
     - type: DeviceNetwork
-      deviceLists:
-      - invalid
 - proto: WeaponEnergyTurretSecurityControlPanel
   entities:
   - uid: 29171

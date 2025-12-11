@@ -18,9 +18,13 @@ offering-window-claim = Claim
 
 salvage-expedition-window-next = Next offer
 
+salvage-expedition-difficulty-Easy = Easy
+salvage-expedition-difficulty-NFEasy = Easy
 salvage-expedition-difficulty-Moderate = Moderate
 salvage-expedition-difficulty-Hazardous = Hazardous
 salvage-expedition-difficulty-Extreme = Extreme
+salvage-expedition-difficulty-Nightmare = Nightmare
+salvage-expedition-difficulty-NFNightmare = Nightmare
 
 # Frontier: salvagers<team size
 salvage-expedition-difficulty-players = Recommended team size:

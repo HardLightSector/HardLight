@@ -223,6 +223,33 @@
   - TitleCase
 
 - type: dataset
+  id: MoodSpecies
+  values:
+  - Humans
+  - Thaven
+  - Dwarves
+  - Arachnids
+  - Reptilians
+  - Avali
+  - Vulpkanin
+  - Feroxi
+  - Protogens
+  - Slime People
+  - Shelegs
+  - Rodentia
+  - Resomi
+  - Kitsune
+  - IPCs
+  - Chitnids
+  - Oni
+  - Vox
+  - Moth People
+  - Felinids
+  - Diona
+  - Goblins
+  - Harpies
+
+- type: dataset
   id: MoodThavenWords
   values:
   - accept

@@ -57,7 +57,7 @@
   configs:
     DefenseStructure: XenoWardingTower
     Megafauna: MobXenoQueenNPC
-    Difficulties: NFModerate
+
 
 - type: salvageFaction
   id: NFCarps
@@ -94,7 +94,7 @@
   configs:
     DefenseStructure: CarpStatue
     Megafauna: NFMobDragonDungeon
-    Difficulties: NFModerate
+
 
 - type: salvageFaction
   id: NFFlesh
@@ -111,7 +111,7 @@
   configs:
     DefenseStructure: AberrantFleshDigestiveSack
     Megafauna: MobHorrorExpeditions
-    Difficulties: NFModerate
+
 
 - type: salvageFaction
   id: NFArgocytes
@@ -148,7 +148,7 @@
   configs:
     DefenseStructure: ArgocyteEgg
     Megafauna: MobArgocyteLeviathingExpeditions
-    Difficulties: NFModerate
+
 
 - type: salvageFaction
   id: HLZombies
@@ -171,7 +171,7 @@
   configs:
     DefenseStructure: MobZBloated
     Megafauna: MobZP0
-    Difficulties: NFModerate
+
 
 # region Hazardous
 
@@ -199,7 +199,7 @@
   configs:
     DefenseStructure: PunkPartySupplies
     Megafauna: MobPunkGangerLeader
-    Difficulties: NFHazardous
+
 
 - type: salvageFaction
   id: NFDinosaurs
@@ -229,7 +229,7 @@
   configs:
     DefenseStructure: DinosaurEgg
     Megafauna: MobDinosaurTrexExpeditions
-    Difficulties: NFHazardous
+
 
 - type: salvageFaction
   id: NFMercenaries
@@ -259,7 +259,7 @@
   configs:
     DefenseStructure: MercenaryCounterfeitCache
     Megafauna: MobMercenaryCaptain
-    Difficulties: NFHazardous
+
 
 # region Extreme
 
@@ -295,7 +295,7 @@
   configs:
     DefenseStructure: CybersunDataMiner
     Megafauna: MobSyndicateNavalCommanderA
-    Difficulties: NFExtreme
+
 
 - type: salvageFaction
   id: NFExplorers
@@ -324,7 +324,7 @@
   configs:
     DefenseStructure: ExplorersLootRadar
     Megafauna: MobExplorerBoss
-    Difficulties: NFExtreme
+
 
 - type: salvageFaction
   id: NFSilicons
@@ -356,7 +356,7 @@
   configs:
     DefenseStructure: RogueAiNode
     Megafauna: MobRogueSiliconBoss
-    Difficulties: NFExtreme
+
 
 - type: salvageFaction
   id: NFCultists
@@ -388,7 +388,7 @@
   configs:
     DefenseStructure: BloodCollector
     Megafauna: MobBloodCultistAscended
-    Difficulties: NFExtreme
+
 
 - type: salvageFaction
   id: HLWizards
@@ -415,4 +415,3 @@
   configs:
     DefenseStructure: NotABloodCollectorIPromise
     Megafauna: MobWizardBoss
-    Difficulties: NFExtreme
