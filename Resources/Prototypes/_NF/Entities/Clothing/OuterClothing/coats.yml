@@ -58,7 +58,7 @@
 - type: entity
   parent: [ ClothingOuterStorageBase, BaseC3ContrabandUnredeemable ]
   id: ClothingOuterCoatNfsdBomber
-  name: Colsec bomber
+  name: TSFMC bomber
   description: Lookin' slick Tom.
   components:
   - type: Sprite
@@ -69,7 +69,7 @@
 - type: entity
   parent: [ ClothingOuterStorageBase, BaseC3ContrabandUnredeemable ]
   id: ClothingOuterCoatNfsdBomberBrigmed
-  name: Colsec brigmedic bomber
+  name: TSFMC brigmedic bomber
   description: Blood may stain.
   components:
   - type: Sprite
@@ -80,7 +80,7 @@
 - type: entity
   parent: [ ClothingOuterStorageBase, BaseC3ContrabandUnredeemable ]
   id: ClothingOuterCoatNfsdFormal
-  name: Colsec formal coat
+  name: TSFMC formal coat
   description: Snazzy.
   components:
   - type: Sprite
@@ -91,7 +91,7 @@
 - type: entity
   parent: [ ClothingOuterStorageBase, BaseC3ContrabandUnredeemable ]
   id: ClothingOuterCoatNfsdFormalSheriff
-  name: Colsec sheriff's formal coat
+  name: TSFMC colonel's formal coat
   description: Very snazzy.
   components:
   - type: Sprite
@@ -102,7 +102,7 @@
 - type: entity
   parent: [ ClothingOuterStorageBase, BaseC3ContrabandUnredeemable ]
   id: ClothingOuterCoatNfsdLongCoat
-  name: Colsec long coat
+  name: TSFMC long coat
   description: Big iron on his hip...
   components:
   - type: Sprite

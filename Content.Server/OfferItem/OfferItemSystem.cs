@@ -11,8 +11,6 @@ namespace Content.Server.OfferItem;
 public sealed class OfferItemSystem : SharedOfferItemSystem
 {
     [Dependency] private readonly AlertsSystem _alertsSystem = default!;
-    [Dependency] private readonly SharedHandsSystem _hands = default!;
-    [Dependency] private readonly PopupSystem _popup = default!;
 
     public override void Update(float frameTime)
     {

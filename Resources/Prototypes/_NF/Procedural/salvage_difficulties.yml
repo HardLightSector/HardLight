@@ -1,12 +1,22 @@
 # Unused default colours: #52B4E996, #9FED5896
 
 - type: salvageDifficulty
+  id: NFEasy
+  lootTable: NFSalvageLootEasy
+  lootBudget: 5
+  mobBudget: 5
+  modifierBudget: 1
+  color: "#00ff2a95"
+  recommendedPlayers: 1
+  destructionStructures: 1
+
+- type: salvageDifficulty
   id: NFModerate
   lootTable: NFSalvageLootModerate
   lootBudget: 30
   mobBudget: 25
   modifierBudget: 2
-  color: "#EFB34196"
+  color: "#f8e00895"
   recommendedPlayers: 2
   destructionStructures: 5
 
@@ -16,7 +26,7 @@
   lootBudget: 40
   mobBudget: 32
   modifierBudget: 3
-  color: "#DE3A3A96"
+  color: "#fc7a0095"
   recommendedPlayers: 3
   destructionStructures: 7
 
@@ -29,3 +39,13 @@
   color: "#D381C996"
   recommendedPlayers: 4
   destructionStructures: 9
+
+- type: salvageDifficulty
+  id: NFNightmare
+  lootTable: NFSalvageLootNightmare
+  lootBudget: 100
+  mobBudget: 100
+  modifierBudget: 8
+  color: "#ff000095"
+  recommendedPlayers: 8
+  destructionStructures: 12

@@ -1,0 +1,21 @@
+- type: loadoutGroup
+  id: TsfmcNeckCommander
+  name: loadout-group-contractor-neck
+  minLimit: 1
+  loadouts:
+  - ContractorClothingNeckIFFCyan
+  - SheriffClothingNeckMantleSheriff
+  fallbacks:
+  - ContractorClothingNeckIFFCyan
+
+- type: loadoutGroup
+  id: TsfmcEarsCommander
+  name: loadout-group-contractor-ears
+  minLimit: 1
+  loadouts:
+  - TsfmcCommanderHeadset
+
+- type: loadout
+  id: TsfmcCommanderHeadset
+  equipment:
+    ears: ClothingHeadsetAltTsfmcCommander

@@ -21,14 +21,8 @@ using Robust.Shared.Map;
 namespace Content.Server._Starlight.Weapon.Systems;
 public sealed partial class WeaponDismantleOnShootSystem : SharedWeaponDismantleOnShootSystem
 {
-    [Dependency] private readonly TagSystem _tagSystem = default!;
-    [Dependency] private readonly SharedGunSystem _gunSystem = default!;
-    [Dependency] private readonly ILogManager _log = default!;
     [Dependency] protected readonly SharedTransformSystem _transformSystem = default!;
-    [Dependency] private readonly SharedPhysicsSystem _physics = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly ThrowingSystem _throwing = default!;
-    [Dependency] private readonly InventorySystem _inventory = default!;
     [Dependency] protected readonly DamageableSystem Damageable = default!;
     [Dependency] private readonly IEntityManager _entityManager = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
@@ -57,7 +51,7 @@ public sealed partial class WeaponDismantleOnShootSystem : SharedWeaponDismantle
 
         if (!TryComp<GunComponent>(ent, out var gunComponent))
             return;
-        
+
         var toCoordinates = gunComponent.ShootCoordinates;
 
         if (toCoordinates == null)

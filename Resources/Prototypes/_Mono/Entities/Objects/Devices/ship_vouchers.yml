@@ -1,0 +1,33 @@
+- type: entity
+  parent: BaseShipVoucher
+  id: ShipVoucherDebug
+  name: evil debug pirate ship voucher
+  description: put in console = free ship!!
+  components:
+  - type: Sprite
+    layers:
+    - state: blue
+    - state: voucherbailiff
+  - type: ShipyardVoucher
+    destroyOnEmpty: true
+    consoleType: BlackMarket
+    access:
+    - Pirate
+
+- type: entity
+  parent: BaseShipVoucher
+  id: ShipVoucherUSSP
+  name: USSP ship voucher
+  description: A small card that authorizes the acquisition of a singular free USSP ship.
+  components:
+  - type: Sprite
+    layers:
+    - state: nfsd
+    - state: voucherstationguard
+  - type: ShipyardVoucher
+    destroyOnEmpty: true
+    consoleType: USSP
+    access:
+    - USSP
+  - type: StaticPrice
+    vendPrice: 12500

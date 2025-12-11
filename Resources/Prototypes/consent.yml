@@ -43,3 +43,7 @@
   name: Interact with natural lubricant
   description: Turn this on for natural lubricant to have any meaningful interaction with you.
 
+- type: consentToggle
+  id: NSFWDescriptions
+  name: See NSFW Descriptions
+  description: Turn this on to see any temporary descriptions that are flagged as NSFW.

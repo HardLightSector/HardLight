@@ -9,11 +9,11 @@
 # Shuttle Notes:
 #
 - type: vessel
-  id: Copperhead
-  parent: BaseVesselAntag
-  name: Copperhead
-  description: "An old model of patrol boat, modernized to fit new Syndicate standards."
-  price: 73500 #49000, 50% markup
+  id: Archer
+  parent: BaseVessel
+  name: TSF-SKR Archer
+  description: A combat ship outfitted with 4 plasma turrets and 6 light autocannons. This ship has a military IFF designation.
+  price: 85200 # the plasma and plastitanium tax is real...
   category: Medium
   group: Syndicate
   shuttlePath: /Maps/_HL/Shuttles/Syndicate/Copperhead.yml
@@ -24,8 +24,8 @@
   - Uranium
 
 - type: gameMap
-  id: Copperhead
-  mapName: 'Copperhead'
+  id: Archer
+  mapName: 'TSF-SKR Archer'
   mapPath: /Maps/_HL/Shuttles/Syndicate/Copperhead.yml
   minPlayers: 0
   stations:

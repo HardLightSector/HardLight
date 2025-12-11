@@ -1,0 +1,23 @@
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsUSSP
+  suffix: USSP, Locked
+  components:
+  - type: AccessReader
+    access: [["USSP"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsUSSPHigh
+  suffix: USSP Secure, Locked
+  components:
+  - type: AccessReader
+    access: [["USSPHigh"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsUSSPCommand
+  suffix: USSP Command, Locked
+  components:
+  - type: AccessReader
+    access: [["USSPCommand"]]

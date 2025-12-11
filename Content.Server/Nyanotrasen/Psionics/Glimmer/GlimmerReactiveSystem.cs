@@ -42,7 +42,6 @@ namespace Content.Server.Psionics.Glimmer
         [Dependency] private readonly SharedDestructibleSystem _destructibleSystem = default!;
         [Dependency] private readonly GhostSystem _ghostSystem = default!;
         [Dependency] private readonly RevenantSystem _revenantSystem = default!;
-        [Dependency] private readonly IMapManager _mapManager = default!;
         [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
         [Dependency] private readonly SharedPointLightSystem _pointLightSystem = default!;
 

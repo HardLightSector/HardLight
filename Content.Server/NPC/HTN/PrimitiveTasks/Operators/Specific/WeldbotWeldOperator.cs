@@ -16,7 +16,6 @@ public sealed partial class WeldbotWeldOperator : HTNOperator
 {
     [Dependency] private readonly IEntityManager _entMan = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-    private ChatSystem _chat = default!;
     private WeldbotSystem _weldbot = default!;
     private SharedAudioSystem _audio = default!;
     private SharedInteractionSystem _interaction = default!;
@@ -40,7 +39,6 @@ public sealed partial class WeldbotWeldOperator : HTNOperator
     public override void Initialize(IEntitySystemManager sysManager)
     {
         base.Initialize(sysManager);
-        _chat = sysManager.GetEntitySystem<ChatSystem>();
         _weldbot = sysManager.GetEntitySystem<WeldbotSystem>();
         _audio = sysManager.GetEntitySystem<SharedAudioSystem>();
         _interaction = sysManager.GetEntitySystem<SharedInteractionSystem>();
@@ -113,8 +111,7 @@ public sealed partial class WeldbotWeldOperator : HTNOperator
         _audio.PlayPvs(botComp.WeldSound, target);
 
         if((weldableIsSilicon && damage.DamagePerGroup["Brute"].Value == 0)
-            || (weldableIsStructure && damage.TotalDamage.Value == 0)) //only say "all done if we're actually done!"
-            _chat.TrySendInGameICMessage(owner, Loc.GetString("weldbot-finish-weld"), InGameICChatType.Speak, hideChat: true, hideLog: true);
+            || (weldableIsStructure && damage.TotalDamage.Value == 0)); //only say "all done if we're actually done!"
 
         return HTNOperatorStatus.Finished;
     }

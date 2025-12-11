@@ -462,3 +462,42 @@
     sprite: /Textures/Interface/Misc/job_icons.rsi
     state: Admin
   allowSelection: false
+  
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconServiceBorg
+  icon:
+    sprite: /Textures/_HL/Interface/Misc/job_icons.rsi
+    state: ServiceBorg
+  jobName: job-name-borg
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconSecurityBorg
+  icon:
+    sprite: /Textures/_HL/Interface/Misc/job_icons.rsi
+    state: SecurityBorg
+  jobName: job-name-borg
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconSalvageBorg
+  icon:
+    sprite: /Textures/_HL/Interface/Misc/job_icons.rsi
+    state: SalvageBorg
+  jobName: job-name-borg
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconEngineeringBorg
+  icon:
+    sprite: /Textures/_HL/Interface/Misc/job_icons.rsi
+    state: EngineeringBorg
+  jobName: job-name-borg
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconMedicalBorg
+  icon:
+    sprite: /Textures/DeltaV/Interface/Misc/job_icons.rsi
+    state: MedicalBorg

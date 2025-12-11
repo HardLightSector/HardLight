@@ -25,7 +25,6 @@ public abstract class SharedModifyMarkingsSystem : EntitySystem
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
     [Dependency] private readonly InventorySystem _inventory = default!;
-    [Dependency] private readonly SharedConsentSystem _consentSystem = default!;
     [Dependency] private readonly IEntityManager _entMan = default!;
     [Dependency] private readonly INetManager _net = default!;
 

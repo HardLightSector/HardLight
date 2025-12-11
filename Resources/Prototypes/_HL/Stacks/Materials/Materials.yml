@@ -4,10 +4,94 @@
   icon: { sprite: /Textures/_HL/Objects/Materials/resin.rsi, state: icon }
   spawn: MaterialResin
   maxCount: 50
-  
+
 - type: stack
   id: RoyalResin
   name: stack-Royal-Resin
   icon: { sprite: /Textures/_HL/Objects/Materials/royalresin.rsi, state: icon }
   spawn: MaterialRoyalResin
   maxCount: 50
+
+- type: stack
+  id: LightShipWeaponFrame
+  name: stack-Light-Frame
+  icon: { sprite: /Textures/_HL/Objects/Materials/royalresin.rsi, state: icon }
+  spawn: MaterialLightShipWeaponFrame
+  maxCount: 10
+
+- type: stack
+  id: LightShipWeaponServo
+  name: stack-Light-Servo
+  icon: { sprite: /Textures/_HL/Objects/Materials/royalresin.rsi, state: icon }
+  spawn: MaterialLightShipWeaponServo
+  maxCount: 10
+
+- type: stack
+  id: LightShipWeaponInternal
+  name: stack-Light-Internal
+  icon: { sprite: /Textures/_HL/Objects/Materials/royalresin.rsi, state: icon }
+  spawn: MaterialLightShipWeaponInternal
+  maxCount: 10
+
+- type: stack
+  id: MediumShipWeaponFrame
+  name: stack-Medium-Frame
+  icon: { sprite: /Textures/_HL/Objects/Materials/royalresin.rsi, state: icon }
+  spawn: MaterialMediumShipWeaponFrame
+  maxCount: 10
+
+- type: stack
+  id: MediumShipWeaponServo
+  name: stack-Medium-Servo
+  icon: { sprite: /Textures/_HL/Objects/Materials/royalresin.rsi, state: icon }
+  spawn: MaterialMediumShipWeaponServo
+  maxCount: 10
+
+- type: stack
+  id: MediumShipWeaponInternal
+  name: stack-Medium-Internal
+  icon: { sprite: /Textures/_HL/Objects/Materials/royalresin.rsi, state: icon }
+  spawn: MaterialMediumShipWeaponInternal
+  maxCount: 10
+
+- type: stack
+  id: HeavyShipWeaponFrame
+  name: stack-Heavy-Frame
+  icon: { sprite: /Textures/_HL/Objects/Materials/royalresin.rsi, state: icon }
+  spawn: MaterialHeavyShipWeaponFrame
+  maxCount: 10
+
+- type: stack
+  id: HeavyShipWeaponServo
+  name: stack-Heavy-Servo
+  icon: { sprite: /Textures/_HL/Objects/Materials/royalresin.rsi, state: icon }
+  spawn: MaterialHeavyShipWeaponServo
+  maxCount: 10
+
+- type: stack
+  id: HeavyShipWeaponInternal
+  name: stack-Heavy-Internal
+  icon: { sprite: /Textures/_HL/Objects/Materials/royalresin.rsi, state: icon }
+  spawn: MaterialHeavyShipWeaponInternal
+  maxCount: 10
+
+- type: stack
+  id: CapitalShipWeaponFrame
+  name: stack-Capital-Frame
+  icon: { sprite: /Textures/_HL/Objects/Materials/royalresin.rsi, state: icon }
+  spawn: MaterialCapitalShipWeaponFrame
+  maxCount: 10
+
+- type: stack
+  id: CapitalShipWeaponServo
+  name: stack-Capital-Servo
+  icon: { sprite: /Textures/_HL/Objects/Materials/royalresin.rsi, state: icon }
+  spawn: MaterialCapitalShipWeaponServo
+  maxCount: 10
+
+- type: stack
+  id: CapitalShipWeaponInternal
+  name: stack-Capital-Internal
+  icon: { sprite: /Textures/_HL/Objects/Materials/royalresin.rsi, state: icon }
+  spawn: MaterialCapitalShipWeaponInternal
+  maxCount: 10

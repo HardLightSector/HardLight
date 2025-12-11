@@ -16,6 +16,18 @@
         {
             "name": "Cartel"
         },
+		{
+            "name": "EngineeringBorg"
+        },
+		{
+            "name": "SalvageBorg"
+        },
+		{
+            "name": "SecurityBorg"
+        },
+		{
+            "name": "ServiceBorg"
+        },
         {
             "name": "CartelLieutenant"
         }

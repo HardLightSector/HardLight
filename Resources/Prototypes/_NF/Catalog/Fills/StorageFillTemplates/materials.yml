@@ -58,6 +58,8 @@
     contents:
     - id: AmeJar
       amount: 2
+    - id: AmeControllerUnanchoredFlatpack # mald pr because controllers keep breaking on ship-load
+      amount: 1
 
 - type: entity
   abstract: true

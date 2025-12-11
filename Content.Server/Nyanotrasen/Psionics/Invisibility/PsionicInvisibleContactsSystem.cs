@@ -13,7 +13,6 @@ namespace Content.Server.Psionics
     public sealed class PsionicInvisibleContactsSystem : EntitySystem
     {
         [Dependency] private readonly SharedStealthSystem _stealth = default!;
-        [Dependency] private readonly IGameTiming _gameTiming = default!;
         [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
 
         public override void Initialize()

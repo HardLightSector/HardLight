@@ -10,8 +10,8 @@
         amount: 30
         doAfter: 5
       - material: Bluespace
-        amount: 5
-        doAfter: 5
+        amount: 25
+        doAfter: 1
   - node: done
     entity: LockerWallBluespace
     edges:

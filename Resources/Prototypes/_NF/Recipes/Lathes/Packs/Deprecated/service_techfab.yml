@@ -167,6 +167,8 @@
       - PlantBagOfHolding
       - PlantAnalyzer
       - JanicartFlatpack
+      - BluespaceBucket
+      - BluespaceBarrel
       # - FireExtinguisherBluespace # DeltaV
 
 - type: latheRecipePack

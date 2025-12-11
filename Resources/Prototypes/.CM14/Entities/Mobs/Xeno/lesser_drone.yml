@@ -2,6 +2,7 @@
   parent: CMXenoDeveloped
   id: CMXenoLesserDrone
   name: Lesser Drone
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: Mobs/Aliens/Xenos/drone.rsi

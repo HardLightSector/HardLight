@@ -2,7 +2,7 @@
   name: tac-lite
   parent: FlashlightLantern
   id: FlashlightNfsdLite
-  description: A tactical flashlight used by the NFSD.
+  description: A tactical flashlight used by military personnel from the TSF.
   components:
   - type: Tag
     tags:

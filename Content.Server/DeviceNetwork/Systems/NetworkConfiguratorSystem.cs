@@ -870,16 +870,16 @@ public sealed class NetworkConfiguratorSystem : SharedNetworkConfiguratorSystem
     public void OnDeviceShutdown(Entity<NetworkConfiguratorComponent?> conf, Entity<DeviceNetworkComponent> device)
     {
         device.Comp.Configurators.Remove(conf.Owner);
-        if (!Resolve(conf.Owner, ref conf.Comp))
+        if (!TryComp<NetworkConfiguratorComponent>(conf.Owner, out var confComp))
             return;
 
-        foreach (var (addr, dev) in conf.Comp.Devices)
+        foreach (var (addr, dev) in confComp.Devices)
         {
             if (device.Owner == dev)
-                conf.Comp.Devices.Remove(addr);
+                confComp.Devices.Remove(addr);
         }
 
-        UpdateListUiState(conf, conf.Comp);
+        UpdateListUiState(conf.Owner, confComp);
     }
 
     private void OnUiOpenAttempt(EntityUid uid, NetworkConfiguratorComponent configurator, ActivatableUIOpenAttemptEvent args)

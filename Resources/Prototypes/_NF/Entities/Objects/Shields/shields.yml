@@ -1,5 +1,5 @@
 - type: entity
-  name: Colsec energy shield
+  name: TSFMC energy shield
   parent: [BaseC2ContrabandUnredeemable, EnergyShield]
   id: EnergyShieldNfsd
   components:

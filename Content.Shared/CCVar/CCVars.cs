@@ -237,6 +237,13 @@ public sealed partial class CCVars : CVars
     ///     Illegal trait totals will still be logged even if this is disabled.
     ///     If you are intending to decrease the trait points availability, or modify the costs of traits, consider temporarily disabling this.
     /// </summary>
+
+    public static readonly CVarDef<bool> LogInChat =
+        CVarDef.Create("white.log_in_chat", true, CVar.CLIENT | CVar.ARCHIVE | CVar.REPLICATED); // WD EDIT
+
+    public static readonly CVarDef<bool> CoalesceIdenticalMessages =
+        CVarDef.Create("white.coalesce_identical_messages", true, CVar.CLIENT | CVar.ARCHIVE | CVar.REPLICATED); // WD EDIT
+
     public static readonly CVarDef<bool> TraitsPunishCheaters =
             CVarDef.Create("game.traits_punish_cheaters", false, CVar.REPLICATED);
     #endregion

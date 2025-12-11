@@ -55,7 +55,7 @@
   id: ComputerShipyardSecurity
   parent: [BaseStructureDisableToolUse, BaseStructureIndestructible, ComputerShipyardBase]
   name: security shipyard console
-  description: Used to enlist into Nanotrasen Security Forces
+  description: Used to enlist into TSF Security Forces
   components:
   - type: Sprite
     sprite: _NF/Structures/Machines/computers.rsi
@@ -81,8 +81,8 @@
 - type: entity
   id: ComputerShipyardNfsd
   parent: [BaseStructureDisableToolUse, BaseStructureIndestructible, ComputerShipyardBase]
-  name: Colsec shipyard console
-  description: Used to buy Colsec patrol vessels.
+  name: TSFMC shipyard console
+  description: Used to buy TSFMC vessels.
   components:
   - type: Sprite
     sprite: _NF/Structures/Machines/computers.rsi

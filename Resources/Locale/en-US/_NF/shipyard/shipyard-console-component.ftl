@@ -83,3 +83,7 @@ shipyard-console-engine-Bananium = Bananium
 ## Error Messages
 shipyard-console-checksum-failure = WARNING: Vessel manifest corrupted! Loading aborted. Contact Colonial Command immediately.
 shipyard-console-load-ship-no-id = Insert an ID card to load saved ships.
+shipyard-console-load-failed = Failed to load ship.
+shipyard-console-insufficient-funds = Insufficient funds to load ship. Cost: {$cost} spesos. Your balance: {$balance} spesos.
+shipyard-console-load-success-charged = Ship "{$ship}" loaded successfully. {$cost} spesos charged to your account.
+shipyard-console-load-success-debt = Ship "{$ship}" loaded successfully. {$cost} spesos charged. WARNING: You are now {$debt} spesos in debt!

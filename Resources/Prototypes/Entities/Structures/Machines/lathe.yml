@@ -567,6 +567,8 @@
     # Hardlight Change
     - BorgArmorEnergy
     - BorgArmorPhys
+    - ShuttleWeaponMaterials
+    - LightShuttleWeapons
   - type: MaterialStorage
     canEjectStoredMaterials: true
     whitelist:
@@ -631,7 +633,6 @@
   parent: [ BaseLatheLube, BaseC3ContrabandUnredeemable ]
   name: security techfab
   description: Prints equipment for use by security crew.
-  categories: [ HideSpawnMenu ] # Frontier
   components:
   - type: Sprite
     sprite: Structures/Machines/techfab.rsi
@@ -647,8 +648,22 @@
       map: ["enum.MaterialStorageVisualLayers.Inserting"]
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
   - type: Machine
     board: SecurityTechFabCircuitboard
+  - type: DisableToolUse
+    anchoring: true
+    prying: true
   - type: Lathe
     idleState: icon
     runningState: icon
@@ -678,6 +693,11 @@
     - UniversalRailgunAmmo
     - UniversalShellAmmo
     - UniversalOrdinance
+    - ShuttleWeaponMaterials
+    - CapitalShuttleWeapons
+    - HeavyShuttleWeapons
+    - MediumShuttleWeapons
+    - LightShuttleWeapons
   - type: MaterialStorage
     canEjectStoredMaterials: true
     whitelist:

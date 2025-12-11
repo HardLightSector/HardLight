@@ -8,6 +8,7 @@
 
 - type: entity
   id: BallisticArtilleryBase
+  parent: ConstructibleMachine #HL
   abstract: true
   placement:
     mode: SnapgridCenter
@@ -98,6 +99,7 @@
 
 - type: entity
   id: BallisticArtilleryBaseCartridge
+  parent: ConstructibleMachine #HL
   abstract: true
   placement:
     mode: SnapgridCenter
@@ -192,6 +194,7 @@
 
 - type: entity
   id: BallisticArtilleryBaseMagazine
+  parent: ConstructibleMachine #HL
   abstract: true
   placement:
     mode: SnapgridCenter

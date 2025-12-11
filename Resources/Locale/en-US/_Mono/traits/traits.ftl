@@ -28,6 +28,9 @@ trait-will-to-die-name = Will To Die
 trait-will-to-die-desc = You have an unusually weak "will to live", and will succumb to injuries sooner than others.
     Your damage threshold for becoming Dead is decreased by 15 points.
 
+trait-psionically-gifted-name = Psionically Gifted
+trait-psionically-gifted-desc = You have always been a psychic, as long as you can remember.
+
 trait-thieving-name = Thieving
 trait-thieving-desc = You are deft with your hands, and talented at convincing people of their belongings. You can identify pocketed items, steal them quieter, and steal ~33% faster.
 

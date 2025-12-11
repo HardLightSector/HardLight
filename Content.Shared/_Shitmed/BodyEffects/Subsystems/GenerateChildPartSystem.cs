@@ -11,7 +11,6 @@ namespace Content.Shared._Shitmed.BodyEffects.Subsystems;
 public sealed class GenerateChildPartSystem : EntitySystem
 {
     [Dependency] private readonly SharedBodySystem _bodySystem = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly INetManager _net = default!;
     public override void Initialize()
     {

@@ -19,7 +19,7 @@ nf-adventure-title = Adventure
 nf-adventure-description = Join a ship crew or buy your own and explore, research, salvage, or haul your way to riches!
 
 nf-pirate-title = Relaxed
-nf-pirate-description = A more Relaxed round with roleplay in mind. 
+nf-pirate-description = A more Relaxed round with roleplay in mind.
 
 nf-test-title = Test
 nf-test-description = A preset intended for testing. No POIs, no bluespace events, final destination.

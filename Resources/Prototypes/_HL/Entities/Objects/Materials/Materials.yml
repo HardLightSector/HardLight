@@ -103,7 +103,7 @@
   - type: Item
     sprite: _HL/Objects/Materials/royalresin.rsi
     heldPrefix: royalresin
-    
+
 - type: entity
   parent: MaterialRoyalResin
   id: MaterialRoyalResin25
@@ -115,6 +115,426 @@
 - type: entity
   parent: MaterialRoyalResin
   id: MaterialRoyalResin1
+  suffix: 1
+  components:
+  - type: Stack
+    count: 1
+
+    #light frame
+- type: entity
+  parent: MaterialBase
+  id: MaterialLightShipWeaponFrame
+  name: light ship structure frame
+  description: A machine frame for a light ship structure.
+  suffix: Full
+  components:
+  - type: ConstructionMaterials # Frontier
+  - type: Sprite
+    sprite: _HL/Objects/Materials/royalresin.rsi
+    state: icon
+  - type: Stack
+    count: 10
+    stackType: LightShipWeaponFrame
+  - type: Item
+    sprite: _HL/Objects/Materials/royalresin.rsi
+    heldPrefix: LightShipWeaponFrame
+
+- type: entity
+  parent:  MaterialLightShipWeaponFrame
+  id:  MaterialLightShipWeaponFrame2
+  suffix: 5
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
+  parent:  MaterialLightShipWeaponFrame
+  id:  MaterialLightShipWeaponFrame1
+  suffix: 1
+  components:
+  - type: Stack
+    count: 1
+
+    #light servo
+- type: entity
+  parent: MaterialBase
+  id: MaterialLightShipWeaponServo
+  name: light ship structure servo
+  description: A machine servo for a light ship structure.
+  suffix: Full
+  components:
+  - type: ConstructionMaterials # Frontier
+  - type: Sprite
+    sprite: _HL/Objects/Materials/royalresin.rsi
+    state: icon
+  - type: Stack
+    count: 10
+    stackType: LightShipWeaponServo
+  - type: Item
+    sprite: _HL/Objects/Materials/royalresin.rsi
+    heldPrefix: LightShipWeaponServo
+
+- type: entity
+  parent:  MaterialLightShipWeaponServo
+  id:  MaterialLightShipWeaponServo2
+  suffix: 5
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
+  parent:  MaterialLightShipWeaponServo
+  id:  MaterialLightShipWeaponServo1
+  suffix: 1
+  components:
+  - type: Stack
+    count: 1
+
+    #light internals
+- type: entity
+  parent: MaterialBase
+  id: MaterialLightShipWeaponInternal
+  name: light ship structure internal
+  description: A machine internal for a light ship structure.
+  suffix: Full
+  components:
+  - type: ConstructionMaterials # Frontier
+  - type: Sprite
+    sprite: _HL/Objects/Materials/royalresin.rsi
+    state: icon
+  - type: Stack
+    count: 10
+    stackType: LightShipWeaponInternal
+  - type: Item
+    sprite: _HL/Objects/Materials/royalresin.rsi
+    heldPrefix: LightShipWeaponInternal
+
+- type: entity
+  parent:  MaterialLightShipWeaponInternal
+  id:  MaterialLightShipWeaponInternal2
+  suffix: 5
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
+  parent:  MaterialLightShipWeaponInternal
+  id:  MaterialLightShipWeaponInternal1
+  suffix: 1
+  components:
+  - type: Stack
+    count: 1
+
+    #medium frame
+- type: entity
+  parent: MaterialBase
+  id: MaterialMediumShipWeaponFrame
+  name: medium ship structure frame
+  description: A machine frame for a medium ship structure.
+  suffix: Full
+  components:
+  - type: ConstructionMaterials # Frontier
+  - type: Sprite
+    sprite: _HL/Objects/Materials/royalresin.rsi
+    state: icon
+  - type: Stack
+    count: 10
+    stackType: MediumShipWeaponFrame
+  - type: Item
+    sprite: _HL/Objects/Materials/royalresin.rsi
+    heldPrefix: MediumShipWeaponFrame
+
+- type: entity
+  parent:  MaterialMediumShipWeaponFrame
+  id:  MaterialMediumShipWeaponFrame2
+  suffix: 5
+  components:
+  - type: Stack
+    count: 25
+
+- type: entity
+  parent:  MaterialMediumShipWeaponFrame
+  id:  MaterialMediumShipWeaponFrame1
+  suffix: 1
+  components:
+  - type: Stack
+    count: 1
+
+    #Medium servo
+- type: entity
+  parent: MaterialBase
+  id: MaterialMediumShipWeaponServo
+  name: medium ship structure servo
+  description: A machine servo for a medium ship structure.
+  suffix: Full
+  components:
+  - type: ConstructionMaterials # Frontier
+  - type: Sprite
+    sprite: _HL/Objects/Materials/royalresin.rsi
+    state: icon
+  - type: Stack
+    count: 10
+    stackType: MediumShipWeaponServo
+  - type: Item
+    sprite: _HL/Objects/Materials/royalresin.rsi
+    heldPrefix: MediumShipWeaponServo
+
+- type: entity
+  parent:  MaterialMediumShipWeaponServo
+  id:  MaterialMediumShipWeaponServo2
+  suffix: 5
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
+  parent:  MaterialMediumShipWeaponServo
+  id:  MaterialMediumShipWeaponServo1
+  suffix: 1
+  components:
+  - type: Stack
+    count: 1
+
+    #Medium internals
+- type: entity
+  parent: MaterialBase
+  id: MaterialMediumShipWeaponInternal
+  name: medium ship structure internal
+  description: A machine internal for a medium ship structure.
+  suffix: Full
+  components:
+  - type: ConstructionMaterials # Frontier
+  - type: Sprite
+    sprite: _HL/Objects/Materials/royalresin.rsi
+    state: icon
+  - type: Stack
+    count: 10
+    stackType: MediumShipWeaponInternal
+  - type: Item
+    sprite: _HL/Objects/Materials/royalresin.rsi
+    heldPrefix: MediumShipWeaponInternal
+
+- type: entity
+  parent:  MaterialMediumShipWeaponInternal
+  id:  MaterialMediumShipWeaponInternal2
+  suffix: 5
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
+  parent:  MaterialMediumShipWeaponInternal
+  id:  MaterialMediumShipWeaponInternal1
+  suffix: 1
+  components:
+  - type: Stack
+    count: 1
+
+    #Heavy frame
+- type: entity
+  parent: MaterialBase
+  id: MaterialHeavyShipWeaponFrame
+  name: heavy ship structure frame
+  description: A machine frame for a heavy ship structure.
+  suffix: Full
+  components:
+  - type: ConstructionMaterials # Frontier
+  - type: Sprite
+    sprite: _HL/Objects/Materials/royalresin.rsi
+    state: icon
+  - type: Stack
+    count: 10
+    stackType: HeavyShipWeaponFrame
+  - type: Item
+    sprite: _HL/Objects/Materials/royalresin.rsi
+    heldPrefix: HeavyShipWeaponFrame
+
+- type: entity
+  parent:  MaterialHeavyShipWeaponFrame
+  id:  MaterialHeavyShipWeaponFrame2
+  suffix: 5
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
+  parent:  MaterialHeavyShipWeaponFrame
+  id:  MaterialHeavyShipWeaponFrame1
+  suffix: 1
+  components:
+  - type: Stack
+    count: 1
+
+    #Heavy servo
+- type: entity
+  parent: MaterialBase
+  id: MaterialHeavyShipWeaponServo
+  name: heavy ship structure servo
+  description: A machine servo for a heavy ship structure.
+  suffix: Full
+  components:
+  - type: ConstructionMaterials # Frontier
+  - type: Sprite
+    sprite: _HL/Objects/Materials/royalresin.rsi
+    state: icon
+  - type: Stack
+    count: 10
+    stackType: HeavyShipWeaponServo
+  - type: Item
+    sprite: _HL/Objects/Materials/royalresin.rsi
+    heldPrefix: HeavyShipWeaponServo
+
+- type: entity
+  parent:  MaterialHeavyShipWeaponServo
+  id:  MaterialHeavyShipWeaponServo2
+  suffix: 5
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
+  parent:  MaterialHeavyShipWeaponServo
+  id:  MaterialHeavyShipWeaponServo1
+  suffix: 1
+  components:
+  - type: Stack
+    count: 1
+
+    #Heavy internals
+- type: entity
+  parent: MaterialBase
+  id: MaterialHeavyShipWeaponInternal
+  name: heavy ship structure internal
+  description: A machine internal for a heavy ship structure.
+  suffix: Full
+  components:
+  - type: ConstructionMaterials # Frontier
+  - type: Sprite
+    sprite: _HL/Objects/Materials/royalresin.rsi
+    state: icon
+  - type: Stack
+    count: 10
+    stackType: HeavyShipWeaponInternal
+  - type: Item
+    sprite: _HL/Objects/Materials/royalresin.rsi
+    heldPrefix: HeavyShipWeaponInternal
+
+- type: entity
+  parent:  MaterialHeavyShipWeaponInternal
+  id:  MaterialHeavyShipWeaponInternal2
+  suffix: 5
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
+  parent:  MaterialHeavyShipWeaponInternal
+  id:  MaterialHeavyShipWeaponInternal1
+  suffix: 1
+  components:
+  - type: Stack
+    count: 1
+
+    #Capital frame
+- type: entity
+  parent: MaterialBase
+  id: MaterialCapitalShipWeaponFrame
+  name: capital ship structure frame
+  description: A machine frame for a capital ship structure.
+  suffix: Full
+  components:
+  - type: ConstructionMaterials # Frontier
+  - type: Sprite
+    sprite: _HL/Objects/Materials/royalresin.rsi
+    state: icon
+  - type: Stack
+    count: 10
+    stackType: CapitalShipWeaponFrame
+  - type: Item
+    sprite: _HL/Objects/Materials/royalresin.rsi
+    heldPrefix: CapitalShipWeaponFrame
+
+- type: entity
+  parent:  MaterialCapitalShipWeaponFrame
+  id:  MaterialCapitalShipWeaponFrame2
+  suffix: 5
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
+  parent:  MaterialCapitalShipWeaponFrame
+  id:  MaterialCapitalShipWeaponFrame1
+  suffix: 1
+  components:
+  - type: Stack
+    count: 1
+
+    #Capital servo
+- type: entity
+  parent: MaterialBase
+  id: MaterialCapitalShipWeaponServo
+  name: capital ship structure servo
+  description: A machine servo for a capital ship structure.
+  suffix: Full
+  components:
+  - type: ConstructionMaterials # Frontier
+  - type: Sprite
+    sprite: _HL/Objects/Materials/royalresin.rsi
+    state: icon
+  - type: Stack
+    count: 10
+    stackType: CapitalShipWeaponServo
+  - type: Item
+    sprite: _HL/Objects/Materials/royalresin.rsi
+    heldPrefix: CapitalShipWeaponServo
+
+- type: entity
+  parent:  MaterialCapitalShipWeaponServo
+  id:  MaterialCapitalShipWeaponServo2
+  suffix: 5
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
+  parent:  MaterialCapitalShipWeaponServo
+  id:  MaterialCapitalShipWeaponServo1
+  suffix: 1
+  components:
+  - type: Stack
+    count: 1
+
+    #Capital internals
+- type: entity
+  parent: MaterialBase
+  id: MaterialCapitalShipWeaponInternal
+  name: capital ship structure internal
+  description: A machine internal for a capital ship structure.
+  suffix: Full
+  components:
+  - type: ConstructionMaterials # Frontier
+  - type: Sprite
+    sprite: _HL/Objects/Materials/royalresin.rsi
+    state: icon
+  - type: Stack
+    count: 10
+    stackType: CapitalShipWeaponInternal
+  - type: Item
+    sprite: _HL/Objects/Materials/royalresin.rsi
+    heldPrefix: CapitalShipWeaponInternal
+
+- type: entity
+  parent:  MaterialCapitalShipWeaponInternal
+  id:  MaterialCapitalShipWeaponInternal2
+  suffix: 5
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
+  parent:  MaterialCapitalShipWeaponInternal
+  id:  MaterialCapitalShipWeaponInternal1
   suffix: 1
   components:
   - type: Stack

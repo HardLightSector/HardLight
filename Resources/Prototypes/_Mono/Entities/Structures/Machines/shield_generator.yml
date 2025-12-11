@@ -8,7 +8,7 @@
 # Base
 - type: entity
   id: ShieldGeneratorBase
-  parent: BaseMachinePowered
+  parent: [ BaseMachinePowered, ConstructibleMachine ] #HL
   name: Shield Generator
   abstract: true
   components:
@@ -105,13 +105,13 @@
         path: "/Audio/Effects/teleport_departure.ogg"
         params:
           pitch: 0.5
-  - type: Machine
+ # - type: Machine
     # board removed: machine board prototype not available
   - type: Construction
     graph: Machine
     node: machine
     # machine board/parts containers removed due to missing machine board prototypes
-  - type: ContainerContainer
+  #- type: ContainerContainer
     # containers removed due to missing machine board prototypes
   - type: PirateBountyItem
     id: ShipShield
@@ -184,6 +184,12 @@
     radius: 2
     energy: 1.5
     color: "#FF9933"
+  - type: ContainerContainer #HL start
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+  - type: Machine
+    board: CapitalShieldBoard #HL end
 
 # TSF capital shield - inbetween POI and MS-500, meant for flyssa
 - type: entity
@@ -260,6 +266,13 @@
   parent: ShieldGeneratorBase
   name: MS-500 "Titan" Shield Generator
   suffix: ADS ONLY
+  components:
+  - type: ContainerContainer #HL start
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+  - type: Machine
+    board: HeavyShieldBoard #HL end
 
 # Medium-End
 - type: entity
@@ -329,16 +342,22 @@
     radius: 2
     energy: 1.5
     color: "#9933FF"
-  - type: Machine
+ # - type: Machine
     # board removed: machine board prototype not available
   - type: Construction
     graph: Machine
     node: machine
     # machine board/parts containers removed due to missing machine board prototypes
-  - type: ContainerContainer
+  #- type: ContainerContainer
     # containers removed due to missing machine board prototypes
   - type: PirateBountyItem
     id: ShipShield
+  - type: ContainerContainer #HL start
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+  - type: Machine
+    board: MediumShieldBoard #HL end
 
 # Low-End
 - type: entity
@@ -407,13 +426,19 @@
     radius: 2
     energy: 1.5
     color: "#3399FF"
-  - type: Machine
+  #- type: Machine
     # board removed: machine board prototype not available
   - type: Construction
     graph: Machine
     node: machine
     # machine board/parts containers removed due to missing machine board prototypes
-  - type: ContainerContainer
+  #- type: ContainerContainer
     # containers removed due to missing machine board prototypes
   - type: PirateBountyItem
     id: ShipShield
+  - type: ContainerContainer #HL start
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+  - type: Machine
+    board: LightShieldBoard #HL end

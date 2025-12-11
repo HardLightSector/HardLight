@@ -1,5 +1,6 @@
 contraband-examine-text-Class1 = [color=yellow]This item is Class 1 contraband, marked suspicious in cases related to known criminal activity or when otherwise specified by command[/color]
 contraband-examine-text-Class2 = [color=red]This item is Class 2 contraband, either job restricted or requiring a permit to be kept on station[/color]
+contraband-examine-text-Class2Restricted = [color=red]This item is Class 2 contraband, either job restricted or requiring a permit to be kept on station[/color]
 contraband-examine-text-Class2Expedition = [color=red]This item is Class 2 contraband, either job restricted or requiring a permit to be kept on station[/color]
 contraband-examine-text-Class3Expedition = [color=crimson]this item is Class 3 contraband, it is highly illegal and cannot be protected with any form of permit. If you are seen with this item while in any code under red, you will be subject to arrest and possibly search and seizure.[/color]
 contraband-examine-text-Class3Cult = [color=crimson]this item is Class 3 contraband, it is highly illegal and cannot be protected with any form of permit. If you are seen with this item while in any code under red, you will be subject to arrest and possibly search and seizure.[/color]

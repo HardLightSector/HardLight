@@ -1,26 +1,29 @@
 - type: npcFaction
   id: Dragon
   hostile:
-    - NanoTrasen
-    - Syndicate
-    - Xeno
-    - PetsNT
-    - Zombie
-    - Revolutionary
-    - AllHostile
-    - WizFedFaction # Frontier
-    - BloodCultNF # Frontier
-    - NFSyndicate # Frontier
-    - NFPirate # Frontier
-    - ExplorersExpeditionNF # Frontier
-    - ArtifactConstruct # Frontier
-    - StreetGangNF # Frontier
-    - DinosaursNF # Frontier
-    - MercenariesExpeditionNF # Frontier
-    - SiliconsExpeditionNF # Frontier
-    - AberrantFleshExpeditionNF # Frontier
-    - ContrabandClothing # Frontier
-    - ContrabandDetection # Frontier
+  - NanoTrasen
+  - Syndicate
+  - Xeno
+  - PetsNT
+  - Zombie
+  - Revolutionary
+  - AllHostile
+  - Wizard
+  - WizFedFaction # Frontier
+  - BloodCultNF # Frontier
+  - PirateNF # Frontier
+  - ExplorersExpeditionNF # Frontier
+  - ArtifactConstruct # Frontier
+  - StreetGangNF # Frontier
+  - DinosaursNF # Frontier
+  - MercenariesExpeditionNF # Frontier
+  - SiliconsExpeditionNF # Frontier
+  - AberrantFleshExpeditionNF # Frontier
+  - ContrabandClothing # Frontier
+  - ContrabandDetection # Frontier
+  - TSFMC # Mono
+  - TSFMCTurret # Mono
+  - USSP # Mono
 
 - type: npcFaction
   id: NanoTrasen
@@ -33,11 +36,9 @@
   - Dragon
   - AllHostile
   - Wizard
-  - Xenoborg
   - WizFedFaction # Frontier
   - BloodCultNF # Frontier
-  - NFSyndicate # Frontier
-  - NFPirate # Frontier
+  - PirateNF # Frontier
   - ExplorersExpeditionNF # Frontier
   - ArtifactConstruct # Frontier
   - StreetGangNF # Frontier
@@ -46,13 +47,13 @@
   - SiliconsExpeditionNF # Frontier
   - AberrantFleshExpeditionNF # Frontier
   - ContrabandClothing # Frontier
+  - USSP # Mono
 
 - type: npcFaction
   id: Mouse
   hostile:
   - PetsNT
-  # - AllHostile # Frontier
-  - HostileUniversally # Frontier
+  - AllHostile
   - Wizard
 
 - type: npcFaction
@@ -67,7 +68,6 @@
   # - Xeno # Frontier
   # - AllHostile # Frontier
   # - Wizard # Frontier
-  # - Dragon # Frontier
 
 - type: npcFaction
   id: SimpleHostile
@@ -78,15 +78,11 @@
   - PetsNT
   - Zombie
   - Revolutionary
-  - Dragon
-  - Xeno
   - AllHostile
   - Wizard
-  - Xenoborg
   - WizFedFaction # Frontier
   - BloodCultNF # Frontier
-  - NFSyndicate # Frontier
-  - NFPirate # Frontier
+  - PirateNF # Frontier
   - ExplorersExpeditionNF # Frontier
   - ArtifactConstruct # Frontier
   - StreetGangNF # Frontier
@@ -96,6 +92,9 @@
   - AberrantFleshExpeditionNF # Frontier
   - ContrabandClothing # Frontier
   - ContrabandDetection # Frontier
+  - TSFMC # Mono
+  - TSFMCTurret # Mono
+  - USSP # Mono
 
 - type: npcFaction
   id: SimpleNeutral
@@ -103,7 +102,7 @@
 - type: npcFaction
   id: Syndicate
   friendly: # Frontier
-  - NFSyndicate # Frontier
+  - SyndicateNF # Frontier
   hostile:
   - NanoTrasen
   - SimpleHostile
@@ -113,10 +112,9 @@
   - Dragon
   - AllHostile
   - Wizard
-  - Xenoborg
   - WizFedFaction # Frontier
   - BloodCultNF # Frontier
-  - NFPirate # Frontier
+  - PirateNF # Frontier
   - ExplorersExpeditionNF # Frontier
   - ArtifactConstruct # Frontier
   - StreetGangNF # Frontier
@@ -126,6 +124,9 @@
   - AberrantFleshExpeditionNF # Frontier
   - ContrabandClothing # Frontier
   - ContrabandDetection # Frontier
+  - TSFMC # Mono
+  - TSFMCTurret # Mono
+  - USSP # Mono
 
 - type: npcFaction
   id: Xeno
@@ -138,12 +139,9 @@
   - Revolutionary
   - AllHostile
   - Wizard
-  - Dragon
-  - Xenoborg
   - WizFedFaction # Frontier
   - BloodCultNF # Frontier
-  - NFSyndicate # Frontier
-  - NFPirate # Frontier
+  - PirateNF # Frontier
   - ExplorersExpeditionNF # Frontier
   - ArtifactConstruct # Frontier
   - StreetGangNF # Frontier
@@ -153,6 +151,9 @@
   - AberrantFleshExpeditionNF # Frontier
   - ContrabandClothing # Frontier
   - ContrabandDetection # Frontier
+  - TSFMC # Mono
+  - TSFMCTurret # Mono
+  - USSP # Mono
 
 - type: npcFaction
   id: Zombie
@@ -166,12 +167,9 @@
   - Revolutionary
   - AllHostile
   - Wizard
-  - Dragon
-  - Xenoborg
   - WizFedFaction # Frontier
   - BloodCultNF # Frontier
-  - NFSyndicate # Frontier
-  - NFPirate # Frontier
+  - PirateNF # Frontier
   - ExplorersExpeditionNF # Frontier
   - ArtifactConstruct # Frontier
   - StreetGangNF # Frontier
@@ -181,6 +179,9 @@
   - AberrantFleshExpeditionNF # Frontier
   - ContrabandClothing # Frontier
   - ContrabandDetection # Frontier
+  - TSFMC # Mono
+  - TSFMCTurret # Mono
+  - USSP # Mono
 
 - type: npcFaction
   id: Revolutionary
@@ -191,10 +192,9 @@
   - Dragon
   - AllHostile
   - Wizard
-  - Xenoborg
   - WizFedFaction # Frontier
   - BloodCultNF # Frontier
-  - NFPirate # Frontier
+  - PirateNF # Frontier
   - ExplorersExpeditionNF # Frontier
   - ArtifactConstruct # Frontier
   #- StreetGangNF # Frontier
@@ -204,6 +204,8 @@
   - AberrantFleshExpeditionNF # Frontier
   - ContrabandClothing # Frontier
   - ContrabandDetection # Frontier
+  - TSFMC # Mono
+  - TSFMCTurret # Mono
 
 - type: npcFaction
   id: AllHostile # Frontier: use HostileUniversally
@@ -220,7 +222,10 @@
   - Zombie
   - Revolutionary
   - Wizard
-  - Xenoborg
+  - TSFMC # Mono
+  - TSFMCTurret # Mono
+  - PirateNF # Mono
+  - USSP # Mono
 
 - type: npcFaction
   id: Wizard
@@ -237,11 +242,9 @@
   - Zombie
   - Revolutionary
   - AllHostile
-  - Xenoborg
   # - WizFedFaction # Frontier
   - BloodCultNF # Frontier
-  - NFSyndicate # Frontier
-  - NFPirate # Frontier
+  - PirateNF # Frontier
   - ExplorersExpeditionNF # Frontier
   - ArtifactConstruct # Frontier
   - StreetGangNF # Frontier
@@ -251,31 +254,6 @@
   - AberrantFleshExpeditionNF # Frontier
   - ContrabandClothing # Frontier
   - ContrabandDetection # Frontier
-
-- type: npcFaction
-  id: Xenoborg
-  hostile:
-  # they have brains
-  - NanoTrasen
-  - Syndicate
-  - Zombie
-  - Revolutionary
-  - Wizard
-
-  - Xeno # rivalry
-
-  # cause they are hostile to them
-  - SimpleHostile 
-  - AllHostile
-  - WizFedFaction # Frontier
-  - BloodCultNF # Frontier
-  - NFPirate # Frontier
-  - ExplorersExpeditionNF # Frontier
-  - ArtifactConstruct # Frontier
-  - StreetGangNF # Frontier
-  - DinosaursNF # Frontier
-  - MercenariesExpeditionNF # Frontier
-  - SiliconsExpeditionNF # Frontier
-  - AberrantFleshExpeditionNF # Frontier
-  - ContrabandClothing # Frontier
-  - ContrabandDetection # Frontier
+  - TSFMC # Mono
+  - TSFMCTurret # Mono
+  - USSP # Mono

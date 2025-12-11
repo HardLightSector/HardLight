@@ -1,0 +1,5 @@
+- type: localizedDataset
+  id: DescriptionsCookieFortune
+  values:
+    prefix: cookie-fortune-
+    count: 50

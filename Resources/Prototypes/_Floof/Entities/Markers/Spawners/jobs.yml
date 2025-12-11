@@ -1,0 +1,72 @@
+# # Central Command Official spawner
+
+# - type: entity
+  # id: SpawnPointCentralCommand
+  # parent: SpawnPointJobBase
+  # name: central command
+  # components:
+  # - type: SpawnPoint
+    # job_id: CentralCommandOfficial
+  # - type: Sprite
+    # layers:
+      # - state: green
+      # - sprite: _Floof/Markers/jobs.rsi
+        # state: centcomm
+
+# # Inventory Specialist Spawner
+
+# - type: entity
+  # id: SpawnPointInventorySpecialist
+  # parent: SpawnPointJobBase
+  # name: inventory specialist
+  # components:
+  # - type: SpawnPoint
+    # job_id: InventorySpecialist
+  # - type: Sprite
+    # layers:
+      # - state: green
+      # - state: cargo_tech
+
+# - type: entity
+  # id: SpawnPointServiceQuadborg
+  # parent: SpawnPointJobBase
+  # name: service quadborg
+  # components:
+  # - type: SpawnPoint
+    # job_id: ServiceQuadBorg
+  # - type: Sprite
+    # sprite: _Floof/Mobs/Silicon/quad.rsi
+    # scale: 0.7, 0.7
+    # layers:
+    # - state: quadspriteserv
+      # map: ["movement"]
+    # - state: quadspriteservl
+      # map: ["enum.BorgVisualLayers.Light"]
+      # shader: unshaded
+      # visible: false
+    # - state: quadspriteservr
+      # shader: unshaded
+      # map: ["light"]
+      # visible: false
+
+# - type: entity
+  # id: SpawnPointMedicalQuadborg
+  # parent: SpawnPointJobBase
+  # name: medical quadborg
+  # components:
+  # - type: SpawnPoint
+    # job_id: MedicalQuadBorg
+  # - type: Sprite
+    # sprite: _Floof/Mobs/Silicon/quad.rsi
+    # scale: 0.7, 0.7
+    # layers:
+    # - state: quadspritemed
+      # map: ["movement"]
+    # - state: quadspritemedl
+      # map: ["enum.BorgVisualLayers.Light"]
+      # shader: unshaded
+      # visible: false
+    # - state: quadspritemedr
+      # shader: unshaded
+      # map: ["light"]
+      # visible: false

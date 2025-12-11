@@ -278,11 +278,13 @@
   parent: BaseStationAdminBankATM
   name: Station NFSD Administration Console
   id: StationAdminBankATMNfsd
-  description: Used to transfer funds to and from Colsec's bank account.
-  suffix: NFSD
+  description: Used to transfer funds to and from TSFMC-FOB's bank account.
+  suffix: TSFMC
   components:
   - type: StationBankATM
     account: Nfsd
+  - type: CompanyAccessReader
+    requiredCompany: TSF
 
 - type: entity
   parent: BaseStationAdminBankATM

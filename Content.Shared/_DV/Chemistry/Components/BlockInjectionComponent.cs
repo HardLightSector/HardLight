@@ -25,4 +25,10 @@ public sealed partial class BlockInjectionComponent : Component
     /// </summary>
     [DataField]
     public bool BlockInjectOnProjectile;
+
+    /// <summary>
+    /// Reason why injections are blocked. Used for localization keys like "injector-component-deny-{BlockReason}".
+    /// </summary>
+    [DataField]
+    public string BlockReason { get; set; } = string.Empty;
 }

@@ -306,6 +306,10 @@
 - type: Tag
   id: BorgWearable
 
+# Peregrine
+- type: Tag
+  id: MagazineRailgunTag
+
 #bolts
 - type: Tag
   id: Boltcart
@@ -319,3 +323,22 @@
 
 - type: Tag
   id: GrenadeRiotGun
+
+#tider anvil
+
+- type: Tag
+  id: TiderAnvilParts
+
+- type: Tag
+  id: UnFlatpackable
+
+# syndie tools
+
+- type: Tag
+  id: Syndie_Powerdrill
+
+- type: Tag
+  id: Syndie_JawsOfLife
+
+- type: Tag
+  id: Syndie_Multitool

@@ -1,7 +1,7 @@
 station-beacon-atm = ATM
 station-beacon-shipyard = Shipyard
-station-beacon-sr-office = SR's Office
-station-beacon-sr-quarters = SR's Quarters
+station-beacon-sr-office = CL's Office
+station-beacon-sr-quarters = CL's Quarters
 
 station-beacon-cargobay-one = Cargo Bay 1
 station-beacon-cargobay-two = Cargo Bay 2

@@ -1,0 +1,307 @@
+- type: entity
+  id: BaseLightShipWeaponBoard
+  parent: BaseMachineCircuitboard
+  abstract: true
+  description: A machine printed circuit board for a specific ship turret.
+  components:
+    - type: Sprite
+      state: security
+    - type: MachineBoard
+      stackRequirements:
+        LightShipWeaponFrame: 1
+        LightShipWeaponServo: 2
+        LightShipWeaponInternal: 3
+    - type: Tag
+      tags:
+      - UnFlatpackable
+
+- type: entity
+  id: BaseMediumShipWeaponBoard
+  parent: BaseMachineCircuitboard
+  abstract: true
+  description: A machine printed circuit board for a specific ship turret.
+  components:
+    - type: Sprite
+      state: security
+    - type: MachineBoard
+      stackRequirements:
+        MediumShipWeaponFrame: 1
+        MediumShipWeaponServo: 2
+        MediumShipWeaponInternal: 3
+    - type: Tag
+      tags:
+      - UnFlatpackable
+
+- type: entity
+  id: BaseHeavyShipWeaponBoard
+  parent: BaseMachineCircuitboard
+  abstract: true
+  description: A machine printed circuit board for a specific ship turret.
+  components:
+    - type: Sprite
+      state: security
+    - type: MachineBoard
+      stackRequirements:
+        HeavyShipWeaponFrame: 1
+        HeavyShipWeaponServo: 2
+        HeavyShipWeaponInternal: 3
+    - type: Tag
+      tags:
+      - UnFlatpackable
+
+- type: entity
+  id: BaseCapitalShipWeaponBoard
+  parent: BaseMachineCircuitboard
+  abstract: true
+  description: A machine printed circuit board for a specific ship turret.
+  components:
+    - type: Sprite
+      state: security
+    - type: MachineBoard
+      stackRequirements:
+        CapitalShipWeaponFrame: 1
+        CapitalShipWeaponServo: 2
+        CapitalShipWeaponInternal: 3
+    - type: Tag
+      tags:
+      - UnFlatpackable
+
+- type: entity
+  id: L1PhalanxWeaponBoard
+  parent: BaseLightShipWeaponBoard
+  name: L-1 Phalanx turret board
+  components:
+    - type: MachineBoard
+      prototype: WeaponLaserTurretL1Phalanx
+
+- type: entity
+  id: L85AutocannonWeaponBoard
+  parent: BaseLightShipWeaponBoard
+  name: L85 20mm autocannon turret board
+  components:
+    - type: MachineBoard
+      prototype: WeaponTurretL85Autocannon
+
+- type: entity
+  id: AdderScattercannonWeaponBoard
+  parent: BaseLightShipWeaponBoard
+  name: Adder scattercannon turret board
+  components:
+    - type: MachineBoard
+      prototype: WeaponTurretAdderScattercannon
+
+- type: entity
+  id: Type35WeaponBoard
+  parent: BaseMediumShipWeaponBoard
+  name: Type-35 MARAUDER-type plasma cannon turret board
+  components:
+    - type: MachineBoard
+      prototype: WeaponTurretType35
+
+- type: entity
+  id: M220WeaponBoard
+  parent: BaseMediumShipWeaponBoard
+  name: M220 RUBICON EMP launcher turret board
+  components:
+    - type: MachineBoard
+      prototype: WeaponTurretM220
+
+- type: entity
+  id: RAC30WeaponBoard
+  parent: BaseMediumShipWeaponBoard
+  name: RAC-30 Draupnir Autocannon turret board
+  components:
+    - type: MachineBoard
+      prototype: WeaponTurretRAC30
+
+- type: entity
+  id: DravonWeaponBoard
+  parent: BaseMediumShipWeaponBoard
+  name: ADBP-7 DRAVON 57mm Autocannon turret board
+  components:
+    - type: MachineBoard
+      prototype: WeaponTurretDravon
+
+- type: entity
+  id: AK570WeaponBoard
+  parent: BaseMediumShipWeaponBoard
+  name: AK570 90mm heavy autocannon turret board
+  components:
+    - type: MachineBoard
+      prototype: WeaponTurretAK570
+
+- type: entity
+  id: CyrexaWeaponBoard
+  parent: BaseMediumShipWeaponBoard
+  name: CYREXA 220mm cannon turret board
+  components:
+    - type: MachineBoard
+      prototype: WeaponTurretCyrexa
+
+- type: entity
+  id: BoforsWeaponBoard
+  parent: BaseMediumShipWeaponBoard
+  name: Bofors 255mm cannon turret board
+  components:
+    - type: MachineBoard
+      prototype: WeaponTurretBofors
+
+- type: entity
+  id: KargilWeaponBoard
+  parent: BaseMediumShipWeaponBoard
+  name: Kargil 203mm cannon turret board
+  components:
+    - type: MachineBoard
+      prototype: WeaponTurretKargil
+
+- type: entity
+  id: FangWeaponBoard
+  parent: BaseMediumShipWeaponBoard
+  name: Fang heavy 100mm autocannon turret board
+  components:
+    - type: MachineBoard
+      prototype: WeaponTurretFang
+
+- type: entity
+  id: ASM220WeaponBoard
+  parent: BaseMediumShipWeaponBoard
+  name: ASM-220 torpedo VLS turret board
+  components:
+    - type: MachineBoard
+      prototype: WeaponTurretASM220
+
+- type: entity
+  id: LightMunitionsBayWeaponBoard
+  parent: BaseMediumShipWeaponBoard
+  name: GPOB-L Light Munitions Bay turret board
+  components:
+    - type: MachineBoard
+      prototype: WeaponTurretLightMunitionsBay
+
+- type: entity
+  id: VesperaWeaponBoard
+  parent: BaseMediumShipWeaponBoard
+  name: ADMP-27 VESPERA Rapid-Fire Pod turret board
+  components:
+    - type: MachineBoard
+      prototype: WeaponTurretVespera
+
+- type: entity
+  id: ASM501WeaponBoard
+  parent: BaseMediumShipWeaponBoard
+  name: ASM-501 pod turret board
+  components:
+    - type: MachineBoard
+      prototype: WeaponTurretASM501
+
+- type: entity
+  id: VanykWeaponBoard
+  parent: BaseMediumShipWeaponBoard
+  name: ASM-302 pod turret board
+  components:
+    - type: MachineBoard
+      prototype: WeaponTurretVanyk
+
+- type: entity
+  id: TovekWeaponBoard
+  parent: BaseMediumShipWeaponBoard
+  name: ADMX-23 TOVEK Hybrid EMP Pod turret board
+  components:
+    - type: MachineBoard
+      prototype: WeaponTurretTovek
+
+- type: entity
+  id: ApolloWeaponBoard
+  parent: BaseHeavyShipWeaponBoard
+  name: L-20 Apollo Heavy Laser Cannon turret board
+  components:
+  - type: MachineBoard
+    prototype: WeaponLaserTurretApollo
+
+- type: entity
+  id: TarnyxReloadWeaponBoard
+  parent: BaseHeavyShipWeaponBoard
+  name: ADBX-31 TARNYX 150mm EMP Cannon turret board
+  components:
+  - type: MachineBoard
+    prototype: WeaponTurretTarnyxReload
+
+- type: entity
+  id: LongbowWeaponBoard
+  parent: BaseHeavyShipWeaponBoard
+  name: L65 Mk.5 "Longbow" heavy autocannon turret board
+  components:
+  - type: MachineBoard
+    prototype: WeaponTurretLongbow
+
+- type: entity
+  id: CharonetteWeaponBoard
+  parent: BaseHeavyShipWeaponBoard
+  name: M194 CHARONETTE mass driver turret board
+  components:
+  - type: MachineBoard
+    prototype: WeaponTurretCharonette
+
+- type: entity
+  id: SerpentMissileWeaponBoard
+  parent: BaseHeavyShipWeaponBoard
+  name: Serpent torpedo launcher turret board
+  components:
+  - type: MachineBoard
+    prototype: WeaponTurretSerpentMissile
+
+- type: entity
+  id: CharonReloadWeaponBoard
+  parent: BaseCapitalShipWeaponBoard
+  name: M381 CHARON mass driver turret board
+  components:
+  - type: MachineBoard
+    prototype: WeaponTurretCharonReload
+
+- type: entity
+  id: HadesWeaponBoard
+  parent: BaseCapitalShipWeaponBoard
+  name: HADES 305mm cannon turret board
+  components:
+  - type: MachineBoard
+    prototype: WeaponTurretHades
+
+- type: entity
+  id: HydraWeaponBoard
+  parent: BaseCapitalShipWeaponBoard
+  name: Hydra 200mm battery turret board
+  components:
+  - type: MachineBoard
+    prototype: WeaponTurretHydra
+
+- type: entity
+  id: LightShieldBoard
+  parent: BaseLightShipWeaponBoard
+  name: MS-100 "Sentinel" Shield Generator board
+  components:
+  - type: MachineBoard
+    prototype: ShieldGeneratorSmall
+
+- type: entity
+  id: MediumShieldBoard
+  parent: BaseMediumShipWeaponBoard
+  name: MS-250 "Aegis" Shield Generator board
+  components:
+  - type: MachineBoard
+    prototype: ShieldGeneratorMedium
+
+- type: entity
+  id: HeavyShieldBoard
+  parent: BaseHeavyShipWeaponBoard
+  name: MS-500 "Titan" Shield Generator board
+  components:
+  - type: MachineBoard
+    prototype: ShieldGenerator
+
+- type: entity
+  id: CapitalShieldBoard
+  parent: BaseCapitalShipWeaponBoard
+  name: FS-421 "Fortress" Outpost Shield Generator board
+  components:
+  - type: MachineBoard
+    prototype: ShieldGeneratorPOI

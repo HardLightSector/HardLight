@@ -8,7 +8,6 @@ namespace Content.Server._Shitmed.Body.Organ;
 
 public sealed class DermisSystem : EntitySystem
 {
-    [Dependency] private readonly SharedBodySystem _bodySystem = default!;
 
     public override void Initialize()
     {

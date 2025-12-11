@@ -44,7 +44,7 @@
 - type: entity
   parent: ClothingShoesBootsMagSecurity
   id: ClothingShoesBootsMagNfsd
-  name: Colsec magboots
+  name: TSFMC magboots
   components:
   - type: Sprite
     sprite: _NF/Clothing/Shoes/Boots/magboots-nfsd.rsi

@@ -1,0 +1,9 @@
+- type: loadout
+  id: TsfmcHud
+  equipment:
+    eyes: ClothingEyesHudSecurity
+
+- type: loadout
+  id: TsfmcMedSec
+  equipment:
+    eyes: ClothingEyesHudMedSec

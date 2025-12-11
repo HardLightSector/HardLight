@@ -12,8 +12,8 @@
   id: AnomalousGeode
   parent: BasePOI
   name: 'Anomalous Geode'
-  minimumDistance: 2100
-  maximumDistance: 3800
+  minimumDistance: 7800
+  maximumDistance: 10800
   spawnGroup: MarketStation
   gridPath: /Maps/_NF/POI/anomalousgeode.yml
   addComponents:

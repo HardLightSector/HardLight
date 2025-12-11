@@ -12,8 +12,8 @@
   id: Lodge
   parent: BasePOI
   name: 'Expeditionary Lodge'
-  minimumDistance: 1650
-  maximumDistance: 3400
+  minimumDistance: 6650
+  maximumDistance: 7400
   spawnGroup: MarketStation
   gridPath: /Maps/_NF/POI/lodge.yml
   addComponents:

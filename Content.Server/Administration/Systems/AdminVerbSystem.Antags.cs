@@ -23,23 +23,17 @@ public sealed partial class AdminVerbSystem
     [Dependency] private readonly ZombieSystem _zombie = default!;
     [Dependency] private readonly GameTicker _gameTicker = default!;
 
-    [ValidatePrototypeId<EntityPrototype>]
-    private const string DefaultTraitorRule = "Traitor";
+    private static readonly EntProtoId DefaultTraitorRule = "Traitor";
 
-    [ValidatePrototypeId<EntityPrototype>]
-    private const string DefaultInitialInfectedRule = "Zombie";
+    private static readonly EntProtoId DefaultInitialInfectedRule = "Zombie";
 
-    [ValidatePrototypeId<EntityPrototype>]
-    private const string DefaultNukeOpRule = "LoneOpsSpawn";
+    private static readonly EntProtoId DefaultNukeOpRule = "LoneOpsSpawn";
 
-    [ValidatePrototypeId<EntityPrototype>]
-    private const string DefaultRevsRule = "Revolutionary";
+    private static readonly EntProtoId DefaultRevsRule = "Revolutionary";
 
-    [ValidatePrototypeId<EntityPrototype>]
-    private const string DefaultThiefRule = "Thief";
+    private static readonly EntProtoId DefaultThiefRule = "Thief";
 
-    [ValidatePrototypeId<StartingGearPrototype>]
-    private const string PirateGearId = "PirateGear";
+    private static readonly ProtoId<StartingGearPrototype> PirateGearId = "PirateGear";
 
     private readonly EntProtoId _paradoxCloneRuleId = "ParadoxCloneSpawn";
     private readonly EntProtoId _pirateRuleId = "NFPirate"; // Frontier

@@ -100,9 +100,6 @@
   components:
     - type: TriggerOnCollide
       fixtureID: floortrap
-      blacklist:
-        tags:
-        - ResinStructures
     - type: SpawnOnTrigger
       proto: MobXenoDrone
     - type: DeleteOnTrigger
@@ -117,9 +114,6 @@
   components:
     - type: TriggerOnCollide
       fixtureID: floortrap
-      blacklist:
-        tags:
-        - ResinStructures
     - type: SpawnOnTrigger
       proto: MobXeno
     - type: DeleteOnTrigger

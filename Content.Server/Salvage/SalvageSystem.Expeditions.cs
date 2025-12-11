@@ -36,7 +36,7 @@ public sealed partial class SalvageSystem
     private readonly JobQueue _salvageQueue = new();
     private readonly List<(SpawnSalvageMissionJob Job, CancellationTokenSource CancelToken)> _salvageJobs = new();
     private const double SalvageJobTime = 0.002;
-    private readonly List<(ProtoId<SalvageDifficultyPrototype> id, int value)> _missionDifficulties = [("NFModerate", 0), ("NFHazardous", 1), ("NFExtreme", 2)]; // Frontier: mission difficulties with order
+    private readonly List<(ProtoId<SalvageDifficultyPrototype> id, int value)> _missionDifficulties = [("NFEasy", 0),("NFModerate", 1), ("NFHazardous", 2),("NFExtreme", 3), ("NFNightmare", 4)]; // Frontier: mission difficulties with order
 
     [Dependency] private readonly IConfigurationManager _cfgManager = default!; // Frontier
 
@@ -218,6 +218,8 @@ public sealed partial class SalvageSystem
             component.NextOffer = _timing.CurTime + TimeSpan.FromSeconds(_cooldown);
             component.CooldownTime = TimeSpan.FromSeconds(_cooldown);
             Announce(uid, Loc.GetString("salvage-expedition-mission-completed"));
+            // HARDLIGHT: Spawn expedition reward at the originating console based on difficulty
+            TrySpawnExpeditionRewardAtConsole(expeditionComp);
         }
         else
         {
@@ -234,7 +236,43 @@ public sealed partial class SalvageSystem
 
         UpdateConsoles(expedition);
     }
+     // HARDLIGHT: Spawn appropriate briefcase reward at the console that started the expedition
+    private void TrySpawnExpeditionRewardAtConsole(SalvageExpeditionComponent expeditionComp)
+    {
+        if (expeditionComp.Console == null || !Exists(expeditionComp.Console.Value))
+        {
+            Log.Warning("Expedition completed but console reference missing; cannot spawn reward.");
+            return;
+        }
 
+        if (!TryComp<TransformComponent>(expeditionComp.Console.Value, out var consoleXform))
+        {
+            Log.Warning($"Expedition completed but console {ToPrettyString(expeditionComp.Console.Value)} has no transform; cannot spawn reward.");
+            return;
+        }
+
+        // Map difficulty to reward tier entity
+        var diffId = expeditionComp.MissionParams.Difficulty.ToString();
+        string rewardProto = diffId switch
+        {
+            "NFEasy" => "SpaceCashExpeditionT1",
+            "NFModerate" => "SpaceCashExpeditionT2",
+            "NFHazardous" => "SpaceCashExpeditionT3",
+            "NFExtreme" => "SpaceCashExpeditionT4",
+            "NFNightmare" => "SpaceCashExpeditionT5",
+            _ => "SpaceCashExpeditionT1"
+        };
+
+        try
+        {
+            EntityManager.SpawnEntity(rewardProto, consoleXform.Coordinates);
+            Log.Info($"Spawned expedition reward {rewardProto} at console {ToPrettyString(expeditionComp.Console.Value)} for difficulty {diffId}.");
+        }
+        catch (Exception ex)
+        {
+            Log.Error($"Failed to spawn expedition reward {rewardProto} at console {ToPrettyString(expeditionComp.Console.Value)}: {ex}");
+        }
+    }
     private void GenerateMissions(SalvageExpeditionDataComponent component)
     {
         // HARDLIGHT: Prevent duplicate mission generation
@@ -278,7 +316,8 @@ public sealed partial class SalvageSystem
                 var mission = new SalvageMissionParams
                 {
                     Index = (ushort)missionIndex,
-                    MissionType = (SalvageMissionType)_random.NextByte((byte)SalvageMissionType.Max + 1), // Frontier
+                    // Pick a valid mission type; Max is a sentinel and must be excluded.
+                    MissionType = (SalvageMissionType)_random.NextByte((byte)SalvageMissionType.Max),
                     Seed = _random.Next(),
                     Difficulty = difficulties[i].id,
                 };

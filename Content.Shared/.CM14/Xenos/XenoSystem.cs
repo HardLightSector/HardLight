@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using Content.Shared.Actions;
 using Content.Shared.Popups;
 using Content.Shared.Access.Components;
 using Content.Shared.CM14.Xenos.Evolution;
 using Content.Shared.CM14.Xenos.Construction;
 using Content.Shared.Mind;
+using Content.Shared.Mobs.Systems;
 using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Player;
@@ -18,6 +20,7 @@ public sealed class XenoSystem : EntitySystem
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedMindSystem _mind = default!;
+    [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly INetManager _net = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly SharedUserInterfaceSystem _ui = default!;
@@ -35,7 +38,7 @@ public sealed class XenoSystem : EntitySystem
 
     private void OnXenoMapInit(Entity<XenoComponent> ent, ref MapInitEvent args)
     {
-        Log.Info($"[Xeno] ({(_net.IsServer ? "server" : "client")}) MapInit {ToPrettyString(ent)} actionIds={ent.Comp.ActionIds.Count}");
+        // Log.Info($"[Xeno] ({(_net.IsServer ? "server" : "client")}) MapInit {ToPrettyString(ent)} actionIds={ent.Comp.ActionIds.Count}"); // verbose init log disabled
         if (_net.IsServer)
         {
             // Server-authoritative action registration (replicated to clients)
@@ -115,7 +118,7 @@ public sealed class XenoSystem : EntitySystem
                 }
             }
 
-            Log.Info($"[Xeno] (server) Actions registered={ent.Comp.Actions.Count} for {ToPrettyString(ent)}");
+            // Log.Info($"[Xeno] (server) Actions registered={ent.Comp.Actions.Count} for {ToPrettyString(ent)}"); // verbose action registration log disabled
         }
 
         // Evolution action: prefer an existing evolve action from ActionIds to avoid duplicates.
@@ -136,7 +139,27 @@ public sealed class XenoSystem : EntitySystem
             if (evolveAction != null && !HasComp<CM14.Xenos.Evolution.XenoEvolveActionComponent>(evolveAction.Value))
             {
                 _action.SetCooldown(evolveAction, _timing.CurTime, _timing.CurTime + ent.Comp.EvolveIn);
+                // var end = _timing.CurTime + ent.Comp.EvolveIn;
+                // Log.Info($"[Xeno] Set evolve cooldown for {ToPrettyString(ent)} evolveIn={ent.Comp.EvolveIn.TotalSeconds:F1}s endsAt={end.TotalSeconds:F1}s action={ToPrettyString(evolveAction.Value)}"); // verbose cooldown log disabled
             }
+            else if (evolveAction != null)
+            {
+                // Log.Info($"[Xeno] Using specialized evolve action component for {ToPrettyString(ent)} action={ToPrettyString(evolveAction.Value)} cooldownCompPresent=true"); // verbose cooldown component log disabled
+            }
+            else
+            {
+                // Log.Info($"[Xeno] No evolve action could be created for {ToPrettyString(ent)}"); // verbose evolve action failure log disabled
+            }
+
+            // Ensure evolve action raises on the user entity so our xeno handlers receive it.
+            if (evolveAction != null && TryComp<InstantActionComponent>(evolveAction.Value, out var evolveInstant))
+            {
+                evolveInstant.RaiseOnUser = true;
+                evolveInstant.RaiseOnAction = false;
+                Dirty(evolveAction.Value, evolveInstant);
+            }
+
+            // (Scheduling moved to Update to avoid briefly setting a pending time before a player mind transfers in on evolution.)
         }
     }
 
@@ -152,15 +175,47 @@ public sealed class XenoSystem : EntitySystem
     {
         var query = EntityQueryEnumerator<XenoComponent>();
         var time = _timing.CurTime;
+        // Defer evolution events to avoid modifying collections mid-enumeration.
+        var toEvolve = new List<EntityUid>();
 
         while (query.MoveNext(out var uid, out var xeno))
         {
-            if (time < xeno.NextPlasmaRegenTime)
-                continue;
+            // Schedule if needed (only once, only for AI-controlled xenos).
+            if (_net.IsServer && xeno.PendingAutoEvolveTime == null && xeno.EvolvesTo.Count > 0 && xeno.EvolveIn > TimeSpan.Zero && !TryComp<ActorComponent>(uid, out _))
+            {
+                xeno.PendingAutoEvolveTime = time + xeno.EvolveIn;
+                Dirty(uid, xeno);
+                // Log.Info($"[Xeno] Scheduled AI auto-evolution (Update) for {ToPrettyString(uid)} dueAt={xeno.PendingAutoEvolveTime.Value.TotalSeconds:F1}s"); // verbose scheduling log disabled
+            }
+            // If a player took control, cancel pending auto-evolution.
+            if (xeno.PendingAutoEvolveTime != null && TryComp<ActorComponent>(uid, out _))
+            {
+                xeno.PendingAutoEvolveTime = null;
+                Dirty(uid, xeno);
+                // Log.Info($"[Xeno] Cleared pending auto-evolution due to actor control for {ToPrettyString(uid)}"); // verbose cancellation log disabled
+            }
+            // Process scheduled AI auto-evolution (deferred)
+            else if (_net.IsServer && xeno.PendingAutoEvolveTime is { } due && time >= due && xeno.EvolvesTo.Count > 0)
+            {
+                xeno.PendingAutoEvolveTime = null;
+                Dirty(uid, xeno);
+                toEvolve.Add(uid);
+                // Log.Info($"[Xeno] Queued scheduled auto-evolution for {ToPrettyString(uid)}"); // verbose queue log disabled
+            }
 
-            xeno.Plasma += xeno.PlasmaRegen;
-            xeno.NextPlasmaRegenTime = time + xeno.PlasmaRegenCooldown;
-            Dirty(uid, xeno);
+            if (time >= xeno.NextPlasmaRegenTime)
+            {
+                xeno.Plasma += xeno.PlasmaRegen;
+                xeno.NextPlasmaRegenTime = time + xeno.PlasmaRegenCooldown;
+                Dirty(uid, xeno);
+            }
+        }
+
+        // Fire evolution events after enumeration.
+        foreach (var uid in toEvolve)
+        {
+            var ev = new XenoOpenEvolutionsEvent();
+            RaiseLocalEvent(uid, ev);
         }
     }
 
@@ -211,38 +266,60 @@ public sealed class XenoSystem : EntitySystem
         if (_net.IsClient)
             return;
 
-        // Require an actor to show UI. If no actor or UI fails to open, fall back to auto-evolve to first option.
+        // Don't allow dead xenos to evolve
+        if (_mobState.IsDead(ent))
+            return;
+
+        Log.Debug($"[Xeno] Evolution handler start for {ToPrettyString(ent)} evolvesTo={ent.Comp.EvolvesTo.Count} hasActor={TryComp(ent, out ActorComponent? _)}");
         if (TryComp(ent, out ActorComponent? actor))
         {
             if (_ui.TryOpenUi(ent.Owner, XenoEvolutionUIKey.Key, actor.Owner))
+            {
+                //Log.Debug($"[Xeno] Opened evolution UI for {ToPrettyString(ent)} actor={ToPrettyString(actor.Owner)}");
                 return;
+            }
+            else
+            {
+                //Log.Debug($"[Xeno] Failed to open evolution UI for {ToPrettyString(ent)} actor={ToPrettyString(actor.Owner)} falling back");
+            }
         }
 
-        // Fallback: no UI available; auto-evolve to the first available option if any.
         if (ent.Comp.EvolvesTo.Count > 0)
         {
-            var evolution = Spawn(ent.Comp.EvolvesTo[0], _transform.GetMoverCoordinates(ent.Owner));
+            var targetProto = ent.Comp.EvolvesTo[0];
+            //Log.Info($"[Xeno] Auto-evolving {ToPrettyString(ent)} to {targetProto}");
+            var evolution = Spawn(targetProto, _transform.GetMoverCoordinates(ent.Owner));
+            //Log.Info($"[Xeno] Spawned evolution entity {ToPrettyString(evolution)} for {ToPrettyString(ent)}");
 
-            // Transfer mind if one exists (for player xenos), otherwise just delete (for AI xenos)
             if (_mind.TryGetMind(ent, out var mindId, out _))
             {
                 _mind.TransferTo(mindId, evolution);
                 _mind.UnVisit(mindId);
+                //Log.Debug($"[Xeno] Transferred mind {mindId} to evolution {ToPrettyString(evolution)} from {ToPrettyString(ent)}");
             }
 
             Del(ent.Owner);
+            //Log.Debug($"[Xeno] Deleted original xeno {ToPrettyString(ent)} after evolution");
+        }
+        else
+        {
+           //Log.Warning($"[Xeno] Evolution event received but no EvolvesTo entries for {ToPrettyString(ent)}");
         }
     }
 
     private void OnXenoEvolveBui(Entity<XenoComponent> ent, ref EvolveBuiMessage args)
     {
+        // Don't allow dead xenos to evolve
+        if (_mobState.IsDead(ent))
+            return;
+
         if (!_mind.TryGetMind(ent, out var mindId, out _))
             return;
 
         var choices = ent.Comp.EvolvesTo.Count;
         if (args.Choice >= choices || args.Choice < 0)
         {
-            Log.Warning($"User {ToPrettyString(args.Actor)} sent an out of bounds evolution choice: {args.Choice}. Choices: {choices}");
+            //Log.Warning($"User {ToPrettyString(args.Actor)} sent an out of bounds evolution choice: {args.Choice}. Choices: {choices}");
             return;
         }
 

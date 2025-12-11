@@ -51,7 +51,7 @@
       collection: MetalThud
 
 - type: entity
-  name: syndicate jaws of life
+  name: jaws of death
   parent: [JawsOfLife, BaseC3SyndicateContraband] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband
   id: SyndicateJawsOfLife
   description: Useful for entering the station or its departments.
@@ -86,3 +86,6 @@
     damage:
       types:
         Blunt: 14
+  - type: Tag
+    tags:
+    - Syndie_JawsOfLife

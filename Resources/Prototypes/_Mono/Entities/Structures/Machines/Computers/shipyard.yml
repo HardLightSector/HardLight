@@ -1,0 +1,28 @@
+- type: entity
+  id: ComputerShipyardUSSP
+  parent: [BaseStructureDisableToolUse, BaseStructureDestructible, ComputerShipyardBase]
+  name: USSP shipyard console
+  description: Used to buy ships from USSP naval reserves.
+  components:
+  - type: ActivatableUI
+    key: enum.ShipyardConsoleUiKey.Ussp
+  - type: UserInterface
+    interfaces:
+      enum.ShipyardConsoleUiKey.Ussp:
+        type: ShipyardConsoleBoundUserInterface
+  - type: Sprite
+    sprite: _NF/Structures/Machines/computers.rsi
+    layers:
+    - map: ["computerLayerBody"]
+      state: computer_blackmarket
+    - map: ["computerLayerKeyboard"]
+      state: generic_keyboard
+    - map: ["computerLayerScreen"]
+      state: shipyard_blackmarket
+    - map: ["computerLayerKeys"]
+      state: blackmarket_key
+  - type: ShipyardConsole
+    shipyardChannel: Ussp
+    secretShipyardChannel: Nfsd
+    ignoreBaseSaleRate: true # Fixed 70% sale rate.
+    canTransferDeed: false

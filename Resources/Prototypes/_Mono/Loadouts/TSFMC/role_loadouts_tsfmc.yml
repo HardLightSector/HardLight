@@ -1,0 +1,137 @@
+# Nfsd
+- type: roleLoadout
+  id: JobCadet
+  groups:
+  - TsfmcHead
+  - TsfmcNeck
+  - TsfmcJumpsuit
+  - TsfmcGloves
+  - TsfmcBackpack
+  - TsfmcOuterClothing
+  - TsfmcShoes
+  - TsfmcFace
+  - TsfmcGlasses
+  - TsfmcBelt
+  - TsfmcEars
+  - NfsdBoxSurvival
+  - CadetPDA
+  - ContractorCartridge
+  - ContractorImplanter
+  - ContractorEncryptionKey
+  - ContractorFun
+  - ContractorTrinkets
+  - NfsdSpeciesSpecific
+
+- type: roleLoadout
+  id: JobDeputy
+  groups:
+  - TsfmcHead
+  - TsfmcNeck
+  - TsfmcJumpsuit
+  - TsfmcGloves
+  - TsfmcBackpack
+  - TsfmcOuterClothing
+  - TsfmcShoes
+  - TsfmcFace
+  - TsfmcGlasses
+  - TsfmcBelt
+  - TsfmcEars
+  - NfsdBoxSurvival
+  - DeputyPDA
+  - ContractorCartridge
+  - ContractorImplanter
+  - ContractorEncryptionKey
+  - ContractorFun
+  - ContractorTrinkets
+  - NfsdSpeciesSpecific
+
+- type: roleLoadout
+  id: JobBrigmedic
+  groups:
+  - TsfmcHead
+  - TsfmcNeck
+  - TsfmcJumpsuit
+  - TsfmcBrigmedicGloves
+  - TsfmcBackpack
+  - TsfmcOuterClothing
+  - TsfmcShoes
+  - TsfmcFace
+  - TsfmcBrigmedicGlasses
+  - TsfmcBrigmedicBelt
+  - TsfmcEars
+  - NfsdBoxSurvival
+  - BrigmedicPDA
+  - ContractorCartridge
+  - ContractorImplanter
+  - ContractorEncryptionKey
+  - ContractorFun
+  - ContractorTrinkets
+  - NfsdSpeciesSpecific
+
+- type: roleLoadout
+  id: JobBailiff
+  groups:
+  - TsfmcHead
+  - TsfmcNeck
+  - TsfmcJumpsuit
+  - TsfmcGloves
+  - TsfmcBackpack
+  - TsfmcOuterClothing
+  - TsfmcShoes
+  - TsfmcFace
+  - TsfmcGlasses
+  - TsfmcBelt
+  - TsfmcEarsSenior
+  - NfsdBoxSurvival
+  - BailiffPDA
+  - ContractorCartridge
+  - ContractorImplanter
+  - ContractorEncryptionKey
+  - ContractorFun
+  - SeniorOfficerTrinkets
+  - NfsdSpeciesSpecific
+
+- type: roleLoadout
+  id: JobSeniorOfficer
+  groups:
+  - TsfmcHead
+  - TsfmcNeck
+  - TsfmcJumpsuit
+  - TsfmcGloves
+  - TsfmcBackpack
+  - TsfmcOuterClothing
+  - TsfmcShoes
+  - TsfmcFace
+  - TsfmcGlasses
+  - TsfmcBelt
+  - TsfmcEarsSenior
+  - NfsdBoxSurvival
+  - SeniorOfficerPDA
+  - ContractorCartridge
+  - ContractorImplanter
+  - ContractorEncryptionKey
+  - ContractorFun
+  - SeniorOfficerTrinkets
+  - NfsdSpeciesSpecific
+
+- type: roleLoadout
+  id: JobSheriff
+  groups:
+  - TsfmcHead
+  - TsfmcNeckCommander
+  - TsfmcJumpsuit
+  - TsfmcGloves
+  - TsfmcBackpack
+  - TsfmcOuterClothing
+  - TsfmcShoes
+  - TsfmcFace
+  - TsfmcGlasses
+  - TsfmcBelt
+  - TsfmcEarsCommander
+  - NfsdBoxSurvival
+  - SheriffPDA
+  - ContractorCartridge
+  - ContractorImplanter
+  - ContractorFun
+  - SeniorOfficerTrinkets
+  - NfsdSpeciesSpecific

@@ -194,7 +194,7 @@
   waterConsumption: 0.60
   idealHeat: 298
   chemicals:
-    ook:
+    Primatine:
       Min: 4
       Max: 16
       PotencyDivisor: 10

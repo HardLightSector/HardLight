@@ -95,6 +95,50 @@
     sprite: Clothing/Belt/belt_overlay.rsi
   - type: Appearance
 
+# HL start
+- type: entity
+  parent: [NFClothingBeltStorageBase, ContentsExplosionResistanceBase, BaseC3SyndicateContraband]
+  id: ClothingBeltUtilitySyndicate
+  name: blood-red utility belt
+  description: It can hold various tools while looking fresh as fuck.
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Belt/utility.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/Belt/utility.rsi
+  - type: Storage
+  - type: ItemMapper
+    mapLayers:
+      drill:
+        whitelist:
+          tags:
+          - Syndie_Powerdrill
+      jaws:
+        whitelist:
+          tags:
+          - Syndie_JawsOfLife
+      multitool:
+        whitelist:
+          tags:
+          - Syndie_Multitool
+    sprite: _HL/Clothing/Belt/belt_overlay.rsi
+  - type: Appearance
+
+- type: entity
+  parent: ClothingBeltUtilitySyndicate
+  id: ClothingBeltUtilitySyndicateFilled
+  suffix: filled
+  components:
+  - type: StorageFill
+    contents:
+    - id: SyndicateJawsOfLife
+    - id: SyndicateWelderExperimental
+    - id: SyndicatePowerDrill
+    - id: SyndicateMultitool
+    - id: ClothingHandsGlovesCombat
+    - id: ClothingMaskGasSyndicate
+# HL end
+
 - type: entity
   parent: NFClothingBeltStorageBase # Frontier: ClothingBeltStorageBase<NFClothingBeltStorageBase
   id: ClothingBeltChiefEngineer

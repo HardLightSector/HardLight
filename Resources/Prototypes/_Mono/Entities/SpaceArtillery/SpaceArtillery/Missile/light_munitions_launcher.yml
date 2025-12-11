@@ -62,3 +62,9 @@
     shipType: Missile
   - type: ShipGunClass
     shipClass: Medium
+  - type: ContainerContainer #HL start
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+  - type: Machine
+    board: LightMunitionsBayWeaponBoard #HL end

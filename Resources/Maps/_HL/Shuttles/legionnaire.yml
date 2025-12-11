@@ -108,27 +108,27 @@ entities:
             54: -1,-10
             55: -1,-7
         - node:
-            color: '#493926FF'
+            color: '#303740FF'
             id: BrickTileWhiteCornerNe
           decals:
             34: 3,-8
         - node:
-            color: '#4B653EFF'
+            color: '#3E4C65FF'
             id: BrickTileWhiteCornerNe
           decals:
             19: 0,-4
         - node:
-            color: '#4B653EFF'
+            color: '#3E4C65FF'
             id: BrickTileWhiteCornerNw
           decals:
             18: -2,-4
         - node:
-            color: '#493926FF'
+            color: '#303740FF'
             id: BrickTileWhiteCornerSe
           decals:
             36: 3,-9
         - node:
-            color: '#4B653EFF'
+            color: '#3E4C65FF'
             id: BrickTileWhiteCornerSe
           decals:
             22: 0,-11
@@ -138,17 +138,17 @@ entities:
           decals:
             27: -4,-9
         - node:
-            color: '#493926FF'
+            color: '#303740FF'
             id: BrickTileWhiteCornerSw
           decals:
             35: 2,-9
         - node:
-            color: '#4B653EFF'
+            color: '#3E4C65FF'
             id: BrickTileWhiteCornerSw
           decals:
             21: -2,-11
         - node:
-            color: '#493926FF'
+            color: '#303740FF'
             id: BrickTileWhiteEndN
           decals:
             33: 2,-7
@@ -158,7 +158,7 @@ entities:
           decals:
             25: -4,-8
         - node:
-            color: '#4B653EFF'
+            color: '#3E4C65FF'
             id: BrickTileWhiteEndS
           decals:
             20: -1,-12
@@ -168,7 +168,7 @@ entities:
           decals:
             26: -7,-9
         - node:
-            color: '#493926FF'
+            color: '#303740FF'
             id: BrickTileWhiteInnerNe
           decals:
             38: 2,-8
@@ -178,17 +178,17 @@ entities:
           decals:
             28: -4,-9
         - node:
-            color: '#4B653EFF'
+            color: '#3E4C65FF'
             id: BrickTileWhiteInnerSe
           decals:
             24: -1,-11
         - node:
-            color: '#4B653EFF'
+            color: '#3E4C65FF'
             id: BrickTileWhiteInnerSw
           decals:
             23: -1,-11
         - node:
-            color: '#4B653EFF'
+            color: '#3E4C65FF'
             id: BrickTileWhiteLineE
           decals:
             9: 0,-9
@@ -196,7 +196,7 @@ entities:
             15: -1,-7
             16: 0,-5
         - node:
-            color: '#4B653EFF'
+            color: '#3E4C65FF'
             id: BrickTileWhiteLineN
           decals:
             17: -1,-4
@@ -213,12 +213,12 @@ entities:
             29: -5,-9
             30: -6,-9
         - node:
-            color: '#493926FF'
+            color: '#303740FF'
             id: BrickTileWhiteLineW
           decals:
             37: 2,-8
         - node:
-            color: '#4B653EFF'
+            color: '#3E4C65FF'
             id: BrickTileWhiteLineW
           decals:
             11: -2,-9
@@ -300,33 +300,33 @@ entities:
             42: -2,-9
             43: 2,-9
         - node:
-            color: '#4B653EFF'
+            color: '#3E4C65FF'
             id: tile_diagonal
           decals:
             3: -2,-6
             4: 0,-8
         - node:
-            color: '#4B653EFF'
+            color: '#3E4C65FF'
             id: tile_diagonal_corner
           decals:
             5: -1,-8
         - node:
-            color: '#4B653EFF'
+            color: '#3E4C65FF'
             id: tile_diagonal_corner_180
           decals:
             8: -1,-6
         - node:
-            color: '#4B653EFF'
+            color: '#3E4C65FF'
             id: tile_diagonal_corner_270
           decals:
             7: -1,-6
         - node:
-            color: '#4B653EFF'
+            color: '#3E4C65FF'
             id: tile_diagonal_corner_90
           decals:
             6: -1,-8
         - node:
-            color: '#4B653EFF'
+            color: '#3E4C65FF'
             id: tile_diagonal_flipped
           decals:
             1: -2,-8

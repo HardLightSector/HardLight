@@ -56,7 +56,7 @@
         - IdCard
   - type: PdaVisuals
   - type: Item
-    size: Small
+    size: Ginormous
   - type: ContainerContainer
     containers:
       PDA-id: !type:ContainerSlot {}

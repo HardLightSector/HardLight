@@ -83,6 +83,12 @@
     shipType: Ballistic
   - type: ShipGunClass
     shipClass: Light
+  - type: ContainerContainer #HL start
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+  - type: Machine
+    board: L85AutocannonWeaponBoard #HL end
 
 # RAC-30 Draupnir
 
@@ -154,6 +160,12 @@
     shipType: Ballistic
   - type: ShipGunClass
     shipClass: Medium
+  - type: ContainerContainer #HL start
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+  - type: Machine
+    board: RAC30WeaponBoard #HL end
 
 # DRAVON 57mm
 
@@ -217,6 +229,12 @@
     shipType: Ballistic
   - type: ShipGunClass
     shipClass: Medium
+  - type: ContainerContainer #HL start
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+  - type: Machine
+    board: DravonWeaponBoard #HL end
 
 # AK570 90mm
 
@@ -285,6 +303,12 @@
     shipType: Ballistic
   - type: ShipGunClass
     shipClass: Medium
+  - type: ContainerContainer #HL start
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+  - type: Machine
+    board: AK570WeaponBoard #HL end
 
 # CYREXA 220mm
 
@@ -365,6 +389,12 @@
     shipType: Ballistic
   - type: ShipGunClass
     shipClass: Medium
+  - type: ContainerContainer #HL start
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+  - type: Machine
+    board: CyrexaWeaponBoard #HL end
 
 # HADES 305mm
 
@@ -445,6 +475,12 @@
     shipType: Ballistic
   - type: ShipGunClass
     shipClass: Superheavy
+  - type: ContainerContainer #HL start
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+  - type: Machine
+    board: HadesWeaponBoard #HL end
 
 # Longbow 150mm
 
@@ -525,6 +561,12 @@
     shipType: Ballistic
   - type: ShipGunClass
     shipClass: Heavy
+  - type: ContainerContainer #HL start
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+  - type: Machine
+    board: LongbowWeaponBoard #HL end
 
 # MiniCHARON
 
@@ -599,6 +641,12 @@
     shipType: Ballistic
   - type: ShipGunClass
     shipClass: Heavy
+  - type: ContainerContainer #HL start
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+  - type: Machine
+    board: CharonetteWeaponBoard #HL end
 
 # Bofors 255mm
 
@@ -675,6 +723,12 @@
     shipType: Ballistic
   - type: ShipGunClass
     shipClass: Medium
+  - type: ContainerContainer #HL start
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+  - type: Machine
+    board: BoforsWeaponBoard #HL end
 
 # Kargil 203mm
 
@@ -751,6 +805,12 @@
     shipType: Ballistic
   - type: ShipGunClass
     shipClass: Medium
+  - type: ContainerContainer #HL start
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+  - type: Machine
+    board: KargilWeaponBoard #HL end
 
 # Corporate War Era - Syndicate
 
@@ -824,6 +884,12 @@
     shipType: Ballistic
   - type: ShipGunClass
     shipClass: Light
+  - type: ContainerContainer #HL start
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+  - type: Machine
+    board: AdderScattercannonWeaponBoard #HL end
 
 - type: entity
   id: WeaponTurretFang
@@ -885,6 +951,12 @@
     shipType: Ballistic
   - type: ShipGunClass
     shipClass: Medium
+  - type: ContainerContainer #HL start
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+  - type: Machine
+    board: FangWeaponBoard #HL end
 
 - type: entity
   id: WeaponTurretHydra
@@ -962,3 +1034,9 @@
     shipType: Ballistic
   - type: ShipGunClass
     shipClass: SuperHeavy
+  - type: ContainerContainer #HL start
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+  - type: Machine
+    board: HydraWeaponBoard #HL end

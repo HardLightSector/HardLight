@@ -1,7 +1,7 @@
 - type: entity
   id: BedsheetNfsd
   parent: BedsheetBase
-  name: Colsec bedsheet
+  name: TSFMC bedsheet
   components:
   - type: Sprite
     sprite: _NF/Objects/Misc/bedsheets.rsi

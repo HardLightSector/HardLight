@@ -109,8 +109,8 @@
   description: trait-thieving-desc
   category: Physical
   cost: 3
-  speciesBlacklist:
-  - Felinid
+  ##speciesBlacklist:
+  ##- Felinid
   components:
   - type: Thieving
     stealthy: true
@@ -218,6 +218,19 @@
     - Harpy
   components:
     - type: TrapAvoider
+
+
+- type: trait
+  id: PsionicallyGifted
+  name: trait-psionically-gifted-name
+  description: trait-psionically-gifted-desc
+  category: Physical
+  cost: 6
+  speciesBlacklist:
+    - IPC
+  components:
+    - type: PsionicBonusChance
+      flatBonus: 1
 
 - type: trait
   id: SelfAware

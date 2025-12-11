@@ -443,9 +443,12 @@ namespace Content.Server.Database
         [Column(TypeName = "jsonb")] public JsonDocument? Markings { get; set; } = null!;
         public string HairName { get; set; } = null!;
         public string HairColor { get; set; } = null!;
+        public bool HairGlowing { get; set; } = false; //starlight
         public string FacialHairName { get; set; } = null!;
         public string FacialHairColor { get; set; } = null!;
+        public bool FacialHairGlowing { get; set; } = false; //starlight
         public string EyeColor { get; set; } = null!;
+        public bool EyeGlowing { get; set;} = false; //starlight
         public string SkinColor { get; set; } = null!;
         public float Height { get; set; } = 1.0f;
         public float Width { get; set; } = 1.0f;
@@ -457,6 +460,8 @@ namespace Content.Server.Database
         public List<ProfileRoleLoadout> Loadouts { get; } = new();
 
         [Column("pref_unavailable")] public DbPreferenceUnavailableMode PreferenceUnavailable { get; set; }
+        
+        public string Company { get; set; } = "None";
 
         public int PreferenceId { get; set; }
         public Preference Preference { get; set; } = null!;

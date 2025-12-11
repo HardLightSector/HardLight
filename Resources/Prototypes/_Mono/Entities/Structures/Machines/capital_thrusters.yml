@@ -1,8 +1,8 @@
 - type: entity
-  id: ThrusterNCMCLarge
+  id: ThrusterTSFMCLarge
   name: thruster
   parent: BaseThruster
-  suffix: NCMC, 2x2
+  suffix: TSFMC, 2x2
   components:
   - type: Destructible
     thresholds:
@@ -22,7 +22,7 @@
         sound:
           collection: MetalBreak
   - type: Sprite
-    sprite: _NF/Structures/Shuttles/thrusternfsd.rsi
+    sprite: _NF/Structures/Shuttles/thruster.rsi
     layers:
     - state: base
       map: ["enum.ThrusterVisualLayers.Base"]
@@ -66,10 +66,10 @@
     shape: diamond
 
 - type: entity
-  id: ThrusterNCMCCapital
+  id: ThrusterTSFMCCapital
   name: thruster
   parent: BaseThruster
-  suffix: NCMC, 3x3
+  suffix: TSFMC, 3x3
   components:
   - type: Destructible
     thresholds:
@@ -89,7 +89,7 @@
         sound:
           collection: MetalBreak
   - type: Sprite
-    sprite: _NF/Structures/Shuttles/thrusternfsd.rsi
+    sprite: _NF/Structures/Shuttles/thruster.rsi
     layers:
     - state: base
       map: ["enum.ThrusterVisualLayers.Base"]

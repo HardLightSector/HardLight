@@ -12,3 +12,5 @@
     highPressureMultiplier: 0.525
     lowPressureMultiplier: 10000
   - type: HeldSpeedModifier
+  - type: PirateBountyItem
+    id: ClothingOuterHardsuitTacsuit

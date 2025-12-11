@@ -66,28 +66,20 @@ public abstract class SharedXenoMeleeSystem : EntitySystem
         if (userCoords.MapId != targetCoords.MapId)
             return;
 
-        var box = new Box2(userCoords.Position.X - 0.10f, userCoords.Position.Y, userCoords.Position.X + 0.10f, userCoords.Position.Y + xeno.Comp.TailRange);
+        // Define a narrow box for debug / visualization and cache it.
+        var debugBox = new Box2(userCoords.Position.X - 0.10f, userCoords.Position.Y, userCoords.Position.X + 0.10f, userCoords.Position.Y + xeno.Comp.TailRange);
 
-    var invWorld = _transform.GetInvWorldMatrix(transform);
-    var matrix = Vector2.Transform(targetCoords.Position, invWorld);
-        var rotation = _transform.GetWorldRotation(xeno).RotateVec(-matrix).ToWorldAngle();
-        var boxRotated = new Box2Rotated(box, rotation, userCoords.Position);
-        LastTailAttack = boxRotated;
+        // Determine stab direction from user to target (fallback to facing if zero-length).
+        var dir = targetCoords.Position - userCoords.Position;
+        if (dir.LengthSquared() <= 0.0001f)
+            dir = _transform.GetWorldRotation(xeno).ToWorldVec();
+        var rotation = dir.ToWorldAngle();
+        LastTailAttack = new Box2Rotated(debugBox, rotation, userCoords.Position);
 
-        // ray on the left side of the box
-        var leftRay = new CollisionRay(boxRotated.BottomLeft, (boxRotated.TopLeft - boxRotated.BottomLeft).Normalized(), AttackMask);
-
-        // ray on the right side of the box
-        var rightRay = new CollisionRay(boxRotated.BottomRight, (boxRotated.TopRight - boxRotated.BottomRight).Normalized(), AttackMask);
-
-        // dont open allocations ahead
-        // entity lookups dont work properly with Box2Rotated
-        // so we do one ray cast on each side instead since its narrow enough
-        // im sure you could calculate the ray bounds more efficiently
-        // but have you seen these allocations either way
-        var intersect = _physics.IntersectRayWithPredicate(transform.MapID, leftRay, xeno.Comp.TailRange, uid => uid == xeno.Owner || !HasComp<MobStateComponent>(uid), false);
-        intersect = intersect.Concat(_physics.IntersectRayWithPredicate(transform.MapID, rightRay, xeno.Comp.TailRange, uid => uid == xeno.Owner ||!HasComp<MobStateComponent>(uid), false));
-        var results = intersect.Select(r => r.HitEntity).ToList();
+        // Single forward ray from user towards target to simplify hit detection.
+        var ray = new CollisionRay(userCoords.Position, dir.Normalized(), AttackMask);
+        var hits = _physics.IntersectRayWithPredicate(transform.MapID, ray, xeno.Comp.TailRange, uid => uid != xeno.Owner && HasComp<MobStateComponent>(uid), false);
+        var results = hits.Select(r => r.HitEntity).Distinct().ToList();
 
         // TODO CM14 sounds
         // TODO CM14 lag compensation
@@ -128,7 +120,10 @@ public abstract class SharedXenoMeleeSystem : EntitySystem
             }
         }
 
-        var localPos = transform.LocalRotation.RotateVec(matrix);
+        // Compute local target offset for lunge animation.
+        var invWorld = _transform.GetInvWorldMatrix(transform);
+        var localTarget = Vector2.Transform(targetCoords.Position, invWorld);
+        var localPos = transform.LocalRotation.RotateVec(localTarget);
 
         var length = localPos.Length();
         localPos *= xeno.Comp.TailRange / length;

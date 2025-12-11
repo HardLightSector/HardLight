@@ -16,8 +16,8 @@
 - type: entity
   parent: [ BaseC3ContrabandUnredeemable, ClothingHeadHelmetBasic ]
   id: ClothingHeadHelmetNfsd
-  name: Colsec helmet
-  description: a Colsec issued helmet to protect your head.
+  name: TSFMC helmet
+  description: An TSFMC issued helmet to protect your head.
   components:
   - type: Sprite
     sprite: _NF/Clothing/Head/Helmets/nfsd.rsi
@@ -28,7 +28,7 @@
 - type: entity
   parent: [ BaseC1Contraband, ClothingHeadHelmetMercenary ]
   id: ClothingHeadHelmetMercenaryBlack
-  name: mercenary helmet
+  name: combat helmet
   description: The combat helmet is commonly used by mercenaries, is strong, light and smells like gunpowder and the urban sprawl.
   components:
   - type: Sprite

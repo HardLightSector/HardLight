@@ -13,7 +13,7 @@
 - type: entity
   parent: ClothingHeadset
   id: ClothingHeadsetNfsdBrown
-  name: Colsec headset
+  name: TSFMC headset
   components:
   - type: Sprite
     sprite: _NF/Clothing/Ears/Headsets/nfsd_e_brown.rsi

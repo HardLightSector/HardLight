@@ -16,7 +16,6 @@ namespace Content.Server.Salvage;
 public sealed class FultonSystem : SharedFultonSystem
 {
     [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly RadioSystem _radio = default!;
 
     public override void Initialize()
     {

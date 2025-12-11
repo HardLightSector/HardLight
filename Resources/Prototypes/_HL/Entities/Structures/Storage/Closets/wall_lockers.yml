@@ -3,7 +3,7 @@
   parent: NFBaseLockerGridInvWallColor
   name: Bluespace wall locker
   suffix: null
-  description: Wall locker infused with bluespace tech. Designed by SESWC.
+  description: Wall locker infused with bluespace tech. Items inside of this will not be seized by dockyard technicians when a ship is stored.
   components:
   - type: Sprite
     sprite: _HL/Structures/Closets/Bluespace_wall_locker.rsi
@@ -20,13 +20,28 @@
     stateBaseOpen: bluespace
     stateDoorOpen: bluespace_open
     stateDoorClosed: icon
+  - type: StaticPrice
+    price: 500000
+  - type: CargoSellBlacklist
   - type: Storage
-    maxItemSize: Ginormous
+    maxItemSize: Huge
     grid:
     - 0,0,19,9
+    blacklist:
+      components:
+      - StorageFill
+      - PresetIdCard
+      - IdCard
+      - Access
+      - Store
+      - Cash
+      - Headset
   - type: Construction
     graph: LockerWallBluespace
     node: done
+  - type: HLPersistOnShipSave
+  - type: ShipyardSellCondition # Frontier: Teleport to shipyard console on sale
+    preserveOnSale: true
 
 - type: entity
   id: HLLockerWallMedical

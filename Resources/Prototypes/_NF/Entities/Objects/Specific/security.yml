@@ -3,7 +3,7 @@
   parent: [ BaseItem, BaseC3ExpeditionContraband ]
   id: FrontierUplinkCoin
   suffix: 20 TC
-  description: A token awarded to the Colsec for turning in contraband. It can be exchanged in a Colsec uplink device for a variety of law enforcement tools.
+  description: A token awarded to TSF personnel for turning in contraband. It can be exchanged in an TSFMC uplink device for a variety of law enforcement tools.
   components:
   - type: Sprite
     sprite: _NF/Objects/Specific/Security/frontieruplinkcoin.rsi
@@ -50,7 +50,7 @@
 - type: entity
   parent: [ BaseItem, StorePresetSecurityUplink, BaseC3ExpeditionContraband ]
   id: BaseSecurityUplinkRadio
-  name: Colsec uplink
+  name: TSFMC uplink
   description: Retro looking old radio...
   suffix: Empty
 #  categories: [ HideSpawnMenu ]
@@ -100,7 +100,18 @@
       FrontierUplinkCoin: 15
 
 - type: entity
-  name: Colsec deployable barrier
+  parent: BaseSecurityUplinkRadio
+  id: BaseSecurityUplinkRadioDeputy
+  suffix: Deputy 10
+  components:
+  - type: Store
+    balance:
+      FrontierUplinkCoin: 10
+
+#Mono End
+
+- type: entity
+  name: TSFMC deployable barrier
   id: NfsdDeployableBarrier
   description: A deployable barrier. Swipe your ID card to lock/unlock it.
   parent: [ DeployableBarrier, BaseC3ExpeditionContraband ]

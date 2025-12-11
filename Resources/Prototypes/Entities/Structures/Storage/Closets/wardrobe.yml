@@ -170,7 +170,7 @@
   id: WardrobeChapel
   parent: WardrobeBlack
   name: chaplain's wardrobe
-  description: It's a storage unit for Nanotrasen-approved religious attire.
+  description: It's a storage unit for TSF regionally-approved religious attire.
 
 - type: entity
   id: ClosetLegal

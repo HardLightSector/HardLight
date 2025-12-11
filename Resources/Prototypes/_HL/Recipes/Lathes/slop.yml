@@ -1,0 +1,54 @@
+- type: latheRecipe
+  id: NutrientPasteDispenserSlop
+  result: FoodThaSlop
+  categories:
+    - Food
+  completetime: 3
+  materials:
+    Biomass: 15
+
+- type: latheRecipe
+  id: NutrientPasteDispenserVeggieSlop
+  result: FoodVeggieThaSlop
+  parent: NutrientPasteDispenserSlop
+
+- type: latheRecipe
+  id: NutrientPasteDispenserMeatSlop
+  result: FoodMeatThaSlop
+  parent: NutrientPasteDispenserSlop
+
+#slop drinks
+- type: latheRecipe
+  id: NutrientPasteDispenserSlopDrink
+  result: FoodThaSlopDrink
+  parent: NutrientPasteDispenserSlop
+  materials:
+    Biomass: 11
+
+- type: latheRecipe
+  id: NutrientPasteDispenserVeggieSlopDrink
+  result: FoodVeggieThaSlopDrink
+  parent: NutrientPasteDispenserSlopDrink
+
+- type: latheRecipe
+  id: NutrientPasteDispenserMeatSlopDrink
+  result: FoodMeatThaSlopDrink
+  parent: NutrientPasteDispenserSlopDrink
+
+#slop bricks
+- type: latheRecipe
+  id: NutrientPasteDispenserSlopBrick
+  result: FoodThaSlopBrick
+  parent: NutrientPasteDispenserSlop
+  materials:
+    Biomass: 30
+
+- type: latheRecipe
+  id: NutrientPasteDispenserSlopBrickVeggie
+  result: FoodVeggieThaSlopBrick
+  parent: NutrientPasteDispenserSlopBrick
+
+- type: latheRecipe
+  id: NutrientPasteDispenserSlopBrickMeat
+  result: FoodMeatThaSlopBrick
+  parent: NutrientPasteDispenserSlopBrick

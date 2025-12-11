@@ -662,8 +662,8 @@
 - type: entity
   parent: BaseComputerTabletopStationAdminBankATM
   id: ComputerTabletopStationAdminBankATMNfsd
-  description: Used to transfer funds from Colsec's bank account
-  suffix: NFSD, Tabletop
+  description: Used to transfer funds from the TSFMC-FOB's bank account
+  suffix: TSFMC, Tabletop
   components:
   - type: StationBankATM
     account: Nfsd

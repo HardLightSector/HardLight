@@ -13,9 +13,9 @@
   id: VipersDen
   parent: BasePOI
   name: "Viper's Den"
-  minimumDistance: 5500
-  maximumDistance: 7500
-  spawnGroup: SyndicateFOB
+  minimumDistance: 3000
+  maximumDistance: 5000
+  spawnGroup: MarketStation
   gridPath: /Maps/_HL/POI/vipersden.yml
   hideWarp: true
   addComponents:

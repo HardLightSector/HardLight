@@ -1,0 +1,19 @@
+- type: constructionGraph
+  id: MagazineRailgunImprovisedCraftingGraph
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: mag
+          steps:
+          - material: Plasma
+            amount: 5
+            doAfter: 0.5
+          - material: MetalRod
+            amount: 5
+            doAfter: 0.5
+          - material: Plasteel
+            amount: 5
+            doAfter: 5
+    - node: mag
+      entity: MagazineRailgunImprovised

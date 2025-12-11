@@ -8,6 +8,7 @@ using Content.Shared.Verbs;
 using Content.Shared.Whitelist;
 using Robust.Shared.GameStates;
 using Robust.Shared.Network;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Labels.EntitySystems;
 
@@ -21,8 +22,7 @@ public abstract class SharedHandLabelerSystem : EntitySystem
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
     [Dependency] private readonly TagSystem _tagSystem = default!; // Frontier: prevent labelling PseudoItems
 
-    [ValidatePrototypeId<TagPrototype>] // Frontier: prevent labelling PseudoItems
-    private const string PreventTag = "PreventLabel"; // Frontier: prevent labelling PseudoItems
+    private static readonly ProtoId<TagPrototype> PreventTag = "PreventLabel"; // Frontier: prevent labelling PseudoItems
 
     public override void Initialize()
     {

@@ -1,0 +1,118 @@
+- type: entity
+  parent: BasePDA
+  id: BaseUSSPPDA
+  description: A basic personal computer for access restriction and organization, manufactured in the USSP.
+  abstract: true
+  components:
+  - type: CartridgeLoader
+    preinstalled:
+    - CrewManifestCartridge
+    - NotekeeperCartridge
+    - NewsReaderCartridge
+    - BountyContractsCartridge
+    - AstroNavCartridge
+
+- type: entity
+  parent: BasePDA
+  id: BaseUSSPMedicPDA
+  description: A basic personal computer for access restriction and organization, manufactured in the USSP.
+  abstract: true
+  components:
+  - type: CartridgeLoader
+    preinstalled:
+    - CrewManifestCartridge
+    - NotekeeperCartridge
+    - NewsReaderCartridge
+    - BountyContractsCartridge
+    - AstroNavCartridge
+    - MedTekCartridge
+
+- type: entity
+  parent: BaseUSSPPDA
+  id: USSPRiflemanPDA
+  name: USSP rifleman PDA
+  components:
+  - type: Pda
+    id: USSPRiflemanIDCard
+  - type: Appearance
+    appearanceDataInit:
+     enum.PdaVisuals.PdaType:
+       !type:String
+       pda-interncadet
+  - type: PdaBorderColor
+    borderColor: "#717059"
+    accentVColor: "#A32D26"
+  - type: Icon
+    state: pda-interncadet
+
+- type: entity
+  parent: BaseUSSPMedicPDA
+  id: USSPMedicPDA
+  name: USSP combat medic PDA
+  components:
+  - type: Pda
+    id: SecurityCadetIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-brigmedic
+  - type: PdaBorderColor
+    borderColor: "#A32D26"
+    accentHColor: "#d7d7d0"
+    accentVColor: "#d7d7d0"
+  - type: Icon
+    state: pda-brigmedic
+
+- type: entity
+  parent: BaseUSSPPDA
+  id: USSPCorporalPDA
+  name: USSP efreitor PDA
+  components:
+  - type: Pda
+    id: SecurityCadetIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-security
+  - type: PdaBorderColor
+    borderColor: "#A32D26"
+  - type: Icon
+    state: pda-security
+
+- type: entity
+  parent: BaseUSSPPDA
+  id: USSPSergeantPDA
+  name: USSP serzhant PDA
+  components:
+  - type: Pda
+    id: SecurityCadetIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-seniorofficer
+  - type: PdaBorderColor
+    borderColor: "#A32D26"
+    accentVColor: "#DFDFDF"
+  - type: Icon
+    state: pda-seniorofficer
+
+- type: entity
+  parent: BaseUSSPPDA
+  id: USSPCommissarPDA
+  name: USSP commissar PDA
+  components:
+  - type: Pda
+    id: SecurityCadetIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-hos
+  - type: PdaBorderColor
+    borderColor: "#A32D26"
+    accentHColor: "#447987"
+  - type: Icon
+    state: pda-hos

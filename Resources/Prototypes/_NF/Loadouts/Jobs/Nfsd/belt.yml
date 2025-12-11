@@ -1,18 +1,18 @@
 - type: loadout
   id: NfsdWebbing
-  name: Colsec webbing (filled)
+  name: TSFMC webbing (filled)
   equipment:
     belt: ClothingBeltNfsdWebbingFilled
 
 - type: loadout
   id: NfsdBelt
-  name: Colsec belt (filled)
+  name: TSFMC belt (filled)
   equipment:
     belt: ClothingBeltNfsdFilled
 
 # Brigmedic
 - type: loadout
   id: BrigmedicClothingBeltBrigmedicWebbing
-  name: Colsec webbing (filled)
+  name: TSFMC webbing (filled)
   equipment:
     belt: ClothingBeltNfsdWebbingFilledBrigmedic

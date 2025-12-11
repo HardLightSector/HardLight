@@ -22,7 +22,7 @@ entities:
   - uid: 1
     components:
     - type: MetaData
-      name: Gnat
+      name: TSF Letterbox
     - type: Transform
       pos: 2.3192325,0.94134426
       parent: invalid

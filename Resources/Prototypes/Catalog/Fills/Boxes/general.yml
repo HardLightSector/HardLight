@@ -352,7 +352,7 @@
         amount: 4
 
 - type: entity
-  name: Colsec encryption key box
+  name: TSFMC encryption key box
   parent: BoxEncryptionKeyPassenger
   id: BoxEncryptionKeySecurity
   components:

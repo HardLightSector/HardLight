@@ -1,0 +1,9 @@
+- type: loadout
+  id: TsfmcVestSlim
+  equipment:
+    outerClothing: ClothingOuterArmorBasicSlim
+
+- type: loadout
+  id: TsfmcVestNormal
+  equipment:
+    outerClothing: ClothingOuterArmorBasic

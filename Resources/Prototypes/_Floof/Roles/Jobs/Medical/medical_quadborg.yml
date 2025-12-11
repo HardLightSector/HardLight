@@ -1,0 +1,15 @@
+# - type: job
+  # id: MedicalQuadBorg
+  # name: job-name-medical-quadborg
+  # description: job-description-medical-quadborg
+  # playTimeTracker: JobMedicalQuadBorg
+  # requirements:
+    # - !type:CharacterOverallTimeRequirement
+      # min: 21600 #6 hrs floof
+    # - !type:DepartmentTimeRequirement
+      # department: Medical
+      # min: 3600 #1 hrs floof
+  # canBeAntag: false
+  # icon: JobIconMedicalBorg
+  # supervisors: job-supervisors-cmo
+  # jobEntity: PlayerBorgQuadmed

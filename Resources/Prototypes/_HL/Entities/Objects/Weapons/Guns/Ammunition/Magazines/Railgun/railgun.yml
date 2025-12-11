@@ -1,0 +1,33 @@
+# Empty mags
+- type: entity
+  parent: BasePowerCell
+  id: MagazineRailgun
+  name: Peregrine Magazine
+  description: A magazine built to fuel the NT-88 Peregrine. The warranty is still in effect.
+  components:
+  - type: Tag
+    tags:
+      - MagazineRailgunTag
+  - type: Item
+    size: Small
+  - type: Battery
+    maxCharge: 5000 # DV did this I'm doing too monke see monke do
+    startingCharge: 5000
+  - type: Sprite
+    sprite: _HL/Objects/Weapons/Guns/Ammunition/Magazine/Railgun/railgun_mag.rsi
+    layers:
+    - map: ["enum.GunVisualLayers.Base"]
+      state: base
+
+- type: entity
+  parent: MagazineRailgun
+  id: MagazineRailgunImprovised
+  name: Improvised Peregrine Magazine
+  description: A magazine cobbled together from found materials. Putting this in your NT-88 Peregrine will void the warranty, but chances are, you're not in a situation to care.
+  components:
+  - type: Construction
+    graph: MagazineRailgunImprovisedCraftingGraph
+    node: mag
+  - type: Battery
+    maxCharge: 2500 # way more than a highcap but we'll cross that bridge
+    startingCharge: 2500

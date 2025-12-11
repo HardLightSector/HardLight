@@ -68,6 +68,12 @@
     shipType: Missile
   - type: ShipGunClass
     shipClass: Medium
+  - type: ContainerContainer #HL start
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+  - type: Machine
+    board: VesperaWeaponBoard #HL end
 
 
 # ASM-501 Smerchs
@@ -117,6 +123,12 @@
     shipType: Missile
   - type: ShipGunClass
     shipClass: Medium
+  - type: ContainerContainer #HL start
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+  - type: Machine
+    board: ASM501WeaponBoard #HL end
 
 # ASM-302 Vanyk
 
@@ -179,6 +191,12 @@
     shipType: Missile
   - type: ShipGunClass
     shipClass: Medium
+  - type: ContainerContainer #HL start
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+  - type: Machine
+    board: VanykWeaponBoard #HL end
 
 # ADMX-23 TOVEK
 
@@ -228,6 +246,12 @@
     shipType: Missile
   - type: ShipGunClass
     shipClass: Medium
+  - type: ContainerContainer #HL start
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+  - type: Machine
+    board: TovekWeaponBoard #HL end
 
 # Corporate War Era - Syndicate
 
@@ -276,3 +300,9 @@
     shipType: Missile
   - type: ShipGunClass
     shipClass: Heavy
+  - type: ContainerContainer #HL start
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+  - type: Machine
+    board: SerpentMissileWeaponBoard #HL end

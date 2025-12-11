@@ -1,0 +1,166 @@
+- type: trait
+  id: CumProducer
+  name: trait-cum-producer-name
+  description: trait-cum-producer-desc
+  category: Physical
+  components:
+    - type: CumProducer
+      maxVol: 25
+      reVol: 5
+      reHunger: 1
+    ##  solutionname: "penis"
+    ##- type: SolutionContainerManager
+      ##solutions:
+        ##penis:
+          ##maxVol: 25
+          ##reagents:
+          ##- ReagentId: Cum
+            ##Quantity: 25
+          ##Commented out section were all doing exactly NOTHING in their interaction with the mob and were extranious.
+          ##Not deleting them here to leave the example for future ref
+
+- type: trait
+  id: CumCascade
+  name: trait-cum-cascade-name
+  description: trait-cum-cascade-desc
+  category: Physical
+  mutuallyExclusiveTraits:
+  - CumProducer
+  - CumFlood
+  - BluespaceBalls
+  components:
+    - type: CumProducer
+      maxVol: 100
+      reVol: 20
+      reHunger: 1
+
+- type: trait
+  id: CumFlood
+  name: trait-cum-flood-name
+  description: trait-cum-flood-desc
+  category: Physical
+  mutuallyExclusiveTraits:
+  - CumProducer
+  - CumCascade
+  - BluespaceBalls
+  components:
+    - type: CumProducer
+      maxVol: 250
+      reVol: 50
+      reHunger: 1
+
+- type: trait
+  id: BluespaceBalls
+  name: trait-bluespace-balls-name
+  description: trait-bluespace-balls-desc
+  category: Physical
+  mutuallyExclusiveTraits:
+  - CumProducer
+  - CumCascade
+  - CumFlood
+  components:
+    - type: CumProducer
+      maxVol: 1000
+      reVol: 200
+      reHunger: 1
+
+##- type: trait
+  ##id: MilkProducer
+  ##name: trait-milk-producer-name
+  ##description: trait-milk-producer-desc
+  ##category: Physical
+  ##components:
+    ##- type: MilkProducer
+      ##maxVol: 50
+      ##reVol: 5
+      ##reHunger: 10
+      ##solutionname: "breasts"
+    ##- type: SolutionContainerManager
+      ##solutions:
+        ##breasts:
+          ##maxVol: 50
+          ##reagents:
+          ##- ReagentId: Milk
+            ##Quantity: 50
+            ##THIS VERSION OF THE TRAIT BREAKS EVERYTHING AND I CANNOT FIGURE OUT WHY SO I REMADE IT BELOW
+
+- type: trait
+  id: MilkProducer
+  name: trait-milk-producer-name
+  description: trait-milk-producer-desc
+  category: Physical
+  mutuallyExclusiveTraits:
+  - MilkCascade
+  - MilkFlood
+  - BluespaceBreasts
+  components:
+    - type: MilkProducer
+      maxVol: 50
+      reVol: 10
+      reHunger: 1
+
+- type: trait
+  id: MilkCascade
+  name: trait-milk-cascade-name
+  description: trait-milk-cascade-desc
+  category: Physical
+  mutuallyExclusiveTraits:
+  - MilkProducer
+  - MilkFlood
+  - BluespaceBreasts
+  components:
+    - type: MilkProducer
+      maxVol: 100
+      reVol: 20
+      reHunger: 1
+
+- type: trait
+  id: MilkFlood
+  name: trait-milk-flood-name
+  description: trait-milk-flood-desc
+  category: Physical
+  mutuallyExclusiveTraits:
+  - MilkProducer
+  - MilkCascade
+  - BluespaceBreasts
+  components:
+    - type: MilkProducer
+      maxVol: 250
+      reVol: 50
+      reHunger: 1
+
+- type: trait
+  id: BluespaceBreasts
+  name: trait-bluespace-breasts-name
+  description: trait-bluespace-breasts-desc
+  category: Physical
+  mutuallyExclusiveTraits:
+  - MilkProducer
+  - MilkCascade
+  - MilkFlood
+  components:
+    - type: MilkProducer
+      maxVol: 1000
+      reVol: 200
+      reHunger: 1
+
+# WIP - Needs a Reagent
+# - type: trait
+#   id: SquirtProducer
+#   category: Physical
+#   requirements:
+#     - !type:CharacterJobRequirement
+#       inverted: true
+#       jobs:
+#         - Borg
+#         - MedicalBorg
+#   components:
+#     - type: SquirtProducer
+#       solutionname: "vagina"
+#     - type: SolutionContainerManager
+#       solutions:
+#         vagina:
+#           maxVol: 250
+#           reagents:
+#           - ReagentId: Water
+#             Quantity: 30

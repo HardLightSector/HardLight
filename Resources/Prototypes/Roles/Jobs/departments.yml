@@ -8,6 +8,7 @@
   - Quartermaster
   - SalvageSpecialist
   - MailCarrier
+  - SalvageQuadBorg
 
 - type: department
   id: Civilian
@@ -36,6 +37,7 @@
    - Mercenary # Frontier
    - Pilot # Frontier
    - Janitor
+   - ServiceQuadBorg # Floof
 - type: department
   id: CentralCommand
   name: department-CentralCommand
@@ -83,6 +85,7 @@
   - ChiefEngineer
   - StationEngineer
   - TechnicalAssistant
+  - EngineeringQuadBorg
 
 
 - type: department
@@ -97,6 +100,7 @@
   - MedicalIntern
   - Psychologist
   - Paramedic
+  - MedicalQuadBorg # Floof
 
 - type: department
   id: Security
@@ -112,6 +116,7 @@
   - Warden
   - PrisonGuard
   - Prisoner
+  - SecurityQuadBorg
 
 - type: department
   id: Science

@@ -38,6 +38,13 @@ using Robust.Shared.Configuration;
 using Robust.Shared.Utility;
 using System.Numerics;
 using System.Threading;
+using Robust.Server.Player; // For IPlayerManager
+using Content.Server.CharacterInfo; // For CharacterInfo updates
+using Content.Server.Mind; // For MindSystem
+using Content.Server.Roles.Jobs; // For JobSystem
+using Content.Server.Roles; // For RoleSystem
+using Content.Shared.Objectives; // For ObjectiveInfo
+using Content.Shared.Objectives.Components; // For ObjectiveComponent
 
 namespace Content.Server.HL.RoundPersistence.Systems;
 
@@ -60,6 +67,11 @@ public sealed class RoundPersistenceSystem : EntitySystem
     [Dependency] private MetaDataSystem _metaDataSystem = default!;
     [Dependency] private SalvageSystem _salvageSystem = default!;
     [Dependency] private ShuttleSystem _shuttle = default!;
+    [Dependency] private IPlayerManager _players = default!;
+    [Dependency] private MindSystem _minds = default!;
+    [Dependency] private JobSystem _jobs = default!;
+    [Dependency] private RoleSystem _roles = default!;
+    [Dependency] private Content.Shared.Objectives.Systems.SharedObjectivesSystem _objectives = default!;
 
     private ISawmill _sawmill = default!;
 
@@ -124,6 +136,112 @@ public sealed class RoundPersistenceSystem : EntitySystem
 
         EnsurePersistentEntity();
         SaveAllCriticalData();
+
+        // Clear antagonist roles and objectives to prevent duplicate payouts across restarts
+        ClearAntagonistRolesAndObjectives();
+
+        // Push character info updates so clients immediately see cleared objectives/roles
+        RefreshCharacterInfoForAllPlayers();
+    }
+
+    /// <summary>
+    /// Clears antagonist roles and objectives from all minds during restart cleanup.
+    /// Prevents players from getting paid multiple times for the same objective after a restart.
+    /// </summary>
+    private void ClearAntagonistRolesAndObjectives()
+    {
+        try
+        {
+            var mindQuery = EntityQueryEnumerator<Content.Shared.Mind.MindComponent>();
+            var clearedCount = 0;
+
+            while (mindQuery.MoveNext(out var mindUid, out var mind))
+            {
+                // Clear objectives using MindSystem API to fully detach and clean state
+                if (mind.Objectives.Count > 0)
+                {
+                    // Remove from highest index to lowest to preserve indices
+                    for (var i = mind.Objectives.Count - 1; i >= 0; i--)
+                    {
+                        _minds.TryRemoveObjective(mindUid, mind, i);
+                    }
+                }
+
+                // Clear mind role entities (antag roles are BaseMindRoleComponent-derived)
+                if (mind.MindRoles.Count > 0)
+                {
+                    foreach (var roleEnt in mind.MindRoles.ToArray())
+                    {
+                        if (Exists(roleEnt))
+                            QueueDel(roleEnt);
+                    }
+                    mind.MindRoles.Clear();
+                }
+
+                // Reset role type to neutral
+                mind.RoleType = "Neutral";
+
+                Dirty(mindUid, mind);
+                clearedCount++;
+            }
+
+            _sawmill.Info($"Cleared antagonist roles/objectives for {clearedCount} minds during restart cleanup");
+        }
+        catch (Exception e)
+        {
+            _sawmill.Error($"Error clearing antagonist roles/objectives on restart: {e}");
+        }
+    }
+
+    /// <summary>
+    /// Sends updated CharacterInfo to all connected players so their character window reflects cleared objectives/roles.
+    /// </summary>
+    private void RefreshCharacterInfoForAllPlayers()
+    {
+        try
+        {
+            var sessions = _players.Sessions.ToList();
+            foreach (var session in sessions)
+            {
+                if (!session.AttachedEntity.HasValue)
+                    continue;
+
+                var entity = session.AttachedEntity.Value;
+
+                var objectives = new Dictionary<string, List<ObjectiveInfo>>();
+                var jobTitle = Loc.GetString("character-info-no-profession");
+                string? briefing = null;
+
+                if (_minds.TryGetMind(entity, out var mindId, out var mind))
+                {
+                    // Build objectives (will be empty after cleanup)
+                    foreach (var objective in mind.Objectives)
+                    {
+                        var info = _objectives.GetInfo(objective, mindId, mind);
+                        if (info == null)
+                            continue;
+
+                        var issuer = Comp<ObjectiveComponent>(objective).LocIssuer;
+                        if (!objectives.ContainsKey(issuer))
+                            objectives[issuer] = new List<ObjectiveInfo>();
+                        objectives[issuer].Add(info.Value);
+                    }
+
+                    if (_jobs.MindTryGetJobName(mindId, out var jobName))
+                        jobTitle = jobName;
+
+                    briefing = _roles.MindGetBriefing(mindId);
+                }
+
+                RaiseNetworkEvent(new Content.Shared.CharacterInfo.CharacterInfoEvent(GetNetEntity(entity), jobTitle, objectives, briefing), session);
+            }
+
+            _sawmill.Info($"Pushed CharacterInfo updates to {sessions.Count} players after antag/objective cleanup");
+        }
+        catch (Exception e)
+        {
+            _sawmill.Error($"Error refreshing character info after cleanup: {e}");
+        }
     }
 
     /// <summary>
@@ -135,6 +253,13 @@ public sealed class RoundPersistenceSystem : EntitySystem
             return;
 
         _sawmill.Info("Round started, will restore data when stations are created");
+
+        // Also ensure antagonists/objectives are cleared at the start of the new round
+        // in case cleanup timing missed any minds created late during restart.
+        ClearAntagonistRolesAndObjectives();
+        RefreshCharacterInfoForAllPlayers();
+
+        
     }
 
     /// <summary>

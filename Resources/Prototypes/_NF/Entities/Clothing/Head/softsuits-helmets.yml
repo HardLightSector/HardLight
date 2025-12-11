@@ -735,8 +735,8 @@
 - type: entity
   parent: ClothingHeadEVAHelmetWithLightBase
   id: ClothingHeadEVAHelmetNfsd
-  name: Colsec EVA helmet
-#  categories: [ HideSpawnMenu ]
+  name: TSFMC EVA helmet
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _NF/Clothing/Head/Helmets/eva_color.rsi

@@ -193,6 +193,56 @@
   - type: RequiresEyeProtection
     statusEffectTime: 5 # less harmful; sunglasses can block it
 
+### HL start
+- type: entity
+  name: cybersun experimental tritwelder
+  parent: [Welder, BaseC3SyndicateContraband] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband
+  id: SyndicateWelderExperimental
+  description: An illegal welder capable of self-fuel generation, less harmful to the eyes, and more harmful to your enemies.
+  components:
+  - type: Sprite
+    sprite: _HL/Objects/Tools/welder_syndicate.rsi
+  - type: Item
+    sprite: _HL/Objects/Tools/welder_syndicate.rsi
+  - type: SolutionContainerManager
+    solutions:
+      Welder:
+        reagents:
+        - ReagentId: WeldingFuel
+          Quantity: 1000
+        maxVol: 1000
+  - type: PointLight
+    enabled: false
+    radius: 1
+    color: lightgreen
+  - type: SolutionRegeneration
+    solution: Welder
+    generated:
+      reagents:
+      - ReagentId: WeldingFuel
+        Quantity: 2
+  - type: RequiresEyeProtection
+    statusEffectTime: 5 # less harmful; sunglasses can block it
+  - type: Tool
+    speedModifier: 2
+  - type: ItemToggleMeleeWeapon
+    activatedSoundOnHit:
+      path: /Audio/Weapons/Guns/Hits/energy_meat1.ogg
+      params:
+        variation: 0.250
+        volume: -10
+    activatedSoundOnHitNoDamage:
+      path: /Audio/Weapons/Guns/Hits/energy_meat1.ogg
+      params:
+        variation: 0.250
+        volume: -12
+    deactivatedSoundOnHitNoDamage:
+      collection: MetalThud
+    activatedDamage:
+      types:
+        Heat: 15
+### HL end
+
 - type: entity
   name: emergency welding tool
   parent: Welder

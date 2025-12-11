@@ -1,0 +1,12 @@
+# - type: job
+  # id: ServiceQuadBorg
+  # name: job-name-service-quadborg
+  # description: job-description-service-quadborg
+  # playTimeTracker: JobServiceQuadBorg
+  # requirements:
+    # - !type:CharacterOverallTimeRequirement
+      # min: 21600 #6 hrs floof
+  # canBeAntag: false
+  # icon: JobIconBorg
+  # supervisors: job-supervisors-hop
+  # jobEntity: PlayerBorgQuadserv

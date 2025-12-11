@@ -27,6 +27,8 @@
       - ReagentId: Blood
         Quantity: 10
   # End Frontier: consistency with upstream
+  - type: BodyPart
+    species: Harpy
 
 - type: entity
   id: TorsoHarpy
@@ -163,7 +165,8 @@
   # - type: BodyPart # Frontier: inherited from BaseLeftLeg
   #   partType: Leg # Frontier: inherited from BaseLeftLeg
   #   symmetry: Left # Frontier: inherited from BaseLeftLeg
-  # - type: MovementBodyPart # Frontier: commented out for upstream consistency (handled elsewhere)
+  - type: MovementBodyPart # HL: Implemented here because we need to apply it to leg I guess
+    sprintSpeed : 5.0
 
 - type: entity
   id: RightLegHarpy
@@ -180,7 +183,8 @@
   # - type: BodyPart # Frontier: inherited from BaseRightLeg
   #   partType: Leg # Frontier: inherited from BaseRightLeg
   #   symmetry: Right # Frontier: inherited from BaseRightLeg
-  # - type: MovementBodyPart # Frontier: commented out for upstream consistency (handled elsewhere)
+  - type: MovementBodyPart # HL: Implemented here because we need to apply it to leg I guess
+    sprintSpeed : 5.0
 
 - type: entity
   id: LeftFootHarpy

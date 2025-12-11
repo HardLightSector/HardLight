@@ -3,7 +3,23 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: false
-  speciesRestriction: [Oni]
+  speciesRestriction:
+    - Dwarf
+    - Diona
+    - Human
+    - SlimePerson
+    - Felinid
+    - Oni
+    - Harpy
+    - Reptilian
+    - Vulpkanin
+    - Rodentia
+    - Goblin
+    - Sheleg
+    - IPC
+    - Feroxi
+    - Moth
+    - Arachnid
   sprites:
   - sprite: Nyanotrasen/Mobs/Customization/oni_horns.rsi
     state: single_curved
@@ -13,7 +29,23 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: false
-  speciesRestriction: [Oni]
+  speciesRestriction:
+    - Dwarf
+    - Diona
+    - Human
+    - SlimePerson
+    - Felinid
+    - Oni
+    - Harpy
+    - Reptilian
+    - Vulpkanin
+    - Rodentia
+    - Goblin
+    - Sheleg
+    - IPC
+    - Feroxi
+    - Moth
+    - Arachnid
   sprites:
   - sprite: Nyanotrasen/Mobs/Customization/oni_horns.rsi
     state: single_left_curved
@@ -23,7 +55,23 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: false
-  speciesRestriction: [Oni]
+  speciesRestriction:
+    - Dwarf
+    - Diona
+    - Human
+    - SlimePerson
+    - Felinid
+    - Oni
+    - Harpy
+    - Reptilian
+    - Vulpkanin
+    - Rodentia
+    - Goblin
+    - Sheleg
+    - IPC
+    - Feroxi
+    - Moth
+    - Arachnid
   sprites:
   - sprite: Nyanotrasen/Mobs/Customization/oni_horns.rsi
     state: single_right_curved
@@ -33,7 +81,23 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: false
-  speciesRestriction: [Oni]
+  speciesRestriction:
+    - Dwarf
+    - Diona
+    - Human
+    - SlimePerson
+    - Felinid
+    - Oni
+    - Harpy
+    - Reptilian
+    - Vulpkanin
+    - Rodentia
+    - Goblin
+    - Sheleg
+    - IPC
+    - Feroxi
+    - Moth
+    - Arachnid
   sprites:
   - sprite: Nyanotrasen/Mobs/Customization/oni_horns.rsi
     state: double_curved_outwards
@@ -43,7 +107,23 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: false
-  speciesRestriction: [Oni]
+  speciesRestriction:
+    - Dwarf
+    - Diona
+    - Human
+    - SlimePerson
+    - Felinid
+    - Oni
+    - Harpy
+    - Reptilian
+    - Vulpkanin
+    - Rodentia
+    - Goblin
+    - Sheleg
+    - IPC
+    - Feroxi
+    - Moth
+    - Arachnid
   sprites:
   - sprite: Nyanotrasen/Mobs/Customization/oni_horns.rsi
     state: double_curved
@@ -53,7 +133,23 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: false
-  speciesRestriction: [Oni]
+  speciesRestriction:
+    - Dwarf
+    - Diona
+    - Human
+    - SlimePerson
+    - Felinid
+    - Oni
+    - Harpy
+    - Reptilian
+    - Vulpkanin
+    - Rodentia
+    - Goblin
+    - Sheleg
+    - IPC
+    - Feroxi
+    - Moth
+    - Arachnid
   sprites:
   - sprite: Nyanotrasen/Mobs/Customization/oni_horns.rsi
     state: double_left_broke_curved
@@ -63,7 +159,23 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: false
-  speciesRestriction: [Oni]
+  speciesRestriction:
+    - Dwarf
+    - Diona
+    - Human
+    - SlimePerson
+    - Felinid
+    - Oni
+    - Harpy
+    - Reptilian
+    - Vulpkanin
+    - Rodentia
+    - Goblin
+    - Sheleg
+    - IPC
+    - Feroxi
+    - Moth
+    - Arachnid
   sprites:
   - sprite: Nyanotrasen/Mobs/Customization/oni_horns.rsi
     state: double_right_broke_curved

@@ -2,7 +2,7 @@
 - type: entity
   id: ShuttleGunFriendshipNfsd
   parent: [BaseStructureDisableToolUse, ShuttleGunFriendship]
-  suffix: NFSD
+  suffix: TSFMC
   components:
   - type: Machine
     board: Null
@@ -10,7 +10,7 @@
 - type: entity
   id: ShuttleGunDusterNfsd
   parent: [BaseStructureDisableToolUse, ShuttleGunDuster]
-  suffix: NFSD
+  suffix: TSFMC
   components:
   - type: Machine
     board: Null

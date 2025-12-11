@@ -53,6 +53,7 @@
         },
         // Frontier begin
         {
+   
             "name": "Server/Client (Release)",
             "configurations": [
                 "Server",

@@ -1,0 +1,93 @@
+# "None" - DO NOT REMOVE!
+- type: company
+  id: None
+  form: Neutral # Do NOT apply "Neutral" to anywhere outside "None"
+  name: None
+  color: "#FFFFFF"
+
+# ====DO NOT TOUCH - ADMIN COMPANIES====
+- type: company
+  id: TSF
+  form: Protagonist
+  name: TSF
+  color: "#047ABD"
+  disabled: true
+
+- type: company
+  id: Rogue
+  form: Antagonist
+  name: Rogue
+  color: "#8B0000"
+  disabled: true
+
+- type: company
+  id: USSP
+  form: Antagonist
+  name: USSP
+  color: "#B01340"
+  disabled: true
+
+- type: company
+  id: TSFHighComm
+  form: Protagonist
+  name: Winter Solstice
+  color: "#008CE3"
+  disabled: true
+  logins: # admins only here !!! or your PR will be CLOSED!!!! also serves as a example for ur whitelisted factions
+  - starch
+  - localhost@starch
+  - localhost@Ark
+  - Ark
+  - Tikibomb
+  - DisguisedBear
+  - JuneCat
+  - Erol509
+  - SuperJoelDood
+# DO NOT TOUCH
+
+# ====TSF / Protag. Companies====
+- type: company
+  id: DarkMatterEnterprises
+  form: Protagonist
+  name: Dark Matter Enterprises
+  color: "#BF00B9"
+
+- type: company
+  id: AetherionDynamics
+  form: Protagonist
+  name: Aetherion Dynamics
+  color: "#7E72B2"
+
+- type: company
+  id: SouthernPeakMercenaries
+  form: Protagonist
+  name: The Southern Peaks
+  color: "#020624"
+
+- type: company
+  id: ZealotsOfBalaam
+  form: Protagonist
+  name: Zealots Of Balaam
+  color: "#BC7F58"
+
+# ====Rogue / Antag. Companies====
+- type: company
+  id: TheViperGroup
+  form: Antagonist
+  name: The Viper Group
+  color: "#D82918"
+  logins:
+  - Schizm1253
+  - Archylle
+  - bubz_bs
+  - capslfern
+  - DrOktober
+  - Ghost581
+  - hellcat76
+  - HungryCuban
+  - Kiterny
+  - plazmasniper_2005
+  - Redrover1760
+  - SwadianSupremacy
+  - Traildog
+

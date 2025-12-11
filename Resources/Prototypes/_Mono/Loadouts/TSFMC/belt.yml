@@ -1,0 +1,12 @@
+- type: loadout
+  id: TsfmcCombatWebbing
+  name: chest rig
+  equipment:
+    belt: ClothingBeltMilitaryWebbing
+
+# Brigmedic
+- type: loadout
+  id: TsfmcCombatWebbingMedical
+  name: chest rig (medical)
+  equipment:
+    belt: ClothingBeltMilitaryWebbingMed

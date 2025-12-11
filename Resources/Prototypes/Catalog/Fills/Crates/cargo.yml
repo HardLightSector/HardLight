@@ -228,6 +228,9 @@
     - id: ClothingUniformJumpskirtOfLife
       prob: 0.01
       orGroup: Clothes
+    - id: ClothingOuterHardsuitLuxmax #HL start
+      prob: 0.001
+      orGroup: Clothes #HL end
     #swag
     - id: ClothingNeckBling
       prob: 0.01

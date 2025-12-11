@@ -253,6 +253,7 @@
     - WeaponCaseShortSvalinnExpedition
     - WeaponCaseLongHristovExpedition
     - WeaponCaseLongMusketExpedition
+    - WeaponCaseLongRailgunPeregrine # HL. Was annoyingly rare in testing. We'll call this a "rate up" for now lmao
     chance: 1.0
     offset: 0.0
     rarePrototypes:
@@ -287,6 +288,7 @@
     - WeaponCaseLongLaserCarbineExpedition
     - WeaponCaseLongXrayCannonExpedition
     - WeaponCaseLongTemperatureGunExpedition
+    - WeaponCaseLongRailgunPeregrine # HL. Intended rarity for the Peregrine
     #Hardlight start
     - WeaponCaseLongVortex
     chance: 1.0

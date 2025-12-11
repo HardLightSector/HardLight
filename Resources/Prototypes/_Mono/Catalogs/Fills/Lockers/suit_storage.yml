@@ -1,0 +1,15 @@
+- type: entity
+  id: SuitStorageUssp
+  parent: SuitStorageBase
+  suffix: USSP L-27
+  components:
+  - type: StorageFill
+    contents:
+        - id: OxygenTankFilled
+        - id: NitrogenTankFilled
+        - id: ClothingOuterHardsuitUsspL27
+        - id: ClothingMaskGasSecurity
+        - id: JetpackMiniFilled
+        - id: ClothingShoesBootsMagSecurity
+  - type: AccessReader
+    access: [["USSP"]]

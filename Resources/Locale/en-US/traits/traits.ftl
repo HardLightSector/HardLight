@@ -65,3 +65,12 @@ trait-spanish-desc = Hola señor, donde esta la biblioteca.
 
 trait-painnumbness-name = Numb
 trait-painnumbness-desc = You lack any sense of feeling pain, being unaware of how hurt you may be.
+
+trait-name-CumProducer = Cock
+trait-description-CumProducer = You have a schlong between your legs.
+
+trait-name-MilkProducer = Boobs
+trait-description-MilkProducer = You have a pair of large mammaries.
+
+trait-name-SquirtProducer = Pussy
+trait-description-SquirtProducer = You have a slit between your legs.

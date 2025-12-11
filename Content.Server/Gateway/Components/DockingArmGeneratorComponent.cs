@@ -62,4 +62,22 @@ public sealed partial class DockingArmGeneratorComponent : Component
     /// </summary>
     [DataField]
     public int MinSpawnDistance = 64;
+
+    /// <summary>
+    /// Counter for dock numbering. Increments each time a dock is spawned.
+    /// Not serialized - resets to 1 on round restart.
+    /// </summary>
+    public int DockCounter = 1;
+
+    /// <summary>
+    /// Maximum number of docks that can be spawned at once.
+    /// </summary>
+    [DataField]
+    public int MaxDocks = 10;
+
+    /// <summary>
+    /// List of currently spawned dock grid UIDs.
+    /// Not serialized - resets on round restart.
+    /// </summary>
+    public List<EntityUid> SpawnedDocks = new();
 }

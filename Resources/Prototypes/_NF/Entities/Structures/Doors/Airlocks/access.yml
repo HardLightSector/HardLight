@@ -83,7 +83,7 @@
 - type: entity
   parent: AirlockNfsdGlass
   id: AirlockNfsdGlassLocked
-  suffix: NFSD, Locked
+  suffix: TSFMC, Locked
   components:
   - type: ContainerFill
     containers:
@@ -92,7 +92,7 @@
 - type: entity
   parent: AirlockNfsd
   id: AirlockNfsdLocked
-  suffix: NFSD, Locked
+  suffix: TSFMC, Locked
   components:
   - type: ContainerFill
     containers:
@@ -101,7 +101,7 @@
 - type: entity
   parent: AirlockNfsd
   id: AirlockNfsdBrigLocked
-  suffix: NFSD Brig, Locked
+  suffix: TSFMC Brig, Locked
   components:
   - type: ContainerFill
     containers:
@@ -110,7 +110,7 @@
 - type: entity
   parent: AirlockNfsdGlass
   id: AirlockNfsdBrigGlassLocked
-  suffix: NFSD Brig, Locked
+  suffix: TSFMC Brig, Locked
   components:
   - type: ContainerFill
     containers:
@@ -119,7 +119,7 @@
 - type: entity
   parent: AirlockNfsd
   id: AirlockNfsdDetectiveLocked
-  suffix: NFSD Detective, Locked
+  suffix: TSFMC Detective, Locked
   components:
   - type: ContainerFill
     containers:
@@ -128,7 +128,7 @@
 - type: entity
   parent: AirlockNfsdGlass
   id: AirlockNfsdDetectiveGlassLocked
-  suffix: NFSD Detective, Locked
+  suffix: TSFMC Detective, Locked
   components:
   - type: ContainerFill
     containers:
@@ -136,8 +136,26 @@
 
 - type: entity
   parent: AirlockNfsd
+  id: AirlockNfsdLawyerLocked
+  suffix: TSFMC Lawyer, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsSecurityLawyer ]
+
+- type: entity
+  parent: AirlockNfsdGlass
+  id: AirlockNfsdLawyerGlassLocked
+  suffix: TSFMC Lawyer, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsSecurityLawyer ]
+
+- type: entity
+  parent: AirlockNfsd
   id: AirlockNfsdArmoryLocked
-  suffix: NFSD Armory, Locked
+  suffix: TSFMC Armory, Locked
   components:
   - type: ContainerFill
     containers:
@@ -146,7 +164,7 @@
 - type: entity
   parent: AirlockNfsdGlass
   id: AirlockNfsdArmoryGlassLocked
-  suffix: NFSD Armory, Locked
+  suffix: TSFMC Armory, Locked
   components:
   - type: ContainerFill
     containers:
@@ -237,7 +255,7 @@
 - type: entity
   parent: AirlockExternalGlassNfsd
   id: AirlockExternalGlassNfsdLocked
-  suffix: NFSD, Glass, Locked
+  suffix: TSFMC, Glass, Locked
   components:
   - type: ContainerFill
     containers:
@@ -246,7 +264,7 @@
 - type: entity
   parent: AirlockShuttleNfsd
   id: AirlockShuttleNfsdLocked
-  suffix: NFSD, Docking, Locked
+  suffix: TSFMC, Docking, Locked
   components:
   - type: ContainerFill
     containers:
@@ -255,7 +273,7 @@
 - type: entity
   parent: AirlockGlassShuttleNfsd
   id: AirlockGlassShuttleNfsdLocked
-  suffix: NFSD, Glass, Docking, Locked
+  suffix: TSFMC, Glass, Docking, Locked
   components:
   - type: ContainerFill
     containers:

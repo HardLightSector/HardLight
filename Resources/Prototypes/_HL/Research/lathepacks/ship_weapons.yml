@@ -1,0 +1,62 @@
+﻿- type: latheRecipePack
+  id: LightShuttleWeapons
+  recipes:
+  - L1PhalanxWeaponBoard
+  - L85AutocannonWeaponBoard
+  - AdderScattercannonWeaponBoard
+  - LightShieldBoard
+
+- type: latheRecipePack
+  id: MediumShuttleWeapons
+  recipes:
+  - Type35WeaponBoard
+  - M220WeaponBoard
+  - RAC30WeaponBoard
+  - DravonWeaponBoard
+  - AK570WeaponBoard
+  - CyrexaWeaponBoard
+  - BoforsWeaponBoard
+  - KargilWeaponBoard
+  - FangWeaponBoard
+  - ASM220WeaponBoard
+  - LightMunitionsBayWeaponBoard
+  - VesperaWeaponBoard
+  - ASM501WeaponBoard
+  - VanykWeaponBoard
+  - TovekWeaponBoard
+  - MediumShieldBoard
+
+- type: latheRecipePack
+  id: HeavyShuttleWeapons
+  recipes:
+  - ApolloWeaponBoard
+  - TarnyxReloadWeaponBoard
+  - LongbowWeaponBoard
+  - CharonetteWeaponBoard
+  - SerpentMissileWeaponBoard
+  - HeavyShieldBoard
+
+- type: latheRecipePack
+  id: CapitalShuttleWeapons
+  recipes:
+  - CharonReloadWeaponBoard
+  - HadesWeaponBoard
+  - HydraWeaponBoard
+  - CapitalShieldBoard
+
+- type: latheRecipePack
+  id: ShuttleWeaponMaterials
+  recipes:
+  - LightShipWeaponFrame
+  - LightShipWeaponServo
+  - LightShipWeaponInternal
+  - MediumShipWeaponFrame
+  - MediumShipWeaponServo
+  - MediumShipWeaponInternal
+  - HeavyShipWeaponFrame
+  - HeavyShipWeaponServo
+  - HeavyShipWeaponInternal
+  - CapitalShipWeaponFrame
+  - CapitalShipWeaponServo
+  - CapitalShipWeaponInternal
+

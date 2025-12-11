@@ -2,7 +2,7 @@
   id: AirlockShuttleAssemblyNfsd
   parent: AirlockShuttleAssembly
   name: external airlock assembly
-  suffix: NFSD, Docking
+  suffix: TSFMC, Docking
   description: An incomplete structure necessary for connecting two space craft together.
   components:
   - type: Sprite
@@ -16,7 +16,7 @@
   id: AirlockGlassShuttleNfsd
   parent: AirlockGlassShuttle
   name: external airlock
-  suffix: NFSD, Glass, Docking
+  suffix: TSFMC, Glass, Docking
   description: Necessary for connecting two space craft together.
   components:
   - type: Sprite
@@ -29,7 +29,7 @@
   id: AirlockShuttleNfsd
   parent: AirlockShuttle
   name: external airlock
-  suffix: NFSD, Docking
+  suffix: TSFMC, Docking
   description: Necessary for connecting two space craft together.
   components:
   - type: Sprite

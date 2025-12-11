@@ -893,8 +893,8 @@
 - type: entity
   parent: UniformPrinterFlatpack
   id: NfsdTechFabFlatpack
-  name: Colsec techfab flatpack
-  description: A flatpack used for constructing a Colsec techfab.
+  name: TSFMC techfab flatpack
+  description: A flatpack used for constructing an TSFMC techfab.
   components:
   - type: Flatpack
     entity: NfsdTechFab
@@ -944,7 +944,7 @@
 - type: entity
   parent: HoverbikeFlatpack
   id: HoverbikeNfsdFlatpack
-  name: Colsec hoverbike flatpack
+  name: TSFMC hoverbike flatpack
   description: A flatpack used for constructing a hoverbike. Keys already slotted in the ignition.
   components:
   - type: Flatpack

@@ -11,9 +11,9 @@
 - type: pointOfInterest
   id: Nfsd
   parent: BasePOI
-  name: 'NFSD Outpost'
-  minimumDistance: 750
-  maximumDistance: 1000
+  name: 'TSFMC Sector FOB'
+  minimumDistance: 4750
+  maximumDistance: 6500
   spawnGroup: MarketStation
   gridPath: /Maps/_NF/POI/nfsd.yml
   addComponents:
@@ -27,7 +27,7 @@
 
 - type: gameMap
   id: Nfsd
-  mapName: 'NFSD Outpost'
+  mapName: 'TSFMC Sector FOB'
   mapPath: /Maps/_NF/POI/nfsd.yml
   minPlayers: 0
   stations:
@@ -35,7 +35,7 @@
       stationProto: SecurityFrontierOutpost
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'NFSD Outpost'
+          mapNameTemplate: 'TSFMC Sector FOB'
         - type: ExtraStationInformation
           iconPath: /Textures/_NF/Structures/Decoration/banner.rsi/nfsd-banner.png
           stationSubtext: 'frontier-lobby-Colsec-subtext'
@@ -45,13 +45,13 @@
           availableJobs:
             Sheriff: [ 1, 1 ]
             Bailiff: [ 1, 1 ]
-            SeniorOfficer: [ 1, 1 ]
-            Brigmedic: [ 0, 0 ]
-            NFDetective: [ 0, 0 ]
-            Deputy: [ 3, 3 ]
-            Cadet: [ 0, 0 ]
+            SeniorOfficer: [ 2, 2 ]
+            Brigmedic: [ 1, 1 ]
+            #NFDetective: [ 0, 0 ] # Mono
+            Deputy: [ 4, 4 ]
+            Cadet: [ 2, 2 ] # Mono
             # Others:
-            PublicAffairsLiaison: [ 1, 1 ]
+            #PublicAffairsLiaison: [ 1, 1 ] # Mono
           tags:
           - HeadOfPersonnel
           - HeadOfSecurity

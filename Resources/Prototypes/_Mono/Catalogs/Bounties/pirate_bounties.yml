@@ -1,0 +1,98 @@
+- type: pirateBounty
+  id: PirateBountyScaf
+  reward: 5
+  description: pirate-bounty-description-generic
+  entries:
+  - name: pirate-bounty-item-scaf
+    amount: 1
+    id: ClothingOuterHardsuitScaf
+
+- type: pirateBounty
+  id: PirateBountyTacsuit
+  reward: 6
+  description: pirate-bounty-description-generic
+  entries:
+  - name: pirate-bounty-item-tsfmc-tacsuit
+    amount: 1
+    id: ClothingOuterHardsuitTacsuit
+
+- type: pirateBounty
+  id: PirateBountyHfBlade
+  reward: 6
+  description: pirate-bounty-description-generic
+  entries:
+  - name: pirate-bounty-item-hfblade
+    amount: 1
+    id: HFKatana
+
+- type: pirateBounty
+  id: PirateBountyShipWeapon
+  reward: 4
+  description: pirate-bounty-description-generic
+  entries:
+  - name: pirate-bounty-item-shipweapon
+    amount: 1
+    id: ShipWeapon
+
+- type: pirateBounty
+  id: PirateBountyFentanylLarge
+  reward: 4
+  description: pirate-bounty-description-generic
+  entries:
+  - name: pirate-bounty-item-fentanyl
+    amount: 6
+    id: FentanylCrystal
+
+- type: pirateBounty
+  id: PirateBountyFentanylSmall
+  reward: 2
+  description: pirate-bounty-description-generic
+  entries:
+  - name: pirate-bounty-item-fentanyl
+    amount: 3
+    id: FentanylCrystal
+
+- type: pirateBounty
+  id: PirateBountyFTLDrive
+  reward: 5
+  description: pirate-bounty-description-generic
+  entries:
+  - name: pirate-bounty-item-ftldrive
+    amount: 1
+    id: FTLDrive
+
+- type: pirateBounty
+  id: PirateBountyShipShield
+  reward: 5
+  description: pirate-bounty-description-generic
+  entries:
+  - name: pirate-bounty-item-shield
+    amount: 1
+    id: ShipShield
+
+- type: pirateBounty
+  id: PirateBountyGCS
+  reward: 4
+  description: pirate-bounty-description-generic
+  entries:
+  - name: pirate-bounty-item-gcs
+    amount: 1
+    id: GunneryServer
+
+- type: pirateBounty
+  id: PirateBountyMercGun
+  reward: 4
+  description: pirate-bounty-description-generic
+  entries:
+  - name: pirate-bounty-item-pmc-gun
+    amount: 1
+    id: PMCGun
+
+- type: pirateBounty
+  id: PirateBountyNitroOxyAirCan
+  reward: 1
+  description: pirate-bounty-description-generic
+  entries:
+  - name: pirate-bounty-item-n2-o2-air
+    amount: 4
+    id: LifeSupportCan

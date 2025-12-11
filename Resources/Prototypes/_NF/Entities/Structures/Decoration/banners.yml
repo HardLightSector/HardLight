@@ -1,8 +1,8 @@
 - type: entity
   id: BannerNfsd
   parent: BannerBase
-  name: Colsec banner
-  description: A banner displaying the colors of the New Frontier Sheriff's Department.
+  name: TSFMC banner
+  description: A banner displaying the colors of the Trans-Solar Federation Marine Corps' Department.
   components:
   - type: Sprite
     sprite: _NF/Structures/Decoration/banner.rsi
@@ -14,8 +14,8 @@
 - type: entity
   id: FlagNfsd
   parent: BannerBase
-  name: Colsec flag
-  description: A flag displaying the colors of the New Frontier Sheriff's Department.
+  name: TSFMC flag
+  description: A flag displaying the colors of the Trans-Solar Federation Marine Corps.
   components:
   - type: Sprite
     sprite: _NF/Structures/Decoration/banner.rsi

@@ -32,7 +32,6 @@ public sealed class PsionicAbilitiesSystem : EntitySystem
     [Dependency] private readonly ISharedPlayerManager _playerManager = default!;
     [Dependency] private readonly IChatManager _chatManager = default!;
     [Dependency] private readonly PsionicFamiliarSystem _psionicFamiliar = default!;
-    [Dependency] private readonly IConfigurationManager _config = default!;
     [Dependency] private readonly NpcFactionSystem _npcFaction = default!;
     [Dependency] private readonly GhostSystem _ghost = default!;
     [Dependency] private readonly MindSystem _mind = default!;

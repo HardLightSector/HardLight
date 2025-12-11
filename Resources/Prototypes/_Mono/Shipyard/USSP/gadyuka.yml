@@ -1,0 +1,35 @@
+- type: vessel
+  id: Gadyuka
+  parent: BaseVesselAntag
+  name: NCS Gadyuka
+  description: A small attack craft, ideal for dealing with small threats.
+  price: 21520 # WALMARTMOBILE 2
+  category: Small
+  group: Ussp
+  shuttlePath: /Maps/_Mono/Shuttles/USSP/gadyuka.yml
+  guidebookPage: Null
+  class:
+  - Pursuit
+  engine:
+  - Uranium
+
+- type: gameMap
+  id: Gadyuka
+  mapName: 'Gadyuka'
+  mapPath: /Maps/_Mono/Shuttles/USSP/gadyuka.yml
+  minPlayers: 0
+  stations:
+    Gadyuka:
+      stationProto: StandardFrontierVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Gadyuka USSP{1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            USSPSergeant: [0, 0]
+            USSPCorporal: [0, 0]
+            USSPMedic: [0, 0]
+            USSPRifleman: [0, 0]

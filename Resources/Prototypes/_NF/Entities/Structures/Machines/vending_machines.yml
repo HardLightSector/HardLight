@@ -438,8 +438,8 @@
 - type: entity
   parent: [BaseStructureDisableAnchoring, VendingMachine]
   id: VendingMachineNfsdDrobe
-  name: ColsecDrobe
-  description: A vending machine for Colsec and Colsec clothing!
+  name: NFSDDrobe
+  description: A vending machine for TSFMC clothing!
   components:
   - type: VendingMachine
     pack: NfsdDrobeInventory
@@ -488,8 +488,8 @@
 - type: entity
   parent: [BaseStructureDisableAnchoring, VendingMachine]
   id: VendingMachineNfsdTech
-  name: ColsecTech
-  description: A vending machine for Colsec and Colsec tech!
+  name: NFSDTech
+  description: A vending machine for TSFMC tech!
   components:
   - type: VendingMachine
     pack: NfsdTechInventory

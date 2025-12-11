@@ -11,3 +11,16 @@
   cost: 5000
   recipeUnlocks:
   - PlumbingAssemblyRecipe
+
+- type: technology
+  id: BulkLiquidStorage
+  name: research-technology-bulk-liquid-storage
+  icon:
+    sprite: _HL/Objects/Tools/bluespacebarrel.rsi
+    state: icon
+  discipline: CivilianServices
+  tier: 3
+  cost: 20000
+  recipeUnlocks:
+  - BluespaceBarrel
+  - BluespaceBucket

@@ -41,7 +41,21 @@
         tags:
           - SecurityUplink
 
-
+- type: listing
+  id: UplinkSecurityRailgun
+  name:  uplink-security-Weapons-railgun-name
+  description: uplink-security-Weapons-railgun-desc
+  productEntity: WeaponRailgunPeregrine
+  icon: { sprite: _HL/Objects/Weapons/Guns/Rifles/peregrine.rsi, state: icon }
+  cost:
+    FrontierUplinkCoin: 10
+  categories:
+    - UplinkSecurityWeapons
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - SecurityUplink
 
 # Syndicate
 - type: listing

@@ -1,0 +1,1486 @@
+Entries:
+- author: Ark
+  changes:
+    - message: Let there be Monolith.
+      type: Add
+  id: 1
+  time: '2025-03-23T17:10:16-07:00'
+- author: Ark
+  changes:
+    - type: Add
+      message: Added Monolith Changelog!
+  id: 2
+  time: '2025-03-24T00:31:03.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Add
+      message: Polaris to pirate shipyard
+    - type: Tweak
+      message: Anura has a water cooler now
+    - type: Fix
+      message: Anura now has a GCS and Rhea now has directional fans on airlocks.
+  id: 3
+  time: '2025-03-24T22:21:11.0000000+00:00'
+- author: Ark
+  changes:
+    - type: Add
+      message: Ported over the Resomi species!
+  id: 4
+  time: '2025-03-25T03:03:48.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Remove
+      message: Removed rotating anchored ship weapons
+    - type: Tweak
+      message: All ship weapon projectiles have had their speed decreased (fix related)
+    - type: Fix
+      message: Ship weapon projectiles shouldnt bypass walls anymore
+  id: 5
+  time: '2025-03-25T13:47:59.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Add
+      message: Ship weapon flatpacks can now be found on expeditions.
+    - type: Tweak
+      message: The M381 has been buffed. God help us all.
+  id: 6
+  time: '2025-03-25T23:48:38.0000000+00:00'
+- author: Ark
+  changes:
+    - type: Fix
+      message: >-
+        Chitinid and Resomi now have shoes and survival boxes in their loadouts.
+        Thanks to SuperJoelDood for reporting this bug.
+  id: 7
+  time: '2025-03-26T05:31:24.0000000+00:00'
+- author: Ark
+  changes:
+    - type: Fix
+      message: >-
+        Shuttles should no longer be able to FTL out of expeditions before they
+        have ended.
+  id: 8
+  time: '2025-03-26T05:32:02.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Add
+      message: Added normal syndicate hardsuit to pirate uplinks.
+    - type: Tweak
+      message: >-
+        Removed the pirate captain job requirement to buy the commander hardsuit
+        in the pirate uplink.
+  id: 9
+  time: '2025-03-26T20:38:52.0000000+00:00'
+- author: SuperJoelD00D
+  changes:
+    - type: Add
+      message: >-
+        New NFSD hardsuit sprites! (Maybe this should encourage more law
+        enforcement?)
+  id: 10
+  time: '2025-03-26T21:53:44.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Add
+      message: Added Archer to base shipyard (merc access restricted).
+    - type: Add
+      message: Added Kessler to pirate shipyard.
+  id: 11
+  time: '2025-03-26T22:11:07.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Add
+      message: New sprites for FTL drive and shield generator.
+  id: 12
+  time: '2025-03-28T10:23:48.0000000+00:00'
+- author: Ark
+  changes:
+    - type: Add
+      message: Target seeking missiles!
+  id: 13
+  time: '2025-03-29T00:22:38.0000000+00:00'
+- author: Ark
+  changes:
+    - type: Add
+      message: Added new circular shields (experimental)!
+    - type: Add
+      message: Added new ship gun presets in gunnery console!
+    - type: Remove
+      message: Removed deprecated grid shields.
+    - type: Tweak
+      message: Now only selected ship guns have a line drawn to your cursor.
+  id: 14
+  time: '2025-03-29T00:29:23.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Add
+      message: >-
+        Added FTL drives and/or shield generators to Kessler, Marauder, Polaris,
+        Archon, Anura, Argent, and M-Class.
+    - type: Tweak
+      message: FTL drive buffed from 512m to 2500m
+    - type: Fix
+      message: Shield generators can be unanchored now
+    - type: Fix
+      message: The Argent has had its LV cable bugs fixed.
+  id: 15
+  time: '2025-03-29T01:54:37.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Tweak
+      message: >-
+        The Iapetus now runs off of uranium instead of plasma (it can run at
+        idle power stock now).
+  id: 16
+  time: '2025-03-29T02:32:26.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Tweak
+      message: Shield generators now need 0.35/m2 instead of 1/m2
+  id: 17
+  time: '2025-03-29T04:06:48.0000000+00:00'
+- author: Ark
+  changes:
+    - type: Fix
+      message: Ship impacts should no longer destroy POIs.
+    - type: Fix
+      message: Shield generator outline should now appear.
+  id: 18
+  time: '2025-03-29T08:45:17.0000000+00:00'
+- author: SuperJoelD00D
+  changes:
+    - type: Add
+      message: Ported over some fun lizard stuff from goob!
+  id: 19
+  time: '2025-03-29T18:17:55.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Add
+      message: Added a new NFSD missile-corvette.
+    - type: Add
+      message: >-
+        Machines and air canisters can now be climbed on like tables. Goodbye
+        unreachable fuel lockers.
+    - type: Tweak
+      message: The Polaris is now missile equipped.
+    - type: Tweak
+      message: The M381's explosion has been tuned a small amount.
+    - type: Fix
+      message: The M381 and MARAUDER can destroy tiles
+  id: 20
+  time: '2025-03-29T23:38:47.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Tweak
+      message: >-
+        Alt-clicking on tables/machines wont make you climb on top of them
+        anymore. Dragging yourself onto the table still works.
+  id: 21
+  time: '2025-03-30T04:18:07.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Tweak
+      message: >-
+        Shields take more power on impact, but take less time to dissipate power
+        surges.
+    - type: Tweak
+      message: Missile speeds have been tweaked.
+  id: 22
+  time: '2025-03-30T07:51:01.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Tweak
+      message: Never heard of the 57mm. Its now 20mm and fires 2x the previous speed.
+    - type: Tweak
+      message: >-
+        The Mayhem has been tuned to be more expensive and trades its previous
+        loadout for 6x missile launchers and 2x 20mms.
+  id: 23
+  time: '2025-03-30T08:35:58.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Add
+      message: >-
+        A guidebook for ship gunnery and available ship weapons is now available
+        under Frontier Guide > Ship Warfare.
+  id: 24
+  time: '2025-03-30T09:43:08.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Add
+      message: Added Tzipora to expedition shipyard (large, advanced med).
+  id: 25
+  time: '2025-03-30T19:41:46.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Add
+      message: >-
+        Added MR-8A AR as a high-tier, .30 C3 assault rifle, with almost perfect
+        accuracy. Find it in rare weapon spawns or Syndicate and mercenary
+        enemies on expeditions.
+    - type: Fix
+      message: Skalpel now has a chemmaster
+  id: 26
+  time: '2025-03-30T23:58:38.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Tweak
+      message: Tzipora moved to med shipyard and given a ~10k price increase.
+    - type: Fix
+      message: Fixed missing Tzipora thrusters.
+  id: 27
+  time: '2025-03-31T01:02:54.0000000+00:00'
+- author: Ark
+  changes:
+    - type: Add
+      message: >-
+        Added gun prediction and lag compensation, aka removes the delay on
+        firing due to ping!
+    - type: Fix
+      message: >-
+        Fixed melee attack lag compensation not accounting for your ping, which
+        would make melee attacks done by players with higher ping more
+        unreliable.
+  id: 28
+  time: '2025-03-31T01:04:08.0000000+00:00'
+- author: Ark
+  changes:
+    - type: Add
+      message: Added guided missiles (experimental) for variety!
+  id: 29
+  time: '2025-03-31T01:06:52.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Tweak
+      message: >-
+        Pirate first mate is no longer whitelisted, but playtime requirements
+        for all pirate jobs has been increased. Pirate captain remains
+        whitelisted.
+  id: 30
+  time: '2025-03-31T15:30:57.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Add
+      message: Added Picses to exped shipyard for 85250.
+    - type: Fix
+      message: 20mm L85s can damage non-structures again.
+  id: 31
+  time: '2025-03-31T23:27:05.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Add
+      message: Added Mercury to pirate shipyard.
+  id: 32
+  time: '2025-04-01T11:22:27.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Fix
+      message: Fixed tzipora gas mixture mix
+  id: 33
+  time: '2025-04-01T16:35:41.0000000+00:00'
+- author: Ark
+  changes:
+    - type: Add
+      message: A few new lobby music tracks!
+    - type: Remove
+      message: Frontier lobby music is no more.
+  id: 34
+  time: '2025-04-01T21:13:11.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Remove
+      message: I took the Dagger out back and shot it. Its gone.
+    - type: Tweak
+      message: Minor tweaks to the ship combat guidebook page.
+  id: 35
+  time: '2025-04-01T21:19:57.0000000+00:00'
+- author: Ark
+  changes:
+    - type: Add
+      message: Your ship guns no longer damage your own ship!
+  id: 36
+  time: '2025-04-01T21:35:47.0000000+00:00'
+- author: Ark
+  changes:
+    - type: Tweak
+      message: New shield appearance.
+  id: 37
+  time: '2025-04-02T20:54:01.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Add
+      message: Added MR-8C DMR to replace MR-8A. No more meta gun...
+    - type: Remove
+      message: >-
+        Removed Hristov and Atreides from the Expedition Lodge's gun vendor.
+        1984 real
+    - type: Tweak
+      message: >-
+        Stack sizes have been greatly increased for mats, fuel, and medical
+        supplies.
+    - type: Tweak
+      message: Spawn rates for MR-8 has been decreased significantly.
+    - type: Tweak
+      message: AME jars are bigger now.
+  id: 38
+  time: '2025-04-03T01:21:50.0000000+00:00'
+- author: SuperJoelD00D
+  changes:
+    - type: Add
+      message: >-
+        Mapped a new NFSDO. It now includes an actual perma, turrets, front
+        desk, a lobby worth waiting in and a reference inside the walls to a
+        certain play named Abductor_Agent ;)
+  id: 39
+  time: '2025-04-03T01:45:07.0000000+00:00'
+- author: Ark
+  changes:
+    - type: Fix
+      message: Xeno elimination expeditions should generate now.
+  id: 40
+  time: '2025-04-03T18:29:46.0000000+00:00'
+- author: Ark
+  changes:
+    - type: Add
+      message: Shields now display whether they are active or not in their console!
+    - type: Fix
+      message: Shield radius should no longer start at 1 instead of 0 in the console.
+  id: 41
+  time: '2025-04-03T20:50:33.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Tweak
+      message: Stack sizes have been increased again because I win these polls Luke.
+    - type: Tweak
+      message: Mercury and Polaris have had some slight updates.
+    - type: Tweak
+      message: >-
+        Mercury is elongated, and has had its 90mms switched out for 20mms, and
+        is now a sub-capital in shipyard (and more expensive). To compensate: 2x
+        the amount of missile pods.
+    - type: Fix
+      message: Polaris has a holopad and fax machine now.
+  id: 42
+  time: '2025-04-04T01:32:54.0000000+00:00'
+- author: Ark
+  changes:
+    - type: Add
+      message: Going into cryosleep is now announced over radio.
+  id: 43
+  time: '2025-04-04T03:03:46.0000000+00:00'
+- author: Ark
+  changes:
+    - type: Add
+      message: >-
+        When you first walk onto a ship or an outpost, its name will be
+        displayed on your screen.
+  id: 44
+  time: '2025-04-04T03:34:26.0000000+00:00'
+- author: Ark
+  changes:
+    - type: Add
+      message: Night and thermal vision goggles have arrived!
+  id: 45
+  time: '2025-04-05T05:25:06.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Add
+      message: Added Calypso to NFSDO shipyard.
+  id: 46
+  time: '2025-04-05T08:02:25.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Add
+      message: Redid the majority of the Pirate Cove. Enjoy your shield and whatnot.
+    - type: Tweak
+      message: CHARON mass-driver has been restored to its TRUE POWER.
+    - type: Fix
+      message: Fixed Calypso not having a fax machine and holopad.
+  id: 47
+  time: '2025-04-06T02:28:36.0000000+00:00'
+- author: SuperJoelD00D
+  changes:
+    - type: Tweak
+      message: >-
+        Made some changes to the NFSDO: The brig now has brig timers, there are
+        a couple more turrets in the spots without them, and the Sheriff's
+        Office now has a station records console.
+  id: 48
+  time: '2025-04-06T02:34:33.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Tweak
+      message: >-
+        Generators can store more fuel in their buffer now. Hopefully works as a
+        band-aid fix for magnets not being able to separate stacks.
+  id: 49
+  time: '2025-04-06T17:52:47.0000000+00:00'
+- author: Ark
+  changes:
+    - type: Fix
+      message: No more free night vision.
+  id: 50
+  time: '2025-04-06T23:01:19.0000000+00:00'
+- author: Ark
+  changes:
+    - type: Add
+      message: More surgery fixes and additions!
+  id: 51
+  time: '2025-04-07T00:23:44.0000000+00:00'
+- author: SuperJoelD00D
+  changes:
+    - type: Tweak
+      message: >-
+        More NFSDO fixes, those being: Fire alarms, fire extinguishers, a defib
+        to med, ATMs and a shipyard console in the lobby area.
+  id: 52
+  time: '2025-04-07T21:31:18.0000000+00:00'
+- author: SuperJoelD00D
+  changes:
+    - type: Tweak
+      message: Iapetus now has a directional fan in the door to the arti chamber.
+  id: 53
+  time: '2025-04-07T21:32:01.0000000+00:00'
+- author: Ark
+  changes:
+    - type: Add
+      message: >-
+        Timed and whitelisted jobs are now freely available when the population
+        is under 6 players.
+  id: 54
+  time: '2025-04-07T21:41:13.0000000+00:00'
+- author: Ark
+  changes:
+    - type: Add
+      message: Changed lobby background and added a new music track to the lobby.
+  id: 55
+  time: '2025-04-07T22:06:14.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Add
+      message: Added Seraphim to shipyard.
+    - type: Tweak
+      message: Undid the changes to the generator fuel storage.
+    - type: Tweak
+      message: Actually restored the mass driver to its TRUE PROTENTIAL.
+  id: 56
+  time: '2025-04-07T22:10:24.0000000+00:00'
+- author: Ark
+  changes:
+    - type: Add
+      message: Newly purchased ships now tell you their estimated location.
+  id: 57
+  time: '2025-04-08T01:26:55.0000000+00:00'
+- author: Ark
+  changes:
+    - type: Fix
+      message: Ship shields no longer flicker.
+  id: 58
+  time: '2025-04-08T21:15:12.0000000+00:00'
+- author: Ark
+  changes:
+    - type: Add
+      message: >-
+        Shields are now based off projectile damage rather than the amount of
+        projectiles hitting them.
+    - type: Add
+      message: Shields now only block ship turret projectiles.
+  id: 59
+  time: '2025-04-13T00:12:21.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Tweak
+      message: Safezone rules have been updated.
+    - type: Fix
+      message: Fixed (hopefully) all remaining mentions of Frontier Outpost
+  id: 60
+  time: '2025-04-13T09:24:27.0000000+00:00'
+- author: assignedgod
+  changes:
+    - type: Tweak
+      message: Allowed UIVs to spawn at lowpop.
+  id: 61
+  time: '2025-04-13T23:40:32.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Add
+      message: Added Littora to expedition shipyard
+    - type: Tweak
+      message: Picses gets a sink now.
+    - type: Fix
+      message: Fixed Tzipora cryo setup.
+    - type: Fix
+      message: Fixed MR-8C back sprites.
+    - type: Fix
+      message: Fixed DMR ammo not being in NF lathes.
+  id: 62
+  time: '2025-04-14T02:12:00.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Add
+      message: >-
+        Added a (stolen) sick ass red SCAF suit to the Pirate uplink. Also
+        replaces old syndie suits in suit storage lockers.
+    - type: Remove
+      message: >-
+        Removed syndicate hardsuits from Pirate uplinks, and Pirate suit-storage
+        lockers.
+  id: 63
+  time: '2025-04-15T00:09:06.0000000+00:00'
+- author: Ark
+  changes:
+    - type: Add
+      message: Companies have arrived (very experimental)! Expect bugs.
+  id: 64
+  time: '2025-04-15T00:49:54.0000000+00:00'
+- author: Ark
+  changes:
+    - type: Add
+      message: Base ship speed increased from 20 m/s to 30 m/s!
+    - type: Fix
+      message: IFF console status bug should be no more.
+    - type: Fix
+      message: >-
+        Shield blips should no longer be on the wrong grid when their shield
+        generator is moved.
+    - type: Fix
+      message: Bluespace drive's incorrect description has been corrected.
+    - type: Fix
+      message: FTL mass problems are no more with our new ship exercise program.
+    - type: Fix
+      message: Shipyard's ship location message is a little more accurate.
+  id: 65
+  time: '2025-04-15T03:19:41.0000000+00:00'
+- author: LukeZurg22
+  changes:
+    - type: Remove
+      message: Oh Mah Nina from Jukebox
+    - type: Fix
+      message: Department names
+    - type: Fix
+      message: NFDSO -> TSFMC-FOB
+  id: 66
+  time: '2025-04-15T04:53:46.0000000+00:00'
+- author: LukeZurg22
+  changes:
+    - type: Tweak
+      message: Numerous NFSD proto names -> TSFMC
+  id: 67
+  time: '2025-04-16T01:42:17.0000000+00:00'
+- author: LukeZurg22
+  changes:
+    - type: Tweak
+      message: Adjusted Pirates -> Rogue naming.
+  id: 68
+  time: '2025-04-16T03:53:27.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Add
+      message: >-
+        Wall health and ship weapon damage have both been increased (by a lot).
+        Enjoy your total boarder death.
+  id: 69
+  time: '2025-04-17T03:18:37.0000000+00:00'
+- author: LukeZurg22
+  changes:
+    - type: Add
+      message: Added the Coldcap Botany vessel.
+  id: 70
+  time: '2025-04-17T04:58:57.0000000+00:00'
+- author: Ark
+  changes:
+    - type: Add
+      message: Certain jobs will now put you into companies they belong to.
+    - type: Fix
+      message: Empty company name bug should be gone now.
+  id: 71
+  time: '2025-04-17T07:26:42.0000000+00:00'
+- author: Ark
+  changes:
+    - type: Add
+      message: New maximum speed slider for better control over your ship's speed.
+  id: 72
+  time: '2025-04-17T07:27:32.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Add
+      message: Added Akasono as a entry-level gas mining ship. Base shipyard, ~38k.
+    - type: Tweak
+      message: Changed manufacturer prefixes for a lot of ships. More standard now.
+  id: 73
+  time: '2025-04-17T17:34:42.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Add
+      message: >-
+        Added two new ships. You wont find them in any shipyard. Don't worry
+        about it. Don't think about it.
+    - type: Fix
+      message: Fixed missing Jr. PACMAN on Akasono. Gas mining real NOW.
+  id: 74
+  time: '2025-04-17T22:54:39.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Tweak
+      message: >-
+        Warp points have been removed from station AI cores. Im not dealing with
+        that bloat in the warp menu from AI ships.
+  id: 75
+  time: '2025-04-18T01:13:37.0000000+00:00'
+- author: SuperJoelD00D
+  changes:
+    - type: Tweak
+      message: TSFMC signs are now lore-accurate!
+  id: 76
+  time: '2025-04-18T01:22:55.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Fix
+      message: Fixed pirate cove not spawning.
+    - type: Tweak
+      message: >-
+        The scheduler for "derelict" AI ship spawns has been tuned (and fixed).
+        There is now a minimum time of 90 minutes from round-start before any
+        can spawn in, and a min-max time between events of 60-90 minutes.
+  id: 77
+  time: '2025-04-18T03:32:37.0000000+00:00'
+- author: LukeZurg22
+  changes:
+    - type: Add
+      message: The NGC Dart (TSFMC former-Armadan scout ship)
+  id: 78
+  time: '2025-04-18T07:35:41.0000000+00:00'
+- author: Ark
+  changes:
+    - type: Tweak
+      message: You are no longer able to engage other ships while FTLing.
+  id: 79
+  time: '2025-04-18T08:10:23.0000000+00:00'
+- author: Ark
+  changes:
+    - type: Add
+      message: You should no longer gib from space damage!
+  id: 80
+  time: '2025-04-18T08:11:06.0000000+00:00'
+- author: LukeZurg22
+  changes:
+    - type: Tweak
+      message: New AI Lawset for ADS
+  id: 81
+  time: '2025-04-18T18:11:53.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Tweak
+      message: >-
+        Derelict AI ships now need more time to spawn in (and have higher
+        cooldowns for spawning), now (should) need whitelist when whitelist is
+        enabled, and now require a sheriff to spawn. Additionally, Zenith can
+        only spawn 3 times now (was 4), and Razor can only spawn 5 times now
+        (was 8).
+    - type: Fix
+      message: >-
+        Ship projectile lifetimes have been lowered again. I accidentally left
+        it on one minute for 20mms. Sorry. 100% FREE LAG
+  id: 82
+  time: '2025-04-18T20:37:20.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Add
+      message: Remnant ships AI core is now a functional ghostrole. Go my Zeniths.
+    - type: Tweak
+      message: Shield gens have double the radius
+    - type: Tweak
+      message: Remnant borgs now get Traffic radio channel.
+    - type: Tweak
+      message: Remnant borgs trade their tools for guns.
+  id: 83
+  time: '2025-04-19T01:00:02.0000000+00:00'
+- author: Ark
+  changes:
+    - type: Tweak
+      message: NSFD -> TSFMC radio.
+  id: 84
+  time: '2025-04-19T05:37:28.0000000+00:00'
+- author: SuperJoelD00D
+  changes:
+    - type: Tweak
+      message: >-
+        TSFMCO has been changed a bit. We called in the painters to repaint the
+        trim of the hallways to blue, and fixed the chemistry room situation.
+        There should also be what we consider all the entertainment you'll ever
+        need in the break room (that is, a TV and a water cooler). Also, PAL and
+        Det now get lockers. Yay!
+  id: 85
+  time: '2025-04-19T06:15:23.0000000+00:00'
+- author: LukeZurg22
+  changes:
+    - type: Add
+      message: Company Descriptions
+    - type: Tweak
+      message: Companies
+    - type: Fix
+      message: Dart Rear Thrusters, Radar & Medkit
+    - type: Tweak
+      message: ADS Lawset
+  id: 86
+  time: '2025-04-19T06:36:30.0000000+00:00'
+- author: LukeZurg22
+  changes:
+    - type: Fix
+      message: Company localization.
+  id: 87
+  time: '2025-04-19T06:58:10.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Add
+      message: Added minpop requirement to Remnant ships. 15 for Razor, 25 for Zenith.
+    - type: Tweak
+      message: Shields should only take 15w per damage point now instead of 50w.
+    - type: Fix
+      message: >-
+        Fixed missing locales for Remnant AI cores. Should also be whitelisted
+        now.
+  id: 88
+  time: '2025-04-19T23:52:20.0000000+00:00'
+- author: SuperJoelD00D
+  changes:
+    - type: Tweak
+      message: >-
+        Changed the AI's holographic appearance on holopads. More robot-alien,
+        less Cortana!
+  id: 89
+  time: '2025-04-20T03:19:55.0000000+00:00'
+- author: LukeZurg22
+  changes:
+    - type: Add
+      message: Added Donkhaus Kitchen Ship
+    - type: Add
+      message: Added Penman News Ship
+    - type: Add
+      message: Added Wooden Crate
+  id: 90
+  time: '2025-04-20T03:32:51.0000000+00:00'
+- author: LukeZurg22
+  changes:
+    - type: Tweak
+      message: AI Lawset to be less Chaotic-Evil.
+  id: 91
+  time: '2025-04-20T04:43:40.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Add
+      message: Added Moonlight service ship to CO shipyard.
+    - type: Add
+      message: >-
+        Shuttle components (shield gens, GCS, FTL drives) can now be researched
+        and built. No more accidentally disassembling gunnery computer and not
+        being able to fix it.
+  id: 92
+  time: '2025-04-20T06:24:25.0000000+00:00'
+- author: Ark
+  changes:
+    - type: Tweak
+      message: IFF label size was decreased to reduce clutter.
+  id: 93
+  time: '2025-04-20T06:25:13.0000000+00:00'
+- author: Ark
+  changes:
+    - type: Fix
+      message: AI is now able to properly pilot a ship.
+  id: 94
+  time: '2025-04-20T06:30:24.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Add
+      message: Added Praetorian to CO shipyard (merc access restricted). Archer+ real
+    - type: Fix
+      message: >-
+        Fixed missing extinguishers, defib, warp point, and latejoin point on
+        Moonlight.
+  id: 95
+  time: '2025-04-20T19:44:49.0000000+00:00'
+- author: Ark
+  changes:
+    - type: Fix
+      message: Asteroid veins should now drop their ore when mined.
+  id: 96
+  time: '2025-04-21T01:23:19.0000000+00:00'
+- author: LukeZurg22
+  changes:
+    - type: Remove
+      message: Removed cryopod from archon.
+  id: 97
+  time: '2025-04-21T06:19:13.0000000+00:00'
+- author: LukeZurg22
+  changes:
+    - type: Add
+      message: UNJ Clemency, Medical Ship
+  id: 98
+  time: '2025-04-21T07:11:34.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Tweak
+      message: >-
+        Archon salvage exped computer and station records computers have finally
+        been swapped. Also added a bit of decals in the cockpit.
+  id: 99
+  time: '2025-04-21T09:31:24.0000000+00:00'
+- author: Ark
+  changes:
+    - type: Add
+      message: You can now send network signals from your shuttle console!
+  id: 100
+  time: '2025-04-21T21:03:28.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Add
+      message: All consoles and shield generators now have a small power buffer.
+    - type: Tweak
+      message: >-
+        Praetorian is now 2x uranium generators instead of 2x plasma. Also
+        slight price increase.
+    - type: Tweak
+      message: Ship weapon projectiles have had their lifetime increased again.
+    - type: Fix
+      message: Shuttle-mounted PKAs can mine again.
+  id: 101
+  time: '2025-04-22T00:29:26.0000000+00:00'
+- author: LukeZurg22
+  changes:
+    - type: Tweak
+      message: New Gunnery Console appearance by justanorang
+  id: 102
+  time: '2025-04-22T04:02:06.0000000+00:00'
+- author: LukeZurg22
+  changes:
+    - type: Fix
+      message: NFSD -> TSFMC.
+  id: 103
+  time: '2025-04-22T06:54:11.0000000+00:00'
+- author: Ark
+  changes:
+    - type: Fix
+      message: Removed companies should no longer show up.
+  id: 104
+  time: '2025-04-22T07:19:43.0000000+00:00'
+- author: Ark
+  changes:
+    - type: Tweak
+      message: No more "nearby objects too massive for FTL."
+  id: 105
+  time: '2025-04-22T20:18:00.0000000+00:00'
+- author: Ark
+  changes:
+    - type: Fix
+      message: >-
+        Chairs and storage containers should no longer take you to the void with
+        them when destroyed.
+  id: 106
+  time: '2025-04-22T20:20:13.0000000+00:00'
+- author: sowelipililimute
+  changes:
+    - type: Add
+      message: >-
+        The Eden now exists, a hydroponics-chemistry shuttle that can be
+        purchased from the Medical Dispatch.
+  id: 107
+  time: '2025-04-22T21:14:40.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Add
+      message: >-
+        Added expedition-capable Praetorian and Archer variants to the
+        expedition shipyard at a 25% markup.
+    - type: Fix
+      message: >-
+        Moonlight gas mixer is proper mixture now. Also fixed Calypso
+        engineering door's access.
+  id: 108
+  time: '2025-04-22T21:58:25.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Tweak
+      message: AI cores can be unanchored. Have fun bringing them on your ship.
+    - type: Tweak
+      message: >-
+        AI ships have been changed a bit. Razor loses the shield gen and now has
+        1x 20mm and 2x missiles. Zenith now has a better shield gen setup.
+  id: 109
+  time: '2025-04-23T01:43:34.0000000+00:00'
+- author: LukeZurg22
+  changes:
+    - type: Tweak
+      message: Tons of SR -> CL
+    - type: Remove
+      message: Removed cryopod from Kessler
+    - type: Tweak
+      message: Company descriptions are full now.
+    - type: Fix
+      message: Clemency to Medical Shipyard
+    - type: Fix
+      message: Medfab & Surgery bad in clemency
+    - type: Fix
+      message: Clemency description no longer Coldcap's
+    - type: Fix
+      message: Donkhaus fans
+  id: 110
+  time: '2025-04-23T04:03:25.0000000+00:00'
+- author: LukeZurg22
+  changes:
+    - type: Tweak
+      message: Clemency Price
+  id: 111
+  time: '2025-04-23T05:27:01.0000000+00:00'
+- author: SuperJoelD00D
+  changes:
+    - type: Tweak
+      message: Made TSFMCO (and Courthouse) proper colors, that being blue. Yay!
+  id: 112
+  time: '2025-04-23T18:32:32.0000000+00:00'
+- author: DisguisedBear
+  changes:
+    - type: Add
+      message: Added Aetherion Dynamics as a hidden faction, to be unlocked very soon!
+  id: 113
+  time: '2025-04-23T21:39:32.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Remove
+      message: >-
+        Removed the scope from the MR-8C. It broke it too much. Now its just
+        MR-8C BR instead of DMR.
+    - type: Tweak
+      message: >-
+        8x65mm DMR is now 8x65mm SKR, and has been nerfed to do 45 pierce
+        instead of 55.
+    - type: Tweak
+      message: MR-8C is now semi-auto only.
+    - type: Tweak
+      message: Gunnery control console screen is also changed. Orange.
+    - type: Tweak
+      message: Kessler has been slightly tuned. It has a FTL drive now. Rejoice.
+    - type: Tweak
+      message: >-
+        Archer-EX and the base Archer have had a slight decal glowup in the main
+        room. Also removed the cryopod from it.
+    - type: Fix
+      message: Argent no longer has a cryopod.
+    - type: Fix
+      message: Praetorian-EX and Archer-EX can exped now. I forgot a single line.
+    - type: Fix
+      message: >-
+        Gunnery control server recipe isn't a copy and paste of the FTL drive
+        recipe anymore. Sorry whoever spent 3 AME jars building it. Also gave
+        the GCS the same power buffer as consoles, so shield power surges
+        shouldn't disconnect all your weapons now.
+  id: 114
+  time: '2025-04-23T22:54:36.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Tweak
+      message: >-
+        Decreased ship weapon projectile lifespan. Too laggy. Also increased
+        shield generator wattage per 1 damage from 15w to 35w.
+  id: 115
+  time: '2025-04-23T23:49:18.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Tweak
+      message: >-
+        TSFMCO and Rogue Insurgency Hideout now get a few roundstart Pirate/Cadet
+        roles.
+  id: 116
+  time: '2025-04-24T02:38:35.0000000+00:00'
+- author: sowelipililimute
+  changes:
+    - type: Add
+      message: >-
+        The Miriam now exists, a cryogenics/stasis-focused shuttle that can be
+        purchased at the Medical Dispatch
+  id: 117
+  time: '2025-04-24T05:53:37.0000000+00:00'
+- author: Ark
+  changes:
+    - type: Tweak
+      message: Single tile grids now show up on mass scanner!
+  id: 118
+  time: '2025-04-24T07:21:54.0000000+00:00'
+- author: Ark
+  changes:
+    - type: Fix
+      message: Hopefully optimized ship collisions.
+  id: 119
+  time: '2025-04-24T07:22:41.0000000+00:00'
+- author: Ark
+  changes:
+    - type: Fix
+      message: Shields are now hidden by FOV.
+  id: 120
+  time: '2025-04-24T07:37:14.0000000+00:00'
+- author: Ark
+  changes:
+    - type: Fix
+      message: Garbage collector bugs should now be resolved.
+  id: 121
+  time: '2025-04-24T19:01:43.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Fix
+      message: Fixed latejoining on a rogue ship spawning you in CO janitor room.
+  id: 122
+  time: '2025-04-24T20:35:43.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Tweak
+      message: >-
+        M381 and marauder have recieved 1250 and 310 Ion damage. This should let
+        them damage shields better.
+    - type: Tweak
+      message: >-
+        M381 structural damage buffed from 7.5k > 10k, 350 heat damage
+        completely removed, and blunt damage buffed from 1750 > 2250.
+    - type: Tweak
+      message: Littora price increased to ~76000. Archon price increased to ~65000.
+  id: 123
+  time: '2025-04-25T13:10:34.0000000+00:00'
+- author: HacksLua
+  changes:
+    - type: Add
+      message: Hidden companies can now be made visible to whitelisted logins.
+  id: 124
+  time: '2025-04-25T19:22:19.0000000+00:00'
+- author: HacksLua
+  changes:
+    - type: Add
+      message: Vehicles now show up as radar blips when occupied, similar to jetpacks
+  id: 125
+  time: '2025-04-25T21:06:20.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Add
+      message: >-
+        CO has been remapped. Report any bugs with it in #bugs or make a issue
+        on the github.
+    - type: Tweak
+      message: >-
+        Shield power draw has been increased again. 35w ->105w. The duration
+        before the power surge dissipates has also been increased from 10 to 20
+        seconds.
+    - type: Add
+      message: >-
+        Plasma deposits of all sizes can be found on every asteroid type now.
+        Also normal sized muddled-plasma deposits too.
+  id: 126
+  time: '2025-04-25T21:21:03.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Add
+      message: Added making Fentanyl as a new gameplay loop. Schedule 1 real
+  id: 127
+  time: '2025-04-25T22:38:06.0000000+00:00'
+- author: Ark
+  changes:
+    - type: Add
+      message: Ported over crawling from Goob!
+  id: 128
+  time: '2025-04-25T23:50:02.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Tweak
+      message: >-
+        The 1u plasma for the Fentanyl recipe is no longer a catalyst, and is
+        consumed. Additionally, there is now 1u oil added to the recipe.
+    - type: Fix
+      message: Hopefully fixed the bus not going to FO.
+    - type: Fix
+      message: Fentanyl is actually C3 now.
+  id: 129
+  time: '2025-04-26T01:01:50.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Add
+      message: Fentanyl gets a alt recipe with Vestine now.
+    - type: Tweak
+      message: >-
+        Fentanyl recipe tweaked AGAIN. It is now 1u space mirage, 2u meth, 1u
+        oil, 0.5u sodium hydroxide, 0.5u phenol, and 0.5u phenol. In exchange,
+        it now makes 7.5u instead of 5u
+    - type: Tweak
+      message: Fentanyl value lowered to 2.5k from 3.5k
+  id: 130
+  time: '2025-04-26T01:38:35.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Tweak
+      message: Shield power buffer 1750 > 475
+  id: 131
+  time: '2025-04-26T02:29:25.0000000+00:00'
+- author: LukeZurg22
+  changes:
+    - type: Fix
+      message: The Fent Crisis, hopefully.
+  id: 132
+  time: '2025-04-26T04:38:30.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Tweak
+      message: Nerf fent recipes and price
+    - type: Fix
+      message: Fixed CO not spawning
+  id: 133
+  time: '2025-04-26T05:12:24.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Add
+      message: Added the Legionnaire to TSFMC shipyard.
+    - type: Add
+      message: >-
+        Added M220 RUBICON EMP launcher. Currently only on the Legionnaire.
+        Specialized towards damaging shields and taking out electronics.
+    - type: Fix
+      message: Fixed CL's quarters camera being in a bookshelf.
+    - type: Fix
+      message: Fixed Fentanyl guidebook being inaccurate for the tricord mix.
+  id: 134
+  time: '2025-04-26T06:40:47.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Add
+      message: Fentanyl can now be broken and shattered. Be careful.
+    - type: Tweak
+      message: Fentanyl now has a less-dangerous OD.
+    - type: Tweak
+      message: >-
+        The tricord in the reaction for solidifying fentanyl is now a catalyst
+        instead of a ingredient.
+  id: 135
+  time: '2025-04-26T07:36:54.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Add
+      message: >-
+        Fentanyl now explodes when heated to 480k (5k above reaction temp). To
+        compensate, the price is raised to 2k again.
+  id: 136
+  time: '2025-04-26T17:16:11.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Tweak
+      message: >-
+        Another shield nerf. Damage surge duration increased from 20s to 60s,
+        consumption/m^2 increased to 0.55 from 0.35, buffer nerfed to 150 from
+        475, and recharge rate decreased from 350 to 25.
+  id: 137
+  time: '2025-04-26T17:33:18.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Add
+      message: >-
+        Added designations to shuttles for better identification of type (CIV,
+        MIL, NGC, EXP)
+    - type: Add
+      message: fent guidebook Jobs/Medical/Chemist/Fentanyl Production
+    - type: Tweak
+      message: >-
+        Fent has gone under even more changes. I aint writing this shit anymore.
+        Check the guidebook.
+  id: 138
+  time: '2025-04-26T20:48:00.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Tweak
+      message: >-
+        Buffed Fentanyl vestine-alt recipe and increased fent crystal price to
+        2750
+  id: 139
+  time: '2025-04-27T00:26:15.0000000+00:00'
+- author: LukeZurg22
+  changes:
+    - type: Add
+      message: GNG Duran Exped. Ship (by floatingfeeling)
+  id: 140
+  time: '2025-04-27T01:45:34.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Add
+      message: Ported over all of goobs clothing sprites
+  id: 141
+  time: '2025-04-27T02:09:54.0000000+00:00'
+- author: LukeZurg22
+  changes:
+    - type: Tweak
+      message: Sprite for 90mm Gun
+  id: 142
+  time: '2025-04-27T03:24:53.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Fix
+      message: Fixed paramedic voidsuit helmet sprite.
+  id: 143
+  time: '2025-04-27T06:27:51.0000000+00:00'
+- author: Ark
+  changes:
+    - type: Add
+      message: Ported CPR from Goob.
+  id: 144
+  time: '2025-04-27T07:55:36.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Add
+      message: >-
+        HF-katana in hand construction. Esword+ real. Abuse it before my rival
+        reverts it.
+  id: 145
+  time: '2025-04-27T10:10:21.0000000+00:00'
+- author: LukeZurg22
+  changes:
+    - type: Tweak
+      message: HF Katana from 115 dmg/hit -> 50 dmg/hit
+  id: 146
+  time: '2025-04-27T16:28:27.0000000+00:00'
+- author: LukeZurg22
+  changes:
+    - type: Fix
+      message: Horrible HF-Sword crash. Counterpart didn't test his work.
+  id: 147
+  time: '2025-04-27T16:51:29.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Remove
+      message: Removed fentanyl guidebook page.
+    - type: Tweak
+      message: >-
+        Fentanyl no longer explodes when heated (still explodes when mixed with
+        Dylovene) and needs Carpotoxin for the base recipe now. Additionally,
+        the price has been buffed to 3.5k and it is now 5u to crystallize
+        instead of 7u.
+    - type: Tweak
+      message: >-
+        HF katana now does 17.5 slash and 4.5 shock, and attack rate has been
+        buffed to 1.5/s
+    - type: Tweak
+      message: MR-8C BR firerate buffed from 150 RPM to 240 RPM (4 RPS)
+    - type: Fix
+      message: Fixed CO not having fuelvends
+  id: 148
+  time: '2025-04-27T19:23:11.0000000+00:00'
+- author: LukeZurg22
+  changes:
+    - type: Fix
+      message: EVA Wall locker on the Duran
+  id: 149
+  time: '2025-04-27T19:31:36.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Add
+      message: Added Murasama. Admin-spawn only. Hopefully stays that way.
+  id: 150
+  time: '2025-04-27T21:22:44.0000000+00:00'
+- author: Tmanzxd
+  changes:
+    - type: Add
+      message: Dark Matter Enterprises added to the companies tab.
+  id: 151
+  time: '2025-04-27T21:36:01.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Tweak
+      message: Advanced laser pistols can be used in HF-katana recipe now.
+    - type: Fix
+      message: Fixed CO bridge access for the STC.
+  id: 152
+  time: '2025-04-27T23:55:49.0000000+00:00'
+- author: Tmanzxd
+  changes:
+    - type: Add
+      message: Updated the color of DME.
+  id: 153
+  time: '2025-04-28T08:34:24.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Add
+      message: Added HF-katana to TSFMC uplink
+    - type: Add
+      message: Added (big nerfed) Murasama to Rogue uplink
+    - type: Tweak
+      message: Changed HF-katana to C2 contraband from C3.
+  id: 154
+  time: '2025-04-28T13:23:09.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Add
+      message: >-
+        Added Flyssa-class to the TSFMC shipyard, a NGC destroyer lended from the
+        frontlines to help you kill Rogues. A bit over half a million, but the
+        CYREXAs are worth it.
+    - type: Add
+      message: >-
+        Added CYREXA 220mm guns as a heavy AP weapon, for capital-ship main
+        batteries.
+    - type: Remove
+      message: >-
+        Removed buying autocannons from TM/TO. You lagged the server too much
+        with gun bricks. No more.
+    - type: Tweak
+      message: Shield power surge duration lowered again to 25s.
+    - type: Tweak
+      message: CHARON is now unanchorable.
+    - type: Tweak
+      message: Removed CHARON flatpack from exped spawns.
+  id: 155
+  time: '2025-04-29T00:49:47.0000000+00:00'
+- author: LukeZurg22
+  changes:
+    - type: Add
+      message: New Service Shuttles
+    - type: Add
+      message: Colonial Staff Console to Colonial Outpost
+    - type: Remove
+      message: Old Service Shuttles
+    - type: Tweak
+      message: Sheriff -> Colonel
+  id: 156
+  time: '2025-04-29T07:08:08.0000000+00:00'
+- author: Ark
+  changes:
+    - type: Add
+      message: When rule breaks. The end is upon us all.
+  id: 157
+  time: '2025-04-29T11:08:43.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Add
+      message: Added a revamped interior (and some parts of the front hull) for Flyssa!
+  id: 158
+  time: '2025-04-29T21:51:26.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Add
+      message: >-
+        Added a shield power draw limit of 1.5mW to the MS-225 before it turns
+        off. I didn't have time to test this much, so report any bugs.
+  id: 159
+  time: '2025-04-30T02:35:55.0000000+00:00'
+- author: KiraZen-Underscore
+  changes:
+    - type: Add
+      message: Added Exocron, a Rogue ship which is made out of an old Zenith.
+  id: 160
+  time: '2025-04-30T05:59:49.0000000+00:00'
+- author: LukeZurg22
+  changes:
+    - type: Fix
+      message: No more 100 TC up per 6-10 wrecks.
+  id: 161
+  time: '2025-04-30T06:04:17.0000000+00:00'
+- author: LukeZurg22
+  changes:
+    - type: Fix
+      message: TSFMC Lieutenant role name
+  id: 162
+  time: '2025-04-30T07:07:43.0000000+00:00'
+- author: Ark
+  changes:
+    - type: Fix
+      message: Burned down the shield blip orphanage.
+  id: 163
+  time: '2025-04-30T08:58:45.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Add
+      message: >-
+        Flyssa, Polaris, Zenith, and Razor now all skip processing for impact
+        collisions. No more Zeniths ramming you to death. No more killing a
+        Flyssa with a framework.
+  id: 164
+  time: '2025-04-30T10:39:01.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Fix
+      message: Fixed missing FTL drive on Flyssa and Archer unpowered thrusters
+  id: 165
+  time: '2025-04-30T11:37:26.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Add
+      message: >-
+        Tweaked shields a bit more. Now when above 1.5mW of power usage, the
+        shield will only reenable once under 200kW of power usage. Flux
+        overload....
+  id: 166
+  time: '2025-04-30T21:04:24.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Add
+      message: >-
+        Polaris has been remapped. Much more armor tank now than shield tank.
+        Also price lowered (to compensate for removal of missiles, and a lot of
+        the empty space)
+    - type: Fix
+      message: Fixed rusted walls not being the correct sprite (paradise 💪)
+  id: 167
+  time: '2025-04-30T23:40:44.0000000+00:00'
+- author: Onezero0
+  changes:
+    - type: Add
+      message: Added the Judiciary Expeditionary Research vessel.
+  id: 168
+  time: '2025-05-01T00:09:22.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Tweak
+      message: Flyssa is now Bailiff/TSFMC captain access-restricted.
+    - type: Fix
+      message: Fixed Flyssa not having a warp point.
+  id: 169
+  time: '2025-05-01T00:36:46.0000000+00:00'
+- author: KiraZen-Underscore
+  changes:
+    - type: Add
+      message: >-
+        Ship AI Cores. They are not in any of the ships yet, either me or
+        someone in the future will make a ship with them.
+  id: 170
+  time: '2025-05-01T10:00:35.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Add
+      message: Added Tumour to TSFMC shipyard. Horrid carrier. Unbelievably ugly.
+    - type: Tweak
+      message: Polaris gets the missiles back. Also better firing port for the CHARON.
+  id: 171
+  time: '2025-05-01T10:27:49.0000000+00:00'
+- author: starch70
+  changes:
+    - type: Add
+      message: Added Spyglass. Its a science ship for Rogues. Insane.
+  id: 172
+  time: '2025-05-01T20:50:52.0000000+00:00'
+- author: Onezero0
+  changes:
+    - type: Fix
+      message: Fixed the Judiciary missing an expedition console.
+  id: 173
+  time: '2025-05-02T00:35:08.0000000+00:00'
+- author: Ark
+  changes:
+    - type: Add
+      message: Shuttle consoles are now locked when you initially purchase your ship.
+  id: 174
+  time: '2025-05-02T03:56:57.0000000+00:00'
+- author: Ark
+  changes:
+    - type: Fix
+      message: >-
+        You should no longer be able to keep firing a turret when it is off your
+        grid.
+  id: 175
+  time: '2025-05-02T07:16:24.0000000+00:00'
+- author: Ark
+  changes:
+    - type: Add
+      message: >-
+        Being outside your ship in FTL will now gib you. Is it really that
+        surprising?
+  id: 176
+  time: '2025-05-02T07:21:47.0000000+00:00'

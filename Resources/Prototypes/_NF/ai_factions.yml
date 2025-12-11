@@ -12,13 +12,11 @@
   - Chicken
   - Monkey
   - Wizard
-  - Dragon
-  - Xenoborg
   ## Frontier Factions
   - Goblin
   - WizFedFaction
   - BloodCultNF
-  - NFPirate
+  - PirateNF
   - ExplorersExpeditionNF
   - ArtifactConstruct
   - StreetGangNF
@@ -27,6 +25,9 @@
   - SiliconsExpeditionNF
   - AberrantFleshExpeditionNF
   - ContrabandClothing
+  - TSFMC # Mono
+  - TSFMCTurret # Mono
+  - USSP # Mono
 
 - type: npcFaction
   id: Dwarf
@@ -52,7 +53,7 @@
   id: Goblin
 
 - type: npcFaction
-  id: NFSyndicate
+  id: SyndicateNF
   friendly:
   - Syndicate
   hostile:
@@ -66,16 +67,13 @@
   - Zombie
   - Revolutionary
   - Xeno
-  - Wizard
-  - Dragon
-  - Xenoborg
   ## Frontier Factions
   - Monkey
   - Goblin
-  #- NFSyndicate
+  #- SyndicateNF
   - WizFedFaction
   - BloodCultNF
-  - NFPirate
+  - PirateNF
   - ExplorersExpeditionNF
   - ArtifactConstruct
   - StreetGangNF
@@ -85,6 +83,9 @@
   - AberrantFleshExpeditionNF
   - ContrabandClothing
   - ContrabandDetection
+  - TSFMC # Mono
+  - TSFMCTurret # Mono
+  - USSP # Mono
 
 - type: npcFaction
   id: WizFedFaction
@@ -99,16 +100,13 @@
   - Zombie
   - Revolutionary
   - Xeno
-  - Wizard
-  - Dragon
-  - Xenoborg
   ## Frontier Factions
   - Monkey
   - Goblin
-  - NFSyndicate
+  - SyndicateNF
   #- WizFedFaction
   - BloodCultNF
-  - NFPirate
+  - PirateNF
   - ExplorersExpeditionNF
   #- ArtifactConstruct
   - StreetGangNF
@@ -118,6 +116,9 @@
   - AberrantFleshExpeditionNF
   - ContrabandClothing
   - ContrabandDetection
+  - TSFMC # Mono
+  - TSFMCTurret # Mono
+  - USSP # Mono
 
 - type: npcFaction
   id: BloodCultNF
@@ -132,16 +133,13 @@
   - Zombie
   - Revolutionary
   - Xeno
-  - Wizard
-  - Dragon
-  - Xenoborg
   ## Frontier Factions
   - Monkey
   - Goblin
-  - NFSyndicate
+  - SyndicateNF
   - WizFedFaction
   #- BloodCultNF
-  - NFPirate
+  - PirateNF
   - ExplorersExpeditionNF
   - ArtifactConstruct
   - StreetGangNF
@@ -151,9 +149,12 @@
   - AberrantFleshExpeditionNF
   - ContrabandClothing
   - ContrabandDetection
+  - TSFMC # Mono
+  - TSFMCTurret # Mono
+  - USSP # Mono
 
 - type: npcFaction
-  id: NFPirate
+  id: PirateNF
   hostile:
   ## SS14 factions
   - NanoTrasen
@@ -165,16 +166,13 @@
   - Zombie
   - Revolutionary
   - Xeno
-  - Wizard
-  - Dragon
-  - Xenoborg
   ## Frontier Factions
   #- Monkey
   #- Goblin
-  - NFSyndicate
+  - SyndicateNF
   - WizFedFaction
   - BloodCultNF
-  #- NFPirate
+  #- PirateNF
   - ExplorersExpeditionNF
   - ArtifactConstruct
   - StreetGangNF
@@ -184,6 +182,9 @@
   - AberrantFleshExpeditionNF
   # - ContrabandClothing
   - ContrabandDetection
+  - TSFMC # Mono
+  - TSFMCTurret # Mono
+  - USSP # Mono
 
 - type: npcFaction
   id: ArtifactConstruct
@@ -198,16 +199,13 @@
   - Zombie
   - Revolutionary
   - Xeno
-  - Wizard
-  - Dragon
-  - Xenoborg
   ## Frontier Factions
   - Monkey
   #- Goblin
-  - NFSyndicate
+  - SyndicateNF
   #- WizFedFaction # Magic
   - BloodCultNF
-  - NFPirate
+  - PirateNF
   - ExplorersExpeditionNF
   #- ArtifactConstruct
   - StreetGangNF
@@ -217,6 +215,9 @@
   - AberrantFleshExpeditionNF
   - ContrabandClothing
   - ContrabandDetection
+  - TSFMC # Mono
+  - TSFMCTurret # Mono
+  - USSP # Mono
 
 - type: npcFaction
   id: StreetGangNF
@@ -231,16 +232,13 @@
   - Zombie
   #- Revolutionary # Like their style
   - Xeno
-  - Wizard
-  - Dragon
-  - Xenoborg
   ## Frontier Factions
   - Monkey
   - Goblin
-  - NFSyndicate
+  - SyndicateNF
   - WizFedFaction
   - BloodCultNF
-  - NFPirate
+  - PirateNF
   - ExplorersExpeditionNF
   - ArtifactConstruct
   #- StreetGangNF
@@ -250,6 +248,9 @@
   - AberrantFleshExpeditionNF
   - ContrabandClothing
   - ContrabandDetection
+  - TSFMC # Mono
+  - TSFMCTurret # Mono
+  - USSP # Mono
 
 - type: npcFaction
   id: DinosaursNF
@@ -264,16 +265,13 @@
   - Zombie
   - Revolutionary
   - Xeno
-  - Wizard
-  - Dragon
-  - Xenoborg
   ## Frontier Factions
   - Monkey
   - Goblin
-  - NFSyndicate
+  - SyndicateNF
   - WizFedFaction
   - BloodCultNF
-  - NFPirate
+  - PirateNF
   - ExplorersExpeditionNF
   - ArtifactConstruct
   - StreetGangNF
@@ -283,6 +281,9 @@
   - AberrantFleshExpeditionNF
   - ContrabandClothing
   - ContrabandDetection
+  - TSFMC # Mono
+  - TSFMCTurret # Mono
+  - USSP # Mono
 
 - type: npcFaction
   id: ExplorersExpeditionNF
@@ -297,16 +298,13 @@
   - Zombie
   - Revolutionary
   - Xeno
-  - Wizard
-  - Dragon
-  - Xenoborg
   ## Frontier Factions
   - Monkey
   - Goblin
-  - NFSyndicate
+  - SyndicateNF
   - WizFedFaction
   - BloodCultNF
-  - NFPirate
+  - PirateNF
   #- ExplorersExpeditionNF
   - ArtifactConstruct
   - StreetGangNF
@@ -316,6 +314,9 @@
   - AberrantFleshExpeditionNF
   - ContrabandClothing
   - ContrabandDetection
+  - TSFMC # Mono
+  - TSFMCTurret # Mono
+  - USSP # Mono
 
 - type: npcFaction
   id: MercenariesExpeditionNF
@@ -330,16 +331,13 @@
   - Zombie
   - Revolutionary
   - Xeno
-  - Wizard
-  - Dragon
-  - Xenoborg
   ## Frontier Factions
   - Monkey
   - Goblin
-  - NFSyndicate
+  - SyndicateNF
   - WizFedFaction
   - BloodCultNF
-  - NFPirate
+  - PirateNF
   - ExplorersExpeditionNF
   - ArtifactConstruct
   - StreetGangNF
@@ -349,6 +347,9 @@
   - AberrantFleshExpeditionNF
   - ContrabandClothing
   - ContrabandDetection
+  - TSFMC # Mono
+  - TSFMCTurret # Mono
+  - USSP # Mono
 
 - type: npcFaction
   id: SiliconsExpeditionNF
@@ -363,16 +364,13 @@
   - Zombie
   - Revolutionary
   - Xeno
-  - Wizard
-  - Dragon
-  - Xenoborg
   ## Frontier Factions
   - Monkey
   - Goblin
-  - NFSyndicate
+  - SyndicateNF
   - WizFedFaction
   - BloodCultNF
-  - NFPirate
+  - PirateNF
   - ExplorersExpeditionNF
   - ArtifactConstruct
   - StreetGangNF
@@ -382,6 +380,9 @@
   - AberrantFleshExpeditionNF
   - ContrabandClothing
   - ContrabandDetection
+  - TSFMC # Mono
+  - TSFMCTurret # Mono
+  - USSP # Mono
 
 - type: npcFaction
   id: AberrantFleshExpeditionNF
@@ -396,16 +397,13 @@
   - Zombie
   - Revolutionary
   - Xeno
-  - Wizard
-  - Dragon
-  - Xenoborg
   ## Frontier Factions
   - Monkey
   - Goblin
-  - NFSyndicate
+  - SyndicateNF
   - WizFedFaction
   - BloodCultNF
-  - NFPirate
+  - PirateNF
   - ExplorersExpeditionNF
   - ArtifactConstruct
   - StreetGangNF
@@ -415,6 +413,9 @@
   #- AberrantFleshExpeditionNF
   - ContrabandClothing
   - ContrabandDetection
+  - TSFMC # Mono
+  - TSFMCTurret # Mono
+  - USSP # Mono
 
 - type: npcFaction
   id: ContrabandClothing
@@ -429,16 +430,13 @@
   - Zombie
   - Revolutionary
   - Xeno
-  - Wizard
-  - Dragon
-  - Xenoborg
   ## Frontier Factions
   - Monkey
   - Goblin
-  - NFSyndicate
+  - SyndicateNF
   - WizFedFaction
   - BloodCultNF
-  - NFPirate
+  - PirateNF
   - ExplorersExpeditionNF
   - ArtifactConstruct
   - StreetGangNF
@@ -448,6 +446,9 @@
   - AberrantFleshExpeditionNF
   #- ContrabandClothing
   - ContrabandDetection
+  - TSFMC # Mono
+  - TSFMCTurret # Mono
+  - USSP # Mono
 
 - type: npcFaction
   id: ContrabandDetection
@@ -459,6 +460,7 @@
   hostile:
   ## SS14 factions
   - NanoTrasen
+  - Dragon
   - Mouse
   - Passive
   - PetsNT
@@ -469,18 +471,16 @@
   - Zombie
   - Revolutionary
   - Wizard
-  - Dragon
-  - Xenoborg
   ## Frontier Factions
   - Cat
   - Dwarf
   - Harpy
   - Monkey
   - Goblin
-  - NFSyndicate
+  - SyndicateNF
   - WizFedFaction
   - BloodCultNF
-  - NFPirate
+  - PirateNF
   - ExplorersExpeditionNF
   - ArtifactConstruct
   - StreetGangNF
@@ -490,3 +490,6 @@
   - AberrantFleshExpeditionNF
   - ContrabandClothing
   - ContrabandDetection
+  - TSFMC # Mono
+  - TSFMCTurret # Mono
+  - USSP # Mono

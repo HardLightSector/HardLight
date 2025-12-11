@@ -1,0 +1,54 @@
+- type: entity
+  id: SpawnPointUSSPRifleman
+  parent: SpawnPointJobBase
+  name: USSP Rifleman
+  components:
+  - type: SpawnPoint
+    job_id: USSPRifleman
+  - type: Sprite
+    sprite: Structures/Decoration/banner.rsi
+    state: banner-red
+
+- type: entity
+  id: SpawnPointUSSPMedic
+  parent: SpawnPointJobBase
+  name: USSP Combat Medic
+  components:
+  - type: SpawnPoint
+    job_id: USSPMedic
+  - type: Sprite
+    sprite: Structures/Decoration/banner.rsi
+    state: banner-red
+
+- type: entity
+  id: SpawnPointUSSPCorporal
+  parent: SpawnPointJobBase
+  name: USSP Efreitor
+  components:
+  - type: SpawnPoint
+    job_id: USSPCorporal
+  - type: Sprite
+    sprite: Structures/Decoration/banner.rsi
+    state: banner-red
+
+- type: entity
+  id: SpawnPointUSSPSergeant
+  parent: SpawnPointJobBase
+  name: USSP Serzhant
+  components:
+  - type: SpawnPoint
+    job_id: USSPSergeant
+  - type: Sprite
+    sprite: Structures/Decoration/banner.rsi
+    state: banner-red
+
+- type: entity
+  id: SpawnPointUSSPCommissar
+  parent: SpawnPointJobBase
+  name: USSP Commissar
+  components:
+  - type: SpawnPoint
+    job_id: USSPCommissar
+  - type: Sprite
+    sprite: Structures/Decoration/banner.rsi
+    state: banner-red

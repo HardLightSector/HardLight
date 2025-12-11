@@ -1,0 +1,57 @@
+- type: loadoutGroup
+  id: USSPBackpack
+  name: loadout-group-contractor-backpack
+  minLimit: 1
+  loadouts:
+  - USSPBackpack
+  - USSPDuffel
+  - USSPSatchel
+  fallbacks:
+  - USSPBackpack
+
+- type: loadoutGroup
+  id: USSPJumpsuit
+  name: loadout-group-contractor-jumpsuit
+  hidden: true # No point in showing this, it gets auto-selected.
+  minLimit: 1
+  loadouts:
+  - USSPClothingJumpsuit
+  fallbacks:
+  - USSPClothingJumpsuit
+
+- type: loadoutGroup
+  id: USSPMedhud
+  name: loadout-group-contractor-glasses
+  hidden: true # No point in showing this, it gets auto-selected.
+  minLimit: 1
+  loadouts:
+  - USSPMedHud
+  fallbacks:
+  - USSPMedHud
+
+- type: loadoutGroup
+  id: USSPHead
+  name: loadout-group-contractor-head
+  loadouts:
+  - USSPHelmet
+  - USSPBeret
+
+- type: loadoutGroup
+  id: USSPEars
+  name: loadout-group-contractor-ears
+  hidden: true # No point in showing this, it gets auto-selected.
+  minLimit: 1
+  loadouts:
+  - USSPHeadset
+  fallbacks:
+  - USSPHeadset
+
+- type: loadoutGroup
+  id: USSPEarsCommand
+  name: loadout-group-contractor-ears
+  hidden: true # No point in showing this, it gets auto-selected.
+  minLimit: 1
+  loadouts:
+  - USSPHeadsetCommand
+  fallbacks:
+  - USSPHeadsetCommand

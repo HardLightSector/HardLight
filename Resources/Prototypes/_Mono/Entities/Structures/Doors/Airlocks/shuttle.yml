@@ -1,0 +1,17 @@
+- type: entity
+  parent: AirlockShuttleSyndicate
+  id: AirlockExternalShuttleUSSPLocked
+  suffix: External, Docking, USSP, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsUSSP ]
+
+- type: entity
+  parent: AirlockGlassShuttleSyndicate
+  id: AirlockExternalGlassShuttleUSSPLocked
+  suffix: USSP, Locked, Glass
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsUSSP ]

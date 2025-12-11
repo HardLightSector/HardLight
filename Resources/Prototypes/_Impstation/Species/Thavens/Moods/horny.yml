@@ -1,0 +1,165 @@
+﻿- type: dataset
+  id: ThavenMoodsHorny
+  values:
+  - BirthdaySuit
+  - FreakySpeak
+  - ServileHands
+  - HeatMagnet
+  - ObedientFreak
+  - StationPet
+  - DragItOut
+  - MyPrecious
+  - CodeSesso
+  - InHeat
+  - DoEyeContact
+  - DontEyeContact
+  - Fujoshi
+  - Himejoshi
+  - HornyCollector
+  - HornyDepartment
+  - Technophilia
+  - Cuck
+  - Sexpert
+  - FuckRock
+  - AttractiveSpecies
+
+# Jumpsuits are uncomfortable, your skin needs to breathe. You should strive to be nude at all times.
+- type: thavenMood
+  id: BirthdaySuit
+  moodName: thaven-mood-birthday-suit-name
+  moodDesc: thaven-mood-birthday-suit-desc
+  conflicts:
+  - HardsuitsGood
+  - HardsuitsBad
+
+# Innuendo is the pinnacle of humour, conversation, and chivalry. Make as many as possible.
+- type: thavenMood
+  id: FreakySpeak
+  moodName: thaven-mood-freaky-speak-name
+  moodDesc: thaven-mood-freaky-speak-desc
+
+# Your hands are desperate to be filled. Find someone you can hold, pamper, stroke, or otherwise touch.
+- type: thavenMood
+  id: ServileHands
+  moodName: thaven-mood-servile-hands-name
+  moodDesc: thaven-mood-servile-hands-desc
+
+# You're desperate for the warmth of another person on your body or inside it. Avoid straying from touching distance.
+- type: thavenMood
+  id: HeatMagnet
+  moodName: thaven-mood-heat-magnet-name
+  moodDesc: thaven-mood-heat-magnet-desc
+
+# Being given orders is Right. If someone speaks with authority and confidence, obey. Find someone to command you.
+- type: thavenMood
+  id: ObedientFreak
+  moodName: thaven-mood-obedient-freak-name
+  moodDesc: thaven-mood-obedient-freak-desc
+
+# You yearn to be called a good pet, and to be pampered like you deserve. Find someone to be your owner.
+- type: thavenMood
+  id: StationPet
+  moodName: thaven-mood-station-pet-name
+  moodDesc: thaven-mood-station-pet-desc
+
+# It's "in" to dress in clothing opposite to one's gender. Anyone not in dressed ambiguously or in drag looks like they're in the wrong era.
+- type: thavenMood
+  id: DragItOut
+  moodName: thaven-mood-drag-it-out-name
+  moodDesc: thaven-mood-drag-it-out-desc
+
+# You feel intense jealousy when someone attractive or important to you is at even the slightest risk of being taken from you.
+- type: thavenMood
+  id: MyPrecious
+  moodName: thaven-mood-my-precious-name
+  moodDesc: thaven-mood-my-precious-desc
+
+# Disagreements must be settled through a sexual contest. Whoever wins is correct.
+- type: thavenMood
+  id: CodeSesso
+  moodName: thaven-mood-code-sesso-name
+  moodDesc: thaven-mood-code-sesso-desc
+
+# It's mating season. Thaven all over the station are breeding, and you need to join them.
+- type: thavenMood
+  id: InHeat
+  moodName: thaven-mood-in-heat-name
+  moodDesc: thaven-mood-in-heat-desc
+
+# It feels wrong not to look people in the eyes. Always look directly at anyone addressing you or interacting with you, or vice versa.
+- type: thavenMood
+  id: DoEyeContact
+  moodName: thaven-mood-do-eye-contact-name
+  moodDesc: thaven-mood-do-eye-contact-desc
+  conflicts:
+  -  DontEyeContact
+
+# You can't help but get shy when people are addressing you. Make sure you aren't ever looking at anyone addressing you or interacting with you, or vice versa.
+- type: thavenMood
+  id: DontEyeContact
+  moodName: thaven-mood-dont-eye-contact-name
+  moodDesc: thaven-mood-dont-eye-contact-desc
+  conflicts:
+  -  DoEyeContact
+
+# There's something so perfect and beautiful about two boys in love. Make sure to celebrate Boys' Love at every opportunity!
+- type: thavenMood
+  id: Fujoshi
+  moodName: thaven-mood-fujoshi-name
+  moodDesc: thaven-mood-fujoshi-desc
+
+# There's something so perfect and beautiful about two girls in love. Make sure to celebrate Girls' Love at every opportunity!
+- type: thavenMood
+  id: Himejoshi
+  moodName: thaven-mood-himejoshi-name
+  moodDesc: thaven-mood-himejoshi-desc
+
+# You have a sexual fascination with {$hornyitem}. Collect as many as you can, and use them often.
+- type: thavenMood
+  id: HornyCollector
+  moodName: thaven-mood-horny-collector-name
+  moodDesc: thaven-mood-horny-collector-desc
+  moodVars:
+    hornyitem: MoodHornyItems
+
+# You have a sexual fascination with {$department}. Try your best to be intimate and submissive for them.
+- type: thavenMood
+  id: HornyDepartment
+  moodName: thaven-mood-horny-department-name
+  moodDesc: thaven-mood-horny-department-desc
+  moodVars:
+    department: MoodDepartments
+    
+# Technology is just so attractive... You are compelled to masturbate with machinery and have sex with IPCs, Protogens, and anyone with cybernetic limbs.
+- type: thavenMood
+  id: Technophilia
+  moodName: thaven-mood-technophilia-name
+  moodDesc: thaven-mood-technophilia-desc
+
+# You really enjoy witnessing sexual acts. It doesn't matter if it's your partner, strangers, or your best friend.
+- type: thavenMood
+  id: Cuck
+  moodName: thaven-mood-cuck-name
+  moodDesc: thaven-mood-cuck-desc
+
+# There is a right way to have sex and you know what it is. Correct anyone doing it wrong, for their sake.
+- type: thavenMood
+  id: Sexpert
+  moodName: thaven-mood-sexpert-name
+  moodDesc: thaven-mood-sexpert-desc
+
+# One of your inanimate possessions is very dear to you. It is your lover, and it has thoughts, feelings, and needs.
+- type: thavenMood
+  id: FuckRock
+  moodName: thaven-mood-fuck-rock-name
+  moodDesc: thaven-mood-fuck-rock-desc
+  conflicts:
+  - PetRock
+
+# {$species} are the most attractive species you've ever seen. You can't help but infatuated with them every time you see them.
+- type: thavenMood
+  id: AttractiveSpecies
+  moodName: thaven-mood-attractive-species-name
+  moodDesc: thaven-mood-attractive-species-desc
+  moodVars:
+    species: MoodSpecies

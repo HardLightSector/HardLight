@@ -370,6 +370,8 @@
   - AmmoBox23x75mmBuckshot
   - AmmoBox23x75mmSlug
   - AmmoBox23x75mmDozd
+# HL
+  - MagRailgun
 
 #civilian = FMJ + practice + empty + rubber
 
@@ -563,3 +565,5 @@
   - Magazine12_gaugeUranium
   - AmmoBox12_gaugeUranium
   - AmmoBox23x75mmUranium
+# HL
+  - MagRailgun

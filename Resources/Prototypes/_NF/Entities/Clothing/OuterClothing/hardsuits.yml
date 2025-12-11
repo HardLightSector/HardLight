@@ -151,8 +151,8 @@
 - type: entity
   parent: [ ClothingOuterHardsuitBaseNFNfsd, BaseC3ExpeditionContraband ]
   id: ClothingOuterHardsuitNfsdBronze
-  name: Colsec bronze patrol suit
-  description: The standard-issue Colsec space proof suit for patrol duty. This bronze variant has cadet rank markings.
+  name: TSFMC M73 tacsuit
+  description: The standard-issue TSFMC tacsuit for patrol duty. This bronze variant has private rank markings.
   components:
   - type: Sprite
     sprite: _NF/Clothing/OuterClothing/Hardsuits/nfsd_bronze.rsi
@@ -165,21 +165,21 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.65
-        Slash: 0.65
-        Piercing: 0.65
+        Blunt: 0.55
+        Slash: 0.45
+        Piercing: 0.55
         Heat: 0.7
         Radiation: 0.55
         Caustic: 0.75
   - type: ClothingSpeedModifier
     walkModifier: 0.95
-    sprintModifier: 0.9
+    sprintModifier: 0.95
 
 - type: entity
   parent: ClothingOuterHardsuitNfsdBronze
   id: ClothingOuterHardsuitNfsdSilver
-  name: Colsec silver patrol suit
-  description: The standard-issue Colsec space proof suit for patrol duty. This silver variant has officer rank markings.
+  name: TSFMC M73 tacsuit
+  description: The standard-issue TSFMC tacsuit for patrol duty. This silver variant has corporal rank markings.
   components:
   - type: Sprite
     sprite: _NF/Clothing/OuterClothing/Hardsuits/nfsd_silver.rsi
@@ -191,8 +191,8 @@
 - type: entity
   parent: ClothingOuterHardsuitNfsdBronze
   id: ClothingOuterHardsuitNfsdGold
-  name: Colsec gold patrol suit
-  description: The standard-issue Colsec space proof suit for patrol duty. This gold variant has supervisor rank markings.
+  name: TSFMC M73 tacsuit
+  description: The standard-issue TSFMC tacsuit for patrol duty. This gold variant has senior rank markings.
   components:
   - type: Sprite
     sprite: _NF/Clothing/OuterClothing/Hardsuits/nfsd_gold.rsi
@@ -202,10 +202,10 @@
     clothingPrototype: ClothingHeadHelmetHardsuitNfsdGold
 
 - type: entity
-  parent: [ ClothingOuterHardsuitSecurityRed, BaseC3ExpeditionContraband ]
+  parent: ClothingOuterHardsuitBaseNFNfsd
   id: ClothingOuterHardsuitNfsdSheriff
-  name: Colsec sheriff patrol suit
-  description: The standard-issue Colsec space proof suit for patrol duty. This gold variant has sheriff rank markings.
+  name: TSFMC M92 tacsuit
+  description: A heavy tacsuit, capable of taking a lot of physical damage.
   components:
   - type: Sprite
     sprite: _NF/Clothing/OuterClothing/Hardsuits/nfsd_sheriff.rsi
@@ -213,12 +213,26 @@
     sprite: _NF/Clothing/OuterClothing/Hardsuits/nfsd_sheriff.rsi
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitNfsdSheriff
+  - type: ExplosionResistance
+    damageCoefficient: 0.5
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.4
+        Slash: 0.25
+        Piercing: 0.4
+        Heat: 0.55
+        Radiation: 0.55
+        Caustic: 0.75
+  - type: ClothingSpeedModifier
+    walkModifier: 0.9
+    sprintModifier: 0.9
 
 - type: entity
   parent: ClothingOuterHardsuitNfsdBronze
   id: ClothingOuterHardsuitNfsdBrigmedic
-  name: Colsec brigmedic patrol suit
-  description: The standard-issue Colsec space proof suit for patrol duty. This brighter variant has brigmedic rank markings.
+  name: TSFMC M73-M tacsuit
+  description: A variant of the M73 tacsuit for combat medical and NBC use. Provides greater caustic and radiation protection.
   components:
   - type: Sprite
     sprite: _NF/Clothing/OuterClothing/Hardsuits/nfsd_brigmed.rsi
@@ -226,12 +240,21 @@
     sprite: _NF/Clothing/OuterClothing/Hardsuits/nfsd_brigmed.rsi
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitNfsdBrigmedic
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.6
+        Slash: 0.5
+        Piercing: 0.6
+        Heat: 0.45
+        Radiation: 0.35
+        Caustic: 0.35
 
 - type: entity
   parent: [BaseC2ContrabandUnredeemable, ClothingOuterHardsuitJuggernaut, BaseC3ExpeditionContraband] # Jugger Suit
   id: ClothingOuterHardsuitNfsdExperimental
-  name: Colsec experimental combat suit
-  description: A very heavily armored Colsec suit. This space proof marvel of engineering uses state of the art alloys to provide immense protection while sacrificing little mobility.
+  name: TSFMC M92-X tacsuit
+  description: A experimental modification of the M92 tacsuit for spec-ops units of the TSFMC. Externally the same, internally its higher-quality alloys and fabric.
   components:
   - type: Sprite
     sprite: _NF/Clothing/OuterClothing/Hardsuits/nfsd_experimental.rsi
@@ -248,11 +271,11 @@
     modifiers:
       coefficients:
         Blunt: 0.2
-        Slash: 0.2
-        Piercing: 0.2
-        Heat: 0.2
-        Radiation: 0.2
-        Caustic: 0.2
+        Slash: 0.25
+        Piercing: 0.25
+        Heat: 0.15
+        Radiation: 0.1
+        Caustic: 0.15
   - type: ClothingSpeedModifier
     walkModifier: 0.75
     sprintModifier: 0.65
@@ -263,8 +286,8 @@
 - type: entity
   parent: [ ClothingOuterHardsuitBaseNFNfsd, BaseC3ExpeditionContraband ]
   id: ClothingOuterHardsuitNfsdCombat
-  name: Colsec combat suit
-  description: A heavily armored Colsec suit. Space proof, with thick armor plating at the expense of mobility.
+  name: TSFMC M93 tacsuit
+  description: A heavily armored TSFMC suit. Space proof, with thick armor plating at the expense of mobility.
   components:
   - type: Sprite
     sprite: _NF/Clothing/OuterClothing/Hardsuits/nfsd_combat.rsi
@@ -277,22 +300,22 @@
   - type: Armor  # Hardlight change.
     modifiers:
       coefficients:
-        Blunt: 0.5
-        Slash: 0.5
-        Piercing: 0.3
-        Heat: 0.60
-        Radiation: 0.50
-        Caustic: 0.7
-  - type: ClothingSpeedModifier  # Hardlight change 25 percent is way to much for the little armor it gives
-    walkModifier: 0.85
-    sprintModifier: 0.85
+        Blunt: 0.25
+        Slash: 0.35
+        Piercing: 0.35
+        Heat: 0.25
+        Radiation: 0.2
+        Caustic: 0.35
+  - type: ClothingSpeedModifier
+    walkModifier: 0.825
+    sprintModifier: 0.825
 
 #Security Command Hardsuit
 - type: entity
-  parent: [ClothingOuterHardsuitSyndieCommander, BaseC3ExpeditionContraband ]
-  id: ClothingOuterHardsuitNfsdCommand # Hardlight change
-  name: Colsec command combat suit
-  description: A heavily armored Colsec suit. Space proof, with thick armor plating at the expense of mobility with built in Non-slip boots. This variant has supervisor rank markings
+  parent: ClothingOuterHardsuitBaseNFNfsd
+  id: ClothingOuterHardsuitNfsdCommand
+  name: TSFMC M93-C tacsuit
+  description: A variant of the M93 tacsuit with slightly better plating. It isn't much extra.
   components:
   - type: Sprite
     sprite: _NF/Clothing/OuterClothing/Hardsuits/nfsd_command.rsi
@@ -301,20 +324,19 @@
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitNfsdCommand
   - type: ExplosionResistance
-    damageCoefficient: 0.4
+    damageCoefficient: 0.35
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.5
-        Slash: 0.5
-        Piercing: 0.5
-        Heat: 0.50
-        Radiation: 0.4
-        Caustic: 0.6
-  - type: ClothingSpeedModifier  # Hardlight Change  this is to match bloodred commander
-    walkModifier: 0.9
-    sprintModifier: 0.9
-  - type: NoSlip  # Hardlight change  Sheriff should be hte only one with this
+        Blunt: 0.225
+        Slash: 0.325
+        Piercing: 0.325
+        Heat: 0.25
+        Radiation: 0.15
+        Caustic: 0.25
+  - type: ClothingSpeedModifier
+    walkModifier: 0.8
+    sprintModifier: 0.8
 
 # SCAF hardsuit
 - type: entity
@@ -327,16 +349,16 @@
     sprite: _NF/Clothing/OuterClothing/Hardsuits/scaf.rsi
   - type: Clothing
     sprite: _NF/Clothing/OuterClothing/Hardsuits/scaf.rsi
-  - type: Armor # Kept original scaf stats
+  - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.7
-        Slash: 0.7
-        Piercing: 0.4
-        Heat: 0.9
-        Caustic: 0.9
+        Blunt: 0.55
+        Slash: 0.55
+        Piercing: 0.45
+        Heat: 0.65
+        Caustic: 0.65
   - type: ExplosionResistance
-    damageCoefficient: 0.8
+    damageCoefficient: 0.55
   - type: PressureProtection
     highPressureMultiplier: 0.5
     lowPressureMultiplier: 1000

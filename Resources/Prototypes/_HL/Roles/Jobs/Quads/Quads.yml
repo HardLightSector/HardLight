@@ -1,0 +1,76 @@
+- type: job
+  id: MedicalQuadBorg
+  name: job-name-medical-quadborg
+  description: job-description-medical-quadborg
+  playTimeTracker: JobMedicalQuadBorg
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 21600 #6 hrs floof
+    - !type:DepartmentTimeRequirement
+      department: Medical
+      time: 3600 #1 hrs floof
+  canBeAntag: false
+  icon: JobIconMedicalBorg
+  supervisors: job-supervisors-cmo
+  jobEntity: PlayerBorgQuadmed
+
+- type: job
+  id: ServiceQuadBorg
+  name: job-name-service-quadborg
+  description: job-description-service-quadborg
+  playTimeTracker: JobServiceQuadBorg
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 21600 #6 hrs floof
+  canBeAntag: false
+  icon: JobIconServiceBorg
+  supervisors: job-supervisors-hop
+  jobEntity: PlayerBorgQuadserv
+
+- type: job
+  id: SalvageQuadBorg
+  name: job-name-salvage-quadborg
+  description: job-description-salvage-quadborg
+  playTimeTracker: JobSalvageQuadBorg
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 21600 #6 hrs floof
+    - !type:DepartmentTimeRequirement
+      department: Cargo
+      time: 3600 #1 hrs floof
+  canBeAntag: false
+  icon: JobIconSalvageBorg
+  supervisors: job-supervisors-Quartermaster
+  jobEntity: PlayerBorgQuadsalv
+
+- type: job
+  id: SecurityQuadBorg
+  name: job-name-security-quadborg
+  description: job-description-security-quadborg
+  playTimeTracker: JobSecurityQuadBorg
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 21600 #6 hrs floof
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 3600 #1 hrs floof
+  canBeAntag: false
+  icon: JobIconSecurityBorg
+  supervisors: job-supervisors-hos
+  jobEntity: PlayerBorgQuad
+
+- type: job
+  id: EngineeringQuadBorg
+  name: job-name-Engineering-quadborg
+  description: job-description-Engineering-quadborg
+  playTimeTracker: JobEngineeringQuadBorg
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 21600 #6 hrs floof
+    - !type:DepartmentTimeRequirement
+      department: Engineering
+      time: 3600 #1 hrs floof
+  canBeAntag: false
+  icon: JobIconEngineeringBorg
+  supervisors: job-supervisors-ChiefEngineer
+  jobEntity: PlayerBorgQuadEngineer

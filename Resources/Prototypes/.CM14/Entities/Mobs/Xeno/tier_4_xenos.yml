@@ -2,6 +2,7 @@
   parent: CMXenoDeveloped
   id: CMXenoQueen_Test
   name: Queen (Test)
+  categories: [ HideSpawnMenu ]
   description: The most vital member of the hive.
   components:
     - type: Sprite

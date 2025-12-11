@@ -4,8 +4,8 @@ meta:
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 11/24/2025 23:43:40
-  entityCount: 28342
+  time: 11/29/2025 20:15:21
+  entityCount: 28358
 maps:
 - 780
 grids:
@@ -14034,7 +14034,7 @@ entities:
       pos: 24.5,16.5
       parent: 8364
     - type: Door
-      secondsUntilStateChange: -98991.75
+      secondsUntilStateChange: -99774.664
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -15592,7 +15592,7 @@ entities:
       pos: 9.5,25.5
       parent: 8364
     - type: Door
-      secondsUntilStateChange: -12248.238
+      secondsUntilStateChange: -13031.152
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -16611,6 +16611,34 @@ entities:
     components:
     - type: Transform
       pos: -12.664007,-72.46974
+      parent: 8364
+- proto: AmmoBox12_gaugeBuckshot
+  entities:
+  - uid: 23637
+    components:
+    - type: Transform
+      pos: 2.813438,39.8126
+      parent: 8364
+- proto: AmmoBox12_gaugeSlug
+  entities:
+  - uid: 23537
+    components:
+    - type: Transform
+      pos: 2.860313,39.578224
+      parent: 8364
+- proto: AmmoBox23x75mmBuckshot
+  entities:
+  - uid: 10087
+    components:
+    - type: Transform
+      pos: 2.250938,39.8126
+      parent: 8364
+- proto: AmmoBox23x75mmSlug
+  entities:
+  - uid: 10079
+    components:
+    - type: Transform
+      pos: 2.266563,39.546974
       parent: 8364
 - proto: AnomalyScanner
   entities:
@@ -74208,6 +74236,21 @@ entities:
     - type: Transform
       pos: -25.5,-36.5
       parent: 8364
+- proto: ComputerShipyardMedical
+  entities:
+  - uid: 23642
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 29.5,-21.5
+      parent: 8364
+- proto: ComputerShipyardSecurity
+  entities:
+  - uid: 23641
+    components:
+    - type: Transform
+      pos: 6.5,28.5
+      parent: 8364
 - proto: ComputerSolarControl
   entities:
   - uid: 5722
@@ -85988,6 +86031,23 @@ entities:
     - type: Transform
       pos: 59.5,-19.5
       parent: 8364
+- proto: explosivelasergun
+  entities:
+  - uid: 9388
+    components:
+    - type: Transform
+      pos: 4.563438,39.515724
+      parent: 8364
+  - uid: 9538
+    components:
+    - type: Transform
+      pos: 4.579063,39.671974
+      parent: 8364
+  - uid: 10029
+    components:
+    - type: Transform
+      pos: 4.563438,39.34385
+      parent: 8364
 - proto: ExplosivesSignMed
   entities:
   - uid: 18369
@@ -88536,7 +88596,7 @@ entities:
       pos: 18.5,-13.5
       parent: 8364
     - type: Door
-      secondsUntilStateChange: -6222.748
+      secondsUntilStateChange: -7005.6616
       state: Closing
   - uid: 13388
     components:
@@ -88544,7 +88604,7 @@ entities:
       pos: 18.5,-14.5
       parent: 8364
     - type: Door
-      secondsUntilStateChange: -6258.448
+      secondsUntilStateChange: -7041.362
       state: Closing
   - uid: 13389
     components:
@@ -88712,7 +88772,7 @@ entities:
       pos: -34.5,-14.5
       parent: 8364
     - type: Door
-      secondsUntilStateChange: -93180.29
+      secondsUntilStateChange: -93963.2
       state: Closing
   - uid: 15010
     components:
@@ -127340,9 +127400,9 @@ entities:
           showEnts: False
           occludes: True
           ents:
-          - 9375
           - 9374
           - 9376
+          - 9375
         paper_label: !type:ContainerSlot
           showEnts: False
           occludes: True
@@ -130168,6 +130228,13 @@ entities:
     - type: Transform
       pos: 60.50045,-17.347412
       parent: 8364
+- proto: LessLethalVendingMachine
+  entities:
+  - uid: 26258
+    components:
+    - type: Transform
+      pos: -10.5,21.5
+      parent: 8364
 - proto: Lighter
   entities:
   - uid: 9709
@@ -132022,28 +132089,6 @@ entities:
       parent: 8364
     - type: BallisticAmmoProvider
       unspawnedCount: 12
-- proto: NFAmmunitionBoxShellShotgunBuckshot
-  entities:
-  - uid: 9388
-    components:
-    - type: Transform
-      pos: 2.7149048,39.67169
-      parent: 8364
-  - uid: 9518
-    components:
-    - type: Transform
-      pos: 2.7149048,39.41707
-      parent: 8364
-  - uid: 9538
-    components:
-    - type: Transform
-      pos: 2.335275,39.66707
-      parent: 8364
-  - uid: 10029
-    components:
-    - type: Transform
-      pos: 2.335275,39.407806
-      parent: 8364
 - proto: NFAmmunitionBoxShellShotgunPractice
   entities:
   - uid: 28334
@@ -132193,6 +132238,13 @@ entities:
     - type: Transform
       pos: 21.387924,36.2875
       parent: 8364
+- proto: NFWeaponEnergyRifleSniperCannonExpedition
+  entities:
+  - uid: 9518
+    components:
+    - type: Transform
+      pos: 4.454063,39.5626
+      parent: 8364
 - proto: NitrogenCanister
   entities:
   - uid: 3026
@@ -132273,6 +132325,13 @@ entities:
     components:
     - type: Transform
       pos: 54.482033,-24.522997
+      parent: 8364
+- proto: NonLethalVendingMachine
+  entities:
+  - uid: 27931
+    components:
+    - type: Transform
+      pos: -8.5,21.5
       parent: 8364
 - proto: NoticeBoard
   entities:
@@ -132355,6 +132414,15 @@ entities:
           ents: []
         machine_parts: !type:Container
           ents: []
+- proto: Oracle
+  entities:
+  - uid: 23638
+    components:
+    - type: Transform
+      pos: 67.5,-15.5
+      parent: 8364
+    missingComponents:
+    - InnatePsionicPowers
 - proto: OreProcessor
   entities:
   - uid: 14191
@@ -150982,6 +151050,15 @@ entities:
     - type: Transform
       pos: -57.5,-61.5
       parent: 8364
+- proto: SophicScribe
+  entities:
+  - uid: 23639
+    components:
+    - type: Transform
+      pos: 65.5,-15.5
+      parent: 8364
+    missingComponents:
+    - InnatePsionicPowers
 - proto: SpaceVillainArcadeComputerCircuitboard
   entities:
   - uid: 21709
@@ -151370,6 +151447,18 @@ entities:
     - type: Transform
       pos: 21.5,3.5
       parent: 8364
+- proto: SpawnPointContractor
+  entities:
+  - uid: 23643
+    components:
+    - type: Transform
+      pos: -56.5,-2.5
+      parent: 8364
+  - uid: 23644
+    components:
+    - type: Transform
+      pos: -56.5,-0.5
+      parent: 8364
 - proto: SpawnPointDetective
   entities:
   - uid: 5344
@@ -151513,6 +151602,18 @@ entities:
     - type: Transform
       pos: 41.5,-28.5
       parent: 8364
+- proto: SpawnPointMercenary
+  entities:
+  - uid: 23654
+    components:
+    - type: Transform
+      pos: -60.5,-0.5
+      parent: 8364
+  - uid: 23655
+    components:
+    - type: Transform
+      pos: -60.5,-2.5
+      parent: 8364
 - proto: SpawnPointMime
   entities:
   - uid: 10442
@@ -151562,6 +151663,18 @@ entities:
     components:
     - type: Transform
       pos: -42.5,3.5
+      parent: 8364
+- proto: SpawnPointPilot
+  entities:
+  - uid: 23678
+    components:
+    - type: Transform
+      pos: -61.5,-0.5
+      parent: 8364
+  - uid: 25306
+    components:
+    - type: Transform
+      pos: -61.5,-3.5
       parent: 8364
 - proto: SpawnPointPsychologist
   entities:
@@ -159082,6 +159195,13 @@ entities:
     - type: Transform
       pos: 29.5,-0.5
       parent: 8364
+- proto: VendingMachineAmmo
+  entities:
+  - uid: 28357
+    components:
+    - type: Transform
+      pos: -6.5,21.5
+      parent: 8364
 - proto: VendingMachineAtmosDrobe
   entities:
   - uid: 22972
@@ -159407,12 +159527,26 @@ entities:
     - type: Transform
       pos: 45.5,-22.5
       parent: 8364
+- proto: VendingMachineMercVend
+  entities:
+  - uid: 27930
+    components:
+    - type: Transform
+      pos: -9.5,21.5
+      parent: 8364
 - proto: VendingMachineNutri
   entities:
   - uid: 10715
     components:
     - type: Transform
       pos: 45.5,-6.5
+      parent: 8364
+- proto: VendingMachinePickNPack
+  entities:
+  - uid: 28133
+    components:
+    - type: Transform
+      pos: -7.5,21.5
       parent: 8364
 - proto: VendingMachineRoboDrobe
   entities:
@@ -159435,6 +159569,11 @@ entities:
     - type: Transform
       pos: -27.5,-29.5
       parent: 8364
+  - uid: 28358
+    components:
+    - type: Transform
+      pos: -5.5,21.5
+      parent: 8364
 - proto: VendingMachineSciDrobe
   entities:
   - uid: 5503
@@ -159444,11 +159583,6 @@ entities:
       parent: 8364
 - proto: VendingMachineSec
   entities:
-  - uid: 10079
-    components:
-    - type: Transform
-      pos: 6.5,40.5
-      parent: 8364
   - uid: 10080
     components:
     - type: Transform
@@ -159470,6 +159604,13 @@ entities:
     components:
     - type: Transform
       pos: 6.5,39.5
+      parent: 8364
+- proto: VendingMachineSecurityVend1
+  entities:
+  - uid: 9208
+    components:
+    - type: Transform
+      pos: 6.5,40.5
       parent: 8364
 - proto: VendingMachineSeeds
   entities:
@@ -178549,28 +178690,6 @@ entities:
     - type: Transform
       pos: 25.540077,32.58242
       parent: 8364
-- proto: WeaponLaserCarbine
-  entities:
-  - uid: 8570
-    components:
-    - type: Transform
-      pos: 4.4934177,39.504333
-      parent: 8364
-  - uid: 8571
-    components:
-    - type: Transform
-      pos: 4.4934177,39.39322
-      parent: 8364
-  - uid: 9172
-    components:
-    - type: Transform
-      pos: 4.4934177,39.629333
-      parent: 8364
-  - uid: 23537
-    components:
-    - type: Transform
-      pos: 4.4934177,39.747383
-      parent: 8364
 - proto: WeaponLaserCarbinePractice
   entities:
   - uid: 4645
@@ -178592,27 +178711,29 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: WeaponShotgunKammerer
+- proto: WeaponShotgunBigJohnny
   entities:
+  - uid: 9172
+    components:
+    - type: Transform
+      pos: 3.594688,39.40635
+      parent: 8364
+- proto: WeaponShotgunVortex
+  entities:
+  - uid: 8570
+    components:
+    - type: Transform
+      pos: 3.547813,39.8751
+      parent: 8364
+  - uid: 8571
+    components:
+    - type: Transform
+      pos: 3.563438,39.734474
+      parent: 8364
   - uid: 8642
     components:
     - type: Transform
-      pos: 3.5233402,39.390335
-      parent: 8364
-  - uid: 9208
-    components:
-    - type: Transform
-      pos: 3.5233402,39.53617
-      parent: 8364
-  - uid: 10087
-    components:
-    - type: Transform
-      pos: 3.5233402,39.668114
-      parent: 8364
-  - uid: 26258
-    components:
-    - type: Transform
-      pos: 3.5474372,39.816833
+      pos: 3.594688,39.578224
       parent: 8364
 - proto: WeaponSubMachineGunDrozd
   entities:

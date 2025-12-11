@@ -1,0 +1,11 @@
+- type: entity
+  id: PrisonerIDCard
+  parent: IDCardStandard
+  name: prisoner ID card
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/id_cards.rsi
+    layers:
+    - state: orange
+    - state: idprisoner
+  - type: GenpopIdCard

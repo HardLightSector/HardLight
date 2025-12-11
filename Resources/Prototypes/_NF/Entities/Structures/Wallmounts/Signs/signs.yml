@@ -55,8 +55,8 @@
 - type: entity
   parent: BaseSignDirectionalNF
   id: SignDirectionalNfsd
-  name: Colsec outpost sign
-  description: A direction sign, pointing out which way a Colsec outpost is.
+  name: TSFMC outpost sign
+  description: A direction sign, pointing out which way an TSFMC outpost is.
   components:
   - type: Sprite
     state: direction_nfsd
@@ -78,7 +78,7 @@
   components:
   - type: Sprite
     state: direction_vend
- 
+
 # Directional Station Guide Signs
 - type: entity
   parent: BaseSign
@@ -87,12 +87,12 @@
   components:
     - type: Sprite
       sprite: _NF/Structures/Wallmounts/signs.rsi
-      
+
 - type: entity
   parent: NFBaseSign
   id: SignNfsd
-  name: Colsec sign
-  description: A sign that marks the area beyond as a Colsec area.
+  name: TSFMC sign
+  description: A sign that marks the area beyond as an TSFMC area.
   components:
   - type: Sprite
     state: nfsd
@@ -101,7 +101,7 @@
   parent: NFBaseSign
   id: SignNfsdArmoury
   name: armory sign
-  description: A sign that marks the area beyond as a Colsec armory.
+  description: A sign that marks the area beyond as an TSFMC armory.
   components:
   - type: Sprite
     state: armoury
@@ -110,7 +110,7 @@
   parent: NFBaseSign
   id: SignNfsdBrief
   name: briefing sign
-  description: A sign that marks the area beyond as a Colsec briefing room.
+  description: A sign that marks the area beyond as an TSFMC briefing room.
   components:
   - type: Sprite
     state: brief
@@ -119,7 +119,7 @@
   parent: NFBaseSign
   id: SignNfsdBrig
   name: brig sign
-  description: A sign that marks the area beyond as a Colsec brig.
+  description: A sign that marks the area beyond as an TSFMC brig.
   components:
   - type: Sprite
     state: brig
@@ -128,7 +128,7 @@
   parent: NFBaseSign
   id: SignNfsdBrigmed
   name: medbay sign
-  description: A sign that marks the area beyond as a Colsec medbay.
+  description: A sign that marks the area beyond as an TSFMC medbay.
   components:
   - type: Sprite
     state: brigmed
@@ -137,7 +137,7 @@
   parent: NFBaseSign
   id: SignNfsdDetective
   name: detective sign
-  description: A sign that marks the area beyond as a Colsec detective's office.
+  description: A sign that marks the area beyond as an TSFMC detective's office.
   components:
   - type: Sprite
     state: detective
@@ -146,7 +146,7 @@
   parent: NFBaseSign
   id: SignNfsdLaw
   name: lawyer sign
-  description: A sign that marks the area beyond as a Colsec lawyer's office.
+  description: A sign that marks the area beyond as an TSFMC lawyer's office.
   components:
   - type: Sprite
     state: law
@@ -155,7 +155,7 @@
   parent: NFBaseSign
   id: SignNfsdRange
   name: shooting range sign
-  description: A sign that marks the area beyond as a Colsec shooting range.
+  description: A sign that marks the area beyond as an TSFMC shooting range.
   components:
   - type: Sprite
     state: range
@@ -164,7 +164,7 @@
   parent: NFBaseSign
   id: SignNfsdEvidence
   name: evidence sign
-  description: A sign that marks the area beyond as a Colsec evidence room.
+  description: A sign that marks the area beyond as an TSFMC evidence room.
   components:
   - type: Sprite
     state: evidence

@@ -142,8 +142,8 @@
 - type: entity
   parent: ClothingHeadBaseButcherable
   id: ClothingHeadHatNfsdBeretGreen
-  name: Colsec beret
-  description: A green beret for use by Colsec officers.
+  name: TSFMC beret
+  description: A green beret for use by TSFMC officers.
   components:
   - type: Sprite
     sprite: _NF/Clothing/Head/Hats/nfsd_beret_green.rsi
@@ -154,8 +154,8 @@
 - type: entity
   parent: ClothingHeadBaseButcherable
   id: ClothingHeadHatNfsdBeretBrown
-  name: Colsec beret
-  description: A brown beret for use by Colsec officers.
+  name: TSFMC beret
+  description: A brown beret for use by TSFMC officers.
   components:
   - type: Sprite
     sprite: _NF/Clothing/Head/Hats/nfsd_beret_brown.rsi
@@ -166,8 +166,8 @@
 - type: entity
   parent: ClothingHeadBaseButcherable
   id: ClothingHeadHatNfsdBeretCream
-  name: Colsec beret
-  description: A cream beret for use by Colsec officers.
+  name: TSFMC beret
+  description: A cream beret for use by TSFMC officers.
   components:
   - type: Sprite
     sprite: _NF/Clothing/Head/Hats/nfsd_beret_cream.rsi
@@ -178,7 +178,7 @@
 - type: entity
   parent: ClothingHeadBaseButcherable
   id: ClothingHeadHatNfsdCampaign
-  name: Colsec campaign hat
+  name: TSFMC campaign hat
   description: Yeehaw, partner.
   components:
   - type: Sprite
@@ -207,7 +207,7 @@
 - type: entity
   parent: ClothingHeadHatNfsdCampaign
   id: ClothingHeadHatNfsdCampaignFilled
-  name: Colsec campaign hat
+  name: TSFMC campaign hat
   description: Yeehaw, partner.
   suffix: Filled
   components:
@@ -220,7 +220,7 @@
 - type: entity
   parent: ClothingHeadBaseButcherable
   id: ClothingHeadHatNfsdSmallCampaign
-  name: Colsec campaign cap
+  name: TSFMC campaign cap
   description: All yee, no haw.
   components:
   - type: Sprite

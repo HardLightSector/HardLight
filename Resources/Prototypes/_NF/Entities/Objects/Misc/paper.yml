@@ -46,7 +46,7 @@
   parent: BoxFolderBase
   name: PAL folder
   suffix: Green
-  description: A folder to contain important NFSD forms.
+  description: A folder to contain important TSF forms.
   components:
   - type: Sprite
     sprite: _NF/Objects/Misc/bureaucracy.rsi
@@ -71,7 +71,7 @@
   parent: BoxFolderBase
   name: PAL folder
   suffix: Brown
-  description: A folder to contain important NFSD forms.
+  description: A folder to contain important TSF forms.
   components:
   - type: Sprite
     sprite: _NF/Objects/Misc/bureaucracy.rsi

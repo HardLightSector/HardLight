@@ -36,6 +36,7 @@ using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Timing;
 using Content.Client._Mono.Radar;
+using Content.Shared._Mono.Company;
 using Content.Shared._Mono.Radar;
 using Robust.Shared.Prototypes;
 using System.Linq;
@@ -446,7 +447,38 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
                         Y = -labelDimensions.Y / 2f
                     };
 
-                    handle.DrawString(Font, (uiPosition + labelOffset) * UIScale, labelText, UIScale, labelColor);
+                    // Get company color if entity has CompanyComponent
+                    var displayColor = labelColor;
+                    if (EntManager.TryGetComponent(gUid, out Shared._Mono.Company.CompanyComponent? companyComp) &&
+                        !string.IsNullOrEmpty(companyComp.CompanyName))
+                    {
+                        var prototypeManager = IoCManager.Resolve<IPrototypeManager>();
+                        CompanyPrototype? prototype = null;
+                        if (prototypeManager.TryIndex(companyComp.CompanyName, out prototype) && prototype != null)
+                        {
+                            displayColor = prototype.Color;
+                        }
+                    }
+
+                    // Split label text into lines
+                    var lines = labelText.Split('\n');
+                    var mainLabel = lines[0];
+
+                    // Draw main ship label with company color if available
+                    handle.DrawString(Font, (uiPosition + labelOffset) * UIScale, mainLabel, UIScale * 0.9f, displayColor);
+
+                    // Draw company label if present
+                    if (lines.Length > 1)
+                    {
+                        var companyLabel = lines[1];
+                        var companyLabelOffset = new Vector2(
+                            labelOffset.X,
+                            labelOffset.Y + handle.GetDimensions(Font, mainLabel, 0.9f).Y
+                        );
+
+                        handle.DrawString(Font, (uiPosition + companyLabelOffset) * UIScale, companyLabel, UIScale * 0.9f, displayColor);
+                    }
+
                     if (isMouseOver && !HideCoords)
                     {
                         var coordDimensions = handle.GetDimensions(Font, coordsText, 0.7f);

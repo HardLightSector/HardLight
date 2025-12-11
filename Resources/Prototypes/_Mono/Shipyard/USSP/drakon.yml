@@ -1,0 +1,35 @@
+- type: vessel
+  id: Drakon
+  parent: BaseVesselAntag
+  name: NCS Drakon
+  description: A fast brawler with heavy armor and ballistic armaments.
+  price: 78290
+  category: Medium
+  group: Ussp
+  shuttlePath: /Maps/_Mono/Shuttles/USSP/drakon.yml
+  guidebookPage: Null
+  class:
+  - Pursuit
+  engine:
+  - AME
+
+- type: gameMap
+  id: Drakon
+  mapName: 'Drakon'
+  mapPath: /Maps/_Mono/Shuttles/USSP/drakon.yml
+  minPlayers: 0
+  stations:
+    Drakon:
+      stationProto: StandardFrontierVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Drakon USSP{1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            USSPSergeant: [0, 0]
+            USSPCorporal: [0, 0]
+            USSPMedic: [0, 0]
+            USSPRifleman: [0, 0]

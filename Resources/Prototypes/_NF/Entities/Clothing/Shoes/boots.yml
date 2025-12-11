@@ -13,7 +13,7 @@
 - type: entity
   parent: ClothingShoesBootsCombat
   id: ClothingShoesBootsNfsdBrown
-  name: Colsec brown boots
+  name: TSFMC brown boots
   description: Stylish boots for running in circles on a deck during emergencies.
   components:
   - type: Sprite
@@ -24,7 +24,7 @@
 - type: entity
   parent: ClothingShoesBootsCombat
   id: ClothingShoesBootsNfsdCream
-  name: Colsec cream boots
+  name: TSFMC cream boots
   description: Stylish boots for running in circles on a deck during emergencies.
   components:
   - type: Sprite

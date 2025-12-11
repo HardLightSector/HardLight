@@ -4,11 +4,6 @@
   text: "/ServerInfo/Guidebook/Mobs/_DV/Felinid.xml"
 
 - type: guideEntry
-  id: Harpy
-  name: species-name-harpy
-  text: "/ServerInfo/Guidebook/Mobs/_DV/Harpy.xml"
-
-- type: guideEntry
   id: Vulpkanin
   name: species-name-vulpkanin
   text: "/ServerInfo/Guidebook/Mobs/_DV/Vulpkanin.xml"

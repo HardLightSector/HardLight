@@ -12,8 +12,6 @@ namespace Content.Shared.Cybernetics
 
         [Dependency] private readonly SharedActionsSystem _actions = default!;
 
-        [Dependency] private readonly GibbingSystem _gibbing = default!;
-
         [Dependency] private readonly BodySystem _body = default!;
 
         [Dependency] private readonly ExplosionSystem _explosion = default!;

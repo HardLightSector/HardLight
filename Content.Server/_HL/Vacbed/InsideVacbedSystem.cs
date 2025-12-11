@@ -6,7 +6,6 @@ namespace Content.Server._HL.Vacbed;
 
 public sealed partial class VacbedSystem
 {
-    [Dependency] private readonly IComponentFactory _componentFactory = default!;
 
     public override void InsideVacbedInit(EntityUid uid, InsideVacbedComponent insideVacbedComponent, ComponentInit args)
     {

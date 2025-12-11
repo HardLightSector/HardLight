@@ -82,6 +82,12 @@
     shipType: Energy
   - type: ShipGunClass
     shipClass: Medium
+  - type: ContainerContainer #HL start
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+  - type: Machine
+    board: Type35WeaponBoard #HL end
 
 # Type 54 autopulser
 
@@ -361,6 +367,12 @@
     shipType: Energy
   - type: ShipGunClass
     shipClass: Medium
+  - type: ContainerContainer #HL start
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+  - type: Machine
+    board: M220WeaponBoard #HL end
 
 # DYMERE
 
@@ -499,6 +511,12 @@
     shipType: Energy
   - type: ShipGunClass
     shipClass: Light
+  - type: ContainerContainer #HL start
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+  - type: Machine
+    board: L1PhalanxWeaponBoard #HL end
 
 # Apollo
 
@@ -557,6 +575,12 @@
         density: 1500
   - type: ShipGunType
     shipType: Energy
+  - type: ContainerContainer #HL start
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+  - type: Machine
+    board: ApolloWeaponBoard #HL end
 
 # PRE- FRACTURE
 # Tachyon Lance "Reaper"

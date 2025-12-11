@@ -1,0 +1,31 @@
+# DMR Cartridge Base
+- type: entity
+  id: BaseCartridgeDMR
+  name: cartridge (DMR)
+  parent: [ BaseCartridge, BaseC1Contraband ]
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+    - Cartridge
+    - CartridgeDMR
+  - type: CartridgeAmmo
+    proto: Bullet556x45mmFMJ
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+  - type: StaticPrice
+    price: 1
+
+# DMR Cartridge
+- type: entity
+  id: CartridgeDMR
+  name: cartridge (DMR)
+  parent: BaseCartridgeDMR
+  components:
+  - type: CartridgeAmmo
+    proto: Bullet556x45mmFMJ

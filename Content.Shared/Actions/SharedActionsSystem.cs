@@ -535,7 +535,7 @@ public abstract class SharedActionsSystem : EntitySystem
         }
 
         // Server-side fallback: if this is the xeno weeds action and no handler marked it handled,
-        // spawn weeds at the performer’s snapped coordinates and start the use delay.
+        // spawn weeds at the performer�s snapped coordinates and start the use delay.
         if (isWeeds && performEvent != null && !performEvent.Handled)
         {
             if (TryComp(user, out XenoComponent? xeno))
@@ -726,6 +726,18 @@ public abstract class SharedActionsSystem : EntitySystem
         _audio.PlayPredicted(action.Sound, performer, predicted ? performer : null);
 
         var dirty = toggledBefore != action.Toggled;
+
+        if (action.Charges != null)
+        {
+            dirty = true;
+            action.Charges--;
+            if (action is { Charges: 0, RenewCharges: false, DisableWhenEmpty: true }) // DeltaV - check DisableWhenEmpty
+            {
+                var disabledEv = new ActionGettingDisabledEvent(performer);
+                RaiseLocalEvent(actionId, ref disabledEv);
+                action.Enabled = false;
+            }
+        }
 
         action.Cooldown = null;
         if (action is { UseDelay: not null})

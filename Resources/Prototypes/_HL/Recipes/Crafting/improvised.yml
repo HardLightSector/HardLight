@@ -1,0 +1,8 @@
+- type: construction
+  id: MagazineRailgunImprovisedCrafting
+  graph: MagazineRailgunImprovisedCraftingGraph
+  startNode: start
+  targetNode: mag
+  category: construction-category-weapons
+  description: improvised-railgun-mag-desc
+  objectType: Item

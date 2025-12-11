@@ -2,6 +2,7 @@ using Content.Server.Shuttles.Systems;
 using Content.Server.Shuttles.Components;
 using Content.Shared.Station.Components;
 using Content.Server.Cargo.Systems;
+using Robust.Shared.Timing; // For IGameTiming
 using Content.Server.Station.Systems;
 using Content.Shared._NF.Shipyard.Components;
 using Content.Shared._NF.Shipyard;
@@ -45,8 +46,8 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
     [Dependency] private readonly IResourceManager _resources = default!;
     [Dependency] private readonly SharedContainerSystem _container = default!; // For safe container removal before deletion
     [Dependency] private readonly UseDelaySystem _useDelay = default!;
-    [Dependency] private readonly GravitySystem _gravitySystem = default!; // For post-load gravity refresh
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
+    [Dependency] private readonly IGameTiming _timing = default!; // For cooldown timing
 
     private EntityQuery<TransformComponent> _transformQuery;
 
@@ -56,6 +57,7 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
     private ISawmill _sawmill = default!;
     private bool _enabled;
     private float _baseSaleRate;
+    private readonly Dictionary<EntityUid, TimeSpan> _lastLoadCharge = new(); // Per-player load charge cooldown
 
     // The type of error from the attempted sale of a ship.
     public enum ShipyardSaleError

@@ -79,7 +79,7 @@
   parent: BaseSubdermalImplant
   id: TrackingImplant
   name: tracking implant
-  description: This implant has a condition monitor for the Colsec radio channel. # Frontier: Colsec mentioned, no tracking
+  description: This implant has a condition monitor for the TSFMC radio channel. # Frontier: NFSD mentioned, no tracking
   categories: [ HideSpawnMenu ]
   components:
     - type: SubdermalImplant
@@ -343,7 +343,7 @@
   parent: BaseSubdermalImplant
   id: MindShieldImplant
   name: mindshield implant
-  description: This implant will prevent mind control devices. # Hardlight, change description
+  description: This implant will ensure loyalty to the TSF and prevent mind control devices.
   categories: [ HideSpawnMenu ]
   components:
    - type: SubdermalImplant

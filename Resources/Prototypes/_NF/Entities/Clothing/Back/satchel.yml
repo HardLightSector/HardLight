@@ -28,7 +28,7 @@
 - type: entity
   parent: ClothingBackpackSatchelSecurity
   id: ClothingBackpackSatchelNfsdBrown
-  name: Colsec satchel
+  name: TSFMC satchel
   components:
   - type: Sprite
     sprite: _NF/Clothing/Back/Satchels/nfsd_brown.rsi

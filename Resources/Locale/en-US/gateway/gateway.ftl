@@ -13,3 +13,4 @@ gateway-docking-arm-already-spawned = Dock already spawned!
 gateway-docking-arm-spawn-failed = Failed to spawn dock!
 gateway-docking-arm-spawned = Dock spawned successfully!
 gateway-docking-arm-no-space = No clear space available to spawn dock!
+gateway-docking-arm-max-limit = Maximum dock limit reached!

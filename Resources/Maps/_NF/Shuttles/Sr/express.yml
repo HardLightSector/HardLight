@@ -29,7 +29,7 @@ entities:
   - uid: 1
     components:
     - type: MetaData
-      name: grid
+      name: TSF Arachnid
     - type: Transform
       pos: -0.546875,-0.484375
       parent: invalid

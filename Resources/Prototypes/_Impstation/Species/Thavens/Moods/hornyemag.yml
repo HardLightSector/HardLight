@@ -1,0 +1,64 @@
+﻿## i can't figure out how to add two datasets to a single attempt to add a mood so... eto bleh~
+
+- type: dataset
+  id: ThavenMoodsHornyEmag
+  values:
+  ## wildcard moods!
+  - CompulsiveLiar
+  - CompulsiveBeliever
+  - PlantPacifist
+  - PuddleDrinker
+  - SeekSin
+  - Nocrastinator
+  - Pope
+  - Cannibal
+  - Outlaw
+  #- ExtremeDepartmentDisapproval
+  - LoneActor
+  - Immortal
+  - Unknown
+  - VampireTalisman
+  - OutsideTheBox
+  - TheSims
+  - Spacewalk
+  - Pariah
+  - TouysBad
+  - StayDead
+  - Tourist
+  - CryWolf
+  - CaveDweller
+  - Daredevil
+  - FolkHero
+  - Blogger
+  - AnimalSacrifice
+  - GoldenThread
+  - FeyMood
+  - Borged
+  - AyeAye
+  - RankSnob
+  - AlwaysAlone
+  - CorporateConspiracy
+  - OppositeDay
+
+    ## horny moods start here!!
+  - BirthdaySuit
+  - FreakySpeak
+  - ServileHands
+  - HeatMagnet
+  - ObedientFreak
+  - StationPet
+  - DragItOut
+  - MyPrecious
+  - CodeSesso
+  - InHeat
+  - DoEyeContact
+  - DontEyeContact
+  - Fujoshi
+  - Himejoshi
+  - HornyCollector
+  - HornyDepartment
+  - Technophilia
+  - Cuck
+  - Sexpert
+  - FuckRock
+  - AttractiveSpecies

@@ -13,8 +13,8 @@
   id: McHobo
   parent: BasePOI
   name: Derelict McCargo
-  minimumDistance: 3250
-  maximumDistance: 5600
+  minimumDistance: 6250
+  maximumDistance: 7600
   spawnGroup: MarketStation
   gridPath: /Maps/_NF/POI/mchobo.yml
   addComponents:

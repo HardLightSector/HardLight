@@ -32,7 +32,7 @@
 - type: entity
   parent: [ LockerWallColorAme, StorageFillMaterialsFuelAmeJar ]
   id: LockerWallMaterialsFuelAmeJarFilled
-  suffix: Filled, AME Jar (x2)
+  suffix: Filled, AME Jar (x2), AME Controller
 
 - type: entity
   parent: [ LockerWallColorWelding, StorageFillMaterialsFuelWelding ]
@@ -75,7 +75,7 @@
   suffix: Filled
 
 - type: entity
-  parent: [ LockerWallEVAColorStc, StorageFillEVASuitStc ]
+  parent: [ LockerWallEVAColorStc, StorageFillEVASuitSr ]
   id: LockerWallEVAColorStcFilled
   suffix: Filled
 

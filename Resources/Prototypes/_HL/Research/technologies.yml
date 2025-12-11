@@ -28,3 +28,100 @@
   - BorgEnergyArmorMk1
   - BorgEnergyArmorMk2
   - BorgEnergyArmorMk3
+
+- type: technology
+  id: LightShuttleWeapons
+  name: research-technology-light-shuttle-weapons
+  icon:
+    sprite: _HL/Logo/shuttle_armament_research_t1.rsi
+    state: T1
+  discipline: Arsenal
+  tier: 1
+  cost: 30000
+  recipeUnlocks:
+  - L1PhalanxWeaponBoard
+  - L85AutocannonWeaponBoard
+  - AdderScattercannonWeaponBoard
+  - LightShieldBoard
+
+- type: technology
+  id: MediumShuttleWeapons
+  name: research-technology-medium-shuttle-weapons
+  icon:
+    sprite: _HL/Logo/shuttle_armament_research_t2.rsi
+    state: T2
+  discipline: Arsenal
+  tier: 2
+  cost: 60000
+  recipeUnlocks:
+  - Type35WeaponBoard
+  - M220WeaponBoard
+  - RAC30WeaponBoard
+  - DravonWeaponBoard
+  - AK570WeaponBoard
+  - CyrexaWeaponBoard
+  - BoforsWeaponBoard
+  - KargilWeaponBoard
+  - FangWeaponBoard
+  - ASM220WeaponBoard
+  - LightMunitionsBayWeaponBoard
+  - VesperaWeaponBoard
+  - ASM501WeaponBoard
+  - VanykWeaponBoard
+  - TovekWeaponBoard
+  - MediumShieldBoard
+
+- type: technology
+  id: HeavyShuttleWeapons
+  name: research-technology-heavy-shuttle-weapons
+  icon:
+    sprite: _HL/Logo/shuttle_armament_research_t3.rsi
+    state: T3
+  discipline: Arsenal
+  tier: 3
+  cost: 90000
+  recipeUnlocks:
+  - ApolloWeaponBoard
+  - TarnyxReloadWeaponBoard
+  - LongbowWeaponBoard
+  - CharonetteWeaponBoard
+  - SerpentMissileWeaponBoard
+  - HeavyShieldBoard
+
+- type: technology
+  id: CapitalShuttleWeapons
+  name: research-technology-capital-shuttle-weapons
+  icon:
+    sprite: _HL/Logo/shuttle_armament_research_t4.rsi
+    state: T4
+  discipline: Arsenal
+  tier: 3
+  cost: 120000
+  recipeUnlocks:
+  - CharonReloadWeaponBoard
+  - HadesWeaponBoard
+  - HydraWeaponBoard
+  - CapitalShieldBoard
+
+- type: technology
+  id: ShuttleWeaponMaterials
+  name: research-technology-shuttle-weapon-materials
+  icon:
+    sprite: _HL/Logo/shuttle_armament_research_t1.rsi
+    state: T1
+  discipline: Arsenal
+  tier: 1
+  cost: 10000
+  recipeUnlocks:
+  - LightShipWeaponFrame
+  - LightShipWeaponServo
+  - LightShipWeaponInternal
+  - MediumShipWeaponFrame
+  - MediumShipWeaponServo
+  - MediumShipWeaponInternal
+  - HeavyShipWeaponFrame
+  - HeavyShipWeaponServo
+  - HeavyShipWeaponInternal
+  - CapitalShipWeaponFrame
+  - CapitalShipWeaponServo
+  - CapitalShipWeaponInternal

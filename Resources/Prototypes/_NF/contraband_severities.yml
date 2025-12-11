@@ -10,6 +10,11 @@
   showDepartmentsAndJobs: true
 
 - type: contrabandSeverity
+  id: Class2Restricted
+  examineText: contraband-examine-text-Class2Restricted
+  showDepartmentsAndJobs: true
+
+- type: contrabandSeverity
   id: Class2Expedition
   examineText: contraband-examine-text-Class2Expedition
 

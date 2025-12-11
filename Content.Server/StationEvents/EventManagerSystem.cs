@@ -28,7 +28,6 @@ public sealed class EventManagerSystem : EntitySystem
     [Dependency] private readonly JobTrackingSystem _jobs = default!; // Frontier
     [Dependency] private readonly GlimmerSystem _glimmerSystem = default!; //Nyano - Summary: pulls in the glimmer system.
 
-    private ISawmill _sawmill = default!;
 
     public bool EventsEnabled { get; private set; }
     private void SetEnabled(bool value) => EventsEnabled = value;

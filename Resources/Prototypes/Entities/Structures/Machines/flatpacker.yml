@@ -77,6 +77,8 @@
         blacklist:
           components:
           - BindToStation
+          tags:
+          - UnFlatpackable
         whitelistFailPopup: flatpacker-item-cannot-be-flatpacked
         # End Frontier: keep grid-bound machines as they are
   - type: ContainerContainer

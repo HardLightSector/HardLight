@@ -55,7 +55,7 @@
     - id: BluespaceVaultSmallError
     - id: BluespaceSyndicateFTLInterception
     #- id: BluespaceWizardFederationScout
-    #- id: BluespaceBloodMoon
+    - id: BluespaceBloodMoon
     - id: BluespaceDungeonBasalt
     - id: BluespaceDungeonChromite
     - id: BluespaceDungeonSnow
@@ -1692,12 +1692,14 @@
     duration: 60
   - type: VentCrittersRule
     entries:
+    - id: XenoEggSpawner
+      prob: 0.01
     - id: MobXenoPraetorianNPC
-      prob: 0.05
+      prob: 0.001
     - id: MobXenoDroneNPC
       prob: 0.001
     - id: MobXenoQueenNPC
-      prob: 0.001
+      prob: 0.0001
     - id: MobXenoRavagerNPC
       prob: 0.001
     - id: MobXenoRunnerNPC

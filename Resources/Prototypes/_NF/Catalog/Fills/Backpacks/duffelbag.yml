@@ -58,17 +58,17 @@
       - id: NFWeaponLauncherGrenadeNfsd
       - id: NFBoxDartsTracking
 
-#- type: entity
-#  parent: ClothingBackpackDuffelNfsdBrown
-#  id: ClothingBackpackDuffelNfsdEmpBundle
-#  name: Colsec Lake EMP bundle
-#  description: "An old repainted China-Lake grenade launcher bundled with 10 rounds of EMP."
-#  components:
-#  - type: StorageFill
-#    contents:
-#      - id: WeaponLauncherNfsdLake
-#      - id: 40mmGrenadeEMP
-#        amount: 12
+- type: entity
+  parent: ClothingBackpackDuffelNfsdBrown
+  id: ClothingBackpackDuffelNfsdEmpBundle
+  name: TSFMC Lake EMP bundle
+  description: "An old repainted China-Lake grenade launcher bundled with 10 rounds of EMP."
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponLauncherNfsdLake
+      - id: GrenadeEMP
+        amount: 12
 
 # Not a duffelbag, but stored with other uplink-related backpacks
 - type: entity
@@ -219,11 +219,5 @@
 - type: entity
   parent: [ ClothingBackpackDuffelNfsdBrown, StorageFillEVASuitNfsd ]
   id: ClothingBackpackDuffelEVABundleNfsd
-  name: Colsec EVA bundle
-  suffix: Filled
-
-- type: entity
-  parent: [ NFClothingBackpackDuffelColorRed, StorageFillEVASuitStc ]
-  id: ClothingBackpackDuffelEVABundleStc
-  name: STC EVA bundle
+  name: TSFMC EVA bundle
   suffix: Filled

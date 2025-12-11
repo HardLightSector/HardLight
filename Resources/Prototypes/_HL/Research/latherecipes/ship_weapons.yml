@@ -1,0 +1,328 @@
+﻿#ship parts
+- type: latheRecipe
+  id: LightShipWeaponFrame
+  result: MaterialLightShipWeaponFrame1
+  completetime: 30
+  materials:
+    Steel: 5000
+    Plasteel: 3000
+    Uranium: 1000
+
+- type: latheRecipe
+  id: LightShipWeaponServo
+  result: MaterialLightShipWeaponServo1
+  completetime: 30
+  materials:
+    Steel: 2500
+    Plasteel: 1000
+    Gold: 600
+    Silver: 300
+
+- type: latheRecipe
+  id: LightShipWeaponInternal
+  result: MaterialLightShipWeaponInternal1
+  completetime: 30
+  materials:
+    Steel: 1000
+    Plastic: 500
+    Gold: 800
+    Silver: 600
+    Uranium: 600
+    Bluespace: 500
+
+- type: latheRecipe
+  id: MediumShipWeaponFrame
+  result: MaterialMediumShipWeaponFrame1
+  completetime: 30
+  materials:
+    Steel: 10000
+    Plasteel: 6000
+    Uranium: 2000
+
+- type: latheRecipe
+  id: MediumShipWeaponServo
+  result: MaterialMediumShipWeaponServo1
+  completetime: 30
+  materials:
+    Steel: 5000
+    Plasteel: 2000
+    Gold: 1200
+    Silver: 600
+
+- type: latheRecipe
+  id: MediumShipWeaponInternal
+  result: MaterialMediumShipWeaponInternal1
+  completetime: 30
+  materials:
+    Steel: 2000
+    Plastic: 1000
+    Gold: 1600
+    Silver: 1200
+    Uranium: 1200
+    Bluespace: 1000
+
+- type: latheRecipe
+  id: HeavyShipWeaponFrame
+  result: MaterialHeavyShipWeaponFrame1
+  completetime: 30
+  materials:
+    Steel: 15000
+    Plasteel: 9000
+    Uranium: 3000
+
+- type: latheRecipe
+  id: HeavyShipWeaponServo
+  result: MaterialHeavyShipWeaponServo1
+  completetime: 30
+  materials:
+    Steel: 7500
+    Plasteel: 3000
+    Gold: 1800
+    Silver: 900
+
+- type: latheRecipe
+  id: HeavyShipWeaponInternal
+  result: MaterialHeavyShipWeaponInternal1
+  completetime: 30
+  materials:
+    Steel: 3000
+    Plastic: 1500
+    Gold: 2400
+    Silver: 1800
+    Uranium: 1800
+    Bluespace: 1500
+
+- type: latheRecipe
+  id: CapitalShipWeaponFrame
+  result: MaterialCapitalShipWeaponFrame1
+  completetime: 30
+  materials:
+    Steel: 20000
+    Plasteel: 12000
+    Uranium: 4000
+
+- type: latheRecipe
+  id: CapitalShipWeaponServo
+  result: MaterialCapitalShipWeaponServo1
+  completetime: 30
+  materials:
+    Steel: 10000
+    Plasteel: 4000
+    Gold: 2400
+    Silver: 1200
+
+- type: latheRecipe
+  id: CapitalShipWeaponInternal
+  result: MaterialCapitalShipWeaponInternal1
+  completetime: 30
+  materials:
+    Steel: 4000
+    Plastic: 2000
+    Gold: 3200
+    Silver: 2400
+    Uranium: 2400
+    Bluespace: 2000
+
+#boards
+
+- type: latheRecipe
+  abstract: true
+  id: BaseWeaponBoardRecipe
+  completetime: 30
+  materials:
+    Steel: 100
+    Plastic: 300
+
+- type: latheRecipe
+  id: BaseLightWeaponBoardRecipe
+  abstract: true
+  parent: BaseWeaponBoardRecipe
+  materials:
+    Steel: 2000
+    Gold: 1000
+    Silver: 700
+    Uranium: 500
+
+- type: latheRecipe
+  id: BaseMediumWeaponBoardRecipe
+  abstract: true
+  parent: BaseWeaponBoardRecipe
+  materials:
+    Steel: 3000
+    Gold: 1500
+    Silver: 1050
+    Uranium: 750
+    Bluespace: 500
+
+- type: latheRecipe
+  id: BaseHeavyWeaponBoardRecipe
+  abstract: true
+  parent: BaseWeaponBoardRecipe
+  materials:
+    Steel: 4000
+    Gold: 2000
+    Silver: 1400
+    Uranium: 1000
+    Bluespace: 750
+
+- type: latheRecipe
+  id: BaseCapitalWeaponBoardRecipe
+  abstract: true
+  parent: BaseWeaponBoardRecipe
+  materials:
+    Steel: 5000
+    Gold: 2500
+    Silver: 1750
+    Uranium: 1250
+    Bluespace: 1000
+
+- type: latheRecipe
+  parent: BaseLightWeaponBoardRecipe
+  id: L1PhalanxWeaponBoard
+  result: L1PhalanxWeaponBoard
+
+- type: latheRecipe
+  parent: BaseLightWeaponBoardRecipe
+  id: L85AutocannonWeaponBoard
+  result: L85AutocannonWeaponBoard
+
+- type: latheRecipe
+  parent: BaseLightWeaponBoardRecipe
+  id: AdderScattercannonWeaponBoard
+  result: AdderScattercannonWeaponBoard
+
+- type: latheRecipe
+  parent: BaseLightWeaponBoardRecipe
+  id: LightShieldBoard
+  result: LightShieldBoard
+
+- type: latheRecipe
+  parent: BaseMediumWeaponBoardRecipe
+  id: Type35WeaponBoard
+  result: Type35WeaponBoard
+
+- type: latheRecipe
+  parent: BaseMediumWeaponBoardRecipe
+  id: M220WeaponBoard
+  result: M220WeaponBoard
+
+- type: latheRecipe
+  parent: BaseMediumWeaponBoardRecipe
+  id: RAC30WeaponBoard
+  result: RAC30WeaponBoard
+
+- type: latheRecipe
+  parent: BaseMediumWeaponBoardRecipe
+  id: DravonWeaponBoard
+  result: DravonWeaponBoard
+
+- type: latheRecipe
+  parent: BaseMediumWeaponBoardRecipe
+  id: AK570WeaponBoard
+  result: AK570WeaponBoard
+
+- type: latheRecipe
+  parent: BaseMediumWeaponBoardRecipe
+  id: CyrexaWeaponBoard
+  result: CyrexaWeaponBoard
+
+- type: latheRecipe
+  parent: BaseMediumWeaponBoardRecipe
+  id: BoforsWeaponBoard
+  result: BoforsWeaponBoard
+
+- type: latheRecipe
+  parent: BaseMediumWeaponBoardRecipe
+  id: KargilWeaponBoard
+  result: KargilWeaponBoard
+
+- type: latheRecipe
+  parent: BaseMediumWeaponBoardRecipe
+  id: FangWeaponBoard
+  result: FangWeaponBoard
+
+- type: latheRecipe
+  parent: BaseMediumWeaponBoardRecipe
+  id: ASM220WeaponBoard
+  result: ASM220WeaponBoard
+
+- type: latheRecipe
+  parent: BaseMediumWeaponBoardRecipe
+  id: LightMunitionsBayWeaponBoard
+  result: LightMunitionsBayWeaponBoard
+
+- type: latheRecipe
+  parent: BaseMediumWeaponBoardRecipe
+  id: VesperaWeaponBoard
+  result: VesperaWeaponBoard
+
+- type: latheRecipe
+  parent: BaseMediumWeaponBoardRecipe
+  id: ASM501WeaponBoard
+  result: ASM501WeaponBoard
+
+- type: latheRecipe
+  parent: BaseMediumWeaponBoardRecipe
+  id: VanykWeaponBoard
+  result: VanykWeaponBoard
+
+- type: latheRecipe
+  parent: BaseMediumWeaponBoardRecipe
+  id: TovekWeaponBoard
+  result: TovekWeaponBoard
+
+- type: latheRecipe
+  parent: BaseMediumWeaponBoardRecipe
+  id: MediumShieldBoard
+  result: MediumShieldBoard
+
+- type: latheRecipe
+  parent: BaseHeavyWeaponBoardRecipe
+  id: ApolloWeaponBoard
+  result: ApolloWeaponBoard
+
+- type: latheRecipe
+  parent: BaseHeavyWeaponBoardRecipe
+  id: TarnyxReloadWeaponBoard
+  result: TarnyxReloadWeaponBoard
+
+- type: latheRecipe
+  parent: BaseHeavyWeaponBoardRecipe
+  id: LongbowWeaponBoard
+  result: LongbowWeaponBoard
+
+- type: latheRecipe
+  parent: BaseHeavyWeaponBoardRecipe
+  id: CharonetteWeaponBoard
+  result: CharonetteWeaponBoard
+
+- type: latheRecipe
+  parent: BaseHeavyWeaponBoardRecipe
+  id: SerpentMissileWeaponBoard
+  result: SerpentMissileWeaponBoard
+
+- type: latheRecipe
+  parent: BaseHeavyWeaponBoardRecipe
+  id: HeavyShieldBoard
+  result: HeavyShieldBoard
+
+- type: latheRecipe
+  parent: BaseCapitalWeaponBoardRecipe
+  id: CharonReloadWeaponBoard
+  result: CharonReloadWeaponBoard
+
+- type: latheRecipe
+  parent: BaseCapitalWeaponBoardRecipe
+  id: HadesWeaponBoard
+  result: HadesWeaponBoard
+
+- type: latheRecipe
+  parent: BaseCapitalWeaponBoardRecipe
+  id: HydraWeaponBoard
+  result: HydraWeaponBoard
+
+- type: latheRecipe
+  parent: BaseCapitalWeaponBoardRecipe
+  id: CapitalShieldBoard
+  result: CapitalShieldBoard
+

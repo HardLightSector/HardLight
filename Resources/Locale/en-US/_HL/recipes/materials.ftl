@@ -1,0 +1,12 @@
+﻿stack-Light-Frame = light ship weapon frame
+stack-Light-Servo = light ship weapon servo
+stack-Light-Internal = light ship weapon internal
+stack-Medium-Frame = medium ship weapon frame
+stack-Medium-Servo = medium ship weapon servo
+stack-Medium-Internal = medium ship weapon internal
+stack-Heavy-Frame = heavy ship weapon frame
+stack-Heavy-Servo = heavy ship weapon servo
+stack-Heavy-Internal = heavy ship weapon internal
+stack-Capital-Frame = capital ship weapon frame
+stack-Capital-Servo = capital ship weapon servo
+stack-Capital-Internal = capital ship weapon internal

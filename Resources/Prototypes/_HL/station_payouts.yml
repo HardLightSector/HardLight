@@ -2,9 +2,54 @@
 # 16k minimum wage (because botanist got 16k which was kind of unfair compared to other service roles but I didn't want to just nerf pay) + 1k for level of hazard + 1k for specialisation with some notable outliers
 
 - type: stationPay
-  id: cargoPay
+  id: ForensicMantisPay
+  payPerHour: 13000 # Outlier: Responsibility over all psionics and possibility of being targeted for your position.
+  job: ForensicMantis
+
+- type: stationPay
+  id: PrisonerPay
   payPerHour: 10000
-  job: CargoTechnician # New Minimum
+  job: Prisoner
+
+- type: stationPay
+  id: MailCarrierPay
+  payPerHour: 11000 # Specialisation
+  job: MailCarrier
+
+- type: stationPay
+  id: ValetPay
+  payPerHour: 11000 # Outlier: Possibility of being targeted for your position.
+  job: Valet
+
+- type: stationPay
+  id: StationTrafficControllerPay
+  payPerHour: 15000 # Outlier: Command, Possibility of being targeted for your position.
+  job: StationTrafficController
+
+- type: stationPay
+  id: EngineeringQuadBorgPay
+  payPerHour: 12000 # Specialisation
+  job: EngineeringQuadBorg
+
+- type: stationPay
+  id: SecurityQuadBorgPay
+  payPerHour: 13000 # Danger
+  job: SecurityQuadBorg
+
+- type: stationPay
+  id: SalvageQuadBorgPay
+  payPerHour: 10000 # New Minimum
+  job: SalvageQuadBorg
+
+- type: stationPay
+  id: ServiceQuadBorgPay
+  payPerHour: 10000 # New Minimum
+  job: ServiceQuadBorg
+
+- type: stationPay
+  id: MedicalQuadBorgPay
+  payPerHour: 12000 # Specialisation
+  job: MedicalQuadBorg
 
 - type: stationPay
   id: BorgPay
@@ -15,21 +60,6 @@
   id: StationAiPay
   payPerHour: 15000 # Outlier: Ai is given an additional 4k for the level of responsibility as they are basically helping EVERYBODY
   job: StationAi
-
-- type: stationPay
-  id: PrisonerPay
-  payPerHour: 10000
-  job: Prisoner
-
-- type: stationPay
-  id: ParamedicPay
-  payPerHour: 12000 # Specialisation + Danger
-  job: Paramedic
-
-- type: stationPay
-  id: PsychologistPay
-  payPerHour: 12000 # Specialisation
-  job: Psychologist
 
 - type: stationPay
   id: MusicianPay
@@ -50,6 +80,11 @@
   id: SalvageSpecialistPay
   payPerHour: 13000 # Danger
   job: SalvageSpecialist
+
+- type: stationPay
+  id: cargoPay
+  payPerHour: 10000
+  job: CargoTechnician # New Minimum
 
 - type: stationPay
   id: DetectivePay
@@ -85,6 +120,16 @@
   id: ScientistPay
   payPerHour: 12000 # Specialisation
   job: Scientist
+
+- type: stationPay
+  id: PsychologistPay
+  payPerHour: 12000 # Specialisation
+  job: Psychologist
+
+- type: stationPay
+  id: ParamedicPay
+  payPerHour: 12000 # Specialisation + Danger
+  job: Paramedic
 
 - type: stationPay
   id: MedicalInternPay
@@ -163,35 +208,35 @@
 
 - type: stationPay
   id: HeadOfPersonnelPay
-  payPerHour: 15000 # Outlier: Command, Respondibility over a department and the heavy possibility of being targeted for your position.
+  payPerHour: 15000 # Outlier: Command, Responsibility over a department and the heavy possibility of being targeted for your position.
   job: HeadOfPersonnel
 
 - type: stationPay
   id: HeadOfSecurityPay
-  payPerHour: 15000 # Outlier: Command, Respondibility over a department and the heavy possibility of being targeted for your position.
+  payPerHour: 15000 # Outlier: Command, Responsibility over a department and the heavy possibility of being targeted for your position.
   job: HeadOfSecurity
 
 - type: stationPay
   id: ChiefMedicalOfficerPay
-  payPerHour: 15000 # Outlier: Command, Respondibility over a department and the heavy possibility of being targeted for your position.
+  payPerHour: 15000 # Outlier: Command, Responsibility over a department and the heavy possibility of being targeted for your position.
   job: ChiefMedicalOfficer
 
 - type: stationPay
   id: ChiefEngineerPay
-  payPerHour: 15000 # Outlier: Command, Respondibility over a department and the heavy possibility of being targeted for your position.
+  payPerHour: 15000 # Outlier: Command, Responsibility over a department and the heavy possibility of being targeted for your position.
   job: ChiefEngineer
 
 - type: stationPay
   id: StationCaptainPay
-  payPerHour: 16000 # Outlier: Captain, responsibility over ALL departments, the station itself, local threats, your crew and an almost guarantee of danger. Not to mention your ass being on the line for others mistakes ALOT.
+  payPerHour: 16000 # Outlier: Captain, Responsibility over ALL departments, the station itself, local threats, your crew and an almost guarantee of danger. Not to mention your ass being on the line for others mistakes ALOT.
   job: StationCaptain
 
 - type: stationPay
   id: ResearchDirectorPay
-  payPerHour: 15000 # Outlier: Command, Respondibility over a department and the heavy possibility of being targeted for your position.
+  payPerHour: 15000 # Outlier: Command, Responsibility over a department and the heavy possibility of being targeted for your position.
   job: ResearchDirector
 
 - type: stationPay
   id: QuartermasterPay
-  payPerHour: 15000 # Outlier: Command, Respondibility over a department and the heavy possibility of being targeted for your position.
+  payPerHour: 15000 # Outlier: Command, Responsibility over a department and the heavy possibility of being targeted for your position.
   job: Quartermaster
