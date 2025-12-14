@@ -3,7 +3,7 @@ using Content.Shared.Examine;
 using Content.Shared.Popups;
 using Robust.Shared.Prototypes;
 
-namespace Content.Goobstation.Shared.Factory.Plumbing;
+namespace Content.Shared._Goobstation.Factory.Plumbing;
 
 public sealed class PlumbingFilterSystem : EntitySystem
 {

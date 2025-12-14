@@ -3,7 +3,7 @@ using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
-namespace Content.Goobstation.Shared.Factory.Plumbing;
+namespace Content.Shared._Goobstation.Factory.Plumbing;
 
 /// <summary>
 /// Transfers liquid from an input machine's solution to an output machine's solution.
