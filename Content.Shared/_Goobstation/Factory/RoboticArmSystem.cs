@@ -216,9 +216,9 @@ public sealed class RoboticArmSystem : EntitySystem
         if (count == 0)
             return false;
 
-        // prevent dropping items on walls etc
+        // prevent dropping items on walls etc (only when nothing is linked)
         var output = _exclusive.GetOutputSlot(ent);
-        if (output != null && IsOutputBlocked(ent))
+        if (output == null && IsOutputBlocked(ent))
             return false;
 
         var filter = _filter.GetSlot(ent);
