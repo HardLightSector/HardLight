@@ -500,7 +500,7 @@ public sealed class DeadDropSystem : EntitySystem
             {
                 //removes the first element of the queue
                 var entityToRemove = _drops.Dequeue();
-                _adminLogger.Add(LogType.Action, LogImpact.Medium, $"{entityToRemove} queued for deletion");
+                //_adminLogger.Add(LogType.Action, LogImpact.Medium, $"{entityToRemove} queued for deletion");
                 _linkedLifecycleGrid.UnparentPlayersFromGrid(entityToRemove, true);
             }
         }
@@ -508,7 +508,7 @@ public sealed class DeadDropSystem : EntitySystem
         //tattle on the smuggler here, but obfuscate it a bit if possible to just the grid it was summoned from.
         var sender = Transform(user).GridUid ?? uid;
 
-        _adminLogger.Add(LogType.Action, LogImpact.Medium, $"{ToPrettyString(user)} sent a dead drop to {dropLocation.ToString()} from {ToPrettyString(uid)} at {Transform(uid).Coordinates.ToString()}");
+        //_adminLogger.Add(LogType.Action, LogImpact.Medium, $"{ToPrettyString(user)} sent a dead drop to {dropLocation.ToString()} from {ToPrettyString(uid)} at {Transform(uid).Coordinates.ToString()}");
 
         //reset the timer (needed for the text)
         component.NextDrop = _timing.CurTime + TimeSpan.FromSeconds(_random.Next(component.MinimumCoolDown, component.MaximumCoolDown));

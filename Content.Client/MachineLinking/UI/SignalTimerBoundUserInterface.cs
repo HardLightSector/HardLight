@@ -1,3 +1,12 @@
+// SPDX-FileCopyrightText: 2023 TemporalOroboros
+// SPDX-FileCopyrightText: 2024 Mervill
+// SPDX-FileCopyrightText: 2024 Nemanja
+// SPDX-FileCopyrightText: 2024 metalgearsloth
+// SPDX-FileCopyrightText: 2025 Ilya246
+// SPDX-FileCopyrightText: 2025 shab00m
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.MachineLinking;
 using Robust.Client.GameObjects;
 using Robust.Client.UserInterface;
@@ -22,8 +31,7 @@ public sealed class SignalTimerBoundUserInterface : BoundUserInterface
         _window.OnStartTimer += StartTimer;
         _window.OnCurrentTextChanged += OnTextChanged;
         _window.OnCurrentRepeatChanged += OnRepeatChanged; // Frontier
-        _window.OnCurrentDelayMinutesChanged += OnDelayChanged;
-        _window.OnCurrentDelaySecondsChanged += OnDelayChanged;
+        _window.OnCurrentDelayChanged += OnDelayChanged; // Mono
     }
 
     public void StartTimer()
@@ -43,11 +51,11 @@ public sealed class SignalTimerBoundUserInterface : BoundUserInterface
     }
     //End Frontier
 
-    private void OnDelayChanged(string newDelay)
+    private void OnDelayChanged(TimeSpan newDelay) // Mono
     {
         if (_window == null)
             return;
-        SendMessage(new SignalTimerDelayChangedMessage(_window.GetDelay()));
+        SendMessage(new SignalTimerDelayChangedMessage(newDelay)); // Mono
     }
 
     /// <summary>
@@ -62,8 +70,7 @@ public sealed class SignalTimerBoundUserInterface : BoundUserInterface
             return;
 
         _window.SetCurrentText(cast.CurrentText);
-        _window.SetCurrentDelayMinutes(cast.CurrentDelayMinutes);
-        _window.SetCurrentDelaySeconds(cast.CurrentDelaySeconds);
+        _window.SetCurrentDelay(cast.CurrentDelay); // Mono
         _window.SetCurrentRepeat(cast.CurrentRepeat); // Frontier
         _window.SetShowText(cast.ShowText);
         _window.SetTriggerTime(cast.TriggerTime);

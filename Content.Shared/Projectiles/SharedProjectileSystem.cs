@@ -1,13 +1,50 @@
+// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto
+// SPDX-FileCopyrightText: 2021 metalgearsloth
+// SPDX-FileCopyrightText: 2022 wrexbe
+// SPDX-FileCopyrightText: 2023 AJCM-git
+// SPDX-FileCopyrightText: 2023 DrSmugleaf
+// SPDX-FileCopyrightText: 2023 KP
+// SPDX-FileCopyrightText: 2023 Kara
+// SPDX-FileCopyrightText: 2023 Leon Friedrich
+// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers
+// SPDX-FileCopyrightText: 2023 PixelTK
+// SPDX-FileCopyrightText: 2023 Slava0135
+// SPDX-FileCopyrightText: 2023 deltanedas
+// SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2024 Arendian
+// SPDX-FileCopyrightText: 2024 Cojoke
+// SPDX-FileCopyrightText: 2024 Dakamakat
+// SPDX-FileCopyrightText: 2024 Nemanja
+// SPDX-FileCopyrightText: 2024 nikthechampiongr
+// SPDX-FileCopyrightText: 2024 slarticodefast
+// SPDX-FileCopyrightText: 2025 Ark
+// SPDX-FileCopyrightText: 2025 Ed
+// SPDX-FileCopyrightText: 2025 ScarKy0
+// SPDX-FileCopyrightText: 2025 SlamBamActionman
+// SPDX-FileCopyrightText: 2025 Whatstone
+// SPDX-FileCopyrightText: 2025 ark1368
+//
+// SPDX-License-Identifier: MPL-2.0
+
 using System.Numerics;
+using Content.Shared._RMC14.Weapons.Ranged.Prediction;
+using Content.Shared.Administration.Logs;
+using Content.Shared.Camera;
 using Content.Shared.CombatMode.Pacification;
 using Content.Shared.Damage;
+using Content.Shared.Damage.Components;
+using Content.Shared.Damage.Systems;
+using Content.Shared.Database;
 using Content.Shared.DoAfter;
+using Content.Shared.Effects;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction;
+using Content.Shared.Inventory;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Throwing;
 using Content.Shared.Tag;
 using Content.Shared.Weapons.Ranged.Components;
+using Content.Shared.Weapons.Ranged.Systems;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Network;
@@ -16,8 +53,13 @@ using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Dynamics;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Physics.Systems;
+using Robust.Shared.Player;
 using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
+using Robust.Shared.Threading;
+using System.Collections.Concurrent;
+using Robust.Shared.Timing;
+using Content.Shared._Mono;
 
 namespace Content.Shared.Projectiles;
 
@@ -25,18 +67,35 @@ public abstract partial class SharedProjectileSystem : EntitySystem
 {
     public const string ProjectileFixture = "projectile";
 
-    [Dependency] private readonly INetManager _net = default!;
+    [Dependency] private readonly INetManager _netManager = default!;
+    [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly SharedColorFlashEffectSystem _color = default!;
+    [Dependency] private readonly DamageableSystem _damageableSystem = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
+    [Dependency] private readonly SharedGunSystem _guns = default!;
     [Dependency] private readonly SharedHandsSystem _hands = default!;
+    [Dependency] private readonly SharedCameraRecoilSystem _sharedCameraRecoil = default!;
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly TagSystem _tag = default!;
+    [Dependency] private readonly IParallelManager _parallel = default!;
+    [Dependency] private readonly IGameTiming _gameTiming = default!;
+    [Dependency] private readonly INetManager _net = default!;
+
+    // Cache of projectiles waiting for collision checks
+    private readonly ConcurrentQueue<(EntityUid Uid, ProjectileComponent Component, EntityUid Target)> _pendingCollisionChecks = new();
+    private readonly HashSet<EntityUid> _processedProjectiles = new();
+    private const int MinProjectilesForParallel = 8;
+    private const int ProjectileBatchSize = 16;
+    private TimeSpan _lastBatchProcess;
+    private readonly TimeSpan _processingInterval = TimeSpan.FromMilliseconds(16); // ~60Hz
 
     public override void Initialize()
     {
         base.Initialize();
 
+        SubscribeLocalEvent<ProjectileComponent, StartCollideEvent>(OnStartCollide);
         SubscribeLocalEvent<ProjectileComponent, PreventCollideEvent>(PreventCollision);
         SubscribeLocalEvent<EmbeddableProjectileComponent, ProjectileHitEvent>(OnEmbedProjectileHit);
         SubscribeLocalEvent<EmbeddableProjectileComponent, ThrowDoHitEvent>(OnEmbedThrowDoHit);
@@ -45,6 +104,204 @@ public abstract partial class SharedProjectileSystem : EntitySystem
         SubscribeLocalEvent<EmbeddableProjectileComponent, ComponentShutdown>(OnEmbeddableCompShutdown);
 
         SubscribeLocalEvent<EmbeddedContainerComponent, EntityTerminatingEvent>(OnEmbeddableTermination);
+    }
+
+    private void OnStartCollide(EntityUid uid, ProjectileComponent component, ref StartCollideEvent args)
+    {
+        // This is so entities that shouldn't get a collision are ignored.
+        if (args.OurFixtureId != ProjectileFixture || !args.OtherFixture.Hard
+            || component.DamagedEntity || component.ProjectileSpent || component is { Weapon: null, OnlyCollideWhenShot: true })
+            return;
+
+        ProjectileCollide((uid, component, args.OurBody), args.OtherEntity);
+    }
+
+    public DamageSpecifier? ProjectileCollide(Entity<ProjectileComponent, PhysicsComponent> projectile, EntityUid target, bool predicted = false)
+    {
+        return ProjectileCollide(projectile, target, null, predicted);
+    }
+
+    public virtual DamageSpecifier? ProjectileCollide(Entity<ProjectileComponent, PhysicsComponent> projectile, EntityUid target, MapCoordinates? collisionCoordinates, bool predicted = false)
+    {
+        var (uid, component, ourBody) = projectile;
+        if (projectile.Comp1.DamagedEntity)
+        {
+            if (_net.IsServer && component.DeleteOnCollide)
+                QueueDel(uid);
+
+            return null;
+        }
+
+        // it's here so this check is only done once before possible hit
+        var attemptEv = new ProjectileReflectAttemptEvent(uid, component, false);
+        RaiseLocalEvent(target, ref attemptEv);
+        if (attemptEv.Cancelled)
+        {
+            SetShooter(uid, component, target);
+            return null;
+        }
+
+        var ev = new ProjectileHitEvent(component.Damage, target, component.Shooter);
+        RaiseLocalEvent(uid, ref ev);
+        if (ev.Handled)
+            return null;
+
+        var coordinates = collisionCoordinates != null
+            ? _transform.ToCoordinates(collisionCoordinates.Value)
+            : Transform(projectile).Coordinates;
+        var otherName = ToPrettyString(target);
+        var direction = ourBody.LinearVelocity.Normalized();
+        DamageSpecifier modifiedDamage;
+        if (_net.IsServer)
+        {
+            modifiedDamage = _damageableSystem.TryChangeDamage(target,
+                ev.Damage,
+                component.IgnoreResistances,
+                origin: component.Shooter,
+                tool: uid) ?? new DamageSpecifier();
+        }
+        else
+        {
+            modifiedDamage = new DamageSpecifier(ev.Damage);
+        }
+        var deleted = Deleted(target);
+
+        var filter = Robust.Shared.Player.Filter.Pvs(coordinates, entityMan: EntityManager);
+        if (_guns.GunPrediction &&
+            TryComp(projectile, out PredictedProjectileServerComponent? serverProjectile) &&
+            serverProjectile.Shooter is { } shooter)
+        {
+            filter = filter.RemovePlayer(shooter);
+        }
+
+        // Create a separate filter for impact effects and damage effects that includes the shooter
+        var impactFilter = Robust.Shared.Player.Filter.Pvs(coordinates, entityMan: EntityManager);
+        var damageFilter = Robust.Shared.Player.Filter.Pvs(coordinates, entityMan: EntityManager);
+
+        if (modifiedDamage is not null && (EntityManager.EntityExists(component.Shooter) || EntityManager.EntityExists(component.Weapon)))
+        {
+            if (modifiedDamage.AnyPositive() && !deleted)
+            {
+                // Use damageFilter which includes the shooter so they can see the red damage effect
+                _color.RaiseEffect(Color.Red, new List<EntityUid> { target }, damageFilter);
+            }
+
+            var shooterOrWeapon = EntityManager.EntityExists(component.Shooter) ? component.Shooter!.Value : component.Weapon!.Value;
+
+            var projectileName = ToPrettyString(uid);
+            var shooterName = ToPrettyString(shooterOrWeapon);
+            var targetName = ToPrettyString(target);
+            var damageAmount = modifiedDamage.GetTotal();
+            /* _adminLogger.Add(LogType.BulletHit,
+                HasComp<ActorComponent>(target) ? LogImpact.Extreme : LogImpact.High,
+                $"Projectile {projectileName:projectile} shot by {shooterName:source} hit {targetName:target} and dealt {damageAmount:damage} damage"); */
+        }
+
+        if (!deleted)
+        {
+            _guns.PlayImpactSound(target, modifiedDamage, component.SoundHit, component.ForceSound, filter, projectile);
+            _sharedCameraRecoil.KickCamera(target, direction);
+        }
+
+        component.DamagedEntity = true;
+        Dirty(uid, component);
+
+        if (!predicted && component.DeleteOnCollide && (_net.IsServer || IsClientSide(uid)))
+            QueueDel(uid);
+        else if (_net.IsServer && component.DeleteOnCollide)
+        {
+            var predictedComp = EnsureComp<PredictedProjectileHitComponent>(uid);
+            predictedComp.Origin = _transform.GetMoverCoordinates(coordinates);
+
+            var targetCoords = _transform.GetMoverCoordinates(target);
+            if (predictedComp.Origin.TryDistance(EntityManager, _transform, targetCoords, out var distance))
+                predictedComp.Distance = distance;
+
+            Dirty(uid, predictedComp);
+        }
+
+        // Always raise impact effects on the server, or for client-side entities, or for predicted collisions
+        // Use impactFilter which includes the shooter so they can see the impact effect
+        if (component.ImpactEffect != null)
+        {
+            var impactEffectEv = new ImpactEffectEvent(component.ImpactEffect, GetNetCoordinates(coordinates));
+            if (_net.IsServer)
+            {
+                // On server, always raise network event so all clients (including shooter) see the impact effect
+                RaiseNetworkEvent(impactEffectEv, impactFilter);
+            }
+            else if (IsClientSide(uid) || predicted)
+            {
+                // On client, raise local event for client-side or predicted projectiles
+                RaiseLocalEvent(impactEffectEv);
+            }
+        }
+
+        return modifiedDamage;
+    }
+
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+
+        // Process batched collision checks if enough time has passed or queue is large
+        var now = _gameTiming.CurTime;
+        if ((now - _lastBatchProcess > _processingInterval || _pendingCollisionChecks.Count >= MinProjectilesForParallel * 2) &&
+            _pendingCollisionChecks.Count > 0)
+        {
+            ProcessPendingCollisionChecks();
+            _lastBatchProcess = now;
+        }
+    }
+
+    /// <summary>
+    /// Process all pending collision checks in a batch, potentially using parallelism
+    /// </summary>
+    private void ProcessPendingCollisionChecks()
+    {
+        if (_pendingCollisionChecks.Count == 0)
+            return;
+
+        // Prepare batch of collision checks
+        var collisionChecks = new List<(EntityUid Uid, ProjectileComponent Component, EntityUid Target)>();
+        while (_pendingCollisionChecks.TryDequeue(out var check))
+        {
+            // Skip if the projectile was already processed (could happen if added multiple times)
+            if (_processedProjectiles.Contains(check.Uid))
+                continue;
+
+            // Check if entities still exist
+            if (!EntityManager.EntityExists(check.Uid) || !EntityManager.EntityExists(check.Target))
+                continue;
+
+            collisionChecks.Add(check);
+            _processedProjectiles.Add(check.Uid); // Mark as processed to avoid duplicates
+        }
+
+        // Clear processed set for next batch
+        _processedProjectiles.Clear();
+
+        // Process collisions (currently sequential, parallel processing removed due to missing job implementation)
+        foreach (var (uid, component, target) in collisionChecks)
+        {
+            CheckShieldCollision(uid, component, target);
+        }
+    }
+
+    /// <summary>
+    /// Check if a projectile's collision should be prevented by shields
+    /// </summary>
+    public bool CheckShieldCollision(EntityUid uid, ProjectileComponent component, EntityUid target)
+    {
+        // Check if projectile entity still exists (might have been deleted during processing)
+        if (!EntityManager.EntityExists(uid) || !EntityManager.EntityExists(target))
+            return false;
+
+        // Raise event to check if any shield system wants to prevent collision
+        var ev = new ProjectileCollisionAttemptEvent(uid, target);
+        RaiseLocalEvent(ref ev);
+
+        return ev.Cancelled;
     }
 
     private void OnEmbedActivate(Entity<EmbeddableProjectileComponent> embeddable, ref ActivateInWorldEvent args)
@@ -271,7 +528,7 @@ public record struct ProjectileReflectAttemptEvent(EntityUid ProjUid, Projectile
 /// Raised when a projectile hits an entity
 /// </summary>
 [ByRefEvent]
-public record struct ProjectileHitEvent(DamageSpecifier Damage, EntityUid Target, EntityUid? Shooter = null);
+public record struct ProjectileHitEvent(DamageSpecifier Damage, EntityUid Target, EntityUid? Shooter = null, bool Handled = false);
 
 /// <summary>
 /// Raised when a projectile is about to collide with an entity, allowing systems to prevent the collision

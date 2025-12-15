@@ -286,7 +286,7 @@
       shader: unshaded
   - type: Battery
     maxCharge: 400
-    startingCharge: 400
+    startingCharge: 0
   - type: BatterySelfRecharger
     autoRecharge: true
     autoRechargeRate: 12 # takes 1 minute to charge itself back to full
@@ -325,7 +325,7 @@
         shader: unshaded
     - type: Battery
       maxCharge: 720
-      startingCharge: 720
+      startingCharge: 0
     - type: BatterySelfRecharger
       autoRecharge: true
       autoRechargeRate: 40
@@ -379,7 +379,7 @@
       shader: unshaded
   - type: Battery
     maxCharge: 2000
-    startingCharge: 2000
+    startingCharge: 0
 
 - type: entity
   id: PowerCageMedium
@@ -397,7 +397,7 @@
       shader: unshaded
   - type: Battery
     maxCharge: 3500
-    startingCharge: 3500
+    startingCharge: 0
 
 - type: entity
   id: PowerCageMech
@@ -415,7 +415,7 @@
       shader: unshaded
   - type: Battery
     maxCharge: 3000
-    startingCharge: 3000
+    startingCharge: 0
 
 - type: entity
   id: PowerCageHigh
@@ -433,7 +433,7 @@
       shader: unshaded
   - type: Battery
     maxCharge: 6500
-    startingCharge: 6500
+    startingCharge: 0
 
 - type: entity
   id: PowerCageSmallEmpty

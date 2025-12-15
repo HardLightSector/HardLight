@@ -70,9 +70,9 @@ public sealed class EngraveableSystem : EntitySystem
                             actor.PlayerSession.AttachedEntity.Value,
                             actor.PlayerSession,
                             PopupType.Medium);
-                        _adminLogger.Add(LogType.Action,
+                        /* _adminLogger.Add(LogType.Action,
                             LogImpact.Low,
-                            $"{ToPrettyString(actor.PlayerSession.AttachedEntity):player} engraved an item with message: {message}");
+                            $"{ToPrettyString(actor.PlayerSession.AttachedEntity):player} engraved an item with message: {message}"); */
                     });
             },
             Impact = LogImpact.Low,

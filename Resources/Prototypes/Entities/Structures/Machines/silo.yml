@@ -24,6 +24,11 @@
       - Sheet
       - Ingot
       - RawMaterial
+  - type: AutomationSlots # Goobstation
+    slots:
+    - !type:AutomatedMaterialStorage
+      input: AutomationSlotMaterials
+      output: null
   - type: ActivatableUI
     key: enum.OreSiloUiKey.Key
   - type: ActivatableUIRequiresPower

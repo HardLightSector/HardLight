@@ -79,6 +79,15 @@
       state: fennec-inner
 
 - type: marking
+  id: VulpEarSpaniel
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  sprites:
+    - sprite: _HL/Mobs/Customization/Vulpkanin/ear_markings.rsi
+      state: spaniel
+
+- type: marking
   id: VulpEarFox
   bodyPart: HeadTop
   markingCategory: HeadTop

@@ -219,8 +219,8 @@ public sealed class IdCardConsoleSystem : SharedIdCardConsoleSystem
 
         /*TODO: ECS SharedIdCardConsoleComponent and then log on card ejection, together with the save.
         This current implementation is pretty shit as it logs 27 entries (27 lines) if someone decides to give themselves AA*/
-        _adminLogger.Add(LogType.Action, LogImpact.Medium,
-            $"{ToPrettyString(player):player} has modified {ToPrettyString(targetId):entity} with the following accesses: [{string.Join(", ", addedTags.Union(removedTags))}] [{string.Join(", ", newAccessList)}]");
+/*         _adminLogger.Add(LogType.Action, LogImpact.Medium,
+            $"{ToPrettyString(player):player} has modified {ToPrettyString(targetId):entity} with the following accesses: [{string.Join(", ", addedTags.Union(removedTags))}] [{string.Join(", ", newAccessList)}]"); */
     }
 
     /// <summary>
@@ -263,8 +263,8 @@ public sealed class IdCardConsoleSystem : SharedIdCardConsoleSystem
 
         _shipyard.TryRenameShuttle(targetId, shuttleDeed, name, suffix);
 
-        _adminLogger.Add(LogType.Action, LogImpact.Medium,
-            $"{ToPrettyString(player):player} has changed the shuttle name of {ToPrettyString(shuttleDeed.ShuttleUid):entity} to {ShipyardSystem.GetFullName(shuttleDeed)}");
+        /* _adminLogger.Add(LogType.Action, LogImpact.Medium,
+            $"{ToPrettyString(player):player} has changed the shuttle name of {ToPrettyString(shuttleDeed.ShuttleUid):entity} to {ShipyardSystem.GetFullName(shuttleDeed)}");*/
     }
 
     /// <summary>

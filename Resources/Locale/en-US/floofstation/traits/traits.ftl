@@ -13,6 +13,9 @@ trait-cum-flood-desc = Your body produces an frankly worrying quantity of cum. (
 trait-bluespace-balls-name = Bluespace Balls
 trait-bluespace-balls-desc = Through augmentation, genetic enhancement, or bluespace implants, your body produces an absolutely massive flood of cum. (1000u)
 
+trait-barrel-balls-name = Bluespace Barrel Balls
+trait-barrel-balls-desc = Somehow... someway... you make so much cum that you can fill a bluespace barrel in one shot. Pocket dimensions fear you. (15000u)
+
 trait-milk-cascade-name = Milk Cascade
 trait-milk-cascade-desc = Your body produces a truly huge quantity of milk. (100u)
 
@@ -21,3 +24,6 @@ trait-milk-flood-desc = Your body produces an frankly worrying quantity of milk.
 
 trait-bluespace-breasts-name = Bluespace Breasts
 trait-bluespace-breasts-desc = Through augmentation, genetic enhancement, or bluespace implants, your body produces an absolutely massive flood of milk. (1000u)
+
+trait-barrel-breasts-name = Bluespace Barrel Breasts
+trait-barrel-breasts-desc = You are capable of such vast quantities of milk that you can fill a bluespace barrel in one go. Go outshine the cheese caves.(15000u)

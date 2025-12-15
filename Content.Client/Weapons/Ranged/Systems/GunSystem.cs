@@ -1,11 +1,43 @@
+// SPDX-FileCopyrightText: 2022 keronshb
+// SPDX-FileCopyrightText: 2022 metalgearsloth
+// SPDX-FileCopyrightText: 2023 AJCM-git
+// SPDX-FileCopyrightText: 2023 Arendian
+// SPDX-FileCopyrightText: 2023 Nemanja
+// SPDX-FileCopyrightText: 2023 deltanedas
+// SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2024 BramvanZijp
+// SPDX-FileCopyrightText: 2024 CaasGit
+// SPDX-FileCopyrightText: 2024 DrSmugleaf
+// SPDX-FileCopyrightText: 2024 Kara
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers
+// SPDX-FileCopyrightText: 2024 Plykiya
+// SPDX-FileCopyrightText: 2024 SlamBamActionman
+// SPDX-FileCopyrightText: 2024 TemporalOroboros
+// SPDX-FileCopyrightText: 2025 Ark
+// SPDX-FileCopyrightText: 2025 Leon Friedrich
+// SPDX-FileCopyrightText: 2025 Redrover1760
+// SPDX-FileCopyrightText: 2025 ark1368
+// SPDX-FileCopyrightText: 2025 beck-thompson
+// SPDX-FileCopyrightText: 2025 bitcrushing
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using System.Linq;
 using System.Numerics;
 using Content.Client.Animations;
 using Content.Client.Gameplay;
 using Content.Client.Items;
+using Content.Client.Projectiles;
 using Content.Client.Weapons.Ranged.Components;
 using Content.Shared.Camera;
 using Content.Shared.CombatMode;
-using Content.Shared.Mech.Components; // Goobstation
+using Content.Shared.Damage;
+using Content.Shared.Hands.Components;
+using Content.Shared._Mono.FireControl;
+using Content.Shared._RMC14.Weapons.Ranged.Prediction;
+using Content.Shared.Mech.Components;
+using Content.Shared.Projectiles;
+using Content.Shared.Weapons.Hitscan.Components;
 using Content.Shared.Weapons.Ranged;
 using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Weapons.Ranged.Events;
@@ -17,9 +49,12 @@ using Robust.Client.Input;
 using Robust.Client.Player;
 using Robust.Client.State;
 using Robust.Shared.Animations;
+using Robust.Shared.Audio;
 using Robust.Shared.Input;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
+using Robust.Shared.Physics.Components;
+using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using SharedGunSystem = Content.Shared.Weapons.Ranged.Systems.SharedGunSystem;
@@ -40,9 +75,9 @@ public sealed partial class GunSystem : SharedGunSystem
     [Dependency] private readonly SharedMapSystem _maps = default!;
     [Dependency] private readonly SharedTransformSystem _xform = default!;
     [Dependency] private readonly SpriteSystem _sprite = default!;
+    [Dependency] private readonly Robust.Client.Physics.PhysicsSystem _physics = default!;
 
-    [ValidatePrototypeId<EntityPrototype>]
-    public const string HitscanProto = "HitscanEffect";
+    public static readonly EntProtoId HitscanProto = "HitscanEffect";
 
     public bool SpreadOverlay
     {
@@ -99,7 +134,30 @@ public sealed partial class GunSystem : SharedGunSystem
     {
         var gunUid = GetEntity(args.Uid);
 
-        CreateEffect(gunUid, args, gunUid);
+        // Find the gun's holder by checking its parent entity
+        // If the gun is being held, its parent will be a hand container, and the hand container's parent will be the holder
+        EntityUid? holder = null;
+        var gunXform = Transform(gunUid);
+        if (gunXform.ParentUid != EntityUid.Invalid)
+        {
+            var parent = gunXform.ParentUid;
+            // Check if the parent has HandsComponent (it's the holder)
+            if (HasComp<HandsComponent>(parent))
+            {
+                holder = parent;
+            }
+            else
+            {
+                // The parent might be a hand container, check its parent
+                var parentXform = Transform(parent);
+                if (parentXform.ParentUid != EntityUid.Invalid && HasComp<HandsComponent>(parentXform.ParentUid))
+                {
+                    holder = parentXform.ParentUid;
+                }
+            }
+        }
+
+        CreateEffect(gunUid, args, holder);
     }
 
     private void OnHitscan(HitscanEvent ev)
@@ -209,11 +267,17 @@ public sealed partial class GunSystem : SharedGunSystem
 
         Log.Debug($"Sending shoot request tick {Timing.CurTick} / {Timing.CurTime}");
 
-        EntityManager.RaisePredictiveEvent(new RequestShootEvent
+        if (_player.LocalSession is not { } session)
+            return;
+
+        var projectiles = ShootRequested(GetNetEntity(gunUid), GetNetCoordinates(coordinates), target, null, (Robust.Shared.Player.ICommonSession)session);
+
+        EntityManager.RaisePredictiveEvent(new RequestShootEvent()
         {
             Target = target,
             Coordinates = GetNetCoordinates(coordinates),
             Gun = GetNetEntity(gunUid),
+            Shot = projectiles?.Select(e => e.Entity.Id).ToList(),
         });
     }
 
@@ -296,7 +360,7 @@ public sealed partial class GunSystem : SharedGunSystem
         PopupSystem.PopupEntity(message, uid.Value, user.Value);
     }
 
-    protected override void CreateEffect(EntityUid gunUid, MuzzleFlashEvent message, EntityUid? tracked = null)
+    protected override void CreateEffect(EntityUid gunUid, MuzzleFlashEvent message, EntityUid? user = null)
     {
         if (!Timing.IsFirstTimePredicted)
             return;
@@ -329,10 +393,13 @@ public sealed partial class GunSystem : SharedGunSystem
         var ent = Spawn(message.Prototype, coordinates);
         TransformSystem.SetWorldRotationNoLerp(ent, message.Angle);
 
-        if (tracked != null)
+        // Don't track muzzle flash to user if this is a fire control console weapon (ship artillery)
+        // Note: FireControllableComponent is server-only, so we can't check it on client
+        // The server will handle this check
+        if (user != null)
         {
             var track = EnsureComp<TrackUserComponent>(ent);
-            track.User = tracked;
+            track.User = user;
             track.Offset = Vector2.UnitX / 2f;
         }
 
@@ -409,5 +476,28 @@ public sealed partial class GunSystem : SharedGunSystem
 
         _animPlayer.Stop(gunUid, uidPlayer, "muzzle-flash-light");
         _animPlayer.Play((gunUid, uidPlayer), animTwo, "muzzle-flash-light");
+    }
+
+    // TODO: Move RangedDamageSoundComponent to shared so this can be predicted.
+    public override void PlayImpactSound(
+        EntityUid otherEntity,
+        DamageSpecifier? modifiedDamage,
+        SoundSpecifier? weaponSound,
+        bool forceWeaponSound,
+        Robust.Shared.Player.Filter? filter = null,
+        Entity<ProjectileComponent, PhysicsComponent>? projectile = null)
+    {
+    }
+
+    public override void ShootProjectile(EntityUid uid,
+        Vector2 direction,
+        Vector2 gunVelocity,
+        EntityUid gunUid,
+        EntityUid? user = null,
+        float speed = 20f)
+    {
+        EnsureComp<PredictedProjectileClientComponent>(uid);
+        _physics.UpdateIsPredicted(uid);
+        base.ShootProjectile(uid, direction, gunVelocity, gunUid, user, speed);
     }
 }

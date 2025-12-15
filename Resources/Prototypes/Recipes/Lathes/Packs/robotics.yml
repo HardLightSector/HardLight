@@ -46,7 +46,6 @@
   - BorgModuleLightReplacer
   - BorgModuleAdvancedParamedic
 
-
 - type: latheRecipePack
   id: SMCybernetics
   recipes:
@@ -57,6 +56,19 @@
   - BasicCyberneticEyes
   - SecurityCyberneticEyes
   - MedicalCyberneticEyes
+
+- type: latheRecipePack
+  id: CombatCybernetics
+  recipes:
+  - CyberneticsMantisBladeLeft
+  - CyberneticsMantisBladeRight
+  - CyberneticsPainEditor
+  - CyberneticsAdrenal
+  - CyberneticsCortexBomb
+  - CyberneticsHiggsCerebralTrainer
+  - CyberneticsHiggsAnchor
+  - CyberneticsHiggsDisplacer
+  - CyberneticsBloodPump
 
 - type: latheRecipePack
   id: BorgLimbsStatic

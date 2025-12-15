@@ -97,6 +97,8 @@
     - ClothingBackpackDuffelHolding
     - ClothingBackpackMessengerHolding
     - OreBagOfHolding
+    - ClothingBackpackExplorer #HL
+    - ClothingRucksack #HL
     - ClothingOuterHardsuitBasic
     - ClothingOuterHardsuitSpatio
     - ClothingOuterHardsuitSalvage

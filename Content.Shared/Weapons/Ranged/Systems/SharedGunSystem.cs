@@ -1,3 +1,43 @@
+// SPDX-FileCopyrightText: 2022 Rane
+// SPDX-FileCopyrightText: 2022 Salex08
+// SPDX-FileCopyrightText: 2022 metalgearsloth
+// SPDX-FileCopyrightText: 2023 AJCM-git
+// SPDX-FileCopyrightText: 2023 Arendian
+// SPDX-FileCopyrightText: 2023 Errant
+// SPDX-FileCopyrightText: 2023 Kara
+// SPDX-FileCopyrightText: 2023 Leon Friedrich
+// SPDX-FileCopyrightText: 2023 Nemanja
+// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers
+// SPDX-FileCopyrightText: 2023 TaralGit
+// SPDX-FileCopyrightText: 2023 and_a
+// SPDX-FileCopyrightText: 2023 deltanedas
+// SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2024 Dakamakat
+// SPDX-FileCopyrightText: 2024 DrSmugleaf
+// SPDX-FileCopyrightText: 2024 Dvir
+// SPDX-FileCopyrightText: 2024 Ed
+// SPDX-FileCopyrightText: 2024 I.K
+// SPDX-FileCopyrightText: 2024 MilenVolf
+// SPDX-FileCopyrightText: 2024 Plykiya
+// SPDX-FileCopyrightText: 2024 SlamBamActionman
+// SPDX-FileCopyrightText: 2024 Tayrtahn
+// SPDX-FileCopyrightText: 2024 TemporalOroboros
+// SPDX-FileCopyrightText: 2024 Whatstone
+// SPDX-FileCopyrightText: 2024 keronshb
+// SPDX-FileCopyrightText: 2024 nikthechampiongr
+// SPDX-FileCopyrightText: 2025 Ark
+// SPDX-FileCopyrightText: 2025 Avalon
+// SPDX-FileCopyrightText: 2025 Aviu00
+// SPDX-FileCopyrightText: 2025 Redrover1760
+// SPDX-FileCopyrightText: 2025 ark1368
+// SPDX-FileCopyrightText: 2025 beck-thompson
+// SPDX-FileCopyrightText: 2025 bitcrushing
+// SPDX-FileCopyrightText: 2025 slarticodefast
+// SPDX-FileCopyrightText: 2025 sleepyyapril
+// SPDX-FileCopyrightText: 2025 starch
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
 using Content.Shared.ActionBlocker;
@@ -25,6 +65,7 @@ using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Weapons.Ranged.Events;
 using Content.Shared.Whitelist;
+using Content.Shared._RMC14.Weapons.Ranged.Prediction;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
@@ -33,6 +74,7 @@ using Robust.Shared.Network;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Systems;
+using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Serialization;
@@ -69,6 +111,7 @@ public abstract partial class SharedGunSystem : EntitySystem
     [Dependency] protected readonly ThrowingSystem ThrowingSystem = default!;
     [Dependency] private   readonly UseDelaySystem _useDelay = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
+    [Dependency] protected readonly SharedGunPredictionSystem? _gunPrediction = default!;
 
     private const float InteractNextFire = 0.3f;
     private const double SafetyNextFire = 0.5;
@@ -148,6 +191,50 @@ public abstract partial class SharedGunSystem : EntitySystem
         gun.ShootCoordinates = GetCoordinates(msg.Coordinates);
         gun.Target = GetEntity(msg.Target);
         AttemptShoot(user.Value, ent, gun);
+    }
+
+    public List<(EntityUid Entity, ProjectileComponent Component)>? ShootRequested(
+        NetEntity gun,
+        NetCoordinates coordinates,
+        NetEntity? target,
+        List<int>? shot,
+        ICommonSession session)
+    {
+        var gunUid = GetEntity(gun);
+        var user = session.AttachedEntity;
+
+        if (user == null ||
+            !_combatMode.IsInCombatMode(user) ||
+            !TryGetGun(user.Value, out var ent, out var gunComp))
+        {
+            return null;
+        }
+
+        if (ent != gunUid)
+            return null;
+
+        gunComp.ShootCoordinates = GetCoordinates(coordinates);
+        gunComp.Target = GetEntity(target);
+
+        AttemptShoot(user.Value, ent, gunComp);
+        
+        // Check if shooting was successful by checking if ammo was consumed
+        // This is a workaround since AttemptShoot returns void
+        if (gunComp.ShotCounter == 0)
+            return null;
+
+        var projectiles = new List<(EntityUid Entity, ProjectileComponent Component)>();
+        if (shot != null)
+        {
+            foreach (var id in shot)
+            {
+                var entity = new EntityUid(id);
+                if (TryComp<ProjectileComponent>(entity, out var projectile))
+                    projectiles.Add((entity, projectile));
+            }
+        }
+
+        return projectiles;
     }
 
     private void OnStopShootRequest(RequestStopShootEvent ev, EntitySessionEventArgs args)
@@ -446,7 +533,7 @@ public abstract partial class SharedGunSystem : EntitySystem
         EntityUid? user = null,
         bool throwItems = false);
 
-    public void ShootProjectile(EntityUid uid, Vector2 direction, Vector2 gunVelocity, EntityUid gunUid, EntityUid? user = null, float speed = 20f)
+    public virtual void ShootProjectile(EntityUid uid, Vector2 direction, Vector2 gunVelocity, EntityUid gunUid, EntityUid? user = null, float speed = 20f)
     {
         var physics = EnsureComp<PhysicsComponent>(uid);
         Physics.SetBodyStatus(uid, physics, BodyStatus.InAir);
@@ -643,6 +730,10 @@ public abstract partial class SharedGunSystem : EntitySystem
     }
 
     protected abstract void CreateEffect(EntityUid gunUid, MuzzleFlashEvent message, EntityUid? user = null);
+
+    public bool GunPrediction => _gunPrediction?.GunPrediction ?? false;
+
+    public abstract void PlayImpactSound(EntityUid otherEntity, DamageSpecifier? modifiedDamage, SoundSpecifier? weaponSound, bool forceWeaponSound, Robust.Shared.Player.Filter? filter = null, Entity<ProjectileComponent, PhysicsComponent>? projectile = null);
 
     /// <summary>
     /// Used for animated effects on the client.

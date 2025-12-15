@@ -27,6 +27,9 @@ marking-VulpEarFennec-fennec = Fennec Ears (Base)
 marking-VulpEarFennec-fennec-inner = Fennec Ears (Inner)
 marking-VulpEarFennec = Vulpkanin Fennec
 
+marking-VulpEarSpaniel-spaniel = Spaniel Ears
+marking-VulpEarSpaniel = Vulpkanin Spaniel
+
 marking-VulpEarFox-fox = Fox Ears
 marking-VulpEarFox = Vulpkanin Fox
 

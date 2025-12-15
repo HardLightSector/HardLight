@@ -241,6 +241,11 @@ public sealed partial class FireControlSystem : EntitySystem
             ShipGunClass.Medium => 6,
             ShipGunClass.Heavy => 9,
             ShipGunClass.Superheavy => 12,
+            ShipGunClass.CVSuperlight => 5,
+            ShipGunClass.CVLight => 8,
+            ShipGunClass.CVMedium => 12,
+            ShipGunClass.CVHeavy => 15,
+            ShipGunClass.CVSuperheavy => 20,
             _ => 0,
         };
     }

@@ -90,7 +90,7 @@ public sealed partial class CryoSleepSystem
 
         RaiseLocalEvent(body, new CryosleepWakeUpEvent(cryopod, id), true);
 
-        _adminLogger.Add(LogType.LateJoin, LogImpact.Medium, $"{id.Value} has returned from cryosleep!");
+        //_adminLogger.Add(LogType.LateJoin, LogImpact.Medium, $"{id.Value} has returned from cryosleep!");
         return ReturnToBodyStatus.Success;
     }
 

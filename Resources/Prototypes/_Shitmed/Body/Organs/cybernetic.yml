@@ -1,5 +1,5 @@
 - type: entity
-  parent: OrganHumanEyes
+  parent: CyberOrganHumanEyes # New parent to prevent rotting in cybernetic eyes
   abstract: true
   id: BaseCyberneticEyes
   components:

@@ -113,7 +113,7 @@ public sealed class PlayerPaymentPersistenceSystem : EntitySystem
             CurrentJob = "Unknown"
         };
 
-        _sawmill.Debug($"Started payment tracking for player {session.Name}");
+        //_sawmill.Debug($"Started payment tracking for player {session.Name}");
     }
 
     private void EndPlayerSession(ICommonSession session)
@@ -127,7 +127,7 @@ public sealed class PlayerPaymentPersistenceSystem : EntitySystem
         var sessionDuration = workSession.SessionEndTime.Value - workSession.SessionStartTime;
         workSession.HoursWorked = (float)sessionDuration.TotalHours;
 
-        _sawmill.Debug($"Ended payment tracking for player {session.Name}, worked {workSession.HoursWorked:F2} hours");
+        //_sawmill.Debug($"Ended payment tracking for player {session.Name}, worked {workSession.HoursWorked:F2} hours");
 
         _activeSessions.Remove(session);
     }
@@ -142,7 +142,7 @@ public sealed class PlayerPaymentPersistenceSystem : EntitySystem
             workSession.LastJobChange = DateTime.UtcNow;
             workSession.CurrentJob = jobId ?? "Unknown";
 
-            _sawmill.Debug($"Updated job for player {session.Name} to {workSession.CurrentJob}");
+            //_sawmill.Debug($"Updated job for player {session.Name} to {workSession.CurrentJob}");
         }
     }
 
@@ -189,7 +189,7 @@ public sealed class PlayerPaymentPersistenceSystem : EntitySystem
                 }
             }
 
-            _sawmill.Info($"Saved payment data for {persistence.PlayerPayments.Count} players");
+            //_sawmill.Info($"Saved payment data for {persistence.PlayerPayments.Count} players");
             return;
         }
     }
@@ -202,7 +202,7 @@ public sealed class PlayerPaymentPersistenceSystem : EntitySystem
         var query = EntityQueryEnumerator<RoundPersistenceComponent>();
         while (query.MoveNext(out var uid, out var persistence))
         {
-            _sawmill.Info($"Restored payment data for {persistence.PlayerPayments.Count} players");
+            //_sawmill.Info($"Restored payment data for {persistence.PlayerPayments.Count} players");
 
             // Restore active sessions for currently connected players
             foreach (var session in _playerManager.Sessions)

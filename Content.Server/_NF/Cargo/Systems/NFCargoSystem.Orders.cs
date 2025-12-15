@@ -145,9 +145,9 @@ public sealed partial class NFCargoSystem
         AddOrder(dbUid.Value, data, orderDatabase);
 
         // Log order addition
-        _adminLogger.Add(LogType.Action, LogImpact.Low,
+        /* _adminLogger.Add(LogType.Action, LogImpact.Low,
             $"{ToPrettyString(player):user} placed an order [orderId:{data.OrderId}, quantity:{data.OrderQuantity}, product:{data.ProductId}, purchaser:{data.Purchaser}, notes:{data.Notes}]");
-
+ */
         _audio.PlayPvs(ent.Comp.ConfirmSound, ent);
     }
 

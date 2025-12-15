@@ -28,6 +28,7 @@
   - CumProducer
   - CumFlood
   - BluespaceBalls
+  - BarrelBalls
   components:
     - type: CumProducer
       maxVol: 100
@@ -43,6 +44,7 @@
   - CumProducer
   - CumCascade
   - BluespaceBalls
+  - BarrelBalls
   components:
     - type: CumProducer
       maxVol: 250
@@ -58,10 +60,27 @@
   - CumProducer
   - CumCascade
   - CumFlood
+  - BarrelBalls
   components:
     - type: CumProducer
       maxVol: 1000
       reVol: 200
+      reHunger: 1
+
+- type: trait
+  id: BarrelBalls
+  name: trait-barrel-balls-name
+  description: trait-barrel-balls-desc
+  category: Physical
+  mutuallyExclusiveTraits:
+  - CumProducer
+  - CumCascade
+  - CumFlood
+  - BluespaceBalls
+  components:
+    - type: CumProducer
+      maxVol: 15000
+      reVol: 3750
       reHunger: 1
 
 ##- type: trait
@@ -93,6 +112,7 @@
   - MilkCascade
   - MilkFlood
   - BluespaceBreasts
+  - BarrelBreasts
   components:
     - type: MilkProducer
       maxVol: 50
@@ -108,6 +128,7 @@
   - MilkProducer
   - MilkFlood
   - BluespaceBreasts
+  - BarrelBreasts
   components:
     - type: MilkProducer
       maxVol: 100
@@ -123,6 +144,7 @@
   - MilkProducer
   - MilkCascade
   - BluespaceBreasts
+  - BarrelBreasts
   components:
     - type: MilkProducer
       maxVol: 250
@@ -138,10 +160,27 @@
   - MilkProducer
   - MilkCascade
   - MilkFlood
+  - BarrelBreasts
   components:
     - type: MilkProducer
       maxVol: 1000
       reVol: 200
+      reHunger: 1
+
+- type: trait
+  id: BarrelBreasts
+  name: trait-barrel-breasts-name
+  description: trait-barrel-breasts-desc
+  category: Physical
+  mutuallyExclusiveTraits:
+  - MilkProducer
+  - MilkCascade
+  - MilkFlood
+  - BluespaceBreasts
+  components:
+    - type: MilkProducer
+      maxVol: 15000
+      reVol: 3750
       reHunger: 1
 
 # WIP - Needs a Reagent

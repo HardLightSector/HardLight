@@ -20,6 +20,9 @@
   - WeaponShotgunKammerer
   - ForensicPad
   - FlashlightSecliteNF
+  - ClothingBackpackTactical #HL
+  - ClothingBackpackExplorer #HL
+  - ClothingRucksack #HL
   technologyPrerequisites:
   - AdvancedRiotControl
 

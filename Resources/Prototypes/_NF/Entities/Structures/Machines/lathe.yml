@@ -279,6 +279,7 @@
     - NFInflatablesStatic
     dynamicPacks:
     - NFEngineeringTechfabDeprecated
+    - AutomationKits # HL
   - type: OreSiloClient
   - type: DeviceLinkSink
     ports:

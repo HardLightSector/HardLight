@@ -62,6 +62,11 @@
   - type: ContainerContainer
     containers:
       Paper: !type:ContainerSlot
+  - type: AutomationSlots # Goobstation
+    slots:
+    - !type:AutomatedPorts
+      sinks:
+      - FaxCopy
   - type: DeviceNetworkRequiresPower
   - type: DeviceNetwork
     deviceNetId: Wireless

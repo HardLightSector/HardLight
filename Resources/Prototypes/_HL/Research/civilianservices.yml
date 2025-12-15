@@ -8,9 +8,10 @@
     state: pumpManualValve
   discipline: CivilianServices
   tier: 1
-  cost: 5000
+  cost: 7500
   recipeUnlocks:
   - PlumbingAssemblyRecipe
+  - PlumbingPumpCircuitboard
 
 - type: technology
   id: BulkLiquidStorage

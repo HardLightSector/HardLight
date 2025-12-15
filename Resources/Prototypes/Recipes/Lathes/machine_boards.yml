@@ -200,6 +200,7 @@
   result: ChemDispenserMachineCircuitboard
 
 # Treatment
+
 - type: latheRecipe
   parent: [ BaseGoldCircuitboardRecipe, BaseMedicalMachineRecipeCategory ]
   id: CryoPodMachineCircuitboard
@@ -396,6 +397,24 @@
   parent: [ BaseGoldCircuitboardRecipe, BaseResearchMachineRecipeCategory ]
   id: CircuitImprinterHyperConvectionMachineCircuitboard
   result: CircuitImprinterHyperConvectionMachineCircuitboard
+
+# - type: latheRecipe
+#   abstract: true # DeltaV
+#   parent: BaseGoldCircuitboardRecipe
+#   id: AutolatheHyperConvectionMachineCircuitboard
+#   result: AutolatheHyperConvectionMachineCircuitboard
+
+# - type: latheRecipe
+#   abstract: true # DeltaV
+#   parent: BaseGoldCircuitboardRecipe
+#   id: ProtolatheHyperConvectionMachineCircuitboard
+#   result: ProtolatheHyperConvectionMachineCircuitboard
+
+# - type: latheRecipe
+#   abstract: true # DeltaV
+#   parent: BaseGoldCircuitboardRecipe
+#   id: CircuitImprinterHyperConvectionMachineCircuitboard
+#   result: CircuitImprinterHyperConvectionMachineCircuitboard
 
 - type: latheRecipe
   parent: [ BaseCircuitboardRecipe, BaseResearchMachineRecipeCategory ]

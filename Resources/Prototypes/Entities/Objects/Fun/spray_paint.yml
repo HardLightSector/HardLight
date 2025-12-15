@@ -44,7 +44,7 @@
 - type: entity
   parent: PaintBase
   id: FunnyPaint
-  name: funny paint
+  name: pink funny paint
   description:  A tin of funny paint, manufactured by Honk! Co.
   components:
   - type: Paint
@@ -62,7 +62,7 @@
 - type: entity
   parent: PaintBase
   id: FunnyPaintYellow
-  name: funny paint
+  name: yellow funny paint
   description:  A tin of funny paint, manufactured by Honk! Co.
   components:
   - type: Paint
@@ -87,6 +87,7 @@
 - type: entity
   parent: PaintBase
   id: DeathPaint
+  name: pink death paint
   components:
   - type: Paint
     color: "#ff20c8"
@@ -109,6 +110,7 @@
 - type: entity
   parent: PaintBase
   id: DeathPaintTwo
+  name: red death paint
   components:
   - type: Paint
     color: "#ff2020"
@@ -134,6 +136,7 @@
 - type: entity
   parent: PaintBase
   id: SprayPaintBlue
+  name: blue paint
   suffix: Blue
   components:
   - type: Sprite
@@ -157,6 +160,7 @@
 - type: entity
   parent: PaintBase
   id: SprayPaintRed
+  name: red paint
   suffix: Red
   components:
   - type: Sprite
@@ -180,6 +184,7 @@
 - type: entity
   parent: PaintBase
   id: SprayPaintGreen
+  name: green paint
   suffix: Green
   components:
   - type: Sprite
@@ -203,6 +208,7 @@
 - type: entity
   parent: PaintBase
   id: SprayPaintBlack
+  name: black paint
   suffix: Black
   components:
   - type: Sprite
@@ -226,6 +232,7 @@
 - type: entity
   parent: PaintBase
   id: SprayPaintOrange
+  name: orange paint
   suffix: Orange
   components:
   - type: Sprite
@@ -249,6 +256,7 @@
 - type: entity
   parent: PaintBase
   id: SprayPaintPurple
+  name: purple paint
   suffix: Purple
   components:
   - type: Sprite
@@ -272,6 +280,7 @@
 - type: entity
   parent: PaintBase
   id: SprayPaintWhite
+  name: white paint
   suffix: White
   components:
   - type: Sprite

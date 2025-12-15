@@ -41,89 +41,38 @@ public sealed partial class SalvageSystem
     private const float ShuttleFTLRange = 150f; // Frontier
 
     /// <summary>
-    /// Gets the expedition data for the station that owns the given console.
+    /// Gets or creates expedition data for the console's shuttle/grid.
+    /// Station data is intentionally ignored; consoles are fully independent.
     /// </summary>
     public SalvageExpeditionDataComponent? GetStationExpeditionData(EntityUid consoleUid)
     {
-        // Prefer resolving with a transform (more reliable right after restarts / docking changes)
-        EntityUid? station = null;
-        if (TryComp(consoleUid, out TransformComponent? xform))
-            station = _station.GetOwningStation(consoleUid, xform);
+        // Resolve the console's transform and grid; only grid-local data is used.
+        var xform = Transform(consoleUid);
+        var gridUid = xform.GridUid;
+        if (gridUid == null)
+            return null;
 
-        station ??= _station.GetOwningStation(consoleUid);
-
-        if (station != null)
+        // Ensure and return grid-local expedition data (independent of stations).
+        if (TryComp<SalvageExpeditionDataComponent>(gridUid.Value, out var gridDataExisting))
         {
-            // Prefer station-local expedition data; create if missing so consoles don't share global state.
-            if (TryComp<SalvageExpeditionDataComponent>(station.Value, out var expeditionData))
-                return expeditionData;
-
-            // Initialize per-station expedition data on-demand to avoid cross-station sharing after restarts.
-            var newData = EnsureComp<SalvageExpeditionDataComponent>(station.Value);
-            // Default timings: allow immediate mission generation; system will populate missions on next update.
-            newData.Cooldown = false;
-            newData.CanFinish = false;
-            newData.ActiveMission = 0;
-            newData.CooldownTime = TimeSpan.Zero;
-            newData.NextOffer = _timing.CurTime; // ready now
-            Dirty(station.Value, newData);
-            return newData;
+            if (gridDataExisting.Missions.Count == 0 && !gridDataExisting.GeneratingMissions && !gridDataExisting.Cooldown)
+            {
+                GenerateMissions(gridDataExisting);
+                Dirty(gridUid.Value, gridDataExisting);
+            }
+            return gridDataExisting;
         }
 
-        // HARDLIGHT: Fallback for shuttle consoles after round restarts.
-        // Some purchased shuttles have their own station entity without expedition data.
-        // If this console is on a shuttle, allow using any station's expedition data
-        // so expeditions remain functional across restarts.
-        var gridUid = xform?.GridUid ?? Transform(consoleUid).GridUid;
-        if (gridUid != null && HasComp<ShuttleComponent>(gridUid.Value))
-        {
-            // If console is on a shuttle without a station association, try to resolve its owning station via transform.
-            var owningStation = _station.GetOwningStation(consoleUid, xform);
-            if (owningStation != null)
-            {
-                if (TryComp<SalvageExpeditionDataComponent>(owningStation.Value, out var data))
-                    return data;
-
-                // Create per-station data to prevent different shuttles from sharing.
-                var created = EnsureComp<SalvageExpeditionDataComponent>(owningStation.Value);
-                created.Cooldown = false;
-                created.CanFinish = false;
-                created.ActiveMission = 0;
-                created.CooldownTime = TimeSpan.Zero;
-                created.NextOffer = _timing.CurTime;
-                Dirty(owningStation.Value, created);
-                return created;
-            }
-
-            // Fallback: try to resolve via the shuttle grid's owning station.
-            var gridStation = _station.GetOwningStation(gridUid.Value);
-            if (gridStation != null)
-            {
-                if (TryComp<SalvageExpeditionDataComponent>(gridStation.Value, out var gridData))
-                    return gridData;
-
-                var createdGridData = EnsureComp<SalvageExpeditionDataComponent>(gridStation.Value);
-                createdGridData.Cooldown = false;
-                createdGridData.CanFinish = false;
-                createdGridData.ActiveMission = 0;
-                createdGridData.CooldownTime = TimeSpan.Zero;
-                createdGridData.NextOffer = _timing.CurTime;
-                Dirty(gridStation.Value, createdGridData);
-                return createdGridData;
-            }
-
-            // Ultimate fallback: attach expedition data to the shuttle grid itself so refresh/claim works.
-            var gridExpData = EnsureComp<SalvageExpeditionDataComponent>(gridUid.Value);
-            gridExpData.Cooldown = false;
-            gridExpData.CanFinish = false;
-            gridExpData.ActiveMission = 0;
-            gridExpData.CooldownTime = TimeSpan.Zero;
-            gridExpData.NextOffer = _timing.CurTime;
-            Dirty(gridUid.Value, gridExpData);
-            return gridExpData;
-        }
-
-        return null;
+        var gridData = EnsureComp<SalvageExpeditionDataComponent>(gridUid.Value);
+        gridData.Cooldown = false;
+        gridData.CanFinish = false;
+        gridData.ActiveMission = 0;
+        gridData.CooldownTime = TimeSpan.Zero;
+        gridData.NextOffer = _timing.CurTime;
+        if (gridData.Missions.Count == 0 && !gridData.GeneratingMissions)
+            GenerateMissions(gridData);
+        Dirty(gridUid.Value, gridData);
+        return gridData;
     }
 
     private void OnSalvageClaimMessage(EntityUid uid, SalvageExpeditionConsoleComponent component, ClaimSalvageMessage args)
@@ -402,16 +351,15 @@ public sealed partial class SalvageSystem
         var data = GetStationExpeditionData(uid);
         if (data == null)
         {
-            Log.Warning($"No station expedition data found for console {ToPrettyString(uid)}");
-            // Create empty state for consoles without station
+            // If the console isn't on a grid, present a disabled state.
             var emptyState = new SalvageExpeditionConsoleState(
                 TimeSpan.Zero,
                 false,
-                true, // Disabled since no station
+                true,
                 0,
                 new List<SalvageMissionParams>(),
-                false, // canFinish
-                TimeSpan.Zero // cooldownTime
+                false,
+                TimeSpan.Zero
             );
             _ui.SetUiState(uid, SalvageConsoleUiKey.Expedition, emptyState);
             return;
@@ -440,8 +388,8 @@ public sealed partial class SalvageSystem
 
         var state = new SalvageExpeditionConsoleState(
             data.NextOffer,
-            data.Cooldown, // HARDLIGHT: Use cooldown state instead of ActiveMission for independent consoles
-            false, // Console is functional when station data exists
+            data.Claimed,
+            data.Cooldown,
             data.ActiveMission,
             data.Missions.Values.ToList(),
             data.CanFinish,
@@ -449,7 +397,7 @@ public sealed partial class SalvageSystem
         );
 
         _ui.SetUiState(component.Owner, SalvageConsoleUiKey.Expedition, state);
-        Log.Debug($"Updated console {ToPrettyString(uid)} with {state.Missions.Count} missions from station (Active: {data.ActiveMission}, Cooldown: {data.Cooldown})");
+        Log.Debug($"Updated console {ToPrettyString(uid)} with {state.Missions.Count} missions (Active: {data.ActiveMission}, Cooldown: {data.Cooldown})");
     }
 
     // HARDLIGHT: Direct mission spawning for console-specific expeditions

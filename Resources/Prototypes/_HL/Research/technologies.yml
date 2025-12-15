@@ -125,3 +125,23 @@
   - CapitalShipWeaponFrame
   - CapitalShipWeaponServo
   - CapitalShipWeaponInternal
+
+- type: technology
+  id: CyberneticWarfare
+  name: research-technology-cybernetic-warfare
+  icon:
+    sprite: _Crescent/Objects/Misc/cybernetics.rsi
+    state: mantisblade
+  discipline: Arsenal
+  tier: 2
+  cost: 10000
+  recipeUnlocks:
+  - CyberneticsMantisBladeLeft
+  - CyberneticsMantisBladeRight
+  - CyberneticsPainEditor
+  - CyberneticsAdrenal
+  - CyberneticsCortexBomb
+  - CyberneticsHiggsCerebralTrainer
+  - CyberneticsHiggsAnchor
+  - CyberneticsHiggsDisplacer
+  - CyberneticsBloodPump

@@ -23,6 +23,9 @@ namespace Content.Shared.Cybernetics
         [DataField, AutoNetworkedField]
         public float CooldownTime = 5f;
 
+        [DataField, AutoNetworkedField]
+        public float MaxRange = 12f;
+
     }
 }
 public sealed partial class BluespaceShuntEvent : WorldTargetActionEvent

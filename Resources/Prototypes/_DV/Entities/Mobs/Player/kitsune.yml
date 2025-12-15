@@ -13,6 +13,12 @@
     interactSuccessSpawn: EffectHearts
     interactSuccessSound:
       path: /Audio/Animals/fox_squeak.ogg
+  - type: PseudoItem
+    storedOffset: 0,17
+    shape:
+      - 0,0,1,4
+      - 0,2,3,4
+      - 4,0,5,4
   - type: MeleeWeapon
     soundHit:
       path: /Audio/Items/hiss.ogg

@@ -1,0 +1,44 @@
+# Author Info
+# GitHub: Generic_Eagle
+# Discord: Generic_Eagle
+
+# Maintainer Info
+# GitHub: Generic_Eagle
+# Discord: Generic_Eagle
+
+# Shuttle Notes:
+#
+- type: vessel
+  id: Deterrence
+  name: AI Deterrence
+  description: A carrier designed to carry Mosquito-frame craft and other light vessels as well as provide heavy fire support.
+  price: 200000 # ~185k + markup
+  category: Large
+  group: Security
+  access: Security
+  shuttlePath: /Maps/_HL/Shuttles/ColSec/deterrence.yml
+  guidebookPage: Null
+  class:
+  - Capital
+  engine:
+  - AME
+
+
+- type: gameMap
+  id: Deterrence
+  mapName: 'AI Deterrence'
+  mapPath: /Maps/_HL/Shuttles/ColSec/deterrence.yml
+  minPlayers: 0
+  stations:
+    Deterrence:
+      stationProto: StandardFrontierSecurityVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Deterrence {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs: {}
+
+          

@@ -29,6 +29,15 @@
     - Meat
 
 - type: entity
+  id: BaseHumanCyberOrganUnGibbable # Parent for cybernetic Organs / Cybernetic Eyes
+  parent: BaseItem
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/organs.rsi
+  - type: Organ
+
+- type: entity
   id: BaseHumanOrgan
   parent: BaseHumanOrganUnGibbable
   abstract: true
@@ -43,7 +52,15 @@
   - type: AtmosExposed
   - type: Temperature
     currentTemperature: 290 # copied from meat
-    
+
+- type: entity
+  id: BaseHumanCyberOrgan # Parent for cybernetic Organs / Cybernetic Eyes
+  parent: BaseHumanCyberOrganUnGibbable
+  abstract: true
+  components:
+  - type: Gibbable
+  - type: AtmosExposed
+
 - type: entity
   id: OrganHumanBrain
   parent: BaseHumanOrganUnGibbable
@@ -89,6 +106,23 @@
 - type: entity
   id: OrganHumanEyes
   parent: BaseHumanOrgan
+  name: eyes
+  description: "I see you!"
+  components:
+  - type: Organ # Shitmed Change
+    slotId: eyes # Shitmed Change
+  - type: Eyes # Shitmed Change
+  - type: Sprite
+    layers:
+    - state: eyeball-l
+    - state: eyeball-r
+  - type: Item
+    size: Small
+    heldPrefix: eyeballs
+
+- type: entity
+  id: CyberOrganHumanEyes # Parent for cybernetic organs / Cybernetic Eyes
+  parent: BaseHumanCyberOrgan
   name: eyes
   description: "I see you!"
   components:

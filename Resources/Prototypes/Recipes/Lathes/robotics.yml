@@ -535,3 +535,89 @@
     Plastic: 500
     Gold: 300
     Silver: 300
+
+- type: latheRecipe
+  id: CyberneticsMantisBladeLeft
+  result: CyberneticsMantisBladeLeft
+  completetime: 30
+  materials:
+    Steel: 1000
+    Plasteel: 3000
+    Gold: 500
+
+- type: latheRecipe
+  id: CyberneticsMantisBladeRight
+  result: CyberneticsMantisBladeRight
+  completetime: 30
+  materials:
+    Steel: 1000
+    Plasteel: 3000
+    Gold: 500
+
+- type: latheRecipe
+  id: CyberneticsPainEditor
+  result: CyberneticsPainEditor
+  completetime: 30
+  materials:
+    Steel: 1500
+    Gold: 500
+    Silver: 300
+
+- type: latheRecipe
+  id: CyberneticsAdrenal
+  result: CyberneticsAdrenal
+  completetime: 30
+  materials:
+    Steel: 1500
+    Gold: 500
+    Silver: 300
+
+- type: latheRecipe
+  id: CyberneticsCortexBomb
+  result: CyberneticsCortexBomb
+  completetime: 30
+  materials:
+    Steel: 2000
+    Gold: 700
+    Silver: 400
+
+- type: latheRecipe
+  id: CyberneticsHiggsCerebralTrainer
+  result: CyberneticsHiggsCerebralTrainer
+  completetime: 30
+  materials:
+    Steel: 1500
+    Gold: 500
+    Silver: 300
+
+- type: latheRecipe
+  id: CyberneticsHiggsAnchor
+  result: CyberneticsHiggsAnchor
+  completetime: 30
+  materials:
+    Steel: 2000
+    Gold: 700
+    Silver: 400
+    Diamond: 400
+
+- type: latheRecipe
+  id: CyberneticsHiggsDisplacer
+  result: CyberneticsHiggsDisplacer
+  completetime: 30
+  materials:
+    Steel: 2000
+    Gold: 1000
+    Silver: 500
+    Diamond: 500
+    Uranium: 300
+    Bananium: 300
+
+- type: latheRecipe
+  id: CyberneticsBloodPump
+  result: CyberneticsBloodPump
+  completetime: 30
+  materials:
+    Steel: 2000
+    Gold: 700
+    Silver: 400
+    Diamond: 100

@@ -1,3 +1,12 @@
+// SPDX-FileCopyrightText: 2022 metalgearsloth
+// SPDX-FileCopyrightText: 2023 Checkraze
+// SPDX-FileCopyrightText: 2023 Leon Friedrich
+// SPDX-FileCopyrightText: 2024 LordCarve
+// SPDX-FileCopyrightText: 2025 Ark
+// SPDX-FileCopyrightText: 2025 ark1368
+//
+// SPDX-License-Identifier: MPL-2.0
+
 using Content.Server.Movement.Components;
 using Robust.Server.Player;
 using Robust.Shared.Map;
@@ -70,7 +79,7 @@ public sealed class LagCompensationSystem : EntitySystem
 
         var angle = Angle.Zero;
         var coordinates = EntityCoordinates.Invalid;
-        var ping = pSession.Ping;
+        var ping = pSession.Channel.Ping;
         // Use 1.5 due to the trip buffer.
         var sentTime = _timing.CurTime - TimeSpan.FromMilliseconds(ping * 1.5);
 

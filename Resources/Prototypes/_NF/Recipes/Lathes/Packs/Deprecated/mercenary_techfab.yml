@@ -148,6 +148,9 @@
   - ClothingBackpackDuffelHolding
   - ClothingBackpackMessengerHolding
   - FlashlightSecliteNF
+  - ClothingBackpackTactical #HL
+  - ClothingBackpackExplorer #HL
+  - ClothingRucksack #HL
 ## Weapons
   - WeaponGrapplingGun
   - BolaNF

@@ -1,3 +1,12 @@
+# SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
+# SPDX-FileCopyrightText: 2024 Dvir
+# SPDX-FileCopyrightText: 2024 TheWaffleJesus
+# SPDX-FileCopyrightText: 2024 deltanedas
+# SPDX-FileCopyrightText: 2024 lzk
+# SPDX-FileCopyrightText: 2025 Ilya246
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: constructionGraph
   id: LogicGate
   start: start
@@ -56,6 +65,14 @@
       - material: Cable
         amount: 2
         doAfter: 1
+    # Mono
+    - to: timer
+      steps:
+      - material: Steel
+        amount: 1
+      - material: Cable
+        amount: 2
+        doAfter: 1
   - node: logic_gate
     entity: LogicGateOr
     edges:
@@ -104,6 +121,20 @@
       completed:
       - !type:SpawnPrototype
         prototype: CapacitorStockPart
+      - !type:SpawnPrototype
+        prototype: CableApcStack1
+        amount: 2
+  # Mono
+  - node: timer
+    entity: SignalTimerItem
+    edges:
+    - to: empty
+      steps:
+      - tool: Prying
+        doAfter: 2
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
       - !type:SpawnPrototype
         prototype: CableApcStack1
         amount: 2

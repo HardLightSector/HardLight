@@ -236,8 +236,6 @@
     damage:
       groups:
         Brute: 12
-  - type: Devourer
-    foodPreference: None
 
 - type: entity
   id: ActionSpawnRift

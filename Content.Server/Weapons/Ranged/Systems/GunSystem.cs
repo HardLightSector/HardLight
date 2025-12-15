@@ -1,10 +1,59 @@
+// SPDX-FileCopyrightText: 2022 Flipp Syder
+// SPDX-FileCopyrightText: 2022 Nemanja
+// SPDX-FileCopyrightText: 2022 Paul Ritter
+// SPDX-FileCopyrightText: 2022 Rane
+// SPDX-FileCopyrightText: 2022 Visne
+// SPDX-FileCopyrightText: 2022 metalgearsloth
+// SPDX-FileCopyrightText: 2022 themias
+// SPDX-FileCopyrightText: 2023 AJCM-git
+// SPDX-FileCopyrightText: 2023 Arendian
+// SPDX-FileCopyrightText: 2023 Chief-Engineer
+// SPDX-FileCopyrightText: 2023 Ilya Chvilyov
+// SPDX-FileCopyrightText: 2023 Kara
+// SPDX-FileCopyrightText: 2023 MendaxxDev
+// SPDX-FileCopyrightText: 2023 Slava0135
+// SPDX-FileCopyrightText: 2023 TaralGit
+// SPDX-FileCopyrightText: 2023 and_a
+// SPDX-FileCopyrightText: 2023 deltanedas
+// SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2024 Aviu00
+// SPDX-FileCopyrightText: 2024 Bixkitts
+// SPDX-FileCopyrightText: 2024 Cojoke
+// SPDX-FileCopyrightText: 2024 DrSmugleaf
+// SPDX-FileCopyrightText: 2024 Dvir
+// SPDX-FileCopyrightText: 2024 Ed
+// SPDX-FileCopyrightText: 2024 Jake Huxell
+// SPDX-FileCopyrightText: 2024 Jessica M
+// SPDX-FileCopyrightText: 2024 LordCarve
+// SPDX-FileCopyrightText: 2024 RiceMar1244
+// SPDX-FileCopyrightText: 2024 Sigil
+// SPDX-FileCopyrightText: 2024 VividPups
+// SPDX-FileCopyrightText: 2024 Whatstone
+// SPDX-FileCopyrightText: 2024 beck-thompson
+// SPDX-FileCopyrightText: 2024 eoineoineoin
+// SPDX-FileCopyrightText: 2024 keronshb
+// SPDX-FileCopyrightText: 2024 nikthechampiongr
+// SPDX-FileCopyrightText: 2025 Ark
+// SPDX-FileCopyrightText: 2025 Leon Friedrich
+// SPDX-FileCopyrightText: 2025 Redrover1760
+// SPDX-FileCopyrightText: 2025 SlamBamActionman
+// SPDX-FileCopyrightText: 2025 ark1368
+// SPDX-FileCopyrightText: 2025 bitcrushing
+// SPDX-FileCopyrightText: 2025 tonotom
+// SPDX-FileCopyrightText: 2025 tonotom1
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Linq;
 using System.Numerics;
 using Content.Server.Cargo.Systems;
 using Content.Server.Power.EntitySystems;
 using Content.Server.Weapons.Ranged.Components;
+using Content.Shared._Mono;
+using Content.Shared._RMC14.Weapons.Ranged.Prediction;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Systems;
+using Content.Shared.Damage.Components;
 using Content.Shared.Database;
 using Content.Shared.Effects;
 using Content.Shared.Projectiles;
@@ -13,20 +62,23 @@ using Content.Shared.Weapons.Ranged;
 using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Weapons.Ranged.Events;
 using Content.Shared.Weapons.Ranged.Systems;
+using Content.Shared.Weapons.Hitscan.Components;
 using Content.Shared.Weapons.Reflect;
-using Content.Shared.Damage.Components;
+using Content.Shared.Effects; // Mono
+using Robust.Server.GameObjects;
+using Robust.Server.Player;
 using Robust.Shared.Audio;
 using Robust.Shared.Map;
 using Robust.Shared.Physics;
+using Robust.Shared.Physics.Components;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using Robust.Shared.Containers;
 using Content.Shared.Interaction; // Frontier
 using Content.Shared.Examine; // Frontier
-using Content.Server.Power.Components;
-using Content.Shared.Power; // Frontier
-using Content.Server.PowerCell;
+using Content.Shared.Hands.Components;
+using Content.Shared.Power;
 
 namespace Content.Server.Weapons.Ranged.Systems;
 
@@ -39,6 +91,8 @@ public sealed partial class GunSystem : SharedGunSystem
     [Dependency] private readonly StaminaSystem _stamina = default!;
     [Dependency] private readonly SharedContainerSystem _container = default!;
     [Dependency] private readonly SharedMapSystem _map = default!;
+    [Dependency] private readonly RequireProjectileTargetSystem _requireProjectileTarget = default!;
+    [Dependency] private readonly IPlayerManager _playerManager = default!;
 
     private const float DamagePitchVariation = 0.05f;
 
@@ -326,6 +380,14 @@ public sealed partial class GunSystem : SharedGunSystem
             return;
         }
 
+        if (GunPrediction && user != null && TryComp<ActorComponent>(user, out var actor))
+        {
+            var predicted = EnsureComp<PredictedProjectileServerComponent>(uid);
+            predicted.Shooter = actor.PlayerSession;
+            predicted.ClientId = uid.Id;
+            predicted.ClientEnt = user;
+        }
+
         ShootProjectile(uid, mapDirection, gunVelocity, gunUid, user, gun.ProjectileSpeedModified);
     }
 
@@ -367,7 +429,7 @@ public sealed partial class GunSystem : SharedGunSystem
 
     protected override void CreateEffect(EntityUid gunUid, MuzzleFlashEvent message, EntityUid? user = null)
     {
-        var filter = Filter.Pvs(gunUid, entityManager: EntityManager);
+        var filter = Robust.Shared.Player.Filter.Pvs(gunUid, entityManager: EntityManager);
 
         if (TryComp<ActorComponent>(user, out var actor))
             filter.RemovePlayer(actor.PlayerSession);
@@ -375,9 +437,11 @@ public sealed partial class GunSystem : SharedGunSystem
         RaiseNetworkEvent(message, filter);
     }
 
-    public void PlayImpactSound(EntityUid otherEntity, DamageSpecifier? modifiedDamage, SoundSpecifier? weaponSound, bool forceWeaponSound)
+    public override void PlayImpactSound(EntityUid otherEntity, DamageSpecifier? modifiedDamage, SoundSpecifier? weaponSound, bool forceWeaponSound, Robust.Shared.Player.Filter? filter = null, Entity<ProjectileComponent, PhysicsComponent>? projectile = null)
     {
         DebugTools.Assert(!Deleted(otherEntity), "Impact sound entity was deleted");
+
+        filter ??= Filter.Pvs(otherEntity, entityManager: EntityManager);
 
         // Like projectiles and melee,
         // 1. Entity specific sound

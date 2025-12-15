@@ -105,7 +105,7 @@ public sealed class DroppableBorgModuleSystem : EntitySystem
             for (int i = 0; i < ent.Comp.Items.Count; i++)
             {
                 if (!DeleteHandAndHeldItem((chassis, hands), HandId(ent, i)))
-                    Log.Error($"Borg {ToPrettyString(chassis)} terminated with empty hand {i} in {ToPrettyString(ent)}");
+                    Log.Warning($"Borg {ToPrettyString(chassis)} terminated with empty hand {i} in {ToPrettyString(ent)}");
             }
             for (int i = 0; i < ent.Comp.Placeholders.Count; i++)
             {

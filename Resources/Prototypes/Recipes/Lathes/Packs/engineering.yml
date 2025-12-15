@@ -68,12 +68,19 @@
   recipes:
   - HolofanProjector
 
-# Frontier: no engineering weapons to unlock
+- type: latheRecipePack
+  id: AutomationKits
+  recipes:
+  - UpgradeKitAutomation
 
-# - type: latheRecipePack
-#   id: EngineeringWeapons
-#   recipes:
-#   - WeaponParticleDecelerator
+
+# Frontier: no engineering weapons to unlock
+# HL:  Oh yeah?
+
+- type: latheRecipePack
+  id: EngineeringWeapons
+  recipes:
+  - WeaponParticleDecelerator
 
 # End Frontier
 

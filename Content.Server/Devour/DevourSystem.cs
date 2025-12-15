@@ -26,9 +26,8 @@ public sealed class DevourSystem : SharedDevourSystem
 
         var ichorInjection = new Solution(component.Chemical, component.HealRate);
 
-        if ((component.FoodPreference == FoodPreference.All ||
-            (component.FoodPreference == FoodPreference.Humanoid && HasComp<HumanoidAppearanceComponent>(args.Args.Target))) &&
-            component.FoodPreference != FoodPreference.None)
+        if (component.FoodPreference == FoodPreference.All ||
+            (component.FoodPreference == FoodPreference.Humanoid && HasComp<HumanoidAppearanceComponent>(args.Args.Target)))
         {
             ichorInjection.ScaleSolution(0.5f);
 

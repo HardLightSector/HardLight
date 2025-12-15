@@ -297,10 +297,10 @@ public sealed partial class ShuttleRecordsSystem
 
         // Add to admin logs.
         var shuttleName = record.Name + " " + record.Suffix;
-        _adminLogger.Add(
+        /* _adminLogger.Add(
             LogType.ShuttleRecordsUsage,
             LogImpact.Low,
-            $"{ToPrettyString(args.Actor):actor} used {transactionPrice} from station bank account to copy shuttle deed {shuttleName}.");
+            $"{ToPrettyString(args.Actor):actor} used {transactionPrice} from station bank account to copy shuttle deed {shuttleName}."); */
         _audioSystem.PlayPredicted(component.ConfirmSound, uid, null, AudioParams.Default.WithMaxDistance(5f));
     }
 

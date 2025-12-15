@@ -1,0 +1,28 @@
+# Base prototypes
+
+- type: latheRecipe
+  abstract: true
+  id: HLBaseUpgradedBackpacks
+  completetime: 4
+  materials:
+    Cloth: 1000
+    Durathread: 750
+    Plastic: 500
+    Plasteel: 400
+    
+# Bags
+    
+- type: latheRecipe
+  id: ClothingBackpackTactical
+  parent: HLBaseUpgradedBackpacks
+  result: ClothingBackpackTactical
+  
+- type: latheRecipe
+  id: ClothingBackpackExplorer
+  parent: HLBaseUpgradedBackpacks
+  result: ClothingBackpackExplorer
+  
+- type: latheRecipe
+  id: ClothingRucksack
+  parent: HLBaseUpgradedBackpacks
+  result: ClothingRucksack

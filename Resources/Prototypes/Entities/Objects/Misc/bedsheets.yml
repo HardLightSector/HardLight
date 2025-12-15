@@ -23,6 +23,7 @@
   - type: Tag
     tags:
     - Bedsheet
+  - type: HLPersistOnShipSave
 
 - type: entity
   id: BedsheetBlack

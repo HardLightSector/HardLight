@@ -17,6 +17,9 @@ namespace Content.Shared.Cybernetics
         [Dependency] private readonly SharedPopupSystem _popup = default!;
         [Dependency] private readonly SharedTransformSystem _transform = default!;
         [Dependency] private readonly IGameTiming _timing = default!;
+
+        private const float MaxTeleportDistance = 10f; // Maximum teleportation distance in tiles
+
         public override void Initialize()
         {
             base.Initialize();
@@ -41,6 +44,15 @@ namespace Content.Shared.Cybernetics
 
             var origin = _transform.GetMapCoordinates(user);
             var target = args.Target.ToMap(EntityManager, _transform);
+
+            // Check if target is within maximum teleport distance
+            var distance = (target.Position - origin.Position).Length();
+            if (distance > MaxTeleportDistance)
+            {
+                _popup.PopupClient(Loc.GetString("shunt-too-far"), user, user);
+                return;
+            }
+
             if (!_examine.InRangeUnOccluded(origin, target, SharedInteractionSystem.MaxRaycastRange, null))
             {
                 // can only dash if the destination is visible on screen

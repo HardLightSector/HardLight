@@ -260,7 +260,7 @@ public sealed partial class NFCargoSystem
 
         _nameIdentifier.GenerateUniqueName(serviceId, PirateBountyNameIdentifierGroup, out var randomVal); // Need a string ID for internal name, probably doesn't need to be outward facing.
         component.Bounties.Add(new PirateBountyData(bounty, randomVal, false));
-        _adminLogger.Add(LogType.Action, LogImpact.Low, $"Added pirate bounty \"{bounty.ID}\" (id:{component.TotalBounties}) to service {ToPrettyString(serviceId)}");
+        //_adminLogger.Add(LogType.Action, LogImpact.Low, $"Added pirate bounty \"{bounty.ID}\" (id:{component.TotalBounties}) to service {ToPrettyString(serviceId)}");
         component.TotalBounties++;
         return true;
     }

@@ -1,3 +1,36 @@
+// SPDX-FileCopyrightText: 2021 20kdc
+// SPDX-FileCopyrightText: 2021 Acruid
+// SPDX-FileCopyrightText: 2021 DrSmugleaf
+// SPDX-FileCopyrightText: 2021 Javier Guardia Fernández
+// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto
+// SPDX-FileCopyrightText: 2022 Alex Evgrashin
+// SPDX-FileCopyrightText: 2022 CommieFlowers
+// SPDX-FileCopyrightText: 2022 EmoGarbage404
+// SPDX-FileCopyrightText: 2022 Flipp Syder
+// SPDX-FileCopyrightText: 2022 Paul Ritter
+// SPDX-FileCopyrightText: 2022 Rane
+// SPDX-FileCopyrightText: 2022 ShadowCommander
+// SPDX-FileCopyrightText: 2022 Visne
+// SPDX-FileCopyrightText: 2022 mirrorcult
+// SPDX-FileCopyrightText: 2022 rolfero
+// SPDX-FileCopyrightText: 2022 wrexbe
+// SPDX-FileCopyrightText: 2023 Jezithyr
+// SPDX-FileCopyrightText: 2023 Kara
+// SPDX-FileCopyrightText: 2023 Leon Friedrich
+// SPDX-FileCopyrightText: 2023 Nemanja
+// SPDX-FileCopyrightText: 2023 PixelTK
+// SPDX-FileCopyrightText: 2023 Slava0135
+// SPDX-FileCopyrightText: 2023 deltanedas
+// SPDX-FileCopyrightText: 2023 metalgearsloth
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers
+// SPDX-FileCopyrightText: 2025 ActiveMammmoth
+// SPDX-FileCopyrightText: 2025 Ark
+// SPDX-FileCopyrightText: 2025 SlamBamActionman
+// SPDX-FileCopyrightText: 2025 ark1368
+// SPDX-FileCopyrightText: 2025 starch
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Linq;
 using Content.Shared.CCVar;
 using Content.Shared.Chemistry;
@@ -180,7 +213,7 @@ namespace Content.Shared.Damage
         public DamageSpecifier? TryChangeDamage(EntityUid? uid, DamageSpecifier damage, bool ignoreResistances = false,
             bool interruptsDoAfters = true, DamageableComponent? damageable = null, EntityUid? origin = null,
             // Shitmed Change
-            bool? canSever = true, bool? canEvade = false, float? partMultiplier = 1.00f, TargetBodyPart? targetPart = null)
+            bool? canSever = true, bool? canEvade = false, float? partMultiplier = 1.00f, TargetBodyPart? targetPart = null, EntityUid? tool = null, float armorPenetration = 0)
         {
             if (!uid.HasValue || !_damageableQuery.Resolve(uid.Value, ref damageable, false))
             {
@@ -220,7 +253,7 @@ namespace Content.Shared.Damage
                     damage = DamageSpecifier.ApplyModifierSet(damage, modifierSet);
                 }
 
-                var ev = new DamageModifyEvent(damage, origin, targetPart); // Shitmed Change
+                var ev = new DamageModifyEvent(damage, origin, armorPenetration, targetPart, tool); // Shitmed Change
                 RaiseLocalEvent(uid.Value, ev);
                 damage = ev.Damage;
 
@@ -484,13 +517,17 @@ namespace Content.Shared.Damage
         public DamageSpecifier Damage;
         public EntityUid? Origin;
         public readonly TargetBodyPart? TargetPart; // Shitmed Change
+        public readonly float ArmorPenetration = 0; // Goobstation
+        public EntityUid? Tool;
 
-        public DamageModifyEvent(DamageSpecifier damage, EntityUid? origin = null, TargetBodyPart? targetPart = null) // Shitmed Change
+        public DamageModifyEvent(DamageSpecifier damage, EntityUid? origin = null, float armorPenetration = 0, TargetBodyPart? targetPart = null, EntityUid? tool = null) // Shitmed Change
         {
             OriginalDamage = damage;
             Damage = damage;
             Origin = origin;
             TargetPart = targetPart; // Shitmed Change
+            ArmorPenetration = armorPenetration; // Goobstation
+            Tool = tool;
         }
     }
 

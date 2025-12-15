@@ -1,4 +1,4 @@
-- type: entity
+﻿- type: entity
   id: MachineFlatpacker
   parent: [ BaseMachinePowered, ConstructibleMachine ]
   name: Flatpacker 1001
@@ -81,6 +81,18 @@
           - UnFlatpackable
         whitelistFailPopup: flatpacker-item-cannot-be-flatpacked
         # End Frontier: keep grid-bound machines as they are
+  - type: AutomationSlots # Goobstation
+    slots:
+    - !type:AutomatedItemSlot
+      input: AutomationSlotBoard
+      output: AutomationSlotBoard
+      slotId: board_slot
+    - !type:AutomatedMaterialStorage
+      input: AutomationSlotMaterials
+      output: null # no automatic silo stealer...
+    - !type:AutomatedPorts
+      sinks:
+      - On
   - type: ContainerContainer
     containers:
       machine_board: !type:Container

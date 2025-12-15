@@ -1,3 +1,9 @@
+// SPDX-FileCopyrightText: 2023 Nemanja
+// SPDX-FileCopyrightText: 2025 Ilya246
+// SPDX-FileCopyrightText: 2025 shab00m
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Robust.Shared.Serialization;
 
 namespace Content.Shared.MachineLinking;
@@ -15,8 +21,7 @@ public enum SignalTimerUiKey : byte
 public sealed class SignalTimerBoundUserInterfaceState : BoundUserInterfaceState
 {
     public string CurrentText;
-    public string CurrentDelayMinutes;
-    public string CurrentDelaySeconds;
+    public TimeSpan CurrentDelay; // Mono
     public bool CurrentRepeat; //Frontier
     public bool ShowText;
     public TimeSpan TriggerTime;
@@ -24,8 +29,7 @@ public sealed class SignalTimerBoundUserInterfaceState : BoundUserInterfaceState
     public bool HasAccess;
 
     public SignalTimerBoundUserInterfaceState(string currentText,
-        string currentDelayMinutes,
-        string currentDelaySeconds,
+        TimeSpan currentDelay, // Mono
         bool currentRepeat, //Frontier
         bool showText,
         TimeSpan triggerTime,
@@ -33,8 +37,7 @@ public sealed class SignalTimerBoundUserInterfaceState : BoundUserInterfaceState
         bool hasAccess)
     {
         CurrentText = currentText;
-        CurrentDelayMinutes = currentDelayMinutes;
-        CurrentDelaySeconds = currentDelaySeconds;
+        CurrentDelay = currentDelay; // Mono
         CurrentRepeat = currentRepeat; //Frontier
         ShowText = showText;
         TriggerTime = triggerTime;

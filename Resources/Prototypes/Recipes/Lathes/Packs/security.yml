@@ -49,6 +49,9 @@
   - PowerCageSmall
   - NFTelescopicShield # Frontier: use NF prefix
   - EnergyDomeDirectionalTurtle #HL
+  - ClothingBackpackTactical #HL
+  - ClothingBackpackExplorer #HL
+  - ClothingRucksack #HL
 
 - type: latheRecipePack
   id: SecurityBoards

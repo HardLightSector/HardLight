@@ -40,6 +40,23 @@
       state: "grinder_empty"
   - type: ApcPowerReceiver
     powerLoad: 300
+  - type: AutomationSlots # Goobstation
+    slots:
+    - !type:AutomatedItemSlot
+      input: AutomationSlotBeaker
+      output: AutomationSlotBeaker
+      slotId: beakerSlot
+    - !type:AutomatedContainer
+      input: AutomationSlotInput
+      output: AutomationSlotInput
+      whitelist:
+        components:
+        - Extractable # shitcode doesnt require this with container attempt events just in interaction
+      containerId: inputContainer
+      maxItems: 6 # manually have to sync it with ReagentGrinderComponent :
+    - !type:AutomatedBeakerSlot
+        input: PlumbingDispenser
+        output: PlumbingDispenser
   - type: ItemSlots
     slots:
       beakerSlot:
@@ -80,6 +97,11 @@
     sprite: Structures/Machines/recycling.rsi
     layers:
       - state: grinder-b0
+  - type: AutomationSlots # Goobstation
+    slots:
+    - !type:AutomatedSolution
+      output: PlumbingOutput
+      solutionName: output
   - type: Machine
     board: ReagentGrinderIndustrialMachineCircuitboard
   - type: GenericVisualizer

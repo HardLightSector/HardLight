@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "spaniel created by Serah64 for use by anyone",
+  "size": {"x": 32, "y": 32},
+  "states": [
+    {
+      "name": "spaniel",
+      "directions": 4
+    }
+  ]
+}

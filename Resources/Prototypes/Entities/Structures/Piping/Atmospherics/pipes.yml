@@ -2,7 +2,7 @@
   abstract: true
   parent: [RecyclableItemSteelSmall, BaseItem] # Frontier: add RecyclableItemSteelSmall
   id: GasPipeSansLayers
-  name: gas pipe
+  name: gas pipe straight
   description: Holds gas.
   placement:
     mode: SnapgridCenter

@@ -117,8 +117,8 @@ public sealed class SalvageMobRestrictionsSystem : EntitySystem
             if (actor.PlayerSession.AttachedEntity == null)
                 return;
 
-            if (component.DespawnIfOffLinkedGrid)
-                _adminLogger.Add(LogType.AdminMessage, LogImpact.Low, $"{ToPrettyString(actor.PlayerSession.AttachedEntity.Value):player} returned to dungeon grid");
+            /* if (component.DespawnIfOffLinkedGrid)
+                _adminLogger.Add(LogType.AdminMessage, LogImpact.Low, $"{ToPrettyString(actor.PlayerSession.AttachedEntity.Value):player} returned to dungeon grid"); */
         }
         else
         {
@@ -133,7 +133,7 @@ public sealed class SalvageMobRestrictionsSystem : EntitySystem
 
             if (component.DespawnIfOffLinkedGrid)
             {
-                _adminLogger.Add(LogType.AdminMessage, LogImpact.Low, $"{ToPrettyString(actor.PlayerSession.AttachedEntity.Value):player} left the dungeon grid");
+                //_adminLogger.Add(LogType.AdminMessage, LogImpact.Low, $"{ToPrettyString(actor.PlayerSession.AttachedEntity.Value):player} left the dungeon grid");
                 _popupSystem.PopupEntity(popupMessage, actor.PlayerSession.AttachedEntity.Value, actor.PlayerSession, PopupType.MediumCaution);
             }
         }

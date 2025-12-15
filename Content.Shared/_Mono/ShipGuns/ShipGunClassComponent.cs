@@ -30,5 +30,10 @@ public enum ShipGunClass
     Light,
     Medium,
     Heavy,
-    Superheavy
+    Superheavy,
+    CVSuperlight,
+    CVLight,
+    CVMedium,
+    CVHeavy,
+    CVSuperheavy
 }

@@ -324,6 +324,7 @@
     sprite: _HL/Objects/Tools/syndie_drill.rsi
     state: drill_screw
   - type: Item
+    sprite: Objects/Tools/drill.rsi
     inhandVisuals:
       left:
       - state: inhand-left
@@ -414,7 +415,7 @@
     attackRate: 2
     damage:
       types:
-        Piercing: 8
+        Shock: 8
     soundHit:
       path: /Audio/Items/Defib/defib_zap.ogg
 ### HL end

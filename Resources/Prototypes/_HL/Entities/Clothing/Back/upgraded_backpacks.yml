@@ -1,0 +1,60 @@
+- type: entity
+  id: ClothingBackpackTactical
+  name: tactical pack
+  parent: [ NFClothingDuffel, RecyclableItemClothDurable ]
+  description: A tactical pack for your tactical needs
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Back/tacticalpack.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.2
+  - type: Storage
+    maxItemSize: Huge
+    grid:
+    - 0,0,2,1
+    - 0,3,8,4
+    - 4,0,2,1
+    - 8,0,3,1
+    - 10,3,1,4
+  - type: ClothingSpeedModifier
+    walkModifier: 1
+    sprintModifier: 0.9
+    
+- type: entity
+  id: ClothingBackpackExplorer
+  name: explorer pack
+  parent: [ NFClothingDuffel, RecyclableItemClothDurable ]
+  description: Large pack for all your gear and supplies
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Back/explorerpack.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.4
+  - type: Storage
+    maxItemSize: Huge
+    grid:
+    - 0,0,8,6
+    - 10,0,2,2
+    - 10,4,2,2
+  - type: ClothingSpeedModifier
+    walkModifier: 1
+    sprintModifier: 0.85
+    
+- type: entity
+  id: ClothingRucksack
+  name: rucksack
+  parent: [ NFClothingDuffel, RecyclableItemClothDurable ]
+  description: Sacks to haul your burdens
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Back/rucksack.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.6
+  - type: Storage
+    maxItemSize: Huge
+    grid:
+    - 0,0,9,7
+    - 11,0,2,7
+  - type: ClothingSpeedModifier
+    walkModifier: 1
+    sprintModifier: 0.85

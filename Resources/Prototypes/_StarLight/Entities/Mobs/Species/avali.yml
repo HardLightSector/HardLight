@@ -23,6 +23,12 @@
         Dead: 0
       baseDecayRate: 0.03
     - type: Thirst
+    - type: PseudoItem
+      storedOffset: 0,17
+      shape:
+        - 0,0,1,4
+        - 0,2,3,4
+        - 4,0,5,4
     - type: Icon
       sprite: _Starlight/Mobs/Species/Avali/parts.rsi
       state: full
