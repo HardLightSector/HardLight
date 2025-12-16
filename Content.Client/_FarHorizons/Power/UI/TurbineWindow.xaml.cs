@@ -70,6 +70,8 @@ public sealed partial class TurbineWindow : FancyWindow
     private EntityUid _entity;
 
     private bool _suppressSliderEvents;
+    private bool _suppressStatorUpdate;
+    private bool _suppressFlowUpdate;
     #endregion
 
     #region Events
@@ -87,6 +89,10 @@ public sealed partial class TurbineWindow : FancyWindow
         InitRPMMeter();
 
         // Handle flow rate
+        TurbineFlowRateLabel.OnFocusEnter += _ => _suppressFlowUpdate = true;
+        TurbineFlowRateLabel.OnFocusExit += _ => FlowTextChanged();
+        TurbineFlowRateLabel.OnTextEntered += _ => FlowTextChanged(true);
+
         TurbineFlowRateSlider.OnValueChanged += _ =>
         {
             if (!_suppressSliderEvents)
@@ -96,6 +102,10 @@ public sealed partial class TurbineWindow : FancyWindow
         FlowRateIncrease.OnPressed += _ => TurbineFlowRateChanged?.Invoke(TurbineFlowRateSlider.Value + 100);
 
         // Handle stator load
+        TurbineStatorLoadLabel.OnFocusEnter += _ => _suppressStatorUpdate = true;
+        TurbineStatorLoadLabel.OnFocusExit += _ => StatorTextChanged();
+        TurbineStatorLoadLabel.OnTextEntered += _ => StatorTextChanged(true);
+
         TurbineStatorLoadSlider.OnValueChanged += _ =>
         {
             if (!_suppressSliderEvents)
@@ -105,6 +115,22 @@ public sealed partial class TurbineWindow : FancyWindow
         StatorLoadDecrease.OnPressed += _ => TurbineStatorLoadChanged?.Invoke(TurbineStatorLoadSlider.Value - 100);
         StatorLoadIncrease.OnPressed += _ => TurbineStatorLoadChanged?.Invoke(TurbineStatorLoadSlider.Value + 100);
         StatorLoadIncreaseLarge.OnPressed += _ => TurbineStatorLoadChanged?.Invoke(TurbineStatorLoadSlider.Value + 1000);
+
+        return;
+
+        void FlowTextChanged(bool suppress = false)
+        {
+            if (float.TryParse(TurbineFlowRateLabel.Text, out var num))
+                TurbineFlowRateChanged?.Invoke(num);
+            _suppressFlowUpdate = suppress;
+        }
+
+        void StatorTextChanged(bool suppress = false)
+        {
+            if (float.TryParse(TurbineStatorLoadLabel.Text, out var num))
+                TurbineStatorLoadChanged?.Invoke(num);
+            _suppressStatorUpdate = suppress;
+        }
     }
 
     #region Graphics
@@ -152,8 +178,10 @@ public sealed partial class TurbineWindow : FancyWindow
     {
         UpdateIndicators(msg);
 
-        TurbineFlowRateLabel.Text = Math.Round(msg.FlowRate).ToString();
-        TurbineStatorLoadLabel.Text = Math.Round(msg.StatorLoad).ToString();
+        if(!_suppressFlowUpdate)
+            TurbineFlowRateLabel.Text = Math.Round(msg.FlowRate).ToString();
+        if(!_suppressStatorUpdate)
+            TurbineStatorLoadLabel.Text = Math.Round(msg.StatorLoad).ToString();
 
         Inputs.Visible = !_lock.IsLocked(_entity);
         LockedMessage.Visible = _lock.IsLocked(_entity);

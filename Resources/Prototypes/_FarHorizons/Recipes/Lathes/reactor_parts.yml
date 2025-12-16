@@ -263,38 +263,3 @@
   materials:
     Steel: 500
     Diamond: 750
-
-## Recipe Packs
-- type: latheRecipePack
-  id: ReactorParts
-  recipes:
-  - SteelReactorGasChannel
-  - SteelReactorHeatExchanger
-  - CerenkiteReactorFuelRod
-  - BohrumReactorControlRod
-  - BrassReactorControlRod
-  - BrassReactorGasChannel
-  - BrassReactorHeatExchanger
-  - GlassReactorControlRod
-  - GlassReactorGasChannel
-  - GlassReactorHeatExchanger
-  - UraniumReactorFuelRod
-  - UraniumGlassReactorFuelRod
-  - PlutoniumReactorFuelRod
-  - PlasmaReactorFuelRod
-  - BananiumReactorFuelRod
-  - DiamondReactorControlRod
-  - GoldReactorControlRod
-  - PlasmaGlassReactorControlRod
-  - PlasteelReactorControlRod
-  - SilverReactorControlRod
-  - DiamondReactorHeatExchanger
-  - GoldReactorHeatExchanger
-  - PlasmaGlassReactorHeatExchanger
-  - PlasteelReactorHeatExchanger
-  - SilverReactorHeatExchanger
-  - DiamondReactorGasChannel
-  - GoldReactorGasChannel
-  - PlasmaGlassReactorGasChannel
-  - PlasteelReactorGasChannel
-  - SilverReactorGasChannel

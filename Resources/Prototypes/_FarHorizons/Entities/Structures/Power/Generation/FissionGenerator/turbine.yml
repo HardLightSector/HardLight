@@ -68,13 +68,9 @@
   - type: AtmosDevice
   - type: AtmosMonitoringConsoleDevice
     navMapBlip: Thermoregulator
-  - type: Explosive
-    explosionType: Default
-    tileBreakScale: 0
-    canCreateVacuum: false
-    intensitySlope: 15
-    maxIntensity: 70
-    repeatable: true
+  - type: Electrified
+    enabled: false
+    requirePower: false
   - type: Turbine
   - type: DeviceNetwork
     deviceNetId: Wireless
@@ -124,6 +120,8 @@
         - MachineMask
         layer:
         - MachineLayer
+  - type: PowerMonitoringDevice
+    sprite: _FarHorizons/Structures/Power/Generation/FissionGenerator/small_turbine.rsi
   - type: Turbine
     turbineMass: 400
     powerMultiplier: 0.4
@@ -182,6 +180,25 @@
         nodeGroupID: Pipe
         pipeDirection: South
         volume: 1000
+        pipeLayer: 0
+      pipe1:
+        !type:PipeNode
+        nodeGroupID: Pipe
+        pipeDirection: South
+        volume: 1000
+        pipeLayer: 1
+      pipe2:
+        !type:PipeNode
+        nodeGroupID: Pipe
+        pipeDirection: South
+        volume: 1000
+        pipeLayer: 2
+  - type: GasPipeManifold
+    inlets:
+    - pipe1
+    - pipe2
+    outlets:
+    - pipe
   - type: Tag
     tags:
       - HideContextMenu

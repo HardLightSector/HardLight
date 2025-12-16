@@ -32,5 +32,9 @@
     unlitIdleState: unlit
     unlitRunningState: unlit-building
     staticPacks:
-    - ReactorParts
-    - nuclearboards
+    - ReactorCircuitboards
+    - ReactorPartsBasic
+    - ReactorFuelRods
+    - ReactorControlRods
+    - ReactorGasChannels
+    - ReactorHeatExchangers

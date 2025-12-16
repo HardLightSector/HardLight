@@ -22,6 +22,7 @@ namespace Content.Client._FarHorizons.Power.UI;
 [UsedImplicitly]
 public sealed class NuclearReactorBoundUserInterface : BoundUserInterface
 {
+    [Dependency] private readonly IEntityManager _entityManager = default!;
 
     [ViewVariables]
     private NuclearReactorWindow? _window;
@@ -32,6 +33,10 @@ public sealed class NuclearReactorBoundUserInterface : BoundUserInterface
 
     protected override void Open()
     {
+        // No UI if Owner is not a reactor or the reactor is melted
+        if (!_entityManager.TryGetComponent<NuclearReactorComponent>(Owner, out var reactorComponent) || reactorComponent.Melted)
+            return;
+
         base.Open();
 
         _window = this.CreateWindow<NuclearReactorWindow>();
