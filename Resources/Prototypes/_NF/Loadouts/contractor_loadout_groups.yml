@@ -210,6 +210,9 @@
   - ContractorClothingUniformJumpskirtBlueTurtleneckDress
   - ContractorClothingUniformJumpskirtYellowTurtleneckDress
   - ContractorClothingUniformJumpskirtYellowOldDress
+#_CS Start
+  - LoadoutCoolCoyoteClothesGearHarness 
+#_CS End
   fallbacks:
   - ContractorClothingUniformJumpsuitColorGrey
   - ContractorClothingUniformJumpskirtColorGrey
@@ -434,7 +437,8 @@
   name: loadout-group-contractor-shoes
   loadouts:
   - ContractorClothingShoesColorBlack
-  - ContractorClothingShoesClothwrap
+  - ContractorClothingShoesClothwrap 
+  - ContractorClothingShoesClothwrapTransparent # HL - Add invisible shoes to generic loadouts
   - ContractorClothingShoesTourist
   - ContractorClothingShoesBootsSalvage
   - ContractorClothingShoesChef

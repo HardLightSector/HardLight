@@ -453,6 +453,18 @@
   - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
     price: 80 # Frontier
 
+#Invisible Wear
+- type: entity
+  parent: ClothingShoesBase
+  id: ClothingShoesClothwrapTransparent
+  name: transparent cloth footwraps
+  description: A transparent roll of treated canvas used for wrapping feet or paws.
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Socks/clothwraptransparent.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/Socks/clothwraptransparent.rsi
+
 #Evening Wear
 - type: entity
   parent: ClothingUniformBase
