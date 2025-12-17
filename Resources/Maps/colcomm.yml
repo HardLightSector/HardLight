@@ -1,6 +1,6 @@
 meta:
   format: 7
-  category: Map
+  category: Grid
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
@@ -49,16 +49,6 @@ tilemap:
 entities:
 - proto: ""
   entities:
-  - uid: 10
-    components:
-    - type: MetaData
-      name: Map Entity
-    - type: Transform
-    - type: Map
-      mapPaused: True
-    - type: GridTree
-    - type: Broadphase
-    - type: OccluderTree
   - uid: 1668
     components:
     - type: MetaData
