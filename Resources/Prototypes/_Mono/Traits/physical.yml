@@ -324,15 +324,15 @@
           Slash: 1.5
           Piercing: 1.5
 
-- type: trait
-  id: Ironman
-  name: trait-ironman-name
-  description: trait-ironman-desc
-  category: Physical
-  cost: -5 # This shit was FREE for factions practically
-  components:
-  - type: Ironman
-  traitGear: SpaceCash10000
+#- type: trait
+#  id: Ironman
+#  name: trait-ironman-name
+#  description: trait-ironman-desc
+#  category: Physical
+#  cost: -5 # This shit was FREE for factions practically
+#  components:
+#  - type: Ironman
+#  traitGear: SpaceCash10000
 
 - type: trait
   id: TemperatureTolerance
