@@ -61,8 +61,8 @@
 
 - type: job
   id: EngineeringQuadBorg
-  name: job-name-Engineering-quadborg
-  description: job-description-Engineering-quadborg
+  name: job-name-engineering-quadborg
+  description: job-description-engineering-quadborg
   playTimeTracker: JobEngineeringQuadBorg
   requirements:
     - !type:OverallPlaytimeRequirement

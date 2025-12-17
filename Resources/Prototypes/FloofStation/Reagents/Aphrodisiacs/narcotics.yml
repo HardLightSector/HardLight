@@ -8,6 +8,7 @@
   color: "#c90084"
   metabolisms:
     Narcotic:
+      metabolismRate: 0.05
       effects:
       - !type:PopupMessage
         type: Local
