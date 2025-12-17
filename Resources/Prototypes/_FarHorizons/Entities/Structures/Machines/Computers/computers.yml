@@ -1,37 +1,4 @@
 - type: entity
-  parent: ComputerRoboticsControl
-  id: ComputerSecurityRoboticsControl
-  name: Security Robotics Control Console
-  description: A variant of the robotics control console, specifically meant to control security cyborgs.
-  components:
-  - type: Sprite
-    sprite: _FarHorizons/Structures/Machines/Computers/secrobotics.rsi
-    layers:
-    - map: ["computerLayerBody"]
-      state: computer
-    - map: ["computerLayerKeyboard"]
-      state: computer
-    - map: ["computerLayerScreen"]
-      state: robot-sec
-    #- map: ["computerLayerKeys"] - Only the screen layer gets turned off, having this active with the merged screen/key png kept the screen on.
-    #  state: robot-sec
-    - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
-      state: generic_panel_open
-  - type: RoboticsConsole
-  - type: ActiveRadio
-    channels:
-    - Science
-    - Security
-  - type: DeviceNetwork
-    deviceNetId: Wireless
-    receiveFrequencyId: SecurityRoboticsConsole
-    transmitFrequencyId: SecborgControl
-  - type: Computer
-    board: SecurityRoboticsConsoleCircuitboard
-  - type: AccessReader
-    access: [["Armory"]]
-
-- type: entity
   parent: BaseComputerAiAccess
   id: NuclearReactorMonitor
   name: nuclear reactor monitor
