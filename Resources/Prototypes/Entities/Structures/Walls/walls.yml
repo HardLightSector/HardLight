@@ -228,8 +228,6 @@
     cost: 6
     delay: 8
     fx: EffectRCDDeconstruct8
-  - type: RadiationBlocker # Goobstation
-    resistance: 40
   - type: Destructible
     thresholds:
     - trigger:
@@ -389,8 +387,6 @@
   - type: Construction
     graph: Girder
     node: goldWall
-  - type: RadiationBlocker # Goobstation
-    resistance: 10
   - type: RCDDeconstructable
     cost: 6
     delay: 8
@@ -495,7 +491,7 @@
     key: walls
     base: plasma
   - type: RadiationBlocker
-    resistance: 10
+    resistance: 5
 
 - type: entity
   parent: BaseWall
@@ -1315,7 +1311,7 @@
     key: walls
     base: uranium
   - type: RadiationBlocker
-    resistance: 20
+    resistance: 6
   - type: RCDDeconstructable #Frontier
     cost: 6 #Frontier
     delay: 8 #Frontier

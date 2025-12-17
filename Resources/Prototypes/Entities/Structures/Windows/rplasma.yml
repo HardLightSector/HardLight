@@ -12,7 +12,7 @@
     damageContainer: StructuralInorganic
     damageModifierSet: RGlass
   - type: RadiationBlocker
-    resistance: 10
+    resistance: 4
   - type: Destructible
     thresholds:
     - trigger:
@@ -83,7 +83,7 @@
     damageOverlay:
       sprite: Structures/Windows/cracks_directional.rsi
   - type: RadiationBlocker
-    resistance: 5
+    resistance: 2
   - type: Destructible
     thresholds:
     - trigger:
