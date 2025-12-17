@@ -26,6 +26,10 @@ namespace Content.Shared.Humanoid.Markings
         [DataField("followSkinColor")]
         public bool FollowSkinColor { get; private set; } = false;
 
+
+        [DataField("RMCFollowSkinColor")]
+        public bool RMCFollowSkinColor { get; private set; } = false;
+
         [DataField("forcedColoring")]
         public bool ForcedColoring { get; private set; } = false;
 

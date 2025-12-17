@@ -35,6 +35,7 @@
     - Avali
     - Feroxi
     - Kitsune # DeltaV
+    - Skrell
 
 - type: guideEntry
   id: Arachnid
@@ -113,5 +114,10 @@
   id: Protogen
   name: species-name-protogen
   text: "/ServerInfo/Guidebook/Mobs/Protogen.xml"
+
+- type: guideEntry
+  id: Skrell
+  name: species-name-skrell
+  text: "/ServerInfo/Guidebook/Mobs/Skrell.xml"
 
 

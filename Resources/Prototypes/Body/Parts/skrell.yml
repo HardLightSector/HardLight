@@ -1,0 +1,91 @@
+
+# Skrell body parts, using Skrell-specific sprites
+- type: entity
+  id: HeadSkrell
+  name: "Skrell head"
+  parent: [PartHuman, BaseHead]
+  components:
+  - type: Sprite
+    sprite: _RMC14/Mobs/Skrells/parts.rsi
+    state: "head_m"
+
+- type: entity
+  id: TorsoSkrell
+  name: "Skrell torso"
+  parent: [PartHuman, BaseTorso]
+  components:
+  - type: Sprite
+    sprite: _RMC14/Mobs/Skrells/parts.rsi
+    state: "torso_m"
+
+- type: entity
+  id: RightArmSkrell
+  name: "right Skrell arm"
+  parent: [PartHuman, BaseRightArm]
+  components:
+  - type: Sprite
+    sprite: _RMC14/Mobs/Skrells/parts.rsi
+    state: "r_arm"
+
+- type: entity
+  id: LeftArmSkrell
+  name: "left Skrell arm"
+  parent: [PartHuman, BaseLeftArm]
+  components:
+  - type: Sprite
+    sprite: _RMC14/Mobs/Skrells/parts.rsi
+    state: "l_arm"
+
+- type: entity
+  id: RightHandSkrell
+  name: "right Skrell hand"
+  parent: [PartHuman, BaseRightHand]
+  components:
+  - type: Sprite
+    sprite: _RMC14/Mobs/Skrells/parts.rsi
+    state: "r_hand"
+
+- type: entity
+  id: LeftHandSkrell
+  name: "left Skrell hand"
+  parent: [PartHuman, BaseLeftHand]
+  components:
+  - type: Sprite
+    sprite: _RMC14/Mobs/Skrells/parts.rsi
+    state: "l_hand"
+
+- type: entity
+  id: RightLegSkrell
+  name: "right Skrell leg"
+  parent: [PartHuman, BaseRightLeg]
+  components:
+  - type: Sprite
+    sprite: _RMC14/Mobs/Skrells/parts.rsi
+    state: "r_leg"
+
+- type: entity
+  id: LeftLegSkrell
+  name: "left Skrell leg"
+  parent: [PartHuman, BaseLeftLeg]
+  components:
+  - type: Sprite
+    sprite: _RMC14/Mobs/Skrells/parts.rsi
+    state: "l_leg"
+
+- type: entity
+  id: RightFootSkrell
+  name: "right Skrell foot"
+  parent: [PartHuman, BaseRightFoot]
+  components:
+  - type: Sprite
+    sprite: _RMC14/Mobs/Skrells/parts.rsi
+    state: "r_foot"
+
+- type: entity
+  id: LeftFootSkrell
+  name: "left Skrell foot"
+  parent: [PartHuman, BaseLeftFoot]
+  components:
+  - type: Sprite
+    sprite: _RMC14/Mobs/Skrells/parts.rsi
+    state: "l_foot"

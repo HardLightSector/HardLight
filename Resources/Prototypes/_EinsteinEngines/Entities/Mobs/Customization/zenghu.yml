@@ -2,7 +2,7 @@
   id: CyberLimbsMarkingZenghuHead
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  speciesRestriction: [Skrell, Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
   sprites:
   - sprite: _EE/Mobs/Species/Cybernetics/zenghu/zenghu_main.rsi
     state: head-1
@@ -13,7 +13,7 @@
   id: CyberLimbsMarkingZenghuChest
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  speciesRestriction: [Skrell, Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
   sprites:
   - sprite: _EE/Mobs/Species/Cybernetics/zenghu/zenghu_main.rsi
     state: torso-1
@@ -24,7 +24,7 @@
   id: CyberLimbsMarkingZenghuLArm
   bodyPart: LArm
   markingCategory: Arms
-  speciesRestriction: [Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  speciesRestriction: [Skrell, Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
   sprites:
   - sprite: _EE/Mobs/Species/Cybernetics/zenghu/zenghu_main.rsi
     state: l_arm-1
@@ -35,7 +35,7 @@
   id: CyberLimbsMarkingZenghuLHand
   bodyPart: LHand
   markingCategory: Arms
-  speciesRestriction: [Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  speciesRestriction: [Skrell, Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
   sprites:
   - sprite: _EE/Mobs/Species/Cybernetics/zenghu/zenghu_main.rsi
     state: l_hand-1
@@ -46,7 +46,7 @@
   id: CyberLimbsMarkingZenghuLLeg
   bodyPart: LLeg
   markingCategory: Legs
-  speciesRestriction: [Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  speciesRestriction: [Skrell, Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
   sprites:
   - sprite: _EE/Mobs/Species/Cybernetics/zenghu/zenghu_main.rsi
     state: l_leg-1
@@ -58,7 +58,7 @@
   id: CyberLimbsMarkingZenghuLFoot
   bodyPart: LFoot
   markingCategory: Legs
-  speciesRestriction: [Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  speciesRestriction: [Skrell, Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
   sprites:
   - sprite: _EE/Mobs/Species/Cybernetics/zenghu/zenghu_main.rsi
     state: l_foot-1
@@ -71,7 +71,7 @@
   id: CyberLimbsMarkingZenghuRArm
   bodyPart: RArm
   markingCategory: Arms
-  speciesRestriction: [Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  speciesRestriction: [Skrell, Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
   sprites:
   - sprite: _EE/Mobs/Species/Cybernetics/zenghu/zenghu_main.rsi
     state: r_arm-1
@@ -84,7 +84,7 @@
   id: CyberLimbsMarkingZenghuRHand
   bodyPart: RHand
   markingCategory: Arms
-  speciesRestriction: [Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  speciesRestriction: [Skrell, Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
   sprites:
   - sprite: _EE/Mobs/Species/Cybernetics/zenghu/zenghu_main.rsi
     state: r_hand-1
@@ -95,7 +95,7 @@
   id: CyberLimbsMarkingZenghuRLeg
   bodyPart: RLeg
   markingCategory: Legs
-  speciesRestriction: [Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  speciesRestriction: [Skrell, Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
   sprites:
   - sprite: _EE/Mobs/Species/Cybernetics/zenghu/zenghu_main.rsi
     state: r_leg-1
@@ -107,7 +107,7 @@
   id: CyberLimbsMarkingZenghuRFoot
   bodyPart: RFoot
   markingCategory: Legs
-  speciesRestriction: [Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  speciesRestriction: [Skrell, Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
   sprites:
   - sprite: _EE/Mobs/Species/Cybernetics/zenghu/zenghu_main.rsi
     state: r_foot-1

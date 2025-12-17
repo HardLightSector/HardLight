@@ -2,7 +2,7 @@
   id: CyberLimbsMarkingWardtakahashiHead
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  speciesRestriction: [Skrell, Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
   sprites:
   - sprite: _EE/Mobs/Species/Cybernetics/wardtakahashi/wardtakahashi_monitor.rsi
     state: head
@@ -11,7 +11,7 @@
   id: CyberLimbsMarkingWardtakahashiHeadAlt
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  speciesRestriction: [Skrell, Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
   sprites:
   - sprite: _EE/Mobs/Species/Cybernetics/wardtakahashi/wardtakahashi_main.rsi
     state: head
@@ -20,7 +20,7 @@
   id: CyberLimbsMarkingWardtakahashiHeadAlt1
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  speciesRestriction: [Skrell, Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
   sprites:
   - sprite: _EE/Mobs/Species/Cybernetics/wardtakahashi/wardtakahashi_alt1.rsi
     state: head
@@ -29,7 +29,7 @@
   id: CyberLimbsMarkingWardtakahashiChest
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  speciesRestriction: [Skrell, Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
   sprites:
   - sprite: _EE/Mobs/Species/Cybernetics/wardtakahashi/wardtakahashi_main.rsi
     state: torso
@@ -38,7 +38,7 @@
   id: CyberLimbsMarkingWardtakahashiLArm
   bodyPart: LArm
   markingCategory: Arms
-  speciesRestriction: [Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  speciesRestriction: [Skrell, Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
   sprites:
   - sprite: _EE/Mobs/Species/Cybernetics/wardtakahashi/wardtakahashi_main.rsi
     state: l_arm
@@ -47,7 +47,7 @@
   id: CyberLimbsMarkingWardtakahashiLHand
   bodyPart: LHand
   markingCategory: Arms
-  speciesRestriction: [Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  speciesRestriction: [Skrell, Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
   sprites:
   - sprite: _EE/Mobs/Species/Cybernetics/wardtakahashi/wardtakahashi_main.rsi
     state: l_hand
@@ -56,7 +56,7 @@
   id: CyberLimbsMarkingWardtakahashiLLeg
   bodyPart: LLeg
   markingCategory: Legs
-  speciesRestriction: [Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  speciesRestriction: [Skrell, Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
   sprites:
   - sprite: _EE/Mobs/Species/Cybernetics/wardtakahashi/wardtakahashi_main.rsi
     state: l_leg
@@ -66,7 +66,7 @@
   id: CyberLimbsMarkingWardtakahashiLFoot
   bodyPart: LFoot
   markingCategory: Legs
-  speciesRestriction: [Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  speciesRestriction: [Skrell, Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
   sprites:
   - sprite: _EE/Mobs/Species/Cybernetics/wardtakahashi/wardtakahashi_main.rsi
     state: l_foot
@@ -77,7 +77,7 @@
   id: CyberLimbsMarkingWardtakahashiRArm
   bodyPart: RArm
   markingCategory: Arms
-  speciesRestriction: [Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  speciesRestriction: [Skrell, Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
   sprites:
   - sprite: _EE/Mobs/Species/Cybernetics/wardtakahashi/wardtakahashi_main.rsi
     state: r_arm
@@ -87,7 +87,7 @@
   id: CyberLimbsMarkingWardtakahashiRHand
   bodyPart: RHand
   markingCategory: Arms
-  speciesRestriction: [Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  speciesRestriction: [Skrell, Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
   sprites:
   - sprite: _EE/Mobs/Species/Cybernetics/wardtakahashi/wardtakahashi_main.rsi
     state: r_hand
@@ -96,7 +96,7 @@
   id: CyberLimbsMarkingWardtakahashiRLeg
   bodyPart: RLeg
   markingCategory: Legs
-  speciesRestriction: [Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  speciesRestriction: [Skrell, Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
   sprites:
   - sprite: _EE/Mobs/Species/Cybernetics/wardtakahashi/wardtakahashi_main.rsi
     state: r_leg
@@ -106,7 +106,7 @@
   id: CyberLimbsMarkingWardtakahashiRFoot
   bodyPart: RFoot
   markingCategory: Legs
-  speciesRestriction: [Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  speciesRestriction: [Skrell, Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
   sprites:
   - sprite: _EE/Mobs/Species/Cybernetics/wardtakahashi/wardtakahashi_main.rsi
     state: r_foot

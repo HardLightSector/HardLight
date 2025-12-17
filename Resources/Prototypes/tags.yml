@@ -1534,6 +1534,9 @@
 
 # ALPHABETICAL
 
+
+- type: Tag
+  id: ShoesRequiredStepTriggerImmune
 # Mono
 
 - type: Tag

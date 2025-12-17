@@ -2,7 +2,7 @@
   id: ReptilianChestUnderbellyFeminine
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Reptilian]
+  speciesRestriction: [Skrell, Reptilian]
   sprites:
   - sprite: _HL/Mobs/Customization/Reptilian/underbellyfemale.rsi
     state: body_underbelly
@@ -11,7 +11,7 @@
   id: ReptilianChestFemaleAlternate
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Reptilian]
+  speciesRestriction: [Skrell, Reptilian]
   sprites:
   - sprite: _HL/Mobs/Customization/Reptilian/chest_female_alternate.rsi
     state: chest
