@@ -43,6 +43,7 @@
   - type: Machine
     board: FlatpackerMachineCircuitboard
   - type: MaterialStorage
+    canEjectStoredMaterials: true
     whitelist:
       tags:
       - Sheet
