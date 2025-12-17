@@ -992,7 +992,6 @@ public sealed partial class AdminVerbSystem
         };
         args.Verbs.Add(caveman);
         // End Frontier
-        args.Verbs.Add(silicon);
 
         // Far Horizons - Start
         var fuelRodifyName = Loc.GetString("admin-smite-become-fuelrod-name").ToLowerInvariant();

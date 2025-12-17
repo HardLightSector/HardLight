@@ -10,7 +10,7 @@
     - map: ["computerLayerBody"]
       state: computer
     - map: ["computerLayerKeyboard"]
-      state: computer 
+      state: computer
     - map: ["computerLayerScreen"]
       state: robot-sec
     #- map: ["computerLayerKeys"] - Only the screen layer gets turned off, having this active with the merged screen/key png kept the screen on.
@@ -30,59 +30,6 @@
     board: SecurityRoboticsConsoleCircuitboard
   - type: AccessReader
     access: [["Armory"]]
-    
-- type: entity
-  parent: BaseComputerAiAccess
-  id: VitalsMonitor
-  name: Vitals Monitor
-  description: A device that monitors the vitals of whoever is laying next to it.
-  components:
-  - type: ApcPowerReceiver
-    powerLoad: 500
-  - type: PointLight
-    radius: 1.5
-    energy: 1.6
-    color: "#1f8c28"
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeCircle
-          radius: 0.2
-        density: 100
-        mask:
-        - TableMask
-  - type: Sprite
-    sprite: _FarHorizons/Structures/Machines/Computers/vitalmonitor.rsi
-    layers:
-    - map: ["computerLayerBody"]
-      state: computer
-    - map: ["computerLayerScreen"]
-      state: screen
-  - type: Speech
-  - type: BodyScanner
-  - type: HealthAnalyzer
-    talk: true
-  - type: ActivatableUI
-    key: enum.HealthAnalyzerUiKey.Key
-  - type: UserInterface
-    interfaces:
-      enum.HealthAnalyzerUiKey.Key:
-        type: HealthAnalyzerBoundUserInterface
-  - type: DeviceList
-  - type: DeviceNetwork
-    deviceNetId: Wired
-  - type: DeviceLinkSource
-    range: 2
-    ports:
-      - VitalsMonitorSender
-  - type: Machine
-    board: VitalsMonitorMachineCircuitboard
-  - type: ContainerContainer
-    containers:
-      board: !type:Container
-      machine_board: !type:Container
-      machine_parts: !type:Container
 
 - type: entity
   parent: BaseComputerAiAccess
