@@ -8,8 +8,9 @@
     state: engineering
   - type: MachineBoard
     prototype: NuclearFabricator
-    stackRequirements:
+    requirements:
       Manipulator: 5
+    stackRequirements:
       Glass: 3
 
 - type: entity
@@ -22,6 +23,7 @@
     state: engineering
   - type: MachineBoard
     prototype: NuclearCentrifuge
-    stackRequirements:
+    requirements:
       Manipulator: 5
+    stackRequirements:
       Plasteel: 5
