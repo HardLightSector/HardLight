@@ -13,6 +13,7 @@ public partial record struct VoreSpace(
     string Name,
     string Description,
     EntProtoId<VoreOverlayComponent>? Overlay,
+    Color OverlayColor,
     VoreSpaceMode Mode,
     FixedPoint2 BurnDamage,
     FixedPoint2 BruteDamage,

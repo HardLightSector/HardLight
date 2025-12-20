@@ -124,8 +124,16 @@
                                 <RichTextLabel Text="[bold]More settings coming soon![/bold]" />
                             </BoxContainer>
                         </ScrollContainer>
-                        <!-- <BoxContainer Name="SpaceVisualsTab" Access="Public" -->
-                        <!--               Orientation="Vertical" Visible="False" />  --> <!-- TODO AFTERLIGHT -->
+                        <BoxContainer Name="SpaceVisualsTab" Access="Public" Orientation="Vertical">
+                            <ScrollContainer HScrollEnabled="True" VScrollEnabled="True" HorizontalExpand="True" VerticalExpand="True">
+                                <BoxContainer Orientation="Vertical">
+                                    <Button Name="NoOverlayButton" Access="Public" Text="No Overlay" StyleClasses="OpenBoth" />
+                                    <GridContainer Name="OverlaysGrid" Access="Public" Columns="2" HorizontalExpand="True" VerticalExpand="True" />
+                                </BoxContainer>
+                            </ScrollContainer>
+                            <ColorSelectorSliders Name="OverlayColor" Access="Public" />
+                            <Button Name="TestOverlayButton" Access="Public" Text="Test Overlay" StyleClasses="OpenBoth" />
+                        </BoxContainer>
                     </TabContainer>
                 </BoxContainer>
             </BoxContainer>

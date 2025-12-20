@@ -1,5 +1,4 @@
-﻿using Content.Shared.Database._Afterlight;
-using Content.Shared.FixedPoint;
+﻿using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared._Afterlight.Vore;
@@ -50,4 +49,18 @@ public sealed class VoreDeleteSpaceBuiMsg(int index) : BoundUserInterfaceMessage
 public sealed class VoreSetActiveSpaceBuiMsg(int index) : BoundUserInterfaceMessage
 {
     public readonly int Index = index;
+}
+
+[Serializable, NetSerializable]
+public sealed class VoreSetOverlayBuiMsg(int index, EntProtoId<VoreOverlayComponent>? overlay) : BoundUserInterfaceMessage
+{
+    public readonly int Index = index;
+    public readonly EntProtoId<VoreOverlayComponent>? Overlay = overlay;
+}
+
+[Serializable, NetSerializable]
+public sealed class VoreSetOverlayColorBuiMsg(int index, Color color) : BoundUserInterfaceMessage
+{
+    public readonly int Index = index;
+    public readonly Color Color = color;
 }

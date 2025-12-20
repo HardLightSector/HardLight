@@ -1,0 +1,11 @@
+﻿<controls:VoreOverlayButton
+    xmlns="https://spacestation14.io"
+    xmlns:controls="clr-namespace:Content.Client._Afterlight.Vore"
+    xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client">
+    <PanelContainer Name="Panel" Access="Public">
+        <PanelContainer.PanelOverride>
+            <graphics:StyleBoxFlat BorderColor="#00FF00" BorderThickness="3" />
+        </PanelContainer.PanelOverride>
+        <TextureButton Name="Button" Access="Public" Margin="3" />
+    </PanelContainer>
+</controls:VoreOverlayButton>

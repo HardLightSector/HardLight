@@ -1,5 +1,7 @@
 ﻿using System.Linq;
+using System.Numerics;
 using Content.Client._Afterlight.MobInteraction;
+using Content.Client._Afterlight.UserInterface;
 using Content.Shared._Afterlight.CCVar;
 using Content.Shared._Afterlight.UserInterface;
 using Content.Shared._Afterlight.Vore;
@@ -7,6 +9,8 @@ using Content.Shared.Database._Afterlight;
 using Content.Shared.FixedPoint;
 using JetBrains.Annotations;
 using Robust.Client.Audio;
+using Robust.Client.GameObjects;
+using Robust.Client.Graphics;
 using Robust.Client.Player;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
@@ -59,6 +63,61 @@ public sealed class VoreBui(EntityUid owner, Enum uiKey) : BoundUserInterface(ow
             if (sound != null)
                 control.SpaceReleaseSoundButton.SetItemMetadata(control.SpaceReleaseSoundButton.ItemCount - 1, sound);
         }
+
+        var sprite = EntMan.System<SpriteSystem>();
+        var overlayButtonGroup = new ButtonGroup();
+        control.NoOverlayButton.Group = overlayButtonGroup;
+        foreach (var overlay in system.Overlays)
+        {
+            var button = new VoreOverlayButton
+            {
+                Id = overlay.Prototype.ID,
+                ToolTip = overlay.Prototype.Name,
+                TooltipDelay = 0.1f,
+            };
+
+            button.Button.Scale = new Vector2(0.5f, 0.5f);
+            button.Button.ToggleMode = true;
+            button.Button.Group = overlayButtonGroup;
+
+            if (overlay.Component.Overlay is { } overlayTex)
+                button.Button.TextureNormal = sprite.Frame0(overlayTex);
+
+            control.OverlaysGrid.AddChild(button);
+
+            button.Button.OnPressed += _ =>
+            {
+                if (GetIndex() is not { } index)
+                    return;
+
+                SendPredictedMessage(new VoreSetOverlayBuiMsg(index, overlay.Prototype.ID));
+            };
+        }
+
+        control.NoOverlayButton.OnPressed += _ =>
+        {
+            if (GetIndex() is not { } index)
+                return;
+
+            SendPredictedMessage(new VoreSetOverlayBuiMsg(index, null));
+        };
+
+        control.OverlayColor.OnColorChanged += args =>
+        {
+            if (GetIndex() is not { } index)
+                return;
+
+            SendPredictedMessage(new VoreSetOverlayColorBuiMsg(index, args));
+        };
+
+        control.TestOverlayButton.OnPressed += _ =>
+        {
+            if (GetIndex() is { } index &&
+                system.TryGetSpace(Owner, index, out var space))
+            {
+                system.StartTestOverlay(space);
+            }
+        };
 
         UpdateSelectedSpace(null);
 
@@ -197,6 +256,14 @@ public sealed class VoreBui(EntityUid owner, Enum uiKey) : BoundUserInterface(ow
             view.SetEntity(EntMan, vored, _player.LocalEntity);
             control.SpaceContentsContainer.AddChild(view);
         }
+
+        control.NoOverlayButton.Pressed = selectedSpace.Overlay == null;
+        foreach (var button in control.OverlaysGrid.ChildrenOfType<VoreOverlayButton>())
+        {
+            button.Button.Pressed = button.Id == selectedSpace.Overlay;
+            if (button.Panel.PanelOverride is StyleBoxFlat box)
+                box.BorderThickness = button.Id == selectedSpace.Overlay ? new Thickness(3) : new Thickness(0);
+        }
     }
 
     private void UpdatePreyView(EntityUid prey)
@@ -245,6 +312,7 @@ public sealed class VoreBui(EntityUid owner, Enum uiKey) : BoundUserInterface(ow
                 control.SpaceNameEdit.Text,
                 Rope.Collapse(control.SpaceDescription.TextRope),
                 null, // TODO AFTERLIGHT
+                control.OverlayColor.Color,
                 (VoreSpaceMode)(control.SpaceMode.SelectedMetadata ?? VoreSpaceMode.Safe),
                 FixedPoint2.New(control.SpaceBurnDamage.Value),
                 FixedPoint2.New(control.SpaceBruteDamage.Value),
@@ -309,12 +377,12 @@ public sealed class VoreBui(EntityUid owner, Enum uiKey) : BoundUserInterface(ow
         {
             control.SpaceNameEdit.Text = space.Name;
             control.SpaceDescription.TextRope = new Rope.Leaf(space.Description);
-            control.SpaceMode.TrySelectId((int)space.Mode);
+            control.SpaceMode.TrySelectId((int) space.Mode);
             control.SpaceBurnDamage.Value = space.BurnDamage.Float();
             control.SpaceBruteDamage.Value = space.BruteDamage.Float();
             control.SpaceMuffleRadio.Pressed = space.MuffleRadio;
             control.SpaceChanceToEscape.Value = space.ChanceToEscape;
-            control.SpaceTimeToEscape.Value = (int)space.TimeToEscape.TotalSeconds;
+            control.SpaceTimeToEscape.Value = (int) space.TimeToEscape.TotalSeconds;
             control.SpaceCanTaste.Pressed = space.CanTaste;
             control.SpaceInsertionVerb.Text = space.InsertionVerb ?? string.Empty;
             control.SpaceReleaseVerb.Text = space.ReleaseVerb ?? string.Empty;

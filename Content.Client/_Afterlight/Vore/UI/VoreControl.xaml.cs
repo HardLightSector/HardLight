@@ -18,6 +18,6 @@ public sealed partial class VoreControl : Control
         TabContainer.SetTabTitle(SpaceContentsTab, Loc.GetString("al-vore-ui-contents"));
         // TabContainer.SetTabTitle(SpaceMessagesTab, Loc.GetString("al-vore-ui-messages")); // TODO AFTERLIGHT
         TabContainer.SetTabTitle(SpaceSettingsTab, Loc.GetString("al-vore-ui-settings"));
-        // TabContainer.SetTabTitle(SpaceVisualsTab, Loc.GetString("al-vore-ui-visuals")); // TODO AFTERLIGHT
+        TabContainer.SetTabTitle(SpaceVisualsTab, Loc.GetString("al-vore-ui-visuals"));
     }
 }

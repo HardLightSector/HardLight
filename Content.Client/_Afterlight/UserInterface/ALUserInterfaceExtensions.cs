@@ -20,4 +20,18 @@ public static class ALUserInterfaceExtensions
         parent = default;
         return false;
     }
+
+    public static string Name(this IEntityManager entities, EntityUid ent)
+    {
+        return entities.GetComponentOrNull<MetaDataComponent>(ent)?.EntityName ?? string.Empty;
+    }
+
+    public static IEnumerable<T> ChildrenOfType<T>(this Control control)
+    {
+        foreach (var child in control.Children)
+        {
+            if (child is T ofType)
+                yield return ofType;
+        }
+    }
 }

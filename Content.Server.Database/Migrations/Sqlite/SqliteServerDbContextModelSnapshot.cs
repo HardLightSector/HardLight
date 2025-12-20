@@ -141,6 +141,11 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("TEXT")
                         .HasColumnName("overlay");
 
+                    b.Property<string>("OverlayColor")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("overlay_color");
+
                     b.Property<Guid>("PlayerId")
                         .HasColumnType("TEXT")
                         .HasColumnName("player_id");

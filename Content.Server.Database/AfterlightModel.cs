@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Content.Shared.Database._Afterlight;
@@ -72,6 +71,7 @@ public sealed class ALVoreSpaces
     public string Name { get; set; } = null!;
     public string Description { get; set; } = null!;
     public string? Overlay { get; set; }
+    public string OverlayColor { get; set; } = null!;
     public VoreSpaceMode Mode { get; set; }
     public double BurnDamage { get; set; }
     public double BruteDamage { get; set; }

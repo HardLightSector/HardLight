@@ -17,6 +17,7 @@ using Content.Shared.Interaction;
 using Content.Shared.Movement.Events;
 using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Popups;
+using Content.Shared.Prototypes;
 using Content.Shared.Verbs;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
@@ -92,14 +93,17 @@ public abstract class SharedVoreSystem : EntitySystem
     private int _messageCountLimit;
     private int _messageCharacterLimit;
 
-    public ImmutableDictionary<EntProtoId<VoreOverlayComponent>, VoreOverlayComponent> Overlays { get; private set; } =
-        ImmutableDictionary<EntProtoId<VoreOverlayComponent>, VoreOverlayComponent>.Empty;
+    public ImmutableArray<EntProtoComp<VoreOverlayComponent>> Overlays { get; private set; } =
+        ImmutableArray<EntProtoComp<VoreOverlayComponent>>.Empty;
 
-    public ImmutableArray<(EntityPrototype Entity, VoreMessageCollectionComponent Comp)> Messages { get; private set; }
+    public ImmutableArray<EntProtoComp<VoreMessageCollectionComponent>> Messages { get; private set; } =
+        ImmutableArray<EntProtoComp<VoreMessageCollectionComponent>>.Empty;
 
-    public ImmutableArray<(string Name, SoundPathSpecifier? Sound)> InsertionSounds { get; private set; }
+    public ImmutableArray<(string Name, SoundPathSpecifier? Sound)> InsertionSounds { get; private set; } =
+        ImmutableArray<(string Name, SoundPathSpecifier? Sound)>.Empty;
 
-    public ImmutableArray<(string Name, SoundPathSpecifier? Sound)> ReleaseSounds { get; private set; }
+    public ImmutableArray<(string Name, SoundPathSpecifier? Sound)> ReleaseSounds { get; private set; } =
+        ImmutableArray<(string Name, SoundPathSpecifier? Sound)>.Empty;
 
     private readonly Dictionary<Guid, VorePrompt> _prompts = new();
 
@@ -148,6 +152,8 @@ public abstract class SharedVoreSystem : EntitySystem
             subs.Event<VoreSetSpaceSettingsBuiMsg>(OnSetSettingsMsg);
             subs.Event<VoreDeleteSpaceBuiMsg>(OnDeleteSpaceMsg);
             subs.Event<VoreSetActiveSpaceBuiMsg>(OnSetActiveSpaceMsg);
+            subs.Event<VoreSetOverlayBuiMsg>(OnSetOverlayMsg);
+            subs.Event<VoreSetOverlayColorBuiMsg>(OnSetOverlayColorMsg);
         });
 
         Subs.CVar(_config, ALCVars.ALVoreSpacesLimit, v => _spaceLimit = v, true);
@@ -547,23 +553,60 @@ public abstract class SharedVoreSystem : EntitySystem
         _popup.PopupPredictedCursor(Loc.GetString("al-vore-selected-active-space", ("space", space.Name)), ent, PopupType.LargeCaution);
     }
 
-    private void ReloadPrototypes()
+    private void OnSetOverlayMsg(Entity<VorePredatorComponent> ent, ref VoreSetOverlayBuiMsg args)
     {
-        var overlays = ImmutableDictionary.CreateBuilder<EntProtoId<VoreOverlayComponent>, VoreOverlayComponent>();
-        foreach (var (proto, comp) in _alPrototype.EnumerateComponents<VoreOverlayComponent>())
+        if (!TryGetSpace(ent.AsNullable(), args.Index, out var space))
+            return;
+
+        if (args.Overlay == null)
         {
-            overlays[proto.ID] = comp;
+            space.Overlay = null;
+        }
+        else
+        {
+            if (!_prototype.TryIndex(args.Overlay, out var overlay) ||
+                !overlay.HasComponent<VoreOverlayComponent>(_compFactory))
+            {
+                return;
+            }
+
+            space.Overlay = overlay.ID;
         }
 
+        ent.Comp.Spaces[args.Index] = space;
+        Dirty(ent);
+        UpdateSpaceDatabase(args.Actor, space);
+    }
+
+    private void OnSetOverlayColorMsg(Entity<VorePredatorComponent> ent, ref VoreSetOverlayColorBuiMsg args)
+    {
+        if (!TryGetSpace(ent.AsNullable(), args.Index, out var space))
+            return;
+
+        space.OverlayColor = args.Color;
+        ent.Comp.Spaces[args.Index] = space;
+        Dirty(ent);
+        UpdateSpaceDatabase(args.Actor, space);
+    }
+
+    private void ReloadPrototypes()
+    {
+        var overlays = ImmutableArray.CreateBuilder<EntProtoComp<VoreOverlayComponent>>();
+        foreach (var (proto, comp) in _alPrototype.EnumerateComponents<VoreOverlayComponent>())
+        {
+            overlays.Add((proto, comp));
+        }
+
+        overlays.Sort((a, b) => ALPrototypeSystem.EntityPrototypeComparer.Compare(a.Prototype, b.Prototype));
         Overlays = overlays.ToImmutable();
 
-        var messages = ImmutableArray
-            .CreateBuilder<(EntityPrototype Entity, VoreMessageCollectionComponent Comp)>();
+        var messages = ImmutableArray.CreateBuilder<EntProtoComp<VoreMessageCollectionComponent>>();
         foreach (var (proto, comp) in _alPrototype.EnumerateComponents<VoreMessageCollectionComponent>())
         {
             messages.Add((proto, comp));
         }
 
+        messages.Sort((a, b) => ALPrototypeSystem.EntityPrototypeComparer.Compare(a.Prototype, b.Prototype));
         Messages = messages.ToImmutable();
 
         InsertionSounds = _alPrototype
@@ -585,6 +628,7 @@ public abstract class SharedVoreSystem : EntitySystem
             Loc.GetString("al-vore-ui-space-default-name"),
             Loc.GetString("al-vore-ui-space-default-description"),
             null,
+            Color.White,
             VoreSpaceMode.Safe,
             _damageBurnDefault,
             _damageBruteDefault,
@@ -598,7 +642,7 @@ public abstract class SharedVoreSystem : EntitySystem
             _internalSoundLoopDefault,
             InsertionSounds.FirstOrDefault(kvp => kvp.Name == _insertionSoundDefault).Sound,
             ReleaseSounds.FirstOrDefault(kvp => kvp.Name == _releaseSoundDefault).Sound,
-            Messages.ToDictionary(tuple => tuple.Comp.MessageType, tuple => tuple.Comp.Messages.ToList())
+            Messages.ToDictionary(tuple => tuple.Component.MessageType, tuple => tuple.Component.Messages.ToList())
         );
     }
 
@@ -952,6 +996,11 @@ public abstract class SharedVoreSystem : EntitySystem
     public bool IsVored(Entity<VorePreyComponent?> prey)
     {
         return IsVored(prey, out _, out _);
+    }
+
+    public bool IsVored(Entity<VorePreyComponent?>? prey)
+    {
+        return prey != null && IsVored(prey.Value, out _, out _);
     }
 
     public IEnumerable<EntityUid> GetVoredActive(Entity<VorePredatorComponent?> predator)

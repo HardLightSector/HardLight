@@ -59,6 +59,17 @@ public sealed class VoreSystem : SharedVoreSystem
             return;
 
         UpdateSpaceDatabase(actor.PlayerSession, space);
+
+        var spaces = _userSpaces[actor.PlayerSession.UserId];
+        for (var i = 0; i < spaces.Count; i++)
+        {
+            var existingSpace = spaces[i];
+            if (space.Id != existingSpace.Id)
+                continue;
+
+            spaces[i] = space;
+            break;
+        }
     }
 
     protected override void RemoveSpaceDatabase(EntityUid player, Guid space)

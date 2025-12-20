@@ -9,6 +9,39 @@ public sealed class ALPrototypeSystem : EntitySystem
     [Dependency] private readonly IComponentFactory _compFactory = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
 
+    public static readonly Comparer<EntityPrototype> EntityPrototypeComparer =
+        Comparer<EntityPrototype>.Create((a, b) =>
+            string.Compare(a.Name, b.Name, StringComparison.OrdinalIgnoreCase));
+
+    private readonly List<Action> _onEntitiesReloaded = new();
+
+    public override void Initialize()
+    {
+        SubscribeLocalEvent<PrototypesReloadedEventArgs>(ev =>
+        {
+            if (!ev.WasModified<EntityPrototype>())
+                return;
+
+            foreach (var action in _onEntitiesReloaded)
+            {
+                try
+                {
+                    action();
+                }
+                catch (Exception e)
+                {
+                    Log.Error($"Error reloading entity prototypes:\n{e}");
+                }
+            }
+        });
+    }
+
+    public void SubscribeEntityReload(Action onReload)
+    {
+        _onEntitiesReloaded.Add(onReload);
+        onReload();
+    }
+
     public IEnumerable<(EntityPrototype Prototype, T Component)> EnumerateComponents<T>() where T : IComponent, new()
     {
         foreach (var entity in _prototype.EnumeratePrototypes<EntityPrototype>())

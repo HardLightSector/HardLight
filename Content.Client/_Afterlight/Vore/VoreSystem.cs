@@ -1,14 +1,21 @@
 ﻿using Content.Client._Afterlight.Vore.UI;
 using Content.Shared._Afterlight.UserInterface;
 using Content.Shared._Afterlight.Vore;
+using Robust.Client.Graphics;
 using Robust.Client.Player;
+using Robust.Shared.Timing;
 
 namespace Content.Client._Afterlight.Vore;
 
 public sealed class VoreSystem : SharedVoreSystem
 {
     [Dependency] private readonly ALUserInterfaceSystem _alUI = default!;
+    [Dependency] private readonly IOverlayManager _overlay = default!;
     [Dependency] private readonly IPlayerManager _player = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
+
+    private TimeSpan _testingOverlayUntil;
+    private VoreSpace _testOverlay;
 
     public override void Initialize()
     {
@@ -18,6 +25,14 @@ public sealed class VoreSystem : SharedVoreSystem
 
         SubscribeNetworkEvent<VoreErrorSavingEvent>(OnErrorSavingMsg);
         SubscribeNetworkEvent<VorePromptEvent>(OnPrompt);
+    }
+
+    public override void Shutdown()
+    {
+        base.Shutdown();
+
+        _testingOverlayUntil = TimeSpan.Zero;
+        _testOverlay = default;
     }
 
     private void OnState(Entity<VorePredatorComponent> ent, ref AfterAutoHandleStateEvent args)
@@ -56,6 +71,7 @@ public sealed class VoreSystem : SharedVoreSystem
             RaiseNetworkEvent(new VorePromptAcceptEvent(ev.Prompt));
             window.Close();
         };
+
         window.CancelButton.OnPressed += _ =>
         {
             RaiseNetworkEvent(new VorePromptDeclineEvent(ev.Prompt));
@@ -63,5 +79,32 @@ public sealed class VoreSystem : SharedVoreSystem
         };
 
         window.OpenCentered();
+    }
+
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+
+        var force = _testingOverlayUntil > TimeSpan.Zero && _timing.CurTime < _testingOverlayUntil;
+        if (!force && !IsVored(_player.LocalEntity))
+        {
+            _overlay.RemoveOverlay<VoreOverlay>();
+            return;
+        }
+
+        if (!_overlay.HasOverlay<VoreOverlay>())
+            _overlay.AddOverlay(new VoreOverlay());
+    }
+
+    public void StartTestOverlay(VoreSpace space)
+    {
+        _testingOverlayUntil = _timing.CurTime + TimeSpan.FromSeconds(3);
+        _testOverlay = space;
+    }
+
+    public bool IsTestingOverlay(out VoreSpace space)
+    {
+        space = default;
+        return _timing.CurTime < _testingOverlayUntil && (space = _testOverlay) != default;
     }
 }

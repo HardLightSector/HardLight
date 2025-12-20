@@ -19,3 +19,9 @@
   name: Vore
   description: "Enables you being able to ingest, and being ingested by, other players.
     You will be asked when another player attempts one involving you."
+
+- type: entity
+  parent: ALContentPreferenceBase
+  id: ALContentPreferenceVoreOverlays
+  name: Vore Overlays
+  description: "Enables you, as prey, to see the overlay of the current space that you are in, if the predator has set any."

@@ -5,7 +5,7 @@ namespace Content.Shared._Afterlight.MobInteraction;
 public sealed class ALContentPref
 {
     public static readonly EntProtoId<ALContentPreferenceComponent> Vore = "ALContentPreferenceVore";
-    // public static readonly EntProtoId<ALContentPreferenceComponent> VoreOverlays = "ALContentPreferenceVoreOverlays";
+    public static readonly EntProtoId<ALContentPreferenceComponent> VoreOverlays = "ALContentPreferenceVoreOverlays";
     public static readonly EntProtoId<ALContentPreferenceComponent> VoreEatingNoises = "ALContentPreferenceEatingNoises";
     // public static readonly EntProtoId<ALContentPreferenceComponent> VoreDigestionNoises = "ALContentPreferenceDigestionNoises";
     // public static readonly EntProtoId<ALContentPreferenceComponent> VoreBelchNoises = "ALContentPreferenceBelchNoises";
