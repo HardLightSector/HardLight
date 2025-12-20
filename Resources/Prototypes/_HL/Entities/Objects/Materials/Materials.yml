@@ -551,3 +551,90 @@
   components:
   - type: Stack
     count: 1
+
+- type: entity
+  parent: MaterialBase
+  id: MaterialHiPowerGunpowder
+  suffix: Full
+  name: triple-base gunpowder
+  description: An explosive compound.  More difficult to synthesize and handle, but more powerful.
+  components:
+  - type: Material
+  - type: Stack
+    stackType: HiPowerGunpowder
+    count: 60
+  - type: Sprite
+    sprite: Objects/Misc/reagent_fillings.rsi
+    state: powderpile
+    color: darkgray
+  - type: PhysicalComposition
+    materialComposition:
+      Gunpowder: 100
+  - type: Item
+    size: Tiny
+
+- type: entity
+  parent: MaterialHiPowerGunpowder
+  id: MaterialHiPowerGunpowder10
+  name: triple-base gunpowder
+  suffix: 10
+  components:
+  - type: Stack
+    stackType: HiPowerGunpowder
+    count: 10
+  - type: Sprite
+    sprite: Objects/Misc/reagent_fillings.rsi
+    state: powderpile
+    color: darkgray
+
+- type: entity
+  parent: MaterialHiPowerGunpowder
+  id: MaterialHiPowerGunpowder1
+  name: triple-base gunpowder
+  suffix: Single
+  components:
+  - type: Stack
+    stackType: HiPowerGunpowder
+    count: 1
+  - type: Sprite
+    sprite: Objects/Misc/reagent_fillings.rsi
+    state: powderpile
+    color: darkgray
+
+- type: entity
+  parent: MaterialBase
+  id: MaterialBulletTip
+  name: bullet tip
+  description: A standard metal bullet tip, for those who like to hand-pack their bullets.
+  components:
+  - type: Material
+  - type: Stack
+    stackType: BulletTip
+    count: 1
+  - type: Sprite
+    sprite: Objects\Weapons\Guns\Ammunition\Casings\ammo_casing.rsi
+    state: tip
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 10
+  - type: Item
+    size: Tiny
+
+- type: entity
+  parent: MaterialBase
+  id: MaterialBulletCasing9x19mm
+  name: brass casing (9x19mm)
+  description: A high-quality brass bullet casing, for those who like to hand-pack their bullets.  This one is 9x19mm.
+  components:
+  - type: Material
+  - type: Stack
+    stackType: BulletCasing9x19mm
+    count: 1
+  - type: Sprite
+    sprite: Objects\Weapons\Guns\Ammunition\Casings\ammo_casing.rsi
+    state: base-spent
+  - type: PhysicalComposition
+    materialComposition:
+      Brass: 10
+  - type: Item
+    size: Tiny

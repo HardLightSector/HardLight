@@ -1,0 +1,10 @@
+- type: entity
+  id: Bullet9x19mmHiPower
+  name: bullet (9x19mm high-power)
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 24

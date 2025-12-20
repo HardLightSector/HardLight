@@ -500,6 +500,9 @@
   - AmmoBox762x51mmRubber
   - Magazine12_gaugeBeanbag
   - AmmoBox12_gaugeBeanbag
+#Parts
+  - BulletTip
+  - BulletCasing9x19mm
 
 #advanced = Uranium + Incendiary
 

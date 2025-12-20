@@ -1,0 +1,13 @@
+- type: latheRecipe
+  id: BulletTip
+  result: MaterialBulletTip
+  completetime: 5
+  materials:
+    Steel: 10
+
+- type: latheRecipe
+  id: BulletCasing9x19mm
+  result: MaterialBulletCasing9x19mm
+  completetime: 5
+  materials:
+    Brass: 10
