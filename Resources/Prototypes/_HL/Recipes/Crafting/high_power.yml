@@ -6,3 +6,12 @@
   category: construction-category-weapons
   description: cartridge-9x19mm-hi-power
   objectType: Item
+
+- type: construction
+  id: Cartridge9x19mmFlechette
+  graph: Cartridge9x19mmFlechetteGraph
+  startNode: start
+  targetNode: shell
+  category: construction-category-weapons
+  description: cartridge-9x19mm-flechette
+  objectType: Item

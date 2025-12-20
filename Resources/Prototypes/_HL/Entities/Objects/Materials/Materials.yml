@@ -638,3 +638,22 @@
       Brass: 10
   - type: Item
     size: Tiny
+
+- type: entity
+  parent: MaterialBase
+  id: MaterialBulletFlechette
+  name: flechette
+  description: A plasteel dart used to replace a bullet tip.  Questionably legal.  Armor-piercing.
+  components:
+  - type: Material
+  - type: Stack
+    stackType: BulletFlechette
+    count: 1
+  - type: Sprite
+    sprite: Objects\Fun\Darts\dart_red.rsi
+    state: icon
+  - type: PhysicalComposition
+    materialComposition:
+      Plasteel: 10
+  - type: Item
+    size: Tiny

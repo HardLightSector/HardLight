@@ -116,3 +116,10 @@
   icon: { sprite: Objects\Weapons\Guns\Ammunition\Casings\ammo_casing.rsi, state: tip }
   spawn: MaterialBulletTip
   maxCount: 60
+
+- type: stack
+  id: BulletFlechette
+  name: stack-bullet-flechette
+  icon: { sprite: Objects\Fun\Darts\dart_red.rsi, state: icon }
+  spawn: MaterialBulletFlechette
+  maxCount: 60

@@ -17,3 +17,23 @@
               doAfter: 5
     - node: shell
       entity: Cartridge9x19mmHiPower
+
+- type: constructionGraph
+  id: Cartridge9x19mmFlechetteGraph
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: shell
+          steps:
+            - material: BulletCasing9x19mm
+              amount: 1
+              doAfter: 0.5
+            - material: HiPowerGunpowder
+              amount: 1
+              doAfter: 0.5
+            - material: BulletFlechette
+              amount: 1
+              doAfter: 5
+    - node: shell
+      entity: Cartridge9x19mmFlechette

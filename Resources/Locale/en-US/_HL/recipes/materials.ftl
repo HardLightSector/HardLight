@@ -11,5 +11,4 @@ stack-Capital-Frame = capital ship weapon frame
 stack-Capital-Servo = capital ship weapon servo
 stack-Capital-Internal = capital ship weapon internal
 stack-bullet-casing-9x19mm = brass casing (9x19mm)
-triple-base-gunpowder = triple-base gunpowder
-stack-bullet-tip = bullet tip(s)
+stack-bullet-flechette = flechette(s)

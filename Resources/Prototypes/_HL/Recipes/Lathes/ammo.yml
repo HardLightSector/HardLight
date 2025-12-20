@@ -11,3 +11,10 @@
   completetime: 5
   materials:
     Brass: 10
+
+- type: latheRecipe
+  id: BulletFlechette
+  result: MaterialBulletFlechette
+  completetime: 5
+  materials:
+    Plasteel: 10

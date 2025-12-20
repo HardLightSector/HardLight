@@ -14,3 +14,20 @@
   - type: Construction
     graph: Cartridge9x19mmHiPowerGraph
     node: shell
+
+- type: entity
+  id: Cartridge9x19mmFlechette
+  name: cartridge (9x19mm flechette)
+  parent: BaseCartridge9x19mm
+  components:
+  - type: CartridgeAmmo
+    proto: Bullet9x19mmFlechette
+  - type: Sprite
+    layers:
+      - state: base
+        map: [ "enum.AmmoVisualLayers.Base" ]
+      - state: tip
+        color: "#808080"
+  - type: Construction
+    graph: Cartridge9x19mmFlechetteGraph
+    node: shell
