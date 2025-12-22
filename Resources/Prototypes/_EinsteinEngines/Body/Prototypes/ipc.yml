@@ -17,7 +17,7 @@
       - right leg
       - left leg
       organs:
-        posbrain: PositronicBrain
+        brain: PositronicBrain
         pump: OrganIPCPump
         heart: OrganIPCCircuit1
         lungs: OrganIPCCircuit2
