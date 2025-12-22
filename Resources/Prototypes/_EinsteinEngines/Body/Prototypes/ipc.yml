@@ -19,6 +19,9 @@
       organs:
         posbrain: PositronicBrain
         pump: OrganIPCPump
+        heart: OrganIPCCircuit1
+        lungs: OrganIPCCircuit2
+        liver: OrganIPCCircuit3
     right arm:
       part: RightArmIPC
       connections:

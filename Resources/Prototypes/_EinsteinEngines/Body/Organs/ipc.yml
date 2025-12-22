@@ -74,3 +74,42 @@
   #   - id: Medicine
   #   - id: Poison
   #   - id: Narcotic
+
+- type: entity
+  id: OrganIPCCircuit1
+  parent: BaseIPCOrgan
+  name: "IPC core Circuitry"
+  description:
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: security
+  - type: Heart
+  - type: Organ
+    slotId: heart
+
+- type: entity
+  id: OrganIPCCircuit2
+  parent: BaseIPCOrgan
+  name: "IPC coolant Circuitry"
+  description:
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: medical
+  - type: Organ
+    slotId: lungs
+  - type: Lung
+
+- type: entity
+  id: OrganIPCCircuit3
+  parent: BaseIPCOrgan
+  name: "IPC auxiliary Circuitry"
+  description:
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: service
+  - type: Liver
+  - type: Organ
+    slotId: liver
