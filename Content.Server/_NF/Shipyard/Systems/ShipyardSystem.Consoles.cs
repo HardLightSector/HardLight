@@ -242,17 +242,7 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
         var deedID = EnsureComp<ShuttleDeedComponent>(targetId);
 
         var shuttleOwner = Name(player).Trim();
-
-        // Get the player's UserId for session tracking
-        string? ownerUserId = null;
-        if (_mind.TryGetMind(player, out _, out var purchaseMindComp))
-        {
-            var userId = purchaseMindComp.UserId;
-            if (userId != null)
-            {
-                ownerUserId = userId.Value.ToString();
-            }
-        }
+        var ownerUserId = GetPlayerUserId(player);
 
         AssignShuttleDeedProperties((targetId, deedID), shuttleUid, name, shuttleOwner, voucherUsed, ownerUserId);
 
@@ -632,17 +622,7 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
 
         var shuttleOwner = Name(player).Trim();
         const bool loadedFromSave = true; // mark as voucher-like to prevent resale
-
-        // Get the player's UserId for session tracking
-        string? loadOwnerUserId = null;
-        if (_mind.TryGetMind(player, out _, out var loadMindComp))
-        {
-            var loadUserId = loadMindComp.UserId;
-            if (loadUserId != null)
-            {
-                loadOwnerUserId = loadUserId.Value.ToString();
-            }
-        }
+        var loadOwnerUserId = GetPlayerUserId(player);
 
         AssignShuttleDeedProperties((targetId, deedID), shuttleUid, name, shuttleOwner, loadedFromSave, loadOwnerUserId);
 
@@ -1200,6 +1180,18 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
     // Shipyard console no longer exposes docked grids for deed creation
 
     #region Deed Assignment
+    /// <summary>
+    /// Extracts the UserId string from a player entity's mind component.
+    /// </summary>
+    private string? GetPlayerUserId(EntityUid player)
+    {
+        if (!_mind.TryGetMind(player, out _, out var mindComp))
+            return null;
+
+        var userId = mindComp.UserId;
+        return userId?.ToString();
+    }
+
     void AssignShuttleDeedProperties(Entity<ShuttleDeedComponent> deed, EntityUid? shuttleUid, string? shuttleName, string? shuttleOwner, bool purchasedWithVoucher, string? ownerUserId = null)
     {
         deed.Comp.ShuttleUid = GetNetEntity(shuttleUid);

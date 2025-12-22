@@ -122,20 +122,14 @@ public sealed class ShuttleDeedOwnerTrackingSystem : EntitySystem
         var userId = new NetUserId(guidValue);
 
         // Check if there's an active session for this user
-        foreach (var session in _playerManager.Sessions)
-        {
-            if (session.UserId != userId)
-                continue;
+        if (!_playerManager.TryGetSessionById(userId, out var session))
+            return false;
 
-            // Check session status - only count as active if not disconnected/zombie
-            if (session.Status is SessionStatus.Disconnected or SessionStatus.Zombie)
-                return false;
+        // Check session status - only count as active if not disconnected/zombie
+        if (session.Status is SessionStatus.Disconnected or SessionStatus.Zombie)
+            return false;
 
-            // Session is connected and active
-            return true;
-        }
-
-        // No session found for this user
-        return false;
+        // Session is connected and active
+        return true;
     }
 }
