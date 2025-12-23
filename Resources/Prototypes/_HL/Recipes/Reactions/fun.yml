@@ -25,6 +25,39 @@
     entity: SheetUranium1
 
 - type: reaction
+  id: CrushPhosphorus10
+  impact: Low
+  quantized: true
+  minTemp: 500
+  reactants:
+    Phosphorus:
+      amount: 20
+    Nitrogen:
+      amount: 1
+      catalyst: true
+    Iodine:
+      amount: 1
+      catalyst: true
+  effects:
+    - !type:CreateEntityReactionEffect
+      entity: CrushedPhosphorus10
+
+- type: reaction
+  id: CookNutribrick
+  impact: Low
+  quantized: true
+  conserveEnergy: false
+  minTemp: 393
+  reactants:
+    Nutriment:
+      amount: 20
+    Water:
+      amount: 5
+  effects:
+    - !type:CreateEntityReactionEffect
+      entity: FoodSnackNutribrickOpen
+
+- type: reaction
   id: SolidifyBrass
   impact: Low
   quantized: true
