@@ -26,7 +26,8 @@ public sealed class ShuttleCrewStatusSystem : EntitySystem
     /// How often to check crew status on shuttles. Default: 3 minutes.
     /// Easily adjustable here for different update frequencies.
     /// </summary>
-    private readonly TimeSpan _checkInterval = TimeSpan.FromMinutes(10);
+    // private readonly TimeSpan _checkInterval = TimeSpawan.FromMinutes(3);
+    private readonly TimeSpan _checkInterval = TimeSpan.FromSeconds(10);
 
     /// <summary>
     /// The color to use when a shuttle has no active crew.

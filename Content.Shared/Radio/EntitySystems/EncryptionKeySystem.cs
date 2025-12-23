@@ -168,7 +168,8 @@ public sealed partial class EncryptionKeySystem : EntitySystem
     {
         if (!args.IsInDetailsRange
             || !component.ExamineWhileLocked && !component.KeysUnlocked // Goobstation
-            || !component.ExamineWhileLocked && TryComp<WiresPanelComponent>(uid, out var panel) && !panel.Open) // Goobstation
+            || !component.ExamineWhileLocked && TryComp<WiresPanelComponent>(uid, out var panel) && !panel.Open // Goobstation
+            || !component.ShowOnExamine) // HardLight (Liv)
             return;
 
         if (component.KeyContainer.ContainedEntities.Count == 0)
@@ -196,7 +197,7 @@ public sealed partial class EncryptionKeySystem : EntitySystem
         if (!args.IsInDetailsRange)
             return;
 
-        if(component.Channels.Count > 0)
+        if (component.Channels.Count > 0)
         {
             args.PushMarkup(Loc.GetString("examine-encryption-channels-prefix"));
             AddChannelsExamine(component.Channels, component.DefaultChannel, args, _protoManager, "examine-encryption-channel");

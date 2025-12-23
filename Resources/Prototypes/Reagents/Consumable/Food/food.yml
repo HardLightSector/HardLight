@@ -11,6 +11,18 @@
     Food:
       effects:
       - !type:SatiateHunger
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: Synth
+        damage:
+          groups:
+            Toxin: -3
+      - !type:ModifyBloodLevel
+        conditions:
+        - !type:OrganType
+          type: Synth
+        amount: 5
   plantMetabolism:
   - !type:PlantAdjustNutrition
     amount: 1.5
@@ -39,6 +51,12 @@
       - !type:ModifyBleedAmount
         amount: -0.25
       - !type:SatiateHunger #Numbers are balanced with this in mind + it helps limit how much healing you can get from food
+      - !type:AdjustReagent # HardLight (Liv): Allows Synths to convert vitamin to nutriment
+        conditions:
+        - !type:OrganType
+          type: Synth
+        reagent: Nutriment
+        amount: 0.57
   # Lets plants benefit too
   plantMetabolism:
   - !type:PlantAdjustNutrition
@@ -66,6 +84,12 @@
       - !type:ModifyBloodLevel
         amount: 1 # weaker than iron but pretty good all things considered
       - !type:SatiateHunger
+      - !type:AdjustReagent # HardLight (Liv): Allows Synths to convert protein to nutriment
+        conditions:
+        - !type:OrganType
+          type: Synth
+        reagent: Nutriment
+        amount: 0.53
   pricePerUnit: 3
 
 - type: reagent
@@ -86,6 +110,12 @@
           reagent: Nutriment
           min: 0.1
         factor: 1
+      - !type:AdjustReagent # HardLight (Liv): Allows Synths to convert sugar to nutriment
+        conditions:
+        - !type:OrganType
+          type: Synth
+        reagent: Nutriment
+        amount: 0.51
   plantMetabolism:
   - !type:PlantAdjustNutrition
     amount: 0.1

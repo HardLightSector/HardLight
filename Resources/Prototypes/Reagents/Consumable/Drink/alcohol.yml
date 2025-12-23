@@ -180,8 +180,17 @@
         - !type:OrganType
           type: Dwarf
           shouldHave: false
+        - !type:OrganType # HardLight (Liv): Prevents Synths vomiting
+          type: Synth
+          shouldHave: false
       - !type:Drunk
         boozePower: 2
+      - !type:AdjustReagent # HardLight (Liv): Allows Synths to convert ethanol to nutriment
+        conditions:
+        - !type:OrganType
+          type: Synth
+        reagent: Nutriment
+        amount: 0.75
 
 - type: reagent
   id: Gin

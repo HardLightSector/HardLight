@@ -15,7 +15,7 @@
   description: hl-trait-horny-desc
   category: Physical
   cost: -1
-  speciesBlacklist: [Vox, Avali, Resomi, Chitinid, Protogen, Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune]
+  speciesBlacklist: [Vox, Avali, Resomi, Chitinid, Protogen, Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid]
   components:
   - type: HornyMoodsTarget
 

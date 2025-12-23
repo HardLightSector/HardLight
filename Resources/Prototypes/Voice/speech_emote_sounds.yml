@@ -481,7 +481,7 @@
     variation: 0.05
   sounds:
     Scream:
-      collection: SiliconScreams
+      collection: SiliconScreams # HardLight (Liv)
     Beep:
       path: /Audio/Machines/twobeep.ogg
     Chime:
@@ -506,6 +506,11 @@
       collection: IPCWhirrs
       params:
         variation: 0
+    Purr: # RMC14
+      path: /Audio/_RMC14/Voice/Reptilian/lizard_purr.ogg
+      params:
+        variation: 0.125
+        volume: -5
 
 - type: emoteSounds
   parent: UnisexSilicon # Hardlight
@@ -514,7 +519,7 @@
     variation: 0.05
   sounds:
     Scream:
-      collection: SiliconScreams
+      collection: SiliconScreams # HardLight (Liv)
     Laugh:
       path: /Audio/Voice/Silicon/syndieborg_laugh.ogg
 

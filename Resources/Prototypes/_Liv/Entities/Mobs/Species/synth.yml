@@ -1,0 +1,154 @@
+- type: entity
+  parent: [ BaseMobSpecies, MobBloodstream, MobAtmosExposed, MobFlammable ]
+  id: BaseMobSynth
+  name: Urist McSynth
+  save: false
+  abstract: true
+  components:
+  - type: Sprite
+  - type: Icon # It will not have an icon in the adminspawn menu without this. Body parts seem fine for whatever reason.
+    sprite: _Liv/Mobs/Species/Synth/parts.rsi
+    state: full
+  - type: Damageable
+    damageModifierSet: Synth
+  - type: Thirst
+  - type: DamageVisuals
+    damageOverlayGroups:
+      Brute:
+        sprite: Mobs/Effects/brute_damage.rsi
+        color: "#8afffd"
+  - type: ZombieImmune
+  - type: HumanoidAppearance
+    species: Synth
+  - type: Body
+    prototype: Synth
+  - type: MeleeWeapon
+    soundHit:
+      collection: Punch
+    angle: 30
+    animation: WeaponArcFist
+    damage:
+      types:
+        Blunt: 8 # Synthetic muscles hit hard.
+  - type: Inventory
+    speciesId: synth
+    displacements:
+      head:
+        sizeMaps:
+          32:
+            sprite: _Liv/Mobs/Species/Synth/displacement.rsi
+            state: head
+      mask:
+        sizeMaps:
+          32:
+            sprite: _Liv/Mobs/Species/Synth/displacement.rsi
+            state: mask
+      back:
+        sizeMaps:
+          32:
+            sprite: _Liv/Mobs/Species/Synth/displacement.rsi
+            state: back
+      outerClothing:
+        sizeMaps:
+          32:
+            sprite: _Liv/Mobs/Species/Synth/displacement.rsi
+            state: outerclothing
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: _Liv/Mobs/Species/Synth/displacement.rsi
+            state: jumpsuit
+      hand:
+        sizeMaps:
+          32:
+            sprite: _Liv/Mobs/Species/Synth/displacement.rsi
+            state: hand
+      shoes:
+        sizeMaps:
+          32:
+            sprite: _Liv/Mobs/Species/Synth/displacement.rsi
+            state: shoes
+  - type: Carriable # Frontier: Carrying system from nyanotrasen.
+  - type: TypingIndicator # Mono
+    proto: robot
+  - type: Speech # Frontier
+    speechVerb: Robotic
+    speechSounds: Borg
+    allowedEmotes: [ 'Thump', 'Purr', 'Beep', 'Ping', 'Buzz' ] # Frontier + Protogen & Reptilian stuff
+  - type: Vocal # Mono
+    sounds:
+      Male: UnisexSilicon
+      Female: UnisexSilicon
+      Unsexed: UnisexSilicon
+  - type: BodyEmotes
+    soundsId: ReptilianBodyEmotes
+  - type: EncryptionKeyHolder
+    keySlots: 10  # 4 to 10 to match other headsets from frontier   Hardlight change
+    showOnExamine: false
+    keysExtractionMethod: Operating
+  - type: ContainerFill #Hardlight change
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+  - type: ActiveRadio
+  - type: Bloodstream
+    bloodReagent: Nanites
+    bloodRefreshAmount: 0.0
+  - type: PassiveDamage
+    allowedStates:
+    - Alive
+    - Critical
+    - Dead
+    damage:
+      groups:
+        Brute: -1
+        Burn: -1
+  - type: BlockInjection
+    blockHypospray: true
+    blockInjectOnProjectile: true
+  - type: LayingDown
+  - type: OfferItem # HL
+
+- type: entity
+  parent: BaseSpeciesDummy
+  id: MobSynthDummy
+  name: Synth Dummy
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Inventory
+    speciesId: synth
+    displacements:
+      head:
+        sizeMaps:
+          32:
+            sprite: _Liv/Mobs/Species/Synth/displacement.rsi
+            state: head
+      mask:
+        sizeMaps:
+          32:
+            sprite: _Liv/Mobs/Species/Synth/displacement.rsi
+            state: mask
+      back:
+        sizeMaps:
+          32:
+            sprite: _Liv/Mobs/Species/Synth/displacement.rsi
+            state: back
+      outerClothing:
+        sizeMaps:
+          32:
+            sprite: _Liv/Mobs/Species/Synth/displacement.rsi
+            state: outerclothing
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: _Liv/Mobs/Species/Synth/displacement.rsi
+            state: jumpsuit
+      hand:
+        sizeMaps:
+          32:
+            sprite: _Liv/Mobs/Species/Synth/displacement.rsi
+            state: hand
+      shoes:
+        sizeMaps:
+          32:
+            sprite: _Liv/Mobs/Species/Synth/displacement.rsi
+            state: shoes

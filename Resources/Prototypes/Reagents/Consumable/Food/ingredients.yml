@@ -134,8 +134,11 @@
       - !type:ChemVomit
         probability: 0.1
         conditions:
-          - !type:ReagentThreshold
-            min: 6
+        - !type:OrganType # HardLight (Liv): Prevents Synths vomiting
+          type: Synth
+          shouldHave: false
+        - !type:ReagentThreshold
+          min: 6
 
 - type: reagent
   id: Rice

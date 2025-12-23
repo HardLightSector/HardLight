@@ -186,6 +186,9 @@
         amount: -1.0
       - !type:HealthChange
         conditions:
+        - !type:OrganType
+          type: Synth
+          shouldHave: false
         - !type:ReagentThreshold
           reagent: Mechanites
           min: 5
@@ -194,6 +197,18 @@
             Slash: 3
             Piercing: 3
             Blunt: 1
+      - !type:HealthChange # HardLight (Liv): Makes mechanites in any capactity lethal for Synths
+        conditions:
+        - !type:OrganType
+          type: Synth
+        damage:
+          types:
+            Slash: 5
+            Piercing: 5
+            Blunt: 3
+      - !type:AdjustReagent # HardLight (Liv): Makes mechanites remove nanites from the bloodstream
+        reagent: Nanites
+        amount: -5
 
 - type: reagent
   id: Bloodeye

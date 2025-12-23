@@ -194,40 +194,4 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<float> GridImpulseMultiplier =
         CVarDef.Create("shuttle.grid_impulse_multiplier", 0.01f, CVar.SERVERONLY);
-
-    #region Orphaned Grid Cleanup
-
-    /// <summary>
-    ///     Whether automatic cleanup of orphaned/empty grids is enabled.
-    /// </summary>
-    public static readonly CVarDef<bool> OrphanedGridCleanupEnabled =
-        CVarDef.Create("shuttle.orphaned_grid_cleanup_enabled", true, CVar.SERVERONLY);
-
-    /// <summary>
-    ///     Minimum number of tiles a grid must have to avoid being cleaned up (unless it has important entities).
-    /// </summary>
-    public static readonly CVarDef<int> OrphanedGridMinimumTiles =
-        CVarDef.Create("shuttle.orphaned_grid_minimum_tiles", 5, CVar.SERVERONLY);
-
-    /// <summary>
-    ///     Whether to periodically check and clean up empty/nameless grids.
-    ///     This catches grids that spawn without tiles during gameplay.
-    /// </summary>
-    public static readonly CVarDef<bool> EmptyGridCleanupEnabled =
-        CVarDef.Create("shuttle.empty_grid_cleanup_enabled", true, CVar.SERVERONLY);
-
-    /// <summary>
-    ///     How often (in seconds) to check for empty/nameless grids to clean up.
-    /// </summary>
-    public static readonly CVarDef<float> EmptyGridCleanupInterval =
-        CVarDef.Create("shuttle.empty_grid_cleanup_interval", 60f, CVar.SERVERONLY);
-
-    /// <summary>
-    ///     Minimum age (in seconds) a grid must be before it can be cleaned up as empty.
-    ///     This prevents newly spawned grids from being immediately deleted before they're populated.
-    /// </summary>
-    public static readonly CVarDef<float> EmptyGridCleanupMinAge =
-        CVarDef.Create("shuttle.empty_grid_cleanup_min_age", 30f, CVar.SERVERONLY);
-
-    #endregion
 }

@@ -608,9 +608,7 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
     /// - Remove mapInit/paused from entities
     /// - Remove Transform.rot entries
     /// - Remove SpreaderGrid update accumulator
-    /// - Remove components: Joint, StationMember, NavMap, ShuttleDeed, IFF, LinkedLifecycleGridParent,
-    ///   AccessReader, DeviceList, DeviceNetwork, DeviceNetworkComponent, UserInterface, Docking,
-    ///   ActionGrant, ContainerFill, Forensics
+    /// - Remove components: Joint, StationMember, NavMap, ShuttleDeed, IFF, LinkedLifecycleGridParent
     /// </summary>
     private void SanitizeShipSaveNode(MappingDataNode root)
     {
@@ -642,14 +640,10 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
             "UserInterface", // Contains invalid EntityUid references
             "Docking", // Contains invalid EntityUid references to docked entities
             "ActionGrant", // Contains invalid EntityUid references to granted actions
-            "ContainerFill", // Container fill component
-            "Forensics", // Forensics component
         };
 
         // Prototype-level exclusions for obvious non-ship entities.
         // If we encounter these, we drop them entirely from the export.
-        // NOTE: Some names like "Forensics" appear in both filteredTypes and filteredPrototypes.
-        // filteredTypes removes the component from entities, while filteredPrototypes removes entire entities with that prototype ID.
         var filteredPrototypes = new HashSet<string>(StringComparer.InvariantCultureIgnoreCase)
         {
             // admin / ghost observers, spectators, etc.

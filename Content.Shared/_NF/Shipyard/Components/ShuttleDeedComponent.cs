@@ -24,13 +24,6 @@ namespace Content.Shared._NF.Shipyard.Components
         [DataField, AutoNetworkedField]
         public string? ShuttleOwner = "Unknown";
 
-        /// <summary>
-        /// The UserId of the player who owns this shuttle deed.
-        /// Used for tracking session status for inactive cleanup.
-        /// </summary>
-        [DataField, AutoNetworkedField]
-        public string? OwnerUserId;
-
         [DataField, AutoNetworkedField]
         public bool PurchasedWithVoucher;
     }

@@ -19,14 +19,11 @@ public sealed class OrphanedGridCleanupCommand : LocalizedCommands
 
         if (args.Length == 0)
         {
-            shell.WriteLine("Usage: orphanedgridcleanup <subcommand> [value]");
-            shell.WriteLine("  enable - Enables automatic cleanup of orphaned grids from splits");
-            shell.WriteLine("  disable - Disables automatic cleanup of orphaned grids from splits");
+            shell.WriteLine("Usage: orphanedgridcleanup <enable|disable|settiles|cleanup> [value]");
+            shell.WriteLine("  enable - Enables automatic cleanup of orphaned grids");
+            shell.WriteLine("  disable - Disables automatic cleanup of orphaned grids");
             shell.WriteLine("  settiles <count> - Sets the minimum tile count threshold");
             shell.WriteLine("  cleanup <gridId> - Manually cleans up a specific grid if it's orphaned");
-            shell.WriteLine("  enableempty - Enables periodic cleanup of empty/nameless grids");
-            shell.WriteLine("  disableempty - Disables periodic cleanup of empty/nameless grids");
-            shell.WriteLine("  force - Forces an immediate empty grid cleanup check");
             return;
         }
 
@@ -40,21 +37,6 @@ public sealed class OrphanedGridCleanupCommand : LocalizedCommands
             case "disable":
                 system.SetEnabled(false);
                 shell.WriteLine("Orphaned grid cleanup disabled.");
-                break;
-
-            case "enableempty":
-                system.SetEmptyGridCleanupEnabled(true);
-                shell.WriteLine("Empty grid periodic cleanup enabled.");
-                break;
-
-            case "disableempty":
-                system.SetEmptyGridCleanupEnabled(false);
-                shell.WriteLine("Empty grid periodic cleanup disabled.");
-                break;
-
-            case "force":
-                var deleted = system.ForceEmptyGridCleanup();
-                shell.WriteLine($"Forced empty grid cleanup. Deleted {deleted} grid(s).");
                 break;
 
             case "settiles":
@@ -92,7 +74,7 @@ public sealed class OrphanedGridCleanupCommand : LocalizedCommands
 
             default:
                 shell.WriteError($"Unknown subcommand: {args[0]}");
-                shell.WriteLine("Valid subcommands: enable, disable, enableempty, disableempty, force, settiles, cleanup");
+                shell.WriteLine("Valid subcommands: enable, disable, settiles, cleanup");
                 break;
         }
     }
@@ -102,7 +84,7 @@ public sealed class OrphanedGridCleanupCommand : LocalizedCommands
         if (args.Length == 1)
         {
             return CompletionResult.FromHintOptions(
-                new[] { "enable", "disable", "enableempty", "disableempty", "force", "settiles", "cleanup" },
+                new[] { "enable", "disable", "settiles", "cleanup" },
                 "<subcommand>");
         }
 

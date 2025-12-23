@@ -1,0 +1,12 @@
+- type: reaction
+  id: Nanites
+  requiredMixerCategories:
+  - Electrolysis
+  quantized: true
+  reactants:
+    Omnizine:
+      amount: 3
+    Mechanites:
+      amount: 3
+  products:
+    Nanites: 5

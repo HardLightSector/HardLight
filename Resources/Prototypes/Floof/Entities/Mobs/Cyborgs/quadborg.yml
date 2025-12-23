@@ -74,6 +74,9 @@
     node: cyborg
   - type: Speech
     speechVerb: Robotic
+    allowedEmotes: [ 'Thump', 'Purr' ]
+  - type: BodyEmotes
+    soundsId: ReptilianBodyEmotes
   - type: LayingDown
   - type: SiliconLawProvider
     laws: Qborg

@@ -1,0 +1,222 @@
+- type: entity
+  id: BaseSynthOrganUnGibbable
+  parent: BaseItem
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _Liv/Mobs/Species/Synth/organs.rsi
+  - type: Organ
+  - type: Extractable
+    grindableSolutionName: organ
+  - type: SolutionContainerManager
+    solutions:
+      organ:
+        reagents:
+        - ReagentId: Nanites
+          Quantity: 5
+
+- type: entity
+  id: BaseSynthOrgan
+  parent: BaseSynthOrganUnGibbable
+  abstract: true
+  components:
+  - type: Gibbable
+
+- type: entity
+  id: OrganSynthBrain
+  parent: BaseSynthOrgan
+  name: synth ccu
+  description: "It's a Synth's brain. Now kindly put it back."
+  components:
+  - type: Sprite
+    state: brain
+  - type: Organ # Shitmed Change
+    slotId: brain # Shitmed Change
+  - type: Input
+    context: "ghost"
+  - type: Brain # Shitmed Change
+  - type: InputMover
+  - type: BlockMovement
+  - type: Examiner
+  - type: BorgBrain
+  - type: Tag
+  - type: Item
+    size: Small
+    heldPrefix: brain
+
+- type: entity
+  id: OrganSynthEyes
+  parent: BaseSynthOrgan
+  name: synth gimbal
+  description: "A small mechanical gimbal featuring several multi-spectrum cameras. Maybe don't put it in anything other than a Synth."
+  components:
+  - type: Organ # Shitmed Change
+    slotId: eyes # Shitmed Change
+  - type: Eyes # Shitmed Change
+  - type: Sprite
+    layers:
+    - state: eyeball-l
+    - state: eyeball-r
+  - type: Item
+    size: Small
+    heldPrefix: eyeballs
+
+- type: entity
+  id: OrganSynthTongue
+  parent: BaseSynthOrgan
+  name: synth tongue
+  description: "It's a fucking tongue. Don't touch it."
+  components:
+  - type: Sprite
+    state: tongue
+
+- type: entity
+  id: OrganSynthAppendix
+  parent: BaseSynthOrgan
+  name: appendix
+  components:
+  - type: Sprite
+    layers:
+    - state: appendix
+    - state: appendix-inflamed
+      visible: false
+
+- type: entity
+  id: OrganSynthEars
+  parent: BaseSynthOrgan
+  name: synth audio pack
+  description: "A sensor pack designed to be installed in a Synth. This one contains audio sensors."
+  components:
+  - type: Sprite
+    state: ears
+  - type: Ears # Shitmed Change
+
+- type: entity
+  id: OrganSynthLungs
+  parent: BaseSynthOrgan
+  name: synth lungs
+  description: "A pair of synthetic lungs. They're supposed to convert gases to nutriment... But they don't."
+  components:
+  - type: Organ # Shitmed Change
+    slotId: lungs # Shitmed Change
+  - type: Sprite
+    layers:
+    - state: lung-l
+    - state: lung-r
+  - type: Item
+    size: Small
+    heldPrefix: lungs
+  - type: Lung
+  - type: Metabolizer
+    solutionOnBody: false
+    solution: "Lung"
+    metabolizerTypes: [ Synth ]
+    groups:
+    - id: Gas
+      rateModifier: 100.0
+  - type: SolutionContainerManager
+    solutions:
+      organ:
+        reagents:
+        - ReagentId: Nanites
+          Quantity: 5
+      Lung:
+        maxVol: 100.0
+        canReact: false
+
+- type: entity
+  id: OrganSynthHeart
+  parent: BaseSynthOrgan
+  name: synth heart
+  description: "A synthetic heart. It doesn't do anything interesting yet."
+  components:
+  - type: Heart # Shitmed Change
+  - type: Organ # Shitmed Change
+    slotId: heart # Shitmed Change
+  - type: Sprite
+    state: heart-on
+  # The heart 'metabolizes' medicines and poisons that aren't filtered out by other organs.
+  # This is done because these chemicals need to have some effect even if they aren't being filtered out of your body.
+  # You're technically 'immune to poison' without a heart, but.. uhh, you'll have bigger problems on your hands.
+  - type: Metabolizer
+    maxReagents: 2
+    metabolizerTypes: [ Synth ]
+    groups:
+    - id: Medicine
+    - id: Poison
+    - id: Narcotic
+  - type: Item
+    size: Small
+    heldPrefix: heart
+
+- type: entity
+  id: OrganSynthStomach
+  parent: BaseSynthOrgan
+  name: synth stomach
+  description: "A synthetic stomach. It can convert minerals to nutriment and nutriment to nanites."
+  components:
+  - type: Organ # Shitmed Change
+    slotId: stomach # Shitmed Change
+  - type: Sprite
+    state: stomach
+  - type: SolutionContainerManager
+    solutions:
+      organ:
+        reagents:
+        - ReagentId: Nanites
+          Quantity: 5
+      stomach:
+        maxVol: 50
+  - type: Stomach
+  # The stomach metabolizes stuff like foods and drinks.
+  - type: Metabolizer
+    maxReagents: 6
+    metabolizerTypes: [ Synth ]
+    groups:
+    - id: Food
+    - id: Drink
+  - type: Item
+    size: Small
+    heldPrefix: stomach
+
+- type: entity
+  id: OrganSynthLiver
+  parent: BaseSynthOrgan
+  name: synth liver
+  description: "A synthetic liver. It prevents poisoning from alcohol and can convert ethanol to nutriment."
+  components:
+  - type: Liver # Shitmed Change
+  - type: Organ # Shitmed Change
+    slotId: liver # Shitmed Change
+  - type: Sprite
+    state: liver
+  - type: Item
+    size: Small
+    heldPrefix: liver
+  - type: Metabolizer # The liver metabolizes certain chemicals only, like alcohol.
+    maxReagents: 1
+    metabolizerTypes: [ Synth ]
+    groups:
+    - id: Alcohol
+      rateModifier: 0.3 # removes alcohol along with the stomach removing it as a drink
+
+- type: entity
+  id: OrganSynthKidneys
+  parent: BaseSynthOrgan
+  name: synth kidneys
+  description: "A pair of synthetic kidneys. They don't do anything interesting yet."
+  components:
+  - type: Organ # Shitmed
+    slotId: kidneys
+  - type: Sprite
+    layers:
+    - state: kidney-l
+    - state: kidney-r
+  - type: Item
+    size: Small
+    heldPrefix: kidneys
+  # The kidneys just remove anything that doesn't currently have any metabolisms, as a stopgap.
+  - type: Metabolizer
+    maxReagents: 5
+    metabolizerTypes: [ Synth ]
+    removeEmpty: true

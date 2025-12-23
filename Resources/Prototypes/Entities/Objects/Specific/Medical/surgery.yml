@@ -444,6 +444,11 @@
   - type: SurgeryTool
     startSound:
       path: /Audio/_Shitmed/Medical/Surgery/saw.ogg
+  - type: Tool # HardLight (Liv): Identifies medical multitools as a tool (for Synths)
+    qualities:
+    - Operating
+    useSound:
+      path: /Audio/_Shitmed/Medical/Surgery/scalpel1.ogg
   - type: Hemostat
     speed: 2
   - type: Scalpel
