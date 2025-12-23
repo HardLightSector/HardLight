@@ -5,7 +5,9 @@
   category: Physical
   cost: 2
   components:
-  - type: PrybarProsthetics
+    - type: Prying
+      speedModifier: 1
+      pryPowered: true
 
 - type: trait
   id: Vigor
