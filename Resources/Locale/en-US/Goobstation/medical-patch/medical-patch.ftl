@@ -5,3 +5,5 @@ goobstation-medicalpatch-sticy-trystick = Started placing patch
 goobstation-medicalpatch-sticy-trystick-success = Patch placed
 goobstation-medicalpatch-sticy-tryremove = Started removing patch
 goobstation-medicalpatch-sticy-tryremove-success = Patch removed
+goobstation-medicalpatch-craft-description = a little better then nothing
+goobstation-medicalpatch-craft-name = Makeshift Patch

@@ -216,14 +216,14 @@
     entity: MedicalPatchMakeshift
 
 - type: construction
-  name: Makeshift Patch
+  name: goobstation-medicalpatch-craft-name
   id: MedicalPatchMakeshift
   graph: MedicalPatchMakeshift
   startNode: start
   targetNode: medicalPatchMakeshift
   category: construction-category-tools
   objectType: Item
-  description: a little better then nothig
+  description: goobstation-medicalpatch-craft-description
   icon:
     sprite: Goobstation/Objects/Medical/medical_patch.rsi
     state: MakeshiftPatch
