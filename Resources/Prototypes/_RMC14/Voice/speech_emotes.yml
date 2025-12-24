@@ -75,26 +75,6 @@
     - peeps!
 
 - type: emote
-  id: RMCSkrellTrill
-  name: rmc-emote-name-trill
-  category: Vocal
-  available: false
-  whitelist:
-    components:
-    - Vocal
-  blacklist:
-    components:
-    - BorgChassis
-  chatMessages: ["rmc-emote-trill"]
-  chatTriggers:
-    - trill
-    - trill.
-    - trill!
-    - trills
-    - trills.
-    - trills!
-
-- type: emote
   id: RMCSkrellWarble
   name: rmc-emote-name-warble
   category: Vocal
