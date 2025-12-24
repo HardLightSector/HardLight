@@ -112,11 +112,12 @@
   description:  used to apply small doses over a long time
   components:
   - type: Sprite
-    sprite: _Goobstation/Objects/Medical/medical_patch.rsi
+    sprite: Goobstation/Objects/Medical/medical_patch.rsi
+    scale: 1 , 1
     layers:
       - state: GenericPatch
       - state: GenericPatchBorder
-        color: LightBlue
+        color: Violet
       - state: GenericPatch-1
         map: ["enum.SolutionContainerLayers.Fill"]
         visible: false
