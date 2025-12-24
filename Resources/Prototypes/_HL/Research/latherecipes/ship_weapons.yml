@@ -1,4 +1,4 @@
-﻿#ship parts
+#ship parts
 - type: latheRecipe
   id: LightShipWeaponFrame
   result: MaterialLightShipWeaponFrame1
@@ -329,12 +329,12 @@
 - type: latheRecipe
   parent: BaseLightWeaponBoardRecipe
   id: CivL1PhalanxWeaponBoard
-  result: L1PhalanxWeaponBoard
+  result: CivL1PhalanxWeaponBoard
 
 - type: latheRecipe
   parent: BaseLightWeaponBoardRecipe
   id: CivL85AutocannonWeaponBoard
-  result: L85AutocannonWeaponBoard
+  result: CivL85AutocannonWeaponBoard
 
 - type: latheRecipe
   parent: BaseMediumWeaponBoardRecipe
