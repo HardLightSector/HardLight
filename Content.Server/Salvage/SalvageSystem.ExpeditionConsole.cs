@@ -58,7 +58,6 @@ public sealed partial class SalvageSystem
             if (gridDataExisting.Missions.Count == 0 && !gridDataExisting.GeneratingMissions && !gridDataExisting.Cooldown)
             {
                 GenerateMissions(gridDataExisting);
-                Dirty(gridUid.Value, gridDataExisting);
             }
             return gridDataExisting;
         }
@@ -71,7 +70,6 @@ public sealed partial class SalvageSystem
         gridData.NextOffer = _timing.CurTime;
         if (gridData.Missions.Count == 0 && !gridData.GeneratingMissions)
             GenerateMissions(gridData);
-        Dirty(gridUid.Value, gridData);
         return gridData;
     }
 
