@@ -5174,8 +5174,6 @@ entities:
     - type: Transform
       pos: 12.5,-3.5
       parent: 3
-  - uid: 1051
-      parent: 1
   - uid: 641
     components:
     - type: Transform
