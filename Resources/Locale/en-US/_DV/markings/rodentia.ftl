@@ -13,6 +13,8 @@ marking-RodentiaHeadRound-round = Pattern
 
 ## ears
 
+marking-RodentiaHeadTopEarDefault = Rodentia Ears
+
 marking-RodentiaHeadTopEarBat = Ears - Bat
 marking-RodentiaHeadTopEarBat-bat = Outer ear
 
@@ -106,6 +108,8 @@ marking-RodentiaCheeksWhiskers-whiskers = Whiskers
 # body markings
 
 ## tail
+
+marking-RodentiaTailDefault = Rodentia Tail
 
 marking-RodentiaTailBeaver = Tail - Beaver
 marking-RodentiaTailBeaver-beaver = Tail
