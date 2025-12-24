@@ -15,7 +15,7 @@
       prototype: Shadekin
       requiredLegs: 2
     - type: Speech
-      allowedEmotes: ["Mar", "Wurble", "Hisses", "Hiss", "Purr"]
+      allowedEmotes: ["Mar", "Wurble", "Hiss", "Purr"]
     - type: Vocal
       sounds:
         Male: ShadekinMale
