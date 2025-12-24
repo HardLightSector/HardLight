@@ -1,0 +1,15 @@
+# SPDX-FileCopyrightText: 2025 Redrover1760
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+
+- type: damageModifierSet
+  id: Synth
+  coefficients:
+    Heat: 1.2
+    Cold: 0.5
+    Radiation: 0.3
+    Shock: 1.5
+    Blunt: 0.8
+    Slash: 0.9
+    Piercing: 1

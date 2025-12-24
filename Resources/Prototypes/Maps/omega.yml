@@ -2,7 +2,7 @@
   id: Omega
   mapName: 'Omega'
   mapPath: /Maps/omega.yml
-  minPlayers: 7
+  minPlayers: 0
   maxPlayers: 35
   stations:
     Omega:
@@ -42,6 +42,7 @@
             MedicalDoctor: [ 3, 3 ]
             Paramedic: [ 1, 1 ]
             MedicalIntern: [ 2, 2 ] #intern, not counted
+            Psychologist: [ 1, 1 ]
             #science (4)
             Scientist: [ 4, 4 ]
             ResearchAssistant: [ 2, 2 ] #intern, not counted
@@ -62,3 +63,15 @@
             #silicon (3)
             StationAi: [ 1, 1 ]
             Borg: [ 2, 2 ]
+            Contractor: [ -1, -1 ]
+            Pilot: [ 5, 5 ]
+            Mercenary: [ 5, 5 ]
+            MedicalQuadBorg: [ 3, 3 ]
+            ServiceQuadBorg: [ 3, 3 ]
+            SalvageQuadBorg: [ 3, 3 ]
+            SecurityQuadBorg: [ 3, 3 ]
+            EngineeringQuadBorg: [ 3, 3 ]
+            Valet: [ 1, 1 ]
+            MailCarrier: [ 1, 1 ]
+            Prisoner: [ 3, 3 ]
+            ForensicMantis: [ 1, 1 ]

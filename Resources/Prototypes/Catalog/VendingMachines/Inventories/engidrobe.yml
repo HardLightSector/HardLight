@@ -14,8 +14,8 @@
     ClothingShoesBootsWork: 3
     ClothingHeadHatHardhatYellow: 3
     ClothingHeadHatHardhatOrange: 3
-    ClothingHeadsetEngineering: 3
-    EncryptionKeyEngineering: 10
+    #ClothingHeadsetEngineering: 3
+    #EncryptionKeyEngineering: 10
     ClothingMaskGas: 3
     ClothingOuterWinterEngi: 2
     ClothingNeckScarfStripedOrange: 3
@@ -54,8 +54,8 @@
     ClothingHeadHatBeretEngineering: 1
     ClothingNeckCloakCe: 1
     ClothingNeckMantleCE: 1
-    ClothingHeadsetAltEngineering: 1
-    RubberStampCE: 1
+    #ClothingHeadsetAltEngineering: 1
+    #RubberStampCE: 1
     # End Frontier
     ClothingHandsEngiWarmers: 3
     ClothingUnderSocksEngi: 3

@@ -44,6 +44,7 @@ namespace Content.Server.Psionics.Glimmer
         [Dependency] private readonly RevenantSystem _revenantSystem = default!;
         [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
         [Dependency] private readonly SharedPointLightSystem _pointLightSystem = default!;
+        [Dependency] private readonly SharedMapSystem _mapSystem = default!;
 
         public float Accumulator = 0;
         public const float UpdateFrequency = 15f;
@@ -230,15 +231,15 @@ namespace Content.Server.Psionics.Glimmer
         public void BeamRandomNearProber(EntityUid prober, int targets, float range = 10f)
         {
             List<EntityUid> targetList = new();
-            foreach (var target in _entityLookupSystem.GetEntitiesInRange<StatusEffectsComponent>(Transform(prober).Coordinates, range))
+            foreach (var (targetUid, targetComp) in _entityLookupSystem.GetEntitiesInRange<StatusEffectsComponent>(Transform(prober).Coordinates, range))
             {
-                if (target.Comp.AllowedEffects.Contains("Electrocution"))
-                    targetList.Add(target.Owner);
+                if (targetComp.AllowedEffects.Contains("Electrocution"))
+                    targetList.Add(targetUid);
             }
 
-            foreach(var reactive in _entityLookupSystem.GetEntitiesInRange<SharedGlimmerReactiveComponent>(Transform(prober).Coordinates, range))
+            foreach (var (reactiveUid, reactiveComp) in _entityLookupSystem.GetEntitiesInRange<SharedGlimmerReactiveComponent>(Transform(prober).Coordinates, range))
             {
-                targetList.Add(reactive.Owner);
+                targetList.Add(reactiveUid);
             }
 
             _random.Shuffle(targetList);
@@ -302,7 +303,7 @@ namespace Content.Server.Psionics.Glimmer
 
             if (gridUid != null && TryComp<MapGridComponent>(gridUid, out var grid))
             {
-                var tileIndices = grid.TileIndicesFor(coordinates);
+                var tileIndices = _mapSystem.TileIndicesFor(gridUid.Value, grid, coordinates);
 
                 if (_anchorableSystem.TileFree(grid, tileIndices, physics.CollisionLayer, physics.CollisionMask) &&
                     _transformSystem.AnchorEntity(uid, xform))
@@ -337,15 +338,15 @@ namespace Content.Server.Psionics.Glimmer
             {
                 var currentGlimmerTier = _glimmerSystem.GetGlimmerTier();
 
-                var reactives = EntityQuery<SharedGlimmerReactiveComponent>();
+                var reactives = EntityQueryEnumerator<SharedGlimmerReactiveComponent>();
                 if (currentGlimmerTier != LastGlimmerTier) {
                     var glimmerTierDelta = (int) currentGlimmerTier - (int) LastGlimmerTier;
                     var ev = new GlimmerTierChangedEvent(LastGlimmerTier, currentGlimmerTier, glimmerTierDelta);
 
-                    foreach (var reactive in reactives)
+                    while (reactives.MoveNext(out var reactiveUid, out var reactiveComp))
                     {
-                        UpdateEntityState(reactive.Owner, reactive, currentGlimmerTier, glimmerTierDelta);
-                        RaiseLocalEvent(reactive.Owner, ev);
+                        UpdateEntityState(reactiveUid, reactiveComp, currentGlimmerTier, glimmerTierDelta);
+                        RaiseLocalEvent(reactiveUid, ev);
                     }
 
                     LastGlimmerTier = currentGlimmerTier;
@@ -355,11 +356,12 @@ namespace Content.Server.Psionics.Glimmer
                     _ghostSystem.MakeVisible(true);
                     _revenantSystem.MakeVisible(true);
                     GhostsVisible = true;
-                    foreach (var reactive in reactives)
+                    while (reactives.MoveNext(out var reactiveUid, out var reactiveComp))
                     {
-                        BeamRandomNearProber(reactive.Owner, 1, 12);
+                        BeamRandomNearProber(reactiveUid, 1, 12);
                     }
-                } else if (GhostsVisible == true)
+                }
+                else if (GhostsVisible == true)
                 {
                     _ghostSystem.MakeVisible(false);
                     _revenantSystem.MakeVisible(false);

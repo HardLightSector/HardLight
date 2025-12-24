@@ -4,10 +4,10 @@ meta:
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 12/11/2025 21:23:26
-  entityCount: 28364
+  time: 12/20/2025 02:13:00
+  entityCount: 28368
 maps:
-- 1
+- 780
 grids:
 - 8364
 - 11906
@@ -68,7 +68,7 @@ tilemap:
 entities:
 - proto: ""
   entities:
-  - uid: 1
+  - uid: 780
     components:
     - type: MetaData
       name: Map Entity
@@ -10623,7 +10623,6 @@ entities:
     - type: SpreaderGrid
     - type: GridPathfinding
     - type: SalvageExpeditionData
-      nextOffer: 0
   - uid: 11906
     components:
     - type: MetaData
@@ -14023,7 +14022,7 @@ entities:
       pos: 24.5,16.5
       parent: 8364
     - type: Door
-      secondsUntilStateChange: -100120.164
+      secondsUntilStateChange: -100247.78
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -15581,7 +15580,7 @@ entities:
       pos: 9.5,25.5
       parent: 8364
     - type: Door
-      secondsUntilStateChange: -13376.654
+      secondsUntilStateChange: -13504.274
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -88602,7 +88601,7 @@ entities:
       pos: 18.5,-13.5
       parent: 8364
     - type: Door
-      secondsUntilStateChange: -7351.1636
+      secondsUntilStateChange: -7478.784
       state: Closing
   - uid: 13388
     components:
@@ -88610,7 +88609,7 @@ entities:
       pos: 18.5,-14.5
       parent: 8364
     - type: Door
-      secondsUntilStateChange: -7386.864
+      secondsUntilStateChange: -7514.4844
       state: Closing
   - uid: 13389
     components:
@@ -88778,7 +88777,7 @@ entities:
       pos: -34.5,-14.5
       parent: 8364
     - type: Door
-      secondsUntilStateChange: -94308.7
+      secondsUntilStateChange: -94436.32
       state: Closing
   - uid: 15010
     components:
@@ -151461,6 +151460,13 @@ entities:
     - type: Transform
       pos: 62.5,-19.5
       parent: 8364
+- proto: SpawnPointForensicMantis
+  entities:
+  - uid: 28366
+    components:
+    - type: Transform
+      pos: 66.5,-18.5
+      parent: 8364
 - proto: SpawnPointHeadOfPersonnel
   entities:
   - uid: 11765
@@ -151552,6 +151558,13 @@ entities:
     components:
     - type: Transform
       pos: 62.5,-6.5
+      parent: 8364
+- proto: SpawnPointMailCarrier
+  entities:
+  - uid: 28368
+    components:
+    - type: Transform
+      pos: -22.5,-18.5
       parent: 8364
 - proto: SpawnPointMedicalDoctor
   entities:
@@ -151677,6 +151690,13 @@ entities:
     components:
     - type: Transform
       pos: -61.5,-3.5
+      parent: 8364
+- proto: SpawnPointPrisoner
+  entities:
+  - uid: 28367
+    components:
+    - type: Transform
+      pos: -13.5,49.5
       parent: 8364
 - proto: SpawnPointPsychologist
   entities:
@@ -151932,6 +151952,13 @@ entities:
     components:
     - type: Transform
       pos: 7.5,-55.5
+      parent: 8364
+- proto: SpawnPointValet
+  entities:
+  - uid: 28365
+    components:
+    - type: Transform
+      pos: -58.5,-3.5
       parent: 8364
 - proto: SpawnPointWarden
   entities:

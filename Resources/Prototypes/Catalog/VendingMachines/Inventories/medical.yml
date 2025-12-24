@@ -17,5 +17,7 @@
     LightImplanter: 10 # Frontier
     BoxFolderMedicalDoctor: 4294967295 # Frontier - infinite
     MedTekCartridge: 3 # Frontier
+    MedicalPatchPrefilledBicaridine: 3  #Goobstation - MedicalPatches
+    MedicalPatchPrefilledDermaline: 3   #Goobstation - MedicalPatches
   # contrabandInventory: # Frontier
   #   FoodApple: 1 # Frontier

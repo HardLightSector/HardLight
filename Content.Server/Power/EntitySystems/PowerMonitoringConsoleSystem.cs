@@ -525,9 +525,16 @@ internal sealed partial class PowerMonitoringConsoleSystem : SharedPowerMonitori
         var currentSupply = 0f;
         var currentDemand = 0f;
 
+        // Build quick lookup of component -> owner to avoid accessing obsolete Component.Owner
+        var supplierOwners = new Dictionary<PowerSupplierComponent, EntityUid>();
+        var supplierQuery = AllEntityQuery<PowerSupplierComponent>();
+        while (supplierQuery.MoveNext(out var supplierEnt, out var supplierComp))
+            supplierOwners[supplierComp] = supplierEnt;
+
         foreach (var powerSupplier in netQ.Suppliers)
         {
-            var ent = powerSupplier.Owner;
+            if (!supplierOwners.TryGetValue(powerSupplier, out var ent))
+                continue;
 
             if (uid == ent)
                 continue;
@@ -552,9 +559,15 @@ internal sealed partial class PowerMonitoringConsoleSystem : SharedPowerMonitori
             }
         }
 
+        var dischargerOwners = new Dictionary<BatteryDischargerComponent, EntityUid>();
+        var dischargerQuery = AllEntityQuery<BatteryDischargerComponent>();
+        while (dischargerQuery.MoveNext(out var dischargerEnt, out var dischargerComp))
+            dischargerOwners[dischargerComp] = dischargerEnt;
+
         foreach (var batteryDischarger in netQ.Dischargers)
         {
-            var ent = batteryDischarger.Owner;
+            if (!dischargerOwners.TryGetValue(batteryDischarger, out var ent))
+                continue;
 
             if (uid == ent)
                 continue;
@@ -590,9 +603,15 @@ internal sealed partial class PowerMonitoringConsoleSystem : SharedPowerMonitori
             currentDemand += powerConsumer.ReceivedPower;
         }
 
+        var chargerOwners = new Dictionary<BatteryChargerComponent, EntityUid>();
+        var chargerQuery = AllEntityQuery<BatteryChargerComponent>();
+        while (chargerQuery.MoveNext(out var chargerEnt, out var chargerComp))
+            chargerOwners[chargerComp] = chargerEnt;
+
         foreach (var batteryCharger in netQ.Chargers)
         {
-            var ent = batteryCharger.Owner;
+            if (!chargerOwners.TryGetValue(batteryCharger, out var ent))
+                continue;
 
             if (!TryComp<PowerNetworkBatteryComponent>(ent, out var entBattery))
                 continue;
@@ -639,6 +658,7 @@ internal sealed partial class PowerMonitoringConsoleSystem : SharedPowerMonitori
         var indexedLoads = new Dictionary<EntityUid, PowerMonitoringConsoleEntry>();
         var currentDemand = 0f;
 
+        #pragma warning disable CS0618
         foreach (var powerConsumer in netQ.Consumers)
         {
             var ent = powerConsumer.Owner;
@@ -665,7 +685,9 @@ internal sealed partial class PowerMonitoringConsoleSystem : SharedPowerMonitori
                 indexedLoads.Add(ent, new PowerMonitoringConsoleEntry(EntityManager.GetNetEntity(ent), entDevice.Group, powerConsumer.ReceivedPower, GetBatteryLevel(ent)));
             }
         }
+        #pragma warning restore CS0618
 
+        #pragma warning disable CS0618
         foreach (var batteryCharger in netQ.Chargers)
         {
             var ent = batteryCharger.Owner;
@@ -695,6 +717,7 @@ internal sealed partial class PowerMonitoringConsoleSystem : SharedPowerMonitori
                 indexedLoads.Add(ent, new PowerMonitoringConsoleEntry(EntityManager.GetNetEntity(ent), entDevice.Group, battery.CurrentReceiving, GetBatteryLevel(ent)));
             }
         }
+        #pragma warning restore CS0618
 
         loads = indexedLoads.Values.ToList();
 

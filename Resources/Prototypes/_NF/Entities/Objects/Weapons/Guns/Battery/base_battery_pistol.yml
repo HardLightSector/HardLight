@@ -152,4 +152,4 @@
       path: /Audio/Weapons/Guns/Gunshots/laser3.ogg
   - type: HitscanBatteryAmmoProvider
     proto: NFPulse
-    fireCost: 60
+    fireCost: 20

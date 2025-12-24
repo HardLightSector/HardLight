@@ -29,8 +29,10 @@ public sealed class DrowsinessOverlay : Overlay
     public DrowsinessOverlay()
     {
         IoCManager.InjectDependencies(this);
-        _drowsinessShader = _prototypeManager.Index<ShaderPrototype>("Drowsiness").InstanceUnique();
+        _drowsinessShader = _prototypeManager.Index(DrowsinessShaderId).InstanceUnique();
     }
+
+    private static readonly ProtoId<ShaderPrototype> DrowsinessShaderId = "Drowsiness";
 
     protected override void FrameUpdate(FrameEventArgs args)
     {

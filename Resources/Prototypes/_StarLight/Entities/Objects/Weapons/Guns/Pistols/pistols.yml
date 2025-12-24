@@ -116,6 +116,8 @@
       - id: RifleStock
         launchAngle: 180
         prob: 0.80
+  - type: StaticPrice
+    price: 1000
 
 - type: entity
   name: forged pistol
@@ -167,3 +169,5 @@
         whitelist:
           tags:
             - Cartridge9x19mm
+  - type: StaticPrice
+    price: 2500

@@ -149,7 +149,7 @@ namespace Content.Server.Mapping
 
             // map successfully created. run misc helpful mapping commands
             if (player.AttachedEntity is { Valid: true } playerEntity &&
-                _entities.GetComponent<MetaDataComponent>(playerEntity).EntityPrototype?.ID != GameTicker.AdminObserverPrototypeName)
+                _entities.GetComponent<MetaDataComponent>(playerEntity).EntityPrototype?.ID != GameTicker.AdminObserverPrototypeName.ToString())
             {
                 shell.ExecuteCommand("aghost");
             }

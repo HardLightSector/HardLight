@@ -19,6 +19,8 @@ public sealed partial class SophicScribeSystem : EntitySystem
     [Dependency] private readonly RadioSystem _radioSystem = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
+    private static readonly ProtoId<RadioChannelPrototype> ScienceChannelId = "Science";
+    private static readonly ProtoId<RadioChannelPrototype> CommonChannelId = "Common";
 
     public override void Update(float frameTime)
     {
@@ -39,7 +41,7 @@ public sealed partial class SophicScribeSystem : EntitySystem
                 continue;
 
             var message = Loc.GetString("glimmer-report", ("level", _glimmerSystem.Glimmer));
-            var channel = _prototypeManager.Index<RadioChannelPrototype>("Science");
+            var channel = _prototypeManager.Index(ScienceChannelId);
             _radioSystem.SendRadioMessage(scribe, message, channel, scribe);
 
             scribeComponent.NextAnnounceTime = curTime + scribeComponent.AnnounceInterval;
@@ -80,7 +82,7 @@ public sealed partial class SophicScribeSystem : EntitySystem
             }
 
             var message = Loc.GetString(args.Message, ("decrease", args.GlimmerBurned), ("level", _glimmerSystem.Glimmer));
-            var channel = _prototypeManager.Index<RadioChannelPrototype>("Common");
+            var channel = _prototypeManager.Index(CommonChannelId);
             _radioSystem.SendRadioMessage(speaker, message, channel, speaker);
         }
     }

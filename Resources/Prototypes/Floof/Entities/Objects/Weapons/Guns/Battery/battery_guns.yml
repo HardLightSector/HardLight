@@ -26,5 +26,5 @@
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser3.ogg
   - type: HitscanBatteryAmmoProvider
-    proto: PulseWeak
+    proto: NFPulse
     fireCost: 100

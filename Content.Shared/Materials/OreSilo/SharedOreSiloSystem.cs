@@ -17,6 +17,7 @@ public abstract class SharedOreSiloSystem : EntitySystem
     {
         SubscribeLocalEvent<OreSiloComponent, ToggleOreSiloClientMessage>(OnToggleOreSiloClient);
         SubscribeLocalEvent<OreSiloComponent, ComponentShutdown>(OnSiloShutdown);
+        SubscribeLocalEvent<OreSiloComponent, MapInitEvent>(OnSiloMapInit);
         Subs.BuiEvents<OreSiloComponent>(OreSiloUiKey.Key,
             subs =>
         {
@@ -27,6 +28,7 @@ public abstract class SharedOreSiloSystem : EntitySystem
         SubscribeLocalEvent<OreSiloClientComponent, GetStoredMaterialsEvent>(OnGetStoredMaterials);
         SubscribeLocalEvent<OreSiloClientComponent, ConsumeStoredMaterialsEvent>(OnConsumeStoredMaterials);
         SubscribeLocalEvent<OreSiloClientComponent, ComponentShutdown>(OnClientShutdown);
+        SubscribeLocalEvent<OreSiloClientComponent, MapInitEvent>(OnClientMapInit);
 
         _clientQuery = GetEntityQuery<OreSiloClientComponent>();
     }
@@ -84,6 +86,73 @@ public abstract class SharedOreSiloSystem : EntitySystem
 
             comp.Silo = null;
             Dirty(client, comp);
+        }
+    }
+
+    private void OnSiloMapInit(Entity<OreSiloComponent> ent, ref MapInitEvent args)
+    {
+        // Clean up invalid client references on map init
+        var invalidClients = new List<EntityUid>();
+        foreach (var client in ent.Comp.Clients)
+        {
+            if (!Exists(client) || !_clientQuery.HasComp(client))
+            {
+                invalidClients.Add(client);
+                continue;
+            }
+
+            // Validate the client's silo reference
+            if (_clientQuery.TryComp(client, out var clientComp))
+            {
+                if (clientComp.Silo != ent.Owner)
+                {
+                    // Fix broken bidirectional link
+                    clientComp.Silo = ent.Owner;
+                    Dirty(client, clientComp);
+                }
+            }
+        }
+
+        // Remove invalid clients
+        foreach (var invalid in invalidClients)
+        {
+            ent.Comp.Clients.Remove(invalid);
+        }
+
+        if (invalidClients.Count > 0)
+            Dirty(ent);
+    }
+
+    private void OnClientMapInit(Entity<OreSiloClientComponent> ent, ref MapInitEvent args)
+    {
+        // Validate silo reference on map init
+        if (ent.Comp.Silo is { } silo)
+        {
+            // Check if the silo still exists and has the OreSiloComponent
+            if (!Exists(silo) || !TryComp<OreSiloComponent>(silo, out var siloComp))
+            {
+                // Silo doesn't exist anymore, clear the reference
+                ent.Comp.Silo = null;
+                Dirty(ent);
+                return;
+            }
+
+            // Ensure bidirectional link is maintained
+            if (!siloComp.Clients.Contains(ent.Owner))
+            {
+                siloComp.Clients.Add(ent.Owner);
+                Dirty(silo, siloComp);
+            }
+
+            // Validate that the client can actually transmit to the silo
+            // If not, disconnect them
+            if (!CanTransmitMaterials((silo, siloComp, null), ent.Owner))
+            {
+                ent.Comp.Silo = null;
+                siloComp.Clients.Remove(ent.Owner);
+                Dirty(ent);
+                Dirty(silo, siloComp);
+            }
         }
     }
 
@@ -157,7 +226,11 @@ public abstract class SharedOreSiloSystem : EntitySystem
         if (!_powerReceiver.IsPowered(silo.Owner))
             return false;
 
-        if (_transform.GetGrid(client) != _transform.GetGrid(silo.Owner))
+        var clientGrid = _transform.GetGrid(client);
+        var siloGrid = _transform.GetGrid(silo.Owner);
+        
+        // Both must have a valid grid and be on the same grid
+        if (clientGrid == null || siloGrid == null || clientGrid != siloGrid)
             return false;
 
         if (!_transform.InRange((silo.Owner, silo.Comp2), client, silo.Comp1.Range))

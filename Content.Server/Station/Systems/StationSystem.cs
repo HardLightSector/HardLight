@@ -131,6 +131,38 @@ public sealed class StationSystem : EntitySystem
             _sawmill.Error($"There were no station grids for {ev.GameMap.ID}!");
         }
 
+        // HARDLIGHT: Check for duplicate stations and grids before spawning
+        var existingStations = new HashSet<string>();
+        var existingGridNames = new HashSet<string>();
+        
+        // Collect existing station names
+        var stationQuery = EntityQueryEnumerator<StationDataComponent, MetaDataComponent>();
+        while (stationQuery.MoveNext(out var existingUid, out var existingData, out var existingMeta))
+        {
+            existingStations.Add(existingMeta.EntityName);
+            
+            // Also collect grid names from existing stations
+            foreach (var gridUid in existingData.Grids)
+            {
+                if (TryComp<MetaDataComponent>(gridUid, out var gridMeta))
+                {
+                    existingGridNames.Add(gridMeta.EntityName);
+                }
+            }
+        }
+
+        // Check for duplicate grids in the incoming spawn
+        var duplicateGridDetected = false;
+        foreach (var grid in ev.Grids)
+        {
+            if (TryComp<MetaDataComponent>(grid, out var gridMeta) && 
+                existingGridNames.Contains(gridMeta.EntityName))
+            {
+                _sawmill.Error($"CRITICAL: Detected duplicate grid '{gridMeta.EntityName}' during round start!");
+                duplicateGridDetected = true;
+            }
+        }
+
         foreach (var (id, gridIds) in dict)
         {
             StationConfig stationConfig;
@@ -141,6 +173,25 @@ public sealed class StationSystem : EntitySystem
             {
                 _sawmill.Error($"The station {id} in map {ev.GameMap.ID} does not have an associated station config!");
                 continue;
+            }
+
+            // HARDLIGHT: Check if a station with this name or ID already exists
+            var plannedStationName = ev.StationName ?? id;
+            if (existingStations.Contains(plannedStationName) || duplicateGridDetected)
+            {
+                _sawmill.Error($"CRITICAL: Detected duplicate station '{plannedStationName}' during round start! Aborting round to prevent corruption.");
+                
+                // Delete all stations to clean up
+                var cleanupQuery = EntityQueryEnumerator<StationDataComponent>();
+                while (cleanupQuery.MoveNext(out var stationUid, out var stationData))
+                {
+                    DeleteStation(stationUid, stationData);
+                }
+
+                // Abort the round and return to lobby
+                var gameTicker = EntitySystem.Get<GameTicker>();
+                gameTicker.RestartRound();
+                return;
             }
 
             InitializeNewStation(stationConfig, gridIds, ev.StationName);

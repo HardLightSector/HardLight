@@ -47,6 +47,7 @@
             Chemist: [ 2, 2 ]
             MedicalIntern: [ 2, 2 ] #intern, not counted
             Paramedic: [ 1, 2 ]
+            Psychologist: [ 1, 1 ]
             #science (3)
             Scientist: [ 3, 3 ]
             ResearchAssistant: [ 1, 1 ] #intern, not counted

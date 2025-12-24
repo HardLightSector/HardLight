@@ -260,7 +260,7 @@ public sealed class RoundPersistenceSystem : EntitySystem
         ClearAntagonistRolesAndObjectives();
         RefreshCharacterInfoForAllPlayers();
 
-        
+
     }
 
     /// <summary>
@@ -277,7 +277,7 @@ public sealed class RoundPersistenceSystem : EntitySystem
                 return;
 
             // Guard: station may have been deleted during cleanup/restart
-            if (!EntityManager.EntityExists(uid) || TerminatingOrDeleted(uid) || !HasComp<MetaDataComponent>(uid))
+            if (!EntityManager.EntityExists(uid) || TerminatingOrDeleted(uid) || !TryComp(uid, out StationDataComponent? _))
                 return;
 
             RestoreStationData(uid, component);
@@ -297,7 +297,7 @@ public sealed class RoundPersistenceSystem : EntitySystem
                 return;
 
             // Guard: shuttle may have been deleted by the time the timer fires
-            if (!EntityManager.EntityExists(uid) || TerminatingOrDeleted(uid) || !HasComp<MetaDataComponent>(uid))
+            if (!EntityManager.EntityExists(uid) || TerminatingOrDeleted(uid) || !TryComp(uid, out ShuttleComponent? _))
                 return;
 
             RestoreShuttleData(uid, component);
@@ -344,7 +344,7 @@ public sealed class RoundPersistenceSystem : EntitySystem
         }
 
         var gridUid = xform.GridUid.Value;
-        var gridName = TryComp<MetaDataComponent>(gridUid, out var gridMeta) ? gridMeta.EntityName : gridUid.ToString();
+        var gridName = TryComp(gridUid, out MetaDataComponent? gridMeta) ? gridMeta.EntityName : gridUid.ToString();
 
         // Try to find the owning station
         var owningStation = _station.GetOwningStation(consoleUid, xform);
@@ -354,7 +354,7 @@ public sealed class RoundPersistenceSystem : EntitySystem
             return;
         }
 
-        var stationName = TryComp<MetaDataComponent>(owningStation.Value, out var stationMeta) ? stationMeta.EntityName : owningStation.Value.ToString();
+        var stationName = TryComp(owningStation.Value, out MetaDataComponent? stationMeta) ? stationMeta.EntityName : owningStation.Value.ToString();
         // Log.Info($"Console {ToPrettyString(consoleUid)} on {gridName} found owning station: {stationName}");
 
         // If the station has expedition data, the console should use it automatically
@@ -434,9 +434,26 @@ public sealed class RoundPersistenceSystem : EntitySystem
         while (stationQuery.MoveNext(out var stationUid, out var stationData))
         {
             // Validate entity exists and has metadata before proceeding
-            if (!EntityManager.EntityExists(stationUid) || TerminatingOrDeleted(stationUid) || !TryComp<MetaDataComponent>(stationUid, out var stationMeta))
+            if (!EntityManager.EntityExists(stationUid) || TerminatingOrDeleted(stationUid) || !TryComp(stationUid, out MetaDataComponent? stationMeta))
             {
                 //_sawmill.Warning($"Skipping invalid station entity {stationUid} during persistence save");
+                continue;
+            }
+
+            // Skip stations with BecomesStationComponent on their grids (map-defined stations that respawn each round)
+            var isMapStation = false;
+            foreach (var grid in stationData.Grids)
+            {
+                if (HasComp<Content.Server.Station.Components.BecomesStationComponent>(grid))
+                {
+                    isMapStation = true;
+                    break;
+                }
+            }
+
+            if (isMapStation)
+            {
+                //_sawmill.Debug($"Skipping persistence save for map-defined station {stationMeta.EntityName}");
                 continue;
             }
 
@@ -551,7 +568,7 @@ public sealed class RoundPersistenceSystem : EntitySystem
             return;
 
         // Validate entity exists and has metadata before proceeding
-        if (!EntityManager.EntityExists(shuttleUid) || TerminatingOrDeleted(shuttleUid) || !TryComp<MetaDataComponent>(shuttleUid, out var shuttleMeta))
+        if (!EntityManager.EntityExists(shuttleUid) || TerminatingOrDeleted(shuttleUid) || !TryComp(shuttleUid, out MetaDataComponent? shuttleMeta))
         {
             //_sawmill.Warning($"Skipping invalid shuttle entity {shuttleUid} during persistence save");
             return;
@@ -576,7 +593,7 @@ public sealed class RoundPersistenceSystem : EntitySystem
         var owningStation = _station.GetOwningStation(shuttleUid);
         if (owningStation != null && EntityManager.EntityExists(owningStation.Value) && !TerminatingOrDeleted(owningStation.Value))
         {
-            if (TryComp<MetaDataComponent>(owningStation.Value, out var owningStationMeta))
+            if (TryComp(owningStation.Value, out MetaDataComponent? owningStationMeta))
             {
                 stationAssociation = owningStationMeta.EntityName;
             }
@@ -618,8 +635,25 @@ public sealed class RoundPersistenceSystem : EntitySystem
             return;
 
         // Guard: Station may already be gone due to round transitions
-        if (!EntityManager.EntityExists(stationUid) || TerminatingOrDeleted(stationUid) || !TryComp<MetaDataComponent>(stationUid, out var stationMeta))
+        if (!EntityManager.EntityExists(stationUid) || TerminatingOrDeleted(stationUid) || !TryComp(stationUid, out MetaDataComponent? stationMeta))
             return;
+
+        // Skip stations with BecomesStationComponent on their grids (map-defined stations that respawn each round)
+        var isMapStation = false;
+        foreach (var grid in stationData.Grids)
+        {
+            if (HasComp<Content.Server.Station.Components.BecomesStationComponent>(grid))
+            {
+                isMapStation = true;
+                break;
+            }
+        }
+
+        if (isMapStation)
+        {
+            //_sawmill.Debug($"Skipping persistence restore for map-defined station {stationMeta.EntityName}");
+            return;
+        }
 
         var stationName = stationMeta.EntityName;
         //_sawmill.Info($"Restoring data for station: {stationName}");
@@ -706,7 +740,7 @@ public sealed class RoundPersistenceSystem : EntitySystem
                     }
                     else if (consoleStation != null)
                     {
-                        var consoleStationName = TryComp<MetaDataComponent>(consoleStation.Value, out var consoleStationMeta)
+                        var consoleStationName = TryComp(consoleStation.Value, out MetaDataComponent? consoleStationMeta)
                             ? consoleStationMeta.EntityName : consoleStation.Value.ToString();
                         //_sawmill.Debug($"Console {ToPrettyString(consoleUid)} belongs to different station {consoleStationName}");
                     }
@@ -786,7 +820,7 @@ public sealed class RoundPersistenceSystem : EntitySystem
             // iffComp.Color = shipData.IFFColor;  // Access violation - need ShuttleSystem
 
             // Update metadata safely (avoid resolving MetaData during teardown)
-            if (TryComp<MetaDataComponent>(shuttleUid, out var meta))
+            if (TryComp(shuttleUid, out MetaDataComponent? meta))
             {
                 _metaDataSystem.SetEntityName(shuttleUid, shipData.ShipName, meta);
             }
@@ -994,7 +1028,7 @@ public sealed class RoundPersistenceSystem : EntitySystem
         if (!EntityManager.EntityExists(entityUid) || TerminatingOrDeleted(entityUid))
             return $"InvalidEntity({entityUid})";
 
-        if (TryComp<MetaDataComponent>(entityUid, out var meta))
+        if (TryComp(entityUid, out MetaDataComponent? meta))
             return meta.EntityName;
 
         return entityUid.ToString();

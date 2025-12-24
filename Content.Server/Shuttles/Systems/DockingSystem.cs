@@ -179,7 +179,7 @@ namespace Content.Server.Shuttles.Systems
                 }
 
                 // If the referenced entity lacks metadata (not spawned or pruned) skip docking gracefully.
-                if (!TryComp<MetaDataComponent>(component.DockedWith.Value, out var _))
+                if (!TryComp(component.DockedWith.Value, out MetaDataComponent? _))
                 {
                     component.DockedWith = null;
                     component.DockJoint = null;

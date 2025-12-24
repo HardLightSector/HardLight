@@ -22,23 +22,23 @@
   chunkComponents:
   - type: SimpleDebrisSelector
     debrisTable:
-    - id: NFAsteroidDebrisExtraLarge
-      prob: 0.8
-      orGroup: debris
-    - id: NFAsteroidScrapDebrisExtraLarge
-      prob: 0.8
-      orGroup: debris
+    # - id: NFAsteroidDebrisExtraLarge
+      # prob: 0.1
+      # orGroup: debris
+    # - id: NFAsteroidScrapDebrisExtraLarge
+      # prob: 0.1
+      # orGroup: debris
     - id: NFAsteroidDebrisHuge
-      prob: 0.4
+      prob: 0.1
       orGroup: debris
     - id: NFAsteroidScrapDebrisHuge
-      prob: 0.4
+      prob: 0.1
       orGroup: debris
     - id: NFAsteroidDebrisExtraHuge
-      prob: 0.2
+      prob: 0.1
       orGroup: debris
     - id: NFAsteroidScrapDebrisExtraHuge
-      prob: 0.2
+      prob: 0.1
       orGroup: debris
     - id: NFAsteroidDebrisEnormous
       prob: 0.1
@@ -113,17 +113,17 @@
       orGroup: debris
   - type: NoiseDrivenDebrisSelector
     debrisTable:
-    - id: NFWreckDebrisExtraLarge
-      prob: 1
-      orGroup: wreck
+    # - id: NFWreckDebrisExtraLarge
+      # prob: 1
+      # orGroup: wreck
     - id: NFWreckDebrisHuge
-      prob: 0.6
+      prob: 0.1
       orGroup: wreck
     - id: NFWreckDebrisExtraHuge
-      prob: 0.3
+      prob: 0.1
       orGroup: wreck
     - id: NFWreckDebrisEnormous
-      prob: 0.15
+      prob: 0.1
       orGroup: wreck
 
 # region Outer Ring
@@ -136,41 +136,41 @@
   chunkComponents:
   - type: SimpleDebrisSelector
     debrisTable:
-    - id: NFAsteroidDebrisExtraLarge
-      prob: 0.24
+    # - id: NFAsteroidDebrisExtraLarge
+      # prob: 0.24
+      # orGroup: debris
+    # - id: NFAsteroidAndesiteDebrisExtraLarge
+      # prob: 0.24
+      # orGroup: debris
+    # - id: NFAsteroidBasaltDebrisExtraLarge
+      # prob: 0.24
+      # orGroup: debris
+    # - id: NFAsteroidSandDebrisExtraLarge
+      # prob: 0.24
+      # orGroup: debris
+    - id: NFAsteroidDebrisExtraGigantic
+      prob: 0.04
       orGroup: debris
-    - id: NFAsteroidAndesiteDebrisExtraLarge
-      prob: 0.24
-      orGroup: debris
-    - id: NFAsteroidBasaltDebrisExtraLarge
-      prob: 0.24
-      orGroup: debris
-    - id: NFAsteroidSandDebrisExtraLarge
-      prob: 0.24
-      orGroup: debris
-    - id: NFAsteroidChromiteDebrisExtraLarge
-      prob: 0.24
-      orGroup: debris
-    - id: NFAsteroidRockDebrisExtraLarge
-      prob: 0.24
+    - id: NFAsteroidIceDebrisExtraGigantic
+      prob: 0.06
       orGroup: debris
     # Huge (.36)
-    - id: NFAsteroidDebrisHuge
+    - id: NFAsteroidAndesiteDebrisExtraGigantic
       prob: 0.06
       orGroup: debris
-    - id: NFAsteroidAndesiteDebrisHuge
+    - id: NFAsteroidBasaltDebrisExtraGigantic
       prob: 0.06
       orGroup: debris
-    - id: NFAsteroidBasaltDebrisHuge
+    - id: NFAsteroidScrapDebrisExtraGigantic
       prob: 0.06
       orGroup: debris
-    - id: NFAsteroidSandDebrisHuge
+    - id: NFAsteroidRockDebrisExtraGigantic
       prob: 0.06
       orGroup: debris
-    - id: NFAsteroidChromiteDebrisHuge
+    - id: NFAsteroidChromiteDebrisExtraGigantic
       prob: 0.06
       orGroup: debris
-    - id: NFAsteroidRockDebrisHuge
+    - id: NFAsteroidSandDebrisExtraGigantic
       prob: 0.046
       orGroup: debris
     # Extra Enormous

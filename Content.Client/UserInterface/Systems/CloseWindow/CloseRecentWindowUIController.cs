@@ -1,4 +1,4 @@
-using Content.Client.Gameplay;
+﻿using Content.Client.Gameplay;
 using Content.Client.Info;
 using Robust.Client.Input;
 using Robust.Client.UserInterface;
@@ -64,7 +64,7 @@ public sealed class CloseRecentWindowUIController : UIController
         if (window != null)
         {
             // And move to top of recent stack
-            //Logger.Debug("Most recent window is " + window.Name);
+            //Logger.GetSawmill(nameof(CloseRecentWindowUIController)).("Most recent window is " + window.Name);
             SetMostRecentlyInteractedWindow(window);
         }
     }
@@ -140,3 +140,4 @@ public sealed class CloseRecentWindowUIController : UIController
         return false;
     }
 }
+

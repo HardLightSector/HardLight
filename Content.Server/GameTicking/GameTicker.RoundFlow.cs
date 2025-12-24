@@ -43,6 +43,7 @@ namespace Content.Server.GameTicking
         [Dependency] private readonly DiscordWebhook _discord = default!;
         [Dependency] private readonly RoleSystem _role = default!;
         [Dependency] private readonly ITaskManager _taskManager = default!;
+        [Dependency] private readonly ArrivalsSystem _arrivalsSystem = default!;
         [Dependency] private readonly ShuttleSystem _shuttleSystem = default!;
 
         private static readonly Counter RoundNumberMetric = Metrics.CreateCounter(
@@ -64,12 +65,12 @@ namespace Content.Server.GameTicking
         [ViewVariables]
         private GameRunLevel _runLevel;
 
+        [ViewVariables]
+        private EntityUid? _pendingDefaultMapDelete;
+
         private RoundEndMessageEvent.RoundEndPlayerInfo[]? _replayRoundPlayerInfo;
 
         private string? _replayRoundText;
-        
-        // Track a pending default map deletion between round end and cleanup
-        private EntityUid? _pendingDefaultMapDelete;
 
         [ViewVariables]
         public GameRunLevel RunLevel
@@ -556,20 +557,22 @@ namespace Content.Server.GameTicking
             }
             // --- End Corrected Colcomm logic ---
 
-            // Schedule default map deletion to occur during round cleanup instead of an asynchronous timer.
-            // This prevents deleting the newly loaded lobby map after a restart, which caused repeated reloads.
+            // Aggressively delete the default map after a 30 second delay
+            var defaultMapEntityUid = _mapManager.GetMapEntityId(DefaultMap);
             if (DefaultMap != null)
             {
-                _pendingDefaultMapDelete = _mapManager.GetMapEntityId(DefaultMap);
-            }
-
-            // Additionally, schedule a guarded 30s post-round deletion of the primary game map.
-            // This runs only while still in PostRound to avoid races with restarts.
-            if (DefaultMap != null)
-            {
-                var scheduledDefaultMap = DefaultMap;
+                var scheduledDefaultMap = DefaultMap; // Capture the current DefaultMap value
                 Timer.Spawn(TimeSpan.FromSeconds(30), () =>
                 {
+                    // Send all players on the default map to the lobby before deleting the map
+                    foreach (var session in _playerManager.Sessions)
+                    {
+                        var attachedEntity = session.AttachedEntity;
+                        if (attachedEntity != null && Transform(attachedEntity.Value).MapID == DefaultMap)
+                        {
+                            PlayerJoinLobby(session);
+                        }
+                    }
                     // Ensure we're still in post-round and the default map hasn't changed
                     if (RunLevel != GameRunLevel.PostRound)
                         return;
@@ -581,27 +584,11 @@ namespace Content.Server.GameTicking
                         return;
 
                     // Move players off the default map before deletion
-                    foreach (var session in _playerManager.Sessions)
-                    {
-                        if (session.AttachedEntity is EntityUid attached)
-                        {
-                            var xform = Transform(attached);
-                            if (xform.MapID == scheduledDefaultMap)
-                            {
-                                PlayerJoinLobby(session);
-                            }
-                        }
-                    }
+                    EvacuatePlayersFromMap(scheduledDefaultMap);
 
-                    // Delete the default map entity safely
-                    var mapEntity = _mapManager.GetMapEntityId(scheduledDefaultMap);
-                    QueueDel(mapEntity);
+                    QueueDel(defaultMapEntityUid);
                 });
             }
-
-            // Also schedule deletion of the main station 30 seconds after round end.
-            // This is guarded by run-level checks so it won't race with restarts.
-            ScheduleStationDeletion(TimeSpan.FromSeconds(30));
 
             try
             {
@@ -620,46 +607,6 @@ namespace Content.Server.GameTicking
             {
                 Log.Error($"Error while sending round end Discord message: {e}");
             }
-        }
-
-        /// <summary>
-        /// Schedules deletion of all stations on the default map after the specified delay.
-        /// Guarded to only run while in PostRound, and to avoid touching the lobby map.
-        /// </summary>
-        private void ScheduleStationDeletion(TimeSpan delay)
-        {
-            // If there's no default map recorded, nothing to do.
-            if (DefaultMap == MapId.Nullspace)
-                return;
-
-            // Fire-and-forget timer. If robust Timer isn't available, fallback to task manager.
-            void DeleteStations()
-            {
-                // Only perform this while still in post-round.
-                if (RunLevel != GameRunLevel.PostRound)
-                    return;
-
-                try
-                {
-                    var stationSystem = EntitySystem.Get<Content.Server.Station.Systems.StationSystem>();
-                    var enumerator = EntityQueryEnumerator<Content.Server.Station.Components.StationDataComponent, TransformComponent>();
-                    while (enumerator.MoveNext(out var stationUid, out var stationData, out var xform))
-                    {
-                        // Only delete stations that are on the old default map (i.e., the round's map).
-                        if (xform.MapID == DefaultMap)
-                        {
-                            stationSystem.DeleteStation(stationUid, stationData);
-                        }
-                    }
-                }
-                catch (Exception e)
-                {
-                    _sawmill.Error($"Error while deleting stations after round end: {e}");
-                }
-            }
-
-            // Schedule via robust Timer.
-            Robust.Shared.Timing.Timer.Spawn(delay, DeleteStations);
         }
 
         public void ShowRoundEndScoreboard(string text = "")
@@ -861,6 +808,24 @@ namespace Content.Server.GameTicking
         }
 
         /// <summary>
+        ///     Moves all players on the specified map to the lobby.
+        /// </summary>
+        private void EvacuatePlayersFromMap(MapId mapId)
+        {
+            foreach (var session in _playerManager.Sessions)
+            {
+                if (session.AttachedEntity is EntityUid attached)
+                {
+                    var xform = Transform(attached);
+                    if (xform.MapID == mapId)
+                    {
+                        PlayerJoinLobby(session);
+                    }
+                }
+            }
+        }
+
+        /// <summary>
         ///     Cleanup that has to run to clear up anything from the previous round.
         ///     Stuff like wiping the previous map clean.
         /// </summary>
@@ -876,21 +841,20 @@ namespace Content.Server.GameTicking
             if (_pendingDefaultMapDelete != null)
             {
                 // Ensure players on that map are moved to lobby before deletion
-                foreach (var session in _playerManager.Sessions)
-                {
-                    var attachedEntity = session.AttachedEntity;
-                    if (attachedEntity != null)
-                    {
-                        var xform = Transform(attachedEntity.Value);
-                        if (DefaultMap != null && xform.MapID == DefaultMap)
-                        {
-                            PlayerJoinLobby(session);
-                        }
-                    }
-                }
+                EvacuatePlayersFromMap(DefaultMap);
 
                 QueueDel(_pendingDefaultMapDelete.Value);
                 _pendingDefaultMapDelete = null;
+            }
+            // If DefaultMap is valid but wasn't scheduled for deletion (e.g., round start failed before EndRound),
+            // we need to delete it here to prevent infinite map creation on repeated round start failures.
+            else if (DefaultMap != MapId.Nullspace && _mapManager.MapExists(DefaultMap))
+            {
+                // Move players off the map before deletion
+                EvacuatePlayersFromMap(DefaultMap);
+
+                var mapEntity = _mapManager.GetMapEntityId(DefaultMap);
+                QueueDel(mapEntity);
             }
 
             // Round restart cleanup event, so entity systems can reset.

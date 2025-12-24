@@ -7,12 +7,12 @@
 - type: contrabandSeverity
   id: Class2
   examineText: contraband-examine-text-Class2
-  showDepartmentsAndJobs: true
+  #showDepartmentsAndJobs: true
 
 - type: contrabandSeverity
   id: Class2Restricted
   examineText: contraband-examine-text-Class2Restricted
-  showDepartmentsAndJobs: true
+  #showDepartmentsAndJobs: true
 
 - type: contrabandSeverity
   id: Class2Expedition

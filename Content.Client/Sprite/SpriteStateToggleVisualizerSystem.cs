@@ -1,6 +1,5 @@
 using Content.Shared.Sprite;
 using Content.Shared.Toggleable;
-using Content.Shared.Sprite;
 using Content.Shared.Movement.Components;
 using Robust.Client.GameObjects;
 using Robust.Shared.GameObjects;

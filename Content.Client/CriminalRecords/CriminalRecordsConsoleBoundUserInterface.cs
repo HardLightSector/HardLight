@@ -73,6 +73,7 @@ public sealed class CriminalRecordsConsoleBoundUserInterface : BoundUserInterfac
         _window?.UpdateState(cast);
     }
 
+    [Obsolete]
     protected override void Dispose(bool disposing)
     {
         base.Dispose(disposing);

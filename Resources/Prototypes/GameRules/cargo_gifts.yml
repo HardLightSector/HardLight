@@ -45,9 +45,9 @@
     description: cargo-gift-pizza-small
     dest: cargo-gift-dest-bar
     gifts:
-      FoodPizza: 1              # 4 pizzas
+      #FoodPizza: 1              # 4 pizzas - MISSING PROTOTYPE
       FoodBarSupply: 1
-      FoodSoftdrinks: 1
+      #FoodSoftdrinks: 1         # MISSING PROTOTYPE
       CrateVendingMachineRestockRobustSoftdrinks: 1
 
 - type: entity
@@ -63,9 +63,9 @@
     description: cargo-gift-pizza-large
     dest: cargo-gift-dest-bar
     gifts:
-      FoodPizzaLarge: 1              # 16 pizzas
+      #FoodPizzaLarge: 1              # 16 pizzas - MISSING PROTOTYPE
       FoodBarSupply: 1
-      FoodSoftdrinksLarge: 1
+      #FoodSoftdrinksLarge: 1    # MISSING PROTOTYPE
 
 - type: entity
   id: GiftsEngineering

@@ -50,6 +50,7 @@ using Robust.Shared.Physics.Systems;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
+using Robust.Shared.Prototypes;
 using Timer = Robust.Shared.Timing.Timer;
 using Robust.Shared.Audio.Systems; // Frontier
 using Robust.Shared.Audio; // Frontier
@@ -88,6 +89,8 @@ public sealed partial class AdminVerbSystem
     [Dependency] private readonly SharedAudioSystem _audio = default!; // Frontier
     [Dependency] private readonly DamageableSystem _damageable = default!; // Frontier
     [Dependency] private readonly SleepingSystem _sleep = default!; // Frontier
+
+    private static readonly ProtoId<DamageTypePrototype> BluntDamage = new("Blunt");
 
     // All smite verbs have names so invokeverb works.
     private void AddSmiteVerbs(GetVerbsEvent<Verb> args)
@@ -957,7 +960,7 @@ public sealed partial class AdminVerbSystem
                     }
                 }
 
-                if (_prototypeManager.TryIndex<DamageTypePrototype>("Blunt", out var bluntProto))
+                if (_prototypeManager.TryIndex<DamageTypePrototype>(BluntDamage, out var bluntProto))
                 {
                     var bluntDamage = new DamageSpecifier(bluntProto, 10);
                     _damageable.TryChangeDamage(args.Target, bluntDamage, true);

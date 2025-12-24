@@ -107,6 +107,7 @@ public sealed class SurveillanceCameraMonitorBoundUserInterface : BoundUserInter
         }
     }
 
+    [Obsolete]
     protected override void Dispose(bool disposing)
     {
         base.Dispose(disposing);

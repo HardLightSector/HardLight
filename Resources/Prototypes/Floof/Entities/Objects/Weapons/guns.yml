@@ -58,7 +58,7 @@
   description: A weapon that is almost as infamous as its users.
   components:
   - type: HitscanBatteryAmmoProvider
-    proto: NFPulse
+    proto: Pulse
     fireCost: 200
   - type: BatterySelfRecharger
     autoRecharge: true

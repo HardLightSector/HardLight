@@ -48,8 +48,10 @@ public sealed class PopupOverlay : Overlay
         _popup = popup;
         _controller = controller;
 
-        _shader = protoManager.Index<ShaderPrototype>("unshaded").Instance();
+        _shader = protoManager.Index(UnshadedShaderId).Instance();
     }
+
+    private static readonly ProtoId<ShaderPrototype> UnshadedShaderId = "unshaded";
 
     protected override void Draw(in OverlayDrawArgs args)
     {

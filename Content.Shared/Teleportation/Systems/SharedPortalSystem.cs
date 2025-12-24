@@ -63,7 +63,12 @@ public abstract class SharedPortalSystem : EntitySystem
                     return;
 
                 var ent = link.LinkedEntities.First();
-                TeleportEntity(uid, args.User, Transform(ent).Coordinates, ent, false);
+                
+                // Validate the entity exists and has a transform before attempting teleport
+                if (!Exists(ent) || !TryComp<TransformComponent>(ent, out var entXform))
+                    return;
+                    
+                TeleportEntity(uid, args.User, entXform.Coordinates, ent, false);
             },
             Disabled = disabled,
             Text = Loc.GetString("portal-component-ghost-traverse"),

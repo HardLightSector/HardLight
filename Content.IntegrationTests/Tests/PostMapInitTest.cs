@@ -70,6 +70,8 @@ namespace Content.IntegrationTests.Tests
         };
 
         private static readonly string[] GameMaps = FrontierConstants.GameMapPrototypes; // Frontier: not inline constants
+
+        private static readonly ProtoId<EntityCategoryPrototype> DoNotMapCategoryId = "DoNotMap";
         // Frontier: comment out upstream game maps
         /*
         private static readonly string[] GameMaps =

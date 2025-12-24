@@ -1,36 +1,3 @@
-// SPDX-FileCopyrightText: 2020 Víctor Aguilera Puerto
-// SPDX-FileCopyrightText: 2020 chairbender
-// SPDX-FileCopyrightText: 2021 Acruid
-// SPDX-FileCopyrightText: 2021 Galactic Chimp
-// SPDX-FileCopyrightText: 2021 Moony
-// SPDX-FileCopyrightText: 2021 Paul
-// SPDX-FileCopyrightText: 2021 Pieter-Jan Briers
-// SPDX-FileCopyrightText: 2021 ShadowCommander
-// SPDX-FileCopyrightText: 2021 Silver
-// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto
-// SPDX-FileCopyrightText: 2022 wrexbe
-// SPDX-FileCopyrightText: 2023 AJCM-git
-// SPDX-FileCopyrightText: 2023 DrSmugleaf
-// SPDX-FileCopyrightText: 2023 Kara
-// SPDX-FileCopyrightText: 2023 PixelTK
-// SPDX-FileCopyrightText: 2023 Slava0135
-// SPDX-FileCopyrightText: 2024 Arendian
-// SPDX-FileCopyrightText: 2024 Leon Friedrich
-// SPDX-FileCopyrightText: 2024 LordCarve
-// SPDX-FileCopyrightText: 2024 Nemanja
-// SPDX-FileCopyrightText: 2024 Whatstone
-// SPDX-FileCopyrightText: 2024 Winkarst
-// SPDX-FileCopyrightText: 2024 metalgearsloth
-// SPDX-FileCopyrightText: 2024 nikthechampiongr
-// SPDX-FileCopyrightText: 2025 Ark
-// SPDX-FileCopyrightText: 2025 Ilya246
-// SPDX-FileCopyrightText: 2025 Redrover1760
-// SPDX-FileCopyrightText: 2025 SlamBamActionman
-// SPDX-FileCopyrightText: 2025 ark1368
-// SPDX-FileCopyrightText: 2025 starch
-//
-// SPDX-License-Identifier: AGPL-3.0-or-later
-
 using Content.Server.Administration.Logs;
 using Content.Server.Destructible;
 using Content.Server.Effects;
@@ -47,31 +14,22 @@ using Robust.Shared.Player;
 using Content.Shared.StatusEffect;
 using Content.Shared.Eye.Blinding.Components; // Frontier
 using Content.Shared.Eye.Blinding.Systems; // Frontier
-using Content.Shared.FixedPoint;
 using Content.Shared.Physics;
-using Content.Shared.Projectiles;
 using Robust.Shared.Map;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Dynamics; // Mono
-using Robust.Shared.Physics.Events;
 using Robust.Shared.Physics.Systems;
-using Robust.Shared.Player;
 using Robust.Shared.Random; // Frontier
 using Content.Server.Chat.Systems; // Frontier
-using Robust.Shared.Physics.Systems;
 using Robust.Shared.Timing;
-using Robust.Shared.Physics.Components;
 using System.Linq;
 using System.Numerics;
-using Content.Shared.Physics;
-using Robust.Shared.Physics;
 
 namespace Content.Server.Projectiles;
 
 public sealed class ProjectileSystem : SharedProjectileSystem
 {
-    [Dependency] private readonly IAdminLogManager _adminLogger = default!;
     [Dependency] private readonly ColorFlashEffectSystem _color = default!;
     [Dependency] private readonly DamageableSystem _damageableSystem = default!;
     [Dependency] private readonly DestructibleSystem _destructibleSystem = default!;
@@ -114,7 +72,7 @@ public sealed class ProjectileSystem : SharedProjectileSystem
         var otherName = ToPrettyString(target);
         // Get damage required for destructible before base applies damage
         var damageRequired = FixedPoint2.Zero;
-        if (TryComp<DamageableComponent>(target, out var damageableComponent))
+        if (TryComp(target, out DamageableComponent? damageableComponent))
         {
             damageRequired = _destructibleSystem.DestroyedAt(target);
             damageRequired -= damageableComponent.TotalDamage;
@@ -243,7 +201,7 @@ public sealed class ProjectileSystem : SharedProjectileSystem
                     SetShooter(uid, projectileComp, hitEntity);
                     _physics.SetLinearVelocity(uid, -currentVelocity, body: physicsComp);
                     // Potentially change angle if your projectile component uses it for orientation
-                    if (TryComp<TransformComponent>(uid, out var projXform))
+                    if (TryComp(uid, out TransformComponent? projXform))
                         _transformSystem.SetLocalRotation(projXform, currentVelocity.ToAngle() + new Angle(MathF.PI));
                     continue; // Done with this projectile if reflected
                 }
@@ -352,7 +310,7 @@ public sealed class ProjectileSystem : SharedProjectileSystem
 
     private void TryBlind(EntityUid target) // Frontier - bb make you go blind
     {
-        if (!TryComp<BlindableComponent>(target, out var blindable) || blindable.IsBlind)
+        if (!TryComp(target, out BlindableComponent? blindable) || blindable.IsBlind)
             return;
 
         var eyeProtectionEv = new GetEyeProtectionEvent();

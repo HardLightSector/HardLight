@@ -18,6 +18,7 @@ using Content.Shared._Shitmed.BodyEffects;
 using Content.Shared._Shitmed.Targeting.Events;
 using Content.Shared.Inventory;
 using Content.Shared.Random;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Body.Systems;
 
@@ -25,6 +26,7 @@ public partial class SharedBodySystem
 {
     [Dependency] private readonly RandomHelperSystem _randomHelper = default!; // Shitmed Change
     [Dependency] private readonly InventorySystem _inventorySystem = default!; // Shitmed Change
+    private static readonly ProtoId<DamageTypePrototype> BloodlossDamageId = "Bloodloss";
 
     private void InitializeParts()
     {
@@ -393,7 +395,7 @@ public partial class SharedBodySystem
             && !GetBodyChildrenOfType(bodyEnt, partEnt.Comp.PartType, bodyEnt.Comp).Any()
         )
         {
-            var damage = new DamageSpecifier(Prototypes.Index<DamageTypePrototype>("Bloodloss"), partEnt.Comp.VitalDamage); // Shitmed Change
+            var damage = new DamageSpecifier(Prototypes.Index<DamageTypePrototype>(BloodlossDamageId), partEnt.Comp.VitalDamage); // Shitmed Change
             Damageable.TryChangeDamage(bodyEnt, damage, partMultiplier: 0f); // Shitmed Change
         }
     }

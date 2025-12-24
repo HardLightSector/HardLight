@@ -12,6 +12,7 @@ public sealed class VehicleSystem : SharedVehicleSystem
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly IEyeManager _eye = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
+    [Dependency] private readonly SpriteSystem _sprite = default!;
 
     public override void Initialize()
     {
@@ -48,9 +49,9 @@ public sealed class VehicleSystem : SharedVehicleSystem
             VehicleRenderOver renderOver = (VehicleRenderOver)(1 << (int)dir);
 
             if ((vehicle.RenderOver & renderOver) == renderOver)
-                sprite.DrawDepth = (int)Content.Shared.DrawDepth.DrawDepth.OverMobs;
+                _sprite.SetDrawDepth((uid, sprite), (int)Content.Shared.DrawDepth.DrawDepth.OverMobs);
             else
-                sprite.DrawDepth = (int)Content.Shared.DrawDepth.DrawDepth.Objects;
+                _sprite.SetDrawDepth((uid, sprite), (int)Content.Shared.DrawDepth.DrawDepth.Objects);
 
             Vector2 offset = Vector2.Zero;
             if (vehicle.Driver != null)
@@ -75,7 +76,7 @@ public sealed class VehicleSystem : SharedVehicleSystem
 
             // Avoid recalculating a matrix if we can help it.
             if (sprite.Offset != offset)
-                sprite.Offset = offset;
+                _sprite.SetOffset((uid, sprite), offset);
         }
     }
 }

@@ -43,6 +43,7 @@ public sealed class SurgeryBui : BoundUserInterface
         Update(s);
     }
 
+    [Obsolete]
     protected override void Dispose(bool disposing)
     {
         base.Dispose(disposing);

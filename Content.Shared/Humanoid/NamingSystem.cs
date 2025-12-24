@@ -14,6 +14,7 @@ namespace Content.Shared.Humanoid
     {
         [Dependency] private readonly IRobustRandom _random = default!;
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+        private static readonly ProtoId<SpeciesPrototype> HumanSpeciesId = "Human";
 
         public string GetName(string species, Gender? gender = null)
         {
@@ -21,7 +22,7 @@ namespace Content.Shared.Humanoid
             // Some downstream is probably gonna have this eventually but then they can deal with fallbacks.
             if (!_prototypeManager.TryIndex(species, out SpeciesPrototype? speciesProto))
             {
-                speciesProto = _prototypeManager.Index<SpeciesPrototype>("Human");
+                speciesProto = _prototypeManager.Index<SpeciesPrototype>(HumanSpeciesId);
                 Log.Warning($"Unable to find species {species} for name, falling back to Human");
             }
 

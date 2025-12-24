@@ -55,13 +55,13 @@ public sealed partial class DockingArmGeneratorComponent : Component
     /// Maximum distance from station to spawn the docking arm.
     /// </summary>
     [DataField]
-    public int MaxSpawnDistance = 256;
+    public int MaxSpawnDistance = 300;
 
     /// <summary>
     /// Minimum distance from station to spawn the docking arm.
     /// </summary>
     [DataField]
-    public int MinSpawnDistance = 64;
+    public int MinSpawnDistance = 200;
 
     /// <summary>
     /// Counter for dock numbering. Increments each time a dock is spawned.

@@ -68,6 +68,7 @@ public sealed class SpawnSalvageMissionJob : Job<bool>
     private EntityUid mapUid = EntityUid.Invalid;
 #pragma warning restore IDE1006
     private static readonly ProtoId<SalvageDifficultyPrototype> FallbackDifficulty = "NFModerate";
+    private static readonly ProtoId<LocalizedDatasetPrototype> PlanetNamesId = "NamesBorer";
     // End Frontier
 
     public SpawnSalvageMissionJob(
@@ -196,7 +197,7 @@ public sealed class SpawnSalvageMissionJob : Job<bool>
     destComp.Enabled = true; // Keep enabled for entire expedition so multiple ships can jump in.
         _metaData.SetEntityName(
             mapUid,
-            _entManager.System<SharedSalvageSystem>().GetFTLName(_prototypeManager.Index<LocalizedDatasetPrototype>("NamesBorer"), _missionParams.Seed));
+            _entManager.System<SharedSalvageSystem>().GetFTLName(_prototypeManager.Index(PlanetNamesId), _missionParams.Seed));
         _entManager.AddComponent<FTLBeaconComponent>(mapUid);
 
         // Saving the mission mapUid to a CD is made optional, in case one is somehow made in a process without a CD entity

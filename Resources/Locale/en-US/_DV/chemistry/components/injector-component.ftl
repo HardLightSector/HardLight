@@ -1,3 +1,3 @@
 ## mob-inject doafter messages
 
-injector-component-deny-user = Exoskeleton too thick!
+injector-component-deny-user = You aren't able to use this here!

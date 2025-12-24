@@ -30,6 +30,8 @@ namespace Content.IntegrationTests.Tests.Commands
       200: Dead
 ";
 
+        private static readonly ProtoId<DamageGroupPrototype> ToxinId = "Toxin";
+
         [Test]
         public async Task RejuvenateDeadTest()
         {
@@ -62,7 +64,7 @@ namespace Content.IntegrationTests.Tests.Commands
                 });
 
                 // Kill the entity
-                DamageSpecifier damage = new(prototypeManager.Index<DamageGroupPrototype>("Toxin"), FixedPoint2.New(10000000));
+                DamageSpecifier damage = new(prototypeManager.Index<DamageGroupPrototype>(ToxinId), FixedPoint2.New(10000000));
 
                 damSystem.TryChangeDamage(human, damage, true);
 

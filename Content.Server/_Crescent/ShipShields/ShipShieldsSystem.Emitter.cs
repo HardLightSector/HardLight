@@ -1,7 +1,3 @@
-// SPDX-FileCopyrightText: 2025 ark1368
-//
-// SPDX-License-Identifier: AGPL-3.0-or-later
-
 using Content.Shared._Crescent.ShipShields;
 using Content.Server.Power.Components;
 using Content.Shared.Projectiles;
@@ -26,6 +22,16 @@ public partial class ShipShieldsSystem
         SubscribeLocalEvent<ShipShieldEmitterComponent, ShieldDeflectedEvent>(OnShieldDeflected);
         SubscribeLocalEvent<ShipShieldEmitterComponent, ExaminedEvent>(OnExamined);
         SubscribeLocalEvent<ShipShieldEmitterComponent, ComponentRemove>(OnRemoved);
+        SubscribeLocalEvent<ShipShieldEmitterComponent, MapInitEvent>(OnEmitterMapInit);
+    }
+
+    private void OnEmitterMapInit(EntityUid uid, ShipShieldEmitterComponent component, MapInitEvent args)
+    {
+        // Clean up any stale shield references from save/load
+        // The Update loop will recreate shields as needed
+        component.Shield = null;
+        component.Shielded = null;
+        component.Recharging = false;
     }
 
 

@@ -29,6 +29,7 @@ public sealed class CluwneSystem : EntitySystem
     [Dependency] private readonly SharedStunSystem _stunSystem = default!;
     [Dependency] private readonly DamageableSystem _damageableSystem = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+    private static readonly ProtoId<DamageGroupPrototype> GeneticGroupId = "Genetic";
     [Dependency] private readonly ChatSystem _chat = default!;
     [Dependency] private readonly AutoEmoteSystem _autoEmote = default!;
     [Dependency] private readonly NameModifierSystem _nameMod = default!;
@@ -54,7 +55,7 @@ public sealed class CluwneSystem : EntitySystem
             RemComp<CluwneComponent>(uid);
             RemComp<ClumsyComponent>(uid);
             RemComp<AutoEmoteComponent>(uid);
-            var damageSpec = new DamageSpecifier(_prototypeManager.Index<DamageGroupPrototype>("Genetic"), 300);
+            var damageSpec = new DamageSpecifier(_prototypeManager.Index(GeneticGroupId), 300);
             _damageableSystem.TryChangeDamage(uid, damageSpec);
         }
     }

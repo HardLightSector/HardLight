@@ -40,12 +40,12 @@ public sealed class NPCBlackboardSerializer : ITypeReader<NPCBlackboard, Mapping
                 // Allow plain booleans for common navigation toggles.
                 if (SimpleBoolKeys.Contains(key))
                 {
-                    validated.Add(serializationManager.ValidateNode(typeof(bool), data.Value, context));
+                    validated.Add(serializationManager.ValidateNode<bool>(data.Value, context));
                     continue;
                 }
 
                 // Fallback: accept untagged scalars as strings to avoid hard failures during validation.
-                validated.Add(serializationManager.ValidateNode(typeof(string), data.Value, context));
+                validated.Add(serializationManager.ValidateNode<string>(data.Value, context));
                 continue;
             }
 

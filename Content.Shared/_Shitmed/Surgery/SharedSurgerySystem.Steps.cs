@@ -32,6 +32,7 @@ public abstract partial class SharedSurgerySystem
 {
     private static readonly string[] BruteDamageTypes = { "Slash", "Blunt", "Piercing" };
     private static readonly string[] BurnDamageTypes = { "Heat", "Shock", "Cold", "Caustic" };
+    private static readonly ProtoId<DamageTypePrototype> PoisonDamageId = "Poison";
     private void InitializeSteps()
     {
         SubscribeLocalEvent<SurgeryStepComponent, SurgeryStepEvent>(OnToolStep);
@@ -131,7 +132,7 @@ public abstract partial class SharedSurgerySystem
         {
             if (!HasComp<SanitizedComponent>(args.User))
             {
-                var sepsis = new DamageSpecifier(_prototypes.Index<DamageTypePrototype>("Poison"), 5);
+                var sepsis = new DamageSpecifier(_prototypes.Index<DamageTypePrototype>(PoisonDamageId), 5);
                 var ev = new SurgeryStepDamageEvent(args.User, args.Body, args.Part, args.Surgery, sepsis, 0.5f);
                 RaiseLocalEvent(args.Body, ref ev);
             }
@@ -243,7 +244,7 @@ public abstract partial class SharedSurgerySystem
 
     private EntProtoId? GetProtoId(EntityUid entityUid)
     {
-        if (!TryComp<MetaDataComponent>(entityUid, out var metaData))
+        if (!TryComp(entityUid, out MetaDataComponent? metaData))
             return null;
 
         return metaData.EntityPrototype?.ID;

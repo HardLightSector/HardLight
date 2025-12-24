@@ -17,6 +17,8 @@ namespace Content.Client.Eye.Blinding
 
         public override bool RequestScreenTexture => true;
         public override OverlaySpace Space => OverlaySpace.WorldSpace;
+        private static readonly ProtoId<ShaderPrototype> CataractsShaderId = "Cataracts";
+        private static readonly ProtoId<ShaderPrototype> CircleMaskShaderId = "CircleMask";
         private readonly ShaderInstance _cataractsShader;
         private readonly ShaderInstance _circleMaskShader;
         private float _magnitude;
@@ -33,8 +35,8 @@ namespace Content.Client.Eye.Blinding
         public BlurryVisionOverlay()
         {
             IoCManager.InjectDependencies(this);
-            _cataractsShader = _prototypeManager.Index<ShaderPrototype>("Cataracts").InstanceUnique();
-            _circleMaskShader = _prototypeManager.Index<ShaderPrototype>("CircleMask").InstanceUnique();
+            _cataractsShader = _prototypeManager.Index(CataractsShaderId).InstanceUnique();
+            _circleMaskShader = _prototypeManager.Index(CircleMaskShaderId).InstanceUnique();
 
             _circleMaskShader.SetParameter("CircleMinDist", 0.0f);
             _circleMaskShader.SetParameter("CirclePow", NoMotion_Pow);

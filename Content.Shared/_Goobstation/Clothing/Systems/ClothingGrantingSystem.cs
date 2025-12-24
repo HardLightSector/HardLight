@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+﻿// SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
 // SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
 // SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
@@ -42,7 +42,7 @@ public sealed class ClothingGrantingSystem : EntitySystem
         // Goobstation
         //if (component.Components.Count > 1)
         //{
-        //    Logger.Error("Although a component registry supports multiple components, we cannot bookkeep more than 1 component for ClothingGrantComponent at this time.");
+        //    Logger.GetSawmill(nameof(ClothingGrantingSystem)).("Although a component registry supports multiple components, we cannot bookkeep more than 1 component for ClothingGrantComponent at this time.");
         //    return;
         //}
 
@@ -109,3 +109,4 @@ public sealed class ClothingGrantingSystem : EntitySystem
         component.IsActive = false;
     }
 }
+

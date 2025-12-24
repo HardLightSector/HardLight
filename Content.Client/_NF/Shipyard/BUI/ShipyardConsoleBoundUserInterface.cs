@@ -237,6 +237,7 @@ public sealed class ShipyardConsoleBoundUserInterface : BoundUserInterface
         SendMessage(new ShipyardConsoleSaveMessage());
     }
 
+    [Obsolete]
     protected override void Dispose(bool disposing)
     {
         base.Dispose(disposing);

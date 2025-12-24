@@ -18,6 +18,7 @@ using Robust.Shared.Physics; // Frontier
 using Content.Server.Chat.Systems; // HARDLIGHT: For ChatSystem (server-side)
 using Content.Shared.Salvage; // HARDLIGHT: For SalvageMissionType
 using System.Threading; // HARDLIGHT: For CancellationTokenSource
+using RobustTimer = Robust.Shared.Timing.Timer; // Replace obsolete SpawnTimer usage with Timer.Spawn
 using System.Numerics; // HARDLIGHT: For Vector2
 using Robust.Shared.Map; // HARDLIGHT: For EntityCoordinates
 using Content.Server.Shuttles.Components; // HARDLIGHT: For ShuttleComponent
@@ -31,8 +32,7 @@ namespace Content.Server.Salvage;
 
 public sealed partial class SalvageSystem
 {
-    [ValidatePrototypeId<EntityPrototype>]
-    public const string CoordinatesDisk = "CoordinatesDisk";
+    public static readonly EntProtoId CoordinatesDisk = new("CoordinatesDisk");
 
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!; // Frontier
     [Dependency] private readonly ChatSystem _chatSystem = default!; // HARDLIGHT
@@ -53,7 +53,7 @@ public sealed partial class SalvageSystem
             return null;
 
         // Ensure and return grid-local expedition data (independent of stations).
-        if (TryComp<SalvageExpeditionDataComponent>(gridUid.Value, out var gridDataExisting))
+        if (TryComp(gridUid.Value, out SalvageExpeditionDataComponent? gridDataExisting))
         {
             if (gridDataExisting.Missions.Count == 0 && !gridDataExisting.GeneratingMissions && !gridDataExisting.Cooldown)
             {
@@ -109,7 +109,7 @@ public sealed partial class SalvageSystem
         }
 
         // Find the grid this console is on
-        if (!TryComp<TransformComponent>(uid, out var consoleXform))
+        if (!TryComp(uid, out TransformComponent? consoleXform))
         {
             Log.Error($"Console {ToPrettyString(uid)} has no transform component");
             PlayDenySound((uid, component));
@@ -119,7 +119,7 @@ public sealed partial class SalvageSystem
         }
 
         var ourGrid = consoleXform.GridUid;
-        if (ourGrid == null || !TryComp<MapGridComponent>(ourGrid, out var gridComp))
+        if (ourGrid == null || !TryComp(ourGrid, out MapGridComponent? gridComp))
         {
             Log.Error($"Console {ToPrettyString(uid)} grid {ourGrid} has no map grid component");
             PlayDenySound((uid, component));
@@ -228,10 +228,10 @@ public sealed partial class SalvageSystem
         Log.Info($"Early expedition finish initiated on console {ToPrettyString(entity)}, FTL in {departTime} seconds");
 
         // Schedule the actual expedition completion after 20 seconds
-        entity.SpawnTimer(TimeSpan.FromSeconds(departTime), () =>
-        {
+            RobustTimer.Spawn(TimeSpan.FromSeconds(departTime), () =>
+            {
             // Verify the expedition still exists
-            if (!Exists(expeditionMapUid.Value) || !TryComp<SalvageExpeditionComponent>(expeditionMapUid.Value, out var expComp))
+                if (!Exists(expeditionMapUid.Value) || !TryComp(expeditionMapUid.Value, out SalvageExpeditionComponent? expComp))
             {
                 Log.Warning($"Expedition {expeditionMapUid} no longer exists when trying to finish early");
                 return;
@@ -261,7 +261,7 @@ public sealed partial class SalvageSystem
         // Find shuttles on the expedition map and FTL them home
         while (shuttleQuery.MoveNext(out var shuttleUid, out var shuttle, out var shuttleXform))
         {
-            if (shuttleXform.MapUid != expeditionMapUid || HasComp<FTLComponent>(shuttleUid))
+            if (shuttleXform.MapUid != expeditionMapUid || TryComp(shuttleUid, out FTLComponent? _))
                 continue;
 
             // Find a destination on the default map
@@ -316,7 +316,7 @@ public sealed partial class SalvageSystem
         CleanupExpeditionConsoleState(expeditionMapUid);
 
         // Delete the expedition map after shuttles have departed
-        expeditionMapUid.SpawnTimer(TimeSpan.FromSeconds(ftlTime + 5f), () =>
+        RobustTimer.Spawn(TimeSpan.FromSeconds(ftlTime + 5f), () =>
         {
             if (Exists(expeditionMapUid))
             {

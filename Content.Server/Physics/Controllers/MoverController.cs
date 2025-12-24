@@ -1,4 +1,4 @@
-using System.Numerics;
+﻿using System.Numerics;
 using System.Runtime.CompilerServices;
 using Content.Server.Shuttles.Components;
 using Content.Server.Shuttles.Systems;
@@ -135,7 +135,7 @@ public sealed class MoverController : SharedMoverController
 
         ApplyTick(component, remainingFraction);
 
-        // Logger.Info($"{curDir}{walk}{sprint}");
+        // Logger.GetSawmill(nameof(MoverController)).($"{curDir}{walk}{sprint}");
         return (component.CurTickStrafeMovement, component.CurTickRotationMovement, component.CurTickBraking);
     }
 
@@ -577,3 +577,4 @@ public sealed class MoverController : SharedMoverController
     }
 
 }
+

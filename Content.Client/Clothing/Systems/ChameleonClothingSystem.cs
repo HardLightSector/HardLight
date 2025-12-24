@@ -23,6 +23,7 @@ public sealed class ChameleonClothingSystem : SharedChameleonClothingSystem
     private static readonly SlotFlags[] Slots = Enum.GetValues<SlotFlags>().Except(IgnoredSlots).ToArray();
 
     private readonly Dictionary<SlotFlags, List<string>> _data = new();
+    [Dependency] private readonly SpriteSystem _sprite = default!;
 
     public override void Initialize()
     {
@@ -50,7 +51,7 @@ public sealed class ChameleonClothingSystem : SharedChameleonClothingSystem
         if (TryComp(uid, out SpriteComponent? sprite)
             && proto.TryGetComponent(out SpriteComponent? otherSprite, _factory))
         {
-            sprite.CopyFrom(otherSprite);
+            _sprite.CopySprite((otherSprite.Owner, otherSprite), (uid, sprite));
         }
 
         // Edgecase for PDAs to include visuals when UI is open

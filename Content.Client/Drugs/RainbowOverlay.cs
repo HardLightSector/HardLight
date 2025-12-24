@@ -33,8 +33,10 @@ public sealed class RainbowOverlay : Overlay
     public RainbowOverlay()
     {
         IoCManager.InjectDependencies(this);
-        _rainbowShader = _prototypeManager.Index<ShaderPrototype>("Rainbow").InstanceUnique();
+        _rainbowShader = _prototypeManager.Index(RainbowShaderId).InstanceUnique();
     }
+
+    private static readonly ProtoId<ShaderPrototype> RainbowShaderId = "Rainbow";
 
     protected override void FrameUpdate(FrameEventArgs args)
     {

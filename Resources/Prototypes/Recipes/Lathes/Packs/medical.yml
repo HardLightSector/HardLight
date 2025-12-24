@@ -16,6 +16,10 @@
   - PillCanister
   - HandLabeler
   - BaseChemistryEmptyVial
+  - MedicalPatchBasic  #Goobstation - MedicalPatch
+  - MedicalPatchRapid #Goobstation - MedicalPatch
+  - MedicalPatchLarge #Goobstation - MedicalPatch
+  - MedicalPatchTherapeutic
 
 - type: latheRecipePack
   parent: BasicChemistryStatic

@@ -188,6 +188,7 @@
         - MachineLayer
   - type: Lathe
   - type: MaterialStorage
+    canEjectStoredMaterials: true
     whitelist: # Frontier
       tags: # Frontier
       - Sheet # Frontier
@@ -419,6 +420,7 @@
     # WD EDIT START
     #- VisionGoggles
     # WD EDIT END
+    - ShuttleWeaponMaterials # HL
   - type: EmagLatheRecipes
     emagDynamicPacks:
     - AdvancedAmmoRecipePack
@@ -494,6 +496,7 @@
     - NFServiceBoards # Frontier
     - MechBoardsPlus
     - MonoAdvancedShuttleComponents # Hardlight
+    - CivShuttleWeapons # HL
   - type: EmagLatheRecipes
     emagDynamicPacks: # Frontier: empty list
     - SecurityBoards # Frontier
@@ -578,6 +581,9 @@
     - BorgArmorPhys
     - ShuttleWeaponMaterials
     - LightShuttleWeapons
+    - MediumShuttleWeapons
+    - HeavyShuttleWeapons
+    - CapitalShuttleWeapons
   - type: MaterialStorage
     canEjectStoredMaterials: true
     whitelist:
@@ -752,6 +758,7 @@
     dynamicPacks:
     - AdvancedAmmoRecipePack
   - type: MaterialStorage
+    canEjectStoredMaterials: true
     whitelist:
       tags:
       - Sheet
@@ -865,6 +872,7 @@
     - ClothingNT
     # HL Ends
   - type: MaterialStorage
+    canEjectStoredMaterials: true
     whitelist:
       tags:
       - Sheet
@@ -900,6 +908,7 @@
   - type: Machine
     board: BiogeneratorMachineCircuitboard
   - type: MaterialStorage
+    canEjectStoredMaterials: true
   - type: ProduceMaterialExtractor
   - type: ItemSlots
     slots:
@@ -969,10 +978,12 @@
   - type: Machine
     board: OreProcessorMachineCircuitboard
   - type: MaterialStorage
+    canEjectStoredMaterials: true
     ignoreColor: true
     whitelist:
       tags:
       - Ore
+  - type: OreSiloClient
   - type: Lathe
     idleState: icon
     runningState: building
@@ -1080,6 +1091,7 @@
     emagStaticPacks: # Frontier
     - NFFloorTilesStrange # Frontier
   - type: MaterialStorage
+    canEjectStoredMaterials: true
     whitelist:
       tags:
       - Sheet
@@ -1116,6 +1128,7 @@
   - type: Machine
     board: MedicalBiofabMachineBoard
   - type: MaterialStorage
+    canEjectStoredMaterials: true
     whitelist:
       tags:
       - Sheet
