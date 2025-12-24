@@ -214,19 +214,3 @@
         doAfter: 10
   - node: medicalPatchMakeshift
     entity: MedicalPatchMakeshift
-
-- type: construction
-  name: goobstation-medicalpatch-craft-name
-  id: MedicalPatchMakeshift
-  graph: MedicalPatchMakeshift
-  startNode: start
-  targetNode: medicalPatchMakeshift
-  category: construction-category-tools
-  objectType: Item
-  description: goobstation-medicalpatch-craft-description
-  icon:
-    sprite: Goobstation/Objects/Medical/medical_patch.rsi
-    state: MakeshiftPatch
-
-
-
