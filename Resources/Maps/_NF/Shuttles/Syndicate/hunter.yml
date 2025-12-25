@@ -16,6 +16,7 @@ entities:
       name: Hunter
     - type: Transform
       pos: -1.6250114,-0.453125
+      parent: invalid
     - type: MapGrid
       chunks:
         0,0:
@@ -1189,18 +1190,18 @@ entities:
       parent: 1
 - proto: EmergencyLight
   entities:
-  - uid: 164
+  - uid: 160
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -0.5,-0.5
       parent: 1
-  - uid: 165
+  - uid: 161
     components:
     - type: Transform
       pos: -1.5,-3.5
       parent: 1
-  - uid: 166
+  - uid: 162
     components:
     - type: Transform
       pos: 2.5,-3.5
@@ -1324,7 +1325,8 @@ entities:
   - uid: 177
     components:
     - type: Transform
-      pos: 2.5,-7.5
+      rot: 3.141592653589793 rad
+      pos: -0.5,-2.5
       parent: 1
     - type: AtmosPipeColor
       color: '#0055CCFF'
@@ -1400,7 +1402,7 @@ entities:
     components:
     - type: Transform
       rot: 3.141592653589793 rad
-      pos: -0.5,-6.5
+      pos: 1.5,-3.5
       parent: 1
     - type: AtmosPipeColor
       color: '#990000FF'
@@ -2291,13 +2293,13 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 4.5,-12.5
       parent: 1
-  - uid: 319
+  - uid: 313
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 4.5,-11.5
       parent: 1
-  - uid: 320
+  - uid: 314
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
