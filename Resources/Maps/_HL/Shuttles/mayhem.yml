@@ -677,29 +677,6 @@ entities:
     - type: RadiationGridResistance
     - type: BecomesStation
       id: Mayhem
-  - uid: 2
-    components:
-    - type: MetaData
-    - type: Transform
-      pos: 0.50082296,0.7653179
-      parent: 1
-    - type: RadarBlip
-      enabled: False
-      visibleFromOtherGrids: True
-      shape: Ring
-      scale: 0
-      radarColor: '#00DEFEFF'
-  - uid: 315
-    components:
-    - type: MetaData
-    - type: Transform
-      pos: 0.500827,0.826278
-      parent: 1
-    - type: RadarBlip
-      enabled: False
-      visibleFromOtherGrids: True
-      shape: Ring
-      radarColor: '#00DEFEFF'
 - proto: AirAlarm
   entities:
   - uid: 3

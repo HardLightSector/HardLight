@@ -2093,13 +2093,6 @@ entities:
     - type: Transform
       pos: -5.5,-1.5
       parent: 1
-- proto: SuitStorageEVAStc
-  entities:
-  - uid: 291
-    components:
-    - type: Transform
-      pos: -7.5,1.5
-      parent: 1
 - proto: TableReinforced
   entities:
   - uid: 16

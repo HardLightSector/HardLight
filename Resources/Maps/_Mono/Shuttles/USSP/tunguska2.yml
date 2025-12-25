@@ -4304,8 +4304,6 @@ entities:
     - type: Transform
       pos: -2.5,3.5
       parent: 2
-    - type: ShuttleConsoleLock
-      locked: False
     - type: ApcPowerReceiver
       powerLoad: 5
     - type: Battery

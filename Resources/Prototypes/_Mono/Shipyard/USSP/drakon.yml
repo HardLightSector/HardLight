@@ -3,7 +3,7 @@
   parent: BaseVesselAntag
   name: NCS Drakon
   description: A fast brawler with heavy armor and ballistic armaments.
-  price: 78290
+  price: 86000
   category: Medium
   group: Ussp
   shuttlePath: /Maps/_Mono/Shuttles/USSP/drakon.yml
