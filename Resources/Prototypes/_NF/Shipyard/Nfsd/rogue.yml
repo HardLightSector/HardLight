@@ -3,7 +3,7 @@
   parent: BaseVessel
   name: NSF Rogue
   description: Micro assault vessel with a toggle for going dark in deep space.
-  price: 12200 #the appraisal is 9100$
+  price: 92000
   category: Micro
   group: Custom
   access: Security

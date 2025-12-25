@@ -5896,33 +5896,6 @@ entities:
     - type: Transform
       pos: -3.5,5.5
       parent: 1
-- proto: SuitStorageInterdyne
-  entities:
-  - uid: 790
-    components:
-    - type: Transform
-      pos: -4.5,17.5
-      parent: 1
-  - uid: 791
-    components:
-    - type: Transform
-      pos: 7.5,15.5
-      parent: 1
-  - uid: 792
-    components:
-    - type: Transform
-      pos: -3.5,17.5
-      parent: 1
-  - uid: 793
-    components:
-    - type: Transform
-      pos: -3.5,19.5
-      parent: 1
-  - uid: 794
-    components:
-    - type: Transform
-      pos: -3.5,20.5
-      parent: 1
 - proto: SurveillanceCameraArmouredMedical
   entities:
   - uid: 795

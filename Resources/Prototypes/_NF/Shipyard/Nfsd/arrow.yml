@@ -6,7 +6,7 @@
   id: Arrow
   name: NSF Arrow
   description: A fighter donned with dual laser weapons and high acceleration.
-  price: 23404
+  price: 39000
   category: Small
   group: Security
   shuttlePath: /Maps/_NF/Shuttles/Nfsd/arrow.yml
