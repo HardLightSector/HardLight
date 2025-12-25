@@ -185,6 +185,9 @@
     materialComposition:
       Steel: 50
   - type: SpaceGarbage
+  - type: Storage
+    grid:
+    - 0,0,4,1
   - type: StorageFill
     contents:
     - id: Cigarette
