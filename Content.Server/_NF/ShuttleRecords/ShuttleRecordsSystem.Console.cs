@@ -133,11 +133,11 @@ public sealed partial class ShuttleRecordsSystem
         }
     }
 
-    private List<DockedGridEntry> GetDockedGridsForConsole(EntityUid consoleUid)
-    {
-        var list = new List<DockedGridEntry>();
-        if (!TryComp<TransformComponent>(consoleUid, out var xform) || xform.GridUid is not { } consoleGrid)
-            return list;
+        private List<DockedGridEntry> GetDockedGridsForConsole(EntityUid consoleUid)
+        {
+            var list = new List<DockedGridEntry>();
+            if (!TryComp(consoleUid, out TransformComponent? xform) || xform.GridUid is not { } consoleGrid)
+                return list;
 
         var xformQuery = GetEntityQuery<TransformComponent>();
         var dockQuery = GetEntityQuery<Content.Server.Shuttles.Components.DockingComponent>();
@@ -176,7 +176,7 @@ public sealed partial class ShuttleRecordsSystem
         }
 
         // Prevent overwriting an existing deed on the ID
-        if (HasComp<ShuttleDeedComponent>(targetId))
+        if (_entityManager.TryGetComponent<ShuttleDeedComponent>(targetId, out _))
         {
             _popup.PopupEntity(Loc.GetString("shipyard-console-already-deeded"), actor);
             _audioSystem.PlayPredicted(component.ErrorSound, uid, null, AudioParams.Default.WithMaxDistance(5f));
@@ -191,9 +191,9 @@ public sealed partial class ShuttleRecordsSystem
         }
 
         // Ensure still docked to this console's grid
-        if (!TryComp<TransformComponent>(uid, out var consoleXform) || consoleXform.GridUid == null)
+        if (!TryComp(uid, out TransformComponent? consoleXform) || consoleXform.GridUid == null)
             return;
-        if (!TryComp<TransformComponent>(gridUid.Value, out var gridXform) || gridXform.GridUid == null)
+        if (!TryComp(gridUid.Value, out TransformComponent? gridXform) || gridXform.GridUid == null)
             return;
 
         if (!IsDockedWith(consoleXform.GridUid.Value, gridXform.GridUid.Value))

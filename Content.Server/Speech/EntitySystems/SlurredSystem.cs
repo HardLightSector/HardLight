@@ -5,6 +5,7 @@ using Content.Shared.Speech.EntitySystems;
 using Content.Shared.StatusEffect;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server.Speech.EntitySystems;
 
@@ -16,8 +17,7 @@ public sealed class SlurredSystem : SharedSlurredSystem
 
 
 
-    [ValidatePrototypeId<StatusEffectPrototype>]
-    private const string SlurKey = "SlurredSpeech";
+    private static readonly ProtoId<StatusEffectPrototype> SlurKey = new("SlurredSpeech");
 
     public override void Initialize()
     {

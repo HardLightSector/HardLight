@@ -21,6 +21,8 @@
     canCollide: False
     bodyType: Static
     bodyStatus: InAir
+  - type: TimedDespawn
+    lifetime: 30
   - type: Fixtures
     fixtures:
       fix1:

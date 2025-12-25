@@ -72,6 +72,8 @@ namespace Content.Server.Forensics
         // End Frontier: payout constants
 
         private static readonly ProtoId<TagPrototype> DNASolutionScannableTag = "DNASolutionScannable";
+        private static readonly ProtoId<StackPrototype> FrontierUplinkCoinId = "FrontierUplinkCoin";
+        private static readonly ProtoId<RadioChannelPrototype> NfsdChannelId = "Nfsd";
 
         public override void Initialize()
         {
@@ -119,7 +121,7 @@ namespace Content.Server.Forensics
                         int payout = sectorDD.FUCAccumulator.Int();
                         sectorDD.FUCAccumulator -= payout;
 
-                        var stackPrototype = _prototypeManager.Index<StackPrototype>("FrontierUplinkCoin");
+                        var stackPrototype = _prototypeManager.Index<StackPrototype>(FrontierUplinkCoinId);
                         _stackSystem.Spawn(payout, stackPrototype, Transform(target).Coordinates);
                     }
                 }
@@ -127,7 +129,7 @@ namespace Content.Server.Forensics
             else
                 fucAmount = 0;
 
-            var channel = _prototypeManager.Index<RadioChannelPrototype>("Nfsd");
+            var channel = _prototypeManager.Index<RadioChannelPrototype>(NfsdChannelId);
             string msgString = Loc.GetString(msg);
             if (fucAmount >= 1)
             {

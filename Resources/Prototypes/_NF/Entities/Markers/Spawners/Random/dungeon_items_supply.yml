@@ -273,7 +273,7 @@
   - type: RandomSpawner
     prototypes:
     # Computers
-    - ComputerIFFCircuitboard
+    #- ComputerIFFCircuitboard
     # Lathes
     - SalvageTechFabCircuitboardNF
     - AutolatheMachineCircuitboard
@@ -293,7 +293,7 @@
     - AmmoTechFabCircuitboard
     - ShuttleGunSvalinnMachineGunCircuitboard
     #- SecurityTechFabCircuitboard
-    - ComputerIFFCircuitboard
+    #- ComputerIFFCircuitboard
     rareChance: 0.03
 
 - type: entity

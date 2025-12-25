@@ -141,7 +141,7 @@ public sealed partial class SalvageSystem
 
         // Finish mission - but handle the case where expedition data might be on a different entity
         // due to round persistence transferring data between entities
-        if (TryComp<SalvageExpeditionDataComponent>(component.Station, out var data))
+        if (TryComp(component.Station, out SalvageExpeditionDataComponent? data))
         {
             FinishExpedition((component.Station, data), component, uid); // Frontier: add component
         }
@@ -179,19 +179,19 @@ public sealed partial class SalvageSystem
             // HARDLIGHT: Modified for round persistence - work with or without StationDataComponent
             EntityUid? largestGrid = null;
 
-            if (TryComp<StationDataComponent>(uid, out var stationData))
+            if (TryComp(uid, out StationDataComponent? stationData))
             {
                 // Normal case: station has StationDataComponent
                 largestGrid = _station.GetLargestGrid(stationData);
             }
-            else if (HasComp<MapGridComponent>(uid))
+            else if (TryComp(uid, out MapGridComponent? _))
             {
                 // Round persistence case: uid might be a grid itself (shuttle serving as station)
                 largestGrid = uid;
             }
 
             // Check if the grid (whether from station or direct grid) has FTL component
-            if (largestGrid == null || !HasComp<FTLComponent>(largestGrid.Value))
+            if (largestGrid == null || !TryComp(largestGrid.Value, out FTLComponent? _))
             {
                 comp.Cooldown = false;
             }
@@ -245,7 +245,7 @@ public sealed partial class SalvageSystem
             return;
         }
 
-        if (!TryComp<TransformComponent>(expeditionComp.Console.Value, out var consoleXform))
+        if (!TryComp(expeditionComp.Console.Value, out TransformComponent? consoleXform))
         {
             Log.Warning($"Expedition completed but console {ToPrettyString(expeditionComp.Console.Value)} has no transform; cannot spawn reward.");
             return;

@@ -27,10 +27,12 @@ namespace Content.Client.Flash
         public FlashOverlay()
         {
             IoCManager.InjectDependencies(this);
-            _shader = _prototypeManager.Index<ShaderPrototype>("FlashedEffect").InstanceUnique();
+            _shader = _prototypeManager.Index(FlashedEffectShaderId).InstanceUnique();
             _flash = _entityManager.System<SharedFlashSystem>();
             _statusSys = _entityManager.System<StatusEffectsSystem>();
         }
+
+    private static readonly ProtoId<ShaderPrototype> FlashedEffectShaderId = "FlashedEffect";
 
         protected override void FrameUpdate(FrameEventArgs args)
         {

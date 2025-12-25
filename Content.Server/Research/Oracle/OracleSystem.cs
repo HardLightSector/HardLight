@@ -76,8 +76,8 @@ public sealed class OracleSystem : EntitySystem
 
     private void OnInteractHand(Entity<OracleComponent> oracle, ref InteractHandEvent args)
     {
-        if (!HasComp<PsionicComponent>(args.User) || HasComp<PsionicInsulationComponent>(args.User)
-            || !TryComp<ActorComponent>(args.User, out var actor))
+        if (!TryComp(args.User, out PsionicComponent? _) || TryComp(args.User, out PsionicInsulationComponent? _)
+            || !TryComp(args.User, out ActorComponent? actor))
             return;
 
         SendTelepathicInfo(oracle, actor.PlayerSession.Channel,
@@ -93,7 +93,7 @@ public sealed class OracleSystem : EntitySystem
         if (args.Handled)
             return;
 
-        if (HasComp<MobStateComponent>(args.Used) || !TryComp<MetaDataComponent>(args.Used, out var meta) || meta.EntityPrototype == null)
+        if (TryComp(args.Used, out MobStateComponent? _) || !TryComp(args.Used, out MetaDataComponent? meta) || meta.EntityPrototype == null)
             return;
 
         var requestValid = IsCorrectItem(meta.EntityPrototype, oracle.Comp.DesiredPrototype);
@@ -109,7 +109,7 @@ public sealed class OracleSystem : EntitySystem
 
         if (!requestValid)
         {
-            if (!HasComp<RefillableSolutionComponent>(args.Used) &&
+            if (!TryComp(args.Used, out RefillableSolutionComponent? _) &&
                 _timing.CurTime >= oracle.Comp.NextRejectTime)
             {
                 oracle.Comp.NextRejectTime = _timing.CurTime + oracle.Comp.RejectDelay;
@@ -234,12 +234,12 @@ public sealed class OracleSystem : EntitySystem
     {
         // Try to find the most advanced server.
         var database = _research.GetServerIds()
-            .Select(x => _research.TryGetServerById(x, out var serverUid, out _) ? serverUid : null)
+                .Select(x => _research.TryGetServerById(x, out var serverUid, out _) ? serverUid : null)
             .Where(x => x != null && Transform(x.Value).GridUid == Transform(oracle).GridUid)
             .Select(x =>
             {
-                TryComp<TechnologyDatabaseComponent>(x!.Value, out var comp);
-                return new Entity<TechnologyDatabaseComponent?>(x.Value, comp);
+                    TryComp(x!.Value, out TechnologyDatabaseComponent? comp);
+                    return new Entity<TechnologyDatabaseComponent?>(x.Value, comp);
             })
             .Where(x => x.Comp != null)
             .OrderByDescending(x =>

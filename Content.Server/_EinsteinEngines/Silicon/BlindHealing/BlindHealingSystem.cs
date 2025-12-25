@@ -18,7 +18,6 @@ namespace Content.Server._EinsteinEngines.Silicon.BlindHealing;
 public sealed class BlindHealingSystem : SharedBlindHealingSystem
 {
     [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly IAdminLogManager _adminLogger = default!;
     [Dependency] private readonly BlindableSystem _blindableSystem = default!;
     [Dependency] private readonly StackSystem _stackSystem = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;

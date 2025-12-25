@@ -13,8 +13,7 @@ namespace Content.Server.Audio;
 
 public sealed class ContentAudioSystem : SharedContentAudioSystem
 {
-    [ValidatePrototypeId<SoundCollectionPrototype>]
-    private const string LobbyMusicCollection = "NFLobbyMusic"; // Frontier: LobbyMusic<NFLobbyMusic
+    private static readonly ProtoId<SoundCollectionPrototype> LobbyMusicCollection = new("NFLobbyMusic"); // Frontier: LobbyMusic<NFLobbyMusic
 
     [Dependency] private readonly AudioSystem _serverAudio = default!;
     [Dependency] private readonly IRobustRandom _robustRandom = default!;

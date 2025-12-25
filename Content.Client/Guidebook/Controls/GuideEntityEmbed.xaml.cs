@@ -123,6 +123,7 @@ public sealed partial class GuideEntityEmbed : BoxContainer, IDocumentTag
         }
     }
 
+    [Obsolete]
     protected override void Dispose(bool disposing)
     {
         base.Dispose(disposing);

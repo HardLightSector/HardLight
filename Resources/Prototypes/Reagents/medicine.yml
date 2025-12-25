@@ -56,6 +56,9 @@
           min: 20
       - !type:PopupMessage
         conditions:
+        - !type:OrganType # HardLight: Prevents Synths becoming nauseous
+          type: Synth
+          shouldHave: false
         - !type:ReagentThreshold
           min: 20
         type: Local
@@ -64,6 +67,9 @@
         probability: 0.2
       - !type:ChemVomit
         conditions:
+        - !type:OrganType # HardLight: Prevents Synths vomiting
+          type: Synth
+          shouldHave: false
         - !type:ReagentThreshold
           min: 20
         probability: 0.02
@@ -71,6 +77,8 @@
         conditions:
         - !type:ReagentThreshold
           min: 15
+      - !type:SatiateThirst
+        factor: -2
   plantMetabolism:
   - !type:PlantAdjustToxins
     amount: -10
@@ -89,6 +97,7 @@
     Medicine:
       effects:
       - !type:AdjustReagent
+        conditions:
         reagent: Histamine
         amount: -3.0
       - !type:GenericStatusEffect
@@ -169,6 +178,9 @@
             Poison: 1.5
       - !type:ChemVomit
         conditions:
+        - !type:OrganType # HardLight: Prevents Synths vomiting
+          type: Synth
+          shouldHave: false
         - !type:ReagentThreshold
           min: 30
         probability: 0.02
@@ -285,11 +297,18 @@
             Bloodloss: -0.5
       - !type:HealthChange
         conditions:
-          - !type:ReagentThreshold
-            min: 20
+        - !type:ReagentThreshold
+          min: 20
         damage:
           types:
             Asphyxiation: 3
+            Cold: 1
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentThreshold
+          min: 20
+        damage:
+          types:
             Cold: 1
       - !type:HealthChange #Starlight
         conditions:
@@ -331,8 +350,8 @@
         amount: -3
       - !type:HealthChange
         conditions:
-          - !type:ReagentThreshold
-            min: 25
+        - !type:ReagentThreshold
+          min: 25
         damage:
           types:
             Asphyxiation: 5
@@ -430,6 +449,10 @@
           types:
             Radiation: -1
       - !type:ChemVomit
+        conditions:
+        - !type:OrganType # HardLight: Prevents Synths vomiting
+          type: Synth
+          shouldHave: false
         probability: 0.02
       - !type:HealthChange
         conditions:
@@ -456,6 +479,9 @@
       effects:
       - !type:ChemVomit
         conditions:
+        - !type:OrganType # HardLight: Prevents Synths vomiting
+          type: Synth
+          shouldHave: false
         - !type:ReagentThreshold
           min: 4
         probability: 0.3
@@ -575,8 +601,11 @@
       - !type:ChemVomit
         probability: 0.15
         conditions:
-          - !type:ReagentThreshold
-            min: 30
+        - !type:OrganType # HardLight: Prevents Synths vomiting
+          type: Synth
+          shouldHave: false
+        - !type:ReagentThreshold
+          min: 30
       - !type:GenericStatusEffect
         key: PressureImmunity
         component: PressureImmunity
@@ -1072,11 +1101,17 @@
         probability: 0.2
       - !type:ChemVomit
         conditions:
+        - !type:OrganType # HardLight: Prevents Synths vomiting
+          type: Synth
+          shouldHave: false
         - !type:ReagentThreshold
           min: 30
         probability: 0.02
       - !type:ChemVomit
         conditions:
+        - !type:OrganType # HardLight: Prevents Synths vomiting
+          type: Synth
+          shouldHave: false
         - !type:ReagentThreshold
           reagent: Arithrazine
           min: 1
@@ -1234,6 +1269,9 @@
             Piercing: 0.5
       - !type:ChemVomit
         conditions:
+        - !type:OrganType # HardLight: Prevents Synths vomiting
+          type: Synth
+          shouldHave: false
         - !type:ReagentThreshold
           min: 15
         probability: 0.1

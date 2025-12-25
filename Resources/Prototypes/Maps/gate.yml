@@ -2,7 +2,7 @@
   id: Gate
   mapName: 'Gate Station'
   mapPath: /Maps/gate.yml
-  minPlayers: 55
+  minPlayers: 0
   stations:
     Gate:
       stationProto: StandardNanotrasenStation
@@ -63,3 +63,15 @@
             #silicon
             StationAi: [ 1, 1 ]
             Borg: [ 2, 2 ]
+            Contractor: [ -1, -1 ]
+            Pilot: [ 5, 5 ]
+            Mercenary: [ 5, 5 ]
+            MedicalQuadBorg: [ 3, 3 ]
+            ServiceQuadBorg: [ 3, 3 ]
+            SalvageQuadBorg: [ 3, 3 ]
+            SecurityQuadBorg: [ 3, 3 ]
+            EngineeringQuadBorg: [ 3, 3 ]
+            Valet: [ 1, 1 ]
+            MailCarrier: [ 1, 1 ]
+            Prisoner: [ 3, 3 ]
+            ForensicMantis: [ 1, 1 ]

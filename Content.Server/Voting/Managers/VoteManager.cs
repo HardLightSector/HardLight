@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Immutable;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
@@ -144,7 +144,7 @@ namespace Content.Server.Voting.Managers
             var remQueue = new RemQueue<int>();
             foreach (var v in _votes.Values)
             {
-                // Logger.Debug($"{_timing.ServerTime}");
+                // Logger.GetSawmill(nameof(VoteManager)).($"{_timing.ServerTime}");
                 if (_timing.RealTime >= v.EndTime)
                     EndVote(v);
 
@@ -666,3 +666,4 @@ namespace Content.Server.Voting.Managers
         #endregion
     }
 }
+

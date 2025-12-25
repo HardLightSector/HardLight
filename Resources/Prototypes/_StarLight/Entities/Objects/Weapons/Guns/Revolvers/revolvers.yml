@@ -74,6 +74,8 @@
       - id: RifleStock
         launchAngle: 180
         prob: 0.80
+  - type: StaticPrice
+    price: 1000
 
 - type: entity
   name: Forged Revolver
@@ -91,3 +93,5 @@
     ammoSlots: [ null, null, null, null]
   - type: WeaponDismantleOnShoot
     dismantleChance: 0
+  - type: StaticPrice
+    price: 2500

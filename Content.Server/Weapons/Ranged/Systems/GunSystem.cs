@@ -64,7 +64,6 @@ using Content.Shared.Weapons.Ranged.Events;
 using Content.Shared.Weapons.Ranged.Systems;
 using Content.Shared.Weapons.Hitscan.Components;
 using Content.Shared.Weapons.Reflect;
-using Content.Shared.Effects; // Mono
 using Robust.Server.GameObjects;
 using Robust.Server.Player;
 using Robust.Shared.Audio;
@@ -91,8 +90,6 @@ public sealed partial class GunSystem : SharedGunSystem
     [Dependency] private readonly StaminaSystem _stamina = default!;
     [Dependency] private readonly SharedContainerSystem _container = default!;
     [Dependency] private readonly SharedMapSystem _map = default!;
-    [Dependency] private readonly RequireProjectileTargetSystem _requireProjectileTarget = default!;
-    [Dependency] private readonly IPlayerManager _playerManager = default!;
 
     private const float DamagePitchVariation = 0.05f;
 

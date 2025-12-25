@@ -12,7 +12,7 @@
     ClothingOuterCoatRnd: 3
     ClothingShoesColorWhite: 3
     ClothingNeckTieSci: 3
-    ClothingHeadsetScience: 3
+    #ClothingHeadsetScience: 3
     ClothingMaskGas: 3
     ClothingOuterWinterSci: 2
     ClothingNeckScarfStripedPurple: 3
@@ -29,7 +29,7 @@
     ClothingHandsGlovesFingerless: 2
     ClothingHeadHatCorpsoft: 2
     ClothingHeadBandSkull: 2
-    ClothingHeadsetRobotics: 2
+    #ClothingHeadsetRobotics: 2
     ClothingOuterWinterRobo: 2
     ClothingShoesBootsWinterRobo: 2 #Delta V: Add departmental winter boots
 # Senior:
@@ -45,8 +45,8 @@
     ClothingNeckMantleRD: 1
     ClothingNeckCloakRd: 1
     ClothingHandsGlovesColorPurple: 1
-    ClothingHeadsetAltScience: 1
-    RubberStampRd: 1
+    #ClothingHeadsetAltScience: 1
+    #RubberStampRd: 1
     ClothingHandsEpiWarmers: 3
     ClothingUnderSocksEpi: 3
     ClothingUniformEpiThong: 3

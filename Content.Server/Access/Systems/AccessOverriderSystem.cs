@@ -23,7 +23,6 @@ public sealed class AccessOverriderSystem : SharedAccessOverriderSystem
 {
     [Dependency] private readonly UserInterfaceSystem _userInterface = default!;
     [Dependency] private readonly AccessReaderSystem _accessReader = default!;
-    [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
     [Dependency] private readonly SharedInteractionSystem _interactionSystem = default!;
     [Dependency] private readonly PopupSystem _popupSystem = default!;
     [Dependency] private readonly SharedAudioSystem _audioSystem = default!;

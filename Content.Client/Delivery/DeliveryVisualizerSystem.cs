@@ -20,11 +20,12 @@ public sealed class DeliveryVisualizerSystem : VisualizerSystem<DeliveryComponen
         _appearance.TryGetData(uid, DeliveryVisuals.JobIcon, out string job, args.Component);
 
         if (string.IsNullOrEmpty(job))
-            job = UnknownIcon;
+            job = UnknownIcon.ToString();
 
         if (!_prototype.TryIndex<JobIconPrototype>(job, out var icon))
         {
-            SpriteSystem.LayerSetTexture((uid, args.Sprite), DeliveryVisualLayers.JobStamp, SpriteSystem.Frame0(_prototype.Index("JobIconUnknown")));
+            var fallback = _prototype.Index<JobIconPrototype>(UnknownIcon).Icon;
+            SpriteSystem.LayerSetTexture((uid, args.Sprite), DeliveryVisualLayers.JobStamp, SpriteSystem.Frame0(fallback));
             return;
         }
 

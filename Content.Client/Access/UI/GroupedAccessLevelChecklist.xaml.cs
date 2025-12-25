@@ -16,6 +16,7 @@ namespace Content.Client.Access.UI;
 public sealed partial class GroupedAccessLevelChecklist : BoxContainer
 {
     [Dependency] private readonly IPrototypeManager _protoManager = default!;
+    private static readonly ProtoId<AccessGroupPrototype> GeneralAccessGroupId = "General";
 
     private bool _isMonotone;
     private string? _labelStyleClass;
@@ -63,7 +64,7 @@ public sealed partial class GroupedAccessLevelChecklist : BoxContainer
 
         // Ensure that the 'general' access group is added to handle
         // misc. access levels that aren't associated with any group
-        if (_protoManager.TryIndex<AccessGroupPrototype>("General", out var generalAccessProto))
+        if (_protoManager.TryIndex(GeneralAccessGroupId, out var generalAccessProto))
             _groupedAccessLevels.TryAdd(generalAccessProto, new());
 
         // Assign known access levels with their associated groups

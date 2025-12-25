@@ -1246,8 +1246,8 @@ Entries:
 - author: dvir001
   changes:
     - message: >-
-        Cappy has joined the Colsec, a veteran war hero cat augmented for tactical
-        operations.
+        Cappy has joined the Colsec, a veteran war hero cat augmented for
+        tactical operations.
       type: Add
     - message: Installed radio inside Clippy for Service radio.
       type: Tweak
@@ -1609,12 +1609,12 @@ Entries:
 - author: Leander
   changes:
     - message: >-
-        Nanotrasen has developed new tracking methods for the Colsec and packed it
-        all in a nice bundle.
+        Nanotrasen has developed new tracking methods for the Colsec and packed
+        it all in a nice bundle.
       type: Add
     - message: >-
-        Nanotrasen has reverse engineered the china lake for the Colsec to deliver
-        high speed justice.
+        Nanotrasen has reverse engineered the china lake for the Colsec to
+        deliver high speed justice.
       type: Add
     - message: Organized the Colsec Uplink a little more into a bundles category.
       type: Tweak
@@ -3823,8 +3823,8 @@ Entries:
         spesos & FUCs on scanning dead drops and pods.
       type: Add
     - message: >-
-        Adds smuggling guidebook entry with a better (Colsec-side) explanation of
-        mechanics.
+        Adds smuggling guidebook entry with a better (Colsec-side) explanation
+        of mechanics.
       type: Add
     - message: >-
         Both pirates and Colsec may receive the location of a drop pod about 15
@@ -5717,8 +5717,8 @@ Entries:
   changes:
     - type: Tweak
       message: >-
-        Added less-lethal ammunition to Colsec techfab by default, with additional
-        Colsec items.
+        Added less-lethal ammunition to Colsec techfab by default, with
+        additional Colsec items.
   id: 5559
   time: '2024-12-06T18:23:50.0000000+00:00'
 - author: whatston3
@@ -8947,8 +8947,8 @@ Entries:
   changes:
     - type: Add
       message: >-
-        Added tool vending machines to ColsecO and toolboxes to the Broadhead and
-        Hypnos
+        Added tool vending machines to ColsecO and toolboxes to the Broadhead
+        and Hypnos
   id: 6003
   time: '2025-05-03T22:48:55.0000000+00:00'
 - author: PeccNeck
@@ -9135,7 +9135,9 @@ Entries:
         [Colsec] Colsec jobs start with a mk32 with extended +P mag. Colsec also
         starts with access to +P ammo.
     - type: Tweak
-      message: '[Colsec] Increased the price of the thruster upgrade pack in Colsec Uplink.'
+      message: >-
+        [Colsec] Increased the price of the thruster upgrade pack in Colsec
+        Uplink.
     - type: Tweak
       message: >-
         [SCI] Removed weapons, added new ammo and extended magazines to arsenal
@@ -9321,3 +9323,9 @@ Entries:
       message: McCargo now has a brand name McService techfab, with McCargo items.
   id: 6048
   time: '2025-05-19T20:35:22.0000000+00:00'
+- author: xemeraldwingx-dot
+  changes:
+    - type: Add
+      message: 'testing changelog '
+  id: 6049
+  time: '2025-12-25T01:36:48.0000000+00:00'

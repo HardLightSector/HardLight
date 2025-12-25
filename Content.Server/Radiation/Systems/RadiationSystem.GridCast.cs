@@ -73,6 +73,11 @@ public partial class RadiationSystem
             var rads = 0f;
             foreach (var source in _sources)
             {
+                // Validate source entity still exists and has the required components
+                if (TerminatingOrDeleted(source.Entity.Owner) || 
+                    !TryComp<TransformComponent>(source.Entity.Owner, out var sourceXform))
+                    continue;
+
                 // send ray towards destination entity
                 if (Irradiate(source, destUid, destTrs, destWorld, debug) is not {} ray)
                     continue;
@@ -179,6 +184,10 @@ public partial class RadiationSystem
         // the ray will be updated with each grid that has some blockers
         foreach (var grid in _grids)
         {
+            // Validate grid entity still exists
+            if (TerminatingOrDeleted(grid.Owner))
+                continue;
+
             ray = Gridcast((grid.Owner, grid.Comp, Transform(grid)), ref ray, saveVisitedTiles, source.Transform, destTrs);
 
             // looks like last grid blocked all radiation
@@ -212,6 +221,10 @@ public partial class RadiationSystem
         // TODO Grid overlap. This currently assumes the grid is always parented directly to the map (local matrix == world matrix).
         // If ever grids are allowed to overlap, this might no longer be true. In that case, this should precompute and cache
         // inverse world matrices.
+
+        // Validate transform components are still valid before accessing their properties
+        if (TerminatingOrDeleted(sourceTrs.Owner) || TerminatingOrDeleted(destTrs.Owner))
+            return ray;
 
         Vector2 srcLocal = sourceTrs.ParentUid == grid.Owner
             ? sourceTrs.LocalPosition

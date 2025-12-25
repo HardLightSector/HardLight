@@ -525,7 +525,7 @@
   name: Civilian Curio-1089 tachyon lance "Reaper" turret board
   components:
   - type: MachineBoard
-    prototype: CVWeaponLaserTurretReaper
+    prototype: CVWeaponTurretReaper
 
 - type: entity
   id: CivHarbringerWeaponBoard
@@ -533,7 +533,7 @@
   name: Civilian Curio-129 ion cannon "Harbringer" turret board
   components:
   - type: MachineBoard
-    prototype: CVWeaponLaserTurretHarbringer
+    prototype: CVWeaponTurretHarbringer
 
 ### Other
 - type: entity

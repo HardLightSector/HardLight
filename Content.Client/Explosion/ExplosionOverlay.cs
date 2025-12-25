@@ -26,10 +26,12 @@ public sealed class ExplosionOverlay : Overlay
     public ExplosionOverlay(SharedAppearanceSystem appearanceSystem)
     {
         IoCManager.InjectDependencies(this);
-        _shader = _proto.Index<ShaderPrototype>("unshaded").Instance();
+        _shader = _proto.Index(UnshadedShaderId).Instance();
         _transformSystem = _entMan.System<SharedTransformSystem>();
         _appearance = appearanceSystem;
     }
+
+    private static readonly ProtoId<ShaderPrototype> UnshadedShaderId = "unshaded";
 
     protected override void Draw(in OverlayDrawArgs args)
     {

@@ -12,3 +12,5 @@ metabolizer-type-arachnid = Arachnid
 # Starlight
 metabolizer-type-vampire = Vampire
 metabolizer-type-avali = Avali
+# HardLight
+metabolizer-type-synth = Synth

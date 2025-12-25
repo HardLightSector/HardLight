@@ -2,7 +2,7 @@
   id: Fland
   mapName: 'Fland Installation'
   mapPath: /Maps/fland.yml
-  minPlayers: 70
+  minPlayers: 0
   stations:
     Fland:
       stationProto: StandardNanotrasenStation
@@ -13,7 +13,7 @@
             !type:NanotrasenNameGenerator
             prefixCreator: 'B'
         - type: StationEmergencyShuttle
-          emergencyShuttlePath: /Maps/Shuttles/emergency_delta.yml
+          emergencyShuttlePath: /Maps/Shuttles/emergency.yml
         - type: StationCargoShuttle
           path: /Maps/Shuttles/cargo_fland.yml
         - type: StationJobs
@@ -44,6 +44,7 @@
             MedicalDoctor: [ 6, 6 ]
             Paramedic: [ 2, 2 ]
             MedicalIntern: [ 4, 4 ] #intern, not counted
+            Psychologist: [ 1, 1 ]
             #science (5)
             Scientist: [ 5, 5 ]
             ResearchAssistant: [ 6, 6 ] #intern, not counted
@@ -64,3 +65,15 @@
             #silicon (6)
             StationAi: [ 1, 1 ]
             Borg: [ 5, 5 ]
+            Contractor: [ -1, -1 ]
+            Pilot: [ 5, 5 ]
+            Mercenary: [ 5, 5 ]
+            MedicalQuadBorg: [ 3, 3 ]
+            ServiceQuadBorg: [ 3, 3 ]
+            SalvageQuadBorg: [ 3, 3 ]
+            SecurityQuadBorg: [ 3, 3 ]
+            EngineeringQuadBorg: [ 3, 3 ]
+            Valet: [ 1, 1 ]
+            MailCarrier: [ 1, 1 ]
+            Prisoner: [ 3, 3 ]
+            ForensicMantis: [ 1, 1 ]

@@ -50,10 +50,12 @@ public sealed class DamageOverlay : Overlay
     {
         // TODO: Replace
         IoCManager.InjectDependencies(this);
-        _oxygenShader = _prototypeManager.Index<ShaderPrototype>("GradientCircleMask").InstanceUnique();
-        _critShader = _prototypeManager.Index<ShaderPrototype>("GradientCircleMask").InstanceUnique();
-        _bruteShader = _prototypeManager.Index<ShaderPrototype>("GradientCircleMask").InstanceUnique();
+        _oxygenShader = _prototypeManager.Index(GradientCircleMaskId).InstanceUnique();
+        _critShader = _prototypeManager.Index(GradientCircleMaskId).InstanceUnique();
+        _bruteShader = _prototypeManager.Index(GradientCircleMaskId).InstanceUnique();
     }
+
+    private static readonly ProtoId<ShaderPrototype> GradientCircleMaskId = "GradientCircleMask";
 
     protected override void Draw(in OverlayDrawArgs args)
     {

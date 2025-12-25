@@ -47,6 +47,7 @@
             Chemist: [ 2, 2 ]
             MedicalIntern: [ 2, 2 ] #intern, not counted
             Paramedic: [ 1, 2 ]
+            Psychologist: [ 1, 1 ]
             #science (3)
             Scientist: [ 3, 3 ]
             ResearchAssistant: [ 1, 1 ] #intern, not counted
@@ -68,7 +69,7 @@
             StationAi: [ 1, 1 ]
             Borg: [ -1, -1 ]
             # frontier
-            Contractor: [ 5, 5 ]
+            Contractor: [ -1, -1 ]
             Pilot: [ 5, 5 ]
             Mercenary: [ 5, 5 ]
             MedicalQuadBorg: [ 3, 3 ]
@@ -76,7 +77,7 @@
             SalvageQuadBorg: [ 3, 3 ]
             SecurityQuadBorg: [ 3, 3 ]
             EngineeringQuadBorg: [ 3, 3 ]
-            #StationTrafficController: [ 1, 1 ]
-            #Valet: [ 1, 1 ]
-            #MailCarrier: [ 1, 1 ]
+            Valet: [ 1, 1 ]
+            MailCarrier: [ 1, 1 ]
             Prisoner: [ 3, 3 ]
+            ForensicMantis: [ 1, 1 ]

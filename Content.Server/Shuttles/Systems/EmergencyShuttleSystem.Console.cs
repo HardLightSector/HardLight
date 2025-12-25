@@ -13,6 +13,7 @@ using Content.Shared.Shuttles.Systems;
 using Content.Shared.UserInterface;
 using Robust.Shared.Map;
 using Robust.Shared.Player;
+using Robust.Shared.Prototypes;
 using Content.Shared.DeviceNetwork.Components;
 using Timer = Robust.Shared.Timing.Timer;
 

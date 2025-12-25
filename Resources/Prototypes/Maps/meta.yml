@@ -2,7 +2,7 @@
   id: Meta
   mapName: 'Meta Station'
   mapPath: /Maps/meta.yml
-  minPlayers: 50
+  minPlayers: 0
   maxPlayers: 80
   stations:
     Meta:
@@ -43,6 +43,7 @@
             MedicalDoctor: [ 4, 6 ]
             MedicalIntern: [ 4, 4 ] #intern, not counted
             Paramedic: [ 1, 2 ]
+            Psychologist: [ 1, 1 ]
             #science (6 - 8)
             Scientist: [ 6, 8 ]
             ResearchAssistant: [ 4, 4 ] #intern, not counted
@@ -63,3 +64,15 @@
             #silicon (5)
             StationAi: [ 1, 1 ]
             Borg: [ 4, 4 ]
+            Contractor: [ -1, -1 ]
+            Pilot: [ 5, 5 ]
+            Mercenary: [ 5, 5 ]
+            MedicalQuadBorg: [ 3, 3 ]
+            ServiceQuadBorg: [ 3, 3 ]
+            SalvageQuadBorg: [ 3, 3 ]
+            SecurityQuadBorg: [ 3, 3 ]
+            EngineeringQuadBorg: [ 3, 3 ]
+            Valet: [ 1, 1 ]
+            MailCarrier: [ 1, 1 ]
+            Prisoner: [ 3, 3 ]
+            ForensicMantis: [ 1, 1 ]

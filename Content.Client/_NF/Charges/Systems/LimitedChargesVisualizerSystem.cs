@@ -2,12 +2,15 @@ using Content.Client._NF.Charges.Components;
 using Content.Shared.Charges.Systems;
 using Content.Shared.Rounding;
 using Robust.Client.GameObjects;
+using Robust.Shared.Graphics.RSI;
+using Robust.Client.Graphics;
 
 namespace Content.Client._NF.Charges.Systems;
 
 // Limited charge visualizer - essentially a copy of the magazine visuals.
 public sealed partial class LimitedChargesVisualizerSystem : EntitySystem
 {
+    [Dependency] private readonly SpriteSystem _sprite = default!;
     public override void Initialize()
     {
         base.Initialize();
@@ -20,10 +23,10 @@ public sealed partial class LimitedChargesVisualizerSystem : EntitySystem
     {
         if (!TryComp<SpriteComponent>(uid, out var sprite)) return;
 
-        if (sprite.LayerMapTryGet(LimitedChargesVisualLayers.Charges, out var chargeLayer))
+        if (_sprite.LayerMapTryGet((uid, sprite), LimitedChargesVisualLayers.Charges, out var chargeLayer, false))
         {
-            sprite.LayerSetState(chargeLayer, $"{component.ChargePrefix}-{component.ChargeSteps - 1}");
-            sprite.LayerSetVisible(chargeLayer, false);
+            _sprite.LayerSetRsiState((uid, sprite), chargeLayer, new RSI.StateId($"{component.ChargePrefix}-{component.ChargeSteps - 1}"));
+            _sprite.LayerSetVisible((uid, sprite), chargeLayer, false);
         }
     }
 
@@ -44,13 +47,13 @@ public sealed partial class LimitedChargesVisualizerSystem : EntitySystem
         int chargeLayer;
         if (step == 0 && !component.ZeroVisible)
         {
-            if (sprite.LayerMapTryGet(LimitedChargesVisualLayers.Charges, out chargeLayer))
-                sprite.LayerSetVisible(chargeLayer, false);
+            if (_sprite.LayerMapTryGet((uid, sprite), LimitedChargesVisualLayers.Charges, out chargeLayer, false))
+                _sprite.LayerSetVisible((uid, sprite), chargeLayer, false);
         }
-        else if (sprite.LayerMapTryGet(LimitedChargesVisualLayers.Charges, out chargeLayer))
+        else if (_sprite.LayerMapTryGet((uid, sprite), LimitedChargesVisualLayers.Charges, out chargeLayer, false))
         {
-            sprite.LayerSetVisible(chargeLayer, true);
-            sprite.LayerSetState(chargeLayer, $"{component.ChargePrefix}-{step}");
+            _sprite.LayerSetVisible((uid, sprite), chargeLayer, true);
+            _sprite.LayerSetRsiState((uid, sprite), chargeLayer, new RSI.StateId($"{component.ChargePrefix}-{step}"));
         }
     }
 }

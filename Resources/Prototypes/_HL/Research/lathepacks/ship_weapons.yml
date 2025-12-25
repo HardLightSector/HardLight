@@ -42,7 +42,7 @@
   - CharonReloadWeaponBoard
   - HadesWeaponBoard
   - HydraWeaponBoard
-  - CapitalShieldBoard
+  #- CapitalShieldBoard
 
 - type: latheRecipePack
   id: ShuttleWeaponMaterials

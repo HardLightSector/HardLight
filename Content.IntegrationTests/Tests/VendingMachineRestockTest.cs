@@ -14,14 +14,14 @@ using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 
 namespace Content.IntegrationTests.Tests
-{    
+{
     [TestFixture]
     [TestOf(typeof(VendingMachineRestockComponent))]
     [TestOf(typeof(VendingMachineSystem))]
     public sealed class VendingMachineRestockTest : EntitySystem
     {
         private const string Blunt = "Blunt";
-        
+
         [TestPrototypes]
         private const string Prototypes = @"
 - type: entity
@@ -185,9 +185,9 @@ namespace Content.IntegrationTests.Tests
             var server = pair.Server;
             await server.WaitIdleAsync();
 
-            var mapManager = server.ResolveDependency<IMapManager>();
             var entityManager = server.ResolveDependency<IEntityManager>();
             var entitySystemManager = server.ResolveDependency<IEntitySystemManager>();
+            var mapSystem = entitySystemManager.GetEntitySystem<SharedMapSystem>();
 
             EntityUid packageRight;
             EntityUid packageWrong;
@@ -259,7 +259,7 @@ namespace Content.IntegrationTests.Tests
                 Assert.That(systemMachine.GetAvailableInventory(machine, machineComponent), Has.Count.GreaterThan(0),
                     "Machine available inventory count is not greater than zero after restock.");
                 */
-                mapManager.DeleteMap(testMap.MapId);
+                mapSystem.DeleteMap(testMap.MapId);
             });
 
             await pair.CleanReturnAsync();
@@ -273,7 +273,6 @@ namespace Content.IntegrationTests.Tests
             await server.WaitIdleAsync();
 
             var prototypeManager = server.ResolveDependency<IPrototypeManager>();
-            var mapManager = server.ResolveDependency<IMapManager>();
             var entityManager = server.ResolveDependency<IEntityManager>();
             var entitySystemManager = server.ResolveDependency<IEntitySystemManager>();
 
@@ -323,7 +322,7 @@ namespace Content.IntegrationTests.Tests
                 Assert.That(totalRamen, Is.EqualTo(2),
                     "Did not find enough ramen after destroying restock box.");
 
-                mapManager.DeleteMap(testMap.MapId);
+                entitySystemManager.GetEntitySystem<SharedMapSystem>().DeleteMap(testMap.MapId);
             });
 
             await pair.CleanReturnAsync();

@@ -37,8 +37,9 @@ public sealed class GatewayGeneratorSystem : EntitySystem
     [Dependency] private readonly SharedSalvageSystem _salvage = default!;
     [Dependency] private readonly TileSystem _tile = default!;
 
-    [ValidatePrototypeId<LocalizedDatasetPrototype>]
-    private const string PlanetNames = "NamesBorer";
+    private static readonly ProtoId<LocalizedDatasetPrototype> PlanetNamesId = "NamesBorer";
+    private static readonly ProtoId<BiomeTemplatePrototype> ContinentalId = "Continental";
+    private static readonly ProtoId<DungeonConfigPrototype> ExperimentDungeonId = "Experiment";
 
     // TODO:
     // Fix shader some more
@@ -103,12 +104,12 @@ public sealed class GatewayGeneratorSystem : EntitySystem
         var mapId = _mapManager.CreateMap();
         var mapUid = _mapManager.GetMapEntityId(mapId);
 
-        var gatewayName = _salvage.GetFTLName(_protoManager.Index<LocalizedDatasetPrototype>(PlanetNames), seed);
+        var gatewayName = _salvage.GetFTLName(_protoManager.Index(PlanetNamesId), seed);
         _metadata.SetEntityName(mapUid, gatewayName);
 
         var origin = new Vector2i(random.Next(-MaxOffset, MaxOffset), random.Next(-MaxOffset, MaxOffset));
 
-        _biome.EnsurePlanet(mapUid, _protoManager.Index<BiomeTemplatePrototype>("Continental"), seed);
+        _biome.EnsurePlanet(mapUid, _protoManager.Index(ContinentalId), seed);
 
         var grid = Comp<MapGridComponent>(mapUid);
 
@@ -180,7 +181,7 @@ public sealed class GatewayGeneratorSystem : EntitySystem
         var dungeonRotation = _dungeon.GetDungeonRotation(seed);
         var dungeonPosition = (origin + dungeonRotation.RotateVec(new Vector2i(0, dungeonDistance))).Floored();
 
-        _dungeon.GenerateDungeon(_protoManager.Index<DungeonConfigPrototype>("Experiment"), "Experiment", args.MapUid, grid, dungeonPosition, seed); // Frontier: add "Experiment" arg
+        _dungeon.GenerateDungeon(_protoManager.Index(ExperimentDungeonId), "Experiment", args.MapUid, grid, dungeonPosition, seed); // Frontier: add "Experiment" arg
 
         // TODO: Dungeon mobs + loot.
 

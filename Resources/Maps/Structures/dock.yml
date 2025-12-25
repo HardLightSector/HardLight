@@ -4,7 +4,7 @@ meta:
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 12/11/2025 22:13:20
+  time: 12/20/2025 08:27:46
   entityCount: 771
 maps: []
 grids:
@@ -2532,6 +2532,10 @@ entities:
     - type: Transform
       pos: -6.5,15.5
       parent: 1
+    - type: PowerSupplier
+      supplyRampRate: 5000
+      supplyRampTolerance: 5000
+      supplyRate: 100000
 - proto: GravityGeneratorMini
   entities:
   - uid: 443

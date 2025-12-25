@@ -22,13 +22,14 @@ namespace Content.Client._NF.Emp.Overlays
         public override OverlaySpace Space => OverlaySpace.WorldSpace;
         public override bool RequestScreenTexture => true;
 
+        private static readonly ProtoId<ShaderPrototype> EmpShaderId = "Emp";
         private readonly ShaderInstance _baseShader;
         private readonly Dictionary<EntityUid, (ShaderInstance shd, EmpShaderInstance instance)> _blasts = new();
 
         public EmpBlastOverlay()
         {
             IoCManager.InjectDependencies(this);
-            _baseShader = _prototypeManager.Index<ShaderPrototype>("Emp").Instance().Duplicate();
+            _baseShader = _prototypeManager.Index(EmpShaderId).Instance().Duplicate();
         }
 
         protected override bool BeforeDraw(in OverlayDrawArgs args)

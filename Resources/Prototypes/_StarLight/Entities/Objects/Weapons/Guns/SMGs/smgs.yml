@@ -127,6 +127,8 @@
       - id: RifleStock
         launchAngle: 180
         prob: 0.80
+  - type: StaticPrice
+    price: 1000
 
 - type: entity
   name: forged SMG
@@ -156,3 +158,5 @@
   - type: Appearance
   - type: WeaponDismantleOnShoot
     dismantleChance: 0
+  - type: StaticPrice
+    price: 2500

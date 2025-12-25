@@ -22,7 +22,6 @@ using Content.Server.DoAfter;
 using Content.Server.Popups;
 using Content.Shared.Audio;
 using Content.Shared.Actions.Events;
-using Content.Shared.DoAfter;
 
 namespace Content.Server.Supermatter.Systems;
 

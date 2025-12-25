@@ -1257,7 +1257,6 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
 
         //_sawmill.Info($"Found {allEntities.Count} entities to clean on grid");
 
-        var entitiesRemoved = 0;
         var componentsRemoved = 0;
 
         // PHASE 1: Do not delete entities to preserve physics counts

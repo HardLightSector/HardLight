@@ -1,9 +1,3 @@
-// SPDX-FileCopyrightText: 2025 Ark
-// SPDX-FileCopyrightText: 2025 Redrover1760
-// SPDX-FileCopyrightText: 2025 ark1368
-//
-// SPDX-License-Identifier: AGPL-3.0-or-later
-
 using Content.Shared._Crescent.ShipShields;
 using Robust.Client.ResourceManagement;
 using Robust.Client.Graphics;
@@ -25,6 +19,7 @@ public sealed class ShipShieldOverlay : Overlay
     private readonly IEntityManager _entManager;
     private readonly FixtureSystem _fixture;
     private readonly SharedPhysicsSystem _physics;
+    private static readonly ProtoId<ShaderPrototype> UnshadedShaderId = "unshaded";
     private readonly ShaderInstance _unshadedShader;
     private readonly List<DrawVertexUV2D> _verts = new(128); // Mono
 
@@ -37,7 +32,7 @@ public sealed class ShipShieldOverlay : Overlay
         _fixture = _entManager.EntitySysManager.GetEntitySystem<FixtureSystem>();
     _physics = _entManager.EntitySysManager.GetEntitySystem<SharedPhysicsSystem>();
 
-        _unshadedShader = prototypeManager.Index<ShaderPrototype>("unshaded").Instance();
+        _unshadedShader = prototypeManager.Index(UnshadedShaderId).Instance();
 
         ZIndex = 8;
     }

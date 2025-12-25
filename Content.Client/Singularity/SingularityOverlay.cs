@@ -29,11 +29,13 @@ namespace Content.Client.Singularity
         public SingularityOverlay()
         {
             IoCManager.InjectDependencies(this);
-            _shader = _prototypeManager.Index<ShaderPrototype>("Singularity").Instance().Duplicate();
+            _shader = _prototypeManager.Index(SingularityShaderId).Instance().Duplicate();
             _shader.SetParameter("maxDistance", MaxDistance * EyeManager.PixelsPerMeter);
             _entMan.EventBus.SubscribeEvent<PixelToMapEvent>(EventSource.Local, this, OnProjectFromScreenToMap);
             ZIndex = 101; // Should be drawn after the placement overlay so admins placing items near the singularity can tell where they're going.
         }
+
+    private static readonly ProtoId<ShaderPrototype> SingularityShaderId = "Singularity";
 
         private readonly Vector2[] _positions = new Vector2[MaxCount];
         private readonly float[] _intensities = new float[MaxCount];

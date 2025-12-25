@@ -34,6 +34,22 @@ namespace Content.Server.Power.NodeGroups
             PowerNetSystem.InitPowerNet(this);
         }
 
+        private EntityUid OwnerOf<TComp>(TComp comp)
+            where TComp : Component
+        {
+            if (EntMan == null)
+                return EntityUid.Invalid;
+
+            var q = EntMan.EntityQueryEnumerator<TComp>();
+            while (q.MoveNext(out var uid, out var c))
+            {
+                if (ReferenceEquals(c, comp))
+                    return uid;
+            }
+
+            return EntityUid.Invalid;
+        }
+
         public override void AfterRemake(IEnumerable<IGrouping<INodeGroup?, Node>> newGroups)
         {
             base.AfterRemake(newGroups);
@@ -51,7 +67,11 @@ namespace Content.Server.Power.NodeGroups
             if (EntMan == null)
                 return;
 
-            var battery = EntMan.GetComponent<PowerNetworkBatteryComponent>(discharger.Owner);
+            var owner = OwnerOf(discharger);
+            if (!owner.IsValid())
+                return;
+
+            var battery = EntMan.GetComponent<PowerNetworkBatteryComponent>(owner);
             DebugTools.Assert(battery.NetworkBattery.LinkedNetworkDischarging == default);
             battery.NetworkBattery.LinkedNetworkDischarging = default;
             Dischargers.Add(discharger);
@@ -62,9 +82,16 @@ namespace Content.Server.Power.NodeGroups
         {
             if (EntMan == null)
                 return;
-
             // Can be missing if the entity is being deleted, not a big deal.
-            if (EntMan.TryGetComponent(discharger.Owner, out PowerNetworkBatteryComponent? battery))
+            var owner = OwnerOf(discharger);
+            if (!owner.IsValid())
+            {
+                Dischargers.Remove(discharger);
+                QueueNetworkReconnect();
+                return;
+            }
+
+            if (EntMan.TryGetComponent(owner, out PowerNetworkBatteryComponent? battery))
             {
                 // Linked network can be default if it was re-connected twice in one tick.
                 DebugTools.Assert(battery.NetworkBattery.LinkedNetworkDischarging == default || battery.NetworkBattery.LinkedNetworkDischarging == NetworkNode.Id);
@@ -80,7 +107,11 @@ namespace Content.Server.Power.NodeGroups
             if (EntMan == null)
                 return;
 
-            var battery = EntMan.GetComponent<PowerNetworkBatteryComponent>(charger.Owner);
+            var owner = OwnerOf(charger);
+            if (!owner.IsValid())
+                return;
+
+            var battery = EntMan.GetComponent<PowerNetworkBatteryComponent>(owner);
             DebugTools.Assert(battery.NetworkBattery.LinkedNetworkCharging == default);
             battery.NetworkBattery.LinkedNetworkCharging = default;
             Chargers.Add(charger);
@@ -91,9 +122,16 @@ namespace Content.Server.Power.NodeGroups
         {
             if (EntMan == null)
                 return;
-
             // Can be missing if the entity is being deleted, not a big deal.
-            if (EntMan.TryGetComponent(charger.Owner, out PowerNetworkBatteryComponent? battery))
+            var owner = OwnerOf(charger);
+            if (!owner.IsValid())
+            {
+                Chargers.Remove(charger);
+                QueueNetworkReconnect();
+                return;
+            }
+
+            if (EntMan.TryGetComponent(owner, out PowerNetworkBatteryComponent? battery))
             {
                 // Linked network can be default if it was re-connected twice in one tick.
                 DebugTools.Assert(battery.NetworkBattery.LinkedNetworkCharging == default || battery.NetworkBattery.LinkedNetworkCharging == NetworkNode.Id);

@@ -101,7 +101,7 @@
   - CharonReloadWeaponBoard
   - HadesWeaponBoard
   - HydraWeaponBoard
-  - CapitalShieldBoard
+  #- CapitalShieldBoard
 
 - type: technology
   id: ShuttleWeaponMaterials

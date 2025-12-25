@@ -101,6 +101,8 @@
   - type: Construction
     graph: ImprovisedSniperGraph
     node: shotgun
+  - type: StaticPrice
+    price: 1000
 
 
 - type: entity
@@ -133,3 +135,5 @@
       - Cartridge45Magnum
   - type: WeaponDismantleOnShoot
     dismantleChance: 0
+  - type: StaticPrice
+    price: 2500

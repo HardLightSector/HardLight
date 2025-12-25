@@ -1,4 +1,4 @@
-﻿#ship parts
+#ship parts
 - type: latheRecipe
   id: LightShipWeaponFrame
   result: MaterialLightShipWeaponFrame1
@@ -321,20 +321,20 @@
   id: HydraWeaponBoard
   result: HydraWeaponBoard
 
-- type: latheRecipe
-  parent: BaseCapitalWeaponBoardRecipe
-  id: CapitalShieldBoard
-  result: CapitalShieldBoard
+# - type: latheRecipe
+  # parent: BaseCapitalWeaponBoardRecipe
+  # id: CapitalShieldBoard
+  # result: CapitalShieldBoard
 
 - type: latheRecipe
   parent: BaseLightWeaponBoardRecipe
   id: CivL1PhalanxWeaponBoard
-  result: L1PhalanxWeaponBoard
+  result: CivL1PhalanxWeaponBoard
 
 - type: latheRecipe
   parent: BaseLightWeaponBoardRecipe
   id: CivL85AutocannonWeaponBoard
-  result: L85AutocannonWeaponBoard
+  result: CivL85AutocannonWeaponBoard
 
 - type: latheRecipe
   parent: BaseMediumWeaponBoardRecipe
@@ -393,8 +393,13 @@
 
 - type: latheRecipe
   parent: BaseHeavyWeaponBoardRecipe
-  id: SerpentType54WeaponBoard
-  result: SerpentType54WeaponBoard
+  id: CivType54WeaponBoard
+  result: CivType54WeaponBoard
+
+- type: latheRecipe
+  parent: BaseHeavyWeaponBoardRecipe
+  id: CivSerpentMissileWeaponBoard
+  result: CivSerpentMissileWeaponBoard
 
 - type: latheRecipe
   parent: BaseHeavyWeaponBoardRecipe
@@ -413,5 +418,5 @@
 
 - type: latheRecipe
   parent: BaseMediumWeaponBoardRecipe
-  id: CivBigThrusterWeaponBoard
-  result: CivBigThrusterWeaponBoard
+  id: CivBigThrusterBoard
+  result: CivBigThrusterBoard

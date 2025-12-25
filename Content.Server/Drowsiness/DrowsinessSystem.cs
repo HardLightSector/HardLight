@@ -3,13 +3,13 @@ using Content.Shared.Drowsiness;
 using Content.Shared.StatusEffect;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server.Drowsiness;
 
 public sealed class DrowsinessSystem : SharedDrowsinessSystem
 {
-    [ValidatePrototypeId<StatusEffectPrototype>]
-    private const string SleepKey = "ForcedSleep"; // Same one used by N2O and other sleep chems.
+    private static readonly ProtoId<StatusEffectPrototype> SleepKey = new("ForcedSleep"); // Same one used by N2O and other sleep chems.
 
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IRobustRandom _random = default!;

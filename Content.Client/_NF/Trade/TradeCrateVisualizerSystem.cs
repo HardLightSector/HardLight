@@ -30,18 +30,18 @@ public sealed class TradeCrateVisualizerSystem : VisualizerSystem<TradeCrateComp
         if (!_proto.TryIndex<TradeCrateDestinationPrototype>(job, out var icon))
             icon = _proto.Index<TradeCrateDestinationPrototype>(FallbackIconID);
 
-        args.Sprite.LayerSetTexture(TradeCrateVisualLayers.Icon, _sprite.Frame0(icon.Icon));
-        args.Sprite.LayerSetVisible(TradeCrateVisualLayers.Icon, true);
+        _sprite.LayerSetTexture((uid, args.Sprite), TradeCrateVisualLayers.Icon, _sprite.Frame0(icon.Icon));
+        _sprite.LayerSetVisible((uid, args.Sprite), TradeCrateVisualLayers.Icon, true);
         if (_appearance.TryGetData(uid, TradeCrateVisuals.IsPriority, out bool isPriority) && isPriority)
         {
-            args.Sprite.LayerSetVisible(TradeCrateVisualLayers.Priority, true);
+            _sprite.LayerSetVisible((uid, args.Sprite), TradeCrateVisualLayers.Priority, true);
             if (_appearance.TryGetData(uid, TradeCrateVisuals.IsPriorityInactive, out bool inactive) && inactive)
-                args.Sprite.LayerSetState(TradeCrateVisualLayers.Priority, CargoPriorityInactiveState);
+                _sprite.LayerSetRsiState((uid, args.Sprite), TradeCrateVisualLayers.Priority, CargoPriorityInactiveState);
             else
-                args.Sprite.LayerSetState(TradeCrateVisualLayers.Priority, CargoPriorityActiveState);
+                _sprite.LayerSetRsiState((uid, args.Sprite), TradeCrateVisualLayers.Priority, CargoPriorityActiveState);
         }
         else
-            args.Sprite.LayerSetVisible(TradeCrateVisualLayers.Priority, false);
+            _sprite.LayerSetVisible((uid, args.Sprite), TradeCrateVisualLayers.Priority, false);
     }
 }
 

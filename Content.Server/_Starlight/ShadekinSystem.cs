@@ -27,7 +27,6 @@ namespace Content.Server._Starlight;
 public sealed class ShadekinSystem : EntitySystem
 {
     [Dependency] private readonly AlertsSystem _alerts = default!;
-    [Dependency] private readonly SharedActionsSystem _actionsSystem = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!;

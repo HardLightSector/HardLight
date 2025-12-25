@@ -34,11 +34,9 @@ namespace Content.Server.GameTicking
         [Dependency] private readonly AdminSystem _admin = default!;
         [Dependency] private readonly RespawnSystem _respawn = default!; // Frontier
 
-        [ValidatePrototypeId<EntityPrototype>]
-        public const string ObserverPrototypeName = "MobObserver";
+        public static readonly EntProtoId ObserverPrototypeName = new("MobObserver");
 
-        [ValidatePrototypeId<EntityPrototype>]
-        public const string AdminObserverPrototypeName = "AdminObserver";
+        public static readonly EntProtoId AdminObserverPrototypeName = new("AdminObserver");
 
         /// <summary>
         /// How many players have joined the round through normal methods.

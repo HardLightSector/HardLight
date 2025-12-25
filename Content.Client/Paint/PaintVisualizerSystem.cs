@@ -17,6 +17,7 @@ namespace Content.Client.Paint
 
         [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
         [Dependency] private readonly IPrototypeManager _protoMan = default!;
+        [Dependency] private readonly SpriteSystem _sprite = default!;
 
         public ShaderInstance? Shader; // in Robust.Client.Graphics so cannot move to shared component.
 
@@ -66,11 +67,11 @@ namespace Content.Client.Paint
 
             foreach (var revealed in args.RevealedLayers)
             {
-                if (!sprite.LayerMapTryGet(revealed, out var layer) || sprite[layer] is not Layer notlayer)
+                if (!_sprite.LayerMapTryGet((args.User, sprite), revealed, out var layer, false) || sprite[layer] is not Layer notlayer)
                     continue;
 
                 sprite.LayerSetShader(layer, component.ShaderName);
-                sprite.LayerSetColor(layer, component.Color);
+                _sprite.LayerSetColor((args.User, sprite), layer, component.Color);
             }
         }
 
@@ -84,11 +85,11 @@ namespace Content.Client.Paint
 
             foreach (var revealed in args.RevealedLayers)
             {
-                if (!sprite.LayerMapTryGet(revealed, out var layer) || sprite[layer] is not Layer notlayer)
+                if (!_sprite.LayerMapTryGet((args.Equipee, sprite), revealed, out var layer, false) || sprite[layer] is not Layer notlayer)
                     continue;
 
                 sprite.LayerSetShader(layer, component.ShaderName);
-                sprite.LayerSetColor(layer, component.Color);
+                _sprite.LayerSetColor((args.Equipee, sprite), layer, component.Color);
             }
         }
 

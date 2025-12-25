@@ -66,7 +66,7 @@
     MailNFCircuitboardService: 1.25
     MailNFCognizine: 0.5
     MailNFMedkit: 0.5
-    MailNFIFFBoard: 0.25
+    #MailNFIFFBoard: 0.25
     MailNFMoney: 1
     MailNFNecrosol: 0.5
     MailNFOmnizine: 0.5

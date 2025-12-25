@@ -25,6 +25,7 @@ public sealed class MappingOverlay : Overlay
 
     private readonly MappingState _state;
     private readonly ShaderInstance _shader;
+    private static readonly ProtoId<ShaderPrototype> UnshadedShaderId = "unshaded";
 
     public override OverlaySpace Space => OverlaySpace.WorldSpace;
 
@@ -35,7 +36,7 @@ public sealed class MappingOverlay : Overlay
         _sprite = _entities.System<SpriteSystem>();
 
         _state = state;
-        _shader = _prototypes.Index<ShaderPrototype>("unshaded").Instance();
+        _shader = _prototypes.Index(UnshadedShaderId).Instance();
     }
 
     protected override void Draw(in OverlayDrawArgs args)

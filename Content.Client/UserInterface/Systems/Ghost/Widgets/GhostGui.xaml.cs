@@ -93,6 +93,7 @@ public sealed partial class GhostGui : UIWidget
     }
     // End Frontier: respawn logic
 
+    [Obsolete]
     protected override void Dispose(bool disposing)
     {
         base.Dispose(disposing);

@@ -17,6 +17,7 @@ public sealed class SunShadowOverlay : Overlay
     [Dependency] private readonly IEntityManager _entManager = default!;
     [Dependency] private readonly IMapManager _mapManager = default!;
     [Dependency] private readonly IPrototypeManager _protoManager = default!;
+    private static readonly ProtoId<ShaderPrototype> MixShaderId = "Mix";
     private readonly EntityLookupSystem _lookup;
     private readonly SharedTransformSystem _xformSys;
 
@@ -150,7 +151,7 @@ public sealed class SunShadowOverlay : Overlay
                         viewport.LightRenderTarget.GetWorldToLocalMatrix(eye, scale);
                     worldHandle.SetTransform(invMatrix);
 
-                    var maskShader = _protoManager.Index<ShaderPrototype>("Mix").Instance();
+                    var maskShader = _protoManager.Index(MixShaderId).Instance();
                     worldHandle.UseShader(maskShader);
 
                     worldHandle.DrawTextureRect(_target.Texture, worldBounds, Color.Black.WithAlpha(alpha));

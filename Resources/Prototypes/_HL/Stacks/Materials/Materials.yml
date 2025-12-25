@@ -95,3 +95,31 @@
   icon: { sprite: /Textures/_HL/Objects/Materials/royalresin.rsi, state: icon }
   spawn: MaterialCapitalShipWeaponInternal
   maxCount: 10
+
+- type: stack
+  id: HiPowerGunpowder
+  name: stack-hi-power-gunpowder
+  icon: { sprite: /Textures/Objects/Misc/reagent_fillings.rsi, state: powderpile }
+  spawn: MaterialHiPowerGunpowder
+  maxCount: 60
+
+- type: stack
+  id: BulletCasing9x19mm
+  name: stack-bullet-casing-9x19mm
+  icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi, state: base-spent }
+  spawn: MaterialBulletCasing9x19mm
+  maxCount: 60
+
+- type: stack
+  id: BulletTip
+  name: stack-bullet-tip
+  icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi, state: tip }
+  spawn: MaterialBulletTip
+  maxCount: 60
+
+- type: stack
+  id: BulletFlechette
+  name: stack-bullet-flechette
+  icon: { sprite: /Textures/Objects/Fun/Darts/dart_red.rsi, state: icon }
+  spawn: MaterialBulletFlechette
+  maxCount: 60

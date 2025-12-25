@@ -23,6 +23,7 @@ public sealed class FtlArrivalOverlay : Overlay
     [Dependency] private readonly IEntityManager _entManager = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IPrototypeManager _protos = default!;
+    private static readonly ProtoId<ShaderPrototype> UnshadedShaderId = "unshaded";
 
     private readonly HashSet<Entity<FtlVisualizerComponent>> _visualizers = new();
 
@@ -36,7 +37,7 @@ public sealed class FtlArrivalOverlay : Overlay
         _maps = _entManager.System<SharedMapSystem>();
         _sprites = _entManager.System<SpriteSystem>();
 
-        _shader = _protos.Index<ShaderPrototype>("unshaded").Instance();
+        _shader = _protos.Index(UnshadedShaderId).Instance();
     }
 
     protected override bool BeforeDraw(in OverlayDrawArgs args)

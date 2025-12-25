@@ -13,9 +13,11 @@ public sealed class MutationSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     private RandomPlantMutationListPrototype _randomMutations = default!;
 
+    private static readonly ProtoId<RandomPlantMutationListPrototype> RandomPlantMutationsId = "RandomPlantMutations";
+
     public override void Initialize()
     {
-        _randomMutations = _prototypeManager.Index<RandomPlantMutationListPrototype>("RandomPlantMutations");
+        _randomMutations = _prototypeManager.Index(RandomPlantMutationsId);
     }
 
     /// <summary>

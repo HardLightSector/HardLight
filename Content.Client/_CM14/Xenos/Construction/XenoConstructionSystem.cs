@@ -1,7 +1,6 @@
 ﻿using Content.Shared.CM14.Xenos.Construction;
 using JetBrains.Annotations;
 using Robust.Shared.GameObjects;
-using Content.Shared.CM14.Xenos.Construction;
 using Content.Shared.CM14.Xenos.Construction.Events;
 using Content.Shared.CM14.Xenos;
 using Content.Shared.UserInterface;

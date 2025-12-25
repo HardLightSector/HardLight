@@ -15,7 +15,6 @@ public sealed class SalvageMobRestrictionsSystem : EntitySystem
 {
     [Dependency] private readonly BodySystem _body = default!;
     [Dependency] private readonly ExplosionSystem _explosion = default!;
-    [Dependency] private readonly IAdminLogManager _adminLogger = default!;
     [Dependency] private readonly PopupSystem _popupSystem = default!;
 
     public override void Initialize()

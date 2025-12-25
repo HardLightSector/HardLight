@@ -18,7 +18,7 @@ namespace Content.Server.Psionics
         {
             base.Initialize();
             /// Masking
-            SubscribeLocalEvent<PotentialPsionicComponent, ComponentInit>(OnInit);
+            SubscribeLocalEvent<PotentialPsionicComponent, MapInitEvent>(OnInit);
             SubscribeLocalEvent<PsionicInsulationComponent, ComponentInit>(OnInsulInit);
             SubscribeLocalEvent<PsionicInsulationComponent, ComponentShutdown>(OnInsulShutdown);
             // OnEyeInit method is commented out - removed subscription
@@ -32,7 +32,7 @@ namespace Content.Server.Psionics
             SubscribeLocalEvent<PsionicallyInvisibleComponent, EntRemovedFromContainerMessage>(OnEntRemoved);
         }
 
-        private void OnInit(EntityUid uid, PotentialPsionicComponent component, ComponentInit args)
+        private void OnInit(EntityUid uid, PotentialPsionicComponent component, MapInitEvent args)
         {
             SetCanSeePsionicInvisiblity(uid, false);
         }
