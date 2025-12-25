@@ -38,7 +38,7 @@
     buckleSelfDoafterTime: 4.5 # people attempting to buckle to the borg will have a doafter
   - type: Sanitized
   - type: Hands
-  - type: Cuffable
+  # - type: Cuffable # Removed due to not having a cuffed sprite, throwing errors.
   - type: ComplexInteraction
   #- type: IdExaminable #HL. These have borg hands and ID slots again!
   - type: IntrinsicRadioTransmitter
