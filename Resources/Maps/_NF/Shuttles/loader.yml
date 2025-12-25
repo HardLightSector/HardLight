@@ -28,7 +28,6 @@ entities:
       name: Loader
     - type: Transform
       pos: -0.48958334,-0.53125
-      parent: invalid
     - type: BecomesStation
       id: Loader
     - type: MapGrid

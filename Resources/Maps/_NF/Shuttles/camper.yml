@@ -30,7 +30,6 @@ entities:
     - type: MetaData
       name: Camper
     - type: Transform
-      parent: invalid
     - type: BecomesStation
       id: Camper
     - type: MapGrid

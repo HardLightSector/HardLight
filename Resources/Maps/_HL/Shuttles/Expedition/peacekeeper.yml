@@ -36,7 +36,6 @@ entities:
       name: Peacekeeper
     - type: Transform
       pos: -1.8582788,2.34375
-      parent: invalid
     - type: MapGrid
       chunks:
         0,0:

@@ -16,7 +16,6 @@ entities:
       name: Hunter
     - type: Transform
       pos: -1.6250114,-0.453125
-      parent: invalid
     - type: MapGrid
       chunks:
         0,0:

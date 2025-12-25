@@ -28,7 +28,6 @@ entities:
       name: Nugget
     - type: Transform
       pos: -0.13859749,-1.0273438
-      parent: invalid
     - type: MapGrid
       chunks:
         0,0:

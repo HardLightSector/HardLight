@@ -33,7 +33,6 @@ entities:
       name: DecadeDove
     - type: Transform
       pos: -2.0101273,0.04338789
-      parent: invalid
     - type: MapGrid
       chunks:
         0,0:

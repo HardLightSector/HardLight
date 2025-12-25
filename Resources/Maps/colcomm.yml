@@ -55,7 +55,6 @@ entities:
       name: Colonial Command
     - type: Transform
       pos: 1.7854652,-0.9889641
-      parent: invalid
     - type: MapGrid
       chunks:
         -1,-1:

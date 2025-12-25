@@ -31,7 +31,6 @@ entities:
       name: Legman
     - type: Transform
       pos: -0.53545,-0.53547734
-      parent: invalid
     - type: MapGrid
       chunks:
         0,0:

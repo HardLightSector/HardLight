@@ -34,7 +34,6 @@ entities:
       name: Prowler
     - type: Transform
       pos: 0,-10
-      parent: invalid
     - type: MapGrid
       chunks:
         0,0:

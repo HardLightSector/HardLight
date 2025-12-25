@@ -29,7 +29,6 @@ entities:
       name: Harbormaster
     - type: Transform
       pos: -0.484375,-0.5156288
-      parent: invalid
     - type: MapGrid
       chunks:
         0,0:

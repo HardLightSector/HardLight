@@ -37,7 +37,6 @@ entities:
       name: Kestrel
     - type: Transform
       pos: -1.078125,-0.46875
-      parent: invalid
     - type: BecomesStation
       id: Kestrel
     - type: MapGrid

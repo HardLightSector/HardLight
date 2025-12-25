@@ -42,7 +42,6 @@ entities:
       name: Empress
     - type: Transform
       pos: -0.46484375,0.90625
-      parent: invalid
     - type: BecomesStation
       id: Empress
     - type: MapGrid

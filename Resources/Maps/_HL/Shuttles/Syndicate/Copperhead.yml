@@ -28,7 +28,6 @@ entities:
       name: Copperhead
     - type: Transform
       pos: -1.3711776,-0.63207495
-      parent: invalid
     - type: MapGrid
       chunks:
         0,0:
@@ -2861,8 +2860,6 @@ entities:
       pos: -3.5,12.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 10
   - uid: 471
@@ -2942,8 +2939,6 @@ entities:
       pos: -3.5,13.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 10
   - uid: 480

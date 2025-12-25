@@ -41,7 +41,6 @@ entities:
       name: Lyrae
     - type: Transform
       pos: 6.660883,-12.527287
-      parent: invalid
     - type: MapGrid
       chunks:
         0,0:

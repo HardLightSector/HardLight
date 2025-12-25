@@ -17,7 +17,6 @@ entities:
       name: Menace
     - type: Transform
       pos: -0.48958334,-0.5208333
-      parent: invalid
     - type: BecomesStation
       id: Menace
     - type: MapGrid

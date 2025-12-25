@@ -37,7 +37,6 @@ entities:
       name: Investigator
     - type: Transform
       pos: -2.6107569,3.2554395
-      parent: invalid
     - type: BecomesStation
       id: Investigator
     - type: MapGrid

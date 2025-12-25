@@ -29,7 +29,6 @@ entities:
       name: Man-O-War
     - type: Transform
       pos: -0.59375,-0.17708331
-      parent: invalid
     - type: MapGrid
       chunks:
         0,0:

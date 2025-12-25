@@ -35,7 +35,6 @@ entities:
       name: Bookworm
     - type: Transform
       pos: -0.53125,-0.55733174
-      parent: invalid
     - type: BecomesStation
       id: Bookworm
     - type: MapGrid

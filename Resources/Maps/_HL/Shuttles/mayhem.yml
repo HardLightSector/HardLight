@@ -33,7 +33,6 @@ entities:
       name: Mayhem
     - type: Transform
       pos: -0.5092587,-0.48148176
-      parent: invalid
     - type: MapGrid
       chunks:
         0,0:

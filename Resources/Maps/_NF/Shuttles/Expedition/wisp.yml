@@ -30,7 +30,6 @@ entities:
       name: grid
     - type: Transform
       pos: 2.6335537,-1.0847871
-      parent: invalid
     - type: MapGrid
       chunks:
         0,0:
@@ -336,8 +335,6 @@ entities:
       pos: 2.5,-8.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 226
   - uid: 22

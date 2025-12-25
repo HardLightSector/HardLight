@@ -20,7 +20,6 @@ entities:
       name: Chauffeur
     - type: Transform
       pos: -0.47916666,-0.5364844
-      parent: invalid
     - type: MapGrid
       chunks:
         0,0:

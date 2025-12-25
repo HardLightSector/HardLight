@@ -22,7 +22,6 @@ entities:
       name: NT Evac Crimson
     - type: Transform
       pos: 0.5,0.5
-      parent: invalid
     - type: MapGrid
       chunks:
         -1,0:

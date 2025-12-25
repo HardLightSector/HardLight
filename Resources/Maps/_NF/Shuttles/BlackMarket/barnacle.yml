@@ -36,7 +36,6 @@ entities:
       name: Barnacle
     - type: Transform
       pos: 0.78109145,1.3831177
-      parent: invalid
     - type: MapGrid
       chunks:
         -1,-1:

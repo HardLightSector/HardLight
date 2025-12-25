@@ -31,7 +31,6 @@ entities:
     - type: MetaData
       name: Gadyuka
     - type: Transform
-      parent: invalid
     - type: MapGrid
       chunks:
         -1,-1:

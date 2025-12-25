@@ -25,7 +25,6 @@ entities:
       name: Construct
     - type: Transform
       pos: -0.47499943,-0.47500038
-      parent: invalid
     - type: MapGrid
       chunks:
         0,0:

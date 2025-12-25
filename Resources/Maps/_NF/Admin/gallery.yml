@@ -20,7 +20,6 @@ entities:
       name: The Gallery
     - type: Transform
       pos: -0.28318977,-0.44841814
-      parent: invalid
     - type: MapGrid
       chunks:
         0,0:

@@ -48,7 +48,6 @@ entities:
       name: Ceres
     - type: Transform
       pos: -0.4270833,-0.57817966
-      parent: invalid
     - type: MapGrid
       chunks:
         0,0:

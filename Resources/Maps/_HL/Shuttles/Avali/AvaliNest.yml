@@ -31,7 +31,6 @@ entities:
       name: TSF Solarsail
     - type: Transform
       pos: -0.65625,-3.2790961
-      parent: invalid
     - type: MapGrid
       chunks:
         0,0:
@@ -262,8 +261,6 @@ entities:
       pos: 0.5,-4.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 246
   - uid: 8
@@ -272,8 +269,6 @@ entities:
       pos: 0.5,-8.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 246
   - uid: 9
@@ -282,8 +277,6 @@ entities:
       pos: -0.5,-1.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 246
 - proto: APCBasic
@@ -1017,8 +1010,6 @@ entities:
       pos: 0.5,-1.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 246
     - type: AtmosPipeColor
@@ -1030,8 +1021,6 @@ entities:
       pos: -1.5,-4.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 246
     - type: AtmosPipeColor
@@ -1043,8 +1032,6 @@ entities:
       pos: 0.5,-7.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 246
     - type: AtmosPipeColor
@@ -1058,8 +1045,6 @@ entities:
       pos: 2.5,-4.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 246
     - type: AtmosPipeColor
@@ -1071,8 +1056,6 @@ entities:
       pos: 0.5,-10.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 246
     - type: AtmosPipeColor
@@ -1083,8 +1066,6 @@ entities:
       pos: 1.5,-1.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 246
     - type: AtmosPipeColor

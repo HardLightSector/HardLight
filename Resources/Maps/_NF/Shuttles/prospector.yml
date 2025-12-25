@@ -31,7 +31,6 @@ entities:
       name: Prospector
     - type: Transform
       pos: 0.13793182,0.67738855
-      parent: invalid
     - type: MapGrid
       chunks:
         -1,-1:

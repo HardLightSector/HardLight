@@ -38,7 +38,6 @@ entities:
       name: Viper's Den
     - type: Transform
       pos: -1.4570646,-0.9329883
-      parent: invalid
     - type: MapGrid
       chunks:
         0,0:
@@ -2380,8 +2379,6 @@ entities:
       pos: 85.5,-18.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 2
   - uid: 209
@@ -22860,8 +22857,6 @@ entities:
       pos: 79.5,-19.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 22
       - 2
@@ -22871,8 +22866,6 @@ entities:
       pos: 79.5,-18.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 22
       - 2
@@ -22882,8 +22875,6 @@ entities:
       pos: 79.5,-17.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 22
       - 2
@@ -23182,8 +23173,6 @@ entities:
       pos: 68.5,18.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 42
       - 41
@@ -31864,8 +31853,6 @@ entities:
     - type: AtmosPipeColor
       color: '#0335FCFF'
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 42
   - uid: 5112
@@ -32075,8 +32062,6 @@ entities:
     - type: AtmosPipeColor
       color: '#0335FCFF'
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 2
   - uid: 5132
@@ -32419,8 +32404,6 @@ entities:
     - type: AtmosPipeColor
       color: '#990000FF'
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 2
   - uid: 5164
@@ -32976,8 +32959,6 @@ entities:
     - type: AtmosPipeColor
       color: '#990000FF'
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 42
   - uid: 5217

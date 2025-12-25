@@ -35,7 +35,6 @@ entities:
       name: Apollo
     - type: Transform
       pos: -0.46875,-0.40625
-      parent: invalid
     - type: MapGrid
       chunks:
         0,0:

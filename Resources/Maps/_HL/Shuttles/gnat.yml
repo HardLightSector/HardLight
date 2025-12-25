@@ -25,7 +25,6 @@ entities:
       name: TSF Letterbox
     - type: Transform
       pos: 2.3192325,0.94134426
-      parent: invalid
     - type: MapGrid
       chunks:
         0,0:

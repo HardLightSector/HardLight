@@ -34,7 +34,6 @@ entities:
     - type: MetaData
       name: PieCrust
     - type: Transform
-      parent: invalid
     - type: MapGrid
       chunks:
         -1,-1:

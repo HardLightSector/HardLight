@@ -31,7 +31,6 @@ entities:
       name: Sparrow
     - type: Transform
       pos: -0.039024353,-0.12682906
-      parent: invalid
     - type: MapGrid
       chunks:
         0,0:
@@ -1131,9 +1130,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -1.5,0.5
       parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 361
   - uid: 135
     components:
     - type: Transform
@@ -1543,9 +1539,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -3.5,0.5
       parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 361
     - type: AtmosPipeColor
       color: '#0055CCFF'
   - uid: 187
@@ -1573,9 +1566,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -3.5,1.5
       parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 361
     - type: AtmosPipeColor
       color: '#990000FF'
   - uid: 190

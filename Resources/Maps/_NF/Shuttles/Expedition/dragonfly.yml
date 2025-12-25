@@ -31,7 +31,6 @@ entities:
       name: Dragonfly
     - type: Transform
       pos: -0.5,-0.453125
-      parent: invalid
     - type: MapGrid
       chunks:
         0,0:

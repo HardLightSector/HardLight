@@ -30,7 +30,6 @@ entities:
     - type: Transform
       rot: -0.000744084594771266 rad
       pos: -0.53681815,-0.61734354
-      parent: invalid
     - type: MapGrid
       chunks:
         0,0:
@@ -2181,8 +2180,6 @@ entities:
       - WeaponizedLaserManipulation
       - ModsuitsTech
       - MeatManipulation
-    - type: DeviceNetwork
-      address: 77F1-352E
 - proto: AutolatheMachineCircuitboard
   entities:
   - uid: 98
@@ -9388,8 +9385,6 @@ entities:
           endTime: 19.7425155
           startTime: 0
           length: 0.5
-    - type: DeviceNetwork
-      address: 74DB-411D
     - type: DeviceLinkSource
       linkedPorts:
         679:
@@ -10419,8 +10414,6 @@ entities:
           showEnts: False
           occludes: True
           ent: 106
-    - type: DeviceNetwork
-      address: 08A2-3809
 - proto: ProtolatheMachineCircuitboard
   entities:
   - uid: 109

@@ -31,7 +31,6 @@ entities:
     components:
     - type: MetaData
     - type: Transform
-      parent: invalid
     - type: MapGrid
       chunks:
         0,0:
@@ -2333,7 +2332,6 @@ entities:
       parent: 1
     - type: DeviceNetwork
       deviceLists:
-      - 736
       - 166
   - uid: 264
     components:
@@ -3389,9 +3387,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -1.5,8.5
       parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 736
     - type: AtmosPipeColor
       color: '#0055CCFF'
   - uid: 394
@@ -3500,9 +3495,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -1.5,10.5
       parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 736
     - type: AtmosPipeColor
       color: '#990000FF'
   - uid: 404

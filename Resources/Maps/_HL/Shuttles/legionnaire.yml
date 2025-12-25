@@ -32,7 +32,6 @@ entities:
       name: Legionnaire
     - type: Transform
       pos: 0.5,0.5
-      parent: invalid
     - type: MapGrid
       chunks:
         -1,-1:

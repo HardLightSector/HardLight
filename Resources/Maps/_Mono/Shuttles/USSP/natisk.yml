@@ -30,7 +30,6 @@ entities:
     - type: MetaData
       name: Natisk
     - type: Transform
-      parent: invalid
     - type: MapGrid
       chunks:
         -1,-1:

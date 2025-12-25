@@ -31,7 +31,6 @@ entities:
       name: McCargo
     - type: Transform
       pos: -0.5,-0.6875
-      parent: invalid
     - type: BecomesStation
       id: McCargo
     - type: MapGrid
