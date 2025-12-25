@@ -253,7 +253,6 @@ entities:
     - type: RadiationGridResistance
     - type: BecomesStation
       id: Express
-    - type: ImplicitRoof
 - proto: AirAlarm
   entities:
   - uid: 79

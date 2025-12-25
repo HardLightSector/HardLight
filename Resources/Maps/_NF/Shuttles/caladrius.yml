@@ -2310,7 +2310,6 @@ entities:
     - type: GasTileOverlay
     - type: BecomesStation
       id: Caladrius
-    - type: ImplicitRoof
 - proto: AcousticGuitarInstrument
   entities:
   - uid: 1123
