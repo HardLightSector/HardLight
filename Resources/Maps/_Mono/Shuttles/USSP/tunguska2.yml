@@ -403,7 +403,6 @@ entities:
       visibleFromOtherGrids: True
       shape: Ring
       radarColor: '#00DEFEFF'
-    - type: CircularShieldRadar
   - uid: 4
     components:
     - type: MetaData
@@ -416,7 +415,6 @@ entities:
       shape: Ring
       scale: 0
       radarColor: '#00DEFEFF'
-    - type: CircularShieldRadar
   - uid: 547
     components:
     - type: MetaData
@@ -429,7 +427,6 @@ entities:
       shape: Ring
       scale: 0
       radarColor: '#00DEFEFF'
-    - type: CircularShieldRadar
 - proto: AdvancedCapacitorStockPart
   entities:
   - uid: 5

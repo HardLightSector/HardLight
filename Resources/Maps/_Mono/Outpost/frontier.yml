@@ -66,7 +66,6 @@ entities:
       shape: Ring
       scale: 0
       radarColor: '#00DEFEFF'
-    - type: CircularShieldRadar
   - uid: 3
     components:
     - type: MetaData
@@ -4333,7 +4332,6 @@ entities:
       shape: Ring
       scale: 52
       radarColor: '#00DEFEFF'
-    - type: CircularShieldRadar
   - uid: 5
     components:
     - type: MetaData
@@ -4346,7 +4344,6 @@ entities:
       shape: Ring
       scale: 52
       radarColor: '#00DEFEFF'
-    - type: CircularShieldRadar
   - uid: 6
     components:
     - type: MetaData
@@ -4359,7 +4356,6 @@ entities:
       shape: Ring
       scale: 52
       radarColor: '#00DEFEFF'
-    - type: CircularShieldRadar
   - uid: 7
     components:
     - type: MetaData
@@ -4372,7 +4368,6 @@ entities:
       shape: Ring
       scale: 52
       radarColor: '#00DEFEFF'
-    - type: CircularShieldRadar
 - proto: AirAlarm
   entities:
   - uid: 8
