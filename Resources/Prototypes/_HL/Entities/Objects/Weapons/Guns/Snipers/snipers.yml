@@ -63,7 +63,7 @@
 
 - type: entity
   name: Forktail
-  parent: [BaseWeaponSniperMag, BaseGunWieldable, BaseC3SyndicateContraband] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband
+  parent: [BaseWeaponSniper, BaseGunWieldable, BaseC3SyndicateContraband]
   id: WeaponSniperBigAMR
   description: A not so portable anti-materiel rifle. Fires excessively large 20x82mm shells.
   components:
@@ -94,7 +94,7 @@
       gun_magazine:
       - MagazineAMR
   - type: MagazineVisuals
-    magState: mag-0
+    magState: mag
     steps: 1
     zeroVisible: true
 
