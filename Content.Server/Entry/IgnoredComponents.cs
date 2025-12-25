@@ -21,7 +21,6 @@ namespace Content.Server.Entry
             "HolidayRsiSwap",
             "OptionsVisualizer",
             "DrawDepthVisualizer", // DeltaV
-            "StatusEffectOrgan",
             "IconSmoothRandom",
             "MultipartMachineGhost"
         };
