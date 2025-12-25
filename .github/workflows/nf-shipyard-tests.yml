@@ -5,7 +5,9 @@ on:
     branches: [ "master" ]
     paths:
       - "Resources/Maps/_NF/Shuttles/**/*.yml" # Ship grids
+      - "Resources/Maps/_HL/Shuttles/**/*.yml" # Ship grids
       - "Resources/Prototypes/_NF/Shipyard/**/*.yml" # Shipyard prototypes
+      - "Resources/Prototypes/_HL/Shipyard/**/*.yml" # Shipyard prototypes
       - "Content.IntegrationTests/Tests/_NF/ShipyardTests.cs" # Shipyard tests
 
 jobs:
