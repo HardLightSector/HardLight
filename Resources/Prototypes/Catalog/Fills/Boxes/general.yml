@@ -133,7 +133,7 @@
 - type: entity
   name: ID card box
   parent: BoxCardboard
-  id: BoxID
+  id: BoxIDs
   description: A box of spare blank ID cards.
   components:
   - type: StorageFill

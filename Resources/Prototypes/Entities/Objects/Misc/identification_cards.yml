@@ -12,7 +12,7 @@
     - idcard
     sprite: Objects/Misc/id_cards.rsi
   - type: Item
-    size: Ginormous
+    size: Small
     heldPrefix: default
     storedRotation: -90
   - type: Access
