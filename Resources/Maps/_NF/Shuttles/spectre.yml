@@ -4360,7 +4360,6 @@ entities:
       parent: 1
     - type: AtmosPipeColor
       color: '#990000FF'
-  - uid: 237
   - uid: 532
     components:
     - type: Transform
