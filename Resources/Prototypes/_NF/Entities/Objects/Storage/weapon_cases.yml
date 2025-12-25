@@ -151,3 +151,30 @@
       - Armor
       tags:
       - Cartridge
+
+- type: entity
+  name: weapon case
+  parent: WeaponCaseHeavy
+  id: WeaponCaseFlammable
+  description: A reinforced casing for storing flammable armaments.
+  suffix: Heavy
+  components:
+  - type: MultiHandedItem
+  - type: Sprite
+    sprite: _NF/Objects/Storage/Cases/guncaseheavy.rsi
+  - type: Item
+    sprite: _NF/Objects/Storage/Cases/guncaseheavy.rsi
+    size: Ginormous
+    shape:
+    - 0,0,10,7
+  - type: Storage
+    maxItemSize: Ginormous
+    grid:
+    - 0,0,9,7
+    whitelist:
+      components:
+      - Gun
+      - Armor
+      tags:
+      - Flammable
+      - FireHelmet
