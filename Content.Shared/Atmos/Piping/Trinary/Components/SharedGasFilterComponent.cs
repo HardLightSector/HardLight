@@ -15,13 +15,16 @@ namespace Content.Shared.Atmos.Piping.Trinary.Components
         public float TransferRate { get; }
         public bool Enabled { get; }
         public Gas? FilteredGas { get; }
-
-        public GasFilterBoundUserInterfaceState(string filterLabel, float transferRate, bool enabled, Gas? filteredGas)
+        public bool HighFlow { get; }
+        public float MaxTransferRate { get; }
+        public GasFilterBoundUserInterfaceState(string filterLabel, float transferRate, bool enabled, Gas? filteredGas, bool highFlow, float maxTransferRate)
         {
             FilterLabel = filterLabel;
             TransferRate = transferRate;
             Enabled = enabled;
             FilteredGas = filteredGas;
+            HighFlow = highFlow;
+            MaxTransferRate = maxTransferRate;
         }
     }
 
