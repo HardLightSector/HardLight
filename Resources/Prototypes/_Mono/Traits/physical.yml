@@ -369,6 +369,7 @@
   - Hemophilia
   speciesBlacklist:
   - IPC
+  - Synth # HardLight
   blacklist:
     components:
     - BorgChassis

@@ -56,7 +56,7 @@
           min: 20
       - !type:PopupMessage
         conditions:
-        - !type:OrganType # HardLight (Liv): Redundancy; Synths can't become nauseous
+        - !type:OrganType # HardLight: Prevents Synths becoming nauseous
           type: Synth
           shouldHave: false
         - !type:ReagentThreshold
@@ -67,7 +67,7 @@
         probability: 0.2
       - !type:ChemVomit
         conditions:
-        - !type:OrganType # HardLight (Liv)
+        - !type:OrganType # HardLight: Prevents Synths vomiting
           type: Synth
           shouldHave: false
         - !type:ReagentThreshold
@@ -178,7 +178,7 @@
             Poison: 1.5
       - !type:ChemVomit
         conditions:
-        - !type:OrganType # HardLight (Liv)
+        - !type:OrganType # HardLight: Prevents Synths vomiting
           type: Synth
           shouldHave: false
         - !type:ReagentThreshold
@@ -450,7 +450,7 @@
             Radiation: -1
       - !type:ChemVomit
         conditions:
-        - !type:OrganType # HardLight (Liv)
+        - !type:OrganType # HardLight: Prevents Synths vomiting
           type: Synth
           shouldHave: false
         probability: 0.02
@@ -479,7 +479,7 @@
       effects:
       - !type:ChemVomit
         conditions:
-        - !type:OrganType # HardLight (Liv)
+        - !type:OrganType # HardLight: Prevents Synths vomiting
           type: Synth
           shouldHave: false
         - !type:ReagentThreshold
@@ -540,13 +540,6 @@
         conditions:
         - !type:ReagentThreshold
           min: 25
-      - !type:ModifyBloodLevel # HardLight (Liv): Chems dilute a Synth's blood above 5u
-        conditions:
-        - !type:OrganType
-          type: Synth
-        - !type:ReagentThreshold
-          min: 5
-        amount: -2.75
 
 - type: reagent
   id: Leporazine
@@ -608,7 +601,7 @@
       - !type:ChemVomit
         probability: 0.15
         conditions:
-        - !type:OrganType # HardLight (Liv)
+        - !type:OrganType # HardLight: Prevents Synths vomiting
           type: Synth
           shouldHave: false
         - !type:ReagentThreshold
@@ -1108,7 +1101,7 @@
         probability: 0.2
       - !type:ChemVomit
         conditions:
-        - !type:OrganType # HardLight (Liv)
+        - !type:OrganType # HardLight: Prevents Synths vomiting
           type: Synth
           shouldHave: false
         - !type:ReagentThreshold
@@ -1116,7 +1109,7 @@
         probability: 0.02
       - !type:ChemVomit
         conditions:
-        - !type:OrganType # HardLight (Liv)
+        - !type:OrganType # HardLight: Prevents Synths vomiting
           type: Synth
           shouldHave: false
         - !type:ReagentThreshold
@@ -1276,7 +1269,7 @@
             Piercing: 0.5
       - !type:ChemVomit
         conditions:
-        - !type:OrganType # HardLight (Liv)
+        - !type:OrganType # HardLight: Prevents Synths vomiting
           type: Synth
           shouldHave: false
         - !type:ReagentThreshold

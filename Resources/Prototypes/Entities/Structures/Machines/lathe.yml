@@ -983,6 +983,7 @@
     whitelist:
       tags:
       - Ore
+  - type: OreSiloClient
   - type: Lathe
     idleState: icon
     runningState: building

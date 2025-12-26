@@ -68,7 +68,7 @@
   spawn: RollingPin
   icon: { sprite: Objects/Tools/rolling_pin.rsi, state: icon }
 
-- type: tool # HardLight (Liv): Creates a tool type for medical multitools (for Synths)
+- type: tool # HardLight: Creates a tool type for medical multitools to use (for Synths)
   id: Operating
   name: tool-quality-operating-name
   toolName: tool-quality-operating-tool-name

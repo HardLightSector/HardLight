@@ -5,6 +5,6 @@
     - type: OwnedDebris
     - type: LocalityLoader
     - type: ForceAnchor
-    - type: TimedDespawn # Frontier
-      lifetime: 7200 # Frontier
+    #- type: TimedDespawn # Frontier
+     # lifetime: 7200 # Frontier
     #- type: WorldLoader

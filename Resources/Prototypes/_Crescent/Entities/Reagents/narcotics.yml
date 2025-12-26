@@ -186,7 +186,7 @@
         amount: -1.0
       - !type:HealthChange
         conditions:
-        - !type:OrganType
+        - !type:OrganType # HardLight
           type: Synth
           shouldHave: false
         - !type:ReagentThreshold
@@ -197,7 +197,7 @@
             Slash: 3
             Piercing: 3
             Blunt: 1
-      - !type:HealthChange # HardLight (Liv): Makes mechanites in any capactity lethal for Synths
+      - !type:HealthChange # HardLight: Makes mechanites lethal to Synths
         conditions:
         - !type:OrganType
           type: Synth
@@ -206,7 +206,7 @@
             Slash: 5
             Piercing: 5
             Blunt: 3
-      - !type:AdjustReagent # HardLight (Liv): Makes mechanites remove nanites from the bloodstream
+      - !type:AdjustReagent # HardLight: Makes mechanites remove nanites from the bloodstream
         reagent: Nanites
         amount: -5
 

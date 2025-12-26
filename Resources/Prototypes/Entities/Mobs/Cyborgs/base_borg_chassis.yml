@@ -155,8 +155,6 @@
   - type: Speech
     speechVerb: Robotic
     speechSounds: Borg
-    allowedEmotes:
-    - Laugh
   - type: Vocal
     sounds:
       Unsexed: UnisexSilicon

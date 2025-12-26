@@ -48,7 +48,7 @@
   onlyWhitelisted: true
   points:
     Hair:
-      points: 0
+      points: 1
       required: false
     FacialHair:
       points: 0

@@ -65,6 +65,9 @@ namespace Content.Server.GameTicking
         [ViewVariables]
         private GameRunLevel _runLevel;
 
+        [ViewVariables]
+        private EntityUid? _pendingDefaultMapDelete;
+
         private RoundEndMessageEvent.RoundEndPlayerInfo[]? _replayRoundPlayerInfo;
 
         private string? _replayRoundText;
@@ -558,6 +561,7 @@ namespace Content.Server.GameTicking
             var defaultMapEntityUid = _mapManager.GetMapEntityId(DefaultMap);
             if (DefaultMap != null)
             {
+                var scheduledDefaultMap = DefaultMap; // Capture the current DefaultMap value
                 Timer.Spawn(TimeSpan.FromSeconds(30), () =>
                 {
                     // Send all players on the default map to the lobby before deleting the map
@@ -569,6 +573,18 @@ namespace Content.Server.GameTicking
                             PlayerJoinLobby(session);
                         }
                     }
+                    // Ensure we're still in post-round and the default map hasn't changed
+                    if (RunLevel != GameRunLevel.PostRound)
+                        return;
+
+                    if (scheduledDefaultMap == MapId.Nullspace)
+                        return;
+
+                    if (DefaultMap != scheduledDefaultMap)
+                        return;
+
+                    // Move players off the default map before deletion
+                    EvacuatePlayersFromMap(scheduledDefaultMap);
 
                     QueueDel(defaultMapEntityUid);
                 });
@@ -792,6 +808,24 @@ namespace Content.Server.GameTicking
         }
 
         /// <summary>
+        ///     Moves all players on the specified map to the lobby.
+        /// </summary>
+        private void EvacuatePlayersFromMap(MapId mapId)
+        {
+            foreach (var session in _playerManager.Sessions)
+            {
+                if (session.AttachedEntity is EntityUid attached)
+                {
+                    var xform = Transform(attached);
+                    if (xform.MapID == mapId)
+                    {
+                        PlayerJoinLobby(session);
+                    }
+                }
+            }
+        }
+
+        /// <summary>
         ///     Cleanup that has to run to clear up anything from the previous round.
         ///     Stuff like wiping the previous map clean.
         /// </summary>
@@ -802,6 +836,26 @@ namespace Content.Server.GameTicking
             //            {
             //                PlayerJoinLobby(player);
             //            }
+
+            // If the previous round requested default map deletion, perform it now in a deterministic phase.
+            if (_pendingDefaultMapDelete != null)
+            {
+                // Ensure players on that map are moved to lobby before deletion
+                EvacuatePlayersFromMap(DefaultMap);
+
+                QueueDel(_pendingDefaultMapDelete.Value);
+                _pendingDefaultMapDelete = null;
+            }
+            // If DefaultMap is valid but wasn't scheduled for deletion (e.g., round start failed before EndRound),
+            // we need to delete it here to prevent infinite map creation on repeated round start failures.
+            else if (DefaultMap != MapId.Nullspace && _mapManager.MapExists(DefaultMap))
+            {
+                // Move players off the map before deletion
+                EvacuatePlayersFromMap(DefaultMap);
+
+                var mapEntity = _mapManager.GetMapEntityId(DefaultMap);
+                QueueDel(mapEntity);
+            }
 
             // Round restart cleanup event, so entity systems can reset.
             var ev = new RoundRestartCleanupEvent();

@@ -11,14 +11,14 @@
     Food:
       effects:
       - !type:SatiateHunger
-      - !type:HealthChange
+      - !type:HealthChange # HardLight: Makes nutriment remove toxins from the bloodstream for Synths
         conditions:
         - !type:OrganType
           type: Synth
         damage:
           groups:
             Toxin: -3
-      - !type:ModifyBloodLevel
+      - !type:ModifyBloodLevel # HardLight: Makes nutriment restore blood level for Synths
         conditions:
         - !type:OrganType
           type: Synth
@@ -51,7 +51,7 @@
       - !type:ModifyBleedAmount
         amount: -0.25
       - !type:SatiateHunger #Numbers are balanced with this in mind + it helps limit how much healing you can get from food
-      - !type:AdjustReagent # HardLight (Liv): Allows Synths to convert vitamin to nutriment
+      - !type:AdjustReagent # HardLight: Allows Synths to convert vitamin to nutriment
         conditions:
         - !type:OrganType
           type: Synth
@@ -84,7 +84,7 @@
       - !type:ModifyBloodLevel
         amount: 1 # weaker than iron but pretty good all things considered
       - !type:SatiateHunger
-      - !type:AdjustReagent # HardLight (Liv): Allows Synths to convert protein to nutriment
+      - !type:AdjustReagent # HardLight: Allows Synths to convert protein to nutriment
         conditions:
         - !type:OrganType
           type: Synth
@@ -110,7 +110,7 @@
           reagent: Nutriment
           min: 0.1
         factor: 1
-      - !type:AdjustReagent # HardLight (Liv): Allows Synths to convert sugar to nutriment
+      - !type:AdjustReagent # HardLight: Allows Synths to convert sugar to nutriment
         conditions:
         - !type:OrganType
           type: Synth
