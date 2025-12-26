@@ -9,6 +9,7 @@
   - type: GasPressurePump
     enabled: false
     maxTargetPressure: 13500
+    HighFlow: true
 
 - type: entity
   parent: GasVolumePump
@@ -20,6 +21,7 @@
   components:
     - type: GasVolumePump
       maxTransferRate: 600
+      HighFlow: true
 
 - type: entity
   parent: GasDualPortVentPump
@@ -31,3 +33,4 @@
   components:
     - type: GasVentPump
       maxPressure: 13500
+      HighFlow: true

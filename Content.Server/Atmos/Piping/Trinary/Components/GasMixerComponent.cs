@@ -32,7 +32,7 @@ namespace Content.Server.Atmos.Piping.Trinary.Components
         public float MaxTargetPressure = Atmospherics.MaxOutputPressure;
 
         [ViewVariables(VVAccess.ReadWrite)]
-        [DataField("highFlow")]
+        [DataField("HighFlow")]
         public bool HighFlow = false;
 
         [ViewVariables(VVAccess.ReadWrite)]

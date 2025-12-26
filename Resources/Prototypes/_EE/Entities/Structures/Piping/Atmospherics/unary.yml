@@ -8,6 +8,7 @@
   components:
     - type: GasVentPump
       maxPressure: 13500
+      HighFlow: true
 
 - type: entity
   parent: GasVentScrubber
@@ -20,6 +21,7 @@
     - type: GasVentScrubber
       maxPressure: 13500
       maxTransferRate: 600
+      HighFlow: true
 
 - type: entity
   parent: GasOutletInjector
@@ -32,3 +34,4 @@
     - type: GasOutletInjector
       maxTransferRate: 600
       maxPressure: 13500
+      HighFlow: true

@@ -23,7 +23,7 @@ namespace Content.Server.Atmos.Piping.Trinary.Components
         [DataField]
         public float MaxTransferRate = Atmospherics.MaxTransferRate;
 
-        [DataField]
+        [DataField("HighFlow")]
         public bool HighFlow = false;
 
         [DataField]

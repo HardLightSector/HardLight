@@ -57,7 +57,7 @@ namespace Content.Server.Atmos.Piping.Unary.Components
         [DataField]
         public bool WideNet { get; set; } = false;
 
-        [DataField]
+        [DataField("HighFlow")]
         public bool HighFlow { get; set; } = false;
 
         public GasVentScrubberData ToAirAlarmData()

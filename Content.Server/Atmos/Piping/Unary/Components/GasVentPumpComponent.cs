@@ -110,7 +110,7 @@ namespace Content.Server.Atmos.Piping.Unary.Components
         [GuidebookData]
         public float MaxPressure = Atmospherics.MaxOutputPressure;
 
-        [DataField]
+        [DataField("HighFlow")]
         public bool HighFlow = false;
 
         /// <summary>

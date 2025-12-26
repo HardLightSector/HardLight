@@ -35,5 +35,8 @@ namespace Content.Server.Atmos.Piping.Unary.Components
 
         [DataField("inlet")]
         public string InletName { get; set; } = "pipe";
+
+        [DataField("HighFlow")]
+        public bool HighFlow = false;
     }
 }

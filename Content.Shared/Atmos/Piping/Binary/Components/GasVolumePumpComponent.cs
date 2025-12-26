@@ -8,7 +8,7 @@ public sealed partial class GasVolumePumpComponent : Component
     [DataField, AutoNetworkedField]
     public bool Enabled = true;
 
-    [DataField, AutoNetworkedField]
+    [DataField("HighFlow"), AutoNetworkedField]
     public bool HighFlow = false;
 
     [DataField]
