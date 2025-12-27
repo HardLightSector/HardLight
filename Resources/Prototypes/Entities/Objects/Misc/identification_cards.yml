@@ -847,6 +847,7 @@
     - NuclearOperative
     - SyndicateAgent
     - Wizard
+    - Xenoborg
     - Pirate # Mono
   - type: Tag #  Ignore Chameleon tags
     tags:

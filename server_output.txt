@@ -1,0 +1,17 @@
+[INFO] root: Server -> Starting
+[INFO] cfg: Configuration loaded from file
+[INFO] srv: Name: MyServer
+[INFO] srv: TickRate: 30(33.33ms)
+[INFO] srv: Max players: 256
+[INFO] szr: Serializer Types Hash: B53C537BD9EF0BD5A57DAA8B29216B0CFAD9A71073227B54CADB0DBA29C662CF
+[ERRO] loc: [/Locale/en-US/station-laws/laws.ftl]: For id:law-xenoborg-1 already exist entry of type: Message
+[/Locale/en-US/station-laws/laws.ftl]: For id:law-xenoborg-2 already exist entry of type: Message
+[/Locale/en-US/station-laws/laws.ftl]: For id:law-xenoborg-3 already exist entry of type: Message
+[/Locale/en-US/station-laws/laws.ftl]: For id:law-xenoborg-4 already exist entry of type: Message
+[/Locale/en-US/station-laws/laws.ftl]: For id:law-xenoborg-5 already exist entry of type: Message
+[/Locale/en-US/station-laws/laws.ftl]: For id:law-mothershipcore-1 already exist entry of type: Message
+[/Locale/en-US/station-laws/laws.ftl]: For id:law-mothershipcore-2 already exist entry of type: Message
+[/Locale/en-US/station-laws/laws.ftl]: For id:law-mothershipcore-3 already exist entry of type: Message
+[/Locale/en-US/station-laws/laws.ftl]: For id:law-mothershipcore-4 already exist entry of type: Message
+[/Locale/en-US/station-laws/laws.ftl]: For id:law-mothershipcore-5 already exist entry of type: Message
+

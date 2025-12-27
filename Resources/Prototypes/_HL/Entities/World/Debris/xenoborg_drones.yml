@@ -1,0 +1,70 @@
+# Xenoborg autonomous combat drone spawners for deep space encounters
+# These spawn beyond 5.5K distance as rare hostile encounters
+
+- type: entity
+  id: XenoborgDroneBase
+  abstract: true
+  name: xenoborg drone
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: GridSpawner
+    nameGrid: true
+  - type: IFF
+    color: "#ff4444" # Red for hostile
+  - type: SpaceDebris
+
+- type: entity
+  id: XenoborgDroneLbit
+  parent: XenoborgDroneBase
+  name: xenoborg drone (lbit)
+  components:
+  - type: GridSpawner
+    path: /Maps/_HL/drones/lbit.yml
+
+- type: entity
+  id: XenoborgDroneLbyte
+  parent: XenoborgDroneBase
+  name: xenoborg drone (lbyte)
+  components:
+  - type: GridSpawner
+    path: /Maps/_HL/drones/lbyte.yml
+
+- type: entity
+  id: XenoborgDroneLgbyte
+  parent: XenoborgDroneBase
+  name: xenoborg drone (lgbyte)
+  components:
+  - type: GridSpawner
+    path: /Maps/_HL/drones/lgbyte.yml
+
+- type: entity
+  id: XenoborgDroneMbyte
+  parent: XenoborgDroneBase
+  name: xenoborg drone (mbyte)
+  components:
+  - type: GridSpawner
+    path: /Maps/_HL/drones/mbyte.yml
+
+- type: entity
+  id: XenoborgDroneMgbyte
+  parent: XenoborgDroneBase
+  name: xenoborg drone (mgbyte)
+  components:
+  - type: GridSpawner
+    path: /Maps/_HL/drones/mgbyte.yml
+
+- type: entity
+  id: XenoborgDroneMtbyte
+  parent: XenoborgDroneBase
+  name: xenoborg drone (mtbyte)
+  components:
+  - type: GridSpawner
+    path: /Maps/_HL/drones/mtbyte.yml
+
+- type: entity
+  id: XenoborgDroneSgbyte
+  parent: XenoborgDroneBase
+  name: xenoborg drone (sgbyte)
+  components:
+  - type: GridSpawner
+    path: /Maps/_HL/drones/sgbyte.yml

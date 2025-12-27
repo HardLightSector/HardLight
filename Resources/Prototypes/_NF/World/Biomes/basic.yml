@@ -184,6 +184,29 @@
   - type: NoiseDrivenDebrisSelector
     noiseChannel: Wreck
     debrisTable:
+    # Xenoborg combat drones - very rare encounters in deep space (beyond 5K)
+    - id: XenoborgDroneLbit
+      prob: 0.005
+      orGroup: wreck
+    - id: XenoborgDroneLbyte
+      prob: 0.05
+      orGroup: wreck
+    - id: XenoborgDroneLgbyte
+      prob: 0.02
+      orGroup: wreck
+    - id: XenoborgDroneMbyte
+      prob: 0.03
+      orGroup: wreck
+    - id: XenoborgDroneMgbyte
+      prob: 0.02
+      orGroup: wreck
+    - id: XenoborgDroneMtbyte
+      prob: 0.01
+      orGroup: wreck
+    - id: XenoborgDroneSgbyte
+      prob: 0.02
+      orGroup: wreck
+    # Regular wrecks
     - id: NFWreckDebrisBrassLarge
       prob: 0.3
       orGroup: wreck

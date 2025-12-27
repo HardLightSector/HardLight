@@ -49,6 +49,9 @@
   id: NFCartridgeGrenade40mmFlash
 
 - type: Tag
+  id: AIShipWeapon
+
+- type: Tag
   id: NFCartridgeGrenade40mmEmp
 
 - type: Tag

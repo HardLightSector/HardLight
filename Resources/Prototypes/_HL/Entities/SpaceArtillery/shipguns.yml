@@ -161,6 +161,179 @@
       machine_parts: !type:Container
   - type: Machine
     board: CivSunderWeaponBoard
+    
+- type: entity
+  id: AIWeaponTurretSunder
+  name: Hostile Curio-1007 proton cannon "Sunder"
+  parent: [ WeaponTurretSunder ]
+  description: An AI controlled weapon, you're too close.  
+  components:
+  - type: Sprite
+    sprite: _HL/Objects/ShuttleWeapons/sunder.rsi
+    layers:
+    - state: space_artillery
+  - type: Tag
+    tags:
+    - AIShipWeapon
+  - type: HitscanRadarSignature
+    radarColor: "#FF0000"
+    lifeTime: 1.0
+  - type: HTN
+    rootTask:
+      task: ShuttleDeedTurretCompound
+    blackboard:
+      RotateSpeed: !type:Single
+        3.141
+      SoundTargetInLOS: !type:SoundPathSpecifier
+        path: /Audio/Effects/double_beep.ogg
+
+- type: entity
+  id: AIWeaponTurretType35
+  name: Hostile Type35
+  parent: [ WeaponTurretType35 ]
+  description: An AI controlled weapon, you're too close.  
+  components:
+  - type: Sprite
+    sprite: _HL/Objects/ShuttleWeapons/t35.rsi
+    layers:
+    - state: space_artillery
+  - type: Tag
+    tags:
+    - AIShipWeapon
+  - type: HitscanRadarSignature
+    radarColor: "#FF0000"
+    lifeTime: 1.0
+  - type: HTN
+    rootTask:
+      task: ShuttleDeedTurretCompound
+    blackboard:
+      RotateSpeed: !type:Single
+        3.141
+      SoundTargetInLOS: !type:SoundPathSpecifier
+        path: /Audio/Effects/double_beep.ogg
+
+- type: entity
+  id: AIWeaponLaserTurretApollo
+  name: Hostile Apollo
+  parent: [ WeaponLaserTurretApollo ]
+  description: An AI controlled weapon, you're too close.  
+  components:
+  - type: Sprite
+    sprite: _HL/Objects/ShuttleWeapons/t35.rsi
+    layers:
+    - state: space_artillery
+  - type: Tag
+    tags:
+    - AIShipWeapon
+  - type: HitscanRadarSignature
+    radarColor: "#FF0000"
+    lifeTime: 1.0
+  - type: HTN
+    rootTask:
+      task: ShuttleDeedTurretCompound
+    blackboard:
+      RotateSpeed: !type:Single
+        3.141
+      SoundTargetInLOS: !type:SoundPathSpecifier
+        path: /Audio/Effects/double_beep.ogg
+
+- type: entity
+  id: AIWeaponLaserTurretFlayer
+  name: Hostile Flayer
+  parent: [ WeaponLaserTurretFlayer ]
+  description: An AI controlled weapon, you're too close.  
+  components:
+  - type: Sprite
+    sprite: _HL/Objects/ShuttleWeapons/flayer.rsi
+    layers:
+    - state: space_artillery
+  - type: Tag
+    tags:
+    - AIShipWeapon
+  - type: HitscanRadarSignature
+    radarColor: "#FF0000"
+    lifeTime: 1.0
+  - type: HTN
+    rootTask:
+      task: ShuttleDeedTurretCompound
+    blackboard:
+      RotateSpeed: !type:Single
+        3.141
+      SoundTargetInLOS: !type:SoundPathSpecifier
+        path: /Audio/Effects/double_beep.ogg
+    
+- type: entity
+  id: AIWeaponLaserTurretL1Phalanx
+  name: Hostile phalanx
+  parent: [ WeaponLaserTurretL1Phalanx ]
+  description: An AI controlled weapon, you're too close.  
+  components:
+  - type: Sprite
+    sprite: _HL/Objects/ShuttleWeapons/phalanx.rsi
+    layers:
+    - state: space_artillery
+  - type: Tag
+    tags:
+    - AIShipWeapon
+  - type: HitscanRadarSignature
+    radarColor: "#FF0000"
+    lifeTime: 1.0
+  - type: HTN
+    rootTask:
+      task: ShuttleDeedTurretCompound
+    blackboard:
+      RotateSpeed: !type:Single
+        3.141
+      SoundTargetInLOS: !type:SoundPathSpecifier
+        path: /Audio/Effects/double_beep.ogg
+
+- type: entity
+  id: AIWeaponTurretAdderScattercannon
+  name: Hostile Adder
+  parent: [ WeaponTurretAdderScattercannon ]
+  description: An AI controlled weapon, you're too close.  
+  components:
+  - type: Sprite
+    sprite: _HL/Objects/ShuttleWeapons/adder.rsi
+    layers:
+    - state: space_artillery
+  - type: Tag
+    tags:
+    - AIShipWeapon
+  - type: HitscanRadarSignature
+    radarColor: "#FF0000"
+    lifeTime: 1.0
+  - type: HTN
+    rootTask:
+      task: ShuttleDeedTurretCompound
+    blackboard:
+      RotateSpeed: !type:Single
+        3.141
+      SoundTargetInLOS: !type:SoundPathSpecifier
+        path: /Audio/Effects/double_beep.ogg
+    
+- type: entity
+  id: AIWeaponTurretCharonette
+  name: Hostile massdriver
+  parent: [ WeaponTurretCharonette ]
+  description: An AI controlled weapon, you're too close.  
+  components:
+  - type: Sprite
+    sprite: _HL/Objects/ShuttleWeapons/charonette.rsi
+    layers:
+    - state: space_artillery
+  - type: Tag
+    tags:
+    - AIShipWeapon
+  - type: HitscanRadarSignature
+    radarColor: "#FF0000"
+    lifeTime: 1.0
+  - type: HTN
+    rootTask:
+      task: ShuttleDeedTurretCompound
+    blackboard:
+      SoundTargetInLOS: !type:SoundPathSpecifier
+        path: /Audio/Effects/double_beep.ogg
 
 - type: entity
   id: CVWeaponTurretFang

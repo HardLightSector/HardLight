@@ -426,6 +426,9 @@
   id: ConveyorAssembly
 
 - type: Tag
+  id: ConstructionMaterial
+
+- type: Tag
   id: CoreTattoo
 
 - type: Tag
@@ -959,6 +962,9 @@
   id: MindTransferTarget
 
 - type: Tag
+  id: Multitool
+
+- type: Tag
   id: Mineshaft
 
 - type: Tag
@@ -983,7 +989,15 @@
   id: Mouse
 
 - type: Tag
-  id: Multitool
+  id: MothershipCoreGhostrole # spawn whitelist : SpawnPointGhostRoleMothershipCore
+
+
+- type: Tag
+  id: MothershipModule # Cyborg module category for evil xenoborg core
+
+
+- type: Tag
+  id: Mushroom  # ConstructionGraph: Soil
 
 - type: Tag
   id: NoBlockAnchoring
@@ -1013,6 +1027,24 @@
   id: OperatingTable
 
 - type: Tag
+  id: Ore # Storage whitelist: OreBag, OreBox. MaterialStorage whitelist: OreProcessor
+
+- type: Tag
+  id: OreBananium # CargoBounty: BountySalvageOreBananium
+
+- type: Tag
+  id: OreGold # CargoBounty: BountySalvageOreGold
+
+- type: Tag
+  id: OrePlasma # CargoBounty: BountySalvageOrePlasma
+
+- type: Tag
+  id: OreSilver # CargoBounty: BountySalvageOreSilver
+
+- type: Tag
+  id: OreUranium # CargoBounty: BountySalvageOreUranium
+
+- type: Tag
   id: Openable
 
 - type: Tag
@@ -1029,9 +1061,6 @@
 
 - type: Tag
   id: Kidneys
-
-- type: Tag
-  id: Ore
 
 - type: Tag
   id: Packet
@@ -1534,6 +1563,24 @@
 
 - type: Tag
   id: WriteIgnoreStamps
+
+- type: Tag
+  id: XenoborgGhostrole # spawn whitelist : SpawnPointGhostRoleXenoborg
+
+- type: Tag
+  id: XenoborgModuleEngi # Cyborg module category for evil engineer xenoborg
+
+- type: Tag
+  id: XenoborgModuleGeneric # Cyborg module category for evil xenoborg
+
+- type: Tag
+  id: XenoborgModuleHeavy # Cyborg module category for evil heavy xenoborg
+
+- type: Tag
+  id: XenoborgModuleScout # Cyborg module category for evil scout xenoborg
+
+- type: Tag
+  id: XenoborgModuleStealth # Cyborg module category for evil stealth xenoborg
 
 # ALPHABETICAL
 

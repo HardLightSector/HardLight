@@ -49,7 +49,7 @@
       points: 0
       required: false
     Tail:
-      points: 1
+      points: 2
       required: true
       defaultMarkings: [ ChitinidWingsDefault ]
     Snout:

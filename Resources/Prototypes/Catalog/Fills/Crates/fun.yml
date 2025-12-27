@@ -453,6 +453,48 @@
         amount: 2
       - id: DeathPaintTwo
         amount: 2
+      - id: SprayPaintBlueDeep
+        amount: 2
+        prob: 0.33
+      - id: SprayPaintRedDeep
+        amount: 2
+        prob: 0.33
+      - id: SprayPaintGreenDeep
+        amount: 2
+        prob: 0.33
+      - id: SprayPaintBlackDeep
+        amount: 2
+        prob: 0.33
+      - id: SprayPaintPurpleDeep
+        amount: 2
+        prob: 0.33
+      - id: SprayPaintSilver
+        amount: 1
+        prob: 0.1
+      - id: SprayPaintGrey
+        amount: 2
+        prob: 0.33
+      - id: SprayPaintGreyDeep
+        amount: 2
+        prob: 0.33
+      - id: SprayPaintAqua
+        amount: 2
+        prob: 0.33
+      - id: SprayPaintAquaDeep
+        amount: 2
+        prob: 0.33
+      - id: SprayPaintGold
+        amount: 1
+        prob: 0.05
+      - id: SprayPaintYellow
+        amount: 2
+        prob: 0.33
+      - id: SprayPaintPink
+        amount: 2
+        prob: 0.33
+      - id: SprayPaintBrown
+        amount: 2
+        prob: 0.33
 
 - type: entity
   name: dartboard box set

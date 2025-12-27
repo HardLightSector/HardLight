@@ -211,23 +211,129 @@
     - sprite: Mobs/Aliens/paradox_clone.rsi
       state: preview
 
-# - type: entity
-#  categories: [ HideSpawnMenu, Spawner ]
-#  parent: BaseAntagSpawner
-#  id: SpawnPointGhostDerelictCyborg
-#  components:
-#  - type: GhostRole
-#    name: ghost-role-information-derelict-cyborg-name
-#    description: nf-ghost-role-information-derelict-cyborg-description # Frontier
-#    rules: ghost-role-information-silicon-rules
-#    raffle:
-#      settings: default
-#  - type: Sprite
-#    sprite: Markers/jobs.rsi
-#    layers:
-#    - state: green
-#    - sprite: Mobs/Silicon/chassis.rsi
-#      state: derelict_icon
+- type: entity
+  categories: [ HideSpawnMenu, Spawner ]
+  parent: SpawnPointGhostDerelictCyborg
+  id: SpawnPointGhostDerelictEngineeringCyborg
+  components:
+  - type: GhostRole
+    name: ghost-role-information-derelict-engineering-cyborg-name
+    description: ghost-role-information-derelict-engineering-cyborg-description
+    rules: ghost-role-information-silicon-rules
+    raffle:
+      settings: default
+
+- type: entity
+  categories: [ HideSpawnMenu, Spawner ]
+  parent: BaseAntagSpawner
+  id: SpawnPointGhostDerelictCyborg
+  components:
+  - type: GhostRole
+    name: ghost-role-information-derelict-cyborg-name
+    description: ghost-role-information-derelict-cyborg-description
+    rules: ghost-role-information-silicon-rules
+    mindRoles:
+    - MindRoleSubvertedSilicon
+    raffle:
+      settings: default
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+    - state: green
+    - sprite: Mobs/Silicon/chassis.rsi
+      state: derelict_icon
+
+- type: entity
+  categories: [ Spawner ]
+  parent: BaseAntagSpawner
+  id: SpawnPointGhostRoleMothershipCore
+  components:
+  - type: Tag
+    tags:
+    - ForceFixRotations
+    - MothershipCoreGhostrole
+  - type: GhostRole
+    name: ghost-role-information-mothership-core-name
+    description: ghost-role-information-mothership-core-desc
+    rules: ghost-role-information-silicon-rules
+    mindRoles:
+    - MindRoleMothershipCore
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+    - state: green
+    - sprite: Mobs/Silicon/mothership_core.rsi
+      state: core-idle
+
+- type: entity
+  categories: [ HideSpawnMenu, Spawner ]
+  parent: BaseAntagSpawner
+  id: SpawnPointGhostRoleXenoborg
+  components:
+  - type: Tag
+    tags:
+    - ForceFixRotations
+    - XenoborgGhostrole
+  - type: GhostRole
+    name: ghost-role-information-xenoborg-name
+    description: ghost-role-information-xenoborg-desc
+    rules: ghost-role-information-silicon-rules
+    mindRoles:
+    - MindRoleXenoborg
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+    - state: green
+    - sprite: Mobs/Silicon/chassis.rsi
+      state: xenoborg_engi
+
+- type: entity
+  categories: [ HideSpawnMenu, Spawner ]
+  parent: SpawnPointGhostDerelictCyborg
+  id: SpawnPointGhostDerelictJanitorCyborg
+  components:
+  - type: GhostRole
+    name: ghost-role-information-derelict-janitor-cyborg-name
+    description: ghost-role-information-derelict-janitor-cyborg-description
+    rules: ghost-role-information-silicon-rules
+    raffle:
+      settings: default
+
+- type: entity
+  categories: [ HideSpawnMenu, Spawner ]
+  parent: SpawnPointGhostDerelictCyborg
+  id: SpawnPointGhostDerelictMedicalCyborg
+  components:
+  - type: GhostRole
+    name: ghost-role-information-derelict-medical-cyborg-name
+    description: ghost-role-information-derelict-medical-cyborg-description
+    rules: ghost-role-information-silicon-rules
+    raffle:
+      settings: default
+
+- type: entity
+  categories: [ HideSpawnMenu, Spawner ]
+  parent: SpawnPointGhostDerelictCyborg
+  id: SpawnPointGhostDerelictMiningCyborg
+  components:
+  - type: GhostRole
+    name: ghost-role-information-derelict-mining-cyborg-name
+    description: ghost-role-information-derelict-mining-cyborg-description
+    rules: ghost-role-information-silicon-rules
+    raffle:
+      settings: default
+
+- type: entity
+  categories: [ HideSpawnMenu, Spawner ]
+  parent: SpawnPointGhostDerelictCyborg
+  id: SpawnPointGhostDerelictSyndicateAssaultCyborg
+  components:
+  - type: GhostRole
+    name: ghost-role-information-derelict-syndicate-assault-cyborg-name
+    description: ghost-role-information-derelict-syndicate-assault-cyborg-description
+    rules: ghost-role-information-silicon-rules
+    raffle:
+      settings: default
 
 - type: entity
   categories: [ HideSpawnMenu, Spawner ]

@@ -113,7 +113,7 @@
   - type: WirelessNetworkConnection
     range: 500
   - type: Gun
-    fireRate: 20
+    fireRate: 7
     minAngle: 0
     maxAngle: 5
     projectileSpeed: 185
@@ -193,7 +193,7 @@
         density: 1500
   - type: Gun
     projectileSpeed: 70
-    fireRate: 13
+    fireRate: 5
     minAngle: 0
     maxAngle: 0
     burstCooldown: 60
@@ -474,7 +474,7 @@
   - type: WirelessNetworkConnection
     range: 500
   - type: Gun
-    fireRate: 20
+    fireRate: 10
     minAngle: 0
     maxAngle: 3
     soundGunshot:
@@ -902,7 +902,7 @@
   - type: WirelessNetworkConnection
     range: 500
   - type: Gun
-    fireRate: 25
+    fireRate: 8
     minAngle: 0
     maxAngle: 4
     soundGunshot:

@@ -41,7 +41,7 @@
     ports:
     - Toggle
   - type: Gun
-    fireRate: 12
+    fireRate: 8
     projectileSpeed: 160
     minAngle: 0
     maxAngle: 5
@@ -118,7 +118,7 @@
     ports:
     - Toggle
   - type: Gun
-    fireRate: 80
+    fireRate: 9
     projectileSpeed: 180
     minAngle: 0
     maxAngle: 8
@@ -521,7 +521,7 @@
     projectileSpeed: 290
     minAngle: 0
     maxAngle: 3
-    fireRate: 11
+    fireRate: 5
     burstCooldown: 8
     burstFireRate: 11
     shotsPerBurst: 10
@@ -842,7 +842,7 @@
     ports:
     - Toggle
   - type: Gun
-    fireRate: 5
+    fireRate: 0.5
     projectileSpeed: 200
     minAngle: 0
     maxAngle: 5
