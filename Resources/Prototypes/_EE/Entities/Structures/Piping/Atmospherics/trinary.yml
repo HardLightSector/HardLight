@@ -54,7 +54,7 @@
   suffix: Flipped
   placement:
     mode: SnapgridCenter
-    components:
+  components:
     - type: GasMixer
       maxTargetPressure: 13500
       HighFlow: true
