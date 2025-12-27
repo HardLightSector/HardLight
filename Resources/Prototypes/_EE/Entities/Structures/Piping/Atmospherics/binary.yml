@@ -14,8 +14,8 @@
 - type: entity
   parent: GasVolumePump
   id: GasVolumePumpHighFlow
-  name: high flow volumetric gas pump. It pumps air at three times the volume of a standard pump
-  description: A pump that moves gas by volume.
+  name: high flow volumetric gas pump
+  description: A pump that moves gas by volume.  It pumps air at three times the volume of a standard pump.
   placement:
     mode: SnapgridCenter
   components:
