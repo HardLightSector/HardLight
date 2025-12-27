@@ -13,7 +13,7 @@
   parent: BaseVessel
   name: SFF Antediluvian
   description: A small antique mining vessel, it's a wonder it's still in service. Sold by SESWC
-  price: 16000
+  price: 23000
   category: Small
   group: Shipyard
   shuttlePath: /Maps/_HL/Shuttles/Shuttles/Antediluvian.yml
