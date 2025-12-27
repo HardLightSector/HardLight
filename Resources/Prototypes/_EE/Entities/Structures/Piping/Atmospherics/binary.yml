@@ -10,6 +10,9 @@
     enabled: false
     maxTargetPressure: 13500
     HighFlow: true
+  - type: Construction
+    graph: GasBinaryHighFlow
+    node: pressurepumpHighFlow
 
 - type: entity
   parent: GasVolumePump
@@ -22,6 +25,9 @@
     - type: GasVolumePump
       maxTransferRate: 600
       HighFlow: true
+    - type: Construction
+      graph: GasBinaryHighFlow
+      node: volumepumpHighFlow
 
 - type: entity
   parent: GasDualPortVentPump
@@ -34,3 +40,6 @@
     - type: GasVentPump
       maxPressure: 13500
       HighFlow: true
+    - type: Construction
+      graph: GasBinaryHighFlow
+      node: dualportventpumpHighFlow

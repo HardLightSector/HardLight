@@ -11,6 +11,9 @@
       transferRate: 3000
       maxTransferRate: 3000
       HighFlow: true
+    - type: Construction
+      graph: GasTrinaryHighFlow
+      node: filterHighFlow
 
 - type: entity
   parent: GasFilterFlipped
@@ -25,6 +28,9 @@
       transferRate: 3000
       maxTransferRate: 3000
       HighFlow: true
+    - type: Construction
+      graph: GasTrinaryHighFlow
+      node: filterflippedHighFlow
 
 - type: entity
   parent: GasMixer
@@ -37,6 +43,9 @@
     - type: GasMixer
       maxTargetPressure: 13500
       HighFlow: true
+    - type: Construction
+      graph: GasTrinaryHighFlow
+      node: mixerHighFlow
 
 - type: entity
   parent: GasMixerFlipped
@@ -49,6 +58,9 @@
     - type: GasMixer
       maxTargetPressure: 13500
       HighFlow: true
+    - type: Construction
+      graph: GasTrinaryHighFlow
+      node: mixerflippedHighFlow
 
 - type: entity
   parent: PressureControlledValve
@@ -61,3 +73,6 @@
     - type: PressureControlledValve
       maxTransferRate: 3000
       HighFlow: true
+    - type: Construction
+      graph: GasTrinaryHighFlow
+      node: pneumaticvalveHighFlow

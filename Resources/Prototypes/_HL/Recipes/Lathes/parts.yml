@@ -7,3 +7,14 @@
   materials:
     Steel: 800
     Plastic: 100
+
+- type: latheRecipe
+  id: HighPressureCasing
+  categories:
+  - Parts
+  completetime: 10
+  result: HighPressureCasing
+  materials:
+    Plasteel: 1500
+    Gold: 100
+    Silver: 100

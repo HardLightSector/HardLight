@@ -175,3 +175,15 @@
   - CivReaperWeaponBoard
   - CivHarbringerWeaponBoard
   - CivBigThrusterBoard
+
+- type: technology
+  id: HighPressureAtmospherics
+  name: research-technology-high-pressure-atmospherics
+  icon:
+    sprite: Structures/Piping/Atmospherics/pump.rsi
+    state: pumpPressure
+  discipline: Industrial
+  tier: 3
+  cost: 15000
+  recipeUnlocks:
+  - HighPressureCasing

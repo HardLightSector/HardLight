@@ -9,6 +9,9 @@
     - type: GasVentPump
       maxPressure: 13500
       HighFlow: true
+    - type: Construction
+      graph: GasUnaryHighFlow
+      node: ventpumphighflow
 
 - type: entity
   parent: GasVentScrubber
@@ -22,6 +25,9 @@
       maxPressure: 13500
       maxTransferRate: 600
       HighFlow: true
+    - type: Construction
+      graph: GasUnaryHighFlow
+      node: ventscrubberhighflow
 
 - type: entity
   parent: GasOutletInjector
@@ -35,3 +41,6 @@
       maxTransferRate: 600
       maxPressure: 13500
       HighFlow: true
+    - type: Construction
+      graph: GasUnaryHighFlow
+      node: outletinjectorhighflow
