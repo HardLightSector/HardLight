@@ -19,7 +19,7 @@
   suffix: Flipped
   placement:
     mode: SnapgridCenter
-    components:
+  components:
     - type: GasFilter
       enabled: false
       transferRate: 3000
