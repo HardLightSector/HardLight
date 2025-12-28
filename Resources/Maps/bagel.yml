@@ -4,8 +4,8 @@ meta:
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 12/11/2025 21:16:46
-  entityCount: 24861
+  time: 12/20/2025 02:09:19
+  entityCount: 24864
 maps:
 - 1
 grids:
@@ -81,14 +81,13 @@ entities:
   - uid: 1
     components:
     - type: MetaData
+      name: Map Entity
     - type: Transform
     - type: Map
       mapPaused: True
     - type: GridTree
     - type: Broadphase
     - type: OccluderTree
-    - type: Parallax
-      parallax: BagelStation
   - uid: 2
     components:
     - type: MetaData
@@ -130172,6 +130171,13 @@ entities:
     - type: Transform
       pos: -33.5,14.5
       parent: 2
+- proto: SpawnPointForensicMantis
+  entities:
+  - uid: 349
+    components:
+    - type: Transform
+      pos: -50.5,3.5
+      parent: 2
 - proto: SpawnPointHeadOfPersonnel
   entities:
   - uid: 22199
@@ -130383,6 +130389,13 @@ entities:
     components:
     - type: Transform
       pos: 49.5,23.5
+      parent: 2
+- proto: SpawnPointPrisoner
+  entities:
+  - uid: 347
+    components:
+    - type: Transform
+      pos: -10.5,-14.5
       parent: 2
 - proto: SpawnPointQuartermaster
   entities:
@@ -130608,6 +130621,13 @@ entities:
     components:
     - type: Transform
       pos: 2.5,20.5
+      parent: 2
+- proto: SpawnPointValet
+  entities:
+  - uid: 348
+    components:
+    - type: Transform
+      pos: -26.5,-23.5
       parent: 2
 - proto: SpawnPointWarden
   entities:

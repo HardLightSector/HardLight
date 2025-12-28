@@ -9,5 +9,3 @@ ShipyardLiquidatorInfo: null # missing from map
 StationEfficiencyCircuitBoard : null # item removed by wizden
 40mmGrenadeIncendiary: null # item removed
 40mmGrenadeStinger: null # item removed
-CircularShieldConsole: null # shield removed awaiting fixes/rework
-CircularShieldBase: null # shield removed awaiting fixes/rework

@@ -29,7 +29,6 @@ entities:
       name: Garden
     - type: Transform
       pos: -0.46875,-0.44527435
-      parent: invalid
     - type: MapGrid
       chunks:
         0,0:

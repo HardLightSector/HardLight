@@ -5,6 +5,7 @@ using Content.Shared.Damage;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.FixedPoint;
 using Content.Shared.VendingMachines;
+using Robust.Shared.Prototypes;
 
 namespace Content.IntegrationTests.Tests.Vending;
 
@@ -62,7 +63,9 @@ public sealed class VendingInteractionTest : InteractionTest
     sprite: error.rsi
 ";
 
-    [Test]
+  private static readonly ProtoId<DamageTypePrototype> BluntId = "Blunt";
+
+  [Test]
     public async Task InteractUITest()
     {
         await SpawnTarget(VendingMachineProtoId);

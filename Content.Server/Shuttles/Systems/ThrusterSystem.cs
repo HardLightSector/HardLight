@@ -1,4 +1,4 @@
-using System.Numerics;
+﻿using System.Numerics;
 using Content.Server.Audio;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
@@ -340,7 +340,7 @@ public sealed class ThrusterSystem : EntitySystem
         if (!EntityManager.TryGetComponent(xform.GridUid, out ShuttleComponent? shuttleComponent))
             return;
 
-        // Logger.DebugS("thruster", $"Enabled thruster {uid}");
+        // Logger.GetSawmill(nameof(ThrusterSystem)).("thruster", $"Enabled thruster {uid}");
 
         switch (component.Type)
         {
@@ -438,7 +438,7 @@ public sealed class ThrusterSystem : EntitySystem
         if (!EntityManager.TryGetComponent(gridId, out ShuttleComponent? shuttleComponent))
             return;
 
-        // Logger.DebugS("thruster", $"Disabled thruster {uid}");
+        // Logger.GetSawmill(nameof(ThrusterSystem)).("thruster", $"Disabled thruster {uid}");
 
         switch (component.Type)
         {
@@ -699,3 +699,4 @@ public sealed class ThrusterSystem : EntitySystem
         return (int)Math.Log2((int)flag);
     }
 }
+

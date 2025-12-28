@@ -14,7 +14,7 @@ namespace Content.Client.Atmos.UI
     public sealed class GasFilterBoundUserInterface : BoundUserInterface
     {
         [ViewVariables]
-        private const float MaxTransferRate = Atmospherics.MaxTransferRate;
+        private float _maxTransferRate = Atmospherics.MaxTransferRate;
 
         [ViewVariables]
         private GasFilterWindow? _window;
@@ -46,6 +46,8 @@ namespace Content.Client.Atmos.UI
         private void OnFilterTransferRatePressed(string value)
         {
             var rate = UserInputParser.TryFloat(value, out var parsed) ? parsed : 0f;
+            if (rate > _maxTransferRate)
+                rate = _maxTransferRate;
 
             SendMessage(new GasFilterChangeRateMessage(rate));
         }
@@ -77,6 +79,7 @@ namespace Content.Client.Atmos.UI
             _window.Title = (cast.FilterLabel);
             _window.SetFilterStatus(cast.Enabled);
             _window.SetTransferRate(cast.TransferRate);
+            _maxTransferRate = cast.HighFlow ? cast.MaxTransferRate * 5f : cast.MaxTransferRate;
             if (cast.FilteredGas is not null)
             {
                 var atmos = EntMan.System<AtmosphereSystem>();

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using Content.Shared.Voting;
@@ -187,7 +187,7 @@ namespace Content.Client.Voting
             existingVote.DisplayVotes = message.DisplayVotes;
             existingVote.TargetEntity = message.TargetEntity;
 
-            // Logger.Debug($"{existingVote.StartTime}, {existingVote.EndTime}, {_gameTiming.RealTime}");
+            // Logger.GetSawmill(nameof(VoteManager)).($"{existingVote.StartTime}, {existingVote.EndTime}, {_gameTiming.RealTime}");
 
             for (var i = 0; i < message.Options.Length; i++)
             {
@@ -267,3 +267,4 @@ namespace Content.Client.Voting
         }
     }
 }
+

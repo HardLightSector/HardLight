@@ -50,7 +50,6 @@ entities:
       name: Tumour
     - type: Transform
       pos: 0.5,0.5
-      parent: invalid
     - type: MapGrid
       chunks:
         -1,-1:
@@ -1837,8 +1836,6 @@ entities:
     - type: Transform
       pos: -4.5,12.5
       parent: 1
-    - type: ShuttleConsoleLock
-      locked: False
     - type: ApcPowerReceiver
       powerLoad: 5
     - type: Battery

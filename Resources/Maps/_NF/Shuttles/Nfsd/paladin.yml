@@ -34,7 +34,6 @@ entities:
       name: Paladin
     - type: Transform
       pos: -0.4917612,-0.4486041
-      parent: invalid
     - type: BecomesStation
       id: Paladin
     - type: MapGrid

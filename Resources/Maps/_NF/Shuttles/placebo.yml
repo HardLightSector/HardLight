@@ -30,7 +30,6 @@ entities:
       name: Placebo
     - type: Transform
       pos: -0.4843776,-0.5312512
-      parent: invalid
     - type: MapGrid
       chunks:
         0,0:

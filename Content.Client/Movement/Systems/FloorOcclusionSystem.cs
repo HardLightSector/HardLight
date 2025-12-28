@@ -10,6 +10,8 @@ public sealed class FloorOcclusionSystem : SharedFloorOcclusionSystem
 {
     [Dependency] private readonly IPrototypeManager _proto = default!;
 
+    private static readonly ProtoId<ShaderPrototype> HorizontalCutShaderId = "HorizontalCut";
+
     private EntityQuery<SpriteComponent> _spriteQuery;
 
     public override void Initialize()
@@ -48,7 +50,7 @@ public sealed class FloorOcclusionSystem : SharedFloorOcclusionSystem
         if (!_spriteQuery.Resolve(sprite.Owner, ref sprite.Comp, false))
             return;
 
-        var shader = _proto.Index<ShaderPrototype>("HorizontalCut").Instance();
+        var shader = _proto.Index(HorizontalCutShaderId).Instance();
 
         if (sprite.Comp.PostShader is not null && sprite.Comp.PostShader != shader)
             return;

@@ -2,8 +2,8 @@
   id: Point
   parent: BaseVessel
   name: SV Point
-  description: Two wrecks welded together that are somehow capable of research. 
-  price: 16100
+  description: Two wrecks welded together that are somehow capable of research.
+  price: 16800
   category: Small
   group: Scrap
   shuttlePath: /Maps/_NF/Shuttles/Scrap/point.yml

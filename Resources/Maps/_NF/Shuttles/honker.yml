@@ -28,7 +28,6 @@ entities:
       name: Honker
     - type: Transform
       pos: -0.6250305,0.875
-      parent: invalid
     - type: BecomesStation
       id: Honker
     - type: MapGrid

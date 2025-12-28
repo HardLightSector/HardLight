@@ -37,7 +37,6 @@ entities:
       name: Bazaar
     - type: Transform
       pos: -8.499361,3.2310195
-      parent: invalid
     - type: MapGrid
       chunks:
         0,0:

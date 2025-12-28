@@ -12,6 +12,7 @@ public sealed class CrateMachineSystem : SharedCrateMachineSystem
     [Dependency] private readonly AppearanceSystem _appearanceSystem = default!;
     [Dependency] private readonly AnimationPlayerSystem _animationSystem = default!;
     [Dependency] private readonly SharedAudioSystem _audioSystem = default!;
+    [Dependency] private readonly SpriteSystem _sprite = default!;
 
     private const string AnimationKey = "crate_machine_animation";
 
@@ -41,20 +42,20 @@ public sealed class CrateMachineSystem : SharedCrateMachineSystem
             return;
         }
 
-        sprite.LayerSetVisible(CrateMachineVisualLayers.Base, true);
-        sprite.LayerSetVisible(CrateMachineVisualLayers.Closed, state == CrateMachineVisualState.Closed);
-        sprite.LayerSetVisible(CrateMachineVisualLayers.Opening, state == CrateMachineVisualState.Opening);
-        sprite.LayerSetVisible(CrateMachineVisualLayers.Closing, state == CrateMachineVisualState.Closing);
-        sprite.LayerSetVisible(CrateMachineVisualLayers.Open, state == CrateMachineVisualState.Open);
-        sprite.LayerSetVisible(CrateMachineVisualLayers.Crate, state == CrateMachineVisualState.Opening);
+        _sprite.LayerSetVisible((uid, sprite), CrateMachineVisualLayers.Base, true);
+        _sprite.LayerSetVisible((uid, sprite), CrateMachineVisualLayers.Closed, state == CrateMachineVisualState.Closed);
+        _sprite.LayerSetVisible((uid, sprite), CrateMachineVisualLayers.Opening, state == CrateMachineVisualState.Opening);
+        _sprite.LayerSetVisible((uid, sprite), CrateMachineVisualLayers.Closing, state == CrateMachineVisualState.Closing);
+        _sprite.LayerSetVisible((uid, sprite), CrateMachineVisualLayers.Open, state == CrateMachineVisualState.Open);
+        _sprite.LayerSetVisible((uid, sprite), CrateMachineVisualLayers.Crate, state == CrateMachineVisualState.Opening);
 
         if (state == CrateMachineVisualState.Opening && !_animationSystem.HasRunningAnimation(uid, AnimationKey))
         {
-            var openingState = sprite.LayerMapTryGet(CrateMachineVisualLayers.Opening, out var flushLayer)
-                ? sprite.LayerGetState(flushLayer)
+            var openingState = _sprite.LayerMapTryGet((uid, sprite), CrateMachineVisualLayers.Opening, out var flushLayer, false)
+                ? _sprite.LayerGetRsiState((uid, sprite), flushLayer)
                 : new RSI.StateId(component.OpeningSpriteState);
-            var crateState = sprite.LayerMapTryGet(CrateMachineVisualLayers.Crate, out var crateFlushLayer)
-                ? sprite.LayerGetState(crateFlushLayer)
+            var crateState = _sprite.LayerMapTryGet((uid, sprite), CrateMachineVisualLayers.Crate, out var crateFlushLayer, false)
+                ? _sprite.LayerGetRsiState((uid, sprite), crateFlushLayer)
                 : new RSI.StateId(component.CrateSpriteState);
 
             // Setup the opening animation to play
@@ -93,8 +94,8 @@ public sealed class CrateMachineSystem : SharedCrateMachineSystem
         }
         else if (state == CrateMachineVisualState.Closing && !_animationSystem.HasRunningAnimation(uid, AnimationKey))
         {
-            var closingState = sprite.LayerMapTryGet(CrateMachineVisualLayers.Closing, out var flushLayer)
-                ? sprite.LayerGetState(flushLayer)
+            var closingState = _sprite.LayerMapTryGet((uid, sprite), CrateMachineVisualLayers.Closing, out var flushLayer, false)
+                ? _sprite.LayerGetRsiState((uid, sprite), flushLayer)
                 : new RSI.StateId(component.ClosingSpriteState);
             // Setup the opening animation to play
             var anim = new Animation

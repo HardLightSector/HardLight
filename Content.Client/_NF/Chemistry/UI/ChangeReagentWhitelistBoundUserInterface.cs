@@ -22,6 +22,7 @@ namespace Content.Client._NF.Chemistry.UI
             _window.OpenCentered();
         }
 
+        [Obsolete]
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);

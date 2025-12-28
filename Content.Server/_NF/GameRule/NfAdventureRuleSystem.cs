@@ -92,9 +92,15 @@ public sealed class NFAdventureRuleSystem : GameRuleSystem<NFAdventureRuleCompon
         foreach (var (player, playerInfo) in sortedPlayers)
         {
             var endBalance = playerInfo.EndBalance;
-            if (_bank.TryGetBalance(player, out var bankBalance))
+            
+            // Only try to get live balance if entity exists and has an attached player session
+            if (EntityManager.EntityExists(player) && 
+                _player.TryGetSessionByEntity(player, out var session))
             {
-                endBalance = bankBalance;
+                if (_bank.TryGetBalance(player, out var bankBalance))
+                {
+                    endBalance = bankBalance;
+                }
             }
 
             // Check if endBalance is valid (non-negative)

@@ -36,7 +36,6 @@ entities:
       name: Peacekeeper
     - type: Transform
       pos: -1.8582788,2.34375
-      parent: invalid
     - type: MapGrid
       chunks:
         0,0:
@@ -2097,92 +2096,12 @@ entities:
       rot: 3.141592653589793 rad
       pos: 4.5,-12.5
       parent: 1
-- proto: d10Dice
-  entities:
-  - uid: 90
-    components:
-    - type: Transform
-      parent: 89
-    - type: Physics
-      canCollide: False
-- proto: d12Dice
-  entities:
-  - uid: 91
-    components:
-    - type: Transform
-      parent: 89
-    - type: Physics
-      canCollide: False
-- proto: d20Dice
-  entities:
-  - uid: 92
-    components:
-    - type: Transform
-      parent: 89
-    - type: Physics
-      canCollide: False
-- proto: d4Dice
-  entities:
-  - uid: 93
-    components:
-    - type: Transform
-      parent: 89
-    - type: Physics
-      canCollide: False
-- proto: d6Dice
-  entities:
-  - uid: 94
-    components:
-    - type: Transform
-      parent: 89
-    - type: Physics
-      canCollide: False
-- proto: d8Dice
-  entities:
-  - uid: 95
-    components:
-    - type: Transform
-      parent: 89
-    - type: Physics
-      canCollide: False
 - proto: DiceBag
   entities:
   - uid: 89
     components:
     - type: Transform
       parent: 82
-    - type: Storage
-      storedItems:
-        90:
-          position: 0,0
-          _rotation: South
-        94:
-          position: 1,0
-          _rotation: South
-        93:
-          position: 2,0
-          _rotation: South
-        92:
-          position: 3,0
-          _rotation: South
-        95:
-          position: 0,1
-          _rotation: South
-        91:
-          position: 1,1
-          _rotation: South
-    - type: ContainerContainer
-      containers:
-        storagebase: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 90
-          - 94
-          - 93
-          - 92
-          - 95
-          - 91
     - type: Physics
       canCollide: False
 - proto: DoubleEmergencyTankO2N2EqualFilled

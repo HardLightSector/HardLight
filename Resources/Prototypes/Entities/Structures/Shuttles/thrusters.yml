@@ -126,11 +126,11 @@
     - Toggle # frontier
   - type: PirateBountyItem # Frontier
     id: Thruster # Frontier
-  - type: RadarBlip # Mono
-    visibleFromOtherGrids: false
-    radarColor: "#99FF99"
-    scale: 1
-    shape: diamond
+  # - type: RadarBlip # Mono
+    # visibleFromOtherGrids: false
+    # radarColor: "#99FF99"
+    # scale: 1
+    # shape: diamond
 
 - type: entity
   id: ThrusterLarge
@@ -205,6 +205,12 @@
   - type: PirateBountyItem
     id: Thruster
   # End Frontier
+  - type: ContainerContainer # HL start
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+  - type: Machine
+    board: CivBigThrusterBoard # HL end
 
 - type: entity
   id: ThrusterUnanchored

@@ -34,7 +34,6 @@ entities:
       name: Gasbender
     - type: Transform
       pos: -0.5426248,-0.4928913
-      parent: invalid
     - type: MapGrid
       chunks:
         0,0:

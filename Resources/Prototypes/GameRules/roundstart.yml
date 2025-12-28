@@ -14,25 +14,25 @@
     # respawnDelay: 10
     # deleteBody: false
 
-# - type: entity
-  # parent: BaseGameRule
-  # id: SubGamemodesRule
-  # components:
-  # - type: SubGamemodes
-    # rules:
-    # - id: Thief
-      # prob: 0.5
-    # - id: SubWizard
-      # prob: 0.05
+#- type: entity
+#  parent: BaseGameRule
+#  id: SubGamemodesRule
+#  components:
+#  - type: SubGamemodes
+#    rules:
+#    - id: Thief
+#      prob: 0.5
+#    - id: SubWizard
+#      prob: 0.05
 
-# - type: entity
-  # parent: BaseGameRule
-  # id: SubGamemodesRuleNoWizard
-  # components:
-  # - type: SubGamemodes
-    # rules:
-    # - id: Thief
-      # prob: 0.5
+#- type: entity
+#  parent: BaseGameRule
+#  id: SubGamemodesRuleNoWizard
+#  components:
+#  - type: SubGamemodes
+#    rules:
+#    - id: Thief
+#      prob: 0.5
 
 # - type: entity
   # parent: BaseGameRule

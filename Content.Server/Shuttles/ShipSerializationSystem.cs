@@ -46,7 +46,6 @@ using Content.Shared.VendingMachines;
 using Robust.Shared.EntitySerialization.Systems; // Added for MapLoaderSystem
 using Robust.Shared.EntitySerialization;
 using Content.Shared.Access.Components; // AccessReaderComponent for access retention
-using Robust.Shared.Serialization.Manager; // For DataNodeParser
 using Robust.Shared.Map.Events; // For BeforeEntityReadEvent
 
 namespace Content.Server.Shuttles.Save
@@ -312,7 +311,7 @@ namespace Content.Server.Shuttles.Save
 
                 var gridData = new GridData
                 {
-                    GridId = grid.Owner.ToString()
+                    GridId = gridId.ToString()
                 };
 
                 // Proper tile serialization
@@ -506,7 +505,7 @@ namespace Content.Server.Shuttles.Save
                 }
             };
 
-            var gridData = new GridData { GridId = grid.Owner.ToString() };
+            var gridData = new GridData { GridId = gridId.ToString() };
 
             // Tiles (retain existing tile extraction logic for compatibility)
             var tiles = _map.GetAllTiles(gridId, grid);
@@ -1250,10 +1249,12 @@ namespace Content.Server.Shuttles.Save
             _map.CreateMap(out var mapId);
             _sawmill.Info($"Created new map {mapId}");
 
-            var newGrid = _mapManager.CreateGrid(mapId);
+            // Create grid entity and get its MapGridComponent without using the obsolete Component.Owner
+            var newGridEntity = _mapManager.CreateGridEntity(mapId);
+            var newGrid = _entityManager.GetComponent<MapGridComponent>(newGridEntity);
             // Ensure the new grid has physics so any subsequent docking attaches a weld joint properly.
-            _entityManager.EnsureComponent<Robust.Shared.Physics.Components.PhysicsComponent>(newGrid.Owner);
-            _sawmill.Info($"Created new grid {newGrid.Owner} on map {mapId}");
+            _entityManager.EnsureComponent<Robust.Shared.Physics.Components.PhysicsComponent>(newGridEntity);
+            _sawmill.Info($"Created new grid {newGridEntity} on map {mapId}");
 
             // Reconstruct tiles in connectivity order to prevent grid splitting
             var tilesToPlace = new List<(Vector2i coords, Tile tile)>();
@@ -1282,15 +1283,15 @@ namespace Content.Server.Shuttles.Save
             }
 
             // Place tiles maintaining connectivity
-            foreach (var (coords, tile) in tilesToPlace)
-            {
-                _map.SetTile(newGrid.Owner, newGrid, coords, tile);
-            }
+                foreach (var (coords, tile) in tilesToPlace)
+                {
+                    _map.SetTile(newGridEntity, newGrid, coords, tile);
+                }
             // Placed tiles
 
             // Apply fixgridatmos-style atmosphere to all loaded ships
             // Applying atmosphere
-            ApplyFixGridAtmosphereToGrid(newGrid.Owner);
+            ApplyFixGridAtmosphereToGrid(newGridEntity);
 
             // Restore decal data using proper DecalSystem API
             if (!string.IsNullOrEmpty(primaryGridData.DecalData))
@@ -1302,14 +1303,14 @@ namespace Content.Server.Shuttles.Save
                     var decalsFailed = 0;
 
                     // Ensure the grid has a DecalGridComponent
-                    _entityManager.EnsureComponent<DecalGridComponent>(newGrid.Owner);
+                    _entityManager.EnsureComponent<DecalGridComponent>(newGridEntity);
 
                     foreach (var (chunkPos, chunk) in decalChunkCollection.ChunkCollection)
                     {
                         foreach (var (decalId, decal) in chunk.Decals)
                         {
                             // Convert the decal coordinates to EntityCoordinates on the new grid
-                            var decalCoords = new EntityCoordinates(newGrid.Owner, decal.Coordinates);
+                                var decalCoords = new EntityCoordinates(newGridEntity, decal.Coordinates);
 
                             // Use the DecalSystem to properly add the decal
                             if (_decalSystem.TryAddDecal(decal.Id, decalCoords, out _, decal.Color, decal.Angle, decal.ZIndex, decal.Cleanable))
@@ -1352,7 +1353,7 @@ namespace Content.Server.Shuttles.Save
 
                 try
                 {
-                    var coordinates = new EntityCoordinates(newGrid.Owner, entityData.Position);
+                    var coordinates = new EntityCoordinates(newGridEntity, entityData.Position);
                     var newEntity = _entityManager.SpawnEntity(entityData.Prototype, coordinates);
 
                     // Apply rotation if it exists
@@ -1372,7 +1373,7 @@ namespace Content.Server.Shuttles.Save
                 }
             }
 
-            return newGrid.Owner;
+            return newGridEntity;
         }
 
         private bool IsEntityContained(EntityUid entityUid, EntityUid gridId)

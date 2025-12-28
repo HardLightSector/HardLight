@@ -36,7 +36,6 @@ entities:
       name: Brigand
     - type: Transform
       pos: -0.48437524,-0.48437494
-      parent: invalid
     - type: MapGrid
       chunks:
         0,0:

@@ -5,6 +5,7 @@ chat-speech-verb-vulpkanin-1 = yips
 chat-speech-verb-vulpkanin-2 = barks
 chat-speech-verb-vulpkanin-3 = rurs
 chat-speech-verb-vulpkanin-4 = yaps
+chat-speech-verb-vulpkanin-5 = yeeps
 
 chat-speech-verb-name-rodentia = Rodentia
 chat-speech-verb-rodentia-1 = squeaks

@@ -21,7 +21,6 @@ entities:
       name: Point
     - type: Transform
       pos: -0.39584857,-0.47913614
-      parent: invalid
     - type: BecomesStation
       id: Point
     - type: MapGrid

@@ -1,24 +1,24 @@
-- type: cargoProduct
-  id: FoodPizza
-  # abstract: true # Frontier
-  icon:
-    sprite: Objects/Consumable/Food/Baked/pizza.rsi
-    state: margherita-slice
-  product: CrateFoodPizza
-  cost: 800
-  category: cargoproduct-category-name-food
-  group: market
+# - type: cargoProduct
+  # id: FoodPizza
+  # # abstract: true # Frontier
+  # icon:
+    # sprite: Objects/Consumable/Food/Baked/pizza.rsi
+    # state: margherita-slice
+  # product: CrateFoodPizza
+  # cost: 800
+  # category: cargoproduct-category-name-food
+  # group: market
 
-- type: cargoProduct
-  id: FoodPizzaLarge
-  # abstract: true # Frontier
-  icon:
-    sprite: Objects/Consumable/Food/Baked/pizza.rsi
-    state: margherita
-  product: CrateFoodPizzaLarge
-  cost: 3000
-  category: cargoproduct-category-name-food
-  group: market
+# - type: cargoProduct
+  # id: FoodPizzaLarge
+  # # abstract: true # Frontier
+  # icon:
+    # sprite: Objects/Consumable/Food/Baked/pizza.rsi
+    # state: margherita
+  # product: CrateFoodPizzaLarge
+  # cost: 3000
+  # category: cargoproduct-category-name-food
+  # group: market
 
 - type: cargoProduct
   id: FoodMRE
@@ -64,27 +64,27 @@
   category: cargoproduct-category-name-food
   group: market
 
-- type: cargoProduct
-  id: FoodSoftdrinks
-  # abstract: true # Frontier
-  icon:
-    sprite: Objects/Consumable/Drinks/cola.rsi
-    state: icon
-  product: CrateFoodSoftdrinks
-  cost: 1200
-  category: cargoproduct-category-name-food
-  group: market
+# - type: cargoProduct
+  # id: FoodSoftdrinks
+  # # abstract: true # Frontier
+  # icon:
+    # sprite: Objects/Consumable/Drinks/cola.rsi
+    # state: icon
+  # product: CrateFoodSoftdrinks
+  # cost: 1200
+  # category: cargoproduct-category-name-food
+  # group: market
 
-- type: cargoProduct
-  id: FoodSoftdrinksLarge
-  # abstract: true # Frontier
-  icon:
-    sprite: Objects/Consumable/Drinks/colabottle.rsi
-    state: icon
-  product: CrateFoodSoftdrinksLarge
-  cost: 2400
-  category: cargoproduct-category-name-food
-  group: market
+# - type: cargoProduct
+  # id: FoodSoftdrinksLarge
+  # # abstract: true # Frontier
+  # icon:
+    # sprite: Objects/Consumable/Drinks/colabottle.rsi
+    # state: icon
+  # product: CrateFoodSoftdrinksLarge
+  # cost: 2400
+  # category: cargoproduct-category-name-food
+  # group: market
 
 - type: cargoProduct
   id: FoodCookGetmore
@@ -97,16 +97,16 @@
   category: cargoproduct-category-name-food
   group: market
 
-- type: cargoProduct
-  id: FoodHappyHonkMeals
-  # abstract: true # Frontier
-  icon:
-    sprite: Objects/Consumable/Food/burger.rsi
-    state: bigbite
-  product: CrateFoodHappyHonkBigBite
-  cost: 1400
-  category: cargoproduct-category-name-food
-  group: market
+# - type: cargoProduct
+  # id: FoodHappyHonkMeals
+  # # abstract: true # Frontier
+  # icon:
+    # sprite: Objects/Consumable/Food/burger.rsi
+    # state: bigbite
+  # product: CrateFoodHappyHonkBigBite
+  # cost: 1400
+  # category: cargoproduct-category-name-food
+  # group: market
 
 - type: cargoProduct
   id: FoodIceCream

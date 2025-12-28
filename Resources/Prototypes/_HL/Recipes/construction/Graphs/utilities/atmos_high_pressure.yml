@@ -1,0 +1,441 @@
+- type: constructionGraph
+  id: GasUnaryHighFlow
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: ventpumphighflow
+      steps:
+      - tag: HighPressureCasing
+        name: construction-graph-tag-high-pressure-casing
+        icon:
+          sprite: Structures/Piping/Atmospherics/pump.rsi
+          state: pumpVolume
+      - material: Steel
+        amount: 5
+        doAfter: 1
+
+    - to: ventscrubberhighflow
+      steps:
+      - tag: HighPressureCasing
+        name: construction-graph-tag-high-pressure-casing
+        icon:
+          sprite: Structures/Piping/Atmospherics/pump.rsi
+          state: pumpVolume
+      - material: Steel
+        amount: 5
+        doAfter: 1
+
+    - to: outletinjectorhighflow
+      steps:
+      - tag: HighPressureCasing
+        name: construction-graph-tag-high-pressure-casing
+        icon:
+          sprite: Structures/Piping/Atmospherics/pump.rsi
+          state: pumpVolume
+      - material: Steel
+        amount: 5
+        doAfter: 1
+
+  - node: ventpumphighflow
+    entity: GasVentPumpHighFlow
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: HighPressureCasing
+        amount: 1
+      - !type:DeleteEntity
+      steps:
+      - tool: Screwing
+        doAfter: 1
+      - tool: Welding
+        doAfter: 1
+
+  - node: ventscrubberhighflow
+    entity: GasVentScrubberHighFlow
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: HighPressureCasing
+        amount: 1
+      - !type:DeleteEntity
+      steps:
+      - tool: Screwing
+        doAfter: 1
+      - tool: Welding
+        doAfter: 1
+
+  - node: outletinjectorhighflow
+    entity: GasOutletInjectorHighFlow
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: HighPressureCasing
+        amount: 1
+      - !type:DeleteEntity
+      steps:
+      - tool: Welding
+        doAfter: 1
+
+- type: constructionGraph
+  id: GasBinaryHighFlow
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: pressurepumpHighFlow
+      steps:
+      - tag: HighPressureCasing
+        name: construction-graph-tag-high-pressure-casing
+        icon:
+          sprite: Structures/Piping/Atmospherics/pump.rsi
+          state: pumpVolume
+      - material: Steel
+        amount: 5
+        doAfter: 1
+
+    - to: pressurepumpHighFlowAlt1
+      steps:
+      - tag: HighPressureCasing
+        name: construction-graph-tag-high-pressure-casing
+        icon:
+          sprite: Structures/Piping/Atmospherics/pump.rsi
+          state: pumpVolume
+      - material: Steel
+        amount: 5
+        doAfter: 1
+
+    - to: pressurepumpHighFlowAlt1
+      steps:
+      - tag: HighPressureCasing
+        name: construction-graph-tag-high-pressure-casing
+        icon:
+          sprite: Structures/Piping/Atmospherics/pump.rsi
+          state: pumpVolume
+      - material: Steel
+        amount: 5
+        doAfter: 1
+
+    - to: pressurepumpHighFlowAlt2
+      steps:
+      - tag: HighPressureCasing
+        name: construction-graph-tag-high-pressure-casing
+        icon:
+          sprite: Structures/Piping/Atmospherics/pump.rsi
+          state: pumpVolume
+      - material: Steel
+        amount: 5
+        doAfter: 1
+
+    - to: volumepumpHighFlow
+      steps:
+      - tag: HighPressureCasing
+        name: construction-graph-tag-high-pressure-casing
+        icon:
+          sprite: Structures/Piping/Atmospherics/pump.rsi
+          state: pumpVolume
+      - material: Steel
+        amount: 5
+        doAfter: 1
+
+    - to: volumepumpHighFlowAlt1
+      steps:
+      - tag: HighPressureCasing
+        name: construction-graph-tag-high-pressure-casing
+        icon:
+          sprite: Structures/Piping/Atmospherics/pump.rsi
+          state: pumpVolume
+      - material: Steel
+        amount: 5
+        doAfter: 1
+
+    - to: volumepumpHighFlowAlt2
+      steps:
+      - tag: HighPressureCasing
+        name: construction-graph-tag-high-pressure-casing
+        icon:
+          sprite: Structures/Piping/Atmospherics/pump.rsi
+          state: pumpVolume
+      - material: Steel
+        amount: 5
+        doAfter: 1
+
+    - to: dualportventpumpHighFlow
+      steps:
+      - tag: HighPressureCasing
+        name: construction-graph-tag-high-pressure-casing
+        icon:
+          sprite: Structures/Piping/Atmospherics/pump.rsi
+          state: pumpVolume
+      - material: Steel
+        amount: 5
+        doAfter: 1
+
+  - node: pressurepumpHighFlow
+    entity: GasPressurePumpHighFlow
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: HighPressureCasing
+        amount: 1
+      - !type:DeleteEntity
+      steps:
+      - tool: Welding
+        doAfter: 1
+
+  - node: pressurepumpHighFlowAlt1
+    entity: GasPressurePumpHighFlowAlt1
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: HighPressureCasing
+        amount: 1
+      - !type:DeleteEntity
+      steps:
+      - tool: Welding
+        doAfter: 1
+
+  - node: pressurepumpHighFlowAlt2
+    entity: GasPressurePumpHighFlowAlt2
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: HighPressureCasing
+        amount: 1
+      - !type:DeleteEntity
+      steps:
+      - tool: Welding
+        doAfter: 1
+
+  - node: volumepumpHighFlow
+    entity: GasVolumePumpHighFlow
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: HighPressureCasing
+        amount: 1
+      - !type:DeleteEntity
+      steps:
+      - tool: Welding
+        doAfter: 1
+
+  - node: volumepumpHighFlowAlt1
+    entity: GasVolumePumpHighFlowAlt1
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: HighPressureCasing
+        amount: 1
+      - !type:DeleteEntity
+      steps:
+      - tool: Welding
+        doAfter: 1
+
+  - node: volumepumpHighFlowAlt2
+    entity: GasVolumePumpHighFlowAlt2
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: HighPressureCasing
+        amount: 1
+      - !type:DeleteEntity
+      steps:
+      - tool: Welding
+        doAfter: 1
+
+  - node: dualportventpumpHighFlow
+    entity: GasDualPortVentPumpHighFlow
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: HighPressureCasing
+        amount: 1
+      - !type:DeleteEntity
+      steps:
+      - tool: Welding
+        doAfter: 1
+
+- type: constructionGraph
+  id: GasTrinaryHighFlow
+  start: start
+  graph:
+  - node: start
+    edges:
+    # Filter
+    - to: filterHighFlow
+      steps:
+      - tag: HighPressureCasing
+        name: construction-graph-tag-high-pressure-casing
+        icon:
+          sprite: Structures/Piping/Atmospherics/pump.rsi
+          state: pumpVolume
+      - material: Steel
+        amount: 5
+        doAfter: 1
+
+    - to: filterflippedHighFlow
+      steps:
+      - tag: HighPressureCasing
+        name: construction-graph-tag-high-pressure-casing
+        icon:
+          sprite: Structures/Piping/Atmospherics/pump.rsi
+          state: pumpVolume
+      - material: Steel
+        amount: 5
+        doAfter: 1
+
+    # Mixer
+    - to: mixerHighFlow
+      steps:
+      - tag: HighPressureCasing
+        name: construction-graph-tag-high-pressure-casing
+        icon:
+          sprite: Structures/Piping/Atmospherics/pump.rsi
+          state: pumpVolume
+      - material: Steel
+        amount: 5
+        doAfter: 1
+
+    - to: mixerflippedHighFlow
+      steps:
+      - tag: HighPressureCasing
+        name: construction-graph-tag-high-pressure-casing
+        icon:
+          sprite: Structures/Piping/Atmospherics/pump.rsi
+          state: pumpVolume
+      - material: Steel
+        amount: 5
+        doAfter: 1
+
+    - to: pneumaticvalveHighFlow
+      steps:
+      - tag: HighPressureCasing
+        name: construction-graph-tag-high-pressure-casing
+        icon:
+          sprite: Structures/Piping/Atmospherics/pump.rsi
+          state: pumpVolume
+      - material: Steel
+        amount: 5
+        doAfter: 1
+
+  # Filter
+  - node: filterHighFlow
+    entity: GasFilterHighFlow
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: HighPressureCasing
+        amount: 1
+      - !type:DeleteEntity
+      steps:
+      - tool: Welding
+        doAfter: 1
+
+  - node: filterflippedHighFlow
+    entity: GasFilterFlippedHighFlow
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: HighPressureCasing
+        amount: 1
+      - !type:DeleteEntity
+      steps:
+      - tool: Welding
+        doAfter: 1
+
+  # Mixer
+  - node: mixerHighFlow
+    entity: GasMixerHighFlow
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: HighPressureCasing
+        amount: 1
+      - !type:DeleteEntity
+      steps:
+      - tool: Welding
+        doAfter: 1
+
+  - node: mixerflippedHighFlow
+    entity: GasMixerFlippedHighFlow
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: HighPressureCasing
+        amount: 1
+      - !type:DeleteEntity
+      steps:
+      - tool: Welding
+        doAfter: 1
+
+  - node: pneumaticvalveHighFlow
+    entity: PressureControlledValveHighFlow
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: HighPressureCasing
+        amount: 1
+      - !type:DeleteEntity
+      steps:
+      - tool: Welding
+        doAfter: 1

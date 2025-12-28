@@ -30,7 +30,6 @@ entities:
       name: Bocadillo
     - type: Transform
       pos: -0.4375,-1.703125
-      parent: invalid
     - type: BecomesStation
       id: Bocadillo
     - type: MapGrid

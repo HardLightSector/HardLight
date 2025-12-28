@@ -1,3 +1,12 @@
+using Content.Shared.Chemistry.Components;
+using Content.Shared.DoAfter;
+using Content.Shared.FixedPoint;
+using Content.Shared.Inventory;
+using Content.Shared.Nutrition.Components;
+using Content.Shared.Nutrition.Prototypes;
+using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization;
+
 namespace Content.Shared.Nutrition;
 
 /// <summary>
@@ -45,4 +54,31 @@ public sealed class BeforeFullySlicedEvent : CancellableEntityEventArgs
     /// The person slicing the food.
     /// </summary>
     public EntityUid User;
+}
+
+[ByRefEvent]
+public record struct IngestingEvent(EntityUid Food, Solution Split, bool ForceFed);
+
+/// <summary>
+/// Raised on an entity when it is being made to be eaten.
+/// </summary>
+/// <param name="User">Who is doing the action?</param>
+/// <param name="Target">Who is doing the eating?</param>
+/// <param name="Split">The solution we're currently eating.</param>
+/// <param name="ForceFed">Whether we're being fed by someone else, checkec enough I might as well pass it.</param>
+[ByRefEvent]
+public record struct IngestedEvent(EntityUid User, EntityUid Target, Solution Split, bool ForceFed)
+{
+    // Should we refill the solution now that we've eaten it?
+    // This bool basically only exists because of stackable system.
+    public bool Refresh;
+
+    // Should we destroy the ingested entity?
+    public bool Destroy;
+
+    // Has this eaten event been handled? Used to prevent duplicate flavor popups and sound effects.
+    public bool Handled;
+
+    // Should we try eating again?
+    public bool Repeat;
 }

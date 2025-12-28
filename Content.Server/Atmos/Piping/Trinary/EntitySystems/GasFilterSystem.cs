@@ -155,7 +155,7 @@ namespace Content.Server.Atmos.Piping.Trinary.EntitySystems
                 return;
 
             _userInterfaceSystem.SetUiState(uid, GasFilterUiKey.Key,
-                new GasFilterBoundUserInterfaceState(MetaData(uid).EntityName, filter.TransferRate, filter.Enabled, filter.FilteredGas));
+                new GasFilterBoundUserInterfaceState(MetaData(uid).EntityName, filter.TransferRate, filter.Enabled, filter.FilteredGas, filter.HighFlow, filter.MaxTransferRate));
         }
 
         private void UpdateAppearance(EntityUid uid, GasFilterComponent? filter = null)
@@ -177,7 +177,8 @@ namespace Content.Server.Atmos.Piping.Trinary.EntitySystems
 
         private void OnTransferRateChangeMessage(EntityUid uid, GasFilterComponent filter, GasFilterChangeRateMessage args)
         {
-            filter.TransferRate = Math.Clamp(args.Rate, 0f, filter.MaxTransferRate);
+            var max = filter.HighFlow ? filter.MaxTransferRate * 5f : filter.MaxTransferRate;
+            filter.TransferRate = Math.Clamp(args.Rate, 0f, max);
             _adminLogger.Add(LogType.AtmosVolumeChanged, LogImpact.Medium,
                 $"{ToPrettyString(args.Actor):player} set the transfer rate on {ToPrettyString(uid):device} to {args.Rate}");
             DirtyUI(uid, filter);

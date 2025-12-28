@@ -31,7 +31,6 @@ entities:
       name: Searchlight
     - type: Transform
       pos: -0.5312576,-0.453125
-      parent: invalid
     - type: MapGrid
       chunks:
         0,0:

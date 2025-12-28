@@ -110,6 +110,9 @@ namespace Content.Server.Atmos.Piping.Unary.Components
         [GuidebookData]
         public float MaxPressure = Atmospherics.MaxOutputPressure;
 
+        [DataField("HighFlow")]
+        public bool HighFlow = false;
+
         /// <summary>
         ///     Pressure pump speed in kPa/s. Determines how much gas is moved.
         /// </summary>

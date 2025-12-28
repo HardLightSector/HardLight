@@ -22,7 +22,6 @@ entities:
       name: Watchdog
     - type: Transform
       pos: -0.4761362,-0.4642291
-      parent: invalid
     - type: MapGrid
       chunks:
         0,0:

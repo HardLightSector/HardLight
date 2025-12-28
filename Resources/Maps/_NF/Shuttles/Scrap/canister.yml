@@ -14,7 +14,6 @@ entities:
       name: Canister
     - type: Transform
       pos: -0.52213657,-0.49262553
-      parent: invalid
     - type: MapGrid
       chunks:
         0,0:

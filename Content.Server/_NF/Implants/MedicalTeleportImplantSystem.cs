@@ -5,7 +5,6 @@ using Content.Shared._NF.Implants.Components;
 using Content.Shared.Humanoid;
 using Content.Shared.Implants;
 using Content.Shared.Implants.Components;
-using Content.Shared.Implants.Components;
 using Content.Shared.Mobs;
 using Content.Shared.Radio;
 using Content.Shared.Salvage.Fulton;

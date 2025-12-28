@@ -113,9 +113,23 @@ public sealed partial class ShipShieldsSystem : EntitySystem
         base.Initialize();
         SubscribeLocalEvent<ShipShieldComponent, StartCollideEvent>(OnCollide);
         SubscribeLocalEvent<ShipShieldEmitterComponent, ComponentShutdown>(OnEmitterShutdown); // Mono
+        SubscribeLocalEvent<ShipShieldedComponent, MapInitEvent>(OnShieldedMapInit);
 
         InitializeCommands();
         InitializeEmitters();
+    }
+
+    private void OnShieldedMapInit(EntityUid uid, ShipShieldedComponent component, MapInitEvent args)
+    {
+        // Clean up orphaned shield entities from save/load
+        // The shield entity won't survive serialization properly, so delete it
+        if (Exists(component.Shield) && !Deleted(component.Shield))
+        {
+            QueueDel(component.Shield);
+        }
+        
+        // Remove the component so the emitter can recreate it fresh
+        RemCompDeferred<ShipShieldedComponent>(uid);
     }
 
 

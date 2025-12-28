@@ -29,8 +29,10 @@ namespace Content.Client.Radiation.Overlays
         public RadiationPulseOverlay()
         {
             IoCManager.InjectDependencies(this);
-            _baseShader = _prototypeManager.Index<ShaderPrototype>("Radiation").Instance().Duplicate();
+            _baseShader = _prototypeManager.Index(RadiationShaderId).Instance().Duplicate();
         }
+
+    private static readonly ProtoId<ShaderPrototype> RadiationShaderId = "Radiation";
 
         protected override bool BeforeDraw(in OverlayDrawArgs args)
         {

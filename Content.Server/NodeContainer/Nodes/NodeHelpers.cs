@@ -2,6 +2,7 @@ using System.Diagnostics.CodeAnalysis;
 using Content.Shared.NodeContainer;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
+using Robust.Shared.GameObjects;
 
 namespace Content.Server.NodeContainer.Nodes
 {
@@ -12,7 +13,10 @@ namespace Content.Server.NodeContainer.Nodes
     {
         public static IEnumerable<Node> GetNodesInTile(EntityQuery<NodeContainerComponent> nodeQuery, MapGridComponent grid, Vector2i coords)
         {
-            foreach (var entityUid in grid.GetAnchoredEntities(coords))
+            var mapSystem = EntitySystem.Get<SharedMapSystem>();
+            #pragma warning disable CS0618
+            foreach (var entityUid in mapSystem.GetAnchoredEntities(grid.Owner, grid, coords))
+            #pragma warning restore CS0618
             {
                 if (!nodeQuery.TryGetComponent(entityUid, out var container))
                     continue;
@@ -48,23 +52,28 @@ namespace Content.Server.NodeContainer.Nodes
             Vector2i coords,
             bool includeSameTile = true)
         {
+            var mapSystem = EntitySystem.Get<SharedMapSystem>();
             if (includeSameTile)
             {
-                foreach (var uid in grid.GetAnchoredEntities(coords))
+                #pragma warning disable CS0618
+                foreach (var uid in mapSystem.GetAnchoredEntities(grid.Owner, grid, coords))
                     yield return (Direction.Invalid, uid);
+                #pragma warning restore CS0618
             }
 
-            foreach (var uid in grid.GetAnchoredEntities(coords + (0, 1)))
+            #pragma warning disable CS0618
+            foreach (var uid in mapSystem.GetAnchoredEntities(grid.Owner, grid, coords + (0, 1)))
                 yield return (Direction.North, uid);
 
-            foreach (var uid in grid.GetAnchoredEntities(coords + (0, -1)))
+            foreach (var uid in mapSystem.GetAnchoredEntities(grid.Owner, grid, coords + (0, -1)))
                 yield return (Direction.South, uid);
 
-            foreach (var uid in grid.GetAnchoredEntities(coords + (1, 0)))
+            foreach (var uid in mapSystem.GetAnchoredEntities(grid.Owner, grid, coords + (1, 0)))
                 yield return (Direction.East, uid);
 
-            foreach (var uid in grid.GetAnchoredEntities(coords + (-1, 0)))
+            foreach (var uid in mapSystem.GetAnchoredEntities(grid.Owner, grid, coords + (-1, 0)))
                 yield return (Direction.West, uid);
+            #pragma warning restore CS0618
         }
     }
 }

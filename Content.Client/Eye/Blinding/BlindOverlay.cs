@@ -19,6 +19,8 @@ namespace Content.Client.Eye.Blinding
 
         public override bool RequestScreenTexture => true;
         public override OverlaySpace Space => OverlaySpace.WorldSpace;
+        private static readonly ProtoId<ShaderPrototype> GreyscaleShaderId = "GreyscaleFullscreen";
+        private static readonly ProtoId<ShaderPrototype> CircleMaskShaderId = "CircleMask";
         private readonly ShaderInstance _greyscaleShader;
         private readonly ShaderInstance _circleMaskShader;
 
@@ -27,8 +29,8 @@ namespace Content.Client.Eye.Blinding
         public BlindOverlay()
         {
             IoCManager.InjectDependencies(this);
-            _greyscaleShader = _prototypeManager.Index<ShaderPrototype>("GreyscaleFullscreen").InstanceUnique();
-            _circleMaskShader = _prototypeManager.Index<ShaderPrototype>("CircleMask").InstanceUnique();
+            _greyscaleShader = _prototypeManager.Index(GreyscaleShaderId).InstanceUnique();
+            _circleMaskShader = _prototypeManager.Index(CircleMaskShaderId).InstanceUnique();
         }
         protected override bool BeforeDraw(in OverlayDrawArgs args)
         {

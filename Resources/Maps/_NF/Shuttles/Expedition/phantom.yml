@@ -37,7 +37,6 @@ entities:
       name: Phantom
     - type: Transform
       pos: -0.46875,-0.453125
-      parent: invalid
     - type: MapGrid
       chunks:
         0,0:
@@ -4892,11 +4891,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: -1.5,-15.5
       parent: 1
-    - type: UserInterface
-      actors:
-        enum.StorageUiKey.Key:
-        - invalid
-    - type: ActiveUserInterface
 - proto: ShuttersWindowOpen
   entities:
   - uid: 658

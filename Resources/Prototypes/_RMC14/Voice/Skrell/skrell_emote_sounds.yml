@@ -5,7 +5,7 @@
       path: /Audio/_RMC14/Voice/Skrell/peep1.ogg
     RMCSkrellAnger:
       path: /Audio/_RMC14/Voice/Skrell/anger2.ogg
-    RMCSkrellTrill:
+    Trill:
       collection: RMCSkrellTrill
     RMCSkrellWarble:
       collection: RMCSkrellWarble

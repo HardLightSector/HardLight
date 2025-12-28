@@ -32,6 +32,7 @@ public sealed class CardHandMenuBoundUserInterface : BoundUserInterface
 
     public void SendCardHandDrawMessage(NetEntity e) => SendMessage(new CardHandDrawMessage(e));
 
+    [Obsolete]
     protected override void Dispose(bool disposing)
     {
         base.Dispose(disposing);

@@ -38,7 +38,6 @@ entities:
       name: Caduceus
     - type: Transform
       pos: -0.49010277,-0.49010563
-      parent: invalid
     - type: MapGrid
       chunks:
         0,-1:

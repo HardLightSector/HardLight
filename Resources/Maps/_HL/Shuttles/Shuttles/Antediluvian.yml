@@ -31,7 +31,6 @@ entities:
       name: grid
     - type: Transform
       pos: -3.445197,3.6341567
-      parent: invalid
     - type: MapGrid
       chunks:
         0,0:
@@ -1324,8 +1323,6 @@ entities:
       pos: 5.5,-9.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 290
       - 337
@@ -1335,8 +1332,6 @@ entities:
       pos: 6.5,-9.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 290
       - 337
@@ -1346,8 +1341,6 @@ entities:
       pos: 7.5,-9.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 290
       - 337
@@ -1357,8 +1350,6 @@ entities:
       pos: 8.5,-6.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 289
       - 290

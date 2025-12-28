@@ -45,6 +45,8 @@ namespace Content.Client.Atmos.Overlays
 
         private int _gasCount;
 
+        private static readonly ProtoId<ShaderPrototype> UnshadedShaderId = "unshaded";
+
         public const int GasOverlayZIndex = (int) Shared.DrawDepth.DrawDepth.Effects; // Under ghosts, above mostly everything else
 
         public GasTileOverlay(GasTileOverlaySystem system, IEntityManager entManager, IResourceCache resourceCache, IPrototypeManager protoMan, SpriteSystem spriteSys, SharedTransformSystem xformSys)
@@ -52,7 +54,7 @@ namespace Content.Client.Atmos.Overlays
             _entManager = entManager;
             _mapManager = IoCManager.Resolve<IMapManager>();
             _xformSys = xformSys;
-            _shader = protoMan.Index<ShaderPrototype>("unshaded").Instance();
+                _shader = protoMan.Index(UnshadedShaderId).Instance();
             ZIndex = GasOverlayZIndex;
 
             _gasCount = system.VisibleGasId.Length;

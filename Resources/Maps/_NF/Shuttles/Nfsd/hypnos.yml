@@ -31,7 +31,6 @@ entities:
     - type: MetaData
       name: Hypnos
     - type: Transform
-      parent: invalid
     - type: BecomesStation
       id: Hypnos
     - type: MapGrid

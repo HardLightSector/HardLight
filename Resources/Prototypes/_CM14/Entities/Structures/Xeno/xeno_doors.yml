@@ -66,12 +66,6 @@
     mode: NoSprite
   - type: AccessReader
     access: [["Xeno"]]
-  - type: Airlock
-    emergencyAccessLayer: false
-    animatePanel: false
-    powered: true
-    openingSpriteState: closed_unlit
-    closingSpriteState: closed_unlit
   # - type: XenoConstructionPlasmaCost
     # plasma: 120
   # - type: XenoStructureUpgradeable

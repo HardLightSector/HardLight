@@ -32,7 +32,6 @@ entities:
     - type: MetaData
       name: Sprinter
     - type: Transform
-      parent: invalid
     - type: MapGrid
       chunks:
         0,0:

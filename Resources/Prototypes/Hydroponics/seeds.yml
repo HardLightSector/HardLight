@@ -999,7 +999,7 @@
     Happiness:
       Min: 1
       Max: 5
-#     PotencyDivisor: 20
+      PotencyDivisor: 20
 #   ColorfulReagent:
 #     Min: 0
 #     Max: 5

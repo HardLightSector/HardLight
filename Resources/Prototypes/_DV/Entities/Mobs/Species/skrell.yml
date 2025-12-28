@@ -70,7 +70,7 @@
           type: SurgeryBui
     - type: Speech
       speechVerb: Skrell
-      allowedEmotes: [ 'RMCSkrellPeep', 'RMCSkrellAnger', 'RMCSkrellTrill', 'RMCSkrellWarble' ]
+      allowedEmotes: [ 'RMCSkrellPeep', 'RMCSkrellAnger', 'Trill', 'RMCSkrellWarble' ]
     - type: Vocal
       sounds:
         Male: RMCMaleSkrell

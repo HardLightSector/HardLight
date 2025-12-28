@@ -31,7 +31,6 @@ entities:
       name: Spirit
     - type: Transform
       pos: -0.484375,-0.5625
-      parent: invalid
     - type: MapGrid
       chunks:
         0,0:

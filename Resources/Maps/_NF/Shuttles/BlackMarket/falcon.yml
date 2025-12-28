@@ -49,7 +49,6 @@ entities:
       name: Falcon
     - type: Transform
       pos: -2.7605057,11.507959
-      parent: invalid
     - type: BecomesStation
       id: Falcon
     - type: MapGrid

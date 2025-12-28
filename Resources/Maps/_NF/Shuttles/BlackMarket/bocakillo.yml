@@ -21,7 +21,6 @@ entities:
       name: Bocakillo
     - type: Transform
       pos: -0.4375,-1.703125
-      parent: invalid
     - type: BecomesStation
       id: Bocakillo
     - type: MapGrid

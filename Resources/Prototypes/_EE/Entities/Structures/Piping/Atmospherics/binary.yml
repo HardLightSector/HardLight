@@ -9,17 +9,25 @@
   - type: GasPressurePump
     enabled: false
     maxTargetPressure: 13500
+    HighFlow: true
+  - type: Construction
+    graph: GasBinaryHighFlow
+    node: pressurepumpHighFlow
 
 - type: entity
   parent: GasVolumePump
   id: GasVolumePumpHighFlow
-  name: high flow volumetric gas pump. It pumps air at three times the volume of a standard pump
-  description: A pump that moves gas by volume.
+  name: high flow volumetric gas pump
+  description: A pump that moves gas by volume.  It pumps air at three times the volume of a standard pump.
   placement:
     mode: SnapgridCenter
   components:
     - type: GasVolumePump
       maxTransferRate: 600
+      HighFlow: true
+    - type: Construction
+      graph: GasBinaryHighFlow
+      node: volumepumpHighFlow
 
 - type: entity
   parent: GasDualPortVentPump
@@ -31,3 +39,7 @@
   components:
     - type: GasVentPump
       maxPressure: 13500
+      HighFlow: true
+    - type: Construction
+      graph: GasBinaryHighFlow
+      node: dualportventpumpHighFlow

@@ -42,7 +42,7 @@
   - CharonReloadWeaponBoard
   - HadesWeaponBoard
   - HydraWeaponBoard
-  - CapitalShieldBoard
+  #- CapitalShieldBoard
 
 - type: latheRecipePack
   id: ShuttleWeaponMaterials
@@ -60,3 +60,25 @@
   - CapitalShipWeaponServo
   - CapitalShipWeaponInternal
 
+- type: latheRecipePack
+  id: CivShuttleWeapons
+  recipes:
+  - CivL1PhalanxWeaponBoard
+  - CivL85AutocannonWeaponBoard
+  - CivKargilWeaponBoard
+  - CivTovekWeaponBoard
+  - CivSunderWeaponBoard
+  - CivFangWeaponBoard
+  - CivType35WeaponBoard
+  - CivRAC30WeaponBoard
+  - CivAK570WeaponBoard
+  - CivDravonWeaponBoard
+  - CivFlayerWeaponBoard
+  - CivM220WeaponBoard
+  - CivVanykWeaponBoard
+  - CivType54WeaponBoard
+  - CivSerpentMissileWeaponBoard
+  - CivApolloWeaponBoard
+  - CivReaperWeaponBoard
+  - CivHarbringerWeaponBoard
+  - CivBigThrusterBoard

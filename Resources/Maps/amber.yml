@@ -4,8 +4,8 @@ meta:
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 12/11/2025 21:11:09
-  entityCount: 23689
+  time: 12/20/2025 02:10:18
+  entityCount: 23695
 maps:
 - 1
 grids:
@@ -78,8 +78,6 @@ entities:
     - type: GridTree
     - type: Broadphase
     - type: OccluderTree
-    - type: Parallax
-      parallax: AmberStation
   - uid: 2
     components:
     - type: MetaData
@@ -14250,7 +14248,6 @@ entities:
     - type: RadiationGridResistance
     - type: NavMap
     - type: SalvageExpeditionData
-      nextOffer: 0
 - proto: AcousticGuitarInstrument
   entities:
   - uid: 3
@@ -131742,6 +131739,13 @@ entities:
     - type: Transform
       pos: 33.5,-24.5
       parent: 2
+- proto: SpawnPointForensicMantis
+  entities:
+  - uid: 19613
+    components:
+    - type: Transform
+      pos: 28.5,-38.5
+      parent: 2
 - proto: SpawnPointHeadOfPersonnel
   entities:
   - uid: 18996
@@ -131798,6 +131802,11 @@ entities:
     components:
     - type: Transform
       pos: 10.5,18.5
+      parent: 2
+  - uid: 19612
+    components:
+    - type: Transform
+      pos: 7.5,17.5
       parent: 2
 - proto: SpawnPointMedicalDoctor
   entities:
@@ -131876,6 +131885,11 @@ entities:
     components:
     - type: Transform
       pos: 24.5,-60.5
+      parent: 2
+  - uid: 19163
+    components:
+    - type: Transform
+      pos: -0.5,-60.5
       parent: 2
 - proto: SpawnPointMime
   entities:
@@ -132073,6 +132087,18 @@ entities:
     components:
     - type: Transform
       pos: -18.5,-59.5
+      parent: 2
+  - uid: 19164
+    components:
+    - type: Transform
+      pos: 3.5,-60.5
+      parent: 2
+- proto: SpawnPointPrisoner
+  entities:
+  - uid: 19918
+    components:
+    - type: Transform
+      pos: -39.5,-2.5
       parent: 2
 - proto: SpawnPointPsychologist
   entities:
@@ -132310,6 +132336,13 @@ entities:
     components:
     - type: Transform
       pos: 0.5,-18.5
+      parent: 2
+- proto: SpawnPointValet
+  entities:
+  - uid: 19274
+    components:
+    - type: Transform
+      pos: 1.5,-59.5
       parent: 2
 - proto: SpawnPointWarden
   entities:

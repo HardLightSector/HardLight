@@ -10,3 +10,5 @@ stack-Heavy-Internal = heavy ship weapon internal
 stack-Capital-Frame = capital ship weapon frame
 stack-Capital-Servo = capital ship weapon servo
 stack-Capital-Internal = capital ship weapon internal
+stack-bullet-casing-9x19mm = brass casing (9x19mm)
+stack-bullet-flechette = flechette(s)

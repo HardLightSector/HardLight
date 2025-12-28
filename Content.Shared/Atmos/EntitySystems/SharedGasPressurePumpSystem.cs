@@ -96,7 +96,8 @@ public abstract class SharedGasPressurePumpSystem : EntitySystem
 
     private void OnOutputPressureChangeMessage(Entity<GasPressurePumpComponent> ent, ref GasPressurePumpChangeOutputPressureMessage args)
     {
-        ent.Comp.TargetPressure = Math.Clamp(args.Pressure, 0f, Atmospherics.MaxOutputPressure);
+        var max = ent.Comp.HighFlow ? Atmospherics.MaxOutputPressure * 3f : Atmospherics.MaxOutputPressure;
+        ent.Comp.TargetPressure = Math.Clamp(args.Pressure, 0f, max);
         _adminLogger.Add(LogType.AtmosPressureChanged,
             LogImpact.Medium,
             $"{ToPrettyString(args.Actor):player} set the pressure on {ToPrettyString(ent):device} to {args.Pressure}kPa");

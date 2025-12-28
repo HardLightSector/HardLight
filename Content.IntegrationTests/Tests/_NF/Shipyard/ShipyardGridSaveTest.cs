@@ -25,15 +25,14 @@ namespace Content.IntegrationTests.Tests._NF.Shipyard
             var server = pair.Server;
 
             var entityManager = server.ResolveDependency<IEntityManager>();
-            var mapManager = server.ResolveDependency<IMapManager>();
+            var mapSystem = server.ResolveDependency<IEntitySystemManager>().GetEntitySystem<SharedMapSystem>();
             var mapLoader = server.ResolveDependency<IEntitySystemManager>().GetEntitySystem<MapLoaderSystem>();
             var shipyardGridSaveSystem = server.ResolveDependency<IEntitySystemManager>().GetEntitySystem<ShipyardGridSaveSystem>();
 
             await server.WaitPost(() =>
             {
                 // Create a test map
-                var mapId = mapManager.CreateMap();
-                var mapUid = mapManager.GetMapEntityId(mapId);
+                var mapUid = mapSystem.CreateMap(out var mapId);
 
                 // Load the ambition ship
                 var mapLoaded = mapLoader.TryLoadGrid(mapId, new ResPath("/Maps/_NF/Shuttles/Expedition/ambition.yml"), out var gridUid);
@@ -62,7 +61,7 @@ namespace Content.IntegrationTests.Tests._NF.Shipyard
                 Assert.That(foundVendingMachine, Is.False, "No vending machines should remain in cleaned grid");
 
                 // Clean up
-                mapManager.DeleteMap(mapId);
+                mapSystem.DeleteMap(mapId);
             });
 
             await pair.CleanReturnAsync();
@@ -75,15 +74,14 @@ namespace Content.IntegrationTests.Tests._NF.Shipyard
             var server = pair.Server;
 
             var entityManager = server.ResolveDependency<IEntityManager>();
-            var mapManager = server.ResolveDependency<IMapManager>();
+            var mapSystem = server.ResolveDependency<IEntitySystemManager>().GetEntitySystem<SharedMapSystem>();
             var mapLoader = server.ResolveDependency<IEntitySystemManager>().GetEntitySystem<MapLoaderSystem>();
             var shipyardGridSaveSystem = server.ResolveDependency<IEntitySystemManager>().GetEntitySystem<ShipyardGridSaveSystem>();
 
             await server.WaitPost(() =>
             {
                 // Create a test map
-                var mapId = mapManager.CreateMap();
-                var mapUid = mapManager.GetMapEntityId(mapId);
+                var mapUid = mapSystem.CreateMap(out var mapId);
 
                 // Load the ambition ship
                 var mapLoaded = mapLoader.TryLoadGrid(mapId, new ResPath("/Maps/_NF/Shuttles/Expedition/ambition.yml"), out var gridUid);
@@ -132,7 +130,7 @@ namespace Content.IntegrationTests.Tests._NF.Shipyard
                 }
 
                 // Clean up
-                mapManager.DeleteMap(mapId);
+                mapSystem.DeleteMap(mapId);
             });
 
             await pair.CleanReturnAsync();

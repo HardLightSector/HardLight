@@ -19,7 +19,6 @@ entities:
       name: Tide
     - type: Transform
       pos: -2.3024244,-6.0853996
-      parent: invalid
     - type: MapGrid
       chunks:
         0,0:

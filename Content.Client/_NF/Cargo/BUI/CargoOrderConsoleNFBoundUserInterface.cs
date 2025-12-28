@@ -131,8 +131,8 @@ public sealed class CargoOrderConsoleNFBoundUserInterface : BoundUserInterface
 
         if (!disposing) return;
 
-        _menu?.Dispose();
-        _orderMenu?.Dispose();
+        _menu?.Close();
+        _orderMenu?.Close();
     }
 
     private bool AddOrder()

@@ -13,8 +13,8 @@ namespace Content.Server.Shuttles.Systems;
 public sealed partial class ShuttleSystem
 {
     private const float SpaceFrictionStrength = 0.0015f;
-    private const float DampenDampingStrength = 0.05f; // FRONTIER MERGE: this should be valuable
-    private const float AnchorDampingStrength = 0.5f;
+    private const float DampenDampingStrength = 0.25f; // FRONTIER MERGE: this should be valuable
+    private const float AnchorDampingStrength = 3f;
     private void NfInitialize()
     {
         SubscribeLocalEvent<ShuttleConsoleComponent, SetInertiaDampeningRequest>(OnSetInertiaDampening);
@@ -56,8 +56,15 @@ public sealed partial class ShuttleSystem
             _ => DampenDampingStrength, // other values: default to some sane behaviour (assume normal dampening)
         };
 
-        _physics.SetLinearDamping(transform.GridUid.Value, physicsComponent, linearDampeningStrength);
-        _physics.SetAngularDamping(transform.GridUid.Value, physicsComponent, angularDampeningStrength);
+        // Persist the desired damping via the shuttle component so the TileFrictionController
+        // uses the requested modifier every tick. Changing the PhysicsComponent damping
+        // directly is transient and will be overwritten by the friction controller.
+        if (EntityManager.TryGetComponent(transform.GridUid, out ShuttleComponent? gridShuttle))
+        {
+            gridShuttle.DampingModifier = linearDampeningStrength;
+            Dirty(transform.GridUid.Value, gridShuttle);
+        }
+
         _console.RefreshShuttleConsoles(transform.GridUid.Value);
         return true;
     }
@@ -86,6 +93,19 @@ public sealed partial class ShuttleSystem
         if (!EntityManager.HasComponent<ShuttleDeedComponent>(xform.GridUid) ||
             EntityManager.HasComponent<StationDampeningComponent>(_station.GetOwningStation(xform.GridUid)))
             return InertiaDampeningMode.Station;
+
+        // Prefer reading the ShuttleComponent's DampingModifier since we persist
+        // the desired dampening there. Fall back to PhysicsComponent if missing.
+        if (EntityManager.TryGetComponent(xform.GridUid, out ShuttleComponent? shuttleComp))
+        {
+            var modifier = shuttleComp.DampingModifier;
+            if (modifier >= AnchorDampingStrength)
+                return InertiaDampeningMode.Anchor;
+            else if (modifier <= SpaceFrictionStrength)
+                return InertiaDampeningMode.Off;
+            else
+                return InertiaDampeningMode.Dampen;
+        }
 
         if (!EntityManager.TryGetComponent(xform.GridUid, out PhysicsComponent? physicsComponent))
             return InertiaDampeningMode.Dampen;

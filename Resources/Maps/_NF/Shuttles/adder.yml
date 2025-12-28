@@ -30,7 +30,6 @@ entities:
       name: Adder
     - type: Transform
       pos: -0.546875,-0.5
-      parent: invalid
     - type: BecomesStation
       id: Adder
     - type: MapGrid

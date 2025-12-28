@@ -51,7 +51,7 @@
   - type: StaticPrice
     price: 140 # Frontier: 215<140 - TODO: material value rework
   - type: RadiationBlocker
-    resistance: 20
+    resistance: 5
 
 - type: entity
   id: UraniumReinforcedWindowDirectional
@@ -107,7 +107,7 @@
   - type: StaticPrice
     price: 70 # Frontier: 110<70 - TODO: material value rework
   - type: RadiationBlocker
-    resistance: 10
+    resistance: 2.5
 
 - type: entity
   parent: ReinforcedUraniumWindow

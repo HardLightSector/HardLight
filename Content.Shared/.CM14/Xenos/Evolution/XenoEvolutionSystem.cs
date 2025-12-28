@@ -22,6 +22,9 @@ public sealed class XenoEvolutionSystem : EntitySystem
 
     private void OnXenoEvolveActionMapInit(Entity<XenoEvolveActionComponent> ent, ref MapInitEvent args)
     {
+        if (!_action.TryGetActionData(ent, out _, logError: false))
+            return;
+
         _action.SetCooldown(ent, _timing.CurTime, _timing.CurTime + ent.Comp.Cooldown);
     }
 

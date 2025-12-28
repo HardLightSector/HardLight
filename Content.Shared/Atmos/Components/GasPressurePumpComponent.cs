@@ -49,4 +49,7 @@ public sealed partial class GasPressurePumpComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public bool PumpingInwards { get; set; }
+
+    [DataField("HighFlow"), AutoNetworkedField]
+    public bool HighFlow = false;
 }

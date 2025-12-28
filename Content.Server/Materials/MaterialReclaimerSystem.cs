@@ -27,7 +27,6 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using System.Linq;
 using Content.Shared.Humanoid;
-using Content.Shared.Stacks; // Frontier
 
 namespace Content.Server.Materials;
 

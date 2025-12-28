@@ -28,6 +28,7 @@ public sealed class MailJobVisualizerSystem : VisualizerSystem<MailComponent>
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly SpriteSystem _spriteSystem = default!;
+    private static readonly ProtoId<JobIconPrototype> UnknownIcon = "JobIconUnknown";
 
     protected override void OnAppearanceChange(EntityUid uid, MailComponent component, ref AppearanceChangeEvent args)
     {
@@ -37,11 +38,12 @@ public sealed class MailJobVisualizerSystem : VisualizerSystem<MailComponent>
         _appearance.TryGetData(uid, MailVisuals.JobIcon, out string job, args.Component);
 
         if (string.IsNullOrEmpty(job))
-            job = "JobIconUnknown";
+            job = UnknownIcon.ToString();
 
         if (!_prototypeManager.TryIndex<JobIconPrototype>(job, out var icon))
         {
-            args.Sprite.LayerSetTexture(MailVisualLayers.JobStamp, _spriteSystem.Frame0(_prototypeManager.Index("JobIconUnknown")));
+            var fallback = _prototypeManager.Index<JobIconPrototype>(UnknownIcon).Icon;
+            args.Sprite.LayerSetTexture(MailVisualLayers.JobStamp, _spriteSystem.Frame0(fallback));
             return;
         }
 

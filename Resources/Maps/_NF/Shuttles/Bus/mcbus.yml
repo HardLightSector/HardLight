@@ -31,7 +31,6 @@ entities:
     - type: MetaData
       name: McBus
     - type: Transform
-      parent: invalid
     - type: BecomesStation
       id: McBus
     - type: MapGrid

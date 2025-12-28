@@ -48,3 +48,7 @@
 - type: metabolizerType
   id: Arachnid
   name: metabolizer-type-arachnid
+
+- type: metabolizerType # HardLight
+  id: Synth
+  name: metabolizer-type-synth

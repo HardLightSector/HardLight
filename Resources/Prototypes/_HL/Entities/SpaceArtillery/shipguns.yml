@@ -2,9 +2,9 @@
 
 - type: entity
   id: CVWeaponTurretReaper
+  name: Civilian Curio-1089 tachyon lance "Reaper"
+  description: A terrifying weapon to have aimed at you, the Reaper is an ancient piece of pre-fracture tech capable of shattering the strongest of hulls within one or two blasts. now made for kids.
   parent: [ BaseC2ContrabandUnredeemable, WeaponTurretReaper ]
-  name: CV-Curio-1089 tachyon lance "Reaper"
-  description: A terrifying weapon to have aimed at you, the Reaper is an ancient piece of pre-fracture tech capable of shattering the strongest of hulls within one or two blasts. now made for kids. 
   components:
   - type: Sprite
     sprite: _HL/Objects/ShuttleWeapons/cvreaper.rsi
@@ -16,11 +16,17 @@
     visibleFromOtherGrids: true
   - type: ShipGunClass
     shipClass: CVSuperheavy
-    
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+  - type: Machine
+    board: CivReaperWeaponBoard
+
 - type: entity
   id: CVWeaponTurretHarbringer
+  name: Civilian Curio-129 ion cannon "Harbringer"
   parent: [ BaseC2ContrabandUnredeemable, WeaponTurretHarbringer ]
-  name: CVCurio-129 ion cannon "Harbringer"
   description: One of the most powerful EMP weapons in sector, its a sign of doom for its targets. Made for all ages!
   components:
   - type: Sprite
@@ -33,11 +39,17 @@
     visibleFromOtherGrids: true
   - type: ShipGunClass
     shipClass: CVSuperheavy
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+  - type: Machine
+    board: CivHarbringerWeaponBoard
 
 - type: entity
   id: CVWeaponTurretKargil
+  name: Civilian Kargil 203mm cannon
   parent: [ BaseC2ContrabandUnredeemable, WeaponTurretKargil ]
-  name: CVKargil 203mm cannon
   description: A (totally legal) cruiser artillery cannon that launches devastating 203mm shells for long-range ship-to-ship combat. Can be remotely activated or linked up to a GCS.
   components:
   - type: Sprite
@@ -49,12 +61,18 @@
     scale: 3.5
     visibleFromOtherGrids: true
   - type: ShipGunClass
-    shipClass: CVSuperheavy
+    shipClass: CVMedium
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+  - type: Machine
+    board: CivKargilWeaponBoard
 
 - type: entity
   id: CVWeaponTurretType54
+  name: Civilian Type-54C plasma autopulser
   parent: [ BaseC2ContrabandUnredeemable, WeaponTurretType54 ]
-  name: CVType-54C plasma autopulser
   description: A rapidly firing energy weapon, dealing a large amount of damage to its targets. Takes a long time to recharge. Feels like it could give a really mean tan. 
   components:
   - type: Sprite
@@ -66,12 +84,18 @@
     scale: 3.5
     visibleFromOtherGrids: true
   - type: ShipGunClass
-    shipClass: CVSuperheavy
+    shipClass: CVHeavy
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+  - type: Machine
+    board: CivType54WeaponBoard
 
 - type: entity
   id: CVWeaponTurretTovek
+  name: Civilian ADMX-23 TOVEK Hybrid EMP Pod
   parent: [ BaseC2ContrabandUnredeemable, WeaponTurretTovek ]
-  name: CVADMX-23 TOVEK Hybrid EMP Pod
   description: A hybrid EMP missile pod by Aetherion Dynamics. Fires EMPHE warheads to disable and weaken enemy ships at long range. Can be remotely activated or linked to a GCS. Says "intended for oral use only". 
   components:
   - type: Sprite
@@ -83,12 +107,18 @@
     scale: 2
     visibleFromOtherGrids: true
   - type: ShipGunClass
-    shipClass: CVMedium   
+    shipClass: CVMedium
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+  - type: Machine
+    board: CivTovekWeaponBoard
 
 - type: entity
   id: CVWeaponTurretSerpentMissile
+  name: Civilian Serpent torpedo launcher
   parent: [ BaseC2ContrabandUnredeemable, WeaponTurretSerpentMissile ]
-  name: CVSerpent torpedo launcher
   description: A light torpedo launcher developed by the Syndicate during the corporate war, uses similar systems to the anaconda for self loading munitons. Additional lubrication required.
   components:
   - type: Sprite
@@ -100,13 +130,19 @@
     scale: 3.5
     visibleFromOtherGrids: true
   - type: ShipGunClass
-    shipClass: CVSuperheavy 
-    
+    shipClass: CVHeavy
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+  - type: Machine
+    board: CivSerpentMissileWeaponBoard
+
 #T2
 - type: entity
   id: CVWeaponTurretSunder
+  name: Civilian Curio-1007 proton cannon "Sunder"
   parent: [ BaseC2ContrabandUnredeemable, WeaponTurretSunder ]
-  name: CVCurio-1007 proton cannon "Sunder"
   description: A potent proton cannon from before the Fracture, known for melting holes through both inorganic and organic matter with ease. Batteries sold separately 
   components:
   - type: Sprite
@@ -118,13 +154,192 @@
     scale: 2
     visibleFromOtherGrids: true
   - type: ShipGunClass
-    shipClass: CVMedium 
+    shipClass: CVMedium
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+  - type: Machine
+    board: CivSunderWeaponBoard
+    
+- type: entity
+  id: AIWeaponTurretSunder
+  name: Hostile Curio-1007 proton cannon "Sunder"
+  parent: [ WeaponTurretSunder ]
+  description: An AI controlled weapon, you're too close.  
+  components:
+  - type: Sprite
+    sprite: _HL/Objects/ShuttleWeapons/sunder.rsi
+    layers:
+    - state: space_artillery
+  - type: Tag
+    tags:
+    - AIShipWeapon
+  - type: HitscanRadarSignature
+    radarColor: "#FF0000"
+    lifeTime: 1.0
+  - type: HTN
+    rootTask:
+      task: ShuttleDeedTurretCompound
+    blackboard:
+      RotateSpeed: !type:Single
+        3.141
+      SoundTargetInLOS: !type:SoundPathSpecifier
+        path: /Audio/Effects/double_beep.ogg
+
+- type: entity
+  id: AIWeaponTurretType35
+  name: Hostile Type35
+  parent: [ WeaponTurretType35 ]
+  description: An AI controlled weapon, you're too close.  
+  components:
+  - type: Sprite
+    sprite: _HL/Objects/ShuttleWeapons/t35.rsi
+    layers:
+    - state: space_artillery
+  - type: Tag
+    tags:
+    - AIShipWeapon
+  - type: HitscanRadarSignature
+    radarColor: "#FF0000"
+    lifeTime: 1.0
+  - type: HTN
+    rootTask:
+      task: ShuttleDeedTurretCompound
+    blackboard:
+      RotateSpeed: !type:Single
+        3.141
+      SoundTargetInLOS: !type:SoundPathSpecifier
+        path: /Audio/Effects/double_beep.ogg
+
+- type: entity
+  id: AIWeaponLaserTurretApollo
+  name: Hostile Apollo
+  parent: [ WeaponLaserTurretApollo ]
+  description: An AI controlled weapon, you're too close.  
+  components:
+  - type: Sprite
+    sprite: _HL/Objects/ShuttleWeapons/t35.rsi
+    layers:
+    - state: space_artillery
+  - type: Tag
+    tags:
+    - AIShipWeapon
+  - type: HitscanRadarSignature
+    radarColor: "#FF0000"
+    lifeTime: 1.0
+  - type: HTN
+    rootTask:
+      task: ShuttleDeedTurretCompound
+    blackboard:
+      RotateSpeed: !type:Single
+        3.141
+      SoundTargetInLOS: !type:SoundPathSpecifier
+        path: /Audio/Effects/double_beep.ogg
+
+- type: entity
+  id: AIWeaponLaserTurretFlayer
+  name: Hostile Flayer
+  parent: [ WeaponLaserTurretFlayer ]
+  description: An AI controlled weapon, you're too close.  
+  components:
+  - type: Sprite
+    sprite: _HL/Objects/ShuttleWeapons/flayer.rsi
+    layers:
+    - state: space_artillery
+  - type: Tag
+    tags:
+    - AIShipWeapon
+  - type: HitscanRadarSignature
+    radarColor: "#FF0000"
+    lifeTime: 1.0
+  - type: HTN
+    rootTask:
+      task: ShuttleDeedTurretCompound
+    blackboard:
+      RotateSpeed: !type:Single
+        3.141
+      SoundTargetInLOS: !type:SoundPathSpecifier
+        path: /Audio/Effects/double_beep.ogg
+    
+- type: entity
+  id: AIWeaponLaserTurretL1Phalanx
+  name: Hostile phalanx
+  parent: [ WeaponLaserTurretL1Phalanx ]
+  description: An AI controlled weapon, you're too close.  
+  components:
+  - type: Sprite
+    sprite: _HL/Objects/ShuttleWeapons/phalanx.rsi
+    layers:
+    - state: space_artillery
+  - type: Tag
+    tags:
+    - AIShipWeapon
+  - type: HitscanRadarSignature
+    radarColor: "#FF0000"
+    lifeTime: 1.0
+  - type: HTN
+    rootTask:
+      task: ShuttleDeedTurretCompound
+    blackboard:
+      RotateSpeed: !type:Single
+        3.141
+      SoundTargetInLOS: !type:SoundPathSpecifier
+        path: /Audio/Effects/double_beep.ogg
+
+- type: entity
+  id: AIWeaponTurretAdderScattercannon
+  name: Hostile Adder
+  parent: [ WeaponTurretAdderScattercannon ]
+  description: An AI controlled weapon, you're too close.  
+  components:
+  - type: Sprite
+    sprite: _HL/Objects/ShuttleWeapons/adder.rsi
+    layers:
+    - state: space_artillery
+  - type: Tag
+    tags:
+    - AIShipWeapon
+  - type: HitscanRadarSignature
+    radarColor: "#FF0000"
+    lifeTime: 1.0
+  - type: HTN
+    rootTask:
+      task: ShuttleDeedTurretCompound
+    blackboard:
+      RotateSpeed: !type:Single
+        3.141
+      SoundTargetInLOS: !type:SoundPathSpecifier
+        path: /Audio/Effects/double_beep.ogg
+    
+- type: entity
+  id: AIWeaponTurretCharonette
+  name: Hostile massdriver
+  parent: [ WeaponTurretCharonette ]
+  description: An AI controlled weapon, you're too close.  
+  components:
+  - type: Sprite
+    sprite: _HL/Objects/ShuttleWeapons/charonette.rsi
+    layers:
+    - state: space_artillery
+  - type: Tag
+    tags:
+    - AIShipWeapon
+  - type: HitscanRadarSignature
+    radarColor: "#FF0000"
+    lifeTime: 1.0
+  - type: HTN
+    rootTask:
+      task: ShuttleDeedTurretCompound
+    blackboard:
+      SoundTargetInLOS: !type:SoundPathSpecifier
+        path: /Audio/Effects/double_beep.ogg
 
 - type: entity
   id: CVWeaponTurretFang
+  name: Civilian Fang heavy 100mm autocannon
+  description: A heavy 100mm autocannon of syndicate design, created during the corporate war. Made for shattering the hulls of NT crusiers. Uses a self loading mechanism similar to the anaconda hangun. Now coming to a backyard near you!zzzzzzzzz
   parent: [ BaseC2ContrabandUnredeemable, WeaponTurretFang ]
-  name: CVFang heavy 100mm autocannon
-  description: A heavy 100mm autocannon of syndicate design, created during the corporate war. Made for shattering the hulls of NT crusiers. Uses a self loading mechanism similar to the anaconda hangun. Now coming to a backyard near you! 
   components:
   - type: Sprite
     sprite: _HL/Objects/ShuttleWeapons/cvfang.rsi
@@ -135,13 +350,19 @@
     scale: 2
     visibleFromOtherGrids: true
   - type: ShipGunClass
-    shipClass: CVMedium 
-    
+    shipClass: CVMedium
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+  - type: Machine
+    board: CivFangWeaponBoard
+
 - type: entity
   id: CVWeaponTurretType35
+  name: Civilian Type-35 MARAUDER-type plasma cannon
+  description: Launches magnetically contained balls of plasma at targets. Can be remotely activated, or linked up to a GCS. Hazardous if consumed.
   parent: [ BaseC2ContrabandUnredeemable, WeaponTurretType35 ]
-  name: CVType-35 MARAUDER-type plasma cannon
-  description: Launches magnetically contained balls of plasma at targets. Can be remotely activated, or linked up to a GCS. Hazardous if consumed.  
   components:
   - type: Sprite
     sprite: _HL/Objects/ShuttleWeapons/cvt35.rsi
@@ -152,13 +373,19 @@
     scale: 2
     visibleFromOtherGrids: true
   - type: ShipGunClass
-    shipClass: CVMedium 
+    shipClass: CVMedium
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+  - type: Machine
+    board: CivType35WeaponBoard
 
 - type: entity
   id: CVWeaponLaserTurretApollo
+  name: Civilian L-20 Apollo Heavy Laser Cannon
+  description: One of the Pantheon Collective's top weapons, the Apollo is aptly named for its beams heating surfaces to beyond the temperature of nearby stars. Bottom weapons unavailable for comment.
   parent: [ BaseC2ContrabandUnredeemable, WeaponLaserTurretApollo ]
-  name: CVL-20 Apollo Heavy Laser Cannon
-  description: One of the Pantheon Collective's top weapons, the Apollo is aptly named for its beams heating surfaces to beyond the temperature of nearby stars. Bottom weapons unavailable for comment.  
   components:
   - type: Sprite
     sprite: _HL/Objects/ShuttleWeapons/cvapollo.rsi
@@ -170,12 +397,18 @@
     visibleFromOtherGrids: true
   - type: ShipGunClass
     shipClass: CVHeavy
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+  - type: Machine
+    board: CivApolloWeaponBoard
 
 - type: entity
   id: CVWeaponTurretRAC30
+  name: Civilian RAC-30 Draupnir Autocannon
+  description: A more heavy duty rapid rife autocannon, firing a hail of rounds much like its namesake became a hail of spears. For outdoor use only.
   parent: [ BaseC2ContrabandUnredeemable, WeaponTurretRAC30 ]
-  name: CVRAC-30 Draupnir Autocannon
-  description: A more heavy duty rapid rife autocannon, firing a hail of rounds much like its namesake became a hail of spears. For outdoor use only.   
   components:
   - type: Sprite
     sprite: _HL/Objects/ShuttleWeapons/cvrac-30_draupnir.rsi
@@ -187,13 +420,19 @@
     visibleFromOtherGrids: true
   - type: ShipGunClass
     shipClass: CVMedium
-    
-#T1   
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+  - type: Machine
+    board: CivRAC30WeaponBoard
+
+#T1
 - type: entity
   id: CVWeaponTurretAK570
+  name: Civilian AK570 90mm heavy autocannon
+  description: A dual-barrel, heavy 90mm autocannon firing general-purpose APHE rounds, effective for sustained fire against medium targets. Can be remotely activated or linked up to a GCS. ribbed for your pleasure.zzzz
   parent: [ BaseC2ContrabandUnredeemable, WeaponTurretAK570 ]
-  name: CVAK570 90mm heavy autocannon
-  description: A dual-barrel, heavy 90mm autocannon firing general-purpose APHE rounds, effective for sustained fire against medium targets. Can be remotely activated or linked up to a GCS. ribbed for your pleasure.  
   components:
   - type: Sprite
     sprite: _HL/Objects/ShuttleWeapons/cvartillery.rsi
@@ -205,12 +444,18 @@
     visibleFromOtherGrids: true
   - type: ShipGunClass
     shipClass: CVMedium
-    
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+  - type: Machine
+    board: CivAK570WeaponBoard
+
 - type: entity
   id: CVWeaponTurretDravon
+  name: Civilian ADBP-7 DRAVON 57mm Autocannon
+  description: A single-barrel autocannon made by Aetherion Dynamics. Medium artillery piece with high fire rate but relatively low impact, firing HEAT shells to damage ship armor and systems. Can be remotely activated or linked up to a GCS. please consult a doctor if an erection lasts longer than 4 hours.
   parent: [ BaseC2ContrabandUnredeemable, WeaponTurretDravon ]
-  name: CVADBP-7 DRAVON 57mm Autocannon
-  description: A single-barrel autocannon made by Aetherion Dynamics. Medium artillery piece with high fire rate but relatively low impact, firing HEAT shells to damage ship armor and systems. Can be remotely activated or linked up to a GCS. please consult a doctor if an erection lasts longer than 4 hours. 
   components:
   - type: Sprite
     sprite: _HL/Objects/ShuttleWeapons/cvdravon.rsi
@@ -221,13 +466,19 @@
     scale: 2
     visibleFromOtherGrids: true
   - type: ShipGunClass
-    shipClass: CVMedium    
-    
+    shipClass: CVMedium
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+  - type: Machine
+    board: CivDravonWeaponBoard
+
 - type: entity
   id: CVWeaponLaserTurretFlayer
+  name: Civilian Curio-183 auto-coil "Flayer"
+  description: A single-barrel autocannon made by Aetherion Dynamics. Medium artillery piece with high fire rate but relatively low impact, firing HEAT shells to damage ship armor and systems. Can be remotely activated or linked up to a GCS. please consult a doctor if an erection lasts longer than 4 hours.
   parent: [ BaseC2ContrabandUnredeemable, WeaponLaserTurretFlayer ]
-  name: CVCurio-183 auto-coil "Flayer"
-  description: A single-barrel autocannon made by Aetherion Dynamics. Medium artillery piece with high fire rate but relatively low impact, firing HEAT shells to damage ship armor and systems. Can be remotely activated or linked up to a GCS. please purchase more lube if an erection lasts longer than 4 hours. 
   components:
   - type: Sprite
     sprite: _HL/Objects/ShuttleWeapons/cvflayer.rsi
@@ -238,13 +489,19 @@
     scale: 2
     visibleFromOtherGrids: true
   - type: ShipGunClass
-    shipClass: CVMedium 
-    
+    shipClass: CVMedium
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+  - type: Machine
+    board: CivFlayerWeaponBoard
+
 - type: entity
   id: CVWeaponLaserTurretL1Phalanx
+  name: Civilian L-1 Phalanx
+  description: A light laser emplactment designed by the Pantheon Collective, used to shred threats of all types. Now in new berry blast flavor.
   parent: [ BaseC2ContrabandUnredeemable, WeaponLaserTurretL1Phalanx ]
-  name: CVL-1 Phalanx
-  description: A light laser emplactment designed by the Pantheon Collective, used to shred threats of all types. Now in new berry blast flavor. 
   components:
   - type: Sprite
     sprite: _HL/Objects/ShuttleWeapons/cvphalanx.rsi
@@ -256,12 +513,18 @@
     visibleFromOtherGrids: true
   - type: ShipGunClass
     shipClass: CVLight
-    
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+  - type: Machine
+    board: CivL1PhalanxWeaponBoard
+
 - type: entity
   id: CVWeaponTurretL85Autocannon
+  name: Civilian L85 20mm autocannon
+  description: A light 20mm ballistic autocannon designed for rapid fire and suppressing smaller targets at close range. Cheap, light, and can be remotely activated or linked up to a GCS. Results may vary.
   parent: [ BaseC2ContrabandUnredeemable, WeaponTurretL85Autocannon ]
-  name: CVL85 20mm autocannon
-  description: A light 20mm ballistic autocannon designed for rapid fire and suppressing smaller targets at close range. Cheap, light, and can be remotely activated or linked up to a GCS. Results may vary. 
   components:
   - type: Sprite
     sprite: _HL/Objects/ShuttleWeapons/cv50cal.rsi
@@ -273,11 +536,17 @@
     visibleFromOtherGrids: true
   - type: ShipGunClass
     shipClass: CVLight
-    
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+  - type: Machine
+    board: CivL85AutocannonWeaponBoard
+
 - type: entity
   id: CVWeaponTurretM220
+  name: Civilian M220 RUBICON EMP launcher
   parent: [ BaseC2ContrabandUnredeemable, WeaponTurretM220 ]
-  name: CVM220 RUBICON EMP launcher
   description: Launches EMP projectiles at ships, disabling systems with powerful electromagnetic pulses. Ideal for non-lethal engagements and can be remotely activated or linked to a GCS. shock your friends.
   components:
   - type: Sprite
@@ -290,12 +559,18 @@
     visibleFromOtherGrids: true
   - type: ShipGunClass
     shipClass: CVMedium
-    
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+  - type: Machine
+    board: CivM220WeaponBoard
+
 - type: entity
   id: CVWeaponTurretVanyk
+  name: Civilian ASM-302 pod
+  description: An escort missile pod manufactured by Aetherion Dynamics. Launches guided missiles for basic ship-to-ship combat and area denial. Can be remotely activated or linked to a GCS.
   parent: [ BaseC2ContrabandUnredeemable, WeaponTurretVanyk ]
-  name: CVASM-302 pod
-  description: An escort missile pod manufactured by Aetherion Dynamics. Launches guided missiles for basic ship-to-ship combat and area denial. Can be remotely activated or linked to a GCS. Some assembly required.
   components:
   - type: Sprite
     sprite: _HL/Objects/ShuttleWeapons/cvvanyk.rsi
@@ -307,3 +582,9 @@
     visibleFromOtherGrids: true
   - type: ShipGunClass
     shipClass: CVMedium
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+  - type: Machine
+    board: CivVanykWeaponBoard

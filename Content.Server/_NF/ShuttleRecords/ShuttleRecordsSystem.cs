@@ -19,7 +19,6 @@ public sealed partial class ShuttleRecordsSystem : SharedShuttleRecordsSystem
     [Dependency] private readonly IEntityManager _entityManager = default!;
     [Dependency] private readonly SectorServiceSystem _sectorService = default!;
     [Dependency] private readonly AccessReaderSystem _access = default!;
-    [Dependency] private readonly IAdminLogManager _adminLogger = default!;
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!;

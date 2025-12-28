@@ -113,8 +113,9 @@
     state: engineering
   - type: MachineBoard
     prototype: PlumbingPump
-    stackRequirements:
+    requirements:
       Manipulator: 4
+    stackRequirements:
       Steel: 5
     tagRequirements:
       GlassBeaker:

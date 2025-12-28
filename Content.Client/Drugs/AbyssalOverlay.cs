@@ -20,6 +20,7 @@ public sealed class AbyssalOverlay : Overlay
 
     public override OverlaySpace Space => OverlaySpace.WorldSpace;
     public override bool RequestScreenTexture => true;
+    private static readonly ProtoId<ShaderPrototype> AbyssalShaderId = "AbyssalWhispers";
     private readonly ShaderInstance _abyssalShader;
 
     public float Intoxication = 0.0f;
@@ -33,7 +34,7 @@ public sealed class AbyssalOverlay : Overlay
     public AbyssalOverlay()
     {
         IoCManager.InjectDependencies(this);
-        _abyssalShader = _prototypeManager.Index<ShaderPrototype>("AbyssalWhispers").InstanceUnique();
+        _abyssalShader = _prototypeManager.Index(AbyssalShaderId).InstanceUnique();
     }
 
     protected override void FrameUpdate(FrameEventArgs args)

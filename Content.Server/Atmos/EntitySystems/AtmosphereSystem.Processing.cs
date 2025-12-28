@@ -580,7 +580,8 @@ namespace Content.Server.Atmos.EntitySystems
                     || TerminatingOrDeleted(xform.MapUid.Value)
                     || xform.MapID == MapId.Nullspace)
                 {
-                    Log.Error($"Attempted to process atmos without a map? Entity: {ToPrettyString(owner)}. Map: {ToPrettyString(xform?.MapUid)}. MapId: {xform?.MapID}");
+                    // This can happen when entities are deleted mid-processing, not an error
+                    Log.Debug($"Skipping atmos processing for entity without valid map. Entity: {ToPrettyString(owner)}. Map: {ToPrettyString(xform?.MapUid)}. MapId: {xform?.MapID}");
                     continue;
                 }
 

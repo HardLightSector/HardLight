@@ -51,7 +51,7 @@
   - type: StaticPrice
     price: 50 # Frontier: 100<50
   - type: RadiationBlocker
-    resistance: 2.5
+    resistance: 2
 
 - type: entity
   id: PlasmaWindowDirectional
@@ -107,7 +107,7 @@
   - type: StaticPrice
     price: 25 # Frontier:50<25
   - type: RadiationBlocker
-    resistance: 2.444
+    resistance: 1
 
 - type: entity
   parent: PlasmaWindow

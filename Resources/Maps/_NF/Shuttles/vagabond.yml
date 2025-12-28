@@ -32,7 +32,6 @@ entities:
       name: Vagabond
     - type: Transform
       pos: -0.5244612,-0.4938817
-      parent: invalid
     - type: MapGrid
       chunks:
         -1,0:

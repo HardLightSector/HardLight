@@ -1,0 +1,64 @@
+# HTN system for turrets targeting grids with ShuttleDeedComponent
+
+# Utility query for finding nearby grids with ShuttleDeed
+- type: utilityQuery
+  id: NearbyShuttleDeedGridTargets
+  query:
+  - !type:NearbyShuttleDeedGridsQuery
+    range: 500
+    blacklist:
+      tags:
+      - ShuttleAIIgnore
+  considerations:
+  - !type:TargetInverseDistanceCon
+    curve: !type:QuadraticCurve
+      slope: 1
+      exponent: 1
+      yOffset: 0
+      xOffset: 0
+
+# Main compound for turrets that target ShuttleDeed grids
+- type: htnCompound
+  id: ShuttleDeedTurretCompound
+  branches:
+  - tasks:
+    - !type:HTNPrimitiveTask
+      operator: !type:UtilityOperator
+        proto: NearbyShuttleDeedGridTargets
+    - !type:HTNCompoundTask
+      task: ShuttleDeedTurretAttackCompound
+
+# Attack compound - move toward target and fire at it
+- type: htnCompound
+  id: ShuttleDeedTurretAttackCompound
+  branches:
+  - preconditions:
+    - !type:KeyExistsPrecondition
+      key: TargetCoordinates
+    tasks:
+    - !type:HTNPrimitiveTask
+      operator: !type:ShipMoveToOperator
+        shutdownState: PlanFinished
+        removeKeyOnFinish: false
+        targetKey: TargetCoordinates
+        range: 50
+        rangeTolerance: 25
+        maxTargetingRange: 500
+        requireAnchored: false
+        avoidCollisions: true
+        finishOnCollide: false
+        leadingEnabled: true
+      services:
+      - !type:UtilityService
+        id: TargetsService
+        proto: NearbyShuttleDeedGridTargets
+        key: Target
+        coordinatesKey: TargetCoordinates
+    - !type:HTNPrimitiveTask
+      operator: !type:ShipFireGunsOperator
+        shutdownState: PlanFinished
+        removeKeyOnFinish: false
+        leadingAccuracy: 0.6
+        requireAnchored: false
+        maxTargetingRange: 75
+        targetKey: TargetCoordinates

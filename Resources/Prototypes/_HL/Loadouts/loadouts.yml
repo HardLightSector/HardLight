@@ -139,6 +139,15 @@
   equipment:
     shoes: ClothingUnderSocksCoderValid
 
+- type: loadout
+  id: ContractorClothingShoesClothwrapTransparent
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: ShoesCapableNF
+  price: 50
+  equipment:
+    shoes: ClothingShoesClothwrapTransparent
+
 
 # Outer clothing
 
@@ -153,6 +162,33 @@
   price: 1200
   equipment:
     outerClothing: ClothingOuterCoatBomberCrop
+
+- type: loadout
+  id: MercenaryClothingOuterArmoredJacketPMCBlue
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFCoatCapable
+  price: 600
+  equipment:
+    outerClothing: ClothingOuterArmoredJacketPMCBlue
+
+- type: loadout
+  id: MercenaryClothingOuterArmoredJacketPMCGreen
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFCoatCapable
+  price: 600
+  equipment:
+    outerClothing: ClothingOuterArmoredJacketPMCGreen
+
+- type: loadout
+  id: MercenaryClothingOuterArmoredJacketPMCOlive
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFCoatCapable
+  price: 600
+  equipment:
+    outerClothing: ClothingOuterArmoredJacketPMCOlive
 
 # Merc guns
 

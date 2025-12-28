@@ -38,7 +38,7 @@ public sealed class GasPressurePumpBoundUserInterface(EntityUid owner, Enum uiKe
             return;
 
         _window.SetPumpStatus(pump.Enabled);
-        _window.MaxPressure = pump.MaxTargetPressure;
+        _window.MaxPressure = pump.HighFlow ? Atmospherics.MaxOutputPressure * 3f : pump.MaxTargetPressure;
         _window.SetOutputPressure(pump.TargetPressure);
     }
 

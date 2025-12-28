@@ -101,7 +101,7 @@
   - CharonReloadWeaponBoard
   - HadesWeaponBoard
   - HydraWeaponBoard
-  - CapitalShieldBoard
+  #- CapitalShieldBoard
 
 - type: technology
   id: ShuttleWeaponMaterials
@@ -145,3 +145,45 @@
   - CyberneticsHiggsAnchor
   - CyberneticsHiggsDisplacer
   - CyberneticsBloodPump
+
+- type: technology
+  id: CivilianShuttleWeapons
+  name: research-technology-civilian-shuttle-weapons
+  icon:
+    sprite: _HL/Logo/shuttle_armament_research_t2.rsi
+    state: T2
+  discipline: Arsenal
+  tier: 2
+  cost: 30000
+  recipeUnlocks:
+  - CivL1PhalanxWeaponBoard
+  - CivL85AutocannonWeaponBoard
+  - CivKargilWeaponBoard
+  - CivTovekWeaponBoard
+  - CivSunderWeaponBoard
+  - CivFangWeaponBoard
+  - CivType35WeaponBoard
+  - CivRAC30WeaponBoard
+  - CivAK570WeaponBoard
+  - CivDravonWeaponBoard
+  - CivFlayerWeaponBoard
+  - CivM220WeaponBoard
+  - CivVanykWeaponBoard
+  - CivType54WeaponBoard
+  - CivSerpentMissileWeaponBoard
+  - CivApolloWeaponBoard
+  - CivReaperWeaponBoard
+  - CivHarbringerWeaponBoard
+  - CivBigThrusterBoard
+
+- type: technology
+  id: HighPressureAtmospherics
+  name: research-technology-high-pressure-atmospherics
+  icon:
+    sprite: Structures/Piping/Atmospherics/pump.rsi
+    state: pumpPressure
+  discipline: Industrial
+  tier: 3
+  cost: 15000
+  recipeUnlocks:
+  - HighPressureCasing

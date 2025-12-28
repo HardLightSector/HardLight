@@ -1,6 +1,6 @@
 - type: entity
   name: Bolt rifle
-  parent: [BaseWeaponRifle, BaseC2ContrabandUnredeemable]
+  parent: [BaseWeaponRifle, BaseC3ExpeditionContraband]
   id: WeaponRifleBolter
   description: A large and powerful rifle that fires explosive rounds known as bolts. Commonly used by elite military forces.
   components:
@@ -46,7 +46,7 @@
 
 - type: entity
   name: Bolt pistol
-  parent: [BaseWeaponPistol, BaseC2ContrabandUnredeemable]
+  parent: [BaseWeaponPistol, BaseC3ExpeditionContraband]
   id: WeaponPistolBolter
   description: A compact sidearm that fires explosive rounds known as bolts. Favored by officers and specialists.
   components:

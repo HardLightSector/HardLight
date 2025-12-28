@@ -19,6 +19,7 @@
   id: MobShadekinSprites
   sprites:
     Head: MobShadekinHead
+    Hair: MobHumanoidAnyMarking
     Snout: MobShadekinAnyMarkingFollowSkin
     Chest: MobShadekinTorso
     HeadTop: MobShadekinAnyMarkingFollowSkin
@@ -38,7 +39,7 @@
   id: MobShadekinMarkingLimits
   points:
     Hair:
-      points: 0
+      points: 1
       required: false
     FacialHair:
       points: 0

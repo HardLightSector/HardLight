@@ -51,3 +51,36 @@
   - type: ExplosionResistance
     damageCoefficient: 0.75
   - type: GroupExamine
+
+- type: entity
+  parent: [ BaseC1Contraband, ClothingOuterVestWebMercenary ]
+  id: ClothingOuterArmoredJacketPMCBlue
+  name: PMC armored jacket
+  description: A high-quality armored jacket made from a tough but flexible synthetic fiber. Gives the user a decent degree of stylish protection.
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/OuterClothing/pmc_armored_jacket_blue.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/OuterClothing/pmc_armored_jacket_blue.rsi
+
+- type: entity
+  parent: [ BaseC1Contraband, ClothingOuterVestWebMercenary ]
+  id: ClothingOuterArmoredJacketPMCGreen
+  name: PMC armored jacket
+  description: A high-quality armored jacket made from a tough but flexible synthetic fiber. Gives the user a decent degree of stylish protection.
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/OuterClothing/pmc_armored_jacket_green.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/OuterClothing/pmc_armored_jacket_green.rsi
+
+- type: entity
+  parent: [ BaseC1Contraband, ClothingOuterVestWebMercenary ]
+  id: ClothingOuterArmoredJacketPMCOlive
+  name: PMC armored jacket
+  description: A high-quality armored jacket made from a tough but flexible synthetic fiber. Gives the user a decent degree of stylish protection.
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/OuterClothing/pmc_armored_jacket_olive.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/OuterClothing/pmc_armored_jacket_olive.rsi

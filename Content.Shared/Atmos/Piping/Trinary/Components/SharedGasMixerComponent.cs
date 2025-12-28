@@ -15,15 +15,18 @@ namespace Content.Shared.Atmos.Piping.Trinary.Components
         public float OutputPressure { get; }
         public bool Enabled { get; }
 
-        public float NodeOne { get; }
+            public float NodeOne { get; }
 
-        public GasMixerBoundUserInterfaceState(string mixerLabel, float outputPressure, bool enabled, float nodeOne)
-        {
-            MixerLabel = mixerLabel;
-            OutputPressure = outputPressure;
-            Enabled = enabled;
-            NodeOne = nodeOne;
-        }
+            public bool HighFlow { get; }
+
+            public GasMixerBoundUserInterfaceState(string mixerLabel, float outputPressure, bool enabled, float nodeOne, bool highFlow)
+            {
+                MixerLabel = mixerLabel;
+                OutputPressure = outputPressure;
+                Enabled = enabled;
+                NodeOne = nodeOne;
+                HighFlow = highFlow;
+            }
     }
 
     [Serializable, NetSerializable]

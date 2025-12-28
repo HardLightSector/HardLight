@@ -26,7 +26,6 @@ entities:
       name: Fighter
     - type: Transform
       pos: -0.15940452,-1.515625
-      parent: invalid
     - type: BecomesStation
       id: Fighter
     - type: MapGrid

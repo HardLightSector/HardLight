@@ -38,7 +38,6 @@ entities:
       name: Baroness
     - type: Transform
       pos: -0.546875,-0.53125
-      parent: invalid
     - type: MapGrid
       chunks:
         0,0:

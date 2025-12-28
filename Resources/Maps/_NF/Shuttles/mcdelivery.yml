@@ -27,7 +27,6 @@ entities:
       name: McDelivery
     - type: Transform
       pos: -0.48958334,-0.5208333
-      parent: invalid
     - type: BecomesStation
       id: McDelivery
     - type: MapGrid

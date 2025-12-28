@@ -49,6 +49,9 @@
   - MercenaryClothingOuterArmorPunkOrange # Punkish (Static visuals)
   - MercenaryClothingOuterArmorPunkRed # Punkish (Static visuals)
   - MercenaryClothingOuterArmorPunkRandomized # Punkish (Randomized visuals)
+  - MercenaryClothingOuterArmoredJacketPMCBlue #HL - added PMC armored jacket
+  - MercenaryClothingOuterArmoredJacketPMCGreen #HL - added PMC armored jacket
+  - MercenaryClothingOuterArmoredJacketPMCOlive #HL - added PMC armored jacket
   - MercenaryClothingOuterArmorCaptainCarapace
   subgroups:
   - PilotOuterClothing

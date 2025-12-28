@@ -3360,7 +3360,7 @@
     enableOverrideDir: true
     sprite: _CS/Clothes/cbuniforms.rsi
     layers:
-    - state: bean
+    - state: gearharnessicon
   - type: Clothing
     sprite: _CS/Clothes/cbuniforms.rsi
     clothingVisuals:

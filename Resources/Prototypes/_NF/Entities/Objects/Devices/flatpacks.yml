@@ -988,6 +988,474 @@
 
 - type: entity
   parent: VendingMachineBoozeFlatpack
+  id: VendingMachineAmmoFlatpack
+  name: liberation station flatpack
+  description: A flatpack used for constructing a liberation station vendomat.
+  components:
+  - type: Flatpack
+    entity: VendingMachineAmmo
+
+- type: entity
+  parent: VendingMachineBoozeFlatpack
+  id: VendingMachineCartFlatpack
+  name: PTech flatpack
+  description: A flatpack used for constructing a PTech vendomat.
+  components:
+  - type: Flatpack
+    entity: VendingMachineCart
+
+- type: entity
+  parent: VendingMachineBoozeFlatpack
+  id: VendingMachineClothingFlatpack
+  name: ClothesMate flatpack
+  description: A flatpack used for constructing a ClothesMate vendomat.
+  components:
+  - type: Flatpack
+    entity: VendingMachineClothing
+
+- type: entity
+  parent: VendingMachineBoozeFlatpack
+  id: VendingMachineWinterFlatpack
+  name: WinterDrobe flatpack
+  description: A flatpack used for constructing a WinterDrobe vendomat.
+  components:
+  - type: Flatpack
+    entity: VendingMachineWinter
+
+- type: entity
+  parent: VendingMachineBoozeFlatpack
+  id: VendingMachineCoffeeFlatpack
+  name: Solar's Best Hot Drinks flatpack
+  description: A flatpack used for constructing a Solar's Best Hot Drinks vendomat.
+  components:
+  - type: Flatpack
+    entity: VendingMachineCoffee
+
+- type: entity
+  parent: VendingMachineBoozeFlatpack
+  id: VendingMachineColaFlatpack
+  name: Robust Softdrinks flatpack
+  description: A flatpack used for constructing a Robust Softdrinks vendomat.
+  components:
+  - type: Flatpack
+    entity: VendingMachineCola
+
+- type: entity
+  parent: VendingMachineBoozeFlatpack
+  id: VendingMachineCondimentsFlatpack
+  name: condiment station flatpack
+  description: A flatpack used for constructing a condiment station vendomat.
+  components:
+  - type: Flatpack
+    entity: VendingMachineCondiments
+
+- type: entity
+  parent: VendingMachineBoozeFlatpack
+  id: VendingMachineAstroVendFlatpack
+  name: AstroVend flatpack
+  description: A flatpack used for constructing an AstroVend vendomat.
+  components:
+  - type: Flatpack
+    entity: VendingMachineAstroVend
+
+- type: entity
+  parent: VendingMachineBoozeFlatpack
+  id: VendingMachineArcadiaFlatpack
+  name: ArcadiaDrobe flatpack
+  description: A flatpack used for constructing an ArcadiaDrobe vendomat.
+  components:
+  - type: Flatpack
+    entity: VendingMachineArcadia
+
+- type: entity
+  parent: VendingMachineBoozeFlatpack
+  id: VendingMachineCuddlyCritterVendFlatpack
+  name: CuddlyCritterVend flatpack
+  description: A flatpack used for constructing a CuddlyCritterVend vendomat.
+  components:
+  - type: Flatpack
+    entity: VendingMachineCuddlyCritterVend
+
+- type: entity
+  parent: VendingMachineBoozeFlatpack
+  id: VendingMachineAutoTuneVendFlatpack
+  name: AutoTune flatpack
+  description: A flatpack used for constructing an AutoTune vendomat.
+  components:
+  - type: Flatpack
+    entity: VendingMachineAutoTuneVend
+
+- type: entity
+  parent: VendingMachineBoozeFlatpack
+  id: VendingMachineDiscountFlatpack
+  name: Discount Dans flatpack
+  description: A flatpack used for constructing a Discount Dans vendomat.
+  components:
+  - type: Flatpack
+    entity: VendingMachineDiscount
+
+- type: entity
+  parent: VendingMachineBoozeFlatpack
+  id: VendingMachineDonutFlatpack
+  name: Donut Holes flatpack
+  description: A flatpack used for constructing a Donut Holes vendomat.
+  components:
+  - type: Flatpack
+    entity: VendingMachineDonut
+
+- type: entity
+  parent: VendingMachineBoozeFlatpack
+  id: VendingMachineDrGibbFlatpack
+  name: Dr. Gibb flatpack
+  description: A flatpack used for constructing a Dr. Gibb vendomat.
+  components:
+  - type: Flatpack
+    entity: VendingMachineDrGibb
+
+- type: entity
+  parent: VendingMachineBoozeFlatpack
+  id: VendingMachineEngiDrobeFlatpack
+  name: EngiDrobe flatpack
+  description: A flatpack used for constructing an EngiDrobe vendomat.
+  components:
+  - type: Flatpack
+    entity: VendingMachineEngiDrobe
+
+- type: entity
+  parent: VendingMachineBoozeFlatpack
+  id: VendingMachineEngivendFlatpack
+  name: EngiVend flatpack
+  description: A flatpack used for constructing an EngiVend vendomat.
+  components:
+  - type: Flatpack
+    entity: VendingMachineEngivend
+
+- type: entity
+  parent: VendingMachineBoozeFlatpack
+  id: VendingMachinePottedPlantVendFlatpack
+  name: BotanyDepot flatpack
+  description: A flatpack used for constructing a PottedPlant vendomat.
+  components:
+  - type: Flatpack
+    entity: VendingMachinePottedPlantVend
+
+- type: entity
+  parent: VendingMachineBoozeFlatpack
+  id: VendingMachineGamesFlatpack
+  name: Good Clean Fun flatpack
+  description: A flatpack used for constructing a Good Clean Fun vendomat.
+  components:
+  - type: Flatpack
+    entity: VendingMachineGames
+
+- type: entity
+  parent: VendingMachineBoozeFlatpack
+  id: VendingMachineGeneDrobeFlatpack
+  name: GeneDrobe flatpack
+  description: A flatpack used for constructing a GeneDrobe vendomat.
+  components:
+  - type: Flatpack
+    entity: VendingMachineGeneDrobe
+
+- type: entity
+  parent: VendingMachineBoozeFlatpack
+  id: VendingMachineHappyHonkFlatpack
+  name: Happy Honk flatpack
+  description: A flatpack used for constructing a Happy Honk vendomat.
+  components:
+  - type: Flatpack
+    entity: VendingMachineHappyHonk
+
+- type: entity
+  parent: VendingMachineBoozeFlatpack
+  id: VendingMachineHydrobeFlatpack
+  name: HydroDrobe flatpack
+  description: A flatpack used for constructing a HydroDrobe vendomat.
+  components:
+  - type: Flatpack
+    entity: VendingMachineHydrobe
+
+- type: entity
+  parent: VendingMachineBoozeFlatpack
+  id: VendingMachineJaniDrobeFlatpack
+  name: JaniDrobe flatpack
+  description: A flatpack used for constructing a JaniDrobe vendomat.
+  components:
+  - type: Flatpack
+    entity: VendingMachineJaniDrobe
+
+- type: entity
+  parent: VendingMachineBoozeFlatpack
+  id: VendingMachineLawDrobeFlatpack
+  name: LawDrobe flatpack
+  description: A flatpack used for constructing a LawDrobe vendomat.
+  components:
+  - type: Flatpack
+    entity: VendingMachineLawDrobe
+
+- type: entity
+  parent: VendingMachineBoozeFlatpack
+  id: VendingMachineNfsdDrobeFlatpack
+  name: NFSD Drobe flatpack
+  description: A flatpack used for constructing an NFSD Drobe vendomat.
+  components:
+  - type: Flatpack
+    entity: VendingMachineNfsdDrobe
+
+- type: entity
+  parent: VendingMachineBoozeFlatpack
+  id: VendingMachineNfsdTechFlatpack
+  name: NFSD Tech flatpack
+  description: A flatpack used for constructing an NFSD Tech vendomat.
+  components:
+  - type: Flatpack
+    entity: VendingMachineNfsdTech
+
+- type: entity
+  parent: VendingMachineBoozeFlatpack
+  id: VendingMachineMagivendFlatpack
+  name: MagiVend flatpack
+  description: A flatpack used for constructing a MagiVend vendomat.
+  components:
+  - type: Flatpack
+    entity: VendingMachineMagivend
+
+- type: entity
+  parent: VendingMachineBoozeFlatpack
+  id: VendingMachineMailDrobeFlatpack
+  name: MailDrobe flatpack
+  description: A flatpack used for constructing a MailDrobe vendomat.
+  components:
+  - type: Flatpack
+    entity: VendingMachineMailDrobe
+
+- type: entity
+  parent: VendingMachineBoozeFlatpack
+  id: VendingMachineMailVendFlatpack
+  name: MailVend flatpack
+  description: A flatpack used for constructing a MailVend vendomat.
+  components:
+  - type: Flatpack
+    entity: VendingMachineMailVend
+
+- type: entity
+  parent: VendingMachineBoozeFlatpack
+  id: VendingMachineCiviMedFlatpack
+  name: CiviMed flatpack
+  description: A flatpack used for constructing a CiviMed vendomat.
+  components:
+  - type: Flatpack
+    entity: VendingMachineCiviMed
+
+- type: entity
+  parent: VendingMachineBoozeFlatpack
+  id: VendingMachineCiviMedPlusFlatpack
+  name: CiviMed Plus flatpack
+  description: A flatpack used for constructing a CiviMed Plus vendomat.
+  components:
+  - type: Flatpack
+    entity: VendingMachineCiviMedPlus
+
+- type: entity
+  parent: VendingMachineBoozeFlatpack
+  id: VendingMachineMediDrobeFlatpack
+  name: MediDrobe flatpack
+  description: A flatpack used for constructing a MediDrobe vendomat.
+  components:
+  - type: Flatpack
+    entity: VendingMachineMediDrobe
+
+- type: entity
+  parent: VendingMachineBoozeFlatpack
+  id: VendingMachineMercVendFlatpack
+  name: MercVend flatpack
+  description: A flatpack used for constructing a MercVend vendomat.
+  components:
+  - type: Flatpack
+    entity: VendingMachineMercVend
+
+- type: entity
+  parent: VendingMachineBoozeFlatpack
+  id: VendingMachineSyndieDrobeFlatpack
+  name: SyndieDrobe flatpack
+  description: A flatpack used for constructing a SyndieDrobe vendomat.
+  components:
+  - type: Flatpack
+    entity: VendingMachineSyndieDrobe
+
+- type: entity
+  parent: VendingMachineBoozeFlatpack
+  id: VendingMachineTankDispenserEngineeringFlatpack
+  name: engineering tank dispenser flatpack
+  description: A flatpack used for constructing an engineering tank dispenser vendomat.
+  components:
+  - type: Flatpack
+    entity: VendingMachineTankDispenserEngineering
+
+- type: entity
+  parent: VendingMachineBoozeFlatpack
+  id: VendingMachineTankDispenserEVAFlatpack
+  name: EVA tank dispenser flatpack
+  description: A flatpack used for constructing an EVA tank dispenser vendomat.
+  components:
+  - type: Flatpack
+    entity: VendingMachineTankDispenserEVA
+
+- type: entity
+  parent: VendingMachineBoozeFlatpack
+  id: VendingMachineTheaterFlatpack
+  name: TheaterDrobe flatpack
+  description: A flatpack used for constructing a TheaterDrobe vendomat.
+  components:
+  - type: Flatpack
+    entity: VendingMachineTheater
+
+- type: entity
+  parent: VendingMachineBoozeFlatpack
+  id: VendingMachineValetDrobeFlatpack
+  name: ValetDrobe flatpack
+  description: A flatpack used for constructing a ValetDrobe vendomat.
+  components:
+  - type: Flatpack
+    entity: VendingMachineValetDrobe
+
+- type: entity
+  parent: VendingMachineBoozeFlatpack
+  id: VendingMachineVendomatFlatpack
+  name: Vendomat flatpack
+  description: A flatpack used for constructing a Vendomat vendomat.
+  components:
+  - type: Flatpack
+    entity: VendingMachineVendomat
+
+- type: entity
+  parent: VendingMachineBoozeFlatpack
+  id: VendingMachineViroDrobeFlatpack
+  name: ViroDrobe flatpack
+  description: A flatpack used for constructing a ViroDrobe vendomat.
+  components:
+  - type: Flatpack
+    entity: VendingMachineViroDrobe
+
+- type: entity
+  parent: VendingMachineBoozeFlatpack
+  id: VendingMachineChangFlatpack
+  name: Chang flatpack
+  description: A flatpack used for constructing a Chang vendomat.
+  components:
+  - type: Flatpack
+    entity: VendingMachineChang
+
+- type: entity
+  parent: VendingMachineBoozeFlatpack
+  id: VendingMachineChapelFlatpack
+  name: Chapel flatpack
+  description: A flatpack used for constructing a Chapel vendomat.
+  components:
+  - type: Flatpack
+    entity: VendingMachineChapel
+
+- type: entity
+  parent: VendingMachineColaFlatpack
+  id: VendingMachineColaBlackFlatpack
+  name: Robust Softdrinks (Black) flatpack
+  description: A flatpack used for constructing a Black Robust Softdrinks vendomat.
+  components:
+  - type: Flatpack
+    entity: VendingMachineColaBlack
+
+- type: entity
+  parent: VendingMachineColaFlatpack
+  id: VendingMachineColaRedFlatpack
+  name: Robust Softdrinks (Red) flatpack
+  description: A flatpack used for constructing a Red Robust Softdrinks vendomat.
+  components:
+  - type: Flatpack
+    entity: VendingMachineColaRed
+
+- type: entity
+  parent: VendingMachineBoozeFlatpack
+  id: VendingMachineYarrrDrobeFlatpack
+  name: YarrrDrobe flatpack
+  description: A flatpack used for constructing a YarrrDrobe vendomat.
+  components:
+  - type: Flatpack
+    entity: VendingMachineYarrrDrobe
+
+- type: entity
+  parent: VendingMachineBoozeFlatpack
+  id: VendingMachineYouToolFlatpack
+  name: YouTool flatpack
+  description: A flatpack used for constructing a YouTool vendomat.
+  components:
+  - type: Flatpack
+    entity: VendingMachineYouTool
+
+- type: entity
+  parent: VendingMachineBoozeFlatpack
+  id: VendingMachineFuelVendFlatpack
+  name: FuelVend flatpack
+  description: A flatpack used for constructing a FuelVend vendomat.
+  components:
+  - type: Flatpack
+    entity: VendingMachineFuelVend
+
+- type: entity
+  parent: VendingMachineBoozeFlatpack
+  id: VendingMachineCargoDrobeFlatpack
+  name: CargoDrobe flatpack
+  description: A flatpack used for constructing a CargoDrobe vendomat.
+  components:
+  - type: Flatpack
+    entity: VendingMachineCargoDrobe
+
+- type: entity
+  parent: VendingMachineBoozeFlatpack
+  id: VendingMachineCentDrobeFlatpack
+  name: CentDrobe flatpack
+  description: A flatpack used for constructing a CentDrobe vendomat.
+  components:
+  - type: Flatpack
+    entity: VendingMachineCentDrobe
+
+- type: entity
+  parent: VendingMachineBoozeFlatpack
+  id: VendingMachineChefDrobeFlatpack
+  name: ChefDrobe flatpack
+  description: A flatpack used for constructing a ChefDrobe vendomat.
+  components:
+  - type: Flatpack
+    entity: VendingMachineChefDrobe
+
+- type: entity
+  parent: VendingMachineBoozeFlatpack
+  id: VendingMachineCuraDrobeFlatpack
+  name: CuraDrobe flatpack
+  description: A flatpack used for constructing a CuraDrobe vendomat.
+  components:
+  - type: Flatpack
+    entity: VendingMachineCuraDrobe
+
+- type: entity
+  parent: VendingMachineBoozeFlatpack
+  id: VendingMachineDetDrobeFlatpack
+  name: DetDrobe flatpack
+  description: A flatpack used for constructing a DetDrobe vendomat.
+  components:
+  - type: Flatpack
+    entity: VendingMachineDetDrobe
+
+- type: entity
+  parent: VendingMachineBoozeFlatpack
+  id: VendingMachineBoxingDrobeFlatpack
+  name: BoxingDrobe flatpack
+  description: A flatpack used for constructing a BoxingDrobe vendomat.
+  components:
+  - type: Flatpack
+    entity: VendingMachineBoxingDrobe
+
+- type: entity
+  parent: VendingMachineBoozeFlatpack
   id: VendingMachineCigsFlatpack
   name: shadycigs delux flatpack
   description: A flatpack used for constructing a shadycigs delux vendomat.

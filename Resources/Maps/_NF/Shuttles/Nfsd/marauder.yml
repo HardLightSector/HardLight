@@ -37,7 +37,6 @@ entities:
       name: Marauder
     - type: Transform
       pos: 10,10
-      parent: invalid
     - type: MapGrid
       chunks:
         0,0:

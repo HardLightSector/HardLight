@@ -57,7 +57,6 @@ entities:
       name: Apothecary
     - type: Transform
       pos: -0.4375,-0.515625
-      parent: invalid
     - type: MapGrid
       chunks:
         0,0:

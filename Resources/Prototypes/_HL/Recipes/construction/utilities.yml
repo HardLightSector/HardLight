@@ -1,0 +1,199 @@
+# ATMOS UNARY
+- type: construction
+  id: GasVentPumpHighFlow
+  graph: GasUnaryHighFlow
+  startNode: start
+  targetNode: ventpumphighflow
+  category: construction-category-utilities
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:NoUnstackableInTile
+
+- type: construction
+  id: GasVentScrubberHighFlow
+  graph: GasUnaryHighFlow
+  startNode: start
+  targetNode: ventscrubberhighflow
+  category: construction-category-utilities
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:NoUnstackableInTile
+
+- type: construction
+  id: GasOutletInjectorHighFlow
+  graph: GasUnaryHighFlow
+  startNode: start
+  targetNode: outletinjectorhighflow
+  category: construction-category-utilities
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:NoUnstackableInTile
+
+# ATMOS BINARY
+- type: construction
+  id: GasPressurePumpHighFlow
+  graph: GasBinaryHighFlow
+  startNode: start
+  targetNode: pressurepumpHighFlow
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: false
+  conditions:
+  - !type:NoUnstackableInTile
+  alternativePrototypes:
+  - GasPressurePumpHighFlow
+  - GasPressurePumpHighFlowAlt1
+  - GasPressurePumpHighFlowAlt2
+
+- type: construction
+  id: GasPressurePumpHighFlowAlt1
+  hide: true
+  graph: GasBinaryHighFlow
+  startNode: start
+  targetNode: pressurepumpHighFlowAlt1
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: false
+  conditions:
+  - !type:NoUnstackableInTile
+  alternativePrototypes:
+  - GasPressurePumpHighFlow
+  - GasPressurePumpHighFlowAlt1
+  - GasPressurePumpHighFlowAlt2
+
+- type: construction
+  id: GasPressurePumpHighFlowAlt2
+  hide: true
+  graph: GasBinaryHighFlow
+  startNode: start
+  targetNode: pressurepumpHighFlowAlt2
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: false
+  conditions:
+  - !type:NoUnstackableInTile
+  alternativePrototypes:
+  - GasPressurePumpHighFlow
+  - GasPressurePumpHighFlowAlt1
+  - GasPressurePumpHighFlowAlt2
+
+- type: construction
+  id: GasVolumePumpHighFlow
+  graph: GasBinaryHighFlow
+  startNode: start
+  targetNode: volumepumpHighFlow
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: false
+  conditions:
+  - !type:NoUnstackableInTile
+  alternativePrototypes:
+  - GasVolumePumpHighFlow
+  - GasVolumePumpHighFlowAlt1
+  - GasVolumePumpHighFlowAlt2
+
+- type: construction
+  id: GasVolumePumpHighFlowAlt1
+  hide: true
+  graph: GasBinaryHighFlow
+  startNode: start
+  targetNode: volumepumpHighFlowAlt1
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: false
+  conditions:
+  - !type:NoUnstackableInTile
+  alternativePrototypes:
+  - GasVolumePumpHighFlow
+  - GasVolumePumpHighFlowAlt1
+  - GasVolumePumpHighFlowAlt2
+
+- type: construction
+  id: GasVolumePumpHighFlowAlt2
+  hide: true
+  graph: GasBinaryHighFlow
+  startNode: start
+  targetNode: volumepumpHighFlowAlt2
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: false
+  conditions:
+  - !type:NoUnstackableInTile
+  alternativePrototypes:
+  - GasVolumePumpHighFlow
+  - GasVolumePumpHighFlowAlt1
+  - GasVolumePumpHighFlowAlt2
+
+- type: construction
+  id: GasDualPortVentPumpHighFlow
+  graph: GasBinaryHighFlow
+  startNode: start
+  targetNode: dualportventpumpHighFlow
+  category: construction-category-utilities
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+
+# ATMOS TRINARY
+- type: construction
+  id: GasFilterHighFlow
+  graph: GasTrinaryHighFlow
+  startNode: start
+  targetNode: filterHighFlow
+  category: construction-category-utilities
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  mirror: GasFilterFlippedHighFlow
+  conditions:
+    - !type:NoUnstackableInTile
+
+- type: construction
+  id: GasFilterFlippedHighFlow
+  hide: true
+  graph: GasTrinaryHighFlow
+  startNode: start
+  targetNode: filterflippedHighFlow
+  category: construction-category-utilities
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  mirror: GasFilterHighFlow
+  conditions:
+    - !type:NoUnstackableInTile
+
+- type: construction
+  id: GasMixerHighFlow
+  graph: GasTrinaryHighFlow
+  startNode: start
+  targetNode: mixerHighFlow
+  category: construction-category-utilities
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  mirror: GasMixerFlippedHighFlow
+  conditions:
+    - !type:NoUnstackableInTile
+
+- type: construction
+  id: GasMixerFlippedHighFlow
+  hide: true
+  graph: GasTrinaryHighFlow
+  startNode: start
+  targetNode: mixerflippedHighFlow
+  category: construction-category-utilities
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  mirror: GasMixerHighFlow
+  conditions:
+    - !type:NoUnstackableInTile
+
+- type: construction
+  id: PressureControlledValveHighFlow
+  graph: GasTrinaryHighFlow
+  startNode: start
+  targetNode: pneumaticvalveHighFlow
+  category: construction-category-utilities
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:NoUnstackableInTile

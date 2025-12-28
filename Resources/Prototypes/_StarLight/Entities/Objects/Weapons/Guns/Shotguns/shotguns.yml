@@ -24,6 +24,8 @@
   - type: BallisticAmmoProvider
     capacity: 2
     proto: null
+  - type: StaticPrice
+    price: 2500
 
 - type: entity
   name: makeshift shotgun

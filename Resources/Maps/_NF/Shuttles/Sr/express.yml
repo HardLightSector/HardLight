@@ -32,7 +32,6 @@ entities:
       name: TSF Arachnid
     - type: Transform
       pos: -0.546875,-0.484375
-      parent: invalid
     - type: MapGrid
       chunks:
         0,0:
@@ -253,7 +252,6 @@ entities:
     - type: RadiationGridResistance
     - type: BecomesStation
       id: Express
-    - type: ImplicitRoof
 - proto: AirAlarm
   entities:
   - uid: 79

@@ -4,7 +4,7 @@ meta:
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 12/11/2025 22:13:20
+  time: 12/20/2025 08:27:46
   entityCount: 771
 maps: []
 grids:
@@ -44,7 +44,6 @@ entities:
       name: grid
     - type: Transform
       pos: -0.5,-0.46875
-      parent: invalid
     - type: MapGrid
       chunks:
         0,0:
@@ -1579,16 +1578,11 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -4.5,15.5
       parent: 1
-    - type: UserInterface
-      actors:
-        enum.GasMixerUiKey.Key:
-        - invalid
     - type: GasMixer
       inletTwoConcentration: 0.20999998
       inletOneConcentration: 0.79
     - type: AtmosPipeColor
       color: '#0335FCFF'
-    - type: ActiveUserInterface
 - proto: GasPassiveVent
   entities:
   - uid: 522
@@ -2445,8 +2439,6 @@ entities:
       pos: 8.5,16.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 639
     - type: AtmosPipeColor
@@ -2457,8 +2449,6 @@ entities:
       pos: -0.5,30.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 639
     - type: AtmosPipeColor
@@ -2470,8 +2460,6 @@ entities:
       pos: -0.5,0.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 639
     - type: AtmosPipeColor
@@ -2485,8 +2473,6 @@ entities:
       pos: 8.5,15.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 639
     - type: AtmosPipeColor
@@ -2498,8 +2484,6 @@ entities:
       pos: 0.5,0.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 639
     - type: AtmosPipeColor
@@ -2510,8 +2494,6 @@ entities:
       pos: 0.5,30.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 639
     - type: AtmosPipeColor
@@ -2532,6 +2514,10 @@ entities:
     - type: Transform
       pos: -6.5,15.5
       parent: 1
+    - type: PowerSupplier
+      supplyRampRate: 5000
+      supplyRampTolerance: 5000
+      supplyRate: 100000
 - proto: GravityGeneratorMini
   entities:
   - uid: 443

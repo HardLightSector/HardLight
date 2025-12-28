@@ -34,7 +34,6 @@ entities:
       name: Eagle
     - type: Transform
       pos: -0.58333296,-0.43749917
-      parent: invalid
     - type: MapGrid
       chunks:
         0,0:

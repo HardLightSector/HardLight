@@ -29,7 +29,6 @@ entities:
       name: Harbormaster
     - type: Transform
       pos: -0.484375,-0.5156288
-      parent: invalid
     - type: MapGrid
       chunks:
         0,0:
@@ -2093,13 +2092,6 @@ entities:
     components:
     - type: Transform
       pos: -5.5,-1.5
-      parent: 1
-- proto: SuitStorageEVAStc
-  entities:
-  - uid: 291
-    components:
-    - type: Transform
-      pos: -7.5,1.5
       parent: 1
 - proto: TableReinforced
   entities:

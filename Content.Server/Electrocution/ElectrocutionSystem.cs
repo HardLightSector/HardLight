@@ -58,13 +58,11 @@ public sealed class ElectrocutionSystem : SharedElectrocutionSystem
     [Dependency] private readonly TagSystem _tag = default!;
     [Dependency] private readonly MetaDataSystem _metaData = default!;
 
-    [ValidatePrototypeId<StatusEffectPrototype>]
-    private const string StatusEffectKey = "Electrocution";
+    private static readonly ProtoId<StatusEffectPrototype> StatusEffectKey = new("Electrocution");
 
-    [ValidatePrototypeId<DamageTypePrototype>]
-    private const string DamageType = "Shock";
+    private static readonly ProtoId<DamageTypePrototype> DamageType = new("Shock");
 
-    private static readonly ProtoId<TagPrototype> WindowTag = "Window";
+    private static readonly ProtoId<TagPrototype> WindowTag = new("Window");
 
     // Yes, this is absurdly small for a reason.
     public const float ElectrifiedDamagePerWatt = 0.0015f; // Goobstation - This information is allowed to be public, and was needed in BatteryElectrocuteChargeSystem.cs

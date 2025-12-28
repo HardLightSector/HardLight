@@ -403,7 +403,6 @@ entities:
       visibleFromOtherGrids: True
       shape: Ring
       radarColor: '#00DEFEFF'
-    - type: CircularShieldRadar
   - uid: 4
     components:
     - type: MetaData
@@ -416,7 +415,6 @@ entities:
       shape: Ring
       scale: 0
       radarColor: '#00DEFEFF'
-    - type: CircularShieldRadar
   - uid: 547
     components:
     - type: MetaData
@@ -429,7 +427,6 @@ entities:
       shape: Ring
       scale: 0
       radarColor: '#00DEFEFF'
-    - type: CircularShieldRadar
 - proto: AdvancedCapacitorStockPart
   entities:
   - uid: 5
@@ -3697,62 +3694,6 @@ entities:
     - type: Transform
       pos: 11.5,21.5
       parent: 2
-- proto: CircularShieldBase
-  entities:
-  - uid: 546
-    components:
-    - type: Transform
-      pos: -7.5,3.5
-      parent: 2
-    - type: CircularShield
-      width: 6.283185307179586 rad
-    - type: Fixtures
-      fixtures:
-        fix1:
-          shape: !type:PolygonShape
-            radius: 0.01
-            vertices:
-            - -0.45,-0.45
-            - 0.45,-0.45
-            - 0.45,0.45
-            - -0.45,0.45
-          mask:
-          - Impassable
-          - TableLayer
-          - LowImpassable
-          layer:
-          - TableLayer
-          - LowImpassable
-          density: 60
-          hard: True
-          restitution: 0
-          friction: 0.4
-        ShieldFixture:
-          shape: !type:PhysShapeCircle
-            radius: 0
-            position: 6.609149,4.6472464
-          mask: []
-          layer:
-          - BulletImpassable
-          density: 1
-          hard: False
-          restitution: 0
-          friction: 0.4
-    - type: ApcPowerReceiver
-      powerLoad: 0
-- proto: CircularShieldConsole
-  entities:
-  - uid: 548
-    components:
-    - type: Transform
-      pos: -6.5,3.5
-      parent: 2
-    - type: ApcPowerReceiver
-      powerLoad: 5
-    - type: DeviceLinkSource
-      linkedPorts:
-        546:
-        - CircularShieldConsoleSender: CircularShieldConsoleReceiver
 - proto: ClosetEmergencyFilledRandom
   entities:
   - uid: 549
@@ -4363,8 +4304,6 @@ entities:
     - type: Transform
       pos: -2.5,3.5
       parent: 2
-    - type: ShuttleConsoleLock
-      locked: False
     - type: ApcPowerReceiver
       powerLoad: 5
     - type: Battery

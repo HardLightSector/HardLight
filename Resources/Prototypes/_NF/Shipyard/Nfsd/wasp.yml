@@ -3,7 +3,7 @@
   parent: BaseVessel
   name: NSF Wasp
   description: A large expedition oriented ship for holding prisoners and making them work planetside.
-  price: 135000
+  price: 152000
   category: Large
   group: Security
   access: Security

@@ -13,6 +13,7 @@ public sealed class CardDeckSystem : EntitySystem
 {
     private readonly Dictionary<Entity<CardDeckComponent>, int> _notInitialized = [];
     [Dependency] private readonly CardSpriteSystem _cardSpriteSystem = default!;
+    [Dependency] private readonly SpriteSystem _sprite = default!;
 
 
     /// <inheritdoc/>
@@ -64,7 +65,7 @@ public sealed class CardDeckSystem : EntitySystem
     {
         layer = null;
         if (!TryComp(card, out SpriteComponent? cardSprite)
-            || !cardSprite.TryGetLayer(0, out var l))
+            || !_sprite.TryGetLayer((card, cardSprite), 0, out var l, false))
             return false;
 
         layer = l;
@@ -92,9 +93,9 @@ public sealed class CardDeckSystem : EntitySystem
             comp.CardLimit,
             (_, cardIndex, layerIndex) =>
             {
-                sprite.LayerSetRotation(layerIndex, Angle.FromDegrees(90));
-                sprite.LayerSetOffset(layerIndex, new Vector2(0, (comp.YOffset * cardIndex)));
-                sprite.LayerSetScale(layerIndex, new Vector2(comp.Scale, comp.Scale));
+                _sprite.LayerSetRotation((uid, sprite), layerIndex, Angle.FromDegrees(90));
+                _sprite.LayerSetOffset((uid, sprite), layerIndex, new Vector2(0, (comp.YOffset * cardIndex)));
+                _sprite.LayerSetScale((uid, sprite), layerIndex, new Vector2(comp.Scale, comp.Scale));
                 return true;
             }
         );

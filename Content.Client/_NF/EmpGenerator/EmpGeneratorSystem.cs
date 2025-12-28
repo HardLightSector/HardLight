@@ -1,12 +1,14 @@
 using Content.Shared._NF.EmpGenerator;
 using Content.Shared.Power;
 using Robust.Client.GameObjects;
+using Robust.Client.Graphics;
 
 namespace Content.Client._NF.EmpGenerator;
 
 public sealed partial class EmpGeneratorSystem : EntitySystem
 {
     [Dependency] private readonly AppearanceSystem _appearanceSystem = default!;
+    [Dependency] private readonly SpriteSystem _sprite = default!;
     public override void Initialize()
     {
         base.Initialize();
@@ -25,21 +27,21 @@ public sealed partial class EmpGeneratorSystem : EntitySystem
         {
             if (comp.SpriteMap.TryGetValue(state, out var spriteState))
             {
-                var layer = args.Sprite.LayerMapGet(EmpGeneratorVisualLayers.Base);
-                args.Sprite.LayerSetState(layer, spriteState);
+                var layer = _sprite.LayerMapGet((uid, args.Sprite), EmpGeneratorVisualLayers.Base);
+                _sprite.LayerSetRsiState((uid, args.Sprite), layer, new RSI.StateId(spriteState));
             }
         }
 
         if (_appearanceSystem.TryGetData<float>(uid, PowerChargeVisuals.Charge, out var charge, args.Component))
         {
-            var layer = args.Sprite.LayerMapGet(EmpGeneratorVisualLayers.Core);
+            var layer = _sprite.LayerMapGet((uid, args.Sprite), EmpGeneratorVisualLayers.Core);
             foreach (var threshold in comp.Thresholds)
             {
                 if (charge < threshold.MaxCharge)
                 {
-                    args.Sprite.LayerSetVisible(layer, threshold.Visible);
+                    _sprite.LayerSetVisible((uid, args.Sprite), layer, threshold.Visible);
                     if (threshold.State != null)
-                        args.Sprite.LayerSetState(layer, threshold.State);
+                        _sprite.LayerSetRsiState((uid, args.Sprite), layer, new RSI.StateId(threshold.State));
                     break;
                 }
             }

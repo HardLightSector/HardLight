@@ -1665,7 +1665,7 @@
 
 - type: loadout
   id: LoadoutCoolCoyoteClothesGearHarness
-  price: 600
+  price: 100
 #  effects:
 #  - !type:GroupLoadoutEffect
 #    proto: ContractorT1

@@ -30,7 +30,6 @@ entities:
       name: Beaker
     - type: Transform
       pos: -1.2979606,0.27499467
-      parent: invalid
     - type: MapGrid
       chunks:
         0,0:

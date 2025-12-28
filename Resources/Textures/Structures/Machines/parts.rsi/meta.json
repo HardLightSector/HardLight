@@ -28,13 +28,16 @@
       "directions": 4
     },
     {
-      "name": "box_0"
+      "name": "box_0",
+        "directions": 4
     },
     {
-      "name": "box_1"
+      "name": "box_1",
+        "directions": 4
     },
     {
-      "name": "box_2"
+      "name": "box_2",
+        "directions": 4
     },
     {
       "name": "vbox_0"

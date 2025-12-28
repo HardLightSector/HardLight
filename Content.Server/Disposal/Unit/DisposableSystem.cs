@@ -1,4 +1,4 @@
-using Content.Server.Atmos.EntitySystems;
+﻿using Content.Server.Atmos.EntitySystems;
 using Content.Server.Disposal.Tube;
 using Content.Shared.Body.Components;
 using Content.Shared.Damage;
@@ -199,7 +199,7 @@ namespace Content.Server.Disposal.Unit
             holder.CurrentDirection = ev.Next;
             holder.StartingTime = 0.1f;
             holder.TimeLeft = 0.1f;
-            // Logger.InfoS("c.s.disposal.holder", $"Disposals dir {holder.CurrentDirection}");
+            // Logger.GetSawmill(nameof(DisposableSystem)).("c.s.disposal.holder", $"Disposals dir {holder.CurrentDirection}");
 
             // Invalid direction = exit now!
             if (holder.CurrentDirection == Direction.Invalid)
@@ -283,3 +283,4 @@ namespace Content.Server.Disposal.Unit
         }
     }
 }
+

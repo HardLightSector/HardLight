@@ -1,4 +1,4 @@
-﻿#ship parts
+#ship parts
 - type: latheRecipe
   id: LightShipWeaponFrame
   result: MaterialLightShipWeaponFrame1
@@ -321,8 +321,102 @@
   id: HydraWeaponBoard
   result: HydraWeaponBoard
 
+# - type: latheRecipe
+  # parent: BaseCapitalWeaponBoardRecipe
+  # id: CapitalShieldBoard
+  # result: CapitalShieldBoard
+
+- type: latheRecipe
+  parent: BaseLightWeaponBoardRecipe
+  id: CivL1PhalanxWeaponBoard
+  result: CivL1PhalanxWeaponBoard
+
+- type: latheRecipe
+  parent: BaseLightWeaponBoardRecipe
+  id: CivL85AutocannonWeaponBoard
+  result: CivL85AutocannonWeaponBoard
+
+- type: latheRecipe
+  parent: BaseMediumWeaponBoardRecipe
+  id: CivKargilWeaponBoard
+  result: CivKargilWeaponBoard
+
+- type: latheRecipe
+  parent: BaseMediumWeaponBoardRecipe
+  id: CivTovekWeaponBoard
+  result: CivTovekWeaponBoard
+
+- type: latheRecipe
+  parent: BaseMediumWeaponBoardRecipe
+  id: CivSunderWeaponBoard
+  result: CivSunderWeaponBoard
+
+- type: latheRecipe
+  parent: BaseMediumWeaponBoardRecipe
+  id: CivFangWeaponBoard
+  result: CivFangWeaponBoard
+
+- type: latheRecipe
+  parent: BaseMediumWeaponBoardRecipe
+  id: CivType35WeaponBoard
+  result: CivType35WeaponBoard
+
+- type: latheRecipe
+  parent: BaseMediumWeaponBoardRecipe
+  id: CivRAC30WeaponBoard
+  result: CivRAC30WeaponBoard
+
+- type: latheRecipe
+  parent: BaseMediumWeaponBoardRecipe
+  id: CivAK570WeaponBoard
+  result: CivAK570WeaponBoard
+
+- type: latheRecipe
+  parent: BaseMediumWeaponBoardRecipe
+  id: CivDravonWeaponBoard
+  result: CivDravonWeaponBoard
+
+- type: latheRecipe
+  parent: BaseMediumWeaponBoardRecipe
+  id: CivFlayerWeaponBoard
+  result: CivFlayerWeaponBoard
+
+- type: latheRecipe
+  parent: BaseMediumWeaponBoardRecipe
+  id: CivM220WeaponBoard
+  result: CivM220WeaponBoard
+
+- type: latheRecipe
+  parent: BaseMediumWeaponBoardRecipe
+  id: CivVanykWeaponBoard
+  result: CivVanykWeaponBoard
+
+- type: latheRecipe
+  parent: BaseHeavyWeaponBoardRecipe
+  id: CivType54WeaponBoard
+  result: CivType54WeaponBoard
+
+- type: latheRecipe
+  parent: BaseHeavyWeaponBoardRecipe
+  id: CivSerpentMissileWeaponBoard
+  result: CivSerpentMissileWeaponBoard
+
+- type: latheRecipe
+  parent: BaseHeavyWeaponBoardRecipe
+  id: CivApolloWeaponBoard
+  result: CivApolloWeaponBoard
+
 - type: latheRecipe
   parent: BaseCapitalWeaponBoardRecipe
-  id: CapitalShieldBoard
-  result: CapitalShieldBoard
+  id: CivReaperWeaponBoard
+  result: CivReaperWeaponBoard
 
+- type: latheRecipe
+  parent: BaseCapitalWeaponBoardRecipe
+  id: CivHarbringerWeaponBoard
+  result: CivHarbringerWeaponBoard
+
+- type: latheRecipe
+  parent: BaseMediumWeaponBoardRecipe
+  id: CivBigThrusterBoard
+  result: CivBigThrusterBoard

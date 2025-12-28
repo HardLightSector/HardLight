@@ -13,6 +13,8 @@ public sealed partial class EtherealSystem : EntitySystem
     [Dependency] private readonly ISharedPlayerManager _playerMan = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
 
+    private static readonly ProtoId<ShaderPrototype> NullSpaceShaderId = "NullSpaceShader";
+
     private NullSpaceOverlay _overlay = default!;
 
     public override void Initialize()
@@ -25,7 +27,7 @@ public sealed partial class EtherealSystem : EntitySystem
         SubscribeLocalEvent<NullSpaceComponent, LocalPlayerDetachedEvent>(OnPlayerDetached);
         SubscribeLocalEvent<NullSpaceComponent, PreventCollideEvent>(PreventCollision);
 
-        _overlay = new(_prototypeManager.Index<ShaderPrototype>("NullSpaceShader"));
+        _overlay = new(_prototypeManager.Index(NullSpaceShaderId));
     }
 
     private void OnInit(EntityUid uid, NullSpaceComponent component, ComponentInit args)

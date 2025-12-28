@@ -16,6 +16,8 @@ public sealed partial class WeldbotWeldOperator : HTNOperator
 {
     [Dependency] private readonly IEntityManager _entMan = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+    private static readonly ProtoId<DamageGroupPrototype> BurnGroupId = "Burn";
+    private static readonly ProtoId<DamageGroupPrototype> BruteGroupId = "Brute";
     private WeldbotSystem _weldbot = default!;
     private SharedAudioSystem _audio = default!;
     private SharedInteractionSystem _interaction = default!;
@@ -81,18 +83,18 @@ public sealed partial class WeldbotWeldOperator : HTNOperator
         if ((!canWeldSilicon && weldableIsSilicon) || (!canWeldStructure && weldableIsStructure))
             return HTNOperatorStatus.Failed;
 
-        if (botComp.IsEmagged)
-        {
-            if (!_prototypeManager.TryIndex<DamageGroupPrototype>("Burn", out var prototype) || weldableIsStructure)
-                return HTNOperatorStatus.Failed;
+            if (botComp.IsEmagged)
+            {
+                if (!_prototypeManager.TryIndex(BurnGroupId, out var prototype) || weldableIsStructure)
+                    return HTNOperatorStatus.Failed;
 
-            _damageableSystem.TryChangeDamage(target, new DamageSpecifier(prototype, EmaggedBurnDamage), true, false, damage);
-        }
+                _damageableSystem.TryChangeDamage(target, new DamageSpecifier(prototype, EmaggedBurnDamage), true, false, damage);
+            }
         else
         {
             if (weldableIsSilicon)
             {
-                if (!_prototypeManager.TryIndex<DamageGroupPrototype>("Brute", out var prototype))
+                if (!_prototypeManager.TryIndex(BruteGroupId, out var prototype))
                     return HTNOperatorStatus.Failed;
 
                 _damageableSystem.TryChangeDamage(target, new DamageSpecifier(prototype, -SiliconRepairAmount), true, false, damage);

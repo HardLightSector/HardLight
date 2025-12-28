@@ -29,3 +29,36 @@
 
 - type: Tag
   id: PlumbingAssembly
+
+- type: Tag
+  id: HighPressureCasing
+
+- type: entity
+  parent: BaseItem
+  id: HighPressureCasing
+  name: high-pressure casing
+  description: A heavy casing for high-pressure atmospheric devices.
+  components:
+  - type: Item
+    size: Large
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Items/crowbar_drop.ogg
+  - type: Sprite
+    sprite: Structures/Piping/Atmospherics/pump.rsi
+    state: pumpVolume
+    rotation: 90 # Rotated 90 degrees to best match default rotation when stored.
+    layers:
+      - sprite: Structures/Piping/Atmospherics/pipe.rsi
+        state: pipeStraight
+      - state: pumpVolume
+  - type: StaticPrice
+    price: 1200
+  - type: PhysicalComposition
+    materialComposition:
+      Plasteel: 1500
+      Gold: 100
+      Silver: 100
+  - type: Tag
+    tags:
+    - HighPressureCasing

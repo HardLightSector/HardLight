@@ -64,7 +64,6 @@ entities:
       name: Flyssa
     - type: Transform
       pos: 0.5,0.5
-      parent: invalid
     - type: MapGrid
       chunks:
         -1,-1:
@@ -6187,8 +6186,6 @@ entities:
     - type: Transform
       pos: -2.5,32.5
       parent: 1
-    - type: ShuttleConsoleLock
-      locked: False
     - type: ApcPowerReceiver
       powerLoad: 5
     - type: Battery
@@ -6564,8 +6561,6 @@ entities:
       pos: 0.5,32.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 1370
       - 26
@@ -7757,8 +7752,6 @@ entities:
       pos: 0.5,33.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 2335
     - type: AtmosPipeColor
@@ -7861,8 +7854,6 @@ entities:
       pos: -1.5,34.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 2335
     - type: AtmosPipeColor

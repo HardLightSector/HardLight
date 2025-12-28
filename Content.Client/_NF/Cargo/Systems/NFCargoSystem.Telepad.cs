@@ -11,6 +11,7 @@ public sealed partial class NFCargoSystem
 {
     [Dependency] private readonly AnimationPlayerSystem _player = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
+    [Dependency] private readonly SpriteSystem _sprite = default!;
 
     private static readonly Animation CargoTelepadBeamAnimation = new()
     {
@@ -81,12 +82,12 @@ public sealed partial class NFCargoSystem
                     _player.Play((uid, player), CargoTelepadBeamAnimation, TelepadBeamKey);
                 break;
             case CargoTelepadState.Unpowered:
-                sprite.LayerSetVisible(NFCargoTelepadLayers.Beam, false);
+                _sprite.LayerSetVisible((uid, sprite), NFCargoTelepadLayers.Beam, false);
                 _player.Stop(uid, player, TelepadBeamKey);
                 _player.Stop(uid, player, TelepadIdleKey);
                 break;
             default:
-                sprite.LayerSetVisible(NFCargoTelepadLayers.Beam, true);
+                _sprite.LayerSetVisible((uid, sprite), NFCargoTelepadLayers.Beam, true);
 
                 if (_player.HasRunningAnimation(uid, player, TelepadIdleKey) ||
                     _player.HasRunningAnimation(uid, player, TelepadBeamKey))

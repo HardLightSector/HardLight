@@ -19,7 +19,6 @@ entities:
     - type: MetaData
       name: NT Evac Brick
     - type: Transform
-      parent: invalid
     - type: MapGrid
       chunks:
         0,0:

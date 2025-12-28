@@ -85,7 +85,7 @@ public sealed class RefreshSalvageConsoleMessage : BoundUserInterfaceMessage;
 /// <summary>
 /// Added per station to store data on their available salvage missions.
 /// </summary>
-[RegisterComponent, AutoGenerateComponentPause]
+[RegisterComponent, AutoGenerateComponentPause, NetworkedComponent]
 public sealed partial class SalvageExpeditionDataComponent : Component
 {
     /// <summary>

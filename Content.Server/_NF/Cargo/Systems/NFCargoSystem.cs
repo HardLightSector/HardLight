@@ -28,7 +28,6 @@ public sealed partial class NFCargoSystem : SharedNFCargoSystem
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
     [Dependency] private readonly AccessReaderSystem _accessReader = default!;
     [Dependency] private readonly BankSystem _bank = default!;
     [Dependency] private readonly ContainerSystem _container = default!;

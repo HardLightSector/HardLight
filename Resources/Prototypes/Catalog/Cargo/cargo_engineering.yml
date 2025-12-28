@@ -5,7 +5,7 @@
     sprite: Objects/Tools/cable-coils.rsi
     state: coillv-30
   product: CrateEngineeringCableLV
-  cost: 300
+  cost: 400
   category: cargoproduct-category-name-engineering
   group: market
 
@@ -16,7 +16,7 @@
     sprite: Objects/Tools/cable-coils.rsi
     state: coilmv-30
   product: CrateEngineeringCableMV
-  cost: 300
+  cost: 400
   category: cargoproduct-category-name-engineering
   group: market
 
@@ -27,7 +27,7 @@
     sprite: Objects/Tools/cable-coils.rsi
     state: coilhv-30
   product: CrateEngineeringCableHV
-  cost: 300
+  cost: 500
   category: cargoproduct-category-name-engineering
   group: market
 
@@ -49,7 +49,7 @@
     sprite: Objects/Tools/cable-coils.rsi
     state: coilall-30
   product: CrateEngineeringCableBulk
-  cost: 600
+  cost: 750
   category: cargoproduct-category-name-engineering
   group: market
 

@@ -318,6 +318,7 @@ namespace Content.Client.LateJoin
             }
         }
 
+        [Obsolete]
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);

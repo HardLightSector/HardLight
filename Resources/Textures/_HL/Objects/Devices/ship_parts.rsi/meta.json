@@ -1,0 +1,95 @@
+﻿{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "made by @mocha_rosensteel on discord",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "frame_0"
+        },
+        {
+            "name": "frame_1"
+        },
+        {
+            "name": "frame_2"
+        },
+        {
+            "name": "frame_3"
+        },
+        {
+            "name": "processor-capital-unshaded",
+            "delays": [
+                [
+                    0.2,
+                    0.2,
+                    0.2,
+                    0.2
+                ]
+            ]
+        },
+        {
+            "name": "processor-light-unshaded",
+            "delays": [
+                [
+                    0.2,
+                    0.2,
+                    0.2,
+                    0.2
+                ]
+            ]
+        },
+        {
+            "name": "processor-medium-unshaded",
+            "delays": [
+                [
+                    0.2,
+                    0.2,
+                    0.2,
+                    0.2
+                ]
+            ]
+        },
+        {
+            "name": "processor-heavy-unshaded",
+            "delays": [
+                [
+                    0.2,
+                    0.2,
+                    0.2,
+                    0.2,
+                    0.2,
+                    0.2,
+                    0.2,
+                    0.2
+                ]
+            ]
+        },
+        {
+            "name": "processor-light"
+        },
+        {
+            "name": "processor-medium"
+        },
+        {
+            "name": "processor-heavy"
+        },
+        {
+            "name": "processor-capital"
+        },
+        {
+            "name": "servo-light"
+        },
+        {
+            "name": "servo-medium"
+        },
+        {
+            "name": "servo-heavy"
+        },
+        {
+            "name": "servo-capital"
+        }
+    ]
+}

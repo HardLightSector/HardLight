@@ -50,7 +50,7 @@ namespace Content.Server.Psionics
         public override void Initialize()
         {
             base.Initialize();
-            SubscribeLocalEvent<PotentialPsionicComponent, MapInitEvent>(OnStartup);
+            SubscribeLocalEvent<PotentialPsionicComponent, ComponentInit>(OnStartup);
             SubscribeLocalEvent<AntiPsionicWeaponComponent, MeleeHitEvent>(OnMeleeHit);
             SubscribeLocalEvent<AntiPsionicWeaponComponent, StaminaMeleeHitEvent>(OnStamHit);
 
@@ -60,7 +60,7 @@ namespace Content.Server.Psionics
             //SubscribeLocalEvent<PsionicComponent, ComponentRemove>(OnRemove);
         }
 
-        private void OnStartup(EntityUid uid, PotentialPsionicComponent component, MapInitEvent args)
+        private void OnStartup(EntityUid uid, PotentialPsionicComponent component, ComponentInit args)
         {
             if (HasComp<PsionicComponent>(uid))
                 return;

@@ -263,7 +263,13 @@ namespace Content.Server.Voting.Managers
 
         private void CreateMapVote(ICommonSession? initiator)
         {
-            var maps = _gameMapManager.CurrentlyEligibleMaps().ToDictionary(map => map, map => map.MapName);
+            // Exclude the map currently being played so it can't win twice in a row
+            var currentMap = _gameMapManager.GetSelectedMap();
+            var eligible = _gameMapManager
+                .CurrentlyEligibleMaps()
+                .Where(m => currentMap == null || m.ID != currentMap.ID);
+
+            var maps = eligible.ToDictionary(map => map, map => map.MapName);
 
             var alone = _playerManager.PlayerCount == 1 && initiator != null;
             var options = new VoteOptions

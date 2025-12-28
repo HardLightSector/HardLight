@@ -14,13 +14,14 @@ public sealed class StealthSystem : SharedStealthSystem
     [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
     [Dependency] private readonly SpriteSystem _sprite = default!;
 
+    private static readonly ProtoId<ShaderPrototype> StealthShaderId = "Stealth";
     private ShaderInstance _shader = default!;
 
     public override void Initialize()
     {
         base.Initialize();
 
-        _shader = _protoMan.Index<ShaderPrototype>("Stealth").InstanceUnique();
+        _shader = _protoMan.Index(StealthShaderId).InstanceUnique();
 
         SubscribeLocalEvent<StealthComponent, ComponentShutdown>(OnShutdown);
         SubscribeLocalEvent<StealthComponent, ComponentStartup>(OnStartup);

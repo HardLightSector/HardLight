@@ -19,3 +19,40 @@
     state: chest_secondary
   - sprite: _HL/Mobs/Customization/Reptilian/chest_female_alternate.rsi
     state: nipples
+
+- type: marking
+  id: ReptilianTailNaga
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Skrell, Reptilian, Human]
+  sprites:
+    - sprite: _HL/Mobs/Customization/Reptilian/naga.rsi
+      state: naga_primary
+    - sprite: _HL/Mobs/Customization/Reptilian/naga.rsi
+      state: naga_secondary
+
+- type: marking
+  id: ReptilianTailNagaStriped
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Skrell, Reptilian, Human]
+  sprites:
+    - sprite: _HL/Mobs/Customization/Reptilian/naga.rsi
+      state: naga_striped_primary
+    - sprite: _HL/Mobs/Customization/Reptilian/naga.rsi
+      state: naga_striped_secondary
+    - sprite: _HL/Mobs/Customization/Reptilian/naga.rsi
+      state: naga_striped_tertiary
+
+- type: marking
+  id: ReptilianTailNagaRattlesnake
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Skrell, Reptilian, Human]
+  sprites:
+    - sprite: _HL/Mobs/Customization/Reptilian/naga.rsi
+      state: naga_rattlesnake_primary
+    - sprite: _HL/Mobs/Customization/Reptilian/naga.rsi
+      state: naga_rattlesnake_secondary
+    - sprite: _HL/Mobs/Customization/Reptilian/naga.rsi
+      state: naga_rattlesnake_tertiary

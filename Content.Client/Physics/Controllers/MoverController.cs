@@ -1,4 +1,4 @@
-using Content.Shared.Alert;
+﻿using Content.Shared.Alert;
 using Content.Shared.CCVar;
 using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Pulling.Components;
@@ -118,7 +118,7 @@ public sealed class MoverController : SharedMoverController
 
     public override void SetSprinting(Entity<InputMoverComponent> entity, ushort subTick, bool walking)
     {
-        // Logger.Info($"[{_gameTiming.CurTick}/{subTick}] Sprint: {enabled}");
+        // Logger.GetSawmill(nameof(MoverController)).($"[{_gameTiming.CurTick}/{subTick}] Sprint: {enabled}");
         base.SetSprinting(entity, subTick, walking);
 
         if (walking && _cfg.GetCVar(CCVars.ToggleWalk))
@@ -127,3 +127,4 @@ public sealed class MoverController : SharedMoverController
             _alerts.ClearAlert(entity, WalkingAlert);
     }
 }
+

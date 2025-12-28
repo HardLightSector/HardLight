@@ -18,6 +18,7 @@ using JetBrains.Annotations;
 using Robust.Shared.Containers;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server._NF.Cargo.Systems;
 
@@ -25,8 +26,7 @@ public sealed partial class NFCargoSystem
 {
     [Dependency] private readonly NameIdentifierSystem _nameIdentifier = default!;
 
-    [ValidatePrototypeId<NameIdentifierGroupPrototype>]
-    private const string PirateBountyNameIdentifierGroup = "Bounty"; // Use the bounty name ID group (0-999) for now.
+    private static readonly ProtoId<NameIdentifierGroupPrototype> PirateBountyNameIdentifierGroup = new("Bounty"); // Use the bounty name ID group (0-999) for now.
 
     private EntityQuery<ContainerManagerComponent> _containerQuery;
     private EntityQuery<PirateBountyLabelComponent> _pirateBountyLabelQuery;

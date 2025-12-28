@@ -27,7 +27,6 @@ entities:
       name: Rogue
     - type: Transform
       pos: 2.2425354,-3.692793
-      parent: invalid
     - type: BecomesStation
       id: Rogue
     - type: MapGrid

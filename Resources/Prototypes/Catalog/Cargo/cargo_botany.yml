@@ -1,12 +1,12 @@
-# - type: cargoProduct
-#   id: HydroponicsSeedsExotic
-#   icon:
-#     sprite: Objects/Specific/Hydroponics/banana.rsi
-#     state: seed
-#   product: CrateHydroponicsSeedsExotic
-#   cost: 1000
-#   category: cargoproduct-category-name-hydroponics
-#   group: market
+ - type: cargoProduct
+   id: HydroponicsSeedsExotic
+   icon:
+     sprite: Objects/Specific/Hydroponics/banana.rsi
+     state: seed
+   product: CrateHydroponicsSeedsExotic
+   cost: 7500
+   category: cargoproduct-category-name-hydroponics
+   group: market
 
 # - type: cargoProduct
 #   id: HydroponicsSeedsMedicinal

@@ -31,7 +31,6 @@ entities:
       name: Verdure
     - type: Transform
       pos: -0.5625,-0.53125
-      parent: invalid
     - type: MapGrid
       chunks:
         0,0:
@@ -2285,8 +2284,6 @@ entities:
       pos: 1.5,7.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 4
     - type: AtmosPipeColor
@@ -2331,8 +2328,6 @@ entities:
       pos: 1.5,-10.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 7
     - type: AtmosPipeColor
@@ -2457,8 +2452,6 @@ entities:
       pos: -0.5,7.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 4
     - type: AtmosPipeColor
@@ -2502,8 +2495,6 @@ entities:
       pos: -0.5,-10.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 7
     - type: AtmosPipeColor

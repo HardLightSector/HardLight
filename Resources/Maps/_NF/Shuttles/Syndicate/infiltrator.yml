@@ -37,7 +37,6 @@ entities:
       name: Infiltrator
     - type: Transform
       pos: 0.64252126,4.1776605
-      parent: invalid
     - type: BecomesStation
       id: Infiltrator
     - type: MapGrid

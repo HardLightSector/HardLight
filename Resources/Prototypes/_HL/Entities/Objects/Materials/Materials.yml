@@ -122,21 +122,21 @@
 
     #light frame
 - type: entity
-  parent: MaterialBase
+  parent: [MaterialBase, BaseC2Contraband]
   id: MaterialLightShipWeaponFrame
-  name: light ship structure frame
+  name: light ship frame
   description: A machine frame for a light ship structure.
   suffix: Full
   components:
   - type: ConstructionMaterials # Frontier
   - type: Sprite
-    sprite: _HL/Objects/Materials/royalresin.rsi
-    state: icon
+    sprite: _HL/Objects/Devices/ship_parts.rsi
+    state: frame_0
   - type: Stack
     count: 10
     stackType: LightShipWeaponFrame
   - type: Item
-    sprite: _HL/Objects/Materials/royalresin.rsi
+    sprite: _HL/Objects/Devices/ship_parts.rsi
     heldPrefix: LightShipWeaponFrame
 
 - type: entity
@@ -157,21 +157,21 @@
 
     #light servo
 - type: entity
-  parent: MaterialBase
+  parent: [MaterialBase, BaseC2Contraband]
   id: MaterialLightShipWeaponServo
-  name: light ship structure servo
+  name: light ship servo
   description: A machine servo for a light ship structure.
   suffix: Full
   components:
   - type: ConstructionMaterials # Frontier
   - type: Sprite
-    sprite: _HL/Objects/Materials/royalresin.rsi
-    state: icon
+    sprite: _HL/Objects/Devices/ship_parts.rsi
+    state: servo-light
   - type: Stack
     count: 10
     stackType: LightShipWeaponServo
   - type: Item
-    sprite: _HL/Objects/Materials/royalresin.rsi
+    sprite: _HL/Objects/Devices/ship_parts.rsi
     heldPrefix: LightShipWeaponServo
 
 - type: entity
@@ -192,21 +192,24 @@
 
     #light internals
 - type: entity
-  parent: MaterialBase
+  parent: [MaterialBase, BaseC2Contraband]
   id: MaterialLightShipWeaponInternal
-  name: light ship structure internal
-  description: A machine internal for a light ship structure.
+  name: light ship circuit
+  description: A machine circuit for a light ship structure.
   suffix: Full
   components:
   - type: ConstructionMaterials # Frontier
   - type: Sprite
-    sprite: _HL/Objects/Materials/royalresin.rsi
-    state: icon
+    sprite: _HL/Objects/Devices/ship_parts.rsi
+    layers:
+    - state: processor-light
+    - state: processor-light-unshaded
+      shader: unshaded
   - type: Stack
     count: 10
     stackType: LightShipWeaponInternal
   - type: Item
-    sprite: _HL/Objects/Materials/royalresin.rsi
+    sprite: _HL/Objects/Devices/ship_parts.rsi
     heldPrefix: LightShipWeaponInternal
 
 - type: entity
@@ -227,21 +230,21 @@
 
     #medium frame
 - type: entity
-  parent: MaterialBase
+  parent: [MaterialBase, BaseC2Contraband]
   id: MaterialMediumShipWeaponFrame
-  name: medium ship structure frame
+  name: medium ship frame
   description: A machine frame for a medium ship structure.
   suffix: Full
   components:
   - type: ConstructionMaterials # Frontier
   - type: Sprite
-    sprite: _HL/Objects/Materials/royalresin.rsi
-    state: icon
+    sprite: _HL/Objects/Devices/ship_parts.rsi
+    state: frame_1
   - type: Stack
     count: 10
     stackType: MediumShipWeaponFrame
   - type: Item
-    sprite: _HL/Objects/Materials/royalresin.rsi
+    sprite: _HL/Objects/Devices/ship_parts.rsi
     heldPrefix: MediumShipWeaponFrame
 
 - type: entity
@@ -262,21 +265,21 @@
 
     #Medium servo
 - type: entity
-  parent: MaterialBase
+  parent: [MaterialBase, BaseC2Contraband]
   id: MaterialMediumShipWeaponServo
-  name: medium ship structure servo
+  name: medium ship servo
   description: A machine servo for a medium ship structure.
   suffix: Full
   components:
   - type: ConstructionMaterials # Frontier
   - type: Sprite
-    sprite: _HL/Objects/Materials/royalresin.rsi
-    state: icon
+    sprite: _HL/Objects/Devices/ship_parts.rsi
+    state: servo-medium
   - type: Stack
     count: 10
     stackType: MediumShipWeaponServo
   - type: Item
-    sprite: _HL/Objects/Materials/royalresin.rsi
+    sprite: _HL/Objects/Devices/ship_parts.rsi
     heldPrefix: MediumShipWeaponServo
 
 - type: entity
@@ -297,21 +300,24 @@
 
     #Medium internals
 - type: entity
-  parent: MaterialBase
+  parent: [MaterialBase, BaseC2Contraband]
   id: MaterialMediumShipWeaponInternal
-  name: medium ship structure internal
-  description: A machine internal for a medium ship structure.
+  name: medium ship circuit
+  description: A machine circuit for a medium ship structure.
   suffix: Full
   components:
   - type: ConstructionMaterials # Frontier
   - type: Sprite
-    sprite: _HL/Objects/Materials/royalresin.rsi
-    state: icon
+    sprite: _HL/Objects/Devices/ship_parts.rsi
+    layers:
+    - state: processor-medium
+    - state: processor-medium-unshaded
+      shader: unshaded
   - type: Stack
     count: 10
     stackType: MediumShipWeaponInternal
   - type: Item
-    sprite: _HL/Objects/Materials/royalresin.rsi
+    sprite: _HL/Objects/Devices/ship_parts.rsi
     heldPrefix: MediumShipWeaponInternal
 
 - type: entity
@@ -332,21 +338,21 @@
 
     #Heavy frame
 - type: entity
-  parent: MaterialBase
+  parent: [MaterialBase, BaseC2Contraband]
   id: MaterialHeavyShipWeaponFrame
-  name: heavy ship structure frame
+  name: heavy ship frame
   description: A machine frame for a heavy ship structure.
   suffix: Full
   components:
   - type: ConstructionMaterials # Frontier
   - type: Sprite
-    sprite: _HL/Objects/Materials/royalresin.rsi
-    state: icon
+    sprite: _HL/Objects/Devices/ship_parts.rsi
+    state: frame_2
   - type: Stack
     count: 10
     stackType: HeavyShipWeaponFrame
   - type: Item
-    sprite: _HL/Objects/Materials/royalresin.rsi
+    sprite: _HL/Objects/Devices/ship_parts.rsi
     heldPrefix: HeavyShipWeaponFrame
 
 - type: entity
@@ -367,21 +373,21 @@
 
     #Heavy servo
 - type: entity
-  parent: MaterialBase
+  parent: [MaterialBase, BaseC2Contraband]
   id: MaterialHeavyShipWeaponServo
-  name: heavy ship structure servo
+  name: heavy ship servo
   description: A machine servo for a heavy ship structure.
   suffix: Full
   components:
   - type: ConstructionMaterials # Frontier
   - type: Sprite
-    sprite: _HL/Objects/Materials/royalresin.rsi
-    state: icon
+    sprite: _HL/Objects/Devices/ship_parts.rsi
+    state: servo-heavy
   - type: Stack
     count: 10
     stackType: HeavyShipWeaponServo
   - type: Item
-    sprite: _HL/Objects/Materials/royalresin.rsi
+    sprite: _HL/Objects/Devices/ship_parts.rsi
     heldPrefix: HeavyShipWeaponServo
 
 - type: entity
@@ -402,21 +408,24 @@
 
     #Heavy internals
 - type: entity
-  parent: MaterialBase
+  parent: [MaterialBase, BaseC2Contraband]
   id: MaterialHeavyShipWeaponInternal
-  name: heavy ship structure internal
-  description: A machine internal for a heavy ship structure.
+  name: heavy ship circuit
+  description: A machine circuit for a heavy ship structure.
   suffix: Full
   components:
   - type: ConstructionMaterials # Frontier
   - type: Sprite
-    sprite: _HL/Objects/Materials/royalresin.rsi
-    state: icon
+    sprite: _HL/Objects/Devices/ship_parts.rsi
+    layers:
+    - state: processor-heavy
+    - state: processor-heavy-unshaded
+      shader: unshaded
   - type: Stack
     count: 10
     stackType: HeavyShipWeaponInternal
   - type: Item
-    sprite: _HL/Objects/Materials/royalresin.rsi
+    sprite: _HL/Objects/Devices/ship_parts.rsi
     heldPrefix: HeavyShipWeaponInternal
 
 - type: entity
@@ -437,21 +446,21 @@
 
     #Capital frame
 - type: entity
-  parent: MaterialBase
+  parent: [MaterialBase, BaseC2Contraband]
   id: MaterialCapitalShipWeaponFrame
-  name: capital ship structure frame
+  name: capital ship frame
   description: A machine frame for a capital ship structure.
   suffix: Full
   components:
   - type: ConstructionMaterials # Frontier
   - type: Sprite
-    sprite: _HL/Objects/Materials/royalresin.rsi
-    state: icon
+    sprite: _HL/Objects/Devices/ship_parts.rsi
+    state: frame_3
   - type: Stack
     count: 10
     stackType: CapitalShipWeaponFrame
   - type: Item
-    sprite: _HL/Objects/Materials/royalresin.rsi
+    sprite: _HL/Objects/Devices/ship_parts.rsi
     heldPrefix: CapitalShipWeaponFrame
 
 - type: entity
@@ -472,21 +481,21 @@
 
     #Capital servo
 - type: entity
-  parent: MaterialBase
+  parent: [MaterialBase, BaseC2Contraband]
   id: MaterialCapitalShipWeaponServo
-  name: capital ship structure servo
+  name: capital ship servo
   description: A machine servo for a capital ship structure.
   suffix: Full
   components:
   - type: ConstructionMaterials # Frontier
   - type: Sprite
-    sprite: _HL/Objects/Materials/royalresin.rsi
-    state: icon
+    sprite: _HL/Objects/Devices/ship_parts.rsi
+    state: servo-capital
   - type: Stack
     count: 10
     stackType: CapitalShipWeaponServo
   - type: Item
-    sprite: _HL/Objects/Materials/royalresin.rsi
+    sprite: _HL/Objects/Devices/ship_parts.rsi
     heldPrefix: CapitalShipWeaponServo
 
 - type: entity
@@ -507,21 +516,24 @@
 
     #Capital internals
 - type: entity
-  parent: MaterialBase
+  parent: [MaterialBase, BaseC2Contraband]
   id: MaterialCapitalShipWeaponInternal
-  name: capital ship structure internal
-  description: A machine internal for a capital ship structure.
+  name: capital ship circuit
+  description: A machine circuit for a capital ship structure.
   suffix: Full
   components:
   - type: ConstructionMaterials # Frontier
   - type: Sprite
-    sprite: _HL/Objects/Materials/royalresin.rsi
-    state: icon
+    sprite: _HL/Objects/Devices/ship_parts.rsi
+    layers:
+    - state: processor-capital
+    - state: processor-capital-unshaded
+      shader: unshaded
   - type: Stack
     count: 10
     stackType: CapitalShipWeaponInternal
   - type: Item
-    sprite: _HL/Objects/Materials/royalresin.rsi
+    sprite: _HL/Objects/Devices/ship_parts.rsi
     heldPrefix: CapitalShipWeaponInternal
 
 - type: entity
@@ -539,3 +551,109 @@
   components:
   - type: Stack
     count: 1
+
+- type: entity
+  parent: MaterialBase
+  id: MaterialHiPowerGunpowder
+  suffix: Full
+  name: triple-base gunpowder
+  description: An explosive compound.  More difficult to synthesize and handle, but more powerful.
+  components:
+  - type: Material
+  - type: Stack
+    stackType: HiPowerGunpowder
+    count: 60
+  - type: Sprite
+    sprite: Objects/Misc/reagent_fillings.rsi
+    state: powderpile
+    color: darkgray
+  - type: PhysicalComposition
+    materialComposition:
+      Gunpowder: 100
+  - type: Item
+    size: Tiny
+
+- type: entity
+  parent: MaterialHiPowerGunpowder
+  id: MaterialHiPowerGunpowder10
+  name: triple-base gunpowder
+  suffix: 10
+  components:
+  - type: Stack
+    stackType: HiPowerGunpowder
+    count: 10
+  - type: Sprite
+    sprite: Objects/Misc/reagent_fillings.rsi
+    state: powderpile
+    color: darkgray
+
+- type: entity
+  parent: MaterialHiPowerGunpowder
+  id: MaterialHiPowerGunpowder1
+  name: triple-base gunpowder
+  suffix: Single
+  components:
+  - type: Stack
+    stackType: HiPowerGunpowder
+    count: 1
+  - type: Sprite
+    sprite: Objects/Misc/reagent_fillings.rsi
+    state: powderpile
+    color: darkgray
+
+- type: entity
+  parent: MaterialBase
+  id: MaterialBulletTip
+  name: bullet tip
+  description: A standard metal bullet tip, for those who like to hand-pack their bullets.
+  components:
+  - type: Material
+  - type: Stack
+    stackType: BulletTip
+    count: 1
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
+    state: tip
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 10
+  - type: Item
+    size: Tiny
+
+- type: entity
+  parent: MaterialBase
+  id: MaterialBulletCasing9x19mm
+  name: brass casing (9x19mm)
+  description: A high-quality brass bullet casing, for those who like to hand-pack their bullets.  This one is 9x19mm.
+  components:
+  - type: Material
+  - type: Stack
+    stackType: BulletCasing9x19mm
+    count: 1
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
+    state: base-spent
+  - type: PhysicalComposition
+    materialComposition:
+      Brass: 10
+  - type: Item
+    size: Tiny
+
+- type: entity
+  parent: MaterialBase
+  id: MaterialBulletFlechette
+  name: flechette
+  description: A plasteel dart used to replace a bullet tip.  Questionably legal.  Armor-piercing.
+  components:
+  - type: Material
+  - type: Stack
+    stackType: BulletFlechette
+    count: 1
+  - type: Sprite
+    sprite: Objects/Fun/Darts/dart_red.rsi
+    state: icon
+  - type: PhysicalComposition
+    materialComposition:
+      Plasteel: 10
+  - type: Item
+    size: Tiny

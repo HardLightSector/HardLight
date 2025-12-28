@@ -69,6 +69,8 @@
       enum.WiresUiKey.Key:
         type: WiresBoundUserInterface
   - type: Airtight
+  - type: RadiationBlocker
+    resistance: 2
   - type: Damageable
     damageContainer: StructuralInorganic
     damageModifierSet: StructuralMetallic
@@ -193,6 +195,8 @@
     node: ShuttersWindow
     containers:
     - board
+  - type: RadiationBlocker
+    resistance: 1
 
 - type: entity
   id: ShuttersWindowOpen
