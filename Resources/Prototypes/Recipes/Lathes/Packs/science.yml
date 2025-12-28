@@ -85,9 +85,9 @@
   recipes:
   - TurboItemRechargerCircuitboard
   # Begin DeltaV Removals - replaced by techfabs/upgrade kits
-  #- AutolatheHyperConvectionMachineCircuitboard
-  #- ProtolatheHyperConvectionMachineCircuitboard
-  #- CircuitImprinterHyperConvectionMachineCircuitboard
+  - AutolatheHyperConvectionMachineCircuitboard
+  - ProtolatheHyperConvectionMachineCircuitboard
+  - CircuitImprinterHyperConvectionMachineCircuitboard
   # End DeltaV Removals
   - TechDiskComputerCircuitboard
   - FlatpackerMachineCircuitboard
