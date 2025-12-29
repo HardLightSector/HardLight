@@ -1,4 +1,3 @@
-
 - type: entity
   id: BorgChassisQuad
   parent: BaseBorgChassisNT
@@ -64,8 +63,6 @@
       - BorgModuleSyndicateAssault
     hasMindState: quadspritel
     noMindState: quadspriter
-  - type: AccessReader
-    access: [["Security"], ["Armory"], ["Command"], ["Mercenary"]]
   - type: BorgTransponder
     sprite:
       sprite: Floof/Mobs/Silicon/quad.rsi
@@ -76,6 +73,8 @@
   - type: Speech
     speechVerb: Robotic
   - type: LayingDown
+  - type: AccessReader
+    access: [["Security"], ["Armory"], ["Command"]]
   - type: SiliconLawProvider
     laws: Qborg
   - type: LeashAnchor # Floofstation
@@ -90,6 +89,66 @@
     stateOn: quadspriteballz
     movementStateOff: quadsprite_moving
     movementStateOn: quadsprite_movingballz
+
+- type: entity
+  id: BorgChassisQuadSec
+  parent: [BorgChassisQuad, ShowSecurityIcons]
+  components:
+  - type: Sprite
+    sprite: Floof/Mobs/Silicon/quad.rsi
+    scale: 0.7, 0.7
+    layers:
+    - state: quadsprite
+      map: ["movement"]
+    - state: quadspritel
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: quadspriter
+      shader: unshaded
+      map: ["light"]
+      visible: false
+  - type: SpriteMovement
+    movementLayers:
+      movement:
+        state: quadsprite_moving
+    noMovementLayers:
+      movement:
+        state: quadsprite
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Security
+    - Binary
+    - Common
+    - Science
+  - type: ActiveRadio
+    channels:
+    - Security
+    - Binary
+    - Common
+    - Science
+  - type: BorgChassis
+    maxModules: 4
+    moduleWhitelist:
+      tags:
+      - BorgModuleGeneric
+      #- XenoborgModuleGeneric
+      - BorgModuleSecurity
+      - BorgModuleSyndicate
+      - BorgModuleSyndicateAssault
+    hasMindState: quadspritel
+    noMindState: quadspriter
+  - type: AccessReader
+    access: [["Security"], ["Armory"], ["Command"]]
+  - type: SiliconLawProvider
+  - type: FlashImmunity
+    laws: Qborg
+  - type: SpriteStateToggle
+    spriteLayer: movement
+    stateOff: quadspritesec
+    stateOn: quadspritesecballz
+    movementStateOff: quadspritesec_moving
+    movementStateOn: quadspritesec_movingballz
 
 - type: entity
   id: SyndiQuad
@@ -422,7 +481,7 @@
 
 - type: entity
   id: BorgChassisQuadmed
-  parent: BorgChassisQuad
+  parent: [BorgChassisQuad, ShowMedicalIcons]
   components:
   - type: Sprite
     sprite: Floof/Mobs/Silicon/quad.rsi
@@ -472,6 +531,7 @@
     access: [["Medical"], ["Salvage"], ["Command"], ["Research"], ["Maintenance"]]
   - type: SiliconLawProvider
     laws: Medical
+  - type: SolutionScanner
   - type: SpriteStateToggle
     spriteLayer: movement
     stateOff: quadspritemed
