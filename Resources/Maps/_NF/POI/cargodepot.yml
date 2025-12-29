@@ -3830,7 +3830,7 @@ entities:
       parent: 10
     - type: Fixtures
       fixtures: {}
-- proto: Gaslock
+- proto: GaslockHighFlow
   entities:
   - uid: 46
     components:

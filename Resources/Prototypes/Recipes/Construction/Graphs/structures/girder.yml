@@ -288,6 +288,48 @@
               amount: 2
               doAfter: 1
 
+        - to: gaslock # Hardlight
+          completed:
+            - !type:SnapToGrid
+          conditions:
+            - !type:EntityAnchored { }
+          steps:
+            - tag: GaslockFrameMachineCircuitBoard
+              name: construction-graph-component-gaslock-circuit-board
+              icon:
+                sprite: "Objects/Misc/module.rsi"
+                state: "engineering"
+              doAfter: 1
+            - material: Steel
+              amount: 4
+              doAfter: 2
+            - tool: Welding
+              doAfter: 10
+
+        - to: gaslockhighflow # Hardlight
+          completed:
+            - !type:SnapToGrid
+          conditions:
+            - !type:EntityAnchored { }
+          steps:
+            - tag: HighPressureCasing
+              name: construction-graph-tag-high-pressure-casing
+              icon:
+                sprite: Structures/Piping/Atmospherics/pump.rsi
+                state: pumpVolume
+              doAfter: 2
+            - tag: GaslockFrameMachineCircuitBoard
+              name: construction-graph-component-gaslock-circuit-board
+              icon:
+                sprite: "Objects/Misc/module.rsi"
+                state: "engineering"
+              doAfter: 1
+            - material: Plasteel
+              amount: 4
+              doAfter: 2
+            - tool: Welding
+              doAfter: 10
+
         - to: diagonalshuttleWall
           conditions:
             - !type:EntityAnchored { }
@@ -422,6 +464,39 @@
                   data: 0
             - tool: Cutting
               doAfter: 4
+
+    - node: gaslock # Hardlight
+      entity: Gaslock
+      edges:
+        - to: reinforcedGirder
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetPlasteel1
+              amount: 4
+            - !type:SpawnPrototype
+              prototype: GaslockFrameMachineCircuitboard
+              amount: 1
+          steps:
+            - tool: Welding
+              doAfter: 10
+
+    - node: gaslockhighflow # Hardlight
+      entity: GaslockHighFlow
+      edges:
+        - to: reinforcedGirder
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetPlasteel1
+              amount: 4
+            - !type:SpawnPrototype
+              prototype: GaslockFrameMachineCircuitboard
+              amount: 1
+            - !type:SpawnPrototype
+              prototype: HighPressureCasing
+              amount: 1
+          steps:
+            - tool: Welding
+              doAfter: 10
 
     - node: diagonalshuttleWall
       entity: WallShuttleDiagonal

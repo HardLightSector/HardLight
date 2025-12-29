@@ -6,7 +6,7 @@
     edges:
     - to: ventpumphighflow
       steps:
-      - tag: HighPressureCasing
+      - tag:
         name: construction-graph-tag-high-pressure-casing
         icon:
           sprite: Structures/Piping/Atmospherics/pump.rsi
