@@ -23,6 +23,8 @@
         - PlushieSlime
         - PlushieSnake
         - PlushieVox
+        - PlushieCuddlyIPC
+        - PlushieFluffyVulpkanin
         - PlushieRatvar
         - PlushieSpaceLizard
         - PlushieRouny
@@ -69,6 +71,7 @@
         - ToyDurand
         - ToySkeleton
         - MysteryFigureBox
+        - ToySeb
       chance: 0.5
       offset: 0.2
 
