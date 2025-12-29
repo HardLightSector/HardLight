@@ -141,8 +141,8 @@
   - type: AccessReader
     access: [["Security"], ["Armory"], ["Command"]]
   - type: SiliconLawProvider
-  - type: FlashImmunity
     laws: Qborg
+  - type: FlashImmunity
   - type: SpriteStateToggle
     spriteLayer: movement
     stateOff: quadspritesec
