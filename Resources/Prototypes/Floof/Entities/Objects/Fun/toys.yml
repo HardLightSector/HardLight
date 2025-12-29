@@ -296,20 +296,20 @@
     delay: 3.0
   - type: EmitSoundOnActivate
     sound:
-      path: /Audio/_Floof/Voice/Reptilian/yip.ogg
+      path: /Audio/Floof/Voice/Reptilian/yip.ogg
       params:
         volume: 2
   - type: EmitSoundOnUse
     sound:
-      path: /Audio/_Floof/Voice/Reptilian/yip.ogg
+      path: /Audio/Floof/Voice/Reptilian/yip.ogg
       params:
         volume: 2
   - type: EmitSoundOnLand
     sound:
-      path: /Audio/_Floof/Voice/Vulpkanin/yap.ogg
+      path: /Audio/Floof/Voice/Vulpkanin/yap.ogg
   - type: MeleeWeapon
     soundHit:
-      path: /Audio/_Floof/Voice/Vulpkanin/yap.ogg
+      path: /Audio/Floof/Voice/Vulpkanin/yap.ogg
       params:
         variation: 0.05
         volume: 4
