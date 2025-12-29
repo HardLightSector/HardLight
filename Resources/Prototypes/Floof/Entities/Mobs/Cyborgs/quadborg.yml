@@ -132,7 +132,7 @@
     moduleWhitelist:
       tags:
       - BorgModuleGeneric
-      #- XenoborgModuleGeneric
+      - XenoborgModuleGeneric
       - BorgModuleSecurity
       - BorgModuleSyndicate
       - BorgModuleSyndicateAssault
