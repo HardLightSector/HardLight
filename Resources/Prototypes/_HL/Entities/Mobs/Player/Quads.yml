@@ -79,7 +79,7 @@
     nameSegments: [NFNamesBorg]
     
 - type: entity
-  id: PlayerBorgQuadSec
+  id: PlayerBorgQuad
   parent: BorgChassisQuadSec
   suffix: Battery, Tools
   components:
