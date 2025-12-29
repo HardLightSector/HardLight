@@ -164,8 +164,8 @@
   id: SprayPainterAmmo
   result: SprayPainterAmmo
   materials:
-    Steel: 150
-    Plastic: 50
+    Steel: 450
+    Plastic: 150
 
 - type: latheRecipe
   parent: BaseToolRecipe

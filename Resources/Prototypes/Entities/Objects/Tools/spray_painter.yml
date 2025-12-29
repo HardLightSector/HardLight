@@ -47,8 +47,8 @@
   - type: StaticPrice
     price: 20 # Frontier 40<20
   - type: LimitedCharges
-    maxCharges: 15
-    lastCharges: 15
+    maxCharges: 50
+    lastCharges: 50
   - type: PhysicalComposition
     materialComposition:
       Steel: 100
@@ -84,7 +84,7 @@
     heldPrefix: ammo
   - type: PhysicalComposition
     materialComposition:
-      Steel: 10
-      Plastic: 10
+      Steel: 30
+      Plastic: 30
   - type: StaticPrice
     price: 30
