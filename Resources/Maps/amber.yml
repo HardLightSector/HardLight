@@ -4,8 +4,8 @@ meta:
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 12/20/2025 02:10:18
-  entityCount: 23695
+  time: 12/29/2025 21:27:42
+  entityCount: 23696
 maps:
 - 1
 grids:
@@ -131380,6 +131380,13 @@ entities:
     components:
     - type: Transform
       pos: -9.5,-33.5
+      parent: 2
+- proto: SpawnMobArcticFoxSeb
+  entities:
+  - uid: 19919
+    components:
+    - type: Transform
+      pos: 22.5,-31.5
       parent: 2
 - proto: SpawnMobBandito
   entities:

@@ -4,8 +4,8 @@ meta:
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 12/20/2025 20:08:32
-  entityCount: 17542
+  time: 12/29/2025 21:32:27
+  entityCount: 17543
 maps:
 - 1
 grids:
@@ -10651,7 +10651,6 @@ entities:
     - type: GasTileOverlay
     - type: RadiationGridResistance
     - type: SalvageExpeditionData
-      nextOffer: 0
 - proto: AcousticGuitarInstrument
   entities:
   - uid: 15607
@@ -14373,7 +14372,7 @@ entities:
       pos: 47.5,5.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -419918.56
+      secondsUntilStateChange: -419991.6
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -97293,6 +97292,13 @@ entities:
     components:
     - type: Transform
       pos: 11.5,0.5
+      parent: 2
+- proto: SpawnMobArcticFoxSeb
+  entities:
+  - uid: 17543
+    components:
+    - type: Transform
+      pos: -13.5,22.5
       parent: 2
 - proto: SpawnMobBandito
   entities:

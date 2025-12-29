@@ -4,8 +4,8 @@ meta:
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 12/20/2025 08:18:59
-  entityCount: 19124
+  time: 12/29/2025 21:20:37
+  entityCount: 19125
 maps:
 - 1
 grids:
@@ -7419,7 +7419,7 @@ entities:
       pos: -21.5,45.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -36449.293
+      secondsUntilStateChange: -36526.273
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -8179,7 +8179,7 @@ entities:
       pos: -23.5,-12.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -122763.76
+      secondsUntilStateChange: -122840.74
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -8191,7 +8191,7 @@ entities:
       pos: -23.5,-13.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -122954.16
+      secondsUntilStateChange: -123031.14
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -8224,7 +8224,7 @@ entities:
       pos: -23.5,-1.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -114592.81
+      secondsUntilStateChange: -114669.8
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -8309,7 +8309,7 @@ entities:
       pos: 21.5,-13.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -103983.26
+      secondsUntilStateChange: -104060.24
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -8355,7 +8355,7 @@ entities:
       pos: 23.5,-5.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -73953.96
+      secondsUntilStateChange: -74030.945
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -8589,7 +8589,7 @@ entities:
       pos: 20.5,17.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -73501.9
+      secondsUntilStateChange: -73578.88
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -8871,7 +8871,7 @@ entities:
       pos: -58.5,43.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -9860.208
+      secondsUntilStateChange: -9937.19
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -9347,7 +9347,7 @@ entities:
       pos: -23.5,39.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -30927.033
+      secondsUntilStateChange: -31004.016
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -87937,7 +87937,7 @@ entities:
       pos: -39.5,46.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -11390.813
+      secondsUntilStateChange: -11467.796
       state: Opening
 - proto: HospitalCurtainsOpen
   entities:
@@ -87947,7 +87947,7 @@ entities:
       pos: -57.5,37.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -9861.374
+      secondsUntilStateChange: -9938.356
       state: Closing
   - uid: 9135
     components:
@@ -101244,7 +101244,7 @@ entities:
       pos: 7.5,26.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -6569.7153
+      secondsUntilStateChange: -6646.6978
       state: Closing
     - type: DeviceLinkSource
       lastSignals:
@@ -103609,6 +103609,13 @@ entities:
     components:
     - type: Transform
       pos: -34.5,6.5
+      parent: 2
+- proto: SpawnMobArcticFoxSeb
+  entities:
+  - uid: 11313
+    components:
+    - type: Transform
+      pos: -27.5,18.5
       parent: 2
 - proto: SpawnMobBandito
   entities:
