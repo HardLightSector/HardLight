@@ -19,6 +19,150 @@
       "name": "Apex",
       "directions": 4
     },
+	{
+      "name": "XenoQuad",
+      "directions": 4
+    },
+	{
+      "name": "XenoQuad_e",
+      "directions": 4
+    },
+	{
+      "name": "XenoQuad_e_r",
+      "directions": 4
+    },
+	{
+      "name": "XenoQuadballz",
+      "directions": 4
+    },
+	{
+      "name": "XenoQuadballz_e",
+      "directions": 4
+    },
+	{
+      "name": "XenoQuadballz_e_r",
+      "directions": 4
+    },
+	{
+      "name": "XenoQuad_moving",
+      "directions": 4,
+      "delays": [
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ]
+      ]
+    },
+	{
+      "name": "XenoQuad_moving_e",
+      "directions": 4,
+      "delays": [
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ]
+      ]
+    },
+	{
+      "name": "XenoQuad_movingballz",
+      "directions": 4,
+      "delays": [
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ]
+      ]
+    },
+	{
+      "name": "XenoQuad_movingballz_e",
+      "directions": 4,
+      "delays": [
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ]
+      ]
+    },
     {
       "name": "quadsprite_moving",
       "directions": 4,
