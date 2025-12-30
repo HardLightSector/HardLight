@@ -283,6 +283,8 @@
     # Armor
     - id: ClothingOuterHardsuitMaximPrototype
       prob: 0.1
+    - id: ClothingOuterHardsuitMaxim
+      prob: 0.1
     # Items
     - id: SpawnDungeonLootClutterEngi
       prob: 0.9
