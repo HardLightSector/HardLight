@@ -2,6 +2,8 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
+using Content.Shared._Afterlight.Atmos;
+using Content.Shared._Afterlight.Body;
 using Content.Shared._Afterlight.CCVar;
 using Content.Shared._Afterlight.MobInteraction;
 using Content.Shared._Afterlight.Prototypes;
@@ -24,6 +26,7 @@ using Robust.Shared.Enums;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
 namespace Content.Shared._Afterlight.Vore;
@@ -31,6 +34,9 @@ namespace Content.Shared._Afterlight.Vore;
 public abstract class SharedVoreSystem : EntitySystem
 {
     [Dependency] private readonly SharedActionsSystem _actions = default!;
+    [Dependency] private readonly SharedALBarotraumaSystem _alBarotrauma = default!;
+    [Dependency] private readonly SharedALRespiratorSystem _alRespirator = default!;
+    [Dependency] private readonly IComponentFactory _compFactory = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedContainerSystem _container = default!;
     [Dependency] private readonly SharedALMobInteractionSystem _alMobInteraction = default!;
@@ -42,6 +48,7 @@ public abstract class SharedVoreSystem : EntitySystem
     [Dependency] private readonly INetManager _net = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly SharedUserInterfaceSystem _ui = default!;
 
     private static readonly EntProtoId<VoreSoundCollectionComponent> InsertionSoundsId = "ALVoreSoundsInsert";
@@ -129,6 +136,10 @@ public abstract class SharedVoreSystem : EntitySystem
         SubscribeLocalEvent<VorePreyComponent, PlayerDetachedEvent>(OnPreyDetached);
         SubscribeLocalEvent<VorePreyComponent, MoveInputEvent>(OnPreyMoveInput);
         SubscribeLocalEvent<VorePreyComponent, VoreEscapeDoAfterEvent>(OnPreyEscapeDoAfter);
+        SubscribeLocalEvent<VorePreyComponent, EntGotInsertedIntoContainerMessage>(OnPreyGotInserted);
+        SubscribeLocalEvent<VorePreyComponent, EntGotRemovedFromContainerMessage>(OnPreyGotRemoved);
+
+        SubscribeLocalEvent<ActiveVorePreyComponent, ALPressureDamageAttemptEvent>(OnActivePreyPressureDamageAttempt);
 
         Subs.BuiEvents<VorePredatorComponent>(VoreUi.Key, subs =>
         {
@@ -261,7 +272,7 @@ public abstract class SharedVoreSystem : EntitySystem
         foreach (var container in _container.GetAllContainers(ent).ToArray())
         {
             var id = container.ID;
-            if (id.StartsWith(VoreContainerPrefix))
+            if (IsVoreContainer(container))
                 _container.EmptyContainer(container);
         }
     }
@@ -343,7 +354,8 @@ public abstract class SharedVoreSystem : EntitySystem
         }
 
         var container = _container.EnsureContainer<Container>(predator, GetSpaceContainerId(space));
-        _container.Insert(target, container);
+        if (_container.Insert(target, container))
+            EnsureComp<ActiveVorePreyComponent>(target);
 
         // TODO AFTERLIGHT
         if (_net.IsClient)
@@ -351,7 +363,6 @@ public abstract class SharedVoreSystem : EntitySystem
 
         // TODO AFTERLIGHT
         _popup.PopupEntity(Loc.GetString("al-vore-predator-ate-others", ("predator", predator), ("prey", args.Target), ("space", space.Name)), predator, predator, PopupType.Medium);
-
         TryPlaySound(predator, space.InsertionSound, ALContentPref.VoreEatingNoises);
     }
 
@@ -433,6 +444,40 @@ public abstract class SharedVoreSystem : EntitySystem
             _popup.PopupEntity($"{Name(prey)} frees themselves from {Name(container.Owner)}'s {space.Name}!", container.Owner, PopupType.MediumCaution);
 
         TryPlaySound(container.Owner, space.ReleaseSound, ALContentPref.VoreEatingNoises);
+    }
+
+    private void OnPreyGotInserted(Entity<VorePreyComponent> ent, ref EntGotInsertedIntoContainerMessage args)
+    {
+        if (_timing.ApplyingState)
+            return;
+
+        if (TerminatingOrDeleted(ent))
+            return;
+
+        EnsureComp<ActiveVorePreyComponent>(ent);
+    }
+
+    private void OnPreyGotRemoved(Entity<VorePreyComponent> ent, ref EntGotRemovedFromContainerMessage args)
+    {
+        if (TerminatingOrDeleted(ent))
+            return;
+
+        if (!IsVoreContainer(args.Container))
+            return;
+
+        RemCompDeferred<ActiveVorePreyComponent>(ent);
+    }
+
+    private void OnActivePreyPressureDamageAttempt(Entity<ActiveVorePreyComponent> ent, ref ALPressureDamageAttemptEvent args)
+    {
+        if (!_container.TryGetContainingContainer(ent.Owner, out var container))
+            return;
+
+        if (_alBarotrauma.IsTakingPressureDamage(container.Owner))
+            return;
+
+        // TODO AFTERLIGHT pressure damage from gases inside someone when we get inflation mechanics?
+        args.Cancelled = true;
     }
 
     private void OnAddSpaceMsg(Entity<VorePredatorComponent> ent, ref VoreAddSpaceBuiMsg args)
@@ -894,10 +939,7 @@ public abstract class SharedVoreSystem : EntitySystem
             }
         }
 
-        // My hive for being able to assign data to containers in any meaningful way
-        // (aka making them entities)
-        var id = container.ID;
-        return id.StartsWith(VoreContainerPrefix);
+        return IsVoreContainer(container);
     }
 
     public bool IsVored(Entity<VorePreyComponent?> prey)
@@ -921,16 +963,14 @@ public abstract class SharedVoreSystem : EntitySystem
     {
         foreach (var container in _container.GetAllContainers(ent).ToArray())
         {
-            var id = container.ID;
-            if (id.StartsWith(VoreContainerPrefix))
+            if (IsVoreContainer(container))
                 _container.EmptyContainer(container);
         }
     }
 
     private void TryEmptyPredatorContainer(BaseContainer container)
     {
-        var id = container.ID;
-        if (id.StartsWith(VoreContainerPrefix))
+        if (IsVoreContainer(container))
             _container.EmptyContainer(container);
     }
 
@@ -939,8 +979,7 @@ public abstract class SharedVoreSystem : EntitySystem
         if (!_container.TryGetContainingContainer(ent.Owner, out var container))
             return;
 
-        var id = container.ID;
-        if (!id.StartsWith(VoreContainerPrefix))
+        if (!IsVoreContainer(container))
             return;
 
         _container.Remove(ent.Owner, container);
@@ -973,6 +1012,30 @@ public abstract class SharedVoreSystem : EntitySystem
             {
                 _audio.PlayEntity(sound, recipient, from);
             }
+        }
+    }
+
+    private bool IsVoreContainer(BaseContainer container)
+    {
+        // My hive for being able to assign data to containers in any meaningful way
+        // (aka making them entities)
+        var id = container.ID;
+        return id.StartsWith(VoreContainerPrefix);
+    }
+
+    public override void Update(float frameTime)
+    {
+        var query = EntityQueryEnumerator<ActiveVorePreyComponent>();
+        while (query.MoveNext(out var uid, out _))
+        {
+            if (!_container.TryGetContainingContainer(uid, out var container))
+                continue;
+
+            if (_alRespirator.IsSuffocating(container.Owner))
+                continue;
+
+            // TODO AFTERLIGHT gas mixes inside someone when we get inflation mechanics?
+            _alRespirator.MaximizeSaturation(uid);
         }
     }
 }
