@@ -1418,7 +1418,7 @@
       "directions": 4
     },
     {
-      "name": "m_waggingtail_guilmon_BEHIND_primary",
+      "name": "m_waggingtail_virtuasaur_BEHIND_primary",
       "directions": 4,
       "delays": [
         [
@@ -1468,7 +1468,7 @@
       ]
     },
     {
-      "name": "m_waggingtail_guilmon_FRONT_primary",
+      "name": "m_waggingtail_virtuasaur_FRONT_primary",
       "directions": 4,
       "delays": [
         [
@@ -1518,11 +1518,11 @@
       ]
     },
     {
-      "name": "m_tail_guilmon_BEHIND_primary",
+      "name": "m_tail_virtuasaur_BEHIND_primary",
       "directions": 4
     },
     {
-      "name": "m_tail_guilmon_FRONT_primary",
+      "name": "m_tail_virtuasaur_FRONT_primary",
       "directions": 4
     },
     {
@@ -3632,23 +3632,23 @@
       "directions": 4
     },
     {
-      "name": "m_tail_eevee_BEHIND_primary",
+      "name": "m_tail_evolox_BEHIND_primary",
       "directions": 4
     },
     {
-      "name": "m_tail_eevee_BEHIND_secondary",
+      "name": "m_tail_evolox_BEHIND_secondary",
       "directions": 4
     },
     {
-      "name": "m_tail_eevee_FRONT_primary",
+      "name": "m_tail_evolox_FRONT_primary",
       "directions": 4
     },
     {
-      "name": "m_tail_eevee_FRONT_secondary",
+      "name": "m_tail_evolox_FRONT_secondary",
       "directions": 4
     },
     {
-      "name": "m_waggingtail_eevee_BEHIND_primary",
+      "name": "m_waggingtail_evolox_BEHIND_primary",
       "directions": 4,
       "delays": [
         [
@@ -3674,7 +3674,7 @@
       ]
     },
     {
-      "name": "m_waggingtail_eevee_BEHIND_secondary",
+      "name": "m_waggingtail_evolox_BEHIND_secondary",
       "directions": 4,
       "delays": [
         [
@@ -3700,7 +3700,7 @@
       ]
     },
     {
-      "name": "m_waggingtail_eevee_FRONT_primary",
+      "name": "m_waggingtail_evolox_FRONT_primary",
       "directions": 4,
       "delays": [
         [
@@ -3726,7 +3726,7 @@
       ]
     },
     {
-      "name": "m_waggingtail_eevee_FRONT_secondary",
+      "name": "m_waggingtail_evolox_FRONT_secondary",
       "directions": 4,
       "delays": [
         [
