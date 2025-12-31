@@ -360,11 +360,6 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         HumanoidAppearanceComponent humanoid,
         SpriteComponent sprite)
     {
-            if (!_sprite.LayerMapTryGet((uid, sprite), markingPrototype.BodyPart, out int targetLayer, false))
-        {
-            return;
-        }
-
         // FLOOF ADD START
         // make a handy dict of filename -> colors
         // cus we might need to access it by filename to link
@@ -463,7 +458,7 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
                 // everything. fun! FLOOF ADD =3
                 // var targLayerAdj = targetLayer == 0 ? 0 + j : targetLayer + j + 1;
                 var targLayerAdj = targetLayer + layerDict[layerSlot.ToString()] + 1;
-                var layer = _sprite.AddLayer(markingSprite, targLayerAdj);
+                var layer = _sprite.AddLayer((uid, sprite), markingSprite, targLayerAdj);
                 _sprite.LayerMapSet((uid, sprite), layerId, layer);
                 _sprite.LayerSetSprite((uid, sprite), layerId, rsi);
             }
@@ -488,7 +483,7 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
             // and we need to check the index is correct.
             // So if that happens just default to white?
             // FLOOF ADD =3
-            _sprite.LayerSetColor(layerId, colorDict.TryGetValue(rsi.RsiState, out var color) ? color : Color.White);
+            _sprite.LayerSetColor((uid, sprite), layerId, colorDict.TryGetValue(rsi.RsiState, out var color) ? color : Color.White);
 
             // FLOOF CHANGE
             // if (colors != null && j < colors.Count)
