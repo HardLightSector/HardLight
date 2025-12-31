@@ -141,7 +141,7 @@
   rules:
     - DummyNonAntagChance
     - Traitor
-    - SubGamemodesRule
+#    - SubGamemodesRule
     - BasicStationEventScheduler
     - MeteorSwarmScheduler
 
