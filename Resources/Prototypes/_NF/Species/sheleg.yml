@@ -16,6 +16,8 @@
 - type: speciesBaseSprites
   id: MobShelegSprites
   sprites:
+    TailBehind: MobHumanoidAnyMarking
+    TailOversuit: MobHumanoidAnyMarking
     Special: MobHumanoidAnyMarking
     Head: MobShelegHead
     Hair: MobShelegHair

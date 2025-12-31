@@ -20,6 +20,8 @@
 - type: speciesBaseSprites
   id: MobAvaliSprites
   sprites:
+    TailBehind: MobHumanoidAnyMarking
+    TailOversuit: MobHumanoidAnyMarking
     Head: MobAvaliHead
     Chest: MobAvaliTorso
     HeadTop: MobHumanoidAnyMarking

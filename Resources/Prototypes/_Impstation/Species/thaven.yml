@@ -28,6 +28,8 @@
 - type: speciesBaseSprites
   id: MobThavenSprites
   sprites:
+    TailBehind: MobHumanoidAnyMarking
+    TailOversuit: MobHumanoidAnyMarking
     Hair: MobHumanoidAnyMarking
     Eyes: MobThavenEyes
     Head: MobThavenHead

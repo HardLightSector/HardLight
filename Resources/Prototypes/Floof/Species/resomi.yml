@@ -21,6 +21,8 @@
 - type: speciesBaseSprites
   id: MobResomiSprites
   sprites:
+    TailBehind: MobHumanoidAnyMarking
+    TailOversuit: MobHumanoidAnyMarking
     Head: MobResomiHead
     Hair: MobHumanoidAnyMarking
     FacialHair: MobHumanoidAnyMarking
@@ -35,7 +37,6 @@
     LFoot: MobResomiLFoot
     RFoot: MobResomiRFoot
     Tail: MobHumanoidAnyMarking
-  # TailBehind removed (unsupported enum); TailOversuit removed.
     UndergarmentTop: MobHumanoidAnyMarking
     UndergarmentBottom: MobHumanoidAnyMarking
     Genital: MobHumanoidAnyMarking

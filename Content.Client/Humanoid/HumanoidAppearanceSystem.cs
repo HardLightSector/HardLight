@@ -365,9 +365,44 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
             return;
         }
 
-        visible &= !IsHidden(humanoid, markingPrototype.BodyPart);
-        visible &= humanoid.BaseLayers.TryGetValue(markingPrototype.BodyPart, out var setting)
-           && setting.AllowsMarkings;
+        // FLOOF ADD START
+        // make a handy dict of filename -> colors
+        // cus we might need to access it by filename to link
+        // one sprite's colors to another
+        var colorDict = new Dictionary<string, Color>();
+        for (var i = 0; i < markingPrototype.Sprites.Count; i++)
+        {
+            var spriteName = markingPrototype.Sprites[i] switch
+            {
+                SpriteSpecifier.Rsi rsi => rsi.RsiState,
+                SpriteSpecifier.Texture texture => texture.TexturePath.Filename,
+                _ => null
+            };
+
+            if (spriteName != null)
+            {
+                if (colors != null && i < colors.Count)
+                    colorDict.Add(spriteName, colors[i]);
+                else
+                    colorDict.Add(spriteName, Color.White);
+            }
+        }
+        // now, rearrange them, copying any parented colors to children set to
+        // inherit them
+        if (markingPrototype.ColorLinks != null)
+        {
+            foreach (var (child, parent) in markingPrototype.ColorLinks)
+            {
+                if (colorDict.TryGetValue(parent, out var color))
+                {
+                    colorDict[child] = color;
+                }
+            }
+        }
+        // and, since we can't rely on the iterator knowing where the heck to put
+        // each sprite when we have one marking setting multiple layers,
+        // lets just kinda sorta do that ourselves
+        var layerDict = new Dictionary<string, int>();
 
         visible &= !humanoid.HiddenMarkings.Contains(markingPrototype.ID); // FLOOF ADD
         // FLOOF ADD END
@@ -386,12 +421,49 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
             {
                 continue;
             }
+            
+            // FLOOF CHANGE START
+            var layerSlot = markingPrototype.BodyPart;
+            // first, try to see if there are any custom layers for this marking
+            if (markingPrototype.Layering != null)
+            {
+                var name = rsi.RsiState;
+                if (markingPrototype.Layering.TryGetValue(name, out var layerName))
+                {
+                    layerSlot = Enum.Parse<HumanoidVisualLayers>(layerName);
+                }
+            }
+            // update the layerDict
+            // if it doesnt have this, add it at 0, otherwise increment it
+            if (layerDict.TryGetValue(layerSlot.ToString(), out var layerIndex))
+            {
+                layerDict[layerSlot.ToString()] = layerIndex + 1;
+            }
+            else
+            {
+                layerDict.Add(layerSlot.ToString(), 0);
+            }
+
+            if (!sprite.LayerMapTryGet(layerSlot, out var targetLayer))
+            {
+                continue;
+            }
+
+            visible &= !IsHidden(humanoid, markingPrototype.BodyPart);
+            visible &= humanoid.BaseLayers.TryGetValue(markingPrototype.BodyPart, out var setting)
+               && setting.AllowsMarkings;
 
             var layerId = $"{markingPrototype.ID}-{rsi.RsiState}";
+            // FLOOF CHANGE END
 
             if (!_sprite.LayerMapTryGet((uid, sprite), layerId, out _ , false))
             {
-                var layer = _sprite.AddLayer((uid, sprite), markingSprite, targetLayer + j + 1);
+                // for layers that are supposed to be behind everything,
+                // adding 1 to the layer index makes it not be behind
+                // everything. fun! FLOOF ADD =3
+                // var targLayerAdj = targetLayer == 0 ? 0 + j : targetLayer + j + 1;
+                var targLayerAdj = targetLayer + layerDict[layerSlot.ToString()] + 1;
+                var layer = _sprite.AddLayer(markingSprite, targLayerAdj);
                 _sprite.LayerMapSet((uid, sprite), layerId, layer);
                 _sprite.LayerSetSprite((uid, sprite), layerId, rsi);
             }
@@ -415,14 +487,18 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
             // Okay so if the marking prototype is modified but we load old marking data this may no longer be valid
             // and we need to check the index is correct.
             // So if that happens just default to white?
-                if (colors != null && j < colors.Count)
-                {
-                    _sprite.LayerSetColor((uid, sprite), layerId, colors[j]);
-                }
-                else
-                {
-                    _sprite.LayerSetColor((uid, sprite), layerId, Color.White);
-                }
+            // FLOOF ADD =3
+            _sprite.LayerSetColor(layerId, colorDict.TryGetValue(rsi.RsiState, out var color) ? color : Color.White);
+
+            // FLOOF CHANGE
+            // if (colors != null && j < colors.Count)
+            // {
+            //     sprite.LayerSetColor(layerId, colors[j]);
+            // }
+            // else
+            // {
+            //     sprite.LayerSetColor(layerId, Color.White);
+            // }
 
             //starlight start
                 if (isGlowing)

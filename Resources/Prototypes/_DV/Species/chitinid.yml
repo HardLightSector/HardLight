@@ -11,6 +11,8 @@
 - type: speciesBaseSprites
   id: MobChitinidSprites
   sprites:
+    TailBehind: MobHumanoidAnyMarking
+    TailOversuit: MobHumanoidAnyMarking
     Head: MobChitinidHead
     Hair: MobHumanoidAnyMarking
     Snout: MobHumanoidAnyMarking

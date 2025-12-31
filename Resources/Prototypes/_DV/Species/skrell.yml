@@ -20,6 +20,8 @@
 - type: speciesBaseSprites
   id: MobSkrellSprites
   sprites:
+    TailBehind: MobHumanoidAnyMarking
+    TailOversuit: MobHumanoidAnyMarking
     Head: MobSkrellHead
     Hair: MobHumanoidAnyMarking
     FacialHair: MobHumanoidAnyMarking

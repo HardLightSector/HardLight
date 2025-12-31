@@ -12,6 +12,8 @@
 - type: speciesBaseSprites
   id: MobSynthSprites
   sprites:
+    TailBehind: MobHumanoidAnyMarking
+    TailOversuit: MobHumanoidAnyMarking
     Head: MobSynthHead
     Hair: MobHumanoidAnyMarking
     Snout: MobHumanoidAnyMarking

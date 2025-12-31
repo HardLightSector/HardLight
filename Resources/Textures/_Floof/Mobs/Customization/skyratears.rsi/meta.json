@@ -168,7 +168,7 @@
       "directions": 4
     },
     {
-      "name": "m_horns_guilmon",
+      "name": "m_horns_virtuasaur",
       "directions": 4
     },
     {
@@ -568,35 +568,35 @@
       "directions": 4
     },
     {
-      "name": "m_ears_eevee_ADJ_primary",
+      "name": "m_ears_evolox_ADJ_primary",
       "directions": 4
     },
     {
-      "name": "m_ears_eevee_ADJ_secondary",
+      "name": "m_ears_evolox_ADJ_secondary",
       "directions": 4
     },
     {
-      "name": "m_ears_eevee_FRONT_primary",
+      "name": "m_ears_evolox_FRONT_primary",
       "directions": 4
     },
     {
-      "name": "m_ears_eevee_FRONT_secondary",
+      "name": "m_ears_evolox_FRONT_secondary",
       "directions": 4
     },
     {
-      "name": "m_ears_eevee_alt_ADJ_primary",
+      "name": "m_ears_evolox_alt_ADJ_primary",
       "directions": 4
     },
     {
-      "name": "m_ears_eevee_alt_ADJ_secondary",
+      "name": "m_ears_evolox_alt_ADJ_secondary",
       "directions": 4
     },
     {
-      "name": "m_ears_eevee_alt_FRONT_primary",
+      "name": "m_ears_evolox_alt_FRONT_primary",
       "directions": 4
     },
     {
-      "name": "m_ears_eevee_alt_FRONT_secondary",
+      "name": "m_ears_evolox_alt_FRONT_secondary",
       "directions": 4
     },
     {

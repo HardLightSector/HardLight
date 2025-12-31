@@ -61,6 +61,7 @@
         Slash: 5 # Reduce?
   - type: Sprite # Need to redefine the whole order to draw the tail over their gas tank
     layers:
+    - map: [ "enum.HumanoidVisualLayers.TailBehind" ]
     - map: [ "enum.HumanoidVisualLayers.Chest" ]
     - map: [ "enum.HumanoidVisualLayers.Head" ]
     - map: [ "enum.HumanoidVisualLayers.Snout" ]
@@ -89,6 +90,7 @@
     - map: [ "outerClothing" ]
     - map: [ "belt" ] # HL: change belt over outerclothing
     - map: [ "back" ]
+    - map: [ "enum.HumanoidVisualLayers.TailOversuit" ]
     - map: [ "neck" ]
     - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
     - map: [ "enum.HumanoidVisualLayers.Hair" ]

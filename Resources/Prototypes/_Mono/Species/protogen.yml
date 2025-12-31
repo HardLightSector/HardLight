@@ -12,6 +12,8 @@
 - type: speciesBaseSprites
   id: MobProtogenSprites
   sprites:
+    TailBehind: MobHumanoidAnyMarking
+    TailOversuit: MobHumanoidAnyMarking
     Head: MobProtogenHead
     Hair: MobHumanoidAnyMarking
     Snout: MobHumanoidAnyMarking

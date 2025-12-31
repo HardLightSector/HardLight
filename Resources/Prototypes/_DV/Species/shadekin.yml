@@ -18,6 +18,8 @@
 - type: speciesBaseSprites
   id: MobShadekinSprites
   sprites:
+    TailBehind: MobHumanoidAnyMarking
+    TailOversuit: MobHumanoidAnyMarking
     Head: MobShadekinHead
     Hair: MobHumanoidAnyMarking
     Snout: MobShadekinAnyMarkingFollowSkin
