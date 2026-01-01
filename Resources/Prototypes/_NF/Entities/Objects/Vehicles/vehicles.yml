@@ -808,8 +808,7 @@
         priority: 2
 
 - type: entity
-  parent:
-  - VehicleHoverbikeMailcarrier
+  parent: VehicleHoverbikeMailcarrier
   id: VehicleHoverbikeParamedic
   name: paramedic hoverbike
   description: A medical edition of the tried and true hoverbike, has space for a defibrillator, medkit, one unlucky (or lucky) patient and a basic EVA suit for emergencies. Patients can't be inserted while critical or dead, but will stay inside if they die in transit.
