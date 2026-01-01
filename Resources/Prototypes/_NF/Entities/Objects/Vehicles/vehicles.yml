@@ -816,6 +816,7 @@
   - type: Storage
     grid:
     - 0,0,3,1
+    noRot: true
   - type: Sprite
     sprite: _NF/Objects/Vehicles/hoverbike.rsi
     layers:
@@ -825,7 +826,6 @@
       map: ["enum.VehicleVisualLayers.AutoAnimate"]
     - state: bag
     - state: lights
-    noRot: true
   - type: ItemSlots
     slots:
       key_slot:
@@ -858,12 +858,6 @@
     color: "#ffffff"
     radius: 6
     energy: 3
-  - type: Mech
-    maxEquipmentAmount: 0
-    airtight: true
-    baseState: hull
-    openState: hull
-    brokenState: hull
   - type: ContainerFill
     containers:
       defib_slot:
