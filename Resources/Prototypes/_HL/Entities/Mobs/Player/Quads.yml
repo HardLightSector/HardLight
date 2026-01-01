@@ -80,7 +80,7 @@
     
 - type: entity
   id: PlayerBorgQuad
-  parent: BorgChassisQuad
+  parent: BorgChassisQuadSec
   suffix: Battery, Tools
   components:
   - type: ContainerFill

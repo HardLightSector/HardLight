@@ -30,9 +30,11 @@
     moduleWhitelist:
       tags:
       - XenoborgModuleGeneric
-      - XenoborgModuleEngi
       - BorgModuleEngineering
       - BorgModuleGeneric
+      - BorgModuleSecurity
+      - BorgModuleSyndicate
+      - BorgModuleSyndicateAssault
   - type: ContainerFill
     containers:
       borg_brain:
@@ -87,7 +89,9 @@
     moduleWhitelist:
       tags:
       - XenoborgModuleGeneric
-      - XenoborgModuleHeavy
+      - BorgModuleSecurity
+      - BorgModuleSyndicate
+      - BorgModuleSyndicateAssault
   - type: MovementSpeedModifier # slower
     baseWalkSpeed : 1.2
     baseSprintSpeed : 2.2
@@ -187,6 +191,9 @@
     moduleWhitelist:
       tags:
       - XenoborgModuleGeneric
+      - BorgModuleSecurity
+      - BorgModuleSyndicate
+      - BorgModuleSyndicateAssault
       - XenoborgModuleScout
   - type: MovementSpeedModifier # faster
     baseWalkSpeed : 3
@@ -242,6 +249,9 @@
       tags:
       - XenoborgModuleGeneric
       - XenoborgModuleStealth
+      - BorgModuleSecurity
+      - BorgModuleSyndicate
+      - BorgModuleSyndicateAssault
   - type: MovementAlwaysTouching # it flies in space with tiny thrusters
   # - type: SpamEmitSound # longer interval to make the creppy sound
   #   minInterval: 50

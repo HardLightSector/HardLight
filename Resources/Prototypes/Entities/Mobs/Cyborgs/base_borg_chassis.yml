@@ -397,6 +397,10 @@
   save: false
   abstract: true
   components:
+  - type: Body
+    prototype: Quadborg
+  - type: Inventory
+    templateId: borgquad #Hardlight - Changes Quadborgs over to use our armor slots
   - type: RandomMetadata
     nameSegments:
     - NamesXenoborg
@@ -422,10 +426,11 @@
     - Mothership
     - Xenoborg
     - Binary
+    - Common
   - type: Repairable
-    doAfterDelay: 13 # 25% more HP, so 30% more time to heal
+    doAfterDelay: 10 # 25% more HP, so 30% more time to heal
   - type: BorgChassis
-    maxModules: 0
+    maxModules: 10
     hasMindState: robot_e
     noMindState: robot_e_r
     moduleWhitelist:
@@ -443,6 +448,7 @@
       Unsexed: UnisexSiliconXenoborg
     wilhelmProbability: 0
   - type: DamagedSiliconAccent
+  - type: BankAccount
   - type: UnblockableSpeech
   - type: FootstepModifier
     footstepSoundCollection:
@@ -459,6 +465,7 @@
   - type: NpcFactionMember
     factions:
     - Xenoborg
+  - type: Hands
   - type: Destructible
     thresholds:
     - trigger:

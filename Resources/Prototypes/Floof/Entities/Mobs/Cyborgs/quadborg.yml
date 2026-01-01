@@ -1,4 +1,3 @@
-
 - type: entity
   id: BorgChassisQuad
   parent: BaseBorgChassisNT
@@ -58,13 +57,12 @@
     moduleWhitelist:
       tags:
       - BorgModuleGeneric
+      - XenoborgModuleGeneric
       - BorgModuleSecurity
       - BorgModuleSyndicate
       - BorgModuleSyndicateAssault
     hasMindState: quadspritel
     noMindState: quadspriter
-  - type: AccessReader
-    access: [["Security"], ["Armory"], ["Command"], ["Mercenary"]]
   - type: BorgTransponder
     sprite:
       sprite: Floof/Mobs/Silicon/quad.rsi
@@ -75,6 +73,8 @@
   - type: Speech
     speechVerb: Robotic
   - type: LayingDown
+  - type: AccessReader
+    access: [["Security"], ["Armory"], ["Command"]]
   - type: SiliconLawProvider
     laws: Qborg
   - type: LeashAnchor # Floofstation
@@ -89,6 +89,66 @@
     stateOn: quadspriteballz
     movementStateOff: quadsprite_moving
     movementStateOn: quadsprite_movingballz
+
+- type: entity
+  id: BorgChassisQuadSec
+  parent: [BorgChassisQuad, ShowSecurityIcons]
+  components:
+  - type: Sprite
+    sprite: Floof/Mobs/Silicon/quad.rsi
+    scale: 0.7, 0.7
+    layers:
+    - state: quadsprite
+      map: ["movement"]
+    - state: quadspritel
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: quadspriter
+      shader: unshaded
+      map: ["light"]
+      visible: false
+  - type: SpriteMovement
+    movementLayers:
+      movement:
+        state: quadsprite_moving
+    noMovementLayers:
+      movement:
+        state: quadsprite
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Security
+    - Binary
+    - Common
+    - Science
+  - type: ActiveRadio
+    channels:
+    - Security
+    - Binary
+    - Common
+    - Science
+  - type: BorgChassis
+    maxModules: 4
+    moduleWhitelist:
+      tags:
+      - BorgModuleGeneric
+      - XenoborgModuleGeneric
+      - BorgModuleSecurity
+      - BorgModuleSyndicate
+      - BorgModuleSyndicateAssault
+    hasMindState: quadspritel
+    noMindState: quadspriter
+  - type: AccessReader
+    access: [["Security"], ["Armory"], ["Command"]]
+  - type: SiliconLawProvider
+    laws: Qborg
+  - type: FlashImmunity
+  - type: SpriteStateToggle
+    spriteLayer: movement
+    stateOff: quadspritesec
+    stateOn: quadspritesecballz
+    movementStateOff: quadspritesec_moving
+    movementStateOn: quadspritesec_movingballz
 
 - type: entity
   id: SyndiQuad
@@ -137,6 +197,7 @@
       - BorgModuleMedical
       - BorgModuleSyndicate
       - BorgModuleSyndicateAssault
+      - XenoborgModuleGeneric
     hasMindState: SyndQuadl
     noMindState: SyndQuadr
   - type: Access #HL
@@ -214,6 +275,7 @@
       - BorgModuleSyndicate
       - BorgModuleSyndicateAssault
       - BorgModuleJanitor
+      - XenoborgModuleGeneric
   - type: Access #HL
     tags: #HL
     - CentralCommand #HL
@@ -280,6 +342,7 @@
       - BorgModuleCargo
       - BorgModuleSyndicate
       - BorgModuleSyndicateAssault
+      - XenoborgModuleGeneric
     hasMindState: quadspritesalvl
     noMindState: quadspritesalvr
   - type: AccessReader
@@ -339,6 +402,7 @@
       - BorgModuleJanitor #HL
       - BorgModuleSyndicate
       - BorgModuleSyndicateAssault
+      - XenoborgModuleGeneric
     hasMindState: quadspriteservl
     noMindState: quadspriteservr
   - type: AccessReader
@@ -400,6 +464,7 @@
       - BorgModuleEngineering
       - BorgModuleSyndicate
       - BorgModuleSyndicateAssault
+      - XenoborgModuleGeneric
     hasMindState: engieborgl
     noMindState: engieborgr
   - type: AccessReader
@@ -416,7 +481,7 @@
 
 - type: entity
   id: BorgChassisQuadmed
-  parent: BorgChassisQuad
+  parent: [BorgChassisQuad, ShowMedicalIcons]
   components:
   - type: Sprite
     sprite: Floof/Mobs/Silicon/quad.rsi
@@ -459,12 +524,14 @@
       - BorgModuleMedical
       - BorgModuleSyndicate
       - BorgModuleSyndicateAssault
+      - XenoborgModuleGeneric
     hasMindState: quadspritemedl
     noMindState: quadspritemedr
   - type: AccessReader
     access: [["Medical"], ["Salvage"], ["Command"], ["Research"], ["Maintenance"]]
   - type: SiliconLawProvider
     laws: Medical
+  - type: SolutionScanner
   - type: SpriteStateToggle
     spriteLayer: movement
     stateOff: quadspritemed
@@ -544,6 +611,7 @@
       - BorgModuleEngineering
       - BorgModuleSyndicate
       - BorgModuleSyndicateAssault
+      - XenoborgModuleGeneric
     hasMindState: quadspritel
     noMindState: quadspriter
   - type: AccessReader
@@ -612,6 +680,7 @@
       - BorgModuleEngineering
       - BorgModuleSyndicate
       - BorgModuleSyndicateAssault
+      - XenoborgModuleGeneric
     hasMindState: quadspritel
     noMindState: quadspriter
   - type: AccessReader
@@ -619,3 +688,81 @@
   - type: SiliconLawProvider
     laws: Qborg
   # Note: No toggle added here; no provided Chip ballz states.
+
+- type: entity
+  parent: [ BaseXenoborgChassis, BaseXenoborgTransponder ]
+  id: Xenoquad
+  name: Quad Xenoborg
+  suffix: with brain
+  description: A man-machine hybrid that aims to replicate itself. They love extracting brains to insert into fresh Xenoborg chassis to grow their army. This one seems to have 4 legs and additional assets. 
+  components:
+  - type: Construction
+    node: start
+  - type: BorgTransponder
+    name: Quad xenoborg
+    sprite:
+      sprite: Floof/Mobs/Silicon/quad.rsi
+      state: XenoQuad
+  - type: BorgChassis
+    maxModules: 10
+    hasMindState: XenoQuad_e
+    noMindState: XenoQuad_e_r
+    moduleWhitelist:
+      tags:
+      - BorgModuleGeneric
+      - XenoborgModuleGeneric
+      - BorgModuleSecurity
+      - BorgModuleSyndicate
+      - BorgModuleSyndicateAssault
+      - BorgModuleMedical
+      - BorgModuleEngineering
+      - BorgModuleScience
+  - type: ContainerFill
+    containers:
+      borg_brain:
+      - MMIFilled
+      borg_module:
+      - XenoborgModuleBasic
+      - BorgModuleKill
+      - BorgModuleConstruction
+      - BorgModuleRCD
+      - BorgModuleTool
+      - BorgModuleAdvancedSurgery
+      - BorgModuleOperative
+      - XenoborgModuleFireExtinguisher
+  - type: ShowHealthBars
+    damageContainers:
+    - Inorganic
+    - Silicon
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellHigh
+  - type: Sprite
+    sprite: Floof/Mobs/Silicon/quad.rsi
+    scale: 0.7, 0.7
+    layers:
+    - state: XenoQuad
+      map: ["movement"]
+    - state: XenoQuad_e
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: XenoQuad_e
+      shader: unshaded
+      map: ["light"]
+      visible: false
+  - type: SpriteStateToggle
+    spriteLayer: movement
+    stateOff: XenoQuad
+    stateOn: XenoQuadballz
+    movementStateOff: XenoQuad_moving
+    movementStateOn: XenoQuad_movingballz
+  - type: SpriteMovement
+    movementLayers:
+      movement:
+        state: XenoQuad_moving
+    noMovementLayers:
+      movement:
+        state: XenoQuad

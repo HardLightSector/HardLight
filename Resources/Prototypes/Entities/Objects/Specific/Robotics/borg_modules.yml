@@ -307,7 +307,7 @@
   components:
   - type: Tag
     tags:
-    - XenoborgModuleEngi
+    - XenoborgModuleGeneric
   - type: Item
     inhandVisuals:
       left:
@@ -334,7 +334,7 @@
   components:
   - type: Tag
     tags:
-    - XenoborgModuleHeavy
+    - XenoborgModuleGeneric
   - type: Item
     inhandVisuals:
       left:
@@ -361,7 +361,7 @@
   components:
   - type: Tag
     tags:
-    - XenoborgModuleScout
+    - XenoborgModuleGeneric
   - type: Item
     inhandVisuals:
       left:
@@ -388,7 +388,7 @@
   components:
   - type: Tag
     tags:
-    - XenoborgModuleStealth
+    - XenoborgModuleGeneric
   - type: Item
     inhandVisuals:
       left:
