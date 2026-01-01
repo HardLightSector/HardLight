@@ -82,6 +82,13 @@ namespace Content.Server.Database
                 .Property(log => log.Markings)
                 .HasConversion(jsonByteArrayConverter);
 
+            // AFTERLIGHT: Preferences.ConstructionFavorites JSON storage on SQLite
+            // AFTERLIGHT: SQLite does not have migration for these Preference fields yet.
+            // Ignore them to avoid pending model changes/migrate errors on startup.
+            modelBuilder.Entity<Preference>()
+                .Ignore(p => p.AdminOOCNameColor)
+                .Ignore(p => p.ConstructionFavorites);
+
             // EF core can make this automatically unique on sqlite but not psql.
             modelBuilder.Entity<IPIntelCache>()
                 .HasIndex(p => p.Address)

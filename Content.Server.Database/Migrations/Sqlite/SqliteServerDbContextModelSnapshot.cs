@@ -47,6 +47,10 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("TEXT")
                         .HasColumnName("preference_id");
 
+                    b.Property<bool>("Value")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("value");
+
                     b.HasKey("PlayerId", "PreferenceId")
                         .HasName("PK_al_content_preferences");
 

@@ -1,5 +1,4 @@
 ﻿using Content.Client._Afterlight.UserInterface;
-using Content.Client._Starlight.UI;
 using Content.Client.Lobby;
 using Content.Shared._Afterlight.Collections;
 using Content.Shared._Afterlight.Kinks;
@@ -74,7 +73,7 @@ public sealed class KinksUIController : UIController, IOnStateChanged<LobbyState
                     continue;
 
                 var localPreference = localKinks.GetValueOrNullStruct(kinkId);
-                label.Label.Modulate(localPreference.GetColor());
+                label.Label.Modulate = localPreference.GetColor();
             }
         };
 

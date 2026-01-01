@@ -14,9 +14,9 @@ public abstract partial class ServerDbContext
     public DbSet<ALContentPreferences> ContentPreferences { get; set; } = null!;
 }
 
-public sealed class AfterlightModel : DataModelBase
+public sealed partial class AfterlightModel
 {
-    public override void OnModelCreating(ServerDbContext dbContext, ModelBuilder modelBuilder)
+    public static void OnModelCreating(ServerDbContext dbContext, ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<ALKinks>()
             .HasOne(k => k.Player)
@@ -119,5 +119,5 @@ public sealed class ALContentPreferences
     [Key]
     public string PreferenceId { get; set; } = null!;
 
-    public bool Value;
+    public bool Value { get; set; }
 }

@@ -30,7 +30,7 @@ using Robust.Shared.Utility;
 
 namespace Content.Server.Database
 {
-    public abstract class ServerDbBase
+    public abstract partial class ServerDbBase
     {
         private readonly ISawmill _opsLog;
 
@@ -184,6 +184,30 @@ namespace Content.Server.Database
 
             await db.DbContext.SaveChangesAsync();
 
+        }
+
+        public async Task SaveAdminOOCNameColorAsync(NetUserId userId, Color color)
+        {
+            await using var db = await GetDb();
+            var prefs = await db.DbContext
+                .Preference
+                .SingleAsync(p => p.UserId == userId.UserId);
+            prefs.AdminOOCNameColor = color.ToHex();
+
+            await db.DbContext.SaveChangesAsync();
+        }
+
+        public async Task SaveConstructionFavoritesAsync(NetUserId userId, List<ProtoId<ConstructionPrototype>> constructionFavorites)
+        {
+            await using var db = await GetDb();
+            var prefs = await db.DbContext
+                .Preference
+                .SingleAsync(p => p.UserId == userId.UserId);
+
+            var jsonDoc = JsonDocument.Parse(JsonSerializer.Serialize(constructionFavorites.Select(x => x.Id).ToList()));
+            prefs.ConstructionFavorites = jsonDoc;
+
+            await db.DbContext.SaveChangesAsync();
         }
 
         private static async Task SetSelectedCharacterSlotAsync(NetUserId userId, int newSlot, ServerDbContext db)

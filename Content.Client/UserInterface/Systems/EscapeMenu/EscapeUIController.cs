@@ -1,6 +1,5 @@
 using Content.Client._Afterlight.Kinks.UI;
 using Content.Client._Afterlight.MobInteraction;
-using Content.Client._Starlight.Managers;
 using Content.Client.Gameplay;
 using Content.Client.UserInterface.Controls;
 using Content.Client.UserInterface.Systems.Guidebook;

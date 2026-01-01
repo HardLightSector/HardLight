@@ -17,8 +17,6 @@ namespace Content.Server.Database
     {
         protected ServerDbContext(DbContextOptions options) : base(options)
         {
-            RegisterDataModel<StarLightModel>();
-            RegisterDataModel<AfterlightModel>();
         }
 
         public DbSet<Preference> Preference { get; set; } = null!;
@@ -407,6 +405,9 @@ namespace Content.Server.Database
                 .OwnsOne(p => p.HWId)
                 .Property(p => p.Type)
                 .HasDefaultValue(HwidType.Legacy);
+
+            // Call Afterlight model configuration
+            AfterlightModel.OnModelCreating(this, modelBuilder);
         }
 
         public virtual IQueryable<AdminLog> SearchLogs(IQueryable<AdminLog> query, string searchText)
@@ -428,6 +429,8 @@ namespace Content.Server.Database
         public Guid UserId { get; set; }
         public int SelectedCharacterSlot { get; set; }
         public string AdminOOCColor { get; set; } = null!;
+        public string AdminOOCNameColor { get; set; } = null!; // AFTERLIGHT
+        [Column(TypeName = "jsonb")] public JsonDocument? ConstructionFavorites { get; set; } // AFTERLIGHT
         public List<Profile> Profiles { get; } = new();
     }
 

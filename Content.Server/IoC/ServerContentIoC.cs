@@ -1,7 +1,7 @@
 using Content.Server._Common.Consent;
 using Content.Server._NF.Auth;
 using Content.Server._Afterlight.Kinks;
-using Content.Server._NullLink.Core;
+// using Content.Server._NullLink.Core; // Namespace doesn't exist
 using Content.Server.Administration;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
@@ -26,8 +26,8 @@ using Content.Server.Players.RateLimiting;
 using Content.Server.Preferences.Managers;
 using Content.Server.ServerInfo;
 using Content.Server.ServerUpdates;
-using Content.Server.Starlight;
-using Content.Server.Starlight.TextToSpeech;
+// using Content.Server.Starlight; // Namespace doesn't exist
+// using Content.Server.Starlight.TextToSpeech; // Namespace doesn't exist
 using Content.Server.Voting.Managers;
 using Content.Server.Worldgen.Tools;
 using Content.Shared.Administration.Logs;
@@ -39,6 +39,8 @@ using Content.Shared.Players.RateLimiting;
 using Content.Shared.Starlight;
 using Content.Server._FS.DiscordAuth; // Floofstation
 using Content.Server.Shuttles;
+using Robust.Server.GameObjects;
+using Robust.Shared.GameObjects;
 
 namespace Content.Server.IoC
 {
@@ -95,18 +97,21 @@ namespace Content.Server.IoC
             IoCManager.Register<DiscordAuthManager>(); //Floofstation
             IoCManager.Register<ServerIdentityService>();
 
-            IoCManager.Register<DiscordLink>();
-            IoCManager.Register<DiscordChatLink>();
+            // IoCManager.Register<DiscordLink>(); // Type doesn't exist
+            // IoCManager.Register<DiscordChatLink>(); // Type doesn't exist
 
-            // 🌟Starlight🌟
-            IoCManager.Register<ISharedPlayersRoleManager, PlayerRolesManager>();
-            IoCManager.Register<IPlayerRolesManager, PlayerRolesManager>();
-            IoCManager.Register<ITTSManager, TTSManager>();
-            IoCManager.Register<IActorRouter, ActorRouter>(); // nulllink
+            // 🌟Starlight🌟 - These types don't exist, commented out
+            // IoCManager.Register<ISharedPlayersRoleManager, PlayerRolesManager>();
+            // IoCManager.Register<IPlayerRolesManager, PlayerRolesManager>();
+            // IoCManager.Register<ITTSManager, TTSManager>();
+            // IoCManager.Register<IActorRouter, ActorRouter>(); // nulllink
 
             // Afterlight
             IoCManager.Register<KinkManager>();
             // Afterlight
+
+            // Core system mappings
+            IoCManager.Register<SharedAppearanceSystem, AppearanceSystem>();
         }
     }
 }

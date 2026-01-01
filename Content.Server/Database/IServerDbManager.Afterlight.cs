@@ -1,4 +1,4 @@
-﻿using System.Collections.Immutable;
+using System.Collections.Immutable;
 using System.Threading;
 using System.Threading.Tasks;
 using Content.Shared._Afterlight.Kinks;
@@ -8,34 +8,10 @@ using Content.Shared.Database._Afterlight;
 using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
 
-// ReSharper disable CheckNamespace
-
 namespace Content.Server.Database;
 
 public partial interface IServerDbManager
 {
-    #region Kinks
-
-    Task<List<ALKinks>> GetKinks(Guid player, CancellationToken cancel);
-
-    Task SetKink(Guid player,
-        EntProtoId<KinkDefinitionComponent> kinkId,
-        KinkPreference preference,
-        CancellationToken cancel);
-
-    Task UpdateKinks(Guid player,
-        Dictionary<EntProtoId<KinkDefinitionComponent>, KinkPreference> kinks,
-        CancellationToken cancel);
-
-    Task UpdateKinks(Guid player,
-        IEnumerable<EntProtoId<KinkDefinitionComponent>> kinks,
-        KinkPreference preference,
-        CancellationToken cancel);
-
-    Task RemoveKink(Guid player, EntProtoId<KinkDefinitionComponent> kinkId, CancellationToken cancel);
-
-    #endregion
-
     #region Vore
 
     Task<List<VoreSpace>> GetVoreSpaces(Guid player, CancellationToken cancel);
@@ -62,7 +38,7 @@ public partial interface IServerDbManager
 
     #region Generic DbEntry Handling
 
-    Task<bool> Delete<TResult>([RequireStaticDelegate] Func<ServerDbContext, Task<TResult>> action);
+    Task<bool> Delete<TResult>(Func<ServerDbContext, Task<TResult>> action);
 
     Task<bool> Delete<T1, TResult>(
         T1 arg1,

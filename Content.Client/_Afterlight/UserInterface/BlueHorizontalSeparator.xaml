@@ -1,0 +1,11 @@
+<controls:BlueHorizontalSeparator
+    xmlns="https://spacestation14.io"
+    xmlns:controls="clr-namespace:Content.Client._Afterlight.UserInterface"
+    xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+    xmlns:xNamespace="http://schemas.microsoft.com/winfx/2006/xaml">
+    <PanelContainer MinSize="0 2" HorizontalExpand="True">
+        <PanelContainer.PanelOverride>
+            <graphics:StyleBoxFlat BackgroundColor="#4169E1" ContentMarginTopOverride="2" />
+        </PanelContainer.PanelOverride>
+    </PanelContainer>
+</controls:BlueHorizontalSeparator>

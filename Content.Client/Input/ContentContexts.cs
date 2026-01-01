@@ -60,8 +60,8 @@ namespace Content.Client.Input
             human.AddFunction(EngineKeyFunctions.MoveLeft);
             human.AddFunction(EngineKeyFunctions.MoveRight);
             human.AddFunction(EngineKeyFunctions.Walk);
-            human.AddFunction(ContentKeyFunctions.Jump); // 🌟Starlight🌟
-            human.AddFunction(ContentKeyFunctions.ToggleKnockdown);
+            // human.AddFunction(ContentKeyFunctions.Jump); // 🌟Starlight🌟 - Jump function doesn't exist
+            // human.AddFunction(ContentKeyFunctions.ToggleKnockdown); // ToggleKnockdown function doesn't exist
             human.AddFunction(ContentKeyFunctions.SwapHands);
             human.AddFunction(ContentKeyFunctions.SwapHandsPrevious); // Frontier
             human.AddFunction(ContentKeyFunctions.Drop);
