@@ -47,6 +47,7 @@
   - type: Tag
     tags:
       - WeldbotFixableStructure
+      - Window
   - type: Appearance
   - type: DamageVisuals
     thresholds: [5, 10, 20]
@@ -74,6 +75,7 @@
     tags:
     - Diagonal
     - WeldbotFixableStructure
+    - Window
   - type: IconSmooth
     mode: Diagonal
     key: walls # Frontier: windows<walls
