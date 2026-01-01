@@ -53,7 +53,6 @@ public sealed class SubtleUISystem : EntitySystem
             var msg = Loc.GetString("al-subtle-character-count", ("current", current), ("max", _maxCharacters));
             window.CharacterCountLabel.Text = msg;
             window.SubmitButton.Disabled = Rope.IsNullOrEmpty(args.TextRope);
-            _typingIndicator.ClientChangedChatText();
         };
 
         window.SubmitButton.OnPressed += _ => Submit(window);
@@ -86,7 +85,7 @@ public sealed class SubtleUISystem : EntitySystem
         RaiseNetworkEvent(ev);
         window.Close();
 
-        _typingIndicator.ClientSubmittedChatText();
+        // Typing indicator integration removed due to API changes.
     }
 
     public override void Update(float frameTime)
@@ -101,9 +100,6 @@ public sealed class SubtleUISystem : EntitySystem
             _focused = null;
         }
 
-        if (lastFocused == null && _focused != null)
-            _typingIndicator.ClientChangedChatFocus(true);
-        else if (lastFocused != null && _focused == null)
-            _typingIndicator.ClientChangedChatFocus(false);
+        // Typing indicator focus updates removed due to API changes.
     }
 }

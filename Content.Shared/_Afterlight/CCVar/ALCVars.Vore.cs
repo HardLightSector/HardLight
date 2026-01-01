@@ -2,7 +2,6 @@
 
 namespace Content.Shared._Afterlight.CCVar;
 
-[CVarDefs]
 public sealed partial class ALCVars
 {
     public static readonly CVarDef<int> ALVoreSpacesLimit =

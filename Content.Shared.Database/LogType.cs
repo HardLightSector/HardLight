@@ -489,4 +489,52 @@ public enum LogType
     #region Starlight log flags
     Railroading = 1000,
     #endregion
+
+    #endregion
+
+    // Additional logs added by downstream content
+    /// <summary>
+    /// Subtle emote events.
+    /// </summary>
+    ALSubtle = 104,
+
+    /// <summary>
+    /// Atmos device direction changed (e.g., pump in/out).
+    /// </summary>
+    AtmosDirectionChanged = 105,
+
+    /// <summary>
+    /// Psionics powers usage and effects.
+    /// </summary>
+    Psionics = 106,
+
+    /// <summary>
+    /// Bounty contract created.
+    /// </summary>
+    BountyContractCreated = 107,
+
+    /// <summary>
+    /// Bounty contract removed.
+    /// </summary>
+    BountyContractRemoved = 108,
+
+    /// <summary>
+    /// Medical bounty redeemed.
+    /// </summary>
+    MedicalBountyRedeemed = 109,
+
+    /// <summary>
+    /// Administrative refund logged.
+    /// </summary>
+    AdminRefund = 110,
+
+    /// <summary>
+    /// Shuttle info changed in station records.
+    /// </summary>
+    ShuttleInfoChanged = 111,
+
+    /// <summary>
+    /// Consent-related logs.
+    /// </summary>
+    Consent = 112,
 }

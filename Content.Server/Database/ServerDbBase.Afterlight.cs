@@ -32,6 +32,7 @@ public abstract partial class ServerDbBase
                 s.Name,
                 s.Description,
                 overlayId,
+                Color.TryFromHex(s.OverlayColor) ?? Color.White,
                 s.Mode,
                 FixedPoint2.New((float) s.BurnDamage),
                 FixedPoint2.New((float) s.BruteDamage),
@@ -69,6 +70,7 @@ public abstract partial class ServerDbBase
         dbSpace.Name = space.Name;
         dbSpace.Description = space.Description;
         dbSpace.Overlay = space.Overlay?.Id;
+        dbSpace.OverlayColor = space.OverlayColor.ToHex();
         dbSpace.Mode = space.Mode;
         dbSpace.BurnDamage = space.BurnDamage.Float();
         dbSpace.BruteDamage = space.BruteDamage.Float();

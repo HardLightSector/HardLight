@@ -3,7 +3,7 @@
   abstract: true
   id: ALActionCassetteBase
   components:
-  - type: Action
+  - type: InstantAction
     useDelay: 0.5
 
 - type: entity
@@ -12,11 +12,10 @@
   name: Play/Pause
   description: Starts or stops playing music.
   components:
-  - type: Action
+  - type: InstantAction
     icon:
       sprite: _Afterlight/Actions/cassette_player.rsi
       state: walkman_playpause
-  - type: InstantAction
     event: !type:CassettePlayPauseActionEvent
 
 - type: entity
@@ -25,11 +24,10 @@
   name: Next song
   description: Moves to the next track.
   components:
-  - type: Action
+  - type: InstantAction
     icon:
       sprite: _Afterlight/Actions/cassette_player.rsi
       state: walkman_next
-  - type: InstantAction
     event: !type:CassetteNextActionEvent
 
 - type: entity
@@ -38,9 +36,8 @@
   name: Restart song
   description: Restarts the current track.
   components:
-  - type: Action
+  - type: InstantAction
     icon:
       sprite: _Afterlight/Actions/cassette_player.rsi
       state: walkman_restart
-  - type: InstantAction
     event: !type:CassetteRestartActionEvent

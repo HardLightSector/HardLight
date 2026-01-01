@@ -1,0 +1,24 @@
+# Temporary compatibility shims for missing prototype parents.
+# TODO: Replace with proper upstream bases or port fields.
+
+- type: entity
+  abstract: true
+  id: Jump
+  name: jump base (compat)
+  description: Compatibility base for missing parent 'Jump'.
+  components: []
+
+- type: entity
+  abstract: true
+  id: BaseMajorContraband
+  name: major contraband base (compat)
+  description: Compatibility base for missing parent 'BaseMajorContraband'.
+  components: []
+
+# Plushie base missing upstream
+- type: entity
+  abstract: true
+  id: BaseVulpkaninPlushie
+  name: vulpkanin plushie base (compat)
+  description: Compatibility base for missing parent 'BaseVulpkaninPlushie'.
+  components: []
