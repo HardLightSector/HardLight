@@ -1,417 +1,1152 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<root>
-	<0>
-		<Code>M01</Code>
-		<Crime>Good Samaritan Clause</Crime>
-		<Description>Crimes committed in the interest of saving life</Description>
-		<Suggested Adjustments> property</Suggested Adjustments>
-	</0>
-	<1>
-		<Code>M02</Code>
-		<Crime>Elevated Sentencing</Crime>
-		<Description>The scope of the crime(s)</Description>
-		<Suggested Adjustments> or repetitive behavior committed</Suggested Adjustments>
-	</1>
-	<2>
-		<Code>M03</Code>
-		<Crime>Self Defense</Crime>
-		<Description>Actions taken to defend oneself from an assailant may have sentences reduced</Description>
-		<Suggested Adjustments> voided</Suggested Adjustments>
-	</2>
-	<3>
-		<Code>M04</Code>
-		<Crime>Non Compos Mentis</Crime>
-		<Description>Those of unstable mind should be referred to medical treatment or</Description>
-		<Suggested Adjustments> if required</Suggested Adjustments>
-	</3>
-	<4>
-		<Code>M05</Code>
-		<Crime>Griseo Maris</Crime>
-		<Description>Coordinated behavior by those with no clear assigned duty</Description>
-		<Suggested Adjustments> which interrupts the normal function of any one department</Suggested Adjustments>
-	</4>
-	<5>
-		<Code>M06</Code>
-		<Crime>Resisting Arrest</Crime>
-		<Description>Knowingly resisting attempts at legal detention by members of the security team. It is advised that these individuals should have their sentences increased the recommended 20% of total duration.</Description>
-		<Suggested Adjustments>Increased Punishment.</Suggested Adjustments>
-	</5>
-	<6>
-		<Code>M07</Code>
-		<Crime>Escaped Prisoner</Crime>
-		<Description>Someone who has escaped their cell should be recaptured and returned to the brig. Their timer should be reset to the full length of the original sentence.</Description>
-		<Suggested Adjustments>Reset of the time of imprisonment or Permanent confinement.</Suggested Adjustments>
-	</6>
-	<7>
-		<Code>M08</Code>
-		<Crime>Attempted crime</Crime>
-		<Description>Anyone that tries to commit a crime but fails to achieve it</Description>
-		<Suggested Adjustments> is to be charged under the relevant crime while recording that it was an attempt. A crime being an attempt warrants the charge be downgraded to a lower offence for punishment in increments of one level per instance.</Suggested Adjustments>
-	</7>
-	<8>
-		<Code>M09</Code>
-		<Crime>Hate Crime</Crime>
-		<Description>If the crime is committed in order to cause fear</Description>
-		<Suggested Adjustments> injury</Suggested Adjustments>
-	</8>
-	<9>
-		<Code>Code</Code>
-		<Crime></Crime>
-		<Description>Crime</Description>
-		<Suggested Adjustments>Description</Suggested Adjustments>
-	</9>
-	<10>
-		<Code>003</Code>
-		<Crime></Crime>
-		<Description>Superficial Vandalism</Description>
-		<Suggested Adjustments>To deface the station or property of another individual.</Suggested Adjustments>
-	</10>
-	<11>
-		<Code>006</Code>
-		<Crime></Crime>
-		<Description>Drug Possession</Description>
-		<Suggested Adjustments>The possession of illegal substances</Suggested Adjustments>
-	</11>
-	<12>
-		<Code>007</Code>
-		<Crime></Crime>
-		<Description>Disorderly Conduct</Description>
-		<Suggested Adjustments>To conduct oneself in a way unsuitable for the retention of one’s position.</Suggested Adjustments>
-	</12>
-	<13>
-		<Code>008</Code>
-		<Crime></Crime>
-		<Description>Creating a Hazard</Description>
-		<Suggested Adjustments>To create a situation that may lead to the harm of others during normal operation in that department.</Suggested Adjustments>
-	</13>
-	<14>
-		<Code>011</Code>
-		<Crime></Crime>
-		<Description>Disruptive Comms</Description>
-		<Suggested Adjustments>To knowingly disrupt or needlessly populate a radio frequency with the intent to be a nuisance to users of that frequency.</Suggested Adjustments>
-	</14>
-	<15>
-		<Code>Code</Code>
-		<Crime></Crime>
-		<Description>Crime</Description>
-		<Suggested Adjustments>Description</Suggested Adjustments>
-	</15>
-	<16>
-		<Code>101</Code>
-		<Crime></Crime>
-		<Description>Assault</Description>
-		<Suggested Adjustments>To use physical force against someone without the apparent intent to kill them.</Suggested Adjustments>
-	</16>
-	<17>
-		<Code>102</Code>
-		<Crime></Crime>
-		<Description>Pickpocketing</Description>
-		<Suggested Adjustments>To steal items from another person.</Suggested Adjustments>
-	</17>
-	<18>
-		<Code>103</Code>
-		<Crime></Crime>
-		<Description>Minor Vandalism</Description>
-		<Suggested Adjustments>To damage</Suggested Adjustments>
-	</18>
-	<19>
-		<Code>104</Code>
-		<Crime></Crime>
-		<Description>Vigilantism</Description>
-		<Suggested Adjustments>To perform the responsibilities and duties of the security department without approval or due cause to act.</Suggested Adjustments>
-	</19>
-	<20>
-		<Code>106</Code>
-		<Crime></Crime>
-		<Description>Illegal Distribution</Description>
-		<Suggested Adjustments>The possession of dangerous or illegal drugs/equipment in a quantity greater than that which is reasonable for personal consumption.</Suggested Adjustments>
-	</20>
-	<21>
-		<Code>107</Code>
-		<Crime></Crime>
-		<Description>Disturbing the Peace</Description>
-		<Suggested Adjustments>To knowingly organize a movement that disrupts the normal operations of a department.</Suggested Adjustments>
-	</21>
-	<22>
-		<Code>108</Code>
-		<Crime></Crime>
-		<Description>Criminal Negligence</Description>
-		<Suggested Adjustments>To be negligent in one’s duty to an extent that it may cause harm</Suggested Adjustments>
-	</22>
-	<23>
-		<Code>109</Code>
-		<Crime></Crime>
-		<Description>Trespass</Description>
-		<Suggested Adjustments>To be in an area which a person has either not purposefully been admitted to</Suggested Adjustments>
-	</23>
-	<24>
-		<Code>110</Code>
-		<Crime></Crime>
-		<Description>Breaking and Entering</Description>
-		<Suggested Adjustments>To trespass into an area using a method of forcible entry.</Suggested Adjustments>
-	</24>
-	<25>
-		<Code>111</Code>
-		<Crime></Crime>
-		<Description>Discriminatory Language</Description>
-		<Suggested Adjustments>To use language that demeans</Suggested Adjustments>
-	</25>
-	<26>
-		<Code>112</Code>
-		<Crime></Crime>
-		<Description>Fine Evasion</Description>
-		<Suggested Adjustments>To purposefully avoid or refuse to pay a legal fine.</Suggested Adjustments>
-	</26>
-	<27>
-		<Code>116</Code>
-		<Crime></Crime>
-		<Description>Unlawful Detainment</Description>
-		<Suggested Adjustments>To intentionally restrict or impede a person’s movement against their will without due cause or lawful authority.</Suggested Adjustments>
-	</27>
-	<28>
-		<Code>Code</Code>
-		<Crime></Crime>
-		<Description>Crime</Description>
-		<Suggested Adjustments>Description</Suggested Adjustments>
-	</28>
-	<29>
-		<Code>201</Code>
-		<Crime></Crime>
-		<Description>Aggravated Assault</Description>
-		<Suggested Adjustments>To take physical action against a person with the intent to grievously harm</Suggested Adjustments>
-	</29>
-	<30>
-		<Code>202</Code>
-		<Crime></Crime>
-		<Description>Theft</Description>
-		<Suggested Adjustments>To steal equipment or items from a workplace</Suggested Adjustments>
-	</30>
-	<31>
-		<Code>203</Code>
-		<Crime></Crime>
-		<Description>Vandalism</Description>
-		<Suggested Adjustments> Major</Suggested Adjustments>
-	</31>
-	<32>
-		<Code>204</Code>
-		<Crime></Crime>
-		<Description>Conspiracy</Description>
-		<Suggested Adjustments>To knowingly work with another person in the interest of committing an illegal action.</Suggested Adjustments>
-	</32>
-	<33>
-		<Code>205</Code>
-		<Crime></Crime>
-		<Description>Hostile Agent</Description>
-		<Suggested Adjustments>To knowingly act as a recruiter</Suggested Adjustments>
-	</33>
-	<34>
-		<Code>206</Code>
-		<Crime></Crime>
-		<Description>Possession</Description>
-		<Suggested Adjustments> Contraband Equipment</Suggested Adjustments>
-	</34>
-	<35>
-		<Code>207</Code>
-		<Crime></Crime>
-		<Description>Rioting</Description>
-		<Suggested Adjustments>To act as a member in a group that collectively commits acts of major vandalism</Suggested Adjustments>
-	</35>
-	<36>
-		<Code>208</Code>
-		<Crime></Crime>
-		<Description>Gross Criminal Negligence</Description>
-		<Suggested Adjustments>To be negligent in one’s duty to an extent that it may cause harm to multiple individuals</Suggested Adjustments>
-	</36>
-	<37>
-		<Code>209</Code>
-		<Crime></Crime>
-		<Description>Trespass</Description>
-		<Suggested Adjustments> Inherently Dangerous Areas</Suggested Adjustments>
-	</37>
-	<38>
-		<Code>210</Code>
-		<Crime></Crime>
-		<Description>Breaking and Entering</Description>
-		<Suggested Adjustments> Inherently Dangerous Areas</Suggested Adjustments>
-	</38>
-	<39>
-		<Code>211</Code>
-		<Crime></Crime>
-		<Description>Insubordination</Description>
-		<Suggested Adjustments>To knowingly disobey a lawful order from a superior without good reason.</Suggested Adjustments>
-	</39>
-	<40>
-		<Code>212</Code>
-		<Crime></Crime>
-		<Description>Fraud</Description>
-		<Suggested Adjustments>To misrepresent one's intention in the interest of gaining property or money from another individual.</Suggested Adjustments>
-	</40>
-	<41>
-		<Code>213</Code>
-		<Crime></Crime>
-		<Description>Mutilation</Description>
-		<Suggested Adjustments>To purposefully modify an individual without consent</Suggested Adjustments>
-	</41>
-	<42>
-		<Code>216</Code>
-		<Crime></Crime>
-		<Description>False Imprisonment</Description>
-		<Suggested Adjustments>To unlawfully confine a person against their will within a location they are normally present in.</Suggested Adjustments>
-	</42>
-	<43>
-		<Code>Code</Code>
-		<Crime></Crime>
-		<Description>Crime</Description>
-		<Suggested Adjustments>Description</Suggested Adjustments>
-	</43>
-	<44>
-		<Code>301</Code>
-		<Crime></Crime>
-		<Description>Murder</Description>
-		<Suggested Adjustments>To purposefully kill someone.</Suggested Adjustments>
-	</44>
-	<45>
-		<Code>302</Code>
-		<Crime></Crime>
-		<Description>Larceny</Description>
-		<Suggested Adjustments>To steal rare</Suggested Adjustments>
-	</45>
-	<46>
-		<Code>303</Code>
-		<Crime></Crime>
-		<Description>Sabotage</Description>
-		<Suggested Adjustments>To destroy station assets or resources critical to normal or emergency station procedures</Suggested Adjustments>
-	</46>
-	<47>
-		<Code>304</Code>
-		<Crime></Crime>
-		<Description>Grand Conspiracy</Description>
-		<Suggested Adjustments>To knowingly work with another person in the interest of committing a major or greater crime.</Suggested Adjustments>
-	</47>
-	<48>
-		<Code>305</Code>
-		<Crime></Crime>
-		<Description>Hostile Activity</Description>
-		<Suggested Adjustments>To knowingly commit an act which is in direct opposition to the interests of Colonial Command</Suggested Adjustments>
-	</48>
-	<49>
-		<Code>306</Code>
-		<Crime></Crime>
-		<Description>Possession</Description>
-		<Suggested Adjustments> Illegal Inherently Dangerous Equipment</Suggested Adjustments>
-	</49>
-	<50>
-		<Code>307</Code>
-		<Crime></Crime>
-		<Description>Inciting a Riot</Description>
-		<Suggested Adjustments>To perform actions in the interest of causing large amounts of unrest up to and including rioting.</Suggested Adjustments>
-	</50>
-	<51>
-		<Code>308</Code>
-		<Crime></Crime>
-		<Description>Manslaughter</Description>
-		<Suggested Adjustments>To unintentionally kill someone through negligent</Suggested Adjustments>
-	</51>
-	<52>
-		<Code>309</Code>
-		<Crime></Crime>
-		<Description>Trespass</Description>
-		<Suggested Adjustments> High Security Areas</Suggested Adjustments>
-	</52>
-	<53>
-		<Code>310</Code>
-		<Crime></Crime>
-		<Description>Breaking and Entering</Description>
-		<Suggested Adjustments> High Security Areas</Suggested Adjustments>
-	</53>
-	<54>
-		<Code>311</Code>
-		<Crime></Crime>
-		<Description>Dereliction</Description>
-		<Suggested Adjustments>To willfully abandon an obligation that is critical to the station’s continued operation.</Suggested Adjustments>
-	</54>
-	<55>
-		<Code>312</Code>
-		<Crime></Crime>
-		<Description>Embezzelment</Description>
-		<Suggested Adjustments>Embezzling funds from the station fund computers.</Suggested Adjustments>
-	</55>
-	<56>
-		<Code>313</Code>
-		<Crime></Crime>
-		<Description>Identity Theft</Description>
-		<Suggested Adjustments>To assume the identity of another individual.</Suggested Adjustments>
-	</56>
-	<57>
-		<Code>314</Code>
-		<Crime></Crime>
-		<Description>Sexual Harassment</Description>
-		<Suggested Adjustments>Non-consensual harassment that is sexual in nature. (If reported and is a OOC consent violation as well</Suggested Adjustments>
-	</57>
-	<58>
-		<Code>315</Code>
-		<Crime></Crime>
-		<Description>Illegal Mindbreaking</Description>
-		<Suggested Adjustments>Permanent removal of a psion's abilities and/or latency not carried out as a punishment for a crime</Suggested Adjustments>
-	</58>
-	<59>
-		<Code>316</Code>
-		<Crime></Crime>
-		<Description>Kidnapping</Description>
-		<Suggested Adjustments>To unlawfully abduct a person to a new location and confine a person against their will.</Suggested Adjustments>
-	</59>
-	<60>
-		<Code>Code</Code>
-		<Crime></Crime>
-		<Description>Crime</Description>
-		<Suggested Adjustments>Description</Suggested Adjustments>
-	</60>
-	<61>
-		<Code>401</Code>
-		<Crime></Crime>
-		<Description>Prime Murder</Description>
-		<Suggested Adjustments>To commit the act of murder</Suggested Adjustments>
-	</61>
-	<62>
-		<Code>403</Code>
-		<Crime></Crime>
-		<Description>Grand Sabotage</Description>
-		<Suggested Adjustments>To destroy or modify station assets or equipment</Suggested Adjustments>
-	</62>
-	<63>
-		<Code>404</Code>
-		<Crime></Crime>
-		<Description>Espionage</Description>
-		<Suggested Adjustments>To knowingly betray critical information to enemies of the station.</Suggested Adjustments>
-	</63>
-	<64>
-		<Code>405</Code>
-		<Crime></Crime>
-		<Description>Enemy of the Government</Description>
-		<Suggested Adjustments>To be a member of any of the following organizations: Hostile boarding parties</Suggested Adjustments>
-	</64>
-	<65>
-		<Code>407</Code>
-		<Crime></Crime>
-		<Description>Subversion of the Chain of Command</Description>
-		<Suggested Adjustments>Disrupting the chain of command via either the murder of a commanding officer or illegally declaring oneself to be a commanding officer.</Suggested Adjustments>
-	</65>
-	<66>
-		<Code>408</Code>
-		<Crime></Crime>
-		<Description>Biological Terror</Description>
-		<Suggested Adjustments>To knowingly release</Suggested Adjustments>
-	</66>
-	<67>
-		<Code>414</Code>
-		<Crime></Crime>
-		<Description>Sexual Assault</Description>
-		<Suggested Adjustments>To non-consentually engage in sexual relations with a person. (If this is an OOC consent violation as well</Suggested Adjustments>
-	</67>
-	<68>
-		<Code>416</Code>
-		<Crime></Crime>
-		<Description>Grand Kidnapping</Description>
-		<Suggested Adjustments>To unlawfully abduct and confine a Command member or higher authority against their will.</Suggested Adjustments>
-	</68>
-</root>
+<!--
+SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+SPDX-FileCopyrightText: 2024 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 dffdff2423 <dffdff2423@gmail.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+  # Space Law: Crime Listing
+  Crimes are organized by their Degree (severity) as well as by color, or the letter code they are assigned.
+
+  [bold]Crimes that share the same color or code cannot be charged together.[/bold] For example, if you arrest someone for murder, you may not charge that same person for assault.
+
+  ## Quick Crime Guide
+  <Table Columns="5">
+    <ColorBox>
+      <Box>
+        Infraction
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        Minor
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        Misdemeanor
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        Felony
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        Capital
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Superficial Vandalism
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#ffcc67">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [color=black]Assault, Pickpocketing[/color]
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#ffcc67">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [color=black]Aggravated Assault, Theft[/color]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Murder, Larceny
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Capital Murder
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Drug Possession
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Minor Vandalism, Vigilantism
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Vandalism (M)
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Sabotage, Grand Conspiracy
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Grand Sabotage, Espionage
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Disorderly Conduct
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#fd6864">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [color=black]Illegal Distribution[/color]
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#fd6864">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [color=black]Conspiracy, Hostile Agent[/color]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Hostile Activity, Possession (Inherently Dangerous)
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Enemy of the Government
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#68cbd0">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [color=black]Creating a Hazard[/color]
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#68cbd0">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [color=black]Disturbing the Peace[/color]
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#fd6864">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [color=black]Possession (Contraband)[/color]
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#fd6864">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [color=black]Incitement of a Riot, Manslaughter[/color]
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#fd6864">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [color=black]Chain of Command Subversion[/color]
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#dae8fc">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [color=black]Disruptive Comms[/color]
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#dae8fc">>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [color=black]Criminal Negligence, Trespassing[/color]
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#dae8fc">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [color=black]Rioting, Gross Criminal Negligence[/color]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Trespass (High Security), B&E (High Security)
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Biological Terror
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Breaking & Entering
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Trespass (Inherently Dangerous), B&E (Inherently Dangerous)
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Dereliction, Embezzlement, Identity Theft
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Sexual Assault
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Discriminatory Language, Fine Evasion
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Insubordination, Fraud
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Sexual Harassment
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Grand Kidnapping
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Unlawful Detainment
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Mutilation, False Imprisonment
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Illegal Mindbreaking, Kidnapping
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+      </Box>
+    </ColorBox>
+  </Table>
+
+  ## Infractions
+  - Typically handled with confiscation and monetary compensation.
+  <Table Columns="3">
+    <ColorBox>
+      <Box>
+        Offense
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        Description
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        Suggested Punishment
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Superficial Vandalism
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To deface the station or property of another individual.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Forced repair of defaced property, or 15-40 thousand speso fine.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Drug Possession
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        The possession of illegal drugs in quantities appropriate for personal use.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Confiscation of illegal drugs and 25-40 thousand speso fine.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Disorderly Conduct
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To conduct oneself in a way unsuitable for the retention of one’s position.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Brig until compliant and 25-45 thousand speso fine.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Creating a Hazard
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To create a situation that may lead to the harm of others during normal operation in that department.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Forced removal of the situation and 15-40 thousand speso fine.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Disruptive Comms
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To knowingly disrupt or needlessly populate a radio frequency with the intent to be a nuisance to users of that frequency.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Brig until compliant, and 5-35 thousand speso fine.
+      </Box>
+    </ColorBox>
+  </Table>
+
+  ## Minor Crimes
+  - These crimes tend to result in brig sentencing.
+  <Table Columns="3">
+    <ColorBox>
+      <Box>
+        Offense
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        Description
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        Suggested Punishment
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Assault
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To use physical force against someone without the apparent intent to kill them.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Restraining and separation of individuals. Charges if necessary. Brig sentence of 5-10 minutes.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Pickpocketing
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To steal items from another person.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Return of object(s) and brig sentence of 5-10 minutes.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Minor Vandalism
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To damage, destroy, or permanently deface non-critical furniture, vendors, or personal property.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Work duty to repair damage. Brig time should vary depending on the damage and repairs done.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Vigitlantism
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To perform the responsibilities and duties of the security department without approval or due cause to act.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        10-15 minutes brig time.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Illegal Distribution
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        The possession of dangerous or illegal drugs/equipment in a quantity greater than that which is reasonable for personal consumption.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        A fair brig timer decided by Warden or HoS that corresponds to the substance, amount, production, and any permanent effects on individuals.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Disturbing The Peace
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To knowingly organize a movement that disrupts the normal operations of a department
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Warning to disperse. Up to 15 minutes of brig time, depending on how easily the illegal protest is dispersed.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Criminal Negligence
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To be negligent in one’s duty to an extent that it may cause harm, illness, or other negative effects to another. This includes the reckless operation of a shuttle.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        5-10 minutes.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Trespassing
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To be in an area which a person has either not purposefully been admitted to, does not have access, or has been asked to leave by someone who has access to that area.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Trespassers who leave peacefully without causing damage or theft may be released; however, those who resist should be sentenced to at least 5 minutes. Long-term trespassers who resist may get additional time reflective of their time spent in the department.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Breaking and Entering
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To trespass into an area using a method of forcible entry.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Damage caused in entry should be reflected in brig timers varying from 5-15 minutes.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Discriminatory Language
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To use language that demeans, generalizes, or otherwise de-personifies the individual to whom it is targeted.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        10-20 minutes brigged.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Fine Evasion
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To purposefully avoid or refuse to pay a legal fine.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        A reasonable time and notification should be given to the plaintiff. If they blatantly oppose the fine or simply ignore after multiple warnings, for every 1 thousand Spesos 15 second timer shall be applied. For example, a 30 thousand speso fine should have a 7 and a half minute timer.
+      </Box>
+    </ColorBox>
+  </Table>
+
+  ## Misdemeanors
+  - Fines and brig time are both common punishments for these offenses.
+  <Table Columns="3">
+    <ColorBox>
+      <Box>
+        Offense
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        Description
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        Suggested Punishment
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Aggravated Assault
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To take physical action against a person with the intent to grievously harm, but not to kill.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Brig time decided by HoS or Warden, depending on the severity of injuries sustained by the victim. Flat 25k fine suggested heavily.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Theft
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To steal equipment or items from a workplace, or items of extraordinary value from one’s person.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Return of items, 5-15 minute brig time, 20-40k fine.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Vandalism, Major
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To destroy or damage non-critical furniture, vendors, or personal property in a manner that can not be repaired.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Replacement of item(s), monetary recompensation for damage amount, 10-15 minute brig time.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Conspiracy
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To knowingly work with another person in the interest of committing an illegal action.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Conspiracy can be anything from opening a door for a cartel member to fabricating weapons for them. The timer should be reflexive in the range of 10-15 minutes.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Hostile Agent
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To knowingly act as a recruiter, representative, messenger, ally, benefactor, or other associate of a hostile organization as defined within Code 405.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        10-20 minutes of Brig time, 25-35k fine.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Possession, Contraband Equipment
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Any and all grade 2 contraband. Applied regardless of whether it was used in a crime or not.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        10-15 minute brig time, 25-40k fine, confiscation of contraband items.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Rioting
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To act as a member in a group that collectively commits acts of major vandalism, sabotage, grand sabotage, or other felony crimes.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Decided on HoS or Warden’s judgement, as all riots can be different.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Gross Criminal Negligence
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To be negligent in one’s duty to an extent that it may cause harm to multiple individuals, a department, or in a manner that directly leads to a serious injury of another person, which requires emergency medical treatment.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Time brigged depends on the severity of harm from negligence. Baseline 25 minutes in brig is encouraged, 45k flat speso fine is encouraged heavily.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Trespass, Inherently Dangerous Areas
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Trespassing in an area that may lead to the injury of oneself or others. This also includes NFZs.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Removal from area, 15-minute brig time, 25k speso fine. Those who resist severely should, like 109, receive additional time reflective of their time in the secure area.
+        If used for NFZ violation, use half of the time they were in the NFZ for additional time.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Breaking and Entering, Inherently Dangerous Areas
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To trespass into an area which may lead to the injury of oneself or others using forcible entry.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Removal from the area, 15-minute brig time, potentially increased depending on damage caused upon entry.
+        30k speso fine.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Insubordination
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To knowingly disobey a lawful order from a superior without good reason.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        10-15 minutes brigged, Possible Demotion, 25-35k fine.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Fraid
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To misrepresent one's intention in the interest of gaining property or money from another individual.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        10-20 minutes brigged, return of property or money to the victim, 45-60k fine.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Mutilation
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To purposefully modify an individual without consent, or with the intent to harm.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Reverse of operations, 15-20 minutes on brig time minimum.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        False Imprisonment
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To unlawfully confine a person against their will within a location they are normally present in.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        15-20 minute brigged, 20-45k fine.
+      </Box>
+    </ColorBox>
+  </Table>
+
+  ## Felonies
+  - Particularly violent offenders may be placed in permanent confinement.
+  <Table Columns="3">
+    <ColorBox>
+      <Box>
+        Offense
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        Description
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        Suggested Punishment
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Murder
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To purposefully kill someone.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        20-40 minutes brigged, 40-60k speso fine
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Larceny
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To steal rare, expensive (Items of greater than 50,000 speso value), or restricted equipment from secure areas or one’s person.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        25-35 minutes brigged, return of items, 40-50k speso fine.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Sabotage
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To destroy station assets or resources critical to normal or emergency station procedures, or cause sections of the station to become uninhabitable.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        35-45 minutes brigged, 40-60k speso fine.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Grand Conspiracy
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To knowingly work with another person in the interest of committing a major or greater crime.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Punished the same punishment as the primary charge.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Hostile Activity
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To knowingly commit an act which is in direct opposition to the interests of Colonial Command, Or to directly assist a known enemy of the Government.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        20-30 minutes brigged, 35-45k speso fine.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Possession, Illegal Inherently Dangerous Equipment
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To possess restricted or illegal equipment that has a primary purpose of causing harm to others, or large amounts of destruction. C3 Equipment is also included under this charge.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Removal of item(s), 20-30 minutes brigged, 40-55k speso fine.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Incitement of a Riot
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To perform actions in the interest of causing large amounts of unrest up to and including rioting.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        25-35 minutes brigged, 45-60k speso fine.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Manslaughter
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To unintentionally kill someone through negligent, but not malicious, actions.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        25-35 Minutes brigged, 35-50k speso fine, payment of victim’s medical bills.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Trespass, High Security Areas
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Trespassing in any of the following without appropriate permission or access: Command areas, Personal offices, Weapons storage, weapon production, explosive storage, explosive production, or other high security areas.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        30-40 minutes brigged, return of any item(s) taken, 45-60k speso fine.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Breaking and Entering, High Security Areas
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To commit trespassing into a secure area as defined in Code 309 using forcible entry.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Similar to 309. However, an additional 10k speso fine is suggested.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Dereliction
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To willfully abandon an obligation that is critical to the station’s continued operation.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Demotion, 40-50k speso fine.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Embezzlement
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Embezzling funds from the station fund computers.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Return of funds, 40-75k fine, demotion, 20-30 minutes brigged.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Identity Theft
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To assume the identity of another individual.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Removal of items used to impersonate, 40-50k speso fine, 25-35 minutes brigged.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Sexual Harassment
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Non-consensual harassment that is sexual in nature. (If reported and is a OOC consent violation as well, AHELP please as this is an OOC rule break)
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        20-35 minutes brigged, 50-80k fine.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Illegal Mindbreaking
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Permanent removal of a psion's abilities and/or latency not carried out as a punishment for a crime, by a Mantis in the line of their duties, or during an extenuating emergency situation requiring the immediate removal of the psion's powers.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        220-35 minutes brigged, 85-120k fine, Returning of psion’s powers if able,Removal of perpetrator’s powers if applicable.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Kidnapping
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To unlawfully abduct a person to a new location and confine a person against their will.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        25-30 minutes brigged, 70-100k fine.
+      </Box>
+    </ColorBox>
+  </Table>
+
+  ## Capital Crimes
+  - Crimes for which the most extreme punishments are served.
+  <Table Columns="3">
+    <ColorBox>
+      <Box>
+        Offense
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        Description
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        Suggested Punishment
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Capital Murder
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To commit the act of murder, with clear intent to kill, and to have materially taken steps to prevent the revival of the victim, or performing Decorperalization without consent or authorization from station command.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Execution, Permanent Confinement, or Decorperalization.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Grand Sabotage
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To destroy or modify station assets or equipment, without which the station may collapse or otherwise become uninhabitable.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Permanent confinement, Demotion.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Espionage
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To knowingly betray critical information to enemies of the station.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Execution, Prisoner transport to Colcom, Permanent confinement.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Enemy of the Government
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To be a member of any of the following organizations: Hostile boarding parties, Changeling Hiveminds, cults, Dirizher Cartel.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Permanent confinement or transportation to Colonial Command for Interrogation.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Subversion of the Chain of Command
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Disrupting the chain of command via either the murder of a commanding officer or illegally declaring oneself to be a commanding officer.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Permanent confinement.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Biological Terror
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To knowingly release, cause, or otherwise cause the station to become affected by a disease, plant, or other biological form which may spread uncontained and or cause serious physical harm.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Permanent confinement, Execution, or decorperalization.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Sexual Assault
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To non-consentually engage in sexual relations with a person. (If this is an OOC consent violation as well, AHELP if this occurs at all, as this is a rule break and is to be handled OOCly)
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Execution, Transport to ColCom
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Grand Kidnapping
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To unlawfully abduct and confine a Command member or higher authority against their will.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Permanent confinement.
+      </Box>
+    </ColorBox>
+  </Table>
+</Document>
