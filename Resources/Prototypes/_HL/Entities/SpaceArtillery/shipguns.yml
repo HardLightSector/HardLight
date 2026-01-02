@@ -183,7 +183,7 @@
       task: ShuttleDeedTurretCompound
     blackboard:
       RotateSpeed: 3.141
-      SoundTargetInLOS:
+      SoundTargetInLOS: !type:SoundPathSpecifier
         path: /Audio/Effects/double_beep.ogg
 
 - type: entity
@@ -207,7 +207,7 @@
       task: ShuttleDeedTurretCompound
     blackboard:
       RotateSpeed: 3.141
-      SoundTargetInLOS:
+      SoundTargetInLOS: !type:SoundPathSpecifier
         path: /Audio/Effects/double_beep.ogg
 
 - type: entity
@@ -231,7 +231,7 @@
       task: ShuttleDeedTurretCompound
     blackboard:
       RotateSpeed: 3.141
-      SoundTargetInLOS:
+      SoundTargetInLOS: !type:SoundPathSpecifier
         path: /Audio/Effects/double_beep.ogg
 
 - type: entity
@@ -255,7 +255,7 @@
       task: ShuttleDeedTurretCompound
     blackboard:
       RotateSpeed: 3.141
-      SoundTargetInLOS:
+      SoundTargetInLOS: !type:SoundPathSpecifier
         path: /Audio/Effects/double_beep.ogg
     
 - type: entity
@@ -279,7 +279,7 @@
       task: ShuttleDeedTurretCompound
     blackboard:
       RotateSpeed: 3.141
-      SoundTargetInLOS:
+      SoundTargetInLOS: !type:SoundPathSpecifier
         path: /Audio/Effects/double_beep.ogg
 
 - type: entity
@@ -326,7 +326,7 @@
     rootTask:
       task: ShuttleDeedTurretCompound
     blackboard:
-      SoundTargetInLOS:
+      SoundTargetInLOS: !type:SoundPathSpecifier
         path: /Audio/Effects/double_beep.ogg
 
 - type: entity
