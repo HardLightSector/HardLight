@@ -5,7 +5,7 @@
     <GuideEntityEmbed Entity="MobFeroxiDummy" Caption=""/>
   </Box>
 
-  The Feroxi (fer-ox-i) are a race of humanoid shark-like beings. Carnivourous in nature with a strong bite force.
+  The Feroxi (fer-ox-i) are a race of humanoid shark-like beings. They are carnivourous in nature with a strong bite force.
 
   ## Diet
 
@@ -14,17 +14,17 @@
 
   ## Benefits
 
-  - Uses their jaws to do piercing damage, and harder than other species, rivaling Oni.
-  - Their cartilaginous skeleton allows them to resist blunt force trauma 10% more easily.
-  - Their adaptation to native environments allows them to resist the cold 10% more easily.
-  - Their biology allow them to breathe water vapour.
+  - Uses their jaws to do [color=red]piercing[/color] damage, and harder than other species, rivaling Oni.
+  - Their cartilaginous skeleton allows them to [color=#1e90ff]resist blunt force trauma 10% more easily.[/color]
+  - Their adaptation to native environments allows them to [color=#1e90ff]resist the cold 10% more easily.[/color]
+  - [color=#1e90ff]Their biology allow them to breathe water vapour.[/color]
 
   ## Drawbacks
 
-  - They take 10% more Slash damage.
+  - They take [color=#ffa500]10% more Slash damage.[/color]
   - Gets thirsty 100% faster. That's faster than a Diona!
-  - When thirst falls to "Parched" they begin to suffocate. Have water handy!
-  - Saline is too salty! It hydrates you much less!
-  - Your lungs are unremovable as theyre intergrated with your gills.
+  - [color=#ffa500]When thirst falls to "Parched", they will begin to suffocate.[/color] Have water handy!
+  - [color=red]Saline is too salty! It hydrates you much less![/color]
+  - [color=red]Your lungs are unremovable, as theyre integrated with your gills.[/color]
 
 </Document>

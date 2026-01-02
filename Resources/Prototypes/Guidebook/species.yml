@@ -76,8 +76,8 @@
 
 - type: guideEntry
   id: IPC
-  name: species-name-IPC
-  text: "/ServerInfo/Guidebook/Mobs/IPC.xml"
+  name: species-name-ipc
+  text: "/ServerInfo/Guidebook/Mobs/IPCs.xml"
 
 # DeltaV
 
@@ -96,11 +96,6 @@
   id: Vox
   name: species-name-vox
   text: "/ServerInfo/Guidebook/Mobs/Vox.xml"
-
-- type: guideEntry
-  id: IPC
-  name: species-name-ipc
-  text: "/ServerInfo/Guidebook/Mobs/IPCs.xml"
 
 - type: guideEntry
   id: Resomi

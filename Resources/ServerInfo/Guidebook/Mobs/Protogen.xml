@@ -5,8 +5,8 @@
     <GuideEntityEmbed Entity="MobProtogen" Caption=""/>
   </Box>
 
-  A Protogen is a technologically enhanced being made of both technological and biological parts. Though they have a mix of artificial and non-artificial organs, they still operate with a soul and mind, yet there are also program files that operate them, and overheating/overcooling can damage the circuits of the artificial organs. They still need to eat and be healed using normal medicines.
+  A Protogen is a technologically enhanced being made of both technological and biological parts. Though they have a mix of artificial and non-artificial organs, they still operate with a soul and mind, yet there are also program files that operate them, and overheating/overcooling can damage the circuits of their artificial organs. They still need to eat and be healed using normal medicines.
 
-  They are capable of playing music and take less damage from asphyixiation. They are also armored against brute damage but are more vulnerable to heat, radiation, and shock.
+  They are capable of playing music and [color=#1e90ff]take less damage from asphyixiation.[/color] They are also [color=#1e90ff]armored against brute damage[/color] but are [color=#ffa500]more vulnerable to heat, radiation, and shock.[/color]
 
 </Document>

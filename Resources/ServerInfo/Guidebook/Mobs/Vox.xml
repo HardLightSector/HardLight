@@ -7,7 +7,7 @@
 
   [color=#ffa500]Warning! This species is not recommended for new players due to their fatal allergy to oxygen![/color]
 
-  Vox breathe nitrogen, and [color=#ffa500] oxygen is toxic to them.[/color]
+  Vox breathe nitrogen, and [color=#ffa500]oxygen is toxic to them.[/color]
   Unfortunately, space stations tend to be full of oxygen,
   so Vox must use an internal nitrogen supply at almost all times to avoid fatal exposure.
 
@@ -21,6 +21,6 @@
   A thirty second oxygen exposure takes them two minutes to recover from.
   If their health does not seem to improve within a minute of oxygen exposure, they should seek medical attention.
 
-  Vox deal Slash damage with their unarmed attack.
+  Vox deal [color=red]Slash[/color] damage with their unarmed attack.
 
 </Document>
