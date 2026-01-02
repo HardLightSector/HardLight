@@ -616,5 +616,5 @@ WeaponEnergyTurretStationControlPanel: WeaponEnergyTurretSecurityControlPanel
 WeaponEnergyTurretStationMachineCircuitboard: WeaponEnergyTurretSecurityMachineCircuitboard
 
 # 2025-12-29 Seb fox
-SpawnMobArcticFoxSiobhan: SpawnMobArcticFoxSeb
-MobArcticFoxSiobhan: MobArcticFoxSeb
+#SpawnMobArcticFoxSiobhan: SpawnMobArcticFoxSeb
+#MobArcticFoxSiobhan: MobArcticFoxSeb
