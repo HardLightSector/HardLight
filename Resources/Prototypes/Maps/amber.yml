@@ -13,8 +13,6 @@
         nameGenerator:
           !type:NanotrasenNameGenerator
           prefixCreator: '14-SB'
-      - type: StationEmergencyShuttle
-        emergencyShuttlePath: /Maps/Shuttles/emergency_amber.yml
       - type: ExtraStationInformation
         iconPath: /Textures/_HL/Logo/icon/icon-256x256.png # used the biggest one, looks better when downscaling than upscaling
         stationSubtext: 'hardlight-lobby-hardlight-subtext'

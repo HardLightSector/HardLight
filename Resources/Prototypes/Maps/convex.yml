@@ -17,8 +17,6 @@
           stationSubtext: 'hardlight-lobby-hardlight-subtext'
           stationDescription: 'hardlight-lobby-hardlight-description'
           lobbySortOrder: 1
-        - type: StationEmergencyShuttle
-          emergencyShuttlePath: /Maps/Shuttles/emergency_delta.yml
         - type: StationJobs # 74 jobs total w/o latejoins & interns, 93 jobs total w/ latejoins & interns
           availableJobs:
             #command (7)

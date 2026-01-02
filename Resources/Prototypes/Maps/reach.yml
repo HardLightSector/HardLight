@@ -18,8 +18,6 @@
           stationSubtext: 'hardlight-lobby-hardlight-subtext'
           stationDescription: 'hardlight-lobby-hardlight-description'
           lobbySortOrder: 1
-        - type: StationEmergencyShuttle
-          emergencyShuttlePath: /Maps/Shuttles/emergency.yml
         - type: StationJobs
           availableJobs: # 15 jobs total w/o latejoins, 19 jobs total w/ latejoins
             #command (2)

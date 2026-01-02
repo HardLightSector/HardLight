@@ -74,9 +74,9 @@
                   Shock: 0
               angle: 60
               animation: WeaponArcThrust
-            - type: CuffsOnHit
-              proto: Handcuffs
-              duration: 0 # INSTANT
+            #- type: CuffsOnHit
+            #  proto: Handcuffs
+            #  duration: 0 # INSTANT
         
         sleep: !type:ItemSwitchState
           verb: sleep
@@ -92,11 +92,22 @@
                   Shock: 0
               angle: 60
               animation: WeaponArcThrust
-            - type: InjectOnHit
-              limit: 40
-              reagents:
-                - ReagentId: Nocturine
-                  Quantity: 20
+            - type: SolutionContainerManager
+              solutions:
+                melee:
+                  maxVol: 50
+            - type: RefillableSolution
+              solution: melee
+            - type: InjectableSolution
+              solution: melee
+            - type: MeleeChemicalInjector
+              solution: melee
+            - type: SolutionRegeneration
+              solution: melee
+              generated:
+                reagents:
+                  - ReagentId: Nocturine
+                    Quantity: 50
         
         damage: !type:ItemSwitchState
           verb: damage
