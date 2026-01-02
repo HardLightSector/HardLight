@@ -194,8 +194,7 @@
 - type: entity # deployed turret
   id: WeaponTurretAsmgtNtDeployed
   name: ASMGT
-  description: |-
-   An Autonomous Sentry Machine Gun Turret (ASMGT) is a magazine-fed turret with barrels compatible with .20, .25, .30 and .35 cartridges. Use screwdriver to disassemble.
+  description: An Autonomous Sentry Machine Gun Turret (ASMGT) is a magazine-fed turret with barrels compatible with .20, .25, .30 and .35 cartridges. Use screwdriver to disassemble.
   suffix: NT
   parent:
   - BaseC2ContrabandUnredeemable
@@ -228,8 +227,10 @@
       gun_magazine:
         name: Magazine
         startingItem: null
-        insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
-        ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+        insertSound: !type:SoundPathSpecifier
+          path: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
+        ejectSound: !type:SoundPathSpecifier
+          path: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
         priority: 2
         whitelist:
           tags:
