@@ -64,3 +64,8 @@
   id: RuleC12
   name: guide-entry-section12
   text: "/ServerInfo/_NF/Guidebook/Rules/CoreRules/RuleC12.xml"
+
+- type: guideEntry
+  id: RuleC13
+  name: guide-entry-section13
+  text: "/ServerInfo/_NF/Guidebook/Rules/CoreRules/RuleC13.xml"
