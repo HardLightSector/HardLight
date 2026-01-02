@@ -65,9 +65,8 @@
     rootTask:
       task: TurretCompound
     blackboard:
-      RotateSpeed: !type:Single
-        3.141
-      SoundTargetInLOS: !type:SoundPathSpecifier
+      RotateSpeed: 3.141
+      SoundTargetInLOS:
         path: /Audio/Effects/double_beep.ogg
   - type: MouseRotator
     angleTolerance: 5

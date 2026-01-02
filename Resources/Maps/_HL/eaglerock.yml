@@ -380,7 +380,7 @@ entities:
       dampingModifier: 0.25
     - type: GridPathfinding
     - type: Gravity
-      gravityShakeSound: !type:SoundPathSpecifier
+      gravityShakeSound:
         path: /Audio/Effects/alert.ogg
     - type: DecalGrid
       chunkCollection:
