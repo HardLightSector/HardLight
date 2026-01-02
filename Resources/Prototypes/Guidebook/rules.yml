@@ -46,6 +46,7 @@
   - RuleC1
   - RuleC2
   - RuleC3
+  - RuleC4
   - RuleC5
   - RuleC6
   - RuleC7
@@ -54,6 +55,7 @@
   - RuleC10
   - RuleC11
   - RuleC12
+  - RuleC13
 # - type: guideEntry
   # id: RuleC1
   # name: guide-entry-rules-c1

@@ -5,3 +5,4 @@ species-name-harpy = Harpy
 species-name-chitinid = Chitinid
 species-name-feroxi = Feroxi
 species-name-kitsune = Kitsune
+species-name-rodentia = Rodentia

@@ -8,15 +8,16 @@
   <GuideEntityEmbed Entity="MobDiona" Caption="Diona"/>
   <GuideEntityEmbed Entity="MobDwarf" Caption="Dwarf"/>
   <GuideEntityEmbed Entity="MobFelinid" Caption="Human"/>
-  </Box>
-  <Box>
   <GuideEntityEmbed Entity="MobMoth" Caption="Moth Person"/>
   <GuideEntityEmbed Entity="MobReptilian" Caption="Reptilian"/>
+  </Box>
+  <Box>
   <GuideEntityEmbed Entity="MobSlimePerson" Caption="Slime Person"/>
   <GuideEntityEmbed Entity="MobVox" Caption="Vox"/>
   <GuideEntityEmbed Entity="MobResomi" Caption="Resomi"/>
   <GuideEntityEmbed Entity="MobAvali" Caption="Avali"/>
   <GuideEntityEmbed Entity="MobChitinid" Caption="Chitinid"/>
+  <GuideEntityEmbed Entity="MobIPC" Caption="IPC"/>
   </Box>
   # Frontier specific species
   <Box>
@@ -30,11 +31,14 @@
   <GuideEntityEmbed Entity="MobHarpy" Caption="Harpy"/>
   <GuideEntityEmbed Entity="MobOni" Caption="Oni"/>
   <GuideEntityEmbed Entity="MobIPCDummy" Caption="I.P.C."/>
-  <GuideEntityEmbed Entity="MobFeroxi" Caption="Feroxi"/>
-  <GuideEntityEmbed Entity="MobKitsune" Caption="Kitsune"/>
   </Box>
   <Box>
+  <GuideEntityEmbed Entity="MobFeroxi" Caption="Feroxi"/>
+  <GuideEntityEmbed Entity="MobKitsune" Caption="Kitsune"/>
+  <GuideEntityEmbed Entity="MobRodentia" Caption="Rodentia"/>
+  </Box>
 
+  <Box>
   <GuideEntityEmbed Entity="MobShadekin" Caption="Shadekin"/>
   </Box>
 
@@ -43,5 +47,9 @@
     <GuideEntityEmbed Entity="MobProtogen" Caption="Protogen"/>
   </Box>
 
+  #Impstation specific species
+  <Box>
+    <GuideEntityEmbed Entity="MobThaven" Caption="Thaven"/>
+  </Box>
 
 </Document>

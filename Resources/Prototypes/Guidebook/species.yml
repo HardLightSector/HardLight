@@ -21,6 +21,7 @@
     - Reptilian
     - SlimePerson
     - Vox
+    - IPC
     - Goblin # Frontier
     - Sheleg # Frontier
     - Vulpkanin # DeltaV
@@ -28,6 +29,7 @@
     - Felinid # DeltaV
     - Oni # DeltaV
     - Chitinid # DeltaV
+    - Rodentia # DeltaV
     - Feroxi # Flooftier
     - Resomi
     - Protogen # Monolith
@@ -35,6 +37,7 @@
     - Avali
     - Kitsune # DeltaV
     - Skrell
+    - Thaven # Impstation
 
 - type: guideEntry
   id: Arachnid
@@ -71,6 +74,11 @@
   name: species-name-slime
   text: "/ServerInfo/Guidebook/Mobs/SlimePerson.xml"
 
+- type: guideEntry
+  id: IPC
+  name: species-name-IPC
+  text: "/ServerInfo/Guidebook/Mobs/IPC.xml"
+
 # DeltaV
 
 - type: guideEntry
@@ -105,6 +113,11 @@
   text: "/ServerInfo/Guidebook/Mobs/_DV/Harpy.xml" # DeltaV
 
 - type: guideEntry
+  id: Rodentia
+  name: species-name-rodentia
+  text: "/ServerInfo/Guidebook/Mobs/_DV/Rodentia.xml" # DeltaV
+
+- type: guideEntry
   id: Avali
   name: species-name-avali
   text: "/ServerInfo/Guidebook/Mobs/Avali.xml"
@@ -124,4 +137,9 @@
   name: species-name-skrell
   text: "/ServerInfo/Guidebook/Mobs/Skrell.xml"
 
+  # Impstation
+- type: guideEntry
+  id: Thaven
+  name: species-name-thaven
+  text: "/ServerInfo/_Impstation/Guidebook/Mobs/Thaven.xml"
 
