@@ -38,8 +38,9 @@
     mode: SnapgridCenter
   components:
     - type: GasOutletInjector
+      transferRate: 600
       maxTransferRate: 600
-      maxPressure: 13500
+      maxPressure: 27000
       HighFlow: true
     - type: Construction
       graph: GasUnaryHighFlow

@@ -83,3 +83,33 @@ Entries:
       message: Added XenoQuadborg
   id: 9
   time: '2025-12-29T07:01:00.0000000+00:00'
+- author: amareyeen
+  changes:
+    - type: Add
+      message: Ability for Vulps and Shadekins to have psionics
+  id: 10
+  time: '2025-12-29T08:22:29.0000000+00:00'
+- author: NotLivyathan
+  changes:
+    - type: Add
+      message: >-
+        Medical quadborgs now have built-in medical HUDs and chemical analysis
+        goggles.
+    - type: Add
+      message: Engineer quadborgs now have built-in diagnostic HUDs.
+    - type: Add
+      message: >-
+        Security quadborgs now have built-in security glasses complete with
+        flash protection.
+    - type: Tweak
+      message: Security quadborgs are now cyan like the rest of SEC.
+  id: 11
+  time: '2025-12-29T09:12:46.0000000+00:00'
+- author: Serah64
+  changes:
+    - type: Tweak
+      message: Peregrine now has FUC value at Contra Exchange of 1
+    - type: Fix
+      message: Restored Maxim Hardsuit to Expedition loot tables
+  id: 12
+  time: '2025-12-31T16:45:51.0000000+00:00'

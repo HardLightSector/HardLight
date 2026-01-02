@@ -4,8 +4,8 @@ meta:
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 12/20/2025 02:13:00
-  entityCount: 28368
+  time: 12/29/2025 21:02:22
+  entityCount: 28369
 maps:
 - 780
 grids:
@@ -14022,7 +14022,7 @@ entities:
       pos: 24.5,16.5
       parent: 8364
     - type: Door
-      secondsUntilStateChange: -100247.78
+      secondsUntilStateChange: -100399.8
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -15580,7 +15580,7 @@ entities:
       pos: 9.5,25.5
       parent: 8364
     - type: Door
-      secondsUntilStateChange: -13504.274
+      secondsUntilStateChange: -13656.292
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -88601,7 +88601,7 @@ entities:
       pos: 18.5,-13.5
       parent: 8364
     - type: Door
-      secondsUntilStateChange: -7478.784
+      secondsUntilStateChange: -7630.802
       state: Closing
   - uid: 13388
     components:
@@ -88609,7 +88609,7 @@ entities:
       pos: 18.5,-14.5
       parent: 8364
     - type: Door
-      secondsUntilStateChange: -7514.4844
+      secondsUntilStateChange: -7666.502
       state: Closing
   - uid: 13389
     components:
@@ -88777,7 +88777,7 @@ entities:
       pos: -34.5,-14.5
       parent: 8364
     - type: Door
-      secondsUntilStateChange: -94436.32
+      secondsUntilStateChange: -94588.336
       state: Closing
   - uid: 15010
     components:
@@ -151114,6 +151114,13 @@ entities:
     components:
     - type: Transform
       pos: 36.5,-5.5
+      parent: 8364
+- proto: SpawnMobArcticFoxSeb
+  entities:
+  - uid: 28369
+    components:
+    - type: Transform
+      pos: 71.5,-21.5
       parent: 8364
 - proto: SpawnMobBandito
   entities:

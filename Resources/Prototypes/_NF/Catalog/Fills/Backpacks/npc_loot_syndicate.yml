@@ -410,6 +410,8 @@
   components:
   - type: SpawnItemsOnUse
     items:
+      - id: ClothingOuterHardsuitMaxim
+        prob: 0.05
       - id: SpaceCash10000
       # Bonus Loot T4
       - id: SpaceCash2500

@@ -570,7 +570,7 @@
     # Crescent - Cyberware
     - CombatCybernetics
   - type: EmagLatheRecipes
-    emagStaticPacks:
+    emagDynamicPacks:
     - WeaponMechCombatArsenal
     # Mono - Space Mecha
     - S2Mechs

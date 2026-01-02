@@ -1,0 +1,25 @@
+- type: construction
+  id: GaslockHighFlow
+  graph: Girder
+  startNode: start
+  targetNode: gaslockhighflow
+  category: construction-category-structures
+  #  state: assembly
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
+  id: Gaslock
+  graph: Girder
+  startNode: start
+  targetNode: gaslock
+  category: construction-category-structures
+  #  state: assembly
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked

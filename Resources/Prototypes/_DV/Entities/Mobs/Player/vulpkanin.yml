@@ -30,4 +30,5 @@
         Asphyxiation: 1.0
       damageRecovery:
         types:
-          Asphyxiation: -1.0
+          Asphyxiation: -1.0    
+    - type: PotentialPsionic #HL - Summary: makes potentially psionic. 

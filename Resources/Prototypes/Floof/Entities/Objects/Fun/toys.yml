@@ -252,6 +252,87 @@
         variation: 0.05
         volume: 1
 
+- type: entity
+  parent: PlushieHuman
+  id: PlushieCuddlyIPC
+  name: Cuddly IPC plushie
+  description: This plump, pink IPC plushie is extra-huggable, to the point of being a little bulky! It has the left half of a matching tag.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/floof_plush.rsi
+    state: cuddlyipc
+  - type: UseDelay
+    delay: 3.0
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/Voice/Talk/pai_exclaim.ogg
+      params:
+        volume: 2
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Voice/Talk/pai_exclaim.ogg
+      params:
+        volume: 2
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Voice/Talk/pai_ask.ogg
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Voice/Talk/pai_ask.ogg
+      params:
+        variation: 0.05
+        volume: 4
+
+- type: entity
+  parent: PlushieHuman
+  id: PlushieFluffyVulpkanin
+  name: Fluffy vulpkanin plushie
+  description: This snow-white vulpkanin plushie is so soft and cuddly that you could squeeze it all day long! It has the right half of a matching tag.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/floof_plush.rsi
+    state: fluffyvulp
+  - type: UseDelay
+    delay: 3.0
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/Floof/Voice/Reptilian/yip.ogg
+      params:
+        volume: 2
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Floof/Voice/Reptilian/yip.ogg
+      params:
+        volume: 2
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Floof/Voice/Vulpkanin/yap.ogg
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Floof/Voice/Vulpkanin/yap.ogg
+      params:
+        variation: 0.05
+        volume: 4
+
+- type: entity
+  parent: BasePlushie
+  id: ToySeb
+  name: seb toy
+  description: Nearly as fluffy as the real Seb!
+  components:
+  - type: Sprite
+    sprite: DeltaV/Objects/Fun/Toys/siobhantoy.rsi
+    state: base
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Animals/fox_squeak.ogg
+  - type: EmitSoundOnTrigger
+    sound:
+      path: /Audio/Animals/fox_squeak.ogg
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Animals/fox_squeak.ogg
+
 # - type: entity
   # parent: PlushieHuman
   # id: PlushieKitsuneCaptain

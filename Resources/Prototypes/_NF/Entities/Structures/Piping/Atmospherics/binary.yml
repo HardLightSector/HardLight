@@ -186,6 +186,67 @@
   - type: IconSmooth
     key: walls
     mode: NoSprite
+  - type: Construction  # Hardlight
+    graph: Girder
+    node: gaslock
+
+# Hardlight
+- type: entity
+  parent: BasePressurePumpGaslock
+  id: GaslockHighFlow
+  name: external high-flow gaslock
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Airtight
+  - type: RadiationBlocker
+    resistance: 3
+  - type: Occluder
+  - type: Sprite
+    sprite: _NF/Structures/Piping/Atmospherics/gaslock.rsi
+    drawdepth: Doors
+    layers:
+    - state: closed
+    - state: closed_unlit
+      shader: unshaded
+      map: ["docked-unlit"]
+      visible: false
+    - state: pipeStraight
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+    - state: pumpPressure
+    - state: pumpPressureOnOut
+      map: [ "enabled-unlit" ]
+      shader: unshaded
+    - state: panel_open
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: GenericVisualizer
+    visuals:
+      enum.PumpVisuals.Enabled:
+        enabled-unlit:
+          True: { visible: true }
+          False: { visible: false }
+      enum.DockablePipeVisuals.Docked:
+        docked-unlit:
+          True: { visible: true }
+          False: { visible: false }
+      enum.PumpVisuals.PumpingInwards:
+        enabled-unlit:
+          True: { state: pumpPressureOnIn }
+          False: { state: pumpPressureOnOut }
+  - type: GasPressurePump
+    HighFlow: true
+  - type: StaticPrice
+    price: 350
+  - type: BlockWeather
+  - type: PlacementReplacement
+    key: walls # For construction if this eventually supports it.
+  - type: IconSmooth
+    key: walls
+    mode: NoSprite
+  - type: Construction
+    graph: Girder
+    node: gaslockhighflow
+# End Hardlight
 
 - type: entity
   parent: [ BaseStructureDynamic, BasePressurePumpGaslock, BaseMachinePowered, ConstructibleMachine ]

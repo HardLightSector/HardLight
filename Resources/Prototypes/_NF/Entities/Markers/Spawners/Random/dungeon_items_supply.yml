@@ -129,6 +129,7 @@
     offset: 0.0
     rarePrototypes:
     - ClothingOuterHardsuitMaximPrototype
+    - ClothingOuterHardsuitMaxim
     rareChance: 0.05
 
 # Lockers

@@ -1,6 +1,6 @@
 - type: entity
   name: NT-88 Peregrine
-  parent: [BaseC2ContrabandUnredeemable, BaseWeaponPowerCell, BaseGunWieldable]
+  parent: [BaseC2ExpeditionContraband , BaseWeaponPowerCell, BaseGunWieldable]
   id: WeaponRailgunPeregrine
   description: From NanoTrasen Skunkworks. Uses a specific proprietary cartridge, although it may be possible to jury-rig something workable...
   components:

@@ -12,7 +12,7 @@ public sealed class HLCCVars
     /// Enable round persistence system to maintain ship functionality across round restarts
     /// </summary>
     public static readonly CVarDef<bool> RoundPersistenceEnabled =
-        CVarDef.Create("hardlight.round_persistence.enabled", true, CVar.SERVERONLY);
+        CVarDef.Create("hardlight.round_persistence.enabled", false, CVar.SERVERONLY);
 
     /// <summary>
     /// Enable expedition data persistence
