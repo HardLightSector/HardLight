@@ -303,7 +303,7 @@
       task: ShuttleDeedTurretCompound
     blackboard:
       RotateSpeed: 3.141
-      SoundTargetInLOS:
+      SoundTargetInLOS: !type:SoundPathSpecifier
         path: /Audio/Effects/double_beep.ogg
     
 - type: entity
