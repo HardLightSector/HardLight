@@ -25,7 +25,7 @@
     ears: ClothingHeadsetChrono
     gloves: ClothingHandsChronoGloves
     suitstorage: Chronoprod
-    pocket1: TheriacHypogun
+    pocket1: OmniHypogun
   storage:
     back:
       - ChronoRCD
