@@ -1,8 +1,8 @@
 ﻿- type: entity
   parent: [ BaseItem, BaseMajorContraband ]
-  id: TheriacHypogun
-  name: chrono hypogun
-  description: A self-refilling injector for rapid administration of theriac to targets.
+  id: OmniHypogun
+  name: omni hypogun
+  description: A self-refilling injector for rapid administration of omnizine to targets.
   components:
     - type: Sprite
       sprite: _Afterlight/Objects/Tools/chrono_hypogun.rsi
@@ -15,13 +15,13 @@
         hypospray:
           maxVol: 5
           reagents:
-            - ReagentId: Theriac
+            - ReagentId: Omnizine
               Quantity: 5
     - type: SolutionRegeneration
       solution: hypospray
       generated:
         reagents:
-          - ReagentId: Theriac
+          - ReagentId: Omnizine
             Quantity: 1
     - type: ExaminableSolution
       solution: hypospray

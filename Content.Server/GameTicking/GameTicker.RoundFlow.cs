@@ -64,6 +64,7 @@ namespace Content.Server.GameTicking
 
         [ViewVariables]
         private GameRunLevel _runLevel;
+        private bool _endingRound; // guard to prevent duplicate EndRound execution
 
         private RoundEndMessageEvent.RoundEndPlayerInfo[]? _replayRoundPlayerInfo;
 
@@ -484,7 +485,20 @@ namespace Content.Server.GameTicking
             if (DummyTicker)
                 return;
 
-            DebugTools.Assert(RunLevel == GameRunLevel.InRound);
+            // Prevent duplicate round end processing if multiple callers race
+            if (_endingRound)
+            {
+                _sawmill.Warning("EndRound called while already ending – ignoring duplicate call.");
+                return;
+            }
+
+            if (RunLevel != GameRunLevel.InRound)
+            {
+                _sawmill.Warning($"EndRound called when RunLevel={RunLevel}, expected InRound – ignoring.");
+                return;
+            }
+
+            _endingRound = true;
             _sawmill.Info("Ending round!");
 
             RunLevel = GameRunLevel.PostRound;
@@ -747,6 +761,9 @@ namespace Content.Server.GameTicking
             RoundNumberMetric.Inc();
 
             PlayersJoinedRoundNormally = 0;
+
+            // Clear end-round guard for the next round
+            _endingRound = false;
 
             RunLevel = GameRunLevel.PreRoundLobby;
             RandomizeLobbyBackground();

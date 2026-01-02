@@ -33,6 +33,7 @@ public sealed class StationPaySystem : EntitySystem
     // sorted in ascending order
     private readonly Dictionary<ProtoId<JobPrototype>, int> _jobPayoutRates = new();
     private OrderedDictionary<EntityUid, int> _scheduledPayouts = new();
+    private bool _roundEndProcessed; // ensure payouts run once per round
 
     public override void Initialize()
     {
@@ -69,11 +70,23 @@ public sealed class StationPaySystem : EntitySystem
 
     private void OnRunLevelChanged(GameRunLevelChangedEvent ev)
     {
-        // restartroundnow command
-        if (ev.Old == GameRunLevel.InRound && ev.New == GameRunLevel.PreRoundLobby)
-            OnRoundEnd();
-        else if (ev.New == GameRunLevel.PostRound)
-            OnRoundEnd();
+        // Reset idempotency flag when a new round starts
+        if (ev.New == GameRunLevel.InRound)
+        {
+            _roundEndProcessed = false;
+            return;
+        }
+
+        // Handle end-of-round transitions; ensure we only process once
+        var isEndTransition =
+            (ev.Old == GameRunLevel.InRound && ev.New == GameRunLevel.PreRoundLobby) // restartroundnow edge case
+            || (ev.New == GameRunLevel.PostRound);
+
+        if (!isEndTransition || _roundEndProcessed)
+            return;
+
+        OnRoundEnd();
+        _roundEndProcessed = true;
     }
 
     private void OnRoundEnd()

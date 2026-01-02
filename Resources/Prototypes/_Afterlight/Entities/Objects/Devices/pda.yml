@@ -11,12 +11,5 @@
         whitelist:
           tags:
             - Write
-    - type: Appearance
-      appearanceDataInit:
-        enum.PdaVisuals.PdaType:
-          !type:String
-          pda-chronoagent
     - type: PdaBorderColor
       borderColor: "#32e5f1"
-    - type: Icon
-      state: pda-chronoagent

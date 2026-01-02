@@ -27,14 +27,14 @@
     - type: Sprite
       sprite: _Afterlight/Objects/Weapons/Melee/chronoprod.rsi
       state: icon
-    - type: RestrictByUserTag
-      contains:
-        - ChronoLegionnaire
-      messages:
-        - chrono-weapon-restricted-1
-        - chrono-weapon-restricted-2
-        - chrono-weapon-restricted-3
-        - chrono-weapon-restricted-4
+    # - type: RestrictByUserTag
+      # contains:
+        # - ChronoLegionnaire
+      # messages:
+        # - chrono-weapon-restricted-1
+        # - chrono-weapon-restricted-2
+        # - chrono-weapon-restricted-3
+        # - chrono-weapon-restricted-4
     - type: ItemSwitch
       state: stun
       states:

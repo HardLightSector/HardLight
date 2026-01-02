@@ -34,6 +34,6 @@
       radius: 5
       energy: 2
       color: "#00ffff"
-    - type: Tag
-      tags:
-        - CorgiWearable
+    # - type: Tag
+      # tags:
+        # - CorgiWearable
