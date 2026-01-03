@@ -10,6 +10,9 @@
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: arcticfox
+  - type: SpriteMovement
+    movementLayers: {}
+    noMovementLayers: {}
   - type: Physics
   - type: Fixtures
     fixtures:
