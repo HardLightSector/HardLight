@@ -10,7 +10,7 @@
       department: Medical
       time: 3600 #1 hrs floof
   canBeAntag: false
-  icon: JobIconMedicalBorg
+  icon: JobIconBorg
   supervisors: job-supervisors-cmo
   jobEntity: PlayerBorgQuadmed
 
@@ -23,7 +23,7 @@
     - !type:OverallPlaytimeRequirement
       time: 21600 #6 hrs floof
   canBeAntag: false
-  icon: JobIconServiceBorg
+  icon: JobIconBorg
   supervisors: job-supervisors-hop
   jobEntity: PlayerBorgQuadserv
 
@@ -39,7 +39,7 @@
       department: Cargo
       time: 3600 #1 hrs floof
   canBeAntag: false
-  icon: JobIconSalvageBorg
+  icon: JobIconBorg
   supervisors: job-supervisors-Quartermaster
   jobEntity: PlayerBorgQuadsalv
 
@@ -55,7 +55,7 @@
       department: Security
       time: 3600 #1 hrs floof
   canBeAntag: false
-  icon: JobIconSecurityBorg
+  icon: JobIconBorg
   supervisors: job-supervisors-hos
   jobEntity: PlayerBorgQuad
 
@@ -71,6 +71,6 @@
       department: Engineering
       time: 3600 #1 hrs floof
   canBeAntag: false
-  icon: JobIconEngineeringBorg
+  icon: JobIconBorg
   supervisors: job-supervisors-ChiefEngineer
   jobEntity: PlayerBorgQuadEngineer

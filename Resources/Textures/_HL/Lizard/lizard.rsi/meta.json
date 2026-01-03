@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Created by Fenndragon, discord ID: 190763499276861440",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "segment"
+    },
+	{
+     "name": "fronttassle"
+    },
+	{
+     "name": "backtassle"
+    },
+	{
+     "name": "frontcyan"
+    },
+	{
+     "name": "backcyan"
+    },
+    {
+     "name": "tip"
+    },
+	{
+     "name": "tailcyan"
+    },
+	{
+     "name": "tailtassle"
+    },
+    {
+     "name": "lizardheadclosed",
+     "directions": 4
+    },
+	{
+     "name": "alive",
+     "directions": 4
+    },
+    {
+     "name": "lizardheadopen",
+     "directions": 4
+    }
+  ]
+}
