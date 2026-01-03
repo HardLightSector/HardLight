@@ -22,6 +22,9 @@
       80: 0.5
   - type: DamageStateVisuals
     rotate: true
+  - type: DamageVisuals
+    targetLayers: []
+    damageOverlayGroups: {}
   - type: RotationVisuals
     defaultRotation: 90
     horizontalRotation: 90
