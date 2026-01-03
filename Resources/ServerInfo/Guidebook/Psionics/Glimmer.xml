@@ -59,8 +59,7 @@ which is something most people working on stations with an Epistemics department
 <Box>
 <GuideEntityEmbed Entity="GlimmerProber"/>
 <GuideEntityEmbed Entity="GlimmerDrain"/>
-<GuideEntityEmbed Entity="MaterialNormality"/>
-<GuideEntityEmbed Entity="Ectoplasm" />
+<GuideEntityEmbed Entity="Ectoplasm"/>
 </Box>
 Probers should be turned off before glimmer exceeds 750 mΨ.
 

@@ -141,6 +141,8 @@ guide-entry-thieves = Thieves
 guide-entry-wizard = Wizard
 guide-entry-xenoborgs = Xenoborgs
 
+guide-entry-expeditions = Expeditions
+
 guide-entry-rules = Server Rules
 guide-entry-rules-core-only = Core Only Ruleset
 guide-entry-rules-lrp = Standard Ruleset

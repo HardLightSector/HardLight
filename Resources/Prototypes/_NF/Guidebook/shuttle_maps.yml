@@ -549,3 +549,27 @@
     sprite: _NF/Guidebook/shuttle_maps/128x96.rsi
     state: nook
     scale: 1.2, 1.2
+
+- type: entity
+  parent: PosterBase
+  id: ShuttleMapPhantom
+  name: "Phantom"
+  description: "Detailed map of a Phantom shuttle."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _NF/Guidebook/shuttle_maps/128x96.rsi
+    state: phantom
+    scale: 1.2, 1.2
+
+- type: entity
+  parent: PosterBase
+  id: ShuttleMapPioneer
+  name: "Pioneer"
+  description: "Detailed map of a Pioneer shuttle."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _NF/Guidebook/shuttle_maps/128x96.rsi
+    state: pioneer
+    scale: 1.2, 1.2

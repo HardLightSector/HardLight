@@ -31,8 +31,8 @@ Most missiles have a tracking delay before attempting to seek out targets, and w
 Some ships are equipped with [color=cyan]shield generators[/color]. These absorb all incoming impacts, and add power draw for every projectile absorbed. [color=yellow]Note that shields only react to projectiles fired from ship weapons, not regular handheld weapons or tools.[/color] Shields will NOT block beam or hitscan weapons, such as [color=red][bold]lasers[/bold][/color], and the effects of [color=teal][bold]EMPs[/color][/bold] will still go through.
 
   <Box>
-    <GuideEntityEmbed Entity="CircularShieldConsole"/>
-    <GuideEntityEmbed Entity="CircularShieldBase"/>
+    <GuideEntityEmbed Entity="ShieldGeneratorMedium"/>
+    <GuideEntityEmbed Entity="ShieldGeneratorSmall"/>
   </Box>
 
 Due to the rarity of these, they are unable to be looted, and must be scavenged if you wish to outfit your ship with them. They can be fabricated if you have the suitable T3 arsenal research for it though.

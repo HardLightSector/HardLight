@@ -50,6 +50,8 @@
   - ShipyardNook
   - ShipyardPathfinder
   - ShipyardPhoenix
+  - ShipyardPioneer
+  - ShipyardPhantom
   - ShipyardPlacebo
   - ShipyardProspector
   - ShipyardPulsar
@@ -62,7 +64,6 @@
   - ShipyardSurveyor
   - ShipyardTide
   - ShipyardVagabond
-  - ShipyardPhantom
   - ShipyardVitalis
 
 - type: guideEntry

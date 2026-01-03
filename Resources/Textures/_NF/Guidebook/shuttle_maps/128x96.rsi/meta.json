@@ -114,7 +114,13 @@
             "name": "pathfinder"
         },
         {
+            "name": "phantom"
+        },
+        {
             "name": "phoenix"
+        },
+        {
+            "name": "pioneer"
         },
         {
             "name": "placebo"
@@ -122,7 +128,7 @@
         {
             "name": "prospector"
         },
-		    {
+        {
             "name": "pulsar"
         },
         {
@@ -151,9 +157,6 @@
         },
         {
             "name": "vagabond"
-        },
-        {
-            "name": "phantom"
         },
         {
             "name": "nook"

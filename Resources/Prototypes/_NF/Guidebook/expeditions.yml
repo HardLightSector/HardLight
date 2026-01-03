@@ -16,6 +16,7 @@
   - MobsExpeditionGuideSyndicate
   - MobsExpeditionGuideXenos
   - MobsExpeditionGuideWizard
+  - MobsExpeditionGuideZombie
 
 - type: guideEntry
   id: MobsExpeditionGuideAberrantFlesh
