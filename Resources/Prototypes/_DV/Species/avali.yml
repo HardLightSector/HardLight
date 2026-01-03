@@ -21,6 +21,11 @@
   id: MobAvaliSprites
   sprites:
     Head: MobAvaliHead
+    UndergarmentTop: MobHumanoidAnyMarking
+    UndergarmentBottom: MobHumanoidAnyMarking
+    Genital: MobHumanoidAnyMarking
+    Penis: MobHumanoidAnyMarking
+    Breasts: MobHumanoidAnyMarking
     Chest: MobAvaliTorso
     HeadTop: MobHumanoidAnyMarking
     HeadSide: MobHumanoidAnyMarking
@@ -50,6 +55,15 @@
       required: false
     FacialHair:
       points: 0
+      required: false
+    UndergarmentTop:
+      points: 1
+      required: false
+    UndergarmentBottom:
+      points: 1
+      required: false
+    Genital:
+      points: 35
       required: false
     Tail:
       points: 1
