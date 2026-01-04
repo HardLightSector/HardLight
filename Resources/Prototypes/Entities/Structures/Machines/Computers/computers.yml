@@ -1046,7 +1046,7 @@
 - type: entity
   id: StationComputerCargoOrders
   parent: [BaseStructureDisableToolUse, BaseStructureIndestructible, BaseComputerAiAccess] # Frontier: add BaseStructureDisableToolUse, BaseStructureIndestructible
-  name: cargo request computer
+  name: station logistics request computer
   description: Used to purchase supplies in from colonial command. # Frontier
   components:
   - type: Sprite
@@ -1076,18 +1076,23 @@
     energy: 1.6
     color: "#b89f25"
   - type: AccessReader
-    #access: [["Cargo"]] # Frontier
+    access: [["Cargo"]] # Frontier
   - type: DeviceNetwork
     deviceNetId: Wireless
     receiveFrequencyId: BasicDevice
+  - type: ActiveRadio
+    channels:
+    - Cargo
 #  - type: WirelessNetworkConnection # Frontier
 #    range: 200 # Frontier
   - type: DeviceLinkSource
     range: 200
     ports:
       - OrderSender
-  - type: NFCargoOrderConsole # Frontier: use NF component
-    # PurchaseAccount: Cargo
+  - type: CargoOrderConsole # Frontier: use NF component
+    account: Cargo
+    announcementChannel: Cargo
+    removeLimitAccess: [ "Quartermaster" ]
   - type: CargoOrderConsole
     account: Cargo
 
@@ -1095,7 +1100,7 @@
 # Request console variants.
 - type: entity
   id: ComputerCargoOrdersEngineering
-  parent: ComputerCargoOrders
+  parent: StationComputerCargoOrders
   name: engineering request computer
   description: Used by the engineering department to order supplies.
   # categories: [HideSpawnMenu] # Frontier
@@ -1128,7 +1133,7 @@
 
 - type: entity
   id: ComputerCargoOrdersMedical
-  parent: ComputerCargoOrders
+  parent: StationComputerCargoOrders
   name: medical request computer
   description: Used by the medical department to order supplies.
   # categories: [HideSpawnMenu] # Frontier
@@ -1161,7 +1166,7 @@
 
 - type: entity
   id: ComputerCargoOrdersScience
-  parent: ComputerCargoOrders
+  parent: StationComputerCargoOrders
   name: science request computer
   description: Used by the science department to order supplies.
   # categories: [HideSpawnMenu] # Frontier
@@ -1194,7 +1199,7 @@
 
 - type: entity
   id: ComputerCargoOrdersSecurity
-  parent: ComputerCargoOrders
+  parent: StationComputerCargoOrders
   name: security request computer
   description: Used by the security department to order supplies.
   # categories: [HideSpawnMenu] # Frontier
@@ -1227,7 +1232,7 @@
 
 - type: entity
   id: ComputerCargoOrdersService
-  parent: ComputerCargoOrders
+  parent: StationComputerCargoOrders
   name: service request computer
   description: Used by the service department to order supplies.
   # categories: [HideSpawnMenu] # Frontier
