@@ -33,7 +33,7 @@
     #- Nukeops
     - Traitor
     - Revolutionary
-    - Zombie
+    #- Zombie
     #- Xenoborgs
     #- Wizard
     #- KesslerSyndromeScheduler
@@ -53,7 +53,7 @@
     #- Nukeops
     - Traitor
     - Revolutionary
-    - Zombie
+    #- Zombie
     #- Xenoborgs
     #- Wizard
     - BasicStationEventScheduler
@@ -141,7 +141,7 @@
   rules:
     - DummyNonAntagChance
     - Traitor
-#    - SubGamemodesRule
+    - SubGamemodesRule
     - BasicStationEventScheduler
     - MeteorSwarmScheduler
 

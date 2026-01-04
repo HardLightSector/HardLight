@@ -429,6 +429,8 @@
   - type: RCD
     availablePrototypes:
     - WallSolid
+    - WallShuttle
+    - WallReinforced
     - FloorSteel
     - Plating
     - Catwalk
@@ -495,6 +497,44 @@
     maxCharges: 20
   - type: AutoRecharge
     rechargeDuration: 10
+    
+- type: entity
+  id: RCDXeno
+  parent: RCDRecharging
+  name: Xeno RCD
+  description: The rapid construction device can be used to quickly place and remove various station structures and fixtures. Requires compressed matter to function.
+  components:
+  - type: RCD
+    availablePrototypes:
+    - WallSolid
+    - FloorSteel
+    - FloorXenoborg
+    - FloorXeno
+    - FloorXenoSteel
+    - FloorXenoMaint
+    - WallShuttle
+    - WallReinforced
+    - WallXenoborg
+    - Plating
+    - Catwalk
+    - Grille
+    - XenoborgWindow
+    - Window
+    - WindowDirectional
+    - WindowReinforcedDirectional
+    - ReinforcedWindow
+    - Airlock
+    - AirlockGlass
+    - Firelock
+    - TubeLight
+    - BulbLight
+    - LVCable
+    - MVCable
+    - HVCable
+    - CableTerminal
+    - Deconstruct
+    #Hardlight
+    - AtmosDeviceFanDirectional
 
 - type: entity
   id: RCDExperimental

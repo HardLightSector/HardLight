@@ -64,7 +64,67 @@
   parent: BaseXenoborgModulesRecipe
   id: XenoborgModuleHeavyLaserRecipe
   result: XenoborgModuleHeavyLaser
+  
+- type: latheRecipe
+  parent: BaseXenoborgModulesRecipe
+  id: XenoborgModuleBasicRecipe
+  result: XenoborgModuleBasic
+  
+- type: latheRecipe
+  parent: BaseXenoborgModulesRecipe
+  id: XenoborgModuleToolRecipe
+  result: XenoborgModuleTool
 
+- type: latheRecipe
+  parent: BaseXenoborgModulesRecipe
+  id: XenoborgModuleAccessBreakerRecipe
+  result: XenoborgModuleAccessBreaker
+  
+- type: latheRecipe
+  parent: BaseXenoborgModulesRecipe
+  id: XenoborgModuleFireExtinguisherRecipe
+  result: XenoborgModuleFireExtinguisher
+  
+- type: latheRecipe
+  parent: BaseXenoborgModulesRecipe
+  id: XenoborgModuleJammerRecipe
+  result: XenoborgModuleJammer
+  
+- type: latheRecipe
+  parent: BaseXenoborgModulesRecipe
+  id: XenoborgModuleLaserRecipe
+  result: XenoborgModuleLaser
+
+- type: latheRecipe
+  parent: BaseXenoborgModulesRecipe
+  id: XenoborgModuleSpaceMovementRecipe
+  result: XenoborgModuleSpaceMovement
+
+- type: latheRecipe
+  parent: BaseXenoborgModulesRecipe
+  id: XenoborgModuleSwordRecipe
+  result: XenoborgModuleSword
+
+- type: latheRecipe
+  parent: BaseXenoborgModulesRecipe
+  id: XenoborgModuleHypoRecipe
+  result: XenoborgModuleHypo
+
+- type: latheRecipe
+  parent: BaseXenoborgModulesRecipe
+  id: XenoborgModuleChameleonProjectorRecipe
+  result: XenoborgModuleChameleonProjector
+
+- type: latheRecipe
+  parent: BaseXenoborgModulesRecipe
+  id: XenoborgModuleCloakDeviceRecipe
+  result: XenoborgModuleCloakDevice
+
+- type: latheRecipe
+  parent: BaseXenoborgModulesRecipe
+  id: BorgModuleXenoRCDRecipe
+  result: BorgModuleXenoRCD
+  
 - type: latheRecipe
   parent: BaseXenoborgModulesRecipe
   id: XenoborgModuleEnergySwordRecipe

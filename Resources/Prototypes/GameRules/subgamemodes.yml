@@ -66,33 +66,33 @@
       mindRoles:
       - MindRoleWizard
 
-# - type: entity
-#   parent: BaseGameRule
-#   id: Xenoborgs
-#   components:
-#   - type: XenoborgsRule
-#   - type: RuleGrids
-#   - type: GameRule
-#     minPlayers: 0
-#   - type: LoadMapRule
-#     gridPath: /Maps/Shuttles/mothership.yml
-#   - type: AntagMultipleRoleSpawner
-#     antagRoleToPrototypes:
-#       MothershipCore: [ MothershipCore ]
-#       Xenoborg: [ XenoborgEngi, XenoborgHeavy, XenoborgScout, XenoborgStealth ]
-#     pickAndTake: true
-#   - type: AntagSelection
-#     selectionTime: PrePlayerSpawn
-#     definitions:
-#     - prefRoles: [ MothershipCore ]
-#       fallbackRoles: [ Xenoborg ]
-#       spawnerPrototype: SpawnPointGhostRoleMothershipCore
-#       mindRoles:
-#       - MindRoleMothershipCore
-#     - prefRoles: [ Xenoborg ]
-#       fallbackRoles: [ MothershipCore ]
-#       spawnerPrototype: SpawnPointGhostRoleXenoborg
-#       mindRoles:
-#       - MindRoleXenoborg
-#       min: 4
-#       max: 4
+- type: entity
+  parent: BaseGameRule
+  id: Xenoborgs
+  components:
+  - type: XenoborgsRule
+  - type: RuleGrids
+  - type: GameRule
+    minPlayers: 0
+  - type: LoadMapRule
+    gridPath: /Maps/Shuttles/mothership.yml
+  - type: AntagMultipleRoleSpawner
+    antagRoleToPrototypes:
+      MothershipCore: [ MothershipCore ]
+      Xenoborg: [ XenoborgEngi, XenoborgHeavy, XenoborgScout, XenoborgStealth ]
+    pickAndTake: true
+  - type: AntagSelection
+    selectionTime: PrePlayerSpawn
+    definitions:
+    - prefRoles: [ MothershipCore ]
+      fallbackRoles: [ Xenoborg ]
+      spawnerPrototype: SpawnPointGhostRoleMothershipCore
+      mindRoles:
+      - MindRoleMothershipCore
+    - prefRoles: [ Xenoborg ]
+      fallbackRoles: [ MothershipCore ]
+      spawnerPrototype: SpawnPointGhostRoleXenoborg
+      mindRoles:
+      - MindRoleXenoborg
+      min: 4
+      max: 4

@@ -12,6 +12,11 @@
   - type: WiresVisuals
   - type: Damageable
     damageContainer: Inorganic
+  - type: ContentEye
+  - type: Examiner
+  - type: RotationVisuals
+    defaultRotation: 90
+    horizontalRotation: 90
   - type: Fixtures
     fixtures:
       fix1:
@@ -58,6 +63,8 @@
   - type: Anchorable
     flags:
     - Anchorable
+  - type: Physics
+  #- type: GravityAffected
   - type: Destructible
     thresholds:
     - trigger:
@@ -96,6 +103,9 @@
   - type: SurveillanceCameraMonitor
   - type: RoboticsConsole
     radioChannel: Xenoborg
+  - type: InteractionOutline
+  - type: Input
+    context: "human"
   - type: DeviceNetwork
     deviceNetId: Wireless
     receiveFrequencyId: Mothership
@@ -103,6 +113,7 @@
   - type: WirelessNetworkConnection
     range: 10000 # mothership can see them from very far
   - type: WiresPanel
+  - type: Alerts
   - type: ActivatableUI
     key: enum.LatheUiKey.Key
   - type: ActivatableUIRequiresPower
@@ -170,7 +181,7 @@
     factions:
     - Xenoborg
   - type: Body
-    prototype: MothershipCoreBody
+    prototype: Quadborg
   - type: Hands
     showInHands: false
     disableExplosionRecursion: true
@@ -200,10 +211,12 @@
       cell_slot:
         name: power-cell-slot-component-slot-name-default
         startingItem: PowerCellMicroreactor
-  # - type: Puller # use the conveyor
+  - type: Puller # use the conveyor
+    needshands: false
+  - type: Clickable
   - type: Eye
     drawFov: false
-  # - type: StationAiOverlay # removed until is no longer buggy
+  - type: StationAiOverlay # removed until is no longer buggy
   - type: IgnoreUIRange
   - type: ComplexInteraction
   - type: MindContainer
