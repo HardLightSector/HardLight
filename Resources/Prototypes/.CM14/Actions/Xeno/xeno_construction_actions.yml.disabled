@@ -1,0 +1,18 @@
+﻿- type: entity
+  id: ActionXenoPlantWeeds
+  parent: ActionXenoBase
+  name: Plant Weeds # TODO CM14 description
+  components:
+  - type: InstantAction
+    itemIconStyle: NoItem
+    icon:
+      sprite: .CM14/Actions/xeno_actions.rsi
+      state: plant_weeds
+    raiseOnUser: true
+    raiseOnAction: false
+    checkCanInteract: false
+    checkConsciousness: true
+    useDelay: 10
+    event: !type:XenoPlantWeedsEvent
+  # Note: The server handler uses the Xeno's Weedprototype datafield. Ensure that is set to a valid
+  # weeds entity such as XenoWeeds or XenoWeedsEntity. No direct reference to XenoWeedsSourceEntity exists.

@@ -1,10 +1,10 @@
 #region WizDen
-- type: entity # TODO: switch to .25 rifle (caseless)
+- type: entity # Hardlight: converted to 7.62x51mm caliber
   id: NFWeaponRifleAssaultSm
-  parent: [ NFBaseWeaponRifleAssaultChamber30, NFBaseWeaponFrameRifleAssaultCybersun ]
-  name: Soland-Moss # Renamed: real brand name
+  parent: [ NFBaseWeaponFrameRifleAssaultCybersun ] # Hardlight: removed NFBaseWeaponRifleAssaultChamber30 parent
+  name: Soland-Moss (7.62x51mm) # Hardlight: updated name to show caliber
   description: |-
-    An iconic weapon of war. An illegal firearm often used by Syndicate agents.
+    An infamous weapon, often seen in the hands of cartel enforcers out on the rim. Hits hard and fast but is somewhat difficult to control. # Hardlight: updated description
   components:
   - type: Clothing
     sprite: _NF/Objects/Weapons/Guns/Rifles/solandmoss.rsi
@@ -14,6 +14,46 @@
     magState: mag
     steps: 4
     zeroVisible: true
+  # Hardlight: Added 7.62x51mm chamber and magazine support
+  - type: Gun
+    minAngle: 28 # Hardlight: increased from Vulcan's 21 for more spread
+    maxAngle: 43 # Hardlight: increased from Vulcan's 32 for more spread
+    angleIncrease: 10
+    angleDecay: 24
+    fireRate: 5.5 # Hardlight: higher than Vulcan's 4 for faster fire
+    selectedMode: FullAuto
+    availableModes:
+    - SemiAuto
+    - FullAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/rifle2.ogg
+  - type: ChamberMagazineAmmoProvider
+    soundRack:
+      path: /Audio/Weapons/Guns/Cock/ltrifle_cock.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: HLMagazine762x51mmSolandFMJ
+        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - HLMagazine762x51mmSoland
+            - HLMagazineLowCapacity762x51mmSoland
+        whitelistFailPopup: gun-magazine-whitelist-fail
+      gun_chamber:
+        name: Chamber
+        startingItem: Cartridge762x51mmFMJ
+        priority: 1
+        whitelist:
+          tags:
+            - Cartridge762x51mmFMJ
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
 
 - type: entity # TODO: switch to .25 rifle (caseless)
   id: NFWeaponRifleAssaultM90GrenadeLauncher

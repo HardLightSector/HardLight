@@ -40,7 +40,7 @@
 
 # Dirizher Cartel Hardsuit (Unmarked)
 - type: entity
-  parent: [ClothingOuterHardsuitSyndie, BaseC3SyndicateContraband, ContrabandClothing]
+  parent: [ClothingOuterHardsuitSyndie, BaseC3CartelContraband, ContrabandClothing] # Hardlight: BaseC3SyndicateContraband<BaseC3CartelContraband
   id: ClothingOuterHardsuitCartel
   name: unmarked hardsuit
   description: A hardsuit with all identifying markings removed. Its origins are unclear.
@@ -239,7 +239,7 @@
 
 # Dirizher Cartel Hardsuit Helmet (Unmarked)
 - type: entity
-  parent: [ClothingHeadHelmetHardsuitSyndie, BaseC3SyndicateContraband, ContrabandClothing]
+  parent: [ClothingHeadHelmetHardsuitSyndie, BaseC3CartelContraband, ContrabandClothing] # Hardlight: BaseC3SyndicateContraband<BaseC3CartelContraband
   id: ClothingHeadHelmetHardsuitCartel
   name: unmarked hardsuit helmet
   description: A hardsuit helmet with all identifying markings removed.
