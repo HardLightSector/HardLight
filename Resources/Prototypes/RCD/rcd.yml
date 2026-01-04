@@ -34,7 +34,7 @@
 - type: rcd
   id: Plating
   name: rcd-component-plating
-  category: WallsAndFlooring
+  category: Floors
   sprite: /Textures/Interface/Radial/RCD/plating.png
   mode: ConstructTile
   prototype: Plating
@@ -48,7 +48,7 @@
 - type: rcd
   id: FloorSteel
   name: rcd-component-floor-steel
-  category: WallsAndFlooring
+  category: Floors
   sprite: /Textures/Interface/Radial/RCD/metal_tile.png
   mode: ConstructTile
   prototype: FloorSteel
@@ -58,10 +58,66 @@
   rules:
     - CanBuildOnEmptyTile
   fx: EffectRCDConstruct1
+  
+- type: rcd
+  id: FloorXenoborg
+  name: tiles-xenoborg-floor
+  category: Floors
+  sprite: /Textures/Interface/Radial/RCD/exoborg.png
+  mode: ConstructTile
+  prototype: FloorXenoborg
+  cost: 1
+  delay: 1
+  collisionMask: InteractImpassable
+  rules:
+    - CanBuildOnEmptyTile
+  fx: EffectRCDConstruct1
+  
+- type: rcd
+  id: FloorXeno
+  name: tiles-xeno-floor
+  category: Floors
+  sprite: /Textures/Interface/Radial/RCD/xeno_flooring.png
+  mode: ConstructTile
+  prototype: FloorXeno
+  cost: 1
+  delay: 1
+  collisionMask: InteractImpassable
+  rules:
+    - CanBuildOnEmptyTile
+  fx: EffectRCDConstruct1
+  
+- type: rcd
+  id: FloorXenoSteel
+  name: tiles-xeno-steel
+  category: Floors
+  sprite: /Textures/Interface/Radial/RCD/xeno_steel.png
+  mode: ConstructTile
+  prototype: FloorXenoSteel
+  cost: 1
+  delay: 1
+  collisionMask: InteractImpassable
+  rules:
+    - CanBuildOnEmptyTile
+  fx: EffectRCDConstruct1
+  
+- type: rcd
+  id: FloorXenoMaint
+  name: tiles-xeno-maint
+  category: Floors
+  sprite: /Textures/Interface/Radial/RCD/xeno_maint.png
+  mode: ConstructTile
+  prototype: FloorXenoMaint
+  cost: 1
+  delay: 1
+  collisionMask: InteractImpassable
+  rules:
+    - CanBuildOnEmptyTile
+  fx: EffectRCDConstruct1
 
 - type: rcd
   id: Catwalk
-  category: WallsAndFlooring
+  category: Floors
   sprite: /Textures/Interface/Radial/RCD/catwalk.png
   mode: ConstructObject
   prototype: Catwalk
@@ -77,7 +133,7 @@
 # Walls
 - type: rcd
   id: WallSolid
-  category: WallsAndFlooring
+  category: Walls
   sprite: /Textures/Interface/Radial/RCD/solid_wall.png
   mode: ConstructObject
   prototype: WallSolid
@@ -86,6 +142,43 @@
   collisionMask: FullTileMask
   rotation: Fixed
   fx: EffectRCDConstruct2
+  
+- type: rcd
+  id: WallShuttle
+  category: Walls
+  sprite: /Textures/Interface/Radial/RCD/shuttle_wall.png
+  mode: ConstructObject
+  prototype: WallShuttle
+  cost: 4
+  delay: 2
+  collisionMask: FullTileMask
+  rotation: Fixed
+  fx: EffectRCDConstruct2
+  
+- type: rcd
+  id: WallReinforced
+  category: Walls
+  sprite: /Textures/Interface/Radial/RCD/reinforced_wall.png
+  mode: ConstructObject
+  prototype: WallReinforced
+  cost: 4
+  delay: 2
+  collisionMask: FullTileMask
+  rotation: Fixed
+  fx: EffectRCDConstruct2
+  
+- type: rcd
+  id: WallXenoborg
+  category: Walls
+  sprite: /Textures/Interface/Radial/RCD/xenoborg.png
+  mode: ConstructObject
+  prototype: WallXenoborg
+  cost: 4
+  delay: 2
+  collisionMask: FullTileMask
+  rotation: Fixed
+  fx: EffectRCDConstruct2
+
 
 - type: rcd
   id: Grille
@@ -106,6 +199,20 @@
   sprite: /Textures/Interface/Radial/RCD/window.png
   mode: ConstructObject
   prototype: Window
+  cost: 3
+  delay: 2
+  collisionMask: Impassable
+  rules:
+    - IsWindow
+  rotation: Fixed
+  fx: EffectRCDConstruct2
+
+- type: rcd
+  id: XenoborgWindow
+  category: WindowsAndGrilles
+  sprite: /Textures/Interface/Radial/RCD/xenoborgwindow.png
+  mode: ConstructObject
+  prototype: XenoborgWindow
   cost: 3
   delay: 2
   collisionMask: Impassable

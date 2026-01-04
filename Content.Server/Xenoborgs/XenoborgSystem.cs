@@ -26,14 +26,14 @@ public sealed partial class XenoborgSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<XenoborgComponent, DestructionEventArgs>(OnXenoborgDestroyed);
-        SubscribeLocalEvent<MothershipCoreComponent, DestructionEventArgs>(OnCoreDestroyed);
+        //SubscribeLocalEvent<XenoborgComponent, DestructionEventArgs>(OnXenoborgDestroyed);
+        //SubscribeLocalEvent<MothershipCoreComponent, DestructionEventArgs>(OnCoreDestroyed);
 
         SubscribeLocalEvent<XenoborgComponent, MindAddedMessage>(OnXenoborgMindAdded);
         SubscribeLocalEvent<XenoborgComponent, MindRemovedMessage>(OnXenoborgMindRemoved);
     }
 
-    private void OnXenoborgDestroyed(EntityUid uid, XenoborgComponent component, DestructionEventArgs args)
+    /* private void OnXenoborgDestroyed(EntityUid uid, XenoborgComponent component, DestructionEventArgs args)
     {
         // if a xenoborg is destroyed, it will check to see if it was the last one
         var xenoborgQuery = AllEntityQuery<XenoborgComponent>(); // paused xenoborgs still count
@@ -78,7 +78,7 @@ public sealed partial class XenoborgSystem : EntitySystem
             // so brute force it is...
             _borg.Destroy(xenoborgEnt);
         }
-    }
+    } */
 
     private void OnXenoborgMindAdded(EntityUid ent, XenoborgComponent comp, MindAddedMessage args)
     {
@@ -96,6 +96,7 @@ public sealed partial class XenoborgSystem : EntitySystem
 
     private void OnXenoborgMindRemoved(EntityUid ent, XenoborgComponent comp, MindRemovedMessage args)
     {
-        _roles.MindRemoveRole<MindRoleComponent>((args.Mind.Owner, args.Mind.Comp));
+        // Remove the xenoborg-specific role component from the mind.
+        _roles.MindTryRemoveRole<XenoborgRoleComponent>(args.Mind.Owner);
     }
 }
