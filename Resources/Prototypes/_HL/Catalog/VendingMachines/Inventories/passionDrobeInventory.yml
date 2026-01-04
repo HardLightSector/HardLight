@@ -1,0 +1,39 @@
+- type: vendingMachineInventory
+  id: passionDrobeInventory
+  startingInventory:
+    AvianDildo: 4
+	CanineDildo: 4
+	CanineDildoRed: 4
+	HorseDildo: 4
+	NormalDildo: 4
+	TentacleDildo: 4
+	DoubleDildo: 4
+	LewdFleshlightTeal: 3
+	LewdFleshlightPink: 3
+	LewdFleshlightGreen: 3
+	LewdFleshlightYellow: 3
+	LewdFleshlightRed: 3
+	LewdWand: 3
+	LewdVibeGreen: 3
+	LewdVibeTeal: 3
+	LewdVibePink: 3
+	LewdVibeYellow: 3
+	WhipPink: 2
+	WhipTeal: 2
+	WhipPinkCrotch: 2
+	WhipTealCrotch: 2
+	SpankPinkPaddle: 2
+	SpankTealPaddle: 2
+    LeashBasic: 4
+    BondageHarness: 3
+    BondageMitts: 3
+    BondageLegSleeve: 3
+    BlindfoldBDSM: 3
+    BallGag: 3
+    LeashAdvanced: 2
+	
+    
+  contrabandInventory:
+  emaggedInventory:
+    LewdFleshlightRed: 2
+    LewdVibeRed: 2
